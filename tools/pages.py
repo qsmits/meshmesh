@@ -26,7 +26,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'tools'))
 from package import COMMUNITY, NRF52, NRF52_COMMUNITY, TARGETS  # noqa: E402
-from chess_site import build as build_chess  # noqa: E402
 from i18n import CODES  # noqa: E402
 from version import VERSION, ANDROID_VERSION, check  # noqa: E402
 
@@ -56,7 +55,6 @@ def main():
     if out.exists():
         shutil.rmtree(out)
     shutil.copytree(ROOT/'site', out)
-    build_chess(out)  # chess/: the chess page for a stock MeshCore companion
     shots = ROOT/'artifacts'/'site-shots'
     if shots.exists():  # screenshots in every language over the committed ru/en ones
         for f in shots.glob('*.png'):

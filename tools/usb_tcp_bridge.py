@@ -4,8 +4,8 @@
 For checking the app in the Android emulator (it reaches this computer as 10.0.2.2) with a real
 board: the app speaks exactly the USB protocol, so its command layer is the one a phone uses over
 USB. Control lines as tools/device.py (no reset). Baud switching is refused: the bridge stays at
-115200. --raw passes bytes as they are, for binary protocols (the MeshCore companion frames of
-tools/chess_companion_check.py). Usage: usb_tcp_bridge.py [--port PORT] [--listen 8771] [--raw]
+115200. --raw passes bytes as they are, for binary protocols (MeshCore companion frames).
+Usage: usb_tcp_bridge.py [--port PORT] [--listen 8771] [--raw]
 
 Firmware over USB (android flash/SerialIo.kt): a client that starts with the line "MMRAW1" gets
 "MMRAW1 native" or "MMRAW1 uart", then raw bytes from the board, and sends frames

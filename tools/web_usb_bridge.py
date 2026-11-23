@@ -18,7 +18,7 @@ from device import connect, command
 ROOT = Path(__file__).resolve().parents[1]
 GETS = {'/api/status': 'status', '/api/messages': 'messages', '/api/nodes': 'nodes', '/api/config': 'config',
         '/api/navigation': 'navigation', '/api/maps': 'map info', '/api/maps/areas': 'map areas',
-        '/api/quick': 'quick', '/api/people': 'people', '/api/clock': 'clock', '/api/key': 'key', '/api/pet': 'pet', '/api/dice': 'dice', '/api/channels': 'channels', '/api/wardrive': 'wardrive'}
+        '/api/quick': 'quick', '/api/people': 'people', '/api/clock': 'clock', '/api/key': 'key', '/api/channels': 'channels', '/api/wardrive': 'wardrive'}
 
 
 def main():
@@ -50,11 +50,6 @@ def main():
                     self.reply(200, (ROOT / 'web/index.html').read_bytes(), 'text/html; charset=utf-8')
                 elif url.path == '/networks.json':
                     self.reply(200, (ROOT / 'site/networks.json').read_bytes())
-                elif url.path == '/api/chess':
-                    query = parse_qs(url.query);game = query.get('id', [''])[0]
-                    self.reply(200, usb('chess rating') if 'rating' in query else usb(f'chess show {game}') if game else usb('chess web'))
-                elif url.path == '/api/tour':
-                    self.reply(200, usb('tour'))
                 elif url.path == '/api/connections':
                     self.reply(200, usb('connections'))
                 elif url.path == '/api/wardrive/log':

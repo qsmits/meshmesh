@@ -39,7 +39,6 @@ SHOTS = {
     'web-radar': ('radar', '', '', False),
     'web-homing': ('homing', 'homing=1', '', False),
     'web-motion': ('motion', 'csi=1', '', False),
-    'web-board': ('board/3F2A', '', '', False),
     'web-radio': ('radio', '', '', False),
     # The networks catalogue: a network chosen in the list, then a test that runs (state of the page only).
     'web-networks': ('radio', '', "netAction('open').then(()=>{netPick.net='mow-01';renderNetList()})", False),
