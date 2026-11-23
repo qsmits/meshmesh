@@ -73,8 +73,8 @@ void Maps::begin(){}void Maps::tick(){}
 void Maps::center(double lat,double lon){latitude=lat;longitude=lon;haveCenter=true;dirty=true;}
 void Maps::pan(int dx,int dy){follow=false;double scale=256.0*(1<<zoom);longitude+=dx*360.0/scale;latitude-=dy*360.0/scale*cos(latitude*M_PI/180);dirty=true;}
 void Maps::changeZoom(int d){zoom=constrain(int(zoom)+d,10,17);dirty=true;}
-String Maps::areas(){return "[{\"id\":\"kazan\",\"name\":\"Казань\",\"tiles\":1022},{\"id\":\"center\",\"name\":\"Центр 4×4 км\",\"tiles\":218}]";}
-bool Maps::selectArea(const String&){title="Казань";return true;}
+String Maps::areas(){return "[{\"id\":\"utrecht\",\"name\":\"Utrecht\",\"tiles\":1022},{\"id\":\"center\",\"name\":\"Centre 4×4 km\",\"tiles\":218}]";}
+bool Maps::selectArea(const String&){title="Utrecht";return true;}
 String Maps::info(){return "{}";}
 void Maps::draw(int x,int y,int w,int h){
  auto& c=*hardware.canvas;visibleTiles=available&&haveCenter?4:0;waiting=false;if(!visibleTiles)return;
@@ -96,7 +96,7 @@ static void tick(){fakeMillis+=1000;radar.tick();uiTick();}
 // Wardrive along a street: packets heard through repeater 3A and a zero-hop advert, pings repeated by C7 and 3A,
 // the middle one by nobody.
 static void wardriveData(){
- const double track[][2]={{55.7963,49.1088},{55.7968,49.1112},{55.7973,49.1137},{55.7979,49.1161},{55.7984,49.1186}};
+ const double track[][2]={{52.0963,5.1088},{52.0968,5.1112},{52.0973,5.1137},{52.0979,5.1161},{52.0984,5.1186}};
  const uint8_t viaA[]={0x3A},viaB[]={0x3A,0xC7},advert[]={0xB2,0x41,0x09};auto saved=hardware.gps.location;
  for(unsigned i=0;i<5;i++){hardware.gps.location.la=track[i][0];hardware.gps.location.lo=track[i][1];
   wardrive::heard(0x1000+i,5,true,1,viaA,nullptr,0,6.5f-i*3,-92-int(i)*4);wardrive::heard(0x2000+i,4,true,0,nullptr,advert,3,-2.0f,-104);
@@ -123,42 +123,42 @@ static void scenario();
 #endif
 int main(int argc,char** argv){
  outDir=argc>1?argv[1]:".";
- config.lang=argc>2?max(0,langFromCode(argv[2])):LangRu; // a language code, Russian by default
+ config.lang=argc>2?max(0,langFromCode(argv[2])):LangEn; // a language code, English by default
 #ifdef MM_DESKTOP_SIMULATOR
  config.lang=LangEn;
 #endif
  hardware.canvas=new GFXcanvas16(320,240);strcpy(config.name,"M9");
  hardware.font.begin(*hardware.canvas);hardware.font.setFont(u8g2_font_6x13_t_cyrillic);hardware.font.setFontMode(1);
  hardware.keyboardOk=hardware.sdOk=hardware.fsOk=hardware.rtcOk=hardware.rtcValid=hardware.compassOk=hardware.imuOk=hardware.compassSample=hardware.imuSample=true;
- hardware.batteryMv=3980;hardware.gps.location={true,55.7963,49.1088};hardware.gps.satellites.v=9;hardware.gps.hdop.v=1.1;hardware.gps.date.valid=true;hardware.gps.sentences=1200;
+ hardware.batteryMv=3980;hardware.gps.location={true,52.0963,5.1088};hardware.gps.satellites.v=9;hardware.gps.hdop.v=1.1;hardware.gps.date.valid=true;hardware.gps.sentences=1200;
  meshRadio.ready=true;meshRadio.nodeId=0x5A1F0C9E77D2A1B3ULL;meshRadio.rxCount=148;meshRadio.txCount=37;meshRadio.relayed=12;meshRadio.rejected=2;meshRadio.lastRssi=-71;meshRadio.lastSnr=9.5;meshRadio.lastRxAt=fakeMillis-20000;
  // Node names fit Peer::name (24 bytes, as the firmware allows).
- const char* names[]={"Heltec V4","Kazan RPT-1","Комн. Казань","Игорь T-Deck","Sensor-12","Марат"};uint8_t types[]={1,2,3,1,4,1};
- for(int i=0;i<6;i++){auto& p=meshRadio.peers[meshRadio.peerCount++];p.id=peerId(i);strcpy(p.name,names[i]);p.type=types[i];p.heard=i!=4;p.seen=fakeMillis-(i*47000+3000);p.rssi=-58-i*11;p.snr=11-i*3.5f;p.hops=i==0?0:i;p.pathLength=i==0?0:i==2?255:i;p.position=i==0||i==1||i==3;p.latitude=55.7963+0.0011*(i+1)*(i%2?1:-1);p.longitude=49.1088+0.0013*(i+1)*(i%3?1:-1);for(int k=0;k<8;k++)p.publicKey[k]=uint8_t(p.id>>(56-8*k));p.publicKey[8]=0x10*i+3;}
+ const char* names[]={"Heltec V4","Utrecht RPT-1","Room Utrecht","Alex T-Deck","Sensor-12","Sam"};uint8_t types[]={1,2,3,1,4,1};
+ for(int i=0;i<6;i++){auto& p=meshRadio.peers[meshRadio.peerCount++];p.id=peerId(i);strcpy(p.name,names[i]);p.type=types[i];p.heard=i!=4;p.seen=fakeMillis-(i*47000+3000);p.rssi=-58-i*11;p.snr=11-i*3.5f;p.hops=i==0?0:i;p.pathLength=i==0?0:i==2?255:i;p.position=i==0||i==1||i==3;p.latitude=52.0963+0.0011*(i+1)*(i%2?1:-1);p.longitude=5.1088+0.0013*(i+1)*(i%3?1:-1);for(int k=0;k<8;k++)p.publicKey[k]=uint8_t(p.id>>(56-8*k));p.publicKey[8]=0x10*i+3;}
  {auto& r=remote::sessions[0];r.id=peerId(1);r.login=r.status=r.command=remote::Done;r.admin=true;r.battery=4170;r.uptime=93780;r.received=1520;r.sent=611;r.airtime=4210;r.noise=-112;r.rssi=-79;r.snr=38;
-  strcpy(r.reply[0],"> Kazan RPT-1");strcpy(r.reply[1],"v1.17.1-meshmesh (Build: Oct  8 2026)");r.replies=2;
+  strcpy(r.reply[0],"> Utrecht RPT-1");strcpy(r.reply[1],"v1.17.1-meshmesh (Build: Oct  8 2026)");r.replies=2;
   auto& tr=remote::trace;tr.id=peerId(1);tr.state=remote::Done;tr.hops=1;tr.hashes[0]=uint8_t(peerId(1)>>56);tr.snr[0]=49;tr.snr[1]=34;}
  time_t now=time(nullptr);
  auto add=[&](uint64_t src,uint64_t dst,const char* name,const char* text,bool out,ChatMessage::Status st,int ago){ChatMessage m;m.source=src;m.destination=dst;strcpy(m.name,name);strcpy(m.text,text);m.outgoing=out;m.status=st;m.timestamp=now-ago;m.id=++nextId;meshRadio.history[meshRadio.historyCount++]=m;};
  uint64_t B=meshmesh::Broadcast;
- add(peerId(5),B,"Марат","Всем привет! 👋 Кто на связи в районе Кремля?",false,ChatMessage::Received,5400);
- add(meshRadio.nodeId,B,"M9","Я на связи, M9 у Кремлёвской",true,ChatMessage::Sent,5300);
- add(peerId(0),meshRadio.nodeId,"Heltec V4","Радиотест V4 → M9: 1790746076",false,ChatMessage::Received,3600);
- add(meshRadio.nodeId,peerId(0),"M9","Принято, слышу хорошо. SNR около 9 дБ",true,ChatMessage::Delivered,3500);
- add(meshRadio.nodeId,peerId(0),"M9","Проверка длинного сообщения: переносы строк должны аккуратно помещаться внутри пузыря",true,ChatMessage::Failed,1200);
+ add(peerId(5),B,"Sam","Hi all! 👋 Anyone on air near the Dom tower?",false,ChatMessage::Received,5400);
+ add(meshRadio.nodeId,B,"M9","Here, M9 at Neude",true,ChatMessage::Sent,5300);
+ add(peerId(0),meshRadio.nodeId,"Heltec V4","Radio test V4 → M9: 1790746076",false,ChatMessage::Received,3600);
+ add(meshRadio.nodeId,peerId(0),"M9","Copy, loud and clear. SNR about 9 dB",true,ChatMessage::Delivered,3500);
+ add(meshRadio.nodeId,peerId(0),"M9","Testing a long message: the lines should wrap neatly inside the bubble on this screen",true,ChatMessage::Failed,1200);
  add(peerId(0),meshRadio.nodeId,"Heltec V4","OK 👍🏽",false,ChatMessage::Received,300);
- add(peerId(3),meshRadio.nodeId,"Игорь T-Deck","Буду через 10 минут 🚗💨",false,ChatMessage::Received,120);
- add(meshRadio.nodeId,peerId(3),"M9","Жду у входа 😊☕️",true,ChatMessage::Sent,60);
+ add(peerId(3),meshRadio.nodeId,"Alex T-Deck","Be there in 10 minutes 🚗💨",false,ChatMessage::Received,120);
+ add(meshRadio.nodeId,peerId(3),"M9","Waiting at the entrance 😊☕️",true,ChatMessage::Sent,60);
  // Channels: Public, a hashtag and a private one with messages; two more heard on air.
  meshRadio.channelCount=1;strcpy(meshRadio.channelList[0].name,"Public");memcpy(meshRadio.channelList[0].secret,channels::publicSecret,16);meshRadio.channelList[0].id=meshmesh::Broadcast;
- {uint64_t tag,priv;meshRadio.joinHashtag("kazan",&tag);uint8_t k[16];for(int i=0;i<16;i++)k[i]=uint8_t(200-i*9);meshRadio.addChannel("Друзья",k,&priv);
-  add(peerId(3),tag,"Игорь T-Deck","Кто едет на Кабан в субботу?",false,ChatMessage::Received,2400);
-  add(peerId(5),priv,"Марат","Встречаемся в 19:00 🔥🎉 🇷🇺🦖",false,ChatMessage::Received,900);
-  meshRadio.heard[0].hash=0x5A;meshRadio.heard[0].packets=3;meshRadio.heard[0].at=fakeMillis-120000;strcpy(meshRadio.heard[0].name,"#ru");
+ {uint64_t tag,priv;meshRadio.joinHashtag("utrecht",&tag);uint8_t k[16];for(int i=0;i<16;i++)k[i]=uint8_t(200-i*9);meshRadio.addChannel("Friends",k,&priv);
+  add(peerId(3),tag,"Alex T-Deck","Who is cycling to the lake on Saturday?",false,ChatMessage::Received,2400);
+  add(peerId(5),priv,"Sam","Meet at 19:00 🔥🎉 🇳🇱🦖",false,ChatMessage::Received,900);
+  meshRadio.heard[0].hash=0x5A;meshRadio.heard[0].packets=3;meshRadio.heard[0].at=fakeMillis-120000;strcpy(meshRadio.heard[0].name,"#nl");
   meshRadio.heard[1].hash=0x07;meshRadio.heard[1].packets=1;meshRadio.heard[1].at=fakeMillis-600000;meshRadio.heardCount=2;meshRadio.heardSamples=4;
-  channels::Channel invite{};strcpy(invite.name,"Походы");for(int i=0;i<16;i++)invite.secret[i]=uint8_t(i*13+5);
-  add(peerId(5),meshRadio.nodeId,"Марат",channels::link(invite).c_str(),false,ChatMessage::Received,200);}
- maps.available=true;maps.tileCount=1240;maps.title="Казань";maps.zoom=15;maps.center(55.7963,49.1088);
+  channels::Channel invite{};strcpy(invite.name,"Hiking");for(int i=0;i<16;i++)invite.secret[i]=uint8_t(i*13+5);
+  add(peerId(5),meshRadio.nodeId,"Sam",channels::link(invite).c_str(),false,ChatMessage::Received,200);}
+ maps.available=true;maps.tileCount=1240;maps.title="Utrecht";maps.zoom=15;maps.center(52.0963,5.1088);
  navigation.headingValid=true;navigation.heading=37;navigation.calibrated=true;
  quickSend::begin();people::begin();wardrive::begin();
 #ifdef MM_DESKTOP_SIMULATOR

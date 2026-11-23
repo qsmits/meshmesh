@@ -6,14 +6,14 @@
 namespace quickSend {
 State state;
 namespace {constexpr uint32_t Magic=0x4d4d5101;
-void defaults(State& s){s.to=meshmesh::Broadcast;s.gps=false;memset(s.text,0,sizeof s.text);const char* text[]={"OK","ping",tr("Got it","Принято"),tr("On my way","Иду"),tr("Arrived","На месте"),tr("Need help","Нужна помощь"),tr("Wait for me","Подождите меня"),tr("All clear","Всё в порядке"),tr("Running late","Опаздываю"),tr("Battery low","Батарея садится")};for(unsigned i=0;i<Count;i++)strlcpy(s.text[i],text[i],sizeof s.text[i]);}
+void defaults(State& s){s.to=meshmesh::Broadcast;s.gps=false;memset(s.text,0,sizeof s.text);const char* text[]={"OK","ping",tr("Got it"),tr("On my way"),tr("Arrived"),tr("Need help"),tr("Wait for me"),tr("All clear"),tr("Running late"),tr("Battery low")};for(unsigned i=0;i<Count;i++)strlcpy(s.text[i],text[i],sizeof s.text[i]);}
 bool hexId(const String& raw){if(!raw.length()||raw.length()>16)return false;for(unsigned i=0;i<raw.length();i++)if(!isxdigit(uint8_t(raw[i])))return false;return true;}
 bool valid(const State& s){if(!s.to)return false;for(const auto& text:s.text){size_t n=strnlen(text,sizeof text);if(n==sizeof text||!meshmesh::validUtf8(reinterpret_cast<const uint8_t*>(text),n))return false;}return true;}}
 void begin(){if(!blob::load("/meshmesh/quick",Magic,state)||!valid(state))defaults(state);}
 bool targetValid(uint64_t to){if(channels::isChannel(to))return meshRadio.channel(to)!=nullptr;const Peer* p=meshRadio.findContact(to);return p&&(p->type==1||p->type==3)&&to!=meshRadio.nodeId;}
 unsigned targetCount(){unsigned n=meshRadio.channelCount;for(unsigned i=0;i<meshRadio.peerCount;i++)if(targetValid(meshRadio.peers[i].id))n++;return n;}
 uint64_t target(unsigned index){if(index<meshRadio.channelCount)return meshRadio.channelList[index].id;index-=meshRadio.channelCount;for(unsigned i=0;i<meshRadio.peerCount;i++)if(targetValid(meshRadio.peers[i].id)){if(!index)return meshRadio.peers[i].id;index--;}return 0;}
-String targetName(){if(auto* c=meshRadio.channel(state.to))return c->name;if(const Peer* p=meshRadio.findContact(state.to))return p->name;return String(tr("Choose recipient","Выберите получателя"));}
+String targetName(){if(auto* c=meshRadio.channel(state.to))return c->name;if(const Peer* p=meshRadio.findContact(state.to))return p->name;return String(tr("Choose recipient"));}
 String send(unsigned index,uint64_t to){if(index>=Count)return "ERR quick index 0..9";if(!to)to=state.to;if(!targetValid(to))return "ERR quick recipient unavailable: choose a channel or contact";String text=state.text[index];
  if(state.gps){if(!hardware.clockTrusted||hardware.clockConflict||!hardware.gpsFix()||!hardware.gpsTime())return "ERR trusted GPS position unavailable";text+=" @"+String(hardware.gps.location.lat(),5)+","+String(hardware.gps.location.lng(),5);}
  if(!text.length()||text.length()>meshRadio.messageLimit(to))return "ERR quick text exceeds recipient UTF-8 byte limit";

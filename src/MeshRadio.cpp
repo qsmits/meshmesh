@@ -439,11 +439,11 @@ void MeshRadio::track(const Pending& wait,unsigned attempt,bool delivered,uint8_
 }
 String MeshRadio::routeText(const ChatMessage& m,bool brief) const{
  if(m.protocol!=2||m.route==ChatMessage::RouteNone||(m.outgoing&&(m.status==ChatMessage::Failed||channels::isChannel(m.destination))))return "";
- String hops=m.hops==255?String():!m.hops?String(brief?tr("direct","напр."):tr("direct","напрямую")):(brief?String(m.hops)+tr(" rpt"," ретр."):String(tr("via ","через "))+m.hops+tr(" rpt"," ретр."));
- String s=m.route==ChatMessage::RouteDirect?(hops.length()?hops:String(tr("routed","по маршруту")))
+ String hops=m.hops==255?String():!m.hops?String(brief?tr("direct"):tr("direct")):(brief?String(m.hops)+tr(" rpt"):String(tr("via "))+m.hops+tr(" rpt"));
+ String s=m.route==ChatMessage::RouteDirect?(hops.length()?hops:String(tr("routed")))
   :!m.outgoing?(hops.length()?hops:String("flood")) // incoming: how far it came
   :m.status==ChatMessage::Delivered&&hops.length()&&!brief?"flood, "+hops:String("flood");
- if(m.outgoing&&m.tries>1)s+=m.status==ChatMessage::Delivered?(brief?" #"+String(m.tries):String(tr(" · try "," · попытка "))+m.tries):" "+String(m.tries)+"/3";
+ if(m.outgoing&&m.tries>1)s+=m.status==ChatMessage::Delivered?(brief?" #"+String(m.tries):String(tr(" · try "))+m.tries):" "+String(m.tries)+"/3";
  return s;
 }
 void MeshRadio::echo(uint32_t packet,uint8_t pathLen,const uint8_t* path){
@@ -496,7 +496,7 @@ void MeshRadio::tick(){
   if(p.attempts>=3||channels::isChannel(p.message.destination)){p.active=false;status(p.message.id,ChatMessage::Failed);if(!p.message.game)event="No delivery ACK";if(!channels::isChannel(p.message.destination)){Peer* c=contact(p.message.destination);if(c&&c->pathLength!=255)resetPath(c->id);}}else if(!core->startMessage(p)){p.active=false;status(p.message.id,ChatMessage::Failed);}}}
  if(autoHelloDue&&int32_t(now-autoHelloDue)>=0&&!busy()){if(sendHello())autoHelloDue=0;else autoHelloDue=now+5000;}
 }
-bool MeshRadio::selfTest(){const mesh::LocalIdentity* self=selfIdentity(core);if(!self||(core&&!core->identitySaved)||!mesh::Utils::selfTestAES())return false;const uint8_t text[]="MeshCore: Привет";uint8_t signature[64];self->sign(signature,text,sizeof(text)-1);if(!self->verify(signature,text,sizeof(text)-1))return false;signature[0]^=1;if(self->verify(signature,text,sizeof(text)-1))return false;uint8_t secret[32]={},cipher[64],plain[64];esp_fill_random(secret,32);int n=mesh::Utils::encryptThenMAC(secret,cipher,text,sizeof(text)-1);int len=mesh::Utils::MACThenDecrypt(secret,plain,cipher,n);if(len<int(sizeof(text)-1)||memcmp(text,plain,sizeof(text)-1))return false;cipher[n-1]^=1;if(mesh::Utils::MACThenDecrypt(secret,plain,cipher,n))return false;SHA256 hmac;hmac.resetHMAC(secret,32);hmac.update(cipher+2,n-3);hmac.finalizeHMAC(secret,32,cipher,2);if(mesh::Utils::MACThenDecrypt(secret,plain,cipher,n-1))return false;return meshmesh::validUtf8(text,sizeof(text)-1);}
+bool MeshRadio::selfTest(){const mesh::LocalIdentity* self=selfIdentity(core);if(!self||(core&&!core->identitySaved)||!mesh::Utils::selfTestAES())return false;const uint8_t text[]="MeshCore: héllo ✓";uint8_t signature[64];self->sign(signature,text,sizeof(text)-1);if(!self->verify(signature,text,sizeof(text)-1))return false;signature[0]^=1;if(self->verify(signature,text,sizeof(text)-1))return false;uint8_t secret[32]={},cipher[64],plain[64];esp_fill_random(secret,32);int n=mesh::Utils::encryptThenMAC(secret,cipher,text,sizeof(text)-1);int len=mesh::Utils::MACThenDecrypt(secret,plain,cipher,n);if(len<int(sizeof(text)-1)||memcmp(text,plain,sizeof(text)-1))return false;cipher[n-1]^=1;if(mesh::Utils::MACThenDecrypt(secret,plain,cipher,n))return false;SHA256 hmac;hmac.resetHMAC(secret,32);hmac.update(cipher+2,n-3);hmac.finalizeHMAC(secret,32,cipher,2);if(mesh::Utils::MACThenDecrypt(secret,plain,cipher,n-1))return false;return meshmesh::validUtf8(text,sizeof(text)-1);}
 String MeshRadio::diagnosticFrame() const{String result;result.reserve(lastFrameSize*2);char hex[3];for(size_t i=0;i<lastFrameSize;i++){snprintf(hex,3,"%02x",lastFrame[i]);result+=hex;}return result;}
 bool MeshRadio::diagnosticIngest(const uint8_t*,size_t){rejected++;return false;} // Do not bypass authenticated RF reception.
 // Channels: Public first, then the joined ones from NVS (name and key; the ID follows from the key).

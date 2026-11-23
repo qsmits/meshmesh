@@ -31,7 +31,6 @@ struct Config {
   }
   bool lightAt(time_t utc) const {return theme==1||(theme==2&&utc>=1700000000&&!nightAt(utc));}
   uint8_t backlight(time_t utc) const {return nightBrightness&&nightAt(utc)?nightBrightness:brightness;}
-  bool inputRussian=false; // Preferred physical keyboard layout at startup.
   bool launcherTiles=false; // Home and folders default to List
   bool lockDetails=true; // the locked screen names message senders
   uint8_t notifyLed=1,notifyPopup=1;
@@ -46,7 +45,6 @@ struct Config {
   // The profile before the last change of the shared radio parameters ("radio previous" returns to it), and
   // during a test ("radio try") the saved one: the test lives in memory only, a restart brings the saved one back.
   RadioProfile previous,trial;
-  bool netAuto=true; // the network search runs by itself near a catalogue place with other profiles (NetFind.h)
   bool doubleBack=false; // one-button boards: a double click steps back (single clicks then wait for a second one)
   RadioProfile radio() const {RadioProfile r;r.frequency=frequency;r.bandwidth=bandwidth;r.sf=sf;r.cr=cr;return r;}
   void setRadio(const RadioProfile& r){frequency=r.frequency;bandwidth=r.bandwidth;sf=r.sf;cr=r.cr;}

@@ -28,13 +28,13 @@ bool tagMatches(const char* tags){
  }
  return false;
 }
-String memoLabel(){return selected?t("Tags","Метки"):t("Note","Заметка");}
+String memoLabel(){return selected?t("Tags"):t("Note");}
 void saveMemo(){
  if(page==Nodes){tagFilter=edit;tagFilter.trim();tagFilter.toLowerCase();editing=false;selected=0;return;}
  Peer* peer=peerOf(focusNode);if(!peer)return;
  auto& entry=contactMemo(*peer);auto next=entry.memo;
  if(selected)strlcpy(next.tags,edit.c_str(),sizeof next.tags);else strlcpy(next.note,edit.c_str(),sizeof next.note);
- if(!entry.readable||!handheldWrite(readKey(peer->id).c_str(),&next,sizeof next)){notice(t("Save failed","Ошибка записи"),bad);return;}
+ if(!entry.readable||!handheldWrite(readKey(peer->id).c_str(),&next,sizeof next)){notice(t("Save failed"),bad);return;}
  entry.memo=next;editing=false;
 }
 void drawMemo(){
@@ -43,9 +43,9 @@ void drawMemo(){
  text(12,42,fit(peer->name,286,bold),ink,bold);
  for(int i=0;i<2;i++){
   int y=50+i*80;listRow(y,76,i==selected);target(8,y,304,76,i);
-  text(18,y+17,i?t("Tags","Метки"):t("Note","Заметка"),dim,small);
+  text(18,y+17,i?t("Tags"):t("Note"),dim,small);
   String rows[4];unsigned n=wrap(i?memo.tags:memo.note,rows,4,280);
   for(unsigned j=0;j<n;j++)text(18,y+31+j*14,rows[j],ink);
  }
- footer({{"OK",t("Edit","Изменить")},{"BACK",t("Back","Назад")}});
+ footer({{"OK",t("Edit")},{"BACK",t("Back")}});
 }

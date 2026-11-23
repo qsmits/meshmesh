@@ -6,7 +6,7 @@ void Hardware::ping(uint16_t,uint16_t){}
 #include "Radar.h"
 Radar& radar=*new Radar;
 void Radar::open(){if(active)return;active=true;wifi=WifiReady;sweeps=3;count=0;
- struct {uint64_t id;const char* name;uint8_t ch;bool open;int rssi;} aps[]={{0x5A1F0C9E1101ULL,"MM-9E77D2",1,false,-41},{0x34E8941A2B3CULL,"Keenetic-4471",6,false,-58},{0xA0F3C1223344ULL,"TP-Link_5GHz",11,false,-66},{0x10FEED000001ULL,"",3,false,-72},{0x28CDC1ABCDEFULL,"Кафе Бахетле",1,true,-79},{0xB827EB000102ULL,"DIRECT-HP-M28",6,false,-88}};
+ struct {uint64_t id;const char* name;uint8_t ch;bool open;int rssi;} aps[]={{0x5A1F0C9E1101ULL,"MM-9E77D2",1,false,-41},{0x34E8941A2B3CULL,"Ziggo-4471",6,false,-58},{0xA0F3C1223344ULL,"TP-Link_5GHz",11,false,-66},{0x10FEED000001ULL,"",3,false,-72},{0x28CDC1ABCDEFULL,"Кафе Бахетле",1,true,-79},{0xB827EB000102ULL,"DIRECT-HP-M28",6,false,-88}};
  for(auto& a:aps){RadarTarget* t=upsert(RadarTarget::Wifi,a.id);strcpy(t->name,a.name);t->channel=a.ch;t->open=a.open;t->rssi=a.rssi;t->seen=millis();}
  struct {uint64_t id;const char* name;RadarTarget::Device device;uint16_t vendor;int rssi;} bles[]={{0x6A11,"",RadarTarget::Personal,0x004c,-52},{0x6A12,"Galaxy Watch6",RadarTarget::Watch,0x0075,-61},{0x6A13,"",RadarTarget::Audio,0x004c,-70},{0x6A14,"MeshMesh 0E44",RadarTarget::Unknown,0xffff,-47},{0x6A15,"",RadarTarget::Unknown,0x0006,-83}};
  for(auto& b:bles){RadarTarget* t=upsert(RadarTarget::Ble,b.id);strcpy(t->name,b.name);t->device=b.device;t->vendor=b.vendor;t->rssi=b.rssi;t->seen=millis()-(b.id&3)*7000;}
@@ -33,7 +33,7 @@ Internet internet;
 static int previewRescans=0; // the T-Deck touch check: DEL in the network list rescans
 void Internet::setEnabled(bool on){enabled=on;}void Internet::rescan(){previewRescans++;}void Internet::connectTo(const String&){}
 bool Internet::save(const String&,const String&){return true;}bool Internet::forget(const String&){return true;}
-String Internet::savedName(unsigned){return "";}String Internet::stateText(){return online()?String("Home-WiFi · 192.168.1.101"):tr("Off","Выключен");}
+String Internet::savedName(unsigned){return "";}String Internet::stateText(){return online()?String("Home-WiFi · 192.168.1.101"):tr("Off");}
 String Internet::address(){return "192.168.1.101";}
 bool Maps::inArea() const{return true;}
 bool webRadarActive(){return false;}
@@ -47,11 +47,11 @@ String executeCommand(const String& line){previewCommands+=line+";";if(line.star
 // Same as src/MeshRadio.cpp (the preview does not link the radio).
 String MeshRadio::routeText(const ChatMessage& m,bool brief) const{
  if(m.protocol!=2||m.route==ChatMessage::RouteNone||(m.outgoing&&(m.status==ChatMessage::Failed||channels::isChannel(m.destination))))return "";
- String hops=m.hops==255?String():!m.hops?String(brief?tr("direct","напр."):tr("direct","напрямую")):(brief?String(m.hops)+tr(" rpt"," ретр."):String(tr("via ","через "))+m.hops+tr(" rpt"," ретр."));
- String s=m.route==ChatMessage::RouteDirect?(hops.length()?hops:String(tr("routed","по маршруту")))
+ String hops=m.hops==255?String():!m.hops?String(brief?tr("direct"):tr("direct")):(brief?String(m.hops)+tr(" rpt"):String(tr("via "))+m.hops+tr(" rpt"));
+ String s=m.route==ChatMessage::RouteDirect?(hops.length()?hops:String(tr("routed")))
   :!m.outgoing?(hops.length()?hops:String("flood")) // incoming: how far it came
   :m.status==ChatMessage::Delivered&&hops.length()&&!brief?"flood, "+hops:String("flood");
- if(m.outgoing&&m.tries>1)s+=m.status==ChatMessage::Delivered?(brief?" #"+String(m.tries):String(tr(" · try "," · попытка "))+m.tries):" "+String(m.tries)+"/3";
+ if(m.outgoing&&m.tries>1)s+=m.status==ChatMessage::Delivered?(brief?" #"+String(m.tries):String(tr(" · try "))+m.tries):" "+String(m.tries)+"/3";
  return s;
 }
 #include "Regions.h"
@@ -77,18 +77,18 @@ bool find(){static Found list[MaxFound];search=Search();search.found=list;search
 void tick(){}
 String json(){return "{}";}
 }
-// Network search: the answer near Moscow with a Kazan profile on the board, at once (src/NetFind.inc on the boards).
+// Network search: an answer with a regional preset found, at once (src/NetFind.inc on the boards).
 #include "NetFind.h"
 namespace netfind {
 State state;
-bool start(bool,const float*,const float*){static Result list[MaxResults];uint16_t found=state.found;state=State();state.found=found;state.results=list;
+bool start(){static Result list[MaxResults];state=State();state.results=list;
  RadioProfile here=config.radio(),near=here;near.sf=7;near.cr=7;
  list[0]=Result();list[0].radio=here;list[0].current=true;list[0].done=true;
  list[1]=Result();list[1].radio=near;list[1].place=1;list[1].repeaters=3;list[1].packets=5;list[1].snr=26;list[1].done=true;
- state.count=2;state.best=1;state.located=true;state.phase=State::Done;return true;}
+ state.count=2;state.best=1;state.phase=State::Done;return true;}
 void stop(){}void cancel(){}void tick(){}
 String json(){return "{}";}
-String placeName(uint8_t place){return place==1?"Москва и Московская область":"";}
+String placeName(uint8_t place){return place==1?"Netherlands":"";}
 String profileText(const RadioProfile& r){return String(r.frequency,3)+" SF"+String(r.sf)+" BW"+String(r.bandwidth,1);}
 String use(uint8_t){return "OK radio test";}
 }

@@ -2,25 +2,21 @@
 #include "Config.h"
 #include "Emoji.h"
 #include <U8g2_for_Adafruit_GFX.h>
-#define MM_LANG_IN(l) 1
 #include "I18nTable.h"
 #include "I18nFonts.h"
 #include <algorithm>
 #include <initializer_list>
 #include <vector>
-#if !defined(MM_NRF52) && !defined(MM_UI_PREVIEW)
-#include <esp_spi_flash.h>
-#endif
 
-const char* const langCodes[LangCount]={"en","ru","uk","es","pt","fr","de","it","pl","tr","zh","ja","ko","ar","id"};
-const char* const langNames[LangCount]={"English","Русский","Українська","Español","Português","Français","Deutsch","Italiano","Polski","Türkçe","中文","日本語","한국어","العربية","Bahasa Indonesia"};
+const char* const langCodes[LangCount]={"en","uk","es","pt","fr","de","it","pl","tr","zh","ja","ko","ar","id"};
+const char* const langNames[LangCount]={"English","Українська","Español","Português","Français","Deutsch","Italiano","Polski","Türkçe","中文","日本語","한국어","العربية","Bahasa Indonesia"};
 int langFromCode(const String& code){for(int i=0;i<LangCount;i++)if(code==langCodes[i])return i;return -1;}
-bool langAvailable(uint8_t l){return l<LangCount&&MM_LANG_IN(l);}
+bool langAvailable(uint8_t l){return l<LangCount;}
 uint8_t langStep(uint8_t l,int dir){for(int i=0;i<LangCount;i++){l=(l+LangCount+(dir<0?-1:1))%LangCount;if(langAvailable(l))break;}return l;}
 
 namespace {
 uint8_t lang(){return config.lang<LangCount?config.lang:LangEn;}
-// FNV-1a over the parts joined by 0x1f, as tools/i18n.py keys the translations.
+// FNV-1a over the parts joined by 0x1f, as tools/i18n.py keys the plural translations.
 uint32_t hashParts(std::initializer_list<const char*> parts){
  uint32_t h=0x811c9dc5;bool first=true;
  for(const char* p:parts){if(!first)h=(h^0x1f)*0x01000193;first=false;while(*p)h=(h^uint8_t(*p++))*0x01000193;}
@@ -28,18 +24,18 @@ uint32_t hashParts(std::initializer_list<const char*> parts){
 }
 // The translation for the interface language, nullptr when there is none.
 const char* lookup(uint32_t key){
- uint8_t l=lang();if(l<2)return nullptr;
+ uint8_t l=lang();if(l==LangEn)return nullptr;
  unsigned lo=0,hi=i18nTable::count;
  while(lo<hi){unsigned mid=(lo+hi)/2;if(i18nTable::keys[mid]<key)lo=mid+1;else hi=mid;}
  if(lo>=i18nTable::count||i18nTable::keys[lo]!=key)return nullptr;
- if(!i18nTable::texts[l-2])return nullptr;
- const char* s=i18nTable::texts[l-2]+i18nTable::offsets[l-2][lo];return *s?s:nullptr;
+ if(!i18nTable::texts[l-1])return nullptr;
+ const char* s=i18nTable::texts[l-1]+i18nTable::offsets[l-1][lo];return *s?s:nullptr;
 }
 // CLDR plural categories: 0 zero, 1 one, 2 two, 3 few, 4 many, 5 other.
 uint8_t category(uint8_t l,unsigned n){
  unsigned d=n%10,h=n%100;
  switch(l){
- case LangRu:case LangUk:return d==1&&h!=11?1:d>=2&&d<=4&&(h<12||h>14)?3:4;
+ case LangUk:return d==1&&h!=11?1:d>=2&&d<=4&&(h<12||h>14)?3:4;
  case LangPl:return n==1?1:d>=2&&d<=4&&(h<12||h>14)?3:4;
  case LangFr:case LangPt:return n<=1?1:5;
  case LangZh:case LangJa:case LangKo:case LangId:return 5;
@@ -49,15 +45,14 @@ uint8_t category(uint8_t l,unsigned n){
 }
 }
 
-const char* trKey(const char* en,const char* ru,uint32_t key){
- uint8_t l=lang();if(l==LangEn)return en;if(l==LangRu)return ru?ru:en;
+const char* trKey(const char* en,uint32_t key){
+ uint8_t l=lang();if(l==LangEn)return en;
  const char* s=lookup(key);return s?s:en;
 }
 
-String plural(unsigned n,const char* one,const char* many,const char* ru1,const char* ru2,const char* ru5){
+String plural(unsigned n,const char* one,const char* many){
  uint8_t l=lang();String form;
- if(l==LangRu){uint8_t c=category(l,n);form=c==1?ru1:c==3?ru2:ru5;}
- else if(const char* s=l==LangEn?nullptr:lookup(hashParts({one,many,ru1,ru2,ru5}))){
+ if(const char* s=l==LangEn?nullptr:lookup(hashParts({one,many}))){
   // six forms separated by 0x1f; a missing one is "other"
   String all(s),forms[6];unsigned at=0;for(int i=0;i<6;i++){int end=all.indexOf('\x1f',at);if(end<0)end=all.length();forms[i]=all.substring(at,end);at=end+1;}
   form=forms[category(l,n)];if(!form.length())form=forms[5];
@@ -66,18 +61,6 @@ String plural(unsigned n,const char* one,const char* many,const char* ru1,const 
  }
  if(!form.length())form=n==1?one:many;
  return String(n)+" "+form;
-}
-
-String installLanguage(){
- char b[17]={};
-#if defined(MM_UI_PREVIEW)
- return "";
-#else
- // The tail of the partition table sector: tools/pages.py writes "MMLANG:<code>" there in partitions-<code>.bin.
- if(spi_flash_read(0x8c00,b,16)!=ESP_OK)return "";
-#endif
- b[16]=0;if(strncmp(b,"MMLANG:",7))return "";
- String code(b+7);return langFromCode(code)>=0?code:"";
 }
 
 // Arabic: letters U+0621..U+064A as their isolated presentation form (U+FE80..) and how they join:
@@ -159,20 +142,11 @@ const uint8_t* const* fallbackFonts(const uint8_t* font){
  else if(font==u8g2_font_10x20_t_cyrillic){list[n++]=u8g2_font_10x20_tf;list[n++]=mmFontExt20;}
  else if(font==u8g2_font_6x12_t_cyrillic){list[n++]=u8g2_font_6x12_tf;list[n++]=mmFontExt12;}
  // CJK and Arabic: the interface language's own script first, so shared Han characters take its forms.
- // An image without a language leaves its fonts out (the linker drops them).
  const uint8_t* zh=nullptr,*ja=nullptr,*ko=nullptr,*ar=nullptr;
-#if MM_LANG_IN(10) // LangZh: the preprocessor sees numbers, not the enum
  zh=small?mmFontZh8:mmFontZh12;
-#endif
-#if MM_LANG_IN(11)
  ja=small?mmFontJa8:mmFontJa12;
-#endif
-#if MM_LANG_IN(12)
  ko=small?mmFontKo8:mmFontKo12;
-#endif
-#if MM_LANG_IN(13)
  ar=mmFontAr12;
-#endif
  if(lang()==LangJa)std::swap(zh,ja);
  for(const uint8_t* f:{zh,ja,ko,ar})if(f)list[n++]=f;
  list[n]=nullptr;

@@ -1,5 +1,5 @@
 // The M9 text fields have an end cursor. Paste appends, and Replace edits the whole draft.
-enum ClipAction {CopyText, PasteText, ReplaceText, CopyMessage, ShowLayout};
+enum ClipAction {CopyText, PasteText, ReplaceText, CopyMessage};
 ClipAction clipAction=CopyText;
 String clipboardText,clipMessage;
 enum class PasteError {None, TooLong, InvalidText};
@@ -29,12 +29,11 @@ bool clipEnabled(ClipAction a){
  case PasteText:return clipboardText.length();
  case ReplaceText:return clipboardText.length()&&activeText().length();
  case CopyMessage:return clipMessage.length();
- case ShowLayout:return true;
  }
  return false;
 }
 void openClipboard(){
- clipMenu=true;lastSpace=0;toast="";clipMessage="";pasteError={};
+ clipMenu=true;toast="";clipMessage="";pasteError={};
  if(page==Chat){
   int skip=chatOffset;
   for(int i=int(meshRadio.historyCount)-1;i>=0;i--){
@@ -52,9 +51,9 @@ void drawClipboard(){
  targetCount=hintCount=0;
  auto& d=g();
  d.fillRect(0,21,320,199,bg);
- text(13,42,t("Clipboard","Буфер обмена"),ink,bold);
- const char* labels[]={tr("Copy text","Копировать текст"),tr("Paste","Вставить"),tr("Replace text","Заменить текст"),tr("Copy message","Копировать сообщение"),tr("Layout","Раскладка")};
- int count=page==Chat?5:3;
+ text(13,42,t("Clipboard"),ink,bold);
+ const char* labels[]={tr("Copy text"),tr("Paste"),tr("Replace text"),tr("Copy message")};
+ int count=page==Chat?4:3;
  for(int row=0;row<count;row++){
   ClipAction a=ClipAction(row);
   int rowHeight=page==Chat?23:28;
@@ -69,18 +68,18 @@ void drawClipboard(){
  if(pasteError.reason!=PasteError::None){
   panel(8,167,304,50,cardHi,6);
   g().fillRoundRect(8,172,3,40,1,warn);
-  text(18,182,t("Paste failed","Не удалось вставить"),warn,bold);
-  if(page==Display)textRight(300,182,t("Device name","Имя устройства"),dim,small);
+  text(18,182,t("Paste failed"),warn,bold);
+  if(page==Display)textRight(300,182,t("Device name"),dim,small);
   char counts[96];
-  snprintf(counts,sizeof counts,tr("%u bytes (limit %u)","%u байт (лимит %u)"),pasteError.bytes,pasteError.limit);
+  snprintf(counts,sizeof counts,tr("%u bytes (limit %u)"),pasteError.bytes,pasteError.limit);
   text(18,199,counts,ink);
   if(pasteError.reason==PasteError::InvalidText)
-   text(18,212,fit(t("Invalid text for this field","Недопустимый текст для поля"),282,small),dim,small);
- }else if(!clipboardText.length())text(13,209,t("Clipboard empty","Буфер пуст"),dim,small);
- footer({{"OK",t("Choose","Выбрать")},{"^v",t("Select","Выбор")},{"BACK",t("Back","Назад")}});
+   text(18,212,fit(t("Invalid text for this field"),282,small),dim,small);
+ }else if(!clipboardText.length())text(13,209,t("Clipboard empty"),dim,small);
+ footer({{"OK",t("Choose")},{"^v",t("Select")},{"BACK",t("Back")}});
 }
 void clipboardKey(int key){
- int count=page==Chat?5:3;
+ int count=page==Chat?4:3;
  if(key==KeyBack||key==Erase||key==KeyHold){clipMenu=false;clipMessage="";return;}
  if(key==KeyDown||key==KeyUp){clipAction=ClipAction((int(clipAction)+count+(key==KeyDown?1:-1))%count);return;}
  if(key!=Enter){
@@ -96,7 +95,7 @@ void clipboardKey(int key){
  switch(clipAction){
  case CopyText:case CopyMessage:
   clipboardText=clipAction==CopyMessage?clipMessage:field;
-  notice(t("Copied","Скопировано"),ok);
+  notice(t("Copied"),ok);
   break;
  case PasteText:case ReplaceText:{
   unsigned bytes=clipboardText.length()+(clipAction==ReplaceText?0:field.length());
@@ -109,7 +108,6 @@ void clipboardKey(int key){
   if(clipAction==ReplaceText)field=clipboardText;else field+=clipboardText;
   break;
  }
- case ShowLayout:layoutHelp=true;break;
  }
  clipMenu=false;clipMessage="";
 }

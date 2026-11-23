@@ -126,12 +126,8 @@ static bool checkSimulator(SDL_Renderer* renderer, SDL_Texture* texture) {
   if(!has("\"page\":\"chat\""))return false;
   type("@");if(!has("\"composer\":\"@\""))return false;
   press(SDLK_BACKSPACE);
-  if(!has("\"typing_language\":\"en\""))return false;
-  type(" ");fakeMillis+=350;type(" ");
-  if(!has("\"composer\":\"  \""))return false;
-  press(SDLK_BACKSPACE);press(SDLK_BACKSPACE);
-  type(" ");type(" ");type("a");
-  if(!has("\"composer\":\"а\"")||config.inputRussian)return false;
+  type("a");
+  if(!has("\"composer\":\"a\""))return false;
   press(SDLK_BACKSPACE);press(SDLK_F7);press(SDLK_RETURN);
   SDL_Event text{};
   text.type = SDL_TEXTINPUT;

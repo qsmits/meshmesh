@@ -6,13 +6,13 @@ void profileJson(JsonObject o,const RadioProfile& r){o["frequency"]=r.frequency;
 }
 String configJson(bool includeKey) {
   DynamicJsonDocument d(2560);d["name"]=config.name;d["frequency"]=config.frequency;d["bandwidth"]=config.bandwidth;d["sf"]=config.sf;d["cr"]=config.cr;d["power"]=config.power;
-  d["hops"]=config.hops;d["path_hash"]=config.pathHash;d["relay"]=config.relay;d["gps"]=config.gps;d["sound"]=config.sound;d["battery_volts"]=config.batteryVolts;d["lang"]=langCodes[config.lang<LangCount?config.lang:0];d["russian"]=config.lang==LangRu;d["brightness"]=config.brightness;if(includeKey)d["key"]=config.keyHex();
+  d["hops"]=config.hops;d["path_hash"]=config.pathHash;d["relay"]=config.relay;d["gps"]=config.gps;d["sound"]=config.sound;d["battery_volts"]=config.batteryVolts;d["lang"]=langCodes[config.lang<LangCount?config.lang:0];d["brightness"]=config.brightness;if(includeKey)d["key"]=config.keyHex();
   d["theme"]=config.theme;d["accent_color"]=config.accentColor;d["night_light"]=config.nightBrightness;
-  d["input_language"]=config.inputRussian?"ru":"en";
+  
   d["launcher_tiles"]=config.launcherTiles;
   d["auto_lock"]=config.autoLock;d["dim_after"]=config.dimAfter;d["lock_details"]=config.lockDetails;
   d["notify_led"]=config.notifyLed;d["notify_wake"]=config.notifyWake;d["notify_popup"]=config.notifyPopup;d["notify_failed"]=config.notifyFailed;d["notify_words"]=config.notifyWords;
-  d["utc_offset"]=config.utcOffset;d["apps"]=appsText(config.apps);d["region"]=config.region;d["preset"]=config.preset;d["net_auto"]=config.netAuto;
+  d["utc_offset"]=config.utcOffset;d["apps"]=appsText(config.apps);d["region"]=config.region;d["preset"]=config.preset;
   if(config.previous.set())profileJson(d.createNestedObject("radio_prev"),config.previous);
   if(config.trial.set())profileJson(d.createNestedObject("radio_trial"),config.trial);
   String s;serializeJson(d,s);return s;
@@ -58,10 +58,6 @@ String applySettings(JsonObjectConst v) {
       else if(name=="accent_color"&&n<=3)next.accentColor=n;
       else if(name=="night_light"&&(n==0||(n>=10&&n<=255)))next.nightBrightness=n;
       else return "ERR display setting";
-    } else if(name=="input_language"){
-      String code=value.as<String>();
-      if(code!="en"&&code!="ru")return "ERR input_language: en or ru";
-      next.inputRussian=code=="ru";
     } else if(name=="launcher_tiles") {
       if(!value.is<bool>())return "ERR boolean required";
       next.launcherTiles=value.as<bool>();
@@ -74,10 +70,9 @@ String applySettings(JsonObjectConst v) {
     } else if(name=="lang") {
       int l=value.is<const char*>()?langFromCode(value.as<String>()):-1;
       if(l<0||!langAvailable(l)){String all;for(int i=0;i<LangCount;i++)if(langAvailable(i))all+=String(all.length()?"|":"")+langCodes[i];return "ERR lang: "+all;}next.lang=l;
-    } else if(name=="relay"||name=="gps"||name=="sound"||name=="russian"||name=="battery_volts"||name=="lock_details"||name=="notify_failed"||name=="net_auto"||name=="double_back") {
-      if(!value.is<bool>())return "ERR boolean required";bool n=value.as<bool>();if(name=="net_auto")next.netAuto=n;if(name=="double_back")next.doubleBack=n;
+    } else if(name=="relay"||name=="gps"||name=="sound"||name=="battery_volts"||name=="lock_details"||name=="notify_failed"||name=="double_back") {
+      if(!value.is<bool>())return "ERR boolean required";bool n=value.as<bool>();if(name=="double_back")next.doubleBack=n;
       if(name=="notify_failed")next.notifyFailed=n;if(name=="relay")next.relay=n;if(name=="gps")next.gps=n;if(name=="sound")next.sound=n;if(name=="battery_volts")next.batteryVolts=n;if(name=="lock_details")next.lockDetails=n;
-      if(name=="russian"&&!v.containsKey("lang")&&(n||next.lang==LangRu))next.lang=n?LangRu:LangEn; // pages from before "lang": false leaves other languages alone
     } else return "ERR unknown setting: "+name;
   }
   if(!next.valid())return "ERR invalid settings; 868 MHz range is 863..870";
@@ -92,7 +87,6 @@ String applySettings(JsonObjectConst v) {
   if(radioChanged&&meshRadio.busy()){config=old;return "ERR radio busy; retry";}
   if(radioChanged&&!meshRadio.applyConfig()) {config=old;meshRadio.applyConfig();return "ERR radio rejected settings; restored previous";}
   if(!config.save()){config=old;if(radioChanged)meshRadio.applyConfig();return "ERR settings storage; restored previous";}
-  if(old.inputRussian!=config.inputRussian)uiUseDefaultInput();
   if(strcmp(old.name,config.name))bleRename();if(old.brightness!=config.brightness)hardware.brightness(uiScreenOff()?0:config.brightness);if(old.gps!=config.gps)hardware.setGps(config.gps);
   meshRadio.event="Settings saved";meshRadio.dirty=true;return "OK settings saved";
 }

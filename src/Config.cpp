@@ -34,7 +34,6 @@ void Config::load() {
   sound=p.getBool("sound",true); batteryVolts=p.getBool("bat_v",false); brightness=p.getUChar("light",180);
   theme=p.getUChar("theme",0);accentColor=p.getUChar("accent",0);nightBrightness=p.getUChar("night_light",0);
   if(theme>2)theme=0;if(accentColor>3)accentColor=0;if(nightBrightness<10)nightBrightness=0;
-  inputRussian=p.getBool("input_ru",false);
   if(p.isKey("launcher_tiles"))launcherTiles=p.getBool("launcher_tiles",false);
   else{
     // Earlier M9 builds saved the footer switch in the UI namespace.
@@ -55,11 +54,11 @@ void Config::load() {
   strlcpy(region,p.getString("region","").c_str(),sizeof region);
   strlcpy(preset,p.getString("preset","").c_str(),sizeof preset);
   if(!region[0])memset(regionKey,0,16);else if(p.getBytesLength("region_key")!=16||p.getBytes("region_key",regionKey,16)!=16)regions::keyOf(region,regionKey);
-  // Language: "lang" since 0.3.7; older versions kept only "russian".
-  lang=p.isKey("lang")?p.getUChar("lang",LangEn):p.getBool("russian",false)?LangRu:LangEn;
-  if(!langAvailable(lang))lang=LangEn; // not in this image (nRF52): English until an image with it is installed
-  // The site installer's choice applies once per installation; afterwards Settings decide.
-  String chosen=installLanguage();if(chosen.length()&&langAvailable(langFromCode(chosen))&&p.getString("inst_lang","")!=chosen){lang=langFromCode(chosen);p.putUChar("lang",lang);p.putString("inst_lang",chosen);}
+  // Language: its code in "ui_lang". Before, "lang" held the number in the order en ru uk es pt fr de it pl tr zh ja ko
+  // ar id; the old Russian becomes English.
+  if(p.isKey("ui_lang")){int l=langFromCode(p.getString("ui_lang","en"));lang=l>=0?l:LangEn;}
+  else{static const char* const old[]={"en","ru","uk","es","pt","fr","de","it","pl","tr","zh","ja","ko","ar","id"};
+   uint8_t n=p.getUChar("lang",0);int l=n<sizeof old/sizeof *old?langFromCode(old[n]):-1;lang=l>=0?l:LangEn;}
   if(p.getBytesLength("key")==32) p.getBytes("key",key,32);
   else {bootloader_random_enable();esp_fill_random(key,32);bootloader_random_disable();p.putBytes("key",key,32);}
   blePin=p.getUInt("ble_pin",0);
@@ -70,23 +69,22 @@ void Config::load() {
   bootCounter=p.getUInt("boot",0)+1;
   if(!bootCounter || p.putUInt("boot",bootCounter)!=sizeof(bootCounter)) {bootCounter=0;Serial.println("ERR boot counter; TX disabled");}
   if(p.getBytesLength("radio_prev")==sizeof previous)p.getBytes("radio_prev",&previous,sizeof previous);
-  netAuto=p.getBool("net_auto",true);doubleBack=p.getBool("dbl_back",false);
+  doubleBack=p.getBool("dbl_back",false);
   p.end();
   {Config c=*this;c.setRadio(previous);if(!previous.set()||!c.valid()||sameRadio(previous))previous=RadioProfile();}
   if(!valid()) {frequency=868.731f;bandwidth=62.5f;sf=8;cr=6;power=10;hops=3;pathHash=2;strcpy(name,"MeshMesh");region[0]=0;memset(regionKey,0,16);}
 }
 bool Config::save() {
   Preferences p; if(!p.begin("meshmesh",false)) return false;
-  if(p.putBool("input_ru",inputRussian)!=1){p.end();return false;}
   if(p.putUChar("theme",theme)!=1||p.putUChar("accent",accentColor)!=1||p.putUChar("night_light",nightBrightness)!=1||p.putBool("launcher_tiles",launcherTiles)!=1){p.end();return false;}
   p.putUChar("n_led",notifyLed);p.putUChar("n_wake",notifyWake);p.putUChar("n_popup",notifyPopup);p.putBool("n_failed",notifyFailed);p.putString("n_words",notifyWords);
   const RadioProfile kept=trial.set()?trial:radio(); // a test is not saved
   p.putString("name",name); p.putFloat("freq",kept.frequency); p.putFloat("bw",kept.bandwidth);
   p.putUChar("sf",kept.sf); p.putUChar("cr",kept.cr);
   if(previous.set())p.putBytes("radio_prev",&previous,sizeof previous);else if(p.isKey("radio_prev"))p.remove("radio_prev");
-  p.putBool("net_auto",netAuto);p.putBool("dbl_back",doubleBack);
+  p.putBool("dbl_back",doubleBack);
   p.putChar("power",power); p.putUChar("hops",hops); p.putUChar("path_hash",pathHash);
-  p.putBool("relay",relay);p.putBool("gps",gps);p.putBool("sound",sound);p.putBool("bat_v",batteryVolts);p.putUChar("lang",lang);p.putBool("russian",lang==LangRu);
+  p.putBool("relay",relay);p.putBool("gps",gps);p.putBool("sound",sound);p.putBool("bat_v",batteryVolts);p.putString("ui_lang",langCodes[lang<LangCount?lang:LangEn]);
   p.putUChar("light",brightness);p.putUShort("lock",autoLock);p.putUShort("dim",dimAfter);p.putBool("lock_txt",lockDetails);p.putShort("utc_offset",utcOffset);p.putString("apps",apps);p.putBytes("key",key,32);
   if(preset[0])p.putString("preset",preset);else if(p.isKey("preset"))p.remove("preset");
   if(region[0]){p.putString("region",region);p.putBytes("region_key",regionKey,16);}else{p.remove("region");p.remove("region_key");}

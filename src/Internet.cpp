@@ -229,12 +229,12 @@ bool Internet::setTileUrl(const String& value){
 String Internet::address(){return online()?WiFi.localIP().toString():String();}
 String Internet::stateText(){
   switch(state){
-  case Off:return tr("Off","Выключен");
-  case Paused:return portalActive()?tr("Paused: access point on","Пауза: включена точка доступа"):radar.active?tr("Paused: radar open","Пауза: открыт радар"):tr("Paused","Пауза");
-  case Scanning:return tr("Scanning...","Поиск сетей...");
-  case Connecting:return tr("Connecting: ","Подключение: ")+ssid;
+  case Off:return tr("Off");
+  case Paused:return portalActive()?tr("Paused: access point on"):radar.active?tr("Paused: radar open"):tr("Paused");
+  case Scanning:return tr("Scanning...");
+  case Connecting:return tr("Connecting: ")+ssid;
   case Online:return ssid+" · "+WiFi.localIP().toString();
-  default:return savedCount()?tr("No saved network in range","Сохранённых сетей рядом нет"):tr("Choose a network","Выберите сеть");
+  default:return savedCount()?tr("No saved network in range"):tr("Choose a network");
   }
 }
 // No passwords and no names of other people's networks: only the saved ones.

@@ -35,7 +35,7 @@ void resetWindow(){memset(seen,0,sizeof seen);memset(fullAt,0,sizeof fullAt);mem
 }
 Counter& current(){return tally.list[tally.current<tally.count?tally.current:0];}
 int32_t value(){return current().value;}
-String name(unsigned i){if(i>=tally.count)return String();if(tally.list[i].name[0])return tally.list[i].name;return String(tr("Counter ","Счётчик "))+String(i+1);}
+String name(unsigned i){if(i>=tally.count)return String();if(tally.list[i].name[0])return tally.list[i].name;return String(tr("Counter "))+String(i+1);}
 bool set(unsigned i,int32_t v){if(i>=tally.count||v<0||v>Limit)return false;tally.list[i].value=v;later();return true;}
 bool change(unsigned i,int delta){if(i>=tally.count)return false;int64_t v=int64_t(tally.list[i].value)+delta;return v>=0&&v<=Limit&&set(i,v);}
 bool change(int delta){return change(tally.current,delta);}

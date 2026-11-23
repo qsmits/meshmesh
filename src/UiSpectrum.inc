@@ -136,7 +136,7 @@ void drawWaterfall(){
   text(10,207,"Peak  "+String(frequency(peak),3)+" MHz",ink,bold);
   textRight(310,207,String(int(row[peak]))+" dBm",accent,bold);
  }
- if(running)footer({{"OK","Stop"},{"<>","Channel"},{"BACK",t("Back","Назад")}});
+ if(running)footer({{"OK","Stop"},{"<>","Channel"},{"BACK",t("Back")}});
  else footer({{"S","Scan once"},{"W","Waterfall"},{"<>","Channel"}});
 }
 }
@@ -165,5 +165,5 @@ void drawSpectrum(){
  if(failed||!used)text(12,197,failed?"Radio read unavailable":"Waiting for receiver",dim,bold);
  else text(12,197,"Latest  "+String(int(channel[(channelHead+history-1)%history]))+" dBm",ink,bold);
  if(used)textRight(308,197,"Peak  "+String(peakLevel)+" dBm",accent,small);
- footer({{"<>","Waterfall"},{"OK",paused?"Resume":"Pause"},{"BACK",t("Back","Назад")}});
+ footer({{"<>","Waterfall"},{"OK",paused?"Resume":"Pause"},{"BACK",t("Back")}});
 }

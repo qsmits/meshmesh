@@ -11,9 +11,9 @@ static void tile(const char* id){
 // Switch using the same draft editor and Save action as the handheld.
 static void switchHomeLayout(){
  key(0x90);key(0xb6);key(13);
- for(int i=0;i<4;i++)key(0xb6);
+ for(int i=0;i<3;i++)key(0xb6);
  key(0xb7);shot("display-home-layout");
- for(int i=0;i<5;i++)key(0xb5);
+ for(int i=0;i<4;i++)key(0xb5);
  key(13);key(0x82);
 }
 static void scenario(){
@@ -45,7 +45,7 @@ static void scenario(){
   for(int at=0;at<10&&!found;at++){key(0x81);for(int i=0;i<at;i++)key(0xb6);key(13);if(uiStatus().indexOf(marat)>=0)found=true;else key(0x86);}
   if(!found){printf("FAIL chat with the invitation not found\n");exit(1);}}
  shot("chat-invite");key(0xb4);shot("chat-invite-joined");key(0x86);
- if(!meshRadio.channel(channels::idOf(meshRadio.channelList[3].secret))||strcmp(meshRadio.channelList[3].name,"Походы")){printf("FAIL invitation not joined\n");exit(1);}
+ if(!meshRadio.channel(channels::idOf(meshRadio.channelList[3].secret))||strcmp(meshRadio.channelList[3].name,"Hiking")){printf("FAIL invitation not joined\n");exit(1);}
  key(0xb6);key(13);shot("chat");
  for(char ch:std::string("Privet! Kak dela? 5to novogo @ 5"))key(ch);key(0xb7);shot("compose");key(0xa3);shot("clipboard");key('l');shot("layout");key(0x86);key(0x86);key(0x86);
  key(0x85);shot("map");key(0xb7);key(0xb6);shot("map-browse");key('L');shot("library");key(0x86);
@@ -72,7 +72,7 @@ static void scenario(){
   if(uiStatus().indexOf("\"radio_preset\":\"Netherlands (Limburg)\"")<0){printf("FAIL preset Netherlands (Limburg): %s\n",uiStatus().c_str());exit(1);}
   for(int i=0;i<4;i++)key(0xb6);key(0xb4);if(uiStatus().indexOf("\"radio_preset\":\"custom\"")<0){printf("FAIL preset after a changed CR: %s\n",uiStatus().c_str());exit(1);}key(0x86);}
  key(0x90);shot("settings");key(13);key(0xb6);key(0xb7);shot("radio");for(int i=0;i<7;i++)key(0xb6);key(0xb7);shot("radio-hash");key(0xb6);key(0xb6);key(13);shot("radio-regions");key(0xb5);key(0xb7);key(0xb7);key(0xb7);shot("radio-region");key(13);for(int i=0;i<3;i++)key(8);for(char ch:std::string("sao"))key(ch);shot("radio-region-type");key(0x86);key(0x86);key(0xb6);key(13);for(int i=0;i<9;i++)key(0xb6);key(0xb7);shot("display-battery");for(int i=0;i<9;i++)key(0xb5);shot("display");key(13);shot("display-name");key(0x86);key(0x86);
- tile("connect");key(13);key(13);key(0xb6);key(13);shot("network");key(13);key(0xb6);key(13);tile("health");key(13);shot("diagnostics");key(0x90);for(int i=0;i<5;i++)key(0xb6);key(13);shot("help");key(13);shot("help-layout");key(0x86);key(13);shot("help-layout");key(0x86);
+ tile("connect");key(13);key(13);key(0xb6);key(13);shot("network");key(13);key(0xb6);key(13);tile("health");key(13);shot("diagnostics");key(0x90);for(int i=0;i<5;i++)key(0xb6);key(13);shot("help");
  // Connections with Bluetooth on: the MeshCore- name the phone apps see, then off again.
  key(0x90);for(int i=0;i<3;i++)key(0xb6);key(13);key(0xb6);key(0xb6);key(13);
  if(!bleActive()||uiStatus().indexOf("\"page\":\"network\"")<0){printf("FAIL Bluetooth on: %s\n",uiStatus().c_str());exit(1);}shot("network-ble");key(13);key(0x86);key(0x86);
@@ -99,11 +99,11 @@ static void scenario(){
   key(0xb5);key(0xb5);shot("quick-last");key(13);
   must(meshRadio.historyCount==sent+2&&String(meshRadio.history[sent+1].text)==quickSend::state.text[quickSend::Count-1],"last preset remains reachable and sends its own text");
   key(0x86);key(0xb7);key(13);int32_t manual=people::value();key(13);must(people::value()==manual+1,"counter +1");key(0xb6);must(people::value()==manual,"counter -1");
-  bool ru=config.lang==LangRu||config.lang==LangUk;people::rename(0,ru?"Гости":"Guests");people::set(0,27);shot("people");
+  people::rename(0,"Guests");people::set(0,27);shot("people");
   key(0xb7);must(uiStatus().indexOf("\"tally_new\":true")>=0,"right of the last card: a new one");shot("people-new");key(13);must(people::tally.count==2&&people::tally.current==1,"OK adds a card");
-  key('n');for(char ch:std::string(ru?"Kofe":"Coffee"))key(ch);shot("people-name");key(13);key(13);key(13);must(people::value()==2,"the new card counts on its own");
+  key('n');for(char ch:std::string("Coffee"))key(ch);shot("people-name");key(13);key(13);key(13);must(people::value()==2,"the new card counts on its own");
   key(0xb4);must(people::tally.current==0&&people::value()==27,"left turns back to the first card");key(0xb7);key(0x08);key(0x08);must(people::tally.count==1,"DEL twice deletes");
-  people::add(ru?"Круги":"Laps");people::set(1,12);people::recolor(1,7);people::add(ru?"Подходы":"Sets");people::set(2,4);people::recolor(2,5);people::select(0);fakeMillis+=4000;tick();shot("people-cards");
+  people::add("Laps");people::set(1,12);people::recolor(1,7);people::add("Sets");people::set(2,4);people::recolor(2,5);people::select(0);fakeMillis+=4000;tick();shot("people-cards");
   people::remove(2);people::remove(1);key(0x86);
   config.apps[0]=0;printf("wishlist UI checks passed\n");}
 // Wardrive: off, then listening and pings along a street; its points on the map.
@@ -111,7 +111,7 @@ static void scenario(){
   strlcpy(config.apps,"wardrive",sizeof config.apps);config.dimAfter=0;config.autoLock=0;
   key(0x86);key(0x82);key(13);must(uiStatus().indexOf("\"page\":\"wardrive\"")>=0,"open wardrive");shot("wardrive-off");
   key(13);must(wardrive::settings.passive&&wardrive::settings.ping,"OK starts listening and pings");wardriveData();tick();shot("wardrive");
-  key(0x85);bool follow=maps.follow;maps.follow=false;maps.center(55.7975,49.1137);shot("wardrive-map");maps.follow=follow;key(0x82);
+  key(0x85);bool follow=maps.follow;maps.follow=false;maps.center(52.0975,5.1137);shot("wardrive-map");maps.follow=follow;key(0x82);
   {StaticJsonDocument<64>d;d["action"]="stop";wardrive::command(d.as<JsonObjectConst>());}config.apps[0]=0;printf("wardrive UI checks passed\n");}
 // Power off last: the screens stop taking keys once it is requested.
  key(0x82);showPasteFailure();shot("clipboard-paste-failed");
