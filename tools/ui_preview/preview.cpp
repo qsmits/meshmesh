@@ -54,11 +54,7 @@ void Hardware::brightness(uint8_t level){screenBrightness=level;}void Hardware::
 void Hardware::flush(){}
 void Hardware::text(int x,int y,const String& v,uint16_t color){font.setForegroundColor(color);font.setCursor(x,y);font.print(v);}
 void Hardware::line(int y,const String& v,uint16_t color){text(
-#if defined(MM_HELTEC_V4)
-0
-#else
 12
-#endif
 ,y,v,color);}
 // Radio
 static uint32_t nextId=900;
@@ -94,21 +90,11 @@ void Maps::draw(int x,int y,int w,int h){
 }
 void Navigation::begin(){}void Navigation::tick(){}void Navigation::start(){calibrating=true;}bool Navigation::finish(){calibrating=false;return true;}String Navigation::info(){return "{}";}
 static void save(const std::string& path){
-#if defined(MM_HIRES)
- {const uint8_t* px=hardware.canvas->getBuffer();FILE* f=fopen(path.c_str(),"wb");fprintf(f,"P6 %d %d 255\n",HiresCanvas::Width,HiresCanvas::Height);
-  for(int i=0;i<HiresCanvas::Width*HiresCanvas::Height;i++){uint16_t p=palette565[px[i]<ColCount?px[i]:ColInk];uint8_t rgb[3]={uint8_t((p>>11&31)*255/31),uint8_t((p>>5&63)*255/63),uint8_t((p&31)*255/31)};fwrite(rgb,1,3,f);}
-  fclose(f);}
-#else
  auto& c=*hardware.canvas;FILE* f=fopen(path.c_str(),"wb");fprintf(f,"P6 %d %d 255\n",c.width(),c.height());
  for(int y=0;y<c.height();y++)for(int x=0;x<c.width();x++){uint16_t p=c.getPixel(x,y);
-#if defined(MM_HELTEC_V4)
-  uint8_t v=p?255:0;uint8_t rgb[3]={v,v,v};
-#else
   uint8_t rgb[3]={uint8_t((p>>11&31)*255/31),uint8_t((p>>5&63)*255/63),uint8_t((p&31)*255/31)};
-#endif
   fwrite(rgb,1,3,f);}
  fclose(f);
-#endif
 }
 static std::string outDir;
 static void tick(){fakeMillis+=1000;radar.tick();uiTick();}
@@ -125,13 +111,9 @@ static void wardriveData(){
 }
 static void key(int k){uiKey(k);tick();}
 static void shot(const char* name){tick();std::string n=name;
-#if defined(MM_HIRES)
- if(n.rfind("heltec-",0)==0)n="t114-"+n.substr(7); // the one-button scenario of the Heltec, on the T114 TFT
-#endif
  save(outDir+"/"+n+".ppm");printf("%s\n",n.c_str());}
 static uint64_t peerId(int i){return (uint64_t(0x1F+i*0x2B)<<56)|0xB2C3D4E5F600ULL|uint64_t(i*0x1111);} // 8-byte IDs as MeshCore keys give
 // Start from normal mode, then exercise the actual clipboard and device-name editor.
-#if !defined(MM_COMPACT)
 static void showPasteFailure(){
  key(0x81);key(13); // Public chat
  for(char c:std::string("Friday field team meeting point"))key(c);
@@ -139,7 +121,6 @@ static void showPasteFailure(){
  key(0x90);key(0xb6);key(13);key(13); // Screen & device, Name
  key(0xa3);key('r');
 }
-#endif
 static void scenario();
 #include "wishlist_checks.inc"
 #ifdef MM_DESKTOP_SIMULATOR
@@ -151,16 +132,7 @@ int main(int argc,char** argv){
 #ifdef MM_DESKTOP_SIMULATOR
  config.lang=LangEn;
 #endif
-#if defined(MM_HIRES)
- hardware.canvas=new HiresCanvas();strcpy(config.name,"T114");
-#elif defined(MM_HELTEC_V4)
- hardware.canvas=new GFXcanvas16(128,64);strcpy(config.name,"Heltec V4");
-#if defined(MM_JOYSTICK)
- strcpy(config.name,"GAT562");
-#endif
-#else
  hardware.canvas=new GFXcanvas16(320,240);strcpy(config.name,"M9");
-#endif
  hardware.font.begin(*hardware.canvas);hardware.font.setFont(u8g2_font_6x13_t_cyrillic);hardware.font.setFontMode(1);
  hardware.keyboardOk=hardware.sdOk=hardware.fsOk=hardware.rtcOk=hardware.rtcValid=hardware.compassOk=hardware.imuOk=hardware.compassSample=hardware.imuSample=true;
  hardware.batteryMv=3980;hardware.gps.location={true,55.7963,49.1088};hardware.gps.satellites.v=9;hardware.gps.hdop.v=1.1;hardware.gps.date.valid=true;hardware.gps.sentences=1200;

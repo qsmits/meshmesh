@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os") // 1 MB flash: as Chess.cpp
-#endif
 #include "Sea.h"
 #include <string.h>
 #include <stdio.h>

@@ -1,6 +1,5 @@
 #include "Internet.h"
 Internet internet;
-#if !defined(MM_NO_WIFI)
 #include "App.h"
 #include "Hardware.h"
 #include "Radar.h"
@@ -24,7 +23,6 @@ const char* Agent="MeshMesh/" MESHMM_VERSION " (ESP32-S3 ThinkNode M9 map viewer
 char tileTemplate[160]="";
 volatile uint32_t ntpReceived=0;
 void ntpReady(struct timeval* tv){ntpReceived=uint32_t(tv->tv_sec);}
-#if !defined(MM_COMPACT)
 const size_t BodyMax=768*1024;
 // Worker hand-off: the loop fills a job and sets Busy; the worker sets Done;
 // the loop reads the result and sets Idle. Buffers belong to whoever holds the phase.
@@ -85,7 +83,6 @@ void work(void*){
     job=j;setPhase(Done);
   }
 }
-#endif
 String urlFor(int z,int x,int y){String u=tileTemplate;u.replace("{z}",String(z));u.replace("{x}",String(x));u.replace("{y}",String(y));return u;}
 esp_err_t scanStart(){WiFi.scanDelete();wifi_scan_config_t c={};c.show_hidden=false;c.scan_type=WIFI_SCAN_TYPE_ACTIVE;c.scan_time.active.min=100;c.scan_time.active.max=300;return esp_wifi_scan_start(&c,false);}
 bool othersUseWifi(){return portalActive()||radar.active||wifiProbeActive();}
@@ -94,11 +91,9 @@ void Internet::begin(){
   loadNames();Preferences p;if(p.begin("mm-wifi",true)){enabled=p.getBool("on",false)&&config.role==RoleNormal;ntpEnabled=p.getBool("ntp",false);preferred=p.getString("pref","");String t=p.getString("tiles","");strlcpy(tileTemplate,t.length()?t.c_str():DefaultTiles,sizeof tileTemplate);p.end();}
   else strlcpy(tileTemplate,DefaultTiles,sizeof tileTemplate);
   sntp_set_time_sync_notification_cb(ntpReady);ntpDue=millis()+60000;
-#if !defined(MM_COMPACT)
   pixels=(uint16_t*)heap_caps_malloc(256*256*2,MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);body=(uint8_t*)heap_caps_malloc(BodyMax,MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);
   // Core 0 beside the Wi-Fi stack, below its priority; the loop (LoRa, UI, SD) keeps core 1.
   if(!pixels||!body||xTaskCreatePinnedToCore(work,"internet",12288,nullptr,1,&worker,0)!=pdPASS){free(pixels);free(body);pixels=nullptr;body=nullptr;worker=nullptr;error="Internet task RAM";}
-#endif
 }
 void Internet::load(unsigned i,String& name,String& password){Preferences p;name="";password="";if(p.begin("mm-wifi",true)){name=p.getString(("s"+String(i)).c_str(),"");password=p.getString(("p"+String(i)).c_str(),"");p.end();}}
 void Internet::loadNames(){Preferences p;bool open=p.begin("mm-wifi",true);for(unsigned i=0;i<MaxSaved;i++)names[i]=open?p.getString(("s"+String(i)).c_str(),""):String();if(open)p.end();}
@@ -210,7 +205,6 @@ void Internet::tick(){
 
   }
 }
-#if !defined(MM_COMPACT)
 bool Internet::idle(){return worker&&current()==Idle;}
 bool Internet::backingOff(){return int32_t(millis()-backoffUntil)<0;}
 bool Internet::fetchTile(int z,int x,int y){
@@ -226,9 +220,6 @@ Internet::Result Internet::result(int& z,int& x,int& y,const uint16_t*& out,doub
   if(job.ok)tiles++;else tileErrors++;return job.ok?TileOk:TileFailed;
 }
 void Internet::release(){if(current()==Done)setPhase(Idle);}
-#else
-bool Internet::idle(){return false;}bool Internet::backingOff(){return false;}bool Internet::fetchTile(int,int,int){return false;}bool Internet::locate(){return false;}Internet::Result Internet::result(int&,int&,int&,const uint16_t*&,double&,double&){return None;}void Internet::release(){}
-#endif
 String Internet::tileUrl(){return tileTemplate;}
 bool Internet::setTileUrl(const String& value){
   String v=value=="default"?String(DefaultTiles):value;
@@ -255,9 +246,7 @@ String Internet::info(){
   JsonArray a=d.createNestedArray("saved");for(unsigned i=0;i<MaxSaved;i++){String n=savedName(i);if(!n.length())continue;JsonObject o=a.createNestedObject();o["ssid"]=n;bool inRange=false;for(unsigned k=0;k<seenCount;k++)if(n==seen[k].ssid)inRange=true;o["in_range"]=inRange;}
   d["ntp_enabled"]=ntpEnabled;d["ntp_active"]=temporary;d["ntp_retry_seconds"]=int32_t(ntpDue-millis())>0?(ntpDue-millis())/1000:0;d["clock_age_seconds"]=hardware.clockAge()/1000;
   d["preferred"]=preferred;
-#if !defined(MM_COMPACT)
   d["tile_url"]=tileTemplate;d["tiles"]=tiles;d["tile_errors"]=tileErrors;d["bytes"]=bytes;d["worker"]=worker!=nullptr;d["busy"]=worker&&current()!=Idle;d["backoff"]=backingOff();
-#endif
   d["heap"]=ESP.getFreeHeap();d["heap_min_block"]=heap_caps_get_largest_free_block(MALLOC_CAP_INTERNAL|MALLOC_CAP_8BIT);
   String s;serializeJson(d,s);return s;
 }
@@ -275,4 +264,3 @@ String Internet::command(const String& line){
   if(line.startsWith("internet tiles "))return setTileUrl(line.substring(15))?"OK tile server set":"ERR tile URL: http(s) with {z} {x} {y}, worker idle";
   return "ERR internet: info|on|off|scan|add {json}|forget SSID|connect SSID|tiles URL|default";
 }
-#endif

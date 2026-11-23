@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os")
-#endif
 #include "MeshRadio.h"
 #include "Hardware.h"
 #include <LittleFS.h>
@@ -10,16 +7,10 @@ using HistoryFs=PreviewLittleFs;
 static constexpr size_t historySegment=12*1024;
 static HistoryFs* historyFs(){return hardware.fsOk?&LittleFS:nullptr;}
 #else
-#if defined(MM_NRF52)
-using HistoryFs=MeshFS; // no SD card; a smaller log in the 100 KB internal storage
-static constexpr size_t historySegment=12*1024;
-static HistoryFs* historyFs(){return hardware.fsOk?&LittleFS:nullptr;}
-#else
 #include <SD.h>
 using HistoryFs=fs::FS;
 static constexpr size_t historySegment=256*1024;
 static HistoryFs* historyFs(){return hardware.sdOk?static_cast<fs::FS*>(&SD):hardware.fsOk?static_cast<fs::FS*>(&LittleFS):nullptr;}
-#endif
 #endif
 namespace {
 bool snapshotReady=false;
@@ -40,11 +31,7 @@ String historyRow(const MeshRadio& radio,const ChatMessage& m){StaticJsonDocumen
 bool completedHistory(HistoryFs* fs){File f=fs->open("/meshmesh/history.next.jsonl",FILE_READ);if(!f)return false;unsigned n=0;uint32_t crc=2166136261u;bool valid=false;while(f.available()){String row=f.readStringUntil('\n');StaticJsonDocument<1024>d;if(deserializeJson(d,row))break;if(d.containsKey("mm_commit")){valid=!f.available()&&d["mm_commit"].as<unsigned>()==n&&d["crc"].as<uint32_t>()==crc;break;}if(!d.containsKey("source")||++n>64)break;crc=rowChecksum(crc,row);}f.close();return valid;}
 }
 void MeshRadio::compactHistoryTick(){
-#if defined(MM_NRF52)
- static File next(LittleFS);
-#else
  static File next;
-#endif
 static uint32_t generation=0,crc=0;static unsigned index=0;HistoryFs* fs=historyFs();if(!fs||!compactRequested)return;
  if(snapshotReady){if(commitSnapshot(fs))compactRequested=false;return;}
  if(next&&generation!=historyGeneration){next.close();fs->remove("/meshmesh/history.next.jsonl");}

@@ -2,34 +2,15 @@
 #include <Arduino.h>
 #include "Board.h"
 #include "BoardPins.h"
-#if defined(MM_HELTEC_V4)
-#include <Adafruit_SSD1306.h>
-#elif defined(MM_COMPACT)
-#include <Adafruit_GFX.h>
-#else
 #include <Adafruit_ST7789.h>
-#endif
-#if defined(MM_HIRES)
-#include "HiresCanvas.h"
-#endif
 #include <U8g2_for_Adafruit_GFX.h>
 #include <TinyGPSPlus.h>
 #include <RTClib.h>
 
 class Hardware {
  public:
-#if defined(MM_HELTEC_V4)
-  Adafruit_SSD1306 display;
-#elif defined(MM_COMPACT)
-  Adafruit_GFX* panel=nullptr; // the board's screen; nullptr when it has none or it did not answer
-#else
   Adafruit_ST7789 display;
-#endif
-#if defined(MM_HIRES)
-  HiresCanvas* canvas=nullptr; // 128x64 layout coordinates on the 240x135 TFT
-#else
   GFXcanvas16* canvas=nullptr;
-#endif
   U8G2_FOR_ADAFRUIT_GFX font;
   TinyGPSPlus gps;
   RTC_PCF8563 rtc;
@@ -38,20 +19,11 @@ class Hardware {
   float mag[3]={}, accel[3]={};
   uint16_t batteryMv=0;
   int8_t usbPower=-1; // USB power (charging) from a sense pin: 1 yes, 0 battery, -1 no pin (the screens guess from the voltage)
-#if defined(MM_NRF52)
-  uint16_t batteryNow(); // a reading now (batteryMv: once a second in tick); also before begin()
-#endif
   uint32_t gpsBytes=0, lastKey=0, keyCount=0, utc=0;
   uint8_t keyboardHw=0, keyboardFw=0;
   const char* boardName=MM_BOARD_NAME; // the M9 adds its revision once the keyboard answers (Hardware.cpp)
   bool micKey=true; // false on the M9 V1.1: no MIC key, hold OK on the home screen locks instead (Ui.cpp)
-#if defined(MM_HELTEC_V4)
-  Hardware():display(128,64,&Wire,pins::oledReset) {}
-#elif defined(MM_COMPACT)
-  Hardware() {}
-#else
   Hardware():display(&SPI,pins::lcdCs,pins::lcdDc,pins::lcdReset) {}
-#endif
   bool clockTrusted=false,clockConflict=false;
   String clockSource="unset";
   void beginClock();
@@ -64,15 +36,11 @@ class Hardware {
   void begin();
   void tick();
   int readKey();
-#if defined(MM_BOARD_TDECK)
-  char readTouch(int& x,int& y);
-#endif
   void brightness(uint8_t level);
   void setGps(bool enabled);
   void beep();
   void ping(uint16_t hz,uint16_t ms);
   void flush();
-#if !defined(MM_COMPACT)
   void flushRect(int x,int y,int width,int height){
 #if !defined(MM_UI_PREVIEW)
     uint16_t* row=canvas->getBuffer()+y*canvas->width()+x;
@@ -81,7 +49,6 @@ class Hardware {
     display.endWrite();
 #endif
   }
-#endif
   // Power off (Power.cpp): the screen, GPS and peripheral supplies off; the levels are held through
   // deep sleep (ESP32) or System OFF (nRF52). started: begin() ran; false on a wake that goes back to
   // sleep, when only the pin levels are set again. A board with a PMU (T-Beam) is switched off by it here.

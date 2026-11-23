@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os") // 1 MB flash: chat, contacts and the companion frames are not speed-critical (the rest of the nRF52 image is -O2)
-#endif
 #include "MeshRadio.h"
 #include "Notifications.h"
 #include "ChannelPolicy.h"
@@ -65,20 +62,11 @@ uint32_t confirm(uint32_t ack,uint64_t& destination); // the message ID of an ap
 int scope(uint8_t key[16]); // the app's region for our floods: 0 - not set, 1 - none, 2 - key
 void control(const mesh::Packet* packet); // a zero-hop control packet (node discovery answers) for the app
 }
-#if defined(MM_RADIO_SX1262)
-constexpr uint32_t irqTxDone=RADIOLIB_SX126X_IRQ_TX_DONE,irqPreamble=RADIOLIB_SX126X_IRQ_PREAMBLE_DETECTED,irqRxDone=RADIOLIB_SX126X_IRQ_RX_DONE;
-#elif defined(MM_RADIO_SX1276)
-// SX127x has no preamble flag in LoRa mode; a valid header marks a packet being received.
-constexpr uint32_t irqTxDone=RADIOLIB_SX127X_CLEAR_IRQ_FLAG_TX_DONE,irqPreamble=RADIOLIB_SX127X_CLEAR_IRQ_FLAG_VALID_HEADER,irqRxDone=RADIOLIB_SX127X_CLEAR_IRQ_FLAG_RX_DONE;
-#else
 constexpr uint32_t irqTxDone=RADIOLIB_LR11X0_IRQ_TX_DONE,irqPreamble=RADIOLIB_LR11X0_IRQ_PREAMBLE_DETECTED,irqRxDone=RADIOLIB_LR11X0_IRQ_RX_DONE;
-#endif
-#if defined(MM_RADIO_LR1110)
 // Spectrum may acknowledge a latched preamble before the frame ends. Keep both
 // the mesh transmitter and scanner off the receiver for a maximum packet airtime.
 static uint32_t spectrumRxSince=0,spectrumRxWindow=0;
 static bool spectrumReceiving(){return millis()-spectrumRxSince<spectrumRxWindow;}
-#endif
 static volatile bool radioIrq=false;
 static void IRAM_ATTR onRadioIrq(){radioIrq=true;powerRadioIrq();}
 void radioIrqPending(){radioIrq=true;}
@@ -106,9 +94,7 @@ class MeshCoreRadioAdapter:public mesh::Radio {
  void onSendFinished() override{owner.radioError=owner.radio.finishTransmit();owner.transmitting=false;radioIrq=false;owner.startReceiving();}
  bool isInRecvMode() const override{return owner.ready&&!owner.transmitting;}
  bool isReceiving() override{
-#if defined(MM_RADIO_LR1110)
   if(spectrumReceiving())return true;
-#endif
   return !owner.transmitting&&(owner.radio.getIrqFlags()&irqPreamble);
  }
  void resetAGC() override{owner.recalibrate();} // the server's agc.reset.interval
@@ -150,9 +136,6 @@ bool writeStored(const char* path,const char* temp,const void* data,size_t size)
  if(!hardware.fsOk)return false;LittleFS.mkdir("/meshmesh");if(LittleFS.exists(temp))LittleFS.remove(temp);
  File f=LittleFS.open(temp,FILE_WRITE);if(!f)return false;bool ok=f.write((const uint8_t*)data,size)==size;f.close();
  if(!ok){LittleFS.remove(temp);return false;}
-#if defined(MM_NRF52)
- if(LittleFS.exists(path)&&!LittleFS.remove(path))return false; // littlefs v1 of the Adafruit core does not rename over a file
-#endif
  return LittleFS.rename(temp,path);
 }
 class MeshCoreBackend:public BaseChatMesh {
@@ -345,12 +328,7 @@ class MeshCoreBackend:public BaseChatMesh {
  void flush(){if(contactsDue)saveContacts();}
  void tick(){if(!protectedAt||millis()-protectedAt>=5000)protectContacts();loop();if(contactsDue&&int32_t(millis()-contactsDue)>=0)saveContacts();}
 };
-#if defined(MM_RADIO_SX1276)
-// SX127x routes interrupts to fixed DIO pins: only RX done (DIO0) is used, CRC is checked by readData.
-int16_t MeshRadio::startReceiving(){return radio.startReceive();}
-#else
 int16_t MeshRadio::startReceiving(){constexpr uint32_t mask=(1UL<<RADIOLIB_IRQ_RX_DONE)|(1UL<<RADIOLIB_IRQ_CRC_ERR)|(1UL<<RADIOLIB_IRQ_HEADER_ERR)|(1UL<<RADIOLIB_IRQ_TIMEOUT);return radio.startReceive(UINT32_MAX,RADIOLIB_IRQ_RX_DEFAULT_FLAGS,mask);}
-#endif
 String MeshRadio::idText(uint64_t id) const{if(id==meshmesh::Broadcast)return "ALL";char b[17];snprintf(b,sizeof(b),"%04lX%08lX",(unsigned long)(id>>32),(unsigned long)(id&0xffffffffu));return b;}
 static const mesh::LocalIdentity* selfIdentity(MeshCoreBackend* core){return core?&core->self_id:meshServer.identity();}
 const uint8_t* MeshRadio::nodeKey() const{auto* self=selfIdentity(core);return self?self->pub_key:nullptr;}
@@ -376,11 +354,7 @@ bool MeshRadio::removeContact(uint64_t id){
 Peer* MeshRadio::contact(uint64_t id){for(unsigned i=0;i<peerCount;i++)if(peers[i].id==id)return &peers[i];return nullptr;}
 void MeshRadio::begin(){
  nodeId=ESP.getEfuseMac();loadChannels();
-#if defined(MM_EMULATOR) // QEMU: no transceiver, the chat node still starts for protocol checks (tools/companion_check.py)
- applyConfig();
-#else
  if(!applyConfig()){restoreHistory();return;}
-#endif
  if(config.role!=RoleNormal){ // MeshCore repeater or room server: no chat contacts or messages, the same key
   Preferences p;mesh::LocalIdentity self;bool created,loaded=p.begin("meshmesh-mc",false)&&loadIdentity(p,self,created);if(loaded)restoreClockFloor(p);p.end();
   if(!loaded||!meshServer.begin(config.role,coreRadio,coreMillis,coreRandom,coreRtc,corePool,coreTables,self)){ready=false;event="MeshCore identity storage error";}else{nodeId=aliasOf(self.pub_key);event=meshServer.room()?"MeshCore room server ready":"MeshCore repeater ready";}
@@ -392,7 +366,6 @@ void MeshRadio::flush(){if(core)core->flush();meshServer.flush();if(echoDue){ech
 void MeshRadio::sleep(){if(ready)radio.sleep();ready=false;}
 void MeshRadio::cancelPending(){for(auto& p:pending)if(p.active){status(p.message.id,ChatMessage::Failed);p.active=false;}while(corePool.getOutboundTotal()){auto* packet=corePool.removeOutboundByIdx(0);corePool.free(packet);}}
 namespace {uint32_t recalAt=0;bool recalFailed=false;}
-#if defined(MM_RADIO_LR1110)
 MeshRadio::SampleResult MeshRadio::spectrumSample(bool offChannel,float mhz,int8_t& dbm){
  auto defer=[this](const char* reason){spectrumWaitReason=reason;return SampleResult::Busy;};
  spectrumWaitReason="";
@@ -439,7 +412,6 @@ MeshRadio::SampleResult MeshRadio::spectrumSample(bool offChannel,float mhz,int8
  if(!(level<0&&level>=-127.5f))return SampleResult::Error; // RadioLib returns zero on an SPI error.
  dbm=int8_t(lroundf(level));return SampleResult::Ok;
 }
-#endif
 bool MeshRadio::applyConfig(){
  if(transmitting)return false;netfind::cancel();tuned=RadioProfile();cancelPending();return startRadio(false);
 }
@@ -450,30 +422,13 @@ bool MeshRadio::recalibrate(){
 }
 bool MeshRadio::startRadio(bool quiet){
  const RadioProfile r=tuned.set()?tuned:config.radio();uint16_t preamble=r.sf<=8?32:16;
-#if defined(MM_RADIO_SX1276)
- radioError=radio.begin(r.frequency,r.bandwidth,r.sf,r.cr,RADIOLIB_SX127X_SYNC_WORD,config.power,preamble,0);
- if(radioError){delay(150);radioError=radio.begin(r.frequency,r.bandwidth,r.sf,r.cr,RADIOLIB_SX127X_SYNC_WORD,config.power,preamble,0);}ready=radioError==0;
-#else
  radioError=radio.begin(r.frequency,r.bandwidth,r.sf,r.cr,RADIOLIB_LR11X0_LORA_SYNC_WORD_PRIVATE,config.power,preamble,pins::radioTcxo);
  if(radioError){delay(150);radioError=radio.begin(r.frequency,r.bandwidth,r.sf,r.cr,RADIOLIB_LR11X0_LORA_SYNC_WORD_PRIVATE,config.power,preamble,pins::radioTcxo);}ready=radioError==0;
-#endif
  if(ready){
-#if defined(MM_HELTEC_V4)
- extern int heltecFemTx;radio.setRfSwitchPins(RADIOLIB_NC,heltecFemTx);
-#elif defined(MM_BOARD_T096)
- radio.setCurrentLimit(140);radio.setRfSwitchPins(RADIOLIB_NC,pins::femTx); // KCT8103L CTX: HIGH while transmitting
-#elif defined(MM_RADIO_SX1276)
- radio.setCurrentLimit(120);radio.setCRC(true);
-#elif defined(MM_RADIO_SX1262)
- radio.setCurrentLimit(140);if(pins::radioRxEn>=0)radio.setRfSwitchPins(pins::radioRxEn,RADIOLIB_NC);
-#else
  static const uint32_t dios[Module::RFSWITCH_MAX_PINS]={RADIOLIB_LR11X0_DIO5,RADIOLIB_LR11X0_DIO6,RADIOLIB_NC,RADIOLIB_NC,RADIOLIB_NC};
  static const Module::RfSwitchMode_t modes[]={{LR11x0::MODE_STBY,{LOW,LOW}},{LR11x0::MODE_RX,{HIGH,LOW}},{LR11x0::MODE_TX,{HIGH,HIGH}},{LR11x0::MODE_TX_HP,{LOW,HIGH}},{LR11x0::MODE_TX_HF,{LOW,LOW}},{LR11x0::MODE_GNSS,{LOW,LOW}},{LR11x0::MODE_WIFI,{LOW,LOW}},END_OF_MODE_TABLE};radio.setRfSwitchTable(dios,modes);
-#endif
  // Station G2: its LNA saturates with the boosted gain (MeshCore keeps it off on this board).
-#if !defined(MM_RADIO_SX1276) && !defined(MM_BOARD_STATION_G2)
  radio.setRxBoostedGainMode(true);
-#endif
  radio.setPacketReceivedAction(onRadioIrq);radioIrq=false;radioError=startReceiving();ready=radioError==0;
  }if(!quiet||!ready){event=ready?"MeshCore radio ready":"Radio error "+String(radioError);dirty=true;}return ready;
 }

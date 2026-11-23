@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os") // 1 MB flash: as Chess.cpp
-#endif
 #include "Checkers.h"
 #include <string.h>
 namespace checkers {

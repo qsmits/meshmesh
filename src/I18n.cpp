@@ -1,22 +1,8 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os") // 1 MB flash: the text lookups are not speed-critical (the rest of our nRF52 code is -O2)
-#endif
 #include "I18n.h"
 #include "Config.h"
 #include "Emoji.h"
 #include <U8g2_for_Adafruit_GFX.h>
-#if defined(MM_NRF52)
-#if !defined(MM_LANG_EXTRA)
-#define MM_LANG_EXTRA 0
-#endif
-#if defined(MM_NO_RU)
-#define MM_LANG_IN(l) ((l)==LangEn||(l)==MM_LANG_EXTRA)
-#else
-#define MM_LANG_IN(l) ((l)<2||(l)==MM_LANG_EXTRA)
-#endif
-#else
 #define MM_LANG_IN(l) 1
-#endif
 #include "Modules.h" // MM_DUEL: the strings of checkers and sea battle (I18nTable.h)
 #include "I18nTable.h"
 #include "I18nFonts.h"
@@ -83,16 +69,10 @@ String plural(unsigned n,const char* one,const char* many,const char* ru1,const 
  return String(n)+" "+form;
 }
 
-#if defined(MM_NRF52)
-// The site installer writes the chosen language over "--" (site/index.html), and the DFU CRC with it.
-extern "C" __attribute__((used)) const volatile char mmInstallLang[16]="MMLANG:--";
-#endif
 String installLanguage(){
  char b[17]={};
 #if defined(MM_UI_PREVIEW)
  return "";
-#elif defined(MM_NRF52)
- for(int i=0;i<16;i++)b[i]=mmInstallLang[i];
 #else
  // The tail of the partition table sector: tools/pages.py writes "MMLANG:<code>" there in partitions-<code>.bin.
  if(spi_flash_read(0x8c00,b,16)!=ESP_OK)return "";
@@ -173,9 +153,6 @@ uint8_t glyphCells(uint32_t cp){
 const uint8_t* const* fallbackFonts(const uint8_t* font){
  static const uint8_t* list[8];unsigned n=0;
  [[maybe_unused]] bool small=font==u8g2_font_5x8_t_cyrillic||font==u8g2_font_4x6_t_cyrillic;
-#if defined(MM_HIRES)
- small=false; // the T114 draws small text with the 12-13 px fonts (hiGlyph): the 8 px CJK fonts stay out (11 KB)
-#endif
  if(font==u8g2_font_6x13_t_cyrillic){list[n++]=u8g2_font_6x13_tf;list[n++]=mmFontExt13;}
  else if(font==u8g2_font_6x13B_t_cyrillic){list[n++]=u8g2_font_6x13B_tf;list[n++]=mmFontExt13B;}
  else if(font==u8g2_font_5x8_t_cyrillic){list[n++]=u8g2_font_5x8_tf;list[n++]=mmFontExt8;}

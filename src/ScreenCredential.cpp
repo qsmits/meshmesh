@@ -1,5 +1,4 @@
 #include "Board.h"
-#if !defined(MM_COMPACT)
 #include "ScreenCredential.h"
 #include <cstring>
 #if !defined(MM_UI_PREVIEW)
@@ -43,4 +42,3 @@ bool ScreenCredential::matches(const char* phrase) const{
  unsigned diff=0;for(unsigned i=0;i<sizeof trial;i++)diff|=trial[i]^digest[i];
  return diff==0;
 }
-#endif

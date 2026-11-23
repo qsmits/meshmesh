@@ -34,9 +34,7 @@ void appsAddGames(char* text,size_t cap); // 0.33.0: the games of an order saved
 String executeCommand(const String& line);
 // Role changes restart the device; the restart waits for the reply to leave over USB, Wi-Fi or BLE.
 const char* roleName(uint8_t role);String setRole(uint8_t role);void restartTick();
-#if !defined(MM_COMPACT)
 void uiUseDefaultInput();
-#endif
 void uiBegin();void uiTick();void uiKey(int key);bool uiScreenOff();
 void uiFarewell(); // power off (Power.cpp): "the device is off" and how to turn it on, the last frame before the screen goes dark
 // Touch (T-Deck; "uitouch" over USB on the 320x240 boards): 't' tap and 'h' hold at x,y; 'u','d','l','r' swipes.
@@ -47,9 +45,6 @@ String connectionCredentials();
 void bleToggle();bool bleActive();
 // The advertised name, "MeshCore-<node name>" as on stock firmware: MeshCore apps find the board by it.
 String bleName();void bleRename(); // a new node name: advertised at once
-#if defined(MM_NRF52)
-void bleSilence(); // power off: Bluetooth quiet, the setting kept
-#endif
 // Radar holders: the web page (Portal.cpp) and the screen pages (Ui.cpp / UiHeltec.cpp).
 bool webRadarActive();bool uiRadarPage();
 String webRadarCommand(const String& line); // "radar web" and "radar do {JSON}"

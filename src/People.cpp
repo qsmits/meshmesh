@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os")
-#endif
 #include "People.h"
 #if !defined(MM_UI_PREVIEW)
 #include <esp_system.h>
@@ -59,11 +56,7 @@ void tick(){if(saveAt&&int32_t(millis()-saveAt)>=0)saveTally();wifiTick();}
 String json(){DynamicJsonDocument d(2048);d["manual"]=value();d["current"]=tally.current;d["counters_max"]=Counters;JsonArray cards=d.createNestedArray("counters");
  for(unsigned i=0;i<tally.count;i++){JsonObject o=cards.createNestedObject();o["name"]=tally.list[i].name;o["value"]=tally.list[i].value;o["color"]=tally.list[i].color;}
  d["ble"]=settings.ble;d["wifi"]=settings.wifi;d["personal_only"]=settings.personal;d["window"]=settings.window;d["rssi"]=settings.rssi;d["ble_devices"]=count(false);d["wifi_devices"]=count(true);d["ble_saturated"]=saturated(false);d["wifi_saturated"]=saturated(true);d["ble_dropped"]=dropped(false);d["wifi_dropped"]=dropped(true);d["ble_state"]=!settings.ble?"off":radar.ble==Radar::BleReady?"listening":radar.ble==Radar::BleFailed?"failed":"paused";d["wifi_state"]=wifiState();d["capacity"]=Max;
-#if defined(MM_NO_WIFI)
- d["wifi_supported"]=false;
-#else
  d["wifi_supported"]=true;
-#endif
  String out;serializeJson(d,out);return out;}
 // {"action":"change","delta":N[,"index":I]}, "reset"[,index], "set" index value, "select" index, "add"[,name],
 // "rename" index name, "color" index color, "delete" index; "window_reset"; "settings" with ble, wifi, personal_only, window, rssi.
@@ -80,9 +73,6 @@ String command(JsonObjectConst values){String action=values["action"]|"";
   return remove(i)?"OK counter deleted":"ERR the last counter stays";}
  if(action=="window_reset"){resetWindow();return "OK people window reset";}
  Settings next=settings;if(action=="settings"){for(JsonPairConst pair:values){String key=pair.key().c_str();JsonVariantConst v=pair.value();if(key=="action")continue;if(key=="ble"||key=="wifi"||key=="personal_only"){if(!v.is<bool>())return "ERR people boolean";if(key=="ble")next.ble=v;if(key=="wifi")next.wifi=v;if(key=="personal_only")next.personal=v;}else if(key=="window"||key=="rssi"){if(!v.is<int>())return "ERR people integer";int n=v;if(key=="window"){if(n<0||n>300)return "ERR people window";next.window=n;}else{if(n<-100||n>-30)return "ERR people RSSI";next.rssi=n;}}else return "ERR people setting";}}else return "ERR people action change|reset|set|select|add|rename|color|delete|window_reset|settings";
-#if defined(MM_NO_WIFI)
- if(next.wifi)return "ERR board has no Wi-Fi";
-#endif
  if(!valid(next))return "ERR people: window 30|60|300, RSSI -100..-30";if(!save(next))return "ERR people storage";bool reset=next.window!=settings.window||next.rssi!=settings.rssi||next.personal!=settings.personal;bool stopBle=settings.ble&&!next.ble;settings=next;if(reset)resetWindow();if(stopBle&&!radar.active)radar.releaseBle();if(!next.wifi)releaseWifi();return "OK people settings saved";
 }
 }

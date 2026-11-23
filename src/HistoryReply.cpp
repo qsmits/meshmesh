@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os")
-#endif
 #include "HistoryReply.h"
 #include "HistoryJson.h"
 #include <new>

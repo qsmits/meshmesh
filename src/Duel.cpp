@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os") // 1 MB flash: the game messages are not speed-critical
-#endif
 #include "Duel.h"
 #include "Config.h"
 #include "MeshRadio.h"

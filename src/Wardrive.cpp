@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os")
-#endif
 #include "Wardrive.h"
 #include "BlobStore.h"
 #include "Config.h"
@@ -18,11 +15,7 @@ namespace {
 constexpr uint32_t Magic=0x4d4d5701;
 constexpr uint8_t TypeAdvert=4; // MeshCore PAYLOAD_TYPE_ADVERT
 constexpr uint32_t PhoneValid=30000,PingWindow=30000,QueueLimit=60000,Batch=30000;
-#if defined(MM_NRF52)
-constexpr unsigned PointCap=256,NetCap=1,RecentMax=48,NetSeen=1; // 100 KB of storage holds the history too
-#else
 constexpr unsigned PointCap=4096,NetCap=2048,RecentMax=256,NetSeen=128;
-#endif
 // One log: the current file and the previous one; records wait in RAM until 16 or 30 s. A file whose size is no
 // multiple of its record (a reset in the middle of a write) becomes the previous one: whole records stay readable.
 template<class T> struct Log {
@@ -110,9 +103,6 @@ void finishPing(){
 bool parseId(const char* text,uint64_t& id){if(!text||!*text||strlen(text)>16)return false;char* end=nullptr;id=strtoull(text,&end,16);return end&&!*end&&id;}
 }
 void begin(){Settings saved{};if(blob::load("/meshmesh/wardrive",Magic,saved)&&saved.distance>=50&&saved.distance<=5000&&saved.interval>=15&&saved.interval<=3600)settings=saved;
-#if defined(MM_NO_WIFI)
- settings.nets=false;
-#endif
  pointLog.begin();netLog.begin();}
 bool running(){return settings.passive||settings.ping||settings.nets;}
 bool holdsRadar(){return settings.nets;}
@@ -165,27 +155,19 @@ void echo(uint32_t packet,uint8_t pathLen,const uint8_t* path,float snr){
 void probeSent(uint32_t id,uint32_t hash){if(probe.id!=id||probe.sentAt)return;probe.hash=hash;probe.sentAt=millis()?millis():1;pingsSent++;}
 void probeFailed(uint32_t id){if(probe.id!=id||probe.sentAt)return;probe=Probe{};pingsFailed++;}
 void wifi(const uint8_t* mac,const char* ssid,uint8_t channel,uint8_t auth,int rssi){
-#if !defined(MM_NO_WIFI)
  if(!settings.nets)return;int32_t lat,lon;bool phone;if(!position(lat,lon,phone))return;
  uint32_t key=blob::checksum(mac,6)&~1u;if(!fresh(macs,NetSeen,macNext,key,lat,lon,100,300000))return;
  Net n{};n.time=clockNow();n.lat=lat;n.lon=lon;memcpy(n.mac,mac,6);n.kind=0;n.channel=channel;n.rssi=dbm(rssi);n.auth=auth;n.flags=phone?FromPhone:0;strlcpy(n.name,ssid,sizeof n.name);netLog.add(n);
-#endif
 }
 void ble(uint64_t address,const char* name,int rssi){
-#if !defined(MM_NO_WIFI)
  if(!settings.nets)return;int32_t lat,lon;bool phone;if(!position(lat,lon,phone))return;
  uint8_t mac[6];for(int i=0;i<6;i++)mac[i]=uint8_t(address>>(8*(5-i)));
  uint32_t key=blob::checksum(mac,6)|1u;if(!fresh(macs,NetSeen,macNext,key,lat,lon,100,300000))return;
  Net n{};n.time=clockNow();n.lat=lat;n.lon=lon;memcpy(n.mac,mac,6);n.kind=1;n.rssi=dbm(rssi);n.flags=phone?FromPhone:0;strlcpy(n.name,name?name:"",sizeof n.name);netLog.add(n);
-#endif
 }
 String json(){
  DynamicJsonDocument d(4096);d["supported"]=true;d["passive"]=settings.passive;d["ping"]=settings.ping;d["coords"]=settings.coords;d["nets"]=settings.nets;
-#if defined(MM_NO_WIFI)
- d["nets_supported"]=false;
-#else
  d["nets_supported"]=true;
-#endif
  d["distance"]=settings.distance;d["interval"]=settings.interval;
  if(settings.channel){d["channel"]=meshRadio.idText(settings.channel);const auto* c=meshRadio.channel(settings.channel);if(c)d["channel_name"]=c->name;}
  int32_t lat,lon;bool phone;if(position(lat,lon,phone)){JsonObject p=d.createNestedObject("position");p["lat"]=lat/1e6;p["lon"]=lon/1e6;p["source"]=phone?"phone":"gps";}
@@ -215,9 +197,6 @@ String command(JsonObjectConst v){
   else if(k=="interval"){if(!x.is<int>()||x.as<int>()<15||x.as<int>()>3600)return "ERR interval 15..3600 s";next.interval=x.as<int>();}
   else if(k=="channel"){uint64_t id;if(!parseId(x.as<const char*>(),id)||!channels::isChannel(id)||id==meshmesh::Broadcast||!meshRadio.channel(id))return "ERR channel: a joined channel ID other than Public";next.channel=id;}
   else return "ERR unknown wardrive setting: "+k;}
-#if defined(MM_NO_WIFI)
- if(next.nets)return "ERR board has no Wi-Fi";
-#endif
  bool started=!settings.ping&&next.ping;settings=next;save();if(started){havePing=false;retryAt=0;}if(!running())flush();meshRadio.dirty=true;return "OK wardrive settings saved";
 }
 // "mesh FROM" and "nets FROM": the log from record FROM on, a part at a time ("next" until "total").

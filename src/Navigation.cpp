@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os") // 1 MB flash: not speed-critical (AGENTS.md, "Языки")
-#endif
 #include "Navigation.h"
 #include "Hardware.h"
 #include <Preferences.h>

@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os") // 1 MB flash: the USB and web commands and their JSON are not speed-critical (the rest of the nRF52 image is -O2)
-#endif
 #include "HistoryJson.h"
 #include "Version.h"
 #include <Utils.h>
@@ -30,33 +27,21 @@
 #include "People.h"
 #include "Wardrive.h"
 #include <LittleFS.h>
-#if !defined(MM_NRF52)
 #include <nvs.h>
 #include "Storage.h"
-#endif
 #include <time.h>
 String statusJson() {
   StaticJsonDocument<3072> d;
   d["version"]=MESHMM_VERSION;d["revision"]=MESHMM_REVISION;
   d["board"]=MM_BOARD_ID;d["board_name"]=hardware.boardName;d["max_power"]=MM_MAX_POWER;
-#if defined(MM_COMPACT)
-  d["family"]="compact";d["button"]=MM_BUTTON;
-#else
   d["family"]="full";d["mic_key"]=hardware.micKey;
-#endif
   {static const int absent[]={MM_ABSENT -1};JsonArray a=d.createNestedArray("absent");for(int i:absent)if(i>=0)a.add(i);}
   d["firmware"]=MESHMM_FIRMWARE;d["role"]=roleName(config.role);d["node"]=meshRadio.idText(meshRadio.nodeId);d["name"]=config.name;d["network"]=meshRadio.networkId;
   char buildHash[65];mesh::Utils::toHex(buildHash,esp_ota_get_app_description()->app_elf_sha256,32);d["build_sha256"]=buildHash;d["protocol"]="MeshCore";d["public_key"]=meshRadio.publicKeyText();d["channel"]="Public";d["channels"]=meshRadio.channelCount;d["public_message_limit"]=meshRadio.messageLimit();d["unix_time"]=int64_t(time(nullptr));d["clock_source"]=hardware.clockSource;d["clock_age_seconds"]=hardware.clockAge()/1000;d["clock_conflict"]=hardware.clockConflict;d["uptime"]=millis()/1000;d["boot"]=config.bootCounter;d["reset_reason"]=int(esp_reset_reason());d["heap"]=ESP.getFreeHeap();d["psram"]=ESP.getFreePsram();d["cpu_mhz"]=powerMhz();d["sleeps"]=powerSleeps();d["sleep_ms"]=powerSleptMs();d["slow_ms"]=powerSlowMs();
-#if !defined(MM_NRF52)
   d["heap_max_block"]=ESP.getMaxAllocHeap(); // the largest internal-RAM allocation: what a board without PSRAM can still answer
-#endif
   d["history_count"]=meshRadio.historyCount;d["idle_waits"]=powerIdleWaits();d["idle_wait_ms"]=powerIdleMs();d["idle_radio_events"]=powerRadioEvents();
   {int way=powerOnWay();d["power_on"]=way>=0?"button":way==-2?"power_key":"reset";
-#if defined(MM_BOARD_TDECK)
-  if(way>=0)d["power_button"]="trackball";
-#else
   if(way>=0)d["power_button"]=MM_BUTTON;
-#endif
   } // "poweroff": what turns the board on again
   d["radio"]=meshRadio.ready;d["radio_error"]=meshRadio.radioError;d["tx"]=meshRadio.txCount;d["radio_recal"]=meshRadio.recalibrations;d["rx"]=meshRadio.rxCount;d["rejected"]=meshRadio.rejected;d["relayed"]=meshRadio.relayed;d["contacts_replaced"]=meshRadio.replaced;d["contacts_saved"]=meshRadio.contactsSaved;
   d["diagnostic_rx"]=meshRadio.diagnosticRx;d["rssi"]=meshRadio.lastRssi;d["snr"]=meshRadio.lastSnr;d["keyboard"]=hardware.keyboardOk;d["key_count"]=hardware.keyCount;d["last_key"]=hardware.lastKey;
@@ -66,21 +51,10 @@ String statusJson() {
   if(d["gps_fix"].as<bool>()) {d["latitude"]=hardware.gps.location.lat();d["longitude"]=hardware.gps.location.lng();}
   JsonArray a=d.createNestedArray("mag");for(float n:hardware.mag)a.add(n);a=d.createNestedArray("accel");for(float n:hardware.accel)a.add(n);
   d["clock_trusted"]=hardware.clockTrusted;d["busy"]=meshRadio.busy();if(meshRadio.lastRxAt)d["rx_age"]=(millis()-meshRadio.lastRxAt)/1000;
-#if !defined(MM_NRF52)
   {nvs_stats_t nvs;if(nvs_get_stats(nullptr,&nvs)==ESP_OK){d["nvs_used"]=nvs.used_entries;d["nvs_free"]=nvs.free_entries;}} // 32-byte entries; the contacts no longer live there
-#endif
   d["quick_send"]=true;d["people_counter"]=true;d["wardrive"]=bool(MM_WARDRIVE);d["notification_dropped"]=notifications::dropped();
-#if defined(MM_COMPACT)
-  d["notification_led"]=pins::led>=0;
-#else
   d["notification_led"]=false;
-#endif
   d["event"]=meshRadio.event;d["wifi"]=portalActive();
-#if defined(MM_NRF52)
-  d["wifi_radio"]=false; // nRF52: no Wi-Fi; the page arrives through the app over BLE or USB
-  {String l;for(int i=0;i<LangCount;i++)if(langAvailable(i))l+=String(l.length()?" ":"")+langCodes[i];d["langs"]=l;} // the screen languages of this image
-  {String m;if(MM_CHESS)m+="chess";if(MM_PET)m+=String(m.length()?" ":"")+"pet";if(MM_DICE)m+=String(m.length()?" ":"")+"dice";if(MM_WARDRIVE)m+=String(m.length()?" ":"")+"wardrive";if(MM_CHECKERS)m+=String(m.length()?" ":"")+"checkers";if(MM_SEA)m+=String(m.length()?" ":"")+"sea";d["modules"]=m;} // optional modules in this image (Modules.h)
-#endif
   d["internet"]=internet.online();d["ble"]=bleActive();d["companion"]=companion::connected();String s;serializeJson(d,s);return s;
 }
 String messagesJson() {
@@ -152,9 +126,7 @@ void restartTick(){if(restartAt&&int32_t(millis()-restartAt)>=0){meshRadio.flush
 String executeCommand(const String& input) {
   String line=input;line.trim();
   if(line.startsWith("map "))return maps.command(line);
-#if !defined(MM_NO_WIFI)
   if(line=="internet"||line.startsWith("internet "))return internet.command(line);
-#endif
   if(line=="chess"||line.startsWith("chess "))return chessNet.command(line);
   if(line=="pet"||line.startsWith("pet "))return creature.command(line);
   if(line=="dice"||line.startsWith("dice "))return dicer.command(line);
@@ -228,19 +200,12 @@ String executeCommand(const String& input) {
   if(line=="ble") {bleToggle();return bleActive()?"OK BLE on":"OK BLE off";}
   if(line=="restart"){restartAt=millis()+1000;return "OK restarting";}
   if(line=="poweroff")return powerOff(); // e.g. after fsformat: the settings are read at boot
-#if !defined(MM_NRF52)
   if(line=="flashstatus")return flashInfo();
   if(line=="flashprobe"){if(meshRadio.busy())return "ERR radio busy";return flashProbe(hardware.fsOk);}
-#endif
   if(line=="fsformat") {
     if(hardware.fsOk)return "ERR filesystem already mounted; no format";
     if(meshRadio.busy())return "ERR radio busy";
-#if defined(MM_NRF52)
-    hardware.fsOk=LittleFS.format() && LittleFS.begin(false,"/littlefs",10,"littlefs");
-    return hardware.fsOk?"OK MeshMesh filesystem initialized":"ERR filesystem";
-#else
     String reply=formatStorage();hardware.fsOk=reply.startsWith("OK");return reply;
-#endif
   }
   if(line.startsWith("resetpath ")||line.startsWith("forget ")) { // node card actions, as on the M9 screen
     bool reset=line.startsWith("resetpath ");String hex=line.substring(reset?10:7);char* end=nullptr;uint64_t id=strtoull(hex.c_str(),&end,16);

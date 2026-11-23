@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os")
-#endif
 #include "QuickSend.h"
 #include "MeshRadio.h"
 #include "Hardware.h"

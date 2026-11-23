@@ -25,12 +25,10 @@ double px(double lon,int z) {return (lon+180)/360*(256UL<<z);}
 double py(double lat,int z) {double r=constrain(lat,-85.05112878,85.05112878)*M_PI/180;return (1-log(tan(r)+1/cos(r))/M_PI)/2*(256UL<<z);}
 }
 void Maps::begin() {
-#if !defined(MM_COMPACT)
   available=hardware.sdOk;
   // The last view the user chose (or the IP location) opens the map without any preloaded area.
   Preferences p;if(p.begin("mm-map",true)){double lat=p.getDouble("lat",NAN),lon=p.getDouble("lon",NAN);int z=p.getUChar("z",0);p.end();
     if(isfinite(lat)&&isfinite(lon)&&fabs(lat)<=85.05112878&&fabs(lon)<=180&&z>=MinZoom&&z<=MaxZoom){latitude=lat;longitude=lon;zoom=z;haveCenter=true;}}
-#endif
   if(!available)return;
   SD.mkdir("/meshmesh");SD.mkdir("/meshmesh/maps");
   SD.mkdir("/meshmesh/maps/areas");
@@ -193,7 +191,6 @@ String Maps::command(const String& line) {
 // Web tiles: the worker downloads and decodes; the loop shows the tile at once and
 // writes the same MMT1 file an upload would, in 4 KB steps so LoRa keeps its turn.
 void Maps::netTick(){
-#if !defined(MM_COMPACT)
   bool on=internet.online();
   if(on!=wasOnline){wasOnline=on;for(auto& t:tiles){if(on&&t.missing)t.z=-1;if(!on&&t.fetch){t.fetch=false;t.missing=true;}}dirty=true;}
   if(!cacheOut){
@@ -218,7 +215,6 @@ void Maps::netTick(){
   Tile* next=nullptr;
   for(auto& t:tiles)if(t.fetch&&t.z==zoom&&millis()-t.stamp<3000&&(!next||int32_t(t.stamp-next->stamp)>0))next=&t;
   if(next)internet.fetchTile(next->z,next->x,next->y);
-#endif
 }
 void Maps::cacheBegin(int z,int x,int y,const uint16_t* pixels){
   if(output)return;

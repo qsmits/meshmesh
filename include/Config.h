@@ -26,7 +26,6 @@ struct Config {
   uint8_t role=RoleNormal;
   uint32_t blePin=0; // pairing PIN, made once: a restart (e.g. a USB-UART reset) keeps it
   bool bleOn=false;  // Bluetooth on after boot: the last choice, else on in the normal role
-#if !defined(MM_COMPACT)
   uint8_t theme=0,accentColor=0,nightBrightness=0; // 0 night brightness follows daytime.
   bool nightAt(time_t utc) const {
     if(utc<1700000000)return false;
@@ -37,14 +36,9 @@ struct Config {
   uint8_t backlight(time_t utc) const {return nightBrightness&&nightAt(utc)?nightBrightness:brightness;}
   bool inputRussian=false; // Preferred physical keyboard layout at startup.
   bool launcherTiles=false; // Home and folders default to List
-#endif
   bool lockDetails=true; // the locked screen names chess opponents, moves and message senders
   uint8_t notifyLed=1,notifyPopup=1;
-#if defined(MM_COMPACT)
-  uint8_t notifyWake=1;
-#else
   uint8_t notifyWake=0; // preserve the keyboard boards' existing screen-off behaviour
-#endif
   bool notifyFailed=false;char notifyWords[97]="";
   char apps[256]=""; // screen menu: order of the apps, "-" hides one (App.h); empty = the default
   // Default region of our flood packets (Regions.h): empty - none; the key is that of "#name" unless an app set

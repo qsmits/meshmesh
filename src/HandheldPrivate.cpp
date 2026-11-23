@@ -1,5 +1,4 @@
 #include "Board.h"
-#if !defined(MM_COMPACT)
 #include "HandheldPrivate.h"
 #include <Preferences.h>
 bool handheldRead(const char* key,void* value,size_t bytes){
@@ -12,4 +11,3 @@ bool handheldWrite(const char* key,const void* value,size_t bytes){
  Preferences p;
  return p.begin("m9-private",false)&&p.putBytes(key,value,bytes)==bytes;
 }
-#endif

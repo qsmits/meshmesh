@@ -9,11 +9,7 @@ constexpr size_t CoreSize=91,SigSize=64,SigTextSize=88;
 constexpr int Start=1500;                    // rating of a player without counted games
 constexpr unsigned NewGames=20,NewK=32,K=20; // K-factor: 32 for a player's first 20 counted games, then 20
 constexpr unsigned PerDay=3;                 // counted games of one pair per UTC day; the others are kept, not counted
-#if defined(MM_NRF52)
-constexpr unsigned MaxRecords=40;            // the oldest records are folded into the players' base when full
-#else
 constexpr unsigned MaxRecords=128;
-#endif
 constexpr unsigned MaxPlayers=32,History=10,MaxDeltas=8;
 enum Result:uint8_t {WhiteWon=1,BlackWon=2,Drawn=3};
 

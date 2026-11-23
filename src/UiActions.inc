@@ -106,6 +106,4 @@ bool actionPanelKey(int key){
  }
  return true;
 }
-#if defined(MM_UI_PREVIEW) || defined(MM_RADIO_LR1110)
 #include "UiSpectrum.inc"
-#endif

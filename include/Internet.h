@@ -6,14 +6,6 @@
 // the radar and the USB Wi-Fi probe, and reconnects when they release it.
 // Network I/O and PNG decoding run on a worker task; SD stays on the loop task
 // because SD, display and LoRa share one SPI bus.
-#if defined(MM_NO_WIFI)
-class Internet {
- public:
-  bool online() const {return false;}
-  void yieldRadio() {}
-  String address() {return String();}
-};
-#else
 class Internet {
  public:
   enum State {Off,NoNetwork,Scanning,Connecting,Online,Paused};
@@ -50,5 +42,4 @@ class Internet {
   String names[MaxSaved];
   void load(unsigned i,String& name,String& password);void loadNames();bool store(String* list,String* words,unsigned n);
 };
-#endif
 extern Internet internet;

@@ -41,9 +41,7 @@ int8_t u8g2_GetGlyphWidth(u8g2_font_t* u8g2,uint16_t encoding);
 // The home tiles, in drawHome() order; the chosen order and the hidden ones: config.apps (App.h).
 // The default: messages, places, tools, games, then the device itself.
 const char* const uiApps[]={"chats","quick","nodes","nav","map","radar",
-#if defined(MM_UI_PREVIEW) || defined(MM_RADIO_LR1110)
  "spectrum",
-#endif
  "wardrive","people","chess","checkers","sea","pet","dice","solitaire","connect","health","settings"};
 const uint8_t uiAppCount=sizeof uiApps/sizeof *uiApps;
 namespace {
@@ -322,14 +320,10 @@ int lastRow[sizeof(pageNames)/sizeof(*pageNames)]={};
 int lastNodeAction=0,lastChatOffset=0;
 uint64_t lastChatId=0;
 Page quickReturn=Home;
-#if defined(MM_UI_PREVIEW) || defined(MM_RADIO_LR1110)
 void resetSpectrum();
 void stopSweep();
-#endif
 void change(Page next,bool back=false){
-#if defined(MM_UI_PREVIEW) || defined(MM_RADIO_LR1110)
  if(page==Spectrum||next==Spectrum)resetSpectrum();
-#endif
  activePanel=Panel::Closed;clipMenu=false;
  if(next==Home&&appFolder>=0&&page!=Home&&page!=Folder){
   uint8_t order[AppEntriesMax];
@@ -438,9 +432,7 @@ void appTiles(AppTile* out){
   {IcCompass,warn,t("Navigation","Навигация"),hardware.gpsFix()?"GPS: "+count(hardware.gps.satellites.value(),"sat","sats","спутник","спутника","спутников"):config.gps?t("GPS: searching","GPS: поиск"):t("GPS off","GPS выключен"),0},
   {IcPin,ok,t("Map","Карта"),maps.title.length()&&maps.available?maps.title:internet.online()?t("Online map","Онлайн-карта"):!maps.available?t("No SD card","Нет SD-карты"):t("No maps yet","Карт пока нет"),0},
   {IcRadar,accent,t("Radar","Радар"),"Wi-Fi, BLE, LoRa",0},
-#if defined(MM_UI_PREVIEW) || defined(MM_RADIO_LR1110)
   {IcPulse,info,"Spectrum","868 MHz band",0},
-#endif
   {IcTower,wardrive::running()?ok:dim,t("Wardrive","Вардрайв"),wardrive::running()?count(wardrive::points(),"point","points","точка","точки","точек"):t("Off","Выключен"),0},
   {IcTally,tallyHue(people::tally.current),t("Quick counter","Быстрый счётчик"),tallyTileDetail(),0},
   {IcChess,ink,t("Chess","Шахматы"),chessTileDetail(),chessNet.waiting()},
@@ -540,9 +532,7 @@ void drawFolder(){
 // Opens an app of the menu (an index into uiApps) from Home or from a folder.
 void openApp(uint8_t app,int folder){
  Page pages[]={Threads,QuickView,Nodes,Sensors,Map,Scope,
-#if defined(MM_UI_PREVIEW) || defined(MM_RADIO_LR1110)
  Spectrum,
-#endif
  WardriveView,PeopleView,ChessList,CheckersList,SeaList,PetView,DiceView,Game,Network,Diagnostics,Settings}; // as uiApps
  static_assert(sizeof pages/sizeof *pages==sizeof uiApps/sizeof *uiApps,"a page for every app ID");
  if(app>=uiAppCount)return;if(pages[app]==QuickView){quickReplyTo=0;quickTargets=false;}if(pages[app]==CheckersList||pages[app]==SeaList)duelKind=pages[app]==SeaList?Duel::Sea:Duel::Checkers;change(pages[app]);appFolder=folder;
@@ -1088,15 +1078,9 @@ void drawDiagnostics(){
  footer({{"OK",hardware.fsOk?t("Crypto test + sound","Тест шифрования и звука"):t("Create storage...","Создать хранилище...")},{"BACK",t("Back","Назад")}});
 }
 void drawHelp(){
-#if defined(MM_BOARD_TDECK)
- Hint keys[]={{tr("Ball, swipe","Шар, свайп"),t("Move: menu, lists, map","Перемещение: меню, списки, карта")},{tr("Click","Нажатие"),t("Open / send","Открыть / отправить")},{tr("Hold ball","Удерж. шар"),t("Clipboard","Буфер обмена")},
-  {tr("Tap","Касание"),t("Open; hints below are keys; title: back","Открыть; кнопки внизу; заголовок - назад")},{"DEL",t("Delete; with no text: back","Удалить; без текста: назад")},{tr("2x space","2×пробел"),t("in text: switch RU/EN","в тексте: RU/EN")},
-  {"L",t("Map: saved maps","Карта: список карт")},{"+ -",t("Map zoom","Масштаб карты")},{"P",t("Nodes: show on map","Узлы: показать на карте")},{"HOME",t("Menu: DEL until the tiles","Меню: DEL до плиток")}};
-#else
  Hint keys[]={{"MSG",t("Chats","Чаты")},{"MAP",t("Map; L - saved maps","Карта; L - список карт")},{"HOME",t("Menu","Главное меню")},{"BACK",t("Previous screen","Предыдущий экран")},{"CTRL",t("Settings","Настройки")},
   {tr("Map pin","Геометка"),t("Announce this node; hold: GPS on/off","Объявить узел; удерж.: GPS вкл/выкл")},{tr("Menu","Меню"),t("App actions and radio controls","Действия и управление связью")},hardware.micKey?Hint{"MIC",t("Lock screen (there is no microphone)","Блокировка (микрофона нет)")}:Hint{tr("hold OK","удерж. OK"),t("Home screen: lock","Главный экран: блокировка")},
   {"OK",t("Open / send; twice or hold: unlock","Открыть / отправить; дважды или удерж.: вход")},{tr("2x space","2×пробел"),t("in text: switch RU/EN; Right: capital","в тексте: RU/EN; -> : заглавная")}};
-#endif
  for(int i=0;i<10;i++){int y=24+i*19;int kw=max(30,measure(keys[i].key,small)+10);g().fillRoundRect(10,y,kw,15,3,line);textCenter(10+kw/2,y+11,keys[i].key,ink,small);text(max(50,kw+16),y+12,fit(keys[i].action,258),i%2?dim:ink);}
  footer({{"OK",t("Russian layout","Русская раскладка")},{"BACK",t("Settings","Настройки")}});
 }
@@ -1149,9 +1133,7 @@ void draw(){
  else if(activePanel!=Panel::Closed)drawActionPanel();
  else switch(page){
  case Spectrum:
-#if defined(MM_UI_PREVIEW) || defined(MM_RADIO_LR1110)
  drawSpectrum();
-#endif
  break;case Memo:drawMemo();break;case Home:drawHome();break;case Threads:drawThreads();break;case Chat:drawChat();break;case Map:drawMap();break;case Library:drawLibrary();break;
  case Nodes:drawNodes();break;case Node:drawNode();break;case Sensors:drawSensors();break;case Settings:drawSettings();break;
  case Radio:case Display:drawEditor();break;case Network:drawNetwork();break;case NetList:drawNetList();break;case Diagnostics:drawDiagnostics();break;case Help:drawHelp();break;
@@ -1240,9 +1222,7 @@ void uiUseDefaultInput(){keyboardRussian=config.inputRussian;lastSpace=0;}
 void uiBegin(){uiUseDefaultInput();lastPhysicalInput=lastInput=millis();page=homePage();openRolePick(true);if(!handheldRead("lock",&credential,sizeof credential))credential.version=UINT32_MAX;if(credentialEnabled())lockScreen();draw();} // the role choice after every boot
 String uiStatus(){StaticJsonDocument<1024>d;if(locked&&credentialEnabled())return "{\"locked\":true,\"page\":\"locked\"}";
  d["panel"]=activePanel==Panel::Actions?"actions":activePanel==Panel::Radios?"radios":"closed";
-#if defined(MM_UI_PREVIEW) || defined(MM_RADIO_LR1110)
  if(page==Spectrum)spectrumStatus(d);
-#endif
  if(page==Home)d["unread"]=unreadTotal();
  if(page==Scope){d["radar_list"]=scopeWide;d["radar_paused"]=scopeHeld;d["radar_row"]=scopeRow;d["radar_rows"]=scopeCount;d["sweep_frames"]=scopeFrames;}
  d["typing_language"]=keyboardRussian?"ru":"en";d["page"]=pageNames[page];if(page==Nodes)d["visible_nodes"]=nodeTotal;if(page==Home||page==Folder)d["layout"]=config.launcherTiles?"tiles":"list";d["role"]=roleName(config.role);if(page==RolePick)d["boot_pick"]=bootPick;if(page==Radio){int p=radiopresets::match(draft);d["radio_preset"]=p<0?"custom":radiopresets::list[p].name;}d["locked"]=locked;d["selected"]=selected;if(page==PeopleView){d["tally_current"]=people::tally.current;d["tally_new"]=tallyAdding();d["tally_value"]=people::value();}if(page==QuickView){d["quick_targets"]=quickTargets;d["quick_to"]=meshRadio.idText(quickReplyTo?quickReplyTo:quickSend::state.to);if(!quickTargets&&selected>0)d["quick_index"]=selected-1;}d["recipient"]=recipient==meshmesh::Broadcast?"ALL":meshRadio.idText(recipient);d["composer"]=composer;d["composer_bytes"]=composer.length();d["keyboard_language"]=keyboardRussian?"RU":"EN";d["editing"]=editing;d["chat_offset"]=chatOffset;d["idle_seconds"]=(millis()-lastInput)/1000;d["layout_help"]=layoutHelp;if(page==Game)gameStatus(d);chessStatus(d);duelStatus(d);tourStatus(d);if(page==Folder){d["folder"]=folderOpen;d["folder_name"]=appsFolderName(folderOpen);}if(appFolder>=0)d["from_folder"]=appFolder;if(page==Node)d["play_menu"]=playMenu;if((page==Nodes||page==Node)&&focusNode)d["selected_node"]=meshRadio.idText(focusNode);if(page==Node){d["action"]=action;if(playMenu)d["play_selected"]=playSel;}if(page==ChannelInfo)d["channel"]=meshRadio.idText(focusChannel);if(page==ChannelAdd)d["add_step"]=int(addStep);d["channels"]=meshRadio.channelCount;if(page==Scope||page==Homing||page==Motion){d["csi_role"]=radar.csi;d["radar_targets"]=radar.count;d["radar_selected"]=liveScopeIndex();d["radar_sound"]=radarSound;}if(page==DiceView){const char* sheets[]={"main","saved","characters","templates","send","offer","block"};d["dice_sheet"]=sheets[diceSheet];d["dice_selected"]=diceSel;d["sheet_block"]=sheetSel;d["sheet_note"]=sheetNote;d["block_field"]=blockField;}String s;serializeJson(d,s);return s;}
@@ -1250,11 +1230,6 @@ void uiKey(int key){if(key!=' ')lastSpace=0;if(powerOffPending())return;bool asl
   static uint32_t firstOk=0;bool twice=key==Enter&&firstOk&&millis()-firstOk<1000;firstOk=key==Enter&&!twice?millis():0;
   if(credentialEnabled()){hardware.lastKey=0;if(!asleep)credentialKey(key);return;}
   if(key==KeyHold||twice){locked=false;int game=lockGame();if(game==1)chessEnter(const_cast<ChessMatch*>(lockChess()));else if(game==2)duelEnter(const_cast<Duel*>(lockDuel()));}return;}if(asleep)return;
-#if defined(MM_BOARD_TDECK)
- // The T-Deck has no BACK key: DEL goes back when there is no text here to delete (DEL tapped in the footer stays DEL).
- bool erase=realErase;realErase=false;
- if(key==Erase&&!erase&&!editing&&credentialStep==CredentialStep::Idle&&!(page==Chat&&composer.length()))key=KeyBack;
-#endif
  if(key==KeyMic){activePanel=Panel::Closed;lockScreen();return;}
  if(credentialStep!=CredentialStep::Idle){credentialKey(key);return;}
  if(layoutHelp){layoutHelp=false;return;}
@@ -1266,9 +1241,7 @@ void uiKey(int key){if(key!=' ')lastSpace=0;if(powerOffPending())return;bool asl
  if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){if(page==Memo||page==Nodes){saveMemo();return;}if(page==ChannelAdd){channelEditSave();return;}if(page==ChessTourNew){tourNameSave();return;}if(page==DiceView){diceEditSave();return;}if(page==PeopleView){tallySaveName();return;}if(page==PetView){if(creature.rename(edit)){editing=false;notice(t("Name saved","Имя сохранено"),ok);}else notice(t("Name: 1-15 UTF-8 bytes","Имя: 1-15 байт UTF-8"),bad);return;}if(page==ServerHome){serverSaveEdit();return;}if(page==Remote){remoteSaveEdit();return;}if(page==ChannelInfo){channelRegionSave();return;}if(page==Radio){String r=regions::normalize(edit);if(edit.length()&&!r.length()){notice(t("Region: letters, digits, '-'","Регион: буквы, цифры, '-'"),bad);return;}strlcpy(draft.region,r.c_str(),sizeof draft.region);editing=false;return;}if(page==NetList){if(edit.length()<8){notice(t("Password: 8-63 characters","Пароль: 8-63 символа"),bad);return;}if(internet.save(pendingSsid,edit)){editing=false;edit="";internet.connectTo(pendingSsid);notice(t("Connecting to ","Подключение к ")+pendingSsid);}else notice(netError(),bad);return;}if(page==Network){StaticJsonDocument<128>d;d["key"]=edit;String r=applySettings(d.as<JsonObjectConst>());if(r.startsWith("OK"))editing=false;notice(r);}else if(edit.length()&&edit.length()<=24&&meshmesh::validUtf8((const uint8_t*)edit.c_str(),edit.length())){strlcpy(draft.name,edit.c_str(),sizeof draft.name);editing=false;}else notice(t("Name: 1-24 UTF-8 bytes","Имя: 1-24 байта UTF-8"),bad);return;}if(key>=32&&key<127){bool raw=page==Network||page==NetList||page==Remote||page==Radio||page==ChannelInfo||(page==DiceView&&diceEditRaw())||(page==ServerHome&&!serverPostEdit())||(page==ChannelAdd&&channelEditRaw());if(!raw&&spaceSwitch(edit,key))return;String ch=raw?String(char(key)):keyboard(key);if(edit.length()+ch.length()<=textByteLimit())edit+=ch;}return;}
  if(activePanel!=Panel::Closed&&actionPanelKey(key))return;
  if(key==KeyMenu&&page!=RolePick){openActionPanel();return;}
-#if defined(MM_UI_PREVIEW) || defined(MM_RADIO_LR1110)
  if(page==Spectrum&&spectrumKey(key))return;
-#endif
  if(page==Node&&playMenu){ // the games of "Play"; other keys (HOME, MSG...) leave the card as usual
   if(key==KeyUp||key==KeyDown||key==KeyLeft||key==KeyRight){playSel=(playSel+(key==KeyUp||key==KeyLeft?playGames-1:1))%playGames;return;}
   if(key==Enter||key==KeyHold){playChoose();return;}if(key==KeyBack||key==Erase){playMenu=false;return;}}
@@ -1420,10 +1393,8 @@ void uiTick(){uint32_t now=millis();
  chessTick();duelTick();tourTick();
  // Homing is used while walking without pressing keys: the screen stays on and unlocked.
  if((page==Homing||page==Motion)&&!locked)lastInput=now;
-#if defined(MM_UI_PREVIEW) || defined(MM_RADIO_LR1110)
  // Keep a user-started sweep visible. A configured credential still locks on physical inactivity.
  if(page==Spectrum&&spectrum::running&&!locked&&activePanel==Panel::Closed)lastInput=now;
-#endif
  // Motion start beeps once (at most every 5 s).
  if(page==Motion&&radar.moving&&!wasMoving&&now-motionBeepAt>5000){motionBeepAt=now;hardware.ping(1800,120);}
  wasMoving=page==Motion&&radar.moving;
@@ -1443,12 +1414,10 @@ void uiTick(){uint32_t now=millis();
  // A dark screen is not drawn: a key lights it and redraws (and light sleep stays short).
  bool scope=page==Scope&&!locked&&activePanel==Panel::Closed;
  bool freshList=scope&&!scopeHeld&&radar.dirty&&now-lastDraw>=500;
-#if defined(MM_UI_PREVIEW) || defined(MM_RADIO_LR1110)
  if(page==Spectrum){
   if(locked||wakeOnly||activePanel!=Panel::Closed)stopSweep();
   else if(advanceSpectrum(now))dirty=true;
  }
-#endif
  bool update=dirty||meshRadio.dirty||maps.dirty||internet.dirty||animate||freshList||now-lastDraw>=1000;
  if(wakeOnly)return;
  if(update&&now-lastDraw>=150){

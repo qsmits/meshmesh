@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os") // 1 MB flash, as UiHeltec.cpp
-#endif
 #include "App.h"
 
 // The screen's apps and folders in the chosen order (config.apps): IDs separated by spaces, "-" before an ID

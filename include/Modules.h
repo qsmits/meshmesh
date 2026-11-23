@@ -28,12 +28,6 @@
 // Checkers and sea battle (Duel.h): MM_NO_CHECKERS, MM_NO_SEA; the shared network code is built with either.
 // The nRF52 images leave them out unless built with MM_WITH_GAMES (tools/nrf52.py package ENV --with-games): with them
 // no language image but English and Russian fits the 1 MB flash, and on the T114 not even that (docs/games.md).
-#if defined(MM_NRF52) && !defined(MM_WITH_GAMES) && !defined(MM_NO_CHECKERS)
-#define MM_NO_CHECKERS 1
-#endif
-#if defined(MM_NRF52) && !defined(MM_WITH_GAMES) && !defined(MM_NO_SEA)
-#define MM_NO_SEA 1
-#endif
 #if defined(MM_NO_CHECKERS)
 #define MM_CHECKERS 0
 #else

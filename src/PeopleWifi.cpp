@@ -1,7 +1,4 @@
 #include "People.h"
-#if defined(MM_NO_WIFI)
-namespace people {void wifiTick(){}void releaseWifi(){}bool wifiRunning(){return false;}const char* wifiState(){return "unsupported";}}
-#else
 #include "App.h"
 #include "Radar.h"
 #include "Internet.h"
@@ -29,4 +26,3 @@ void wifiTick(){if(!settings.wifi||busy()){releaseWifi();state=!settings.wifi?"o
  if(millis()-hopAt>=1000){hopAt=millis();wifi_country_t country{};unsigned first=1,last=11;if(esp_wifi_get_country(&country)==ESP_OK&&country.nchan){first=country.schan;last=country.schan+country.nchan-1;}channel=channel>=last?first:channel+1;esp_wifi_set_channel(channel,WIFI_SECOND_CHAN_NONE);}
 }
 }
-#endif

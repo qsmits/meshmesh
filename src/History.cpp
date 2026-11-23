@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os")
-#endif
 #include "MeshRadio.h"
 #include <time.h>
 static uint32_t upSeconds(){return uint32_t(millis()/1000)+1;}

@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os") // 1 MB flash: the dice are not speed-critical (the rest of the nRF52 image is -O2)
-#endif
 #include "Dice.h"
 #include "MeshRadio.h"
 #include "Hardware.h"
@@ -486,9 +483,6 @@ void Dicer::saveSheet(){
   File f=LittleFS.open(temp.c_str(),FILE_WRITE);if(!f)return;
   bool ok=f.write((const uint8_t*)&h,sizeof h)==sizeof h&&f.write((const uint8_t*)sheet.block,sizeof(Block)*sheet.count)==sizeof(Block)*sheet.count&&f.write((const uint8_t*)sheet.notes,sheet.notesUsed)==sheet.notesUsed;
   f.close();if(!ok){LittleFS.remove(temp.c_str());return;}
-#if defined(MM_NRF52)
-  if(LittleFS.exists(path.c_str()))LittleFS.remove(path.c_str()); // littlefs v1 of the Adafruit core does not rename over a file
-#endif
   LittleFS.rename(temp.c_str(),path.c_str());
 }
 bool Dicer::addCharacter(const String& name,uint8_t tmpl){

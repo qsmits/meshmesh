@@ -1,10 +1,5 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os") // 1 MB flash: icons and shapes are not speed-critical (the rest of our nRF52 code is -O2)
-#endif
 #include "UiIcons.h"
-#if !defined(MM_COMPACT)
 #include "SmoothCanvas.h"
-#endif
 #include "Dice.h"
 #include "Modules.h"
 #include <Arduino.h>
@@ -13,7 +8,6 @@
 namespace {
 void arc(Adafruit_GFX& d,int cx,int cy,int r,int a0,int a1,uint16_t c){for(int a=a0;a<=a1;a+=3){float rad=a*M_PI/180;d.drawPixel(cx+roundf(r*sinf(rad)),cy-roundf(r*cosf(rad)),c);}}
 void thick(Adafruit_GFX& d,int x0,int y0,int x1,int y1,uint16_t c){d.drawLine(x0,y0,x1,y1,c);d.drawLine(x0+1,y0,x1+1,y1,c);}
-#if !defined(MM_COMPACT)
 // Distance to a circular arc, with round caps at the two ends. Pixel centres
 // on the included sweep use radial distance, including sweeps over 180°.
 void arc(SmoothCanvas& d,int cx,int cy,int r,int a0,int a1,uint16_t c){
@@ -31,7 +25,6 @@ void arc(SmoothCanvas& d,int cx,int cy,int r,int a0,int a1,uint16_t c){
  }
 }
 void thick(SmoothCanvas& d,int x0,int y0,int x1,int y1,uint16_t c){d.strokeLine(x0,y0,x1,y1,1.75f,c);}
-#endif
 }
 template<class Canvas> static void paintIcon(Canvas& d,Icon id,int cx,int cy,int s,uint16_t c,uint16_t hole,uint16_t shade){
  int h=s/2,q=max(1,s/4),w=max(1,s/8);
@@ -118,7 +111,6 @@ void drawStatShape(Adafruit_GFX& d,uint8_t shape,int cx,int cy,int r,uint16_t fi
   paintStat(d, shape, cx, cy, r, fill, edge);
 }
 
-#if !defined(MM_COMPACT)
 void drawIcon(SmoothCanvas& d,Icon id,int cx,int cy,int s,uint16_t c,uint16_t hole,uint16_t shade) {
   // Optical adjustments for the small LCD icons. Join the tail well inside
   // the bubble and leave enough room between cutouts at status-bar sizes.
@@ -160,4 +152,3 @@ void drawDieShape(SmoothCanvas& d,uint8_t shape,int cx,int cy,int s,uint16_t fil
 void drawStatShape(SmoothCanvas& d,uint8_t shape,int cx,int cy,int r,uint16_t fill,uint16_t edge) {
   paintStat(d, shape, cx, cy, r, fill, edge);
 }
-#endif

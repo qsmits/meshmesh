@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os")
-#endif
 #include "Notifications.h"
 #include "Config.h"
 #include "I18n.h"

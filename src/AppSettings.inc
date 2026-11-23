@@ -7,17 +7,12 @@ void profileJson(JsonObject o,const RadioProfile& r){o["frequency"]=r.frequency;
 String configJson(bool includeKey) {
   DynamicJsonDocument d(2560);d["name"]=config.name;d["frequency"]=config.frequency;d["bandwidth"]=config.bandwidth;d["sf"]=config.sf;d["cr"]=config.cr;d["power"]=config.power;
   d["hops"]=config.hops;d["path_hash"]=config.pathHash;d["relay"]=config.relay;d["gps"]=config.gps;d["sound"]=config.sound;d["battery_volts"]=config.batteryVolts;d["lang"]=langCodes[config.lang<LangCount?config.lang:0];d["russian"]=config.lang==LangRu;d["brightness"]=config.brightness;if(includeKey)d["key"]=config.keyHex();
-#if !defined(MM_COMPACT)
   d["theme"]=config.theme;d["accent_color"]=config.accentColor;d["night_light"]=config.nightBrightness;
   d["input_language"]=config.inputRussian?"ru":"en";
   d["launcher_tiles"]=config.launcherTiles;
-#endif
   d["auto_lock"]=config.autoLock;d["dim_after"]=config.dimAfter;d["lock_details"]=config.lockDetails;
   d["notify_led"]=config.notifyLed;d["notify_wake"]=config.notifyWake;d["notify_popup"]=config.notifyPopup;d["notify_failed"]=config.notifyFailed;d["notify_words"]=config.notifyWords;
   d["utc_offset"]=config.utcOffset;d["apps"]=appsText(config.apps);d["region"]=config.region;d["preset"]=config.preset;d["net_auto"]=config.netAuto;
-#if defined(MM_ONE_BUTTON)
-  d["double_back"]=config.doubleBack; // the page shows the switch only where the board has it
-#endif
   if(config.previous.set())profileJson(d.createNestedObject("radio_prev"),config.previous);
   if(config.trial.set())profileJson(d.createNestedObject("radio_trial"),config.trial);
   String s;serializeJson(d,s);return s;
@@ -56,7 +51,6 @@ String applySettings(JsonObjectConst v) {
       AppMenu menu;
       if(!value.is<const char*>()||!appsParse(value.as<const char*>(),menu,true)){String all;for(uint8_t i=0;i<uiAppCount;i++)all+=String(i?" ":"")+uiApps[i];return "ERR apps: IDs separated by spaces, -ID hides, {NAME ID ...} is a folder (up to 6): "+all;}
       String text=appsText(value.as<const char*>());if(text.length()>=sizeof next.apps)return "ERR apps: too long";strlcpy(next.apps,text.c_str(),sizeof next.apps);
-#if !defined(MM_COMPACT)
     } else if(name=="theme"||name=="accent_color"||name=="night_light"){
       if(!value.is<unsigned>())return "ERR display setting";
       unsigned n=value.as<unsigned>();
@@ -71,7 +65,6 @@ String applySettings(JsonObjectConst v) {
     } else if(name=="launcher_tiles") {
       if(!value.is<bool>())return "ERR boolean required";
       next.launcherTiles=value.as<bool>();
-#endif
     } else if(name=="region") { // "" or "*": none; the same name keeps its key (an app may have set a private one)
       if(!value.is<const char*>())return "ERR region: text";String raw=value.as<String>();raw.trim();
       if(!raw.length()||raw==regions::Unscoped){next.region[0]=0;memset(next.regionKey,0,16);}
@@ -99,9 +92,7 @@ String applySettings(JsonObjectConst v) {
   if(radioChanged&&meshRadio.busy()){config=old;return "ERR radio busy; retry";}
   if(radioChanged&&!meshRadio.applyConfig()) {config=old;meshRadio.applyConfig();return "ERR radio rejected settings; restored previous";}
   if(!config.save()){config=old;if(radioChanged)meshRadio.applyConfig();return "ERR settings storage; restored previous";}
-#if !defined(MM_COMPACT)
   if(old.inputRussian!=config.inputRussian)uiUseDefaultInput();
-#endif
   meshServer.configChanged();if(strcmp(old.name,config.name))bleRename();if(old.brightness!=config.brightness)hardware.brightness(uiScreenOff()?0:config.brightness);if(old.gps!=config.gps)hardware.setGps(config.gps);
   meshRadio.event="Settings saved";meshRadio.dirty=true;return "OK settings saved";
 }

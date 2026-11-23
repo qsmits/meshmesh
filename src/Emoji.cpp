@@ -1,6 +1,3 @@
-#if defined(MM_NRF52)
-#pragma GCC optimize("Os") // 1 MB flash (AGENTS.md, "Языки")
-#endif
 #define EMOJI_DATA_DEFINE
 #include "Emoji.h"
 namespace emoji {
