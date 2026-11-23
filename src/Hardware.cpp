@@ -40,12 +40,17 @@ void Hardware::probeM9Keyboard() {
     break;
   }
 }
+// On the M9 V1.1 (keyboard at 0x6d, Airoha AG3335) the GPS enable is active HIGH, GPIO10 is pulsed after
+// power-on and $PAIR650 (backup mode) is sent before power-off, as the stock firmware does. V1.0: active LOW.
+// Thanks to Bas van Dijk for the V1.1 wake pulse and backup command.
 void Hardware::setGps(bool enabled) {
+  const bool v11 = keyboardAddress==keyboardV11;
+  if(!enabled && gpsEnabled && v11) {Serial1.print("$PAIR650,0*25\r\n");Serial1.flush();delay(40);}
   gpsEnabled=enabled;
-  // On the M9 V1.1 the keyboard address and the GPS enable polarity both changed.
-  const int gpsOnLevel = keyboardAddress==keyboardV11 ? HIGH : LOW;
+  const int gpsOnLevel = v11 ? HIGH : LOW;
   digitalWrite(pins::gpsEnable,enabled ? gpsOnLevel : !gpsOnLevel);
   digitalWrite(pins::gpsReset,LOW);
+  if(enabled && v11) {delay(50);digitalWrite(pins::gpsWake,HIGH);delay(5);digitalWrite(pins::gpsWake,LOW);}
   // 115200 baud: the default 256-byte buffer holds 22 ms, less than a map frame; lost sentences fail their checksums.
   if(enabled) {Serial1.setRxBufferSize(2048);Serial1.begin(115200,SERIAL_8N1,pins::gpsRx,pins::gpsTx);lastGpsBaud=millis();}
   else Serial1.end();
@@ -55,8 +60,8 @@ void Hardware::begin() {
   gpio_deep_sleep_hold_dis();
   for(int pin:{pins::backlight,pins::peripheralPower}) {rtc_gpio_hold_dis(gpio_num_t(pin));pinMode(pin,OUTPUT);digitalWrite(pin,LOW);}
   for(int pin:{pins::radioCs,pins::lcdCs,pins::sdCs}) {gpio_hold_dis(gpio_num_t(pin));pinMode(pin,OUTPUT);digitalWrite(pin,HIGH);}
-  pinMode(pins::gpsEnable,OUTPUT);pinMode(pins::gpsReset,OUTPUT);pinMode(pins::buzzer,OUTPUT);
-  digitalWrite(pins::buzzer,LOW);
+  pinMode(pins::gpsEnable,OUTPUT);pinMode(pins::gpsReset,OUTPUT);pinMode(pins::gpsWake,OUTPUT);pinMode(pins::buzzer,OUTPUT);
+  digitalWrite(pins::buzzer,LOW);digitalWrite(pins::gpsWake,LOW);
   SPI.begin(pins::spiClock,pins::spiMiso,pins::spiMosi);
   display.init(240,320,SPI_MODE0);display.setSPISpeed(40000000);display.setRotation(1);display.fillScreen(0x0862);
   ledcSetup(7,5000,8);ledcAttachPin(pins::backlight,7);brightness(config.backlight(time(nullptr)));
