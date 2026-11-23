@@ -12,7 +12,7 @@ so channels and QR codes are interchangeable with them.
 
 | Way | M9 and T-Deck | Web page | Android app | Heltec, GAT562 etc. (OLED) |
 |---|---|---|---|---|
-| Hashtag (`#name`) | Chats → “Add a channel” | yes | yes | via the page or the app |
+| Hashtag (`#name`) | Chats → Menu → “Add a channel” | yes | yes | via the page or the app |
 | Link `meshcore://channel/add?...` | — (no need to type a long link: see invitations) | paste | paste, open from another app | via the page or the app |
 | QR code | shows the QR of its channel | shows the QR | scans with the camera and shows | — |
 | Name and key (32 hex or base64) | yes | yes | yes | via the page or the app |
@@ -54,7 +54,7 @@ a message (151 bytes) URL-encoded; then its letters go as they are, without `%D0
 
 ## Controls
 
-- **M9, T-Deck.** Chats: Public, the channels, “Add a channel”, then direct conversations. On a channel row
+- **M9, T-Deck.** Chats shows Public, joined channels and direct conversations. Press U for the next unread conversation. Use Chats → Menu → Add a channel to join or create one. On a channel row
   ←/→ open the channel card, in a channel chat the ← key. Card: QR code, hash, key of a private channel,
   “Invite” (←/→ choose the contact), “Leave channel” (OK twice).
 - **Heltec, GAT562 and other OLED boards.** Messages name their channel (`Marat #kazan`); the “OK”/“Got it”
