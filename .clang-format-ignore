@@ -1,0 +1,6 @@
+include/I18nTable.h
+include/I18nFonts.h
+include/EmojiData.h
+include/RootCerts.h
+include/Version.h
+src/DisplayFontData.inc

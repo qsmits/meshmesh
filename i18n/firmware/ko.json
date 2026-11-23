@@ -55,10 +55,6 @@
   "en": "Counter ",
   "text": "카운터 "
  },
- "f2d8afbf": {
-  "en": "Choose recipient",
-  "text": "수신자 선택"
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "알겠습니다"
@@ -90,6 +86,1418 @@
  "e774d890": {
   "en": "Battery low",
   "text": "배터리 부족"
+ },
+ "f2d8afbf": {
+  "en": "Choose recipient",
+  "text": "수신자 선택"
+ },
+ "af34335c": {
+  "en": "Internet",
+  "text": "인터넷"
+ },
+ "0b728291": {
+  "en": "All off",
+  "text": "모두 꺼짐"
+ },
+ "c0b2703d": {
+  "en": {
+   "one": "new message",
+   "other": "new messages"
+  },
+  "forms": {
+   "other": "새 메시지 {n}개"
+  }
+ },
+ "8f7412e6": {
+  "en": " of ",
+  "text": " / "
+ },
+ "4f1014c0": {
+  "en": " nearby",
+  "text": " 근처"
+ },
+ "e50e2dad": {
+  "en": {
+   "one": "sat",
+   "other": "sats"
+  },
+  "forms": {
+   "other": "위성 {n}개"
+  }
+ },
+ "84e158a3": {
+  "en": "GPS: searching",
+  "text": "GPS: 검색 중"
+ },
+ "7f9b88be": {
+  "en": "GPS off",
+  "text": "GPS 꺼짐"
+ },
+ "517f4378": {
+  "en": "Online map",
+  "text": "온라인 지도"
+ },
+ "b40c44cd": {
+  "en": "No SD card",
+  "text": "SD 카드 없음"
+ },
+ "2c64a5cf": {
+  "en": "No maps yet",
+  "text": "지도 없음"
+ },
+ "4b896fbb": {
+  "en": "Radar",
+  "text": "레이더"
+ },
+ "c0de6b7d": {
+  "en": {
+   "one": "point",
+   "other": "points"
+  },
+  "forms": {
+   "other": "{n}개 지점"
+  }
+ },
+ "db89a899": {
+  "en": "Connect",
+  "text": "연결"
+ },
+ "a4bb08e5": {
+  "en": {
+   "one": "fault",
+   "other": "faults"
+  },
+  "forms": {
+   "other": "오류 {n}"
+  }
+ },
+ "010ffdb6": {
+  "en": "All OK",
+  "text": "모두 정상"
+ },
+ "67a31c2c": {
+  "en": "Radio, screen",
+  "text": "무선, 화면"
+ },
+ "1520e768": {
+  "en": " MHz · SF",
+  "text": " MHz · SF"
+ },
+ "168512be": {
+  "en": "Radio error ",
+  "text": "무선 오류 "
+ },
+ "538b10e9": {
+  "en": "Open",
+  "text": "열기"
+ },
+ "3750eb16": {
+  "en": "Radio controls",
+  "text": "무선 제어"
+ },
+ "19ede191": {
+  "en": {
+   "one": "app",
+   "other": "apps"
+  },
+  "forms": {
+   "other": "앱 {n}개"
+  }
+ },
+ "832f1cca": {
+  "en": " waiting",
+  "text": " 대기 중"
+ },
+ "2c6a14ea": {
+  "en": "Folders and order: web page or app",
+  "text": "폴더와 순서: 웹 페이지 또는 앱"
+ },
+ "6e19da59": {
+  "en": "No apps in this folder",
+  "text": "이 폴더에 앱 없음"
+ },
+ "00c6075a": {
+  "en": "Menu",
+  "text": "메인 메뉴"
+ },
+ "3e892b4d": {
+  "en": "Select",
+  "text": "선택"
+ },
+ "66836516": {
+  "en": "You: ",
+  "text": "나: "
+ },
+ "51e7624c": {
+  "en": "No messages yet",
+  "text": "메시지 없음"
+ },
+ "32e97c4a": {
+  "en": "Open MeshCore channel",
+  "text": "MeshCore 공개 채널"
+ },
+ "9c9c5d7e": {
+  "en": "Open channel · no messages yet",
+  "text": "공개 채널 · 메시지 없음"
+ },
+ "543bd3e9": {
+  "en": "Private channel · no messages yet",
+  "text": "비공개 채널 · 메시지 없음"
+ },
+ "e65fb504": {
+  "en": "Actions",
+  "text": "동작"
+ },
+ "33a4b02f": {
+  "en": "Next unread",
+  "text": "다음 안 읽음"
+ },
+ "4648e8a8": {
+  "en": "Private channel · senders unverified · no ACK",
+  "text": "비공개 채널 · 발신자 미검증 · ACK 없음"
+ },
+ "46718231": {
+  "en": "Open channel · senders unverified · no ACK",
+  "text": "공개 채널 · 발신자 미검증 · ACK 없음"
+ },
+ "c4e598ca": {
+  "en": "logged in",
+  "text": "로그인됨"
+ },
+ "ab1fafa1": {
+  "en": "log in: node card > Server",
+  "text": "로그인: 노드 카드 > 서버"
+ },
+ "91455582": {
+  "en": "Not in contacts",
+  "text": "연락처에 없음"
+ },
+ "e99aa76f": {
+  "en": "not confirmed",
+  "text": "미확인"
+ },
+ "1a940c2a": {
+  "en": "Type and press OK to send",
+  "text": "입력 후 OK를 눌러 보내기"
+ },
+ "f574869a": {
+  "en": "Message...",
+  "text": "메시지..."
+ },
+ "f28e14cf": {
+  "en": "Send",
+  "text": "전송"
+ },
+ "68f399b1": {
+  "en": "Clipboard",
+  "text": "복사 메뉴"
+ },
+ "72d06ea7": {
+  "en": "Finding location by IP...",
+  "text": "IP로 위치 찾는 중..."
+ },
+ "851e5ac2": {
+  "en": "Needs Wi-Fi internet or an SD card",
+  "text": "Wi-Fi 인터넷 또는 SD 카드 필요"
+ },
+ "77c28af9": {
+  "en": "Connect Wi-Fi or load a map",
+  "text": "Wi-Fi를 연결하거나 지도를 넣으세요"
+ },
+ "119314d0": {
+  "en": "GPS will take over after a fix",
+  "text": "GPS 위치가 잡히면 그쪽으로 이동"
+ },
+ "c19b47bb": {
+  "en": "Connections > Internet over Wi-Fi",
+  "text": "연결 > Wi-Fi 인터넷"
+ },
+ "b59a5b35": {
+  "en": "Downloading map...",
+  "text": "지도 다운로드 중..."
+ },
+ "e6aae7d4": {
+  "en": "Reading map from SD...",
+  "text": "SD에서 지도 읽는 중..."
+ },
+ "ba994464": {
+  "en": "Tiles unavailable",
+  "text": "타일 사용 불가"
+ },
+ "66643a4a": {
+  "en": "This zoom is not downloaded",
+  "text": "이 배율은 받지 않음"
+ },
+ "29cc0d19": {
+  "en": "+/- zoom · Wi-Fi internet loads maps",
+  "text": "+/- 배율 · Wi-Fi 인터넷으로 지도 로드"
+ },
+ "a3b1d86e": {
+  "en": "Offline map",
+  "text": "오프라인 지도"
+ },
+ "59317dec": {
+  "en": " · loading",
+  "text": " · 로드 중"
+ },
+ "1d1e1a72": {
+  "en": "GPS: old date",
+  "text": "GPS: 오래된 날짜"
+ },
+ "b45aef8c": {
+  "en": "Pan",
+  "text": "이동"
+ },
+ "62399752": {
+  "en": "Zoom",
+  "text": "배율"
+ },
+ "9fa2c938": {
+  "en": "Following",
+  "text": "따라가기"
+ },
+ "3f654d20": {
+  "en": "To GPS",
+  "text": "GPS로"
+ },
+ "04dfc93c": {
+  "en": "No saved maps",
+  "text": "저장된 지도 없음"
+ },
+ "dcf1e39a": {
+  "en": "Upload a map via Wi-Fi or USB",
+  "text": "Wi-Fi나 USB로 지도를 올리세요"
+ },
+ "7c620193": {
+  "en": {
+   "one": "tile on SD",
+   "other": "tiles on SD"
+  },
+  "forms": {
+   "other": "SD에 타일 {n}개"
+  }
+ },
+ "bd794432": {
+  "en": "No matching contacts",
+  "text": "일치하는 연락처 없음"
+ },
+ "4e5a0349": {
+  "en": "No nodes discovered yet",
+  "text": "발견된 노드 없음"
+ },
+ "8a8a895b": {
+  "en": "F: edit tag filter",
+  "text": "F: 태그 필터 편집"
+ },
+ "2ad4b008": {
+  "en": "Advertise my node",
+  "text": "내 노드 알리기"
+ },
+ "e2339f44": {
+  "en": "saved",
+  "text": "저장됨"
+ },
+ "0ec24245": {
+  "en": "Details",
+  "text": "정보"
+ },
+ "f4a9c097": {
+  "en": "Filter",
+  "text": "필터"
+ },
+ "c2954bc2": {
+  "en": "Back",
+  "text": "뒤로"
+ },
+ "c416a424": {
+  "en": "Node was removed",
+  "text": "노드가 삭제됨"
+ },
+ "81ef07a9": {
+  "en": "Last heard",
+  "text": "마지막 수신"
+ },
+ "4f0a0e98": {
+  "en": " ago",
+  "text": " 전"
+ },
+ "1ae89b50": {
+  "en": "not since boot",
+  "text": "부팅 후 수신 없음"
+ },
+ "2fce4529": {
+  "en": "Signal",
+  "text": "신호"
+ },
+ "d7d630be": {
+  "en": "Route",
+  "text": "경로"
+ },
+ "cd08221c": {
+  "en": " · flood",
+  "text": " · flood"
+ },
+ "e27f342a": {
+  "en": "Position",
+  "text": "위치"
+ },
+ "a3ad51f3": {
+  "en": "not shared",
+  "text": "공유 안 함"
+ },
+ "b8297e9a": {
+  "en": "Room",
+  "text": "룸"
+ },
+ "ae0ed984": {
+  "en": "Message",
+  "text": "메시지"
+ },
+ "8f635566": {
+  "en": "On map",
+  "text": "지도에"
+ },
+ "db5485e7": {
+  "en": "Reset path",
+  "text": "경로 초기화"
+ },
+ "2d44294d": {
+  "en": "Sure?",
+  "text": "정말?"
+ },
+ "6e3fab8c": {
+  "en": "Forget",
+  "text": "삭제"
+ },
+ "6d7302f2": {
+  "en": "Server",
+  "text": "서버"
+ },
+ "26f8e74e": {
+  "en": "Trace",
+  "text": "추적"
+ },
+ "0a77a91f": {
+  "en": "Action",
+  "text": "작업"
+ },
+ "8d57e66a": {
+  "en": "Run",
+  "text": "실행"
+ },
+ "0ff01b6a": {
+  "en": "Notes",
+  "text": "메모"
+ },
+ "d112e127": {
+  "en": "hold flat",
+  "text": "평평하게 드세요"
+ },
+ "1a45dda5": {
+  "en": "not calibrated",
+  "text": "보정 안 됨"
+ },
+ "ab3a8a0a": {
+  "en": "off",
+  "text": "꺼짐"
+ },
+ "b2e48278": {
+  "en": "fix",
+  "text": "위치 확보"
+ },
+ "620f3cc6": {
+  "en": "old date",
+  "text": "오래된 날짜"
+ },
+ "67ce0277": {
+  "en": "searching",
+  "text": "검색 중"
+ },
+ "f5e7befb": {
+  "en": "Satellites",
+  "text": "위성"
+ },
+ "a2009955": {
+  "en": " in view",
+  "text": " 보임"
+ },
+ "6d7e4165": {
+  "en": "Latitude",
+  "text": "위도"
+ },
+ "671964ee": {
+  "en": "Longitude",
+  "text": "경도"
+ },
+ "bb5f80fd": {
+  "en": "Clock",
+  "text": "시계"
+ },
+ "ffa35e26": {
+  "en": "not set",
+  "text": "미설정"
+ },
+ "219101e3": {
+  "en": "manual",
+  "text": "수동"
+ },
+ "d2cdcecb": {
+  "en": " · trusted",
+  "text": " · 신뢰됨"
+ },
+ "bb77a2cf": {
+  "en": "Compass",
+  "text": "나침반"
+ },
+ "1db880db": {
+  "en": {
+   "one": "sample",
+   "other": "samples"
+  },
+  "forms": {
+   "other": "샘플 {n}개"
+  }
+ },
+ "37b8f592": {
+  "en": "calibrated",
+  "text": "보정됨"
+ },
+ "75c3ffb2": {
+  "en": "needs calibration",
+  "text": "보정 필요"
+ },
+ "ff05911b": {
+  "en": "Share position",
+  "text": "위치 공유"
+ },
+ "7629db5a": {
+  "en": "Finish calibration",
+  "text": "보정 완료"
+ },
+ "6f59150a": {
+  "en": "Calibrate compass",
+  "text": "나침반 보정"
+ },
+ "e125a9a1": {
+  "en": "Advert with GPS",
+  "text": "GPS 포함 알림"
+ },
+ "10b78d8a": {
+  "en": "Needs a fresh GPS fix",
+  "text": "새 GPS 위치 필요"
+ },
+ "a603b11c": {
+  "en": "Rotate in all directions",
+  "text": "장치를 모든 방향으로 돌리세요"
+ },
+ "7f8e9f6b": {
+  "en": "Rotate for 20+ seconds",
+  "text": "20초 이상 돌리세요"
+ },
+ "45465004": {
+  "en": "GPS on",
+  "text": "GPS 켜기"
+ },
+ "4930944f": {
+  "en": "Phone",
+  "text": "휴대폰"
+ },
+ "ec266ec8": {
+  "en": "Watch",
+  "text": "시계"
+ },
+ "89a2ef46": {
+  "en": "Headphones",
+  "text": "헤드폰"
+ },
+ "fae1ce6b": {
+  "en": "Phone/watch",
+  "text": "휴대폰/시계"
+ },
+ "7e3d4120": {
+  "en": "BLE device",
+  "text": "BLE 장치"
+ },
+ "9e13a743": {
+  "en": "Hidden network",
+  "text": "숨겨진 네트워크"
+ },
+ "90cbadfa": {
+  "en": "Bluetooth busy: probe",
+  "text": "Bluetooth 사용 중: 검사"
+ },
+ "e5e4ab77": {
+  "en": "Bluetooth error",
+  "text": "Bluetooth 오류"
+ },
+ "983f66dc": {
+  "en": "Wi-Fi busy: access point",
+  "text": "Wi-Fi 사용 중: 액세스 포인트"
+ },
+ "35c403f6": {
+  "en": "Wi-Fi busy: probe",
+  "text": "Wi-Fi 사용 중: 검사"
+ },
+ "1be7979b": {
+  "en": "Wi-Fi error",
+  "text": "Wi-Fi 오류"
+ },
+ "89414ad6": {
+  "en": "Scanning Wi-Fi...",
+  "text": "Wi-Fi 검색 중..."
+ },
+ "542d8f50": {
+  "en": "closer to centre = stronger",
+  "text": "중심에 가까울수록 강함"
+ },
+ "fde56fad": {
+  "en": "List paused",
+  "text": "목록 일시 정지"
+ },
+ "503d6eed": {
+  "en": {
+   "one": "phone/watch nearby",
+   "other": "phones/watches nearby"
+  },
+  "forms": {
+   "other": "근처 휴대폰/시계 {n}대"
+  }
+ },
+ "49031ccd": {
+  "en": "No signals yet",
+  "text": "아직 신호 없음"
+ },
+ "8d2937a1": {
+  "en": "List",
+  "text": "목록"
+ },
+ "454d1d8a": {
+  "en": "Resume",
+  "text": "재개"
+ },
+ "44f9bf2d": {
+  "en": "Pause",
+  "text": "일시 정지"
+ },
+ "3368e695": {
+  "en": "Home in",
+  "text": "추적"
+ },
+ "aad07647": {
+  "en": "Motion",
+  "text": "움직임"
+ },
+ "84397af6": {
+  "en": " · direct packets only",
+  "text": " · 직접 패킷만"
+ },
+ "b8a018ba": {
+  "en": " · address changes over time",
+  "text": " · 주소가 수시로 바뀜"
+ },
+ "a8e7e5cc": {
+  "en": "channel ",
+  "text": "채널 "
+ },
+ "64db285b": {
+  "en": "Lost",
+  "text": "놓침"
+ },
+ "46102346": {
+  "en": "No signal",
+  "text": "신호 없음"
+ },
+ "3b06b3cd": {
+  "en": "Stronger",
+  "text": "강해짐"
+ },
+ "4dd880a2": {
+  "en": "Weaker",
+  "text": "약해짐"
+ },
+ "cd945433": {
+  "en": "Steady",
+  "text": "유지"
+ },
+ "184745be": {
+  "en": "keep moving",
+  "text": "계속 이동"
+ },
+ "78c14fb6": {
+  "en": "peak ",
+  "text": "최고 "
+ },
+ "b991041c": {
+  "en": "Waiting for samples",
+  "text": "샘플 대기 중"
+ },
+ "cde081d3": {
+  "en": {
+   "one": "packet",
+   "other": "packets"
+  },
+  "forms": {
+   "other": "패킷 {n}개"
+  }
+ },
+ "0ec969ac": {
+  "en": " adverts/s",
+  "text": " 알림/초"
+ },
+ "93382782": {
+  "en": " beacons/s",
+  "text": " 비콘/초"
+ },
+ "42cfcb2d": {
+  "en": " s ago",
+  "text": " 초 전"
+ },
+ "3f609f74": {
+  "en": "Mute",
+  "text": "음소거"
+ },
+ "b3ca9a34": {
+  "en": "Sound",
+  "text": "소리"
+ },
+ "68f7fd73": {
+  "en": "Reset peak",
+  "text": "최고치 초기화"
+ },
+ "394ec4f2": {
+  "en": "Turn the access point off",
+  "text": "액세스 포인트를 끄세요"
+ },
+ "fccfe8a5": {
+  "en": "Beacon for another board",
+  "text": "다른 보드용 비콘"
+ },
+ "bfacb4d0": {
+  "en": " frames/s on channel 1",
+  "text": " 프레임/초, 채널 1"
+ },
+ "6d3d79bb": {
+  "en": "beacon ",
+  "text": "비콘 "
+ },
+ "d7972182": {
+  "en": " frames/s · ",
+  "text": " 프레임/초 · "
+ },
+ "b85b81cf": {
+  "en": "waiting: set the other board to CSI beacon",
+  "text": "대기 중: 다른 보드를 CSI 비콘으로 설정"
+ },
+ "1d0cdb24": {
+  "en": "NO WI-FI",
+  "text": "WI-FI 없음"
+ },
+ "e9a87b56": {
+  "en": "BEACON ON",
+  "text": "비콘 켜짐"
+ },
+ "564cdaca": {
+  "en": "NO BEACON",
+  "text": "비콘 없음"
+ },
+ "9a1796e8": {
+  "en": "CSI FROZEN",
+  "text": "CSI 정지됨"
+ },
+ "dd26ae1f": {
+  "en": "CALIBRATING ",
+  "text": "보정 중 "
+ },
+ "5ec52fe4": {
+  "en": " s",
+  "text": " 초"
+ },
+ "4d851fe7": {
+  "en": "MOTION",
+  "text": "움직임"
+ },
+ "6fce5d71": {
+  "en": "STILL",
+  "text": "정지"
+ },
+ "13d6d724": {
+  "en": "activity ",
+  "text": "활동 "
+ },
+ "1e3add08": {
+  "en": "threshold ",
+  "text": "임계값 "
+ },
+ "dda163c5": {
+  "en": " (default)",
+  "text": " (기본값)"
+ },
+ "19deef04": {
+  "en": "Walk between the boards to see the trace",
+  "text": "보드 사이를 걸으면 흔적이 보입니다"
+ },
+ "faa0c1ab": {
+  "en": "Calibrate with the area empty and still (10 s)",
+  "text": "구역을 비우고 움직임 없이 보정 (10초)"
+ },
+ "4204187c": {
+  "en": "Place the boards 2-5 m apart; motion between them is sensed",
+  "text": "보드를 2-5 m 간격으로 두면 그 사이 움직임 감지"
+ },
+ "9bb72cae": {
+  "en": "Signals",
+  "text": "신호"
+ },
+ "6fb7daa2": {
+  "en": "Calibrate",
+  "text": "보정"
+ },
+ "4d580639": {
+  "en": "Beacon",
+  "text": "비콘"
+ },
+ "5427923a": {
+  "en": "To turn on, hold the trackball pressed",
+  "text": "켜기: 트랙볼을 누른 채 유지"
+ },
+ "b1e20664": {
+  "en": "To turn on: RESET or the power switch",
+  "text": "켜기: RESET 또는 전원 스위치"
+ },
+ "cba7fbe8": {
+  "en": "Device is off",
+  "text": "기기가 꺼졌습니다"
+ },
+ "2697628b": {
+  "en": "Turning off...",
+  "text": "끄는 중..."
+ },
+ "b639f585": {
+  "en": "GPS & compass",
+  "text": "GPS 및 나침반"
+ },
+ "dde0a6be": {
+  "en": "Keys & help",
+  "text": "키 및 도움말"
+ },
+ "cd03e04b": {
+  "en": "Turn off",
+  "text": "끄기"
+ },
+ "a21b5cde": {
+  "en": "Brightness ",
+  "text": "밝기 "
+ },
+ "e1b4bdaa": {
+  "en": "compass calibrated",
+  "text": "나침반 보정됨"
+ },
+ "e8f719bd": {
+  "en": "compass not calibrated",
+  "text": "나침반 보정 안 됨"
+ },
+ "7316bebd": {
+  "en": " relayed",
+  "text": " 중계됨"
+ },
+ "4f18c10c": {
+  "en": "What every key does",
+  "text": "각 키의 기능"
+ },
+ "7e8a19d5": {
+  "en": "Searching: ",
+  "text": "검색 중: "
+ },
+ "9a555563": {
+  "en": {
+   "one": "repeater",
+   "other": "repeaters"
+  },
+  "forms": {
+   "other": "리피터 {n}개"
+  }
+ },
+ "1a8c15c3": {
+  "en": {
+   "one": "region",
+   "other": "regions"
+  },
+  "forms": {
+   "other": "지역 {n}개"
+  }
+ },
+ "99f30427": {
+  "en": "OK: start",
+  "text": "OK: 시작"
+ },
+ "9fca3c9e": {
+  "en": "Listening ",
+  "text": "수신 중 "
+ },
+ "a3980ce8": {
+  "en": "Nothing new",
+  "text": "새 항목 없음"
+ },
+ "443ffd47": {
+  "en": "OK: test ",
+  "text": "OK: 테스트 "
+ },
+ "2265ebb1": {
+  "en": "Current profile: ",
+  "text": "현재 프로필: "
+ },
+ "34f428b1": {
+  "en": "Try every regional preset",
+  "text": "모든 지역 프리셋 시도"
+ },
+ "c91eb13e": {
+  "en": "Preset",
+  "text": "프리셋"
+ },
+ "8d9206a1": {
+  "en": "Frequency",
+  "text": "주파수"
+ },
+ "008f5512": {
+  "en": "Bandwidth",
+  "text": "대역폭"
+ },
+ "d174bc31": {
+  "en": "Spreading factor",
+  "text": "확산 계수"
+ },
+ "3c2364a7": {
+  "en": "Coding rate",
+  "text": "부호율"
+ },
+ "92d39d44": {
+  "en": "TX power",
+  "text": "송신 출력"
+ },
+ "175749a2": {
+  "en": "Relay hop limit",
+  "text": "중계 홉 한도"
+ },
+ "75193707": {
+  "en": "Relay packets",
+  "text": "패킷 중계"
+ },
+ "2197c64b": {
+  "en": "Path hash size",
+  "text": "경로 해시 크기"
+ },
+ "492e789d": {
+  "en": "Region",
+  "text": "지역"
+ },
+ "b872ed2b": {
+  "en": "Find regions",
+  "text": "지역 찾기"
+ },
+ "eb38bf4c": {
+  "en": "Find network",
+  "text": "네트워크 찾기"
+ },
+ "24646b98": {
+  "en": "Radio test",
+  "text": "무선 테스트"
+ },
+ "0614ba0b": {
+  "en": "Previous radio",
+  "text": "이전 무선"
+ },
+ "0fe07306": {
+  "en": "Name",
+  "text": "이름"
+ },
+ "9a73db9b": {
+  "en": "Language",
+  "text": "언어"
+ },
+ "df6e627c": {
+  "en": "Day brightness",
+  "text": "주간 밝기"
+ },
+ "73d459b4": {
+  "en": "Home layout",
+  "text": "메인 화면 보기"
+ },
+ "4ef0ddc5": {
+  "en": "Sounds",
+  "text": "소리"
+ },
+ "300ec32d": {
+  "en": "Auto lock",
+  "text": "자동 잠금"
+ },
+ "1f0bca87": {
+  "en": "Dim screen",
+  "text": "화면 어둡게"
+ },
+ "37976ee4": {
+  "en": "GPS receiver",
+  "text": "GPS 수신기"
+ },
+ "f050c5bc": {
+  "en": "UTC offset",
+  "text": "UTC 오프셋"
+ },
+ "caa82244": {
+  "en": "Battery shows",
+  "text": "배터리 표시"
+ },
+ "fecd422a": {
+  "en": "Lock screen",
+  "text": "잠금 화면"
+ },
+ "667ad2f5": {
+  "en": "Wake on message",
+  "text": "메시지로 깨우기"
+ },
+ "98b6a9f6": {
+  "en": "Message popup",
+  "text": "메시지 팝업"
+ },
+ "4eaf7c92": {
+  "en": "Theme",
+  "text": "테마"
+ },
+ "ac7ce48d": {
+  "en": "Accent colour",
+  "text": "강조 색상"
+ },
+ "548b7cf8": {
+  "en": "Night brightness",
+  "text": "야간 밝기"
+ },
+ "1c076c32": {
+  "en": "Screen password",
+  "text": "화면 암호"
+ },
+ "9525b78e": {
+  "en": "Custom",
+  "text": "사용자 지정"
+ },
+ "dc6bfbe0": {
+  "en": " MHz",
+  "text": " MHz"
+ },
+ "1ffe2452": {
+  "en": " kHz",
+  "text": " kHz"
+ },
+ "49e98b8b": {
+  "en": {
+   "one": "byte",
+   "other": "bytes"
+  },
+  "forms": {
+   "other": "{n}바이트"
+  }
+ },
+ "304ff7fb": {
+  "en": "None",
+  "text": "없음"
+ },
+ "9023a2b0": {
+  "en": "OK: keep",
+  "text": "OK: 유지"
+ },
+ "45570065": {
+  "en": "Dark",
+  "text": "어둡게"
+ },
+ "8ad2f8cf": {
+  "en": "Light",
+  "text": "밝게"
+ },
+ "126befb6": {
+  "en": "Auto",
+  "text": "자동"
+ },
+ "880f97dc": {
+  "en": "Lime",
+  "text": "라임"
+ },
+ "e9dd1fed": {
+  "en": "Blue",
+  "text": "블루"
+ },
+ "f03bdf12": {
+  "en": "Violet",
+  "text": "보라"
+ },
+ "15903060": {
+  "en": "Amber",
+  "text": "Amber"
+ },
+ "0dad9117": {
+  "en": "Same as day",
+  "text": "주간과 같음"
+ },
+ "8581156e": {
+  "en": "Tiles",
+  "text": "타일"
+ },
+ "87c7093b": {
+  "en": "Volts",
+  "text": "전압"
+ },
+ "ff1537fa": {
+  "en": "Percent",
+  "text": "퍼센트"
+ },
+ "3c2dfe59": {
+  "en": "Hidden",
+  "text": "숨김"
+ },
+ "75afe364": {
+  "en": "All",
+  "text": "전체"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "멘션"
+ },
+ "f0b87eb8": {
+  "en": "MeshCore regional settings: frequency, BW, SF, CR",
+  "text": "MeshCore 지역 설정: 주파수, BW, SF, CR"
+ },
+ "21ff842c": {
+  "en": "1 kHz steps; must match every node",
+  "text": "1 kHz 단위, 모든 노드와 같아야 함"
+ },
+ "7608c344": {
+  "en": "62.5 / 125 / 250 / 500 kHz",
+  "text": "62.5 / 125 / 250 / 500 kHz"
+ },
+ "943a47cb": {
+  "en": "Higher SF: longer range, slower",
+  "text": "SF가 높을수록 멀리, 느리게"
+ },
+ "c52a8c0f": {
+  "en": "Error correction 4/5 to 4/8",
+  "text": "오류 정정 4/5 ~ 4/8"
+ },
+ "af53f6b8": {
+  "en": "Radio chip setting, 0-22 dBm",
+  "text": "무선 칩 설정, 0-22 dBm"
+ },
+ "3f328711": {
+  "en": "Relay packets with fewer hops than this",
+  "text": "홉 수가 이보다 적은 패킷 중계"
+ },
+ "7cd202ed": {
+  "en": "Forward other nodes' MeshCore packets",
+  "text": "다른 노드의 MeshCore 패킷 중계"
+ },
+ "fa81bada": {
+  "en": "Per hop in our floods; older MeshCore drops 2-3",
+  "text": "플러드 패킷 홉당 크기; 구 MeshCore는 2-3 폐기"
+ },
+ "8513a98e": {
+  "en": "Repeaters pass on our floods by it; OK: type",
+  "text": "리피터가 이에 따라 전달; OK: 입력"
+ },
+ "33a9cb6d": {
+  "en": "Found: ",
+  "text": "찾음: "
+ },
+ "2fd16ea7": {
+  "en": "Asks repeaters that hear this device",
+  "text": "이 기기를 듣는 리피터에 문의"
+ },
+ "d284a6e4": {
+  "en": "A restart returns ",
+  "text": "재시작 시 복귀 "
+ },
+ "51c955b1": {
+  "en": "OK: return to it",
+  "text": "OK: 되돌리기"
+ },
+ "5261f68a": {
+  "en": "Kept on a change of frequency, BW, SF or CR",
+  "text": "주파수, BW, SF, CR 변경 시 기억"
+ },
+ "85dde262": {
+  "en": "Applied to the radio when saved",
+  "text": "저장하면 무선에 적용"
+ },
+ "7c3b11a9": {
+  "en": "OK: set or change password",
+  "text": "OK: 암호 설정 또는 변경"
+ },
+ "e754fa0d": {
+  "en": "Day 07:00–20:00, local time",
+  "text": "주간 07:00–20:00, 현지 시간"
+ },
+ "34fd54b2": {
+  "en": "OK: edit, 1-24 UTF-8 bytes",
+  "text": "OK: 편집, 1-24 UTF-8 바이트"
+ },
+ "7ecd2a4c": {
+  "en": "Menu language",
+  "text": "메뉴 언어"
+ },
+ "018eb564": {
+  "en": "Applies to Home and all folders",
+  "text": "메인 화면과 모든 폴더에 적용"
+ },
+ "b265628f": {
+  "en": "Tone for messages and ACKs",
+  "text": "메시지 및 ACK 알림음"
+ },
+ "969a0678": {
+  "en": "0 = off, 30-600 s",
+  "text": "0 = 끔, 30-600초"
+ },
+ "ab5a04f6": {
+  "en": "0 = off, 10-600 s",
+  "text": "0 = 끔, 10-600초"
+ },
+ "48707a29": {
+  "en": "Receiver power",
+  "text": "수신기 전원"
+ },
+ "ed88bd72": {
+  "en": "Local time, 15 minute steps",
+  "text": "현지 시간, 15분 단위"
+ },
+ "5d6af097": {
+  "en": "Status bar: charge estimate or measured voltage",
+  "text": "상태 표시줄: 추정 잔량 또는 측정 전압"
+ },
+ "e4f5443f": {
+  "en": "Message senders while locked",
+  "text": "잠금 중 보낸 사람"
+ },
+ "6cf00f88": {
+  "en": "Stored in device memory",
+  "text": "장치 메모리에 저장"
+ },
+ "1dd4ab8a": {
+  "en": "Listening",
+  "text": "수신"
+ },
+ "2fe2598e": {
+  "en": "pings",
+  "text": "핑"
+ },
+ "9296739d": {
+  "en": "Phone: ",
+  "text": "휴대폰: "
+ },
+ "4aba2ce0": {
+  "en": "No position: GPS fix or phone app",
+  "text": "위치 없음: GPS 또는 휴대폰"
+ },
+ "53e32296": {
+  "en": "Ping sent, listening for repeaters...",
+  "text": "핑 전송됨, 리피터 수신 대기..."
+ },
+ "140b9a3a": {
+  "en": "No pings yet: P sends one",
+  "text": "핑 없음: P로 전송"
+ },
+ "39b7127d": {
+  "en": "Last ping: ",
+  "text": "최근 핑: "
+ },
+ "1983dffb": {
+  "en": "Last ping: no repeater heard it",
+  "text": "최근 핑: 응답한 리피터 없음"
+ },
+ "8504bdd5": {
+  "en": "No repeaters heard yet",
+  "text": "아직 들린 리피터 없음"
+ },
+ "6c03392d": {
+  "en": "OK starts listening and pings",
+  "text": "OK: 수신과 핑 시작"
+ },
+ "0aed7015": {
+  "en": "rx ",
+  "text": "수신 "
+ },
+ "04be6123": {
+  "en": " · echo ",
+  "text": " · 에코 "
+ },
+ "4b7f7705": {
+  "en": "Stop",
+  "text": "중지"
+ },
+ "0ae8097f": {
+  "en": "Start",
+  "text": "시작"
+ },
+ "7fb7f0a9": {
+  "en": "Ping",
+  "text": "핑"
+ },
+ "5f7eec60": {
+  "en": "Wardrive on",
+  "text": "워드라이빙 켜짐"
+ },
+ "8ae160ba": {
+  "en": "Wardrive off",
+  "text": "워드라이빙 꺼짐"
+ },
+ "54f6c01a": {
+  "en": "Ping queued",
+  "text": "핑 대기 중"
+ },
+ "dfe5ac67": {
+  "en": "No position yet",
+  "text": "아직 위치 없음"
+ },
+ "0cf72110": {
+  "en": "Wait: a ping is under way",
+  "text": "잠시만요: 핑 진행 중"
+ },
+ "46ff9c40": {
+  "en": "choose",
+  "text": "선택"
+ },
+ "11c2662d": {
+  "en": "select",
+  "text": "확정"
+ },
+ "7261c8af": {
+  "en": "send",
+  "text": "전송"
+ },
+ "cded1a85": {
+  "en": "exit",
+  "text": "종료"
+ },
+ "61efb279": {
+  "en": "Save changes",
+  "text": "변경 사항 저장"
+ },
+ "a2c6becb": {
+  "en": "No changes",
+  "text": "변경 없음"
+ },
+ "4d2d5d68": {
+  "en": "Save",
+  "text": "저장"
+ },
+ "c2c76cb1": {
+  "en": "Edit",
+  "text": "변경"
+ },
+ "35afca3b": {
+  "en": "Cancel",
+  "text": "취소"
+ },
+ "701eaa88": {
+  "en": "Edit name",
+  "text": "이름 편집"
+ },
+ "555cbe68": {
+  "en": "Keep",
+  "text": "유지"
+ },
+ "cc01b1df": {
+  "en": "Return",
+  "text": "되돌리기"
+ },
+ "2ffcbe05": {
+  "en": "Test",
+  "text": "테스트"
+ },
+ "c646a2c9": {
+  "en": "Search",
+  "text": "검색"
+ },
+ "0abaed3f": {
+  "en": "Found",
+  "text": "찾은 것"
+ },
+ "d155d06d": {
+  "en": "Type",
+  "text": "입력"
+ },
+ "a1de2fdd": {
+  "en": "Change",
+  "text": "변경"
+ },
+ "c3a34509": {
+  "en": "Next value",
+  "text": "다음 값"
+ },
+ "4d7ef753": {
+  "en": "Wi-Fi access point",
+  "text": "Wi-Fi 액세스 포인트"
+ },
+ "ba5122e7": {
+  "en": "Web chat and map upload",
+  "text": "웹 채팅과 지도 업로드"
+ },
+ "4dbe556f": {
+  "en": "MeshCore identity",
+  "text": "MeshCore 키"
+ },
+ "18ac79a2": {
+  "en": "Networks",
+  "text": "네트워크"
+ },
+ "6cf1ba25": {
+  "en": "Toggle",
+  "text": "전환"
+ },
+ "75a04256": {
+  "en": "Wrong password or refused: ",
+  "text": "비밀번호 오류 또는 거부: "
+ },
+ "e2dabf28": {
+  "en": "No answer from ",
+  "text": "응답 없음: "
+ },
+ "09974b89": {
+  "en": "Connection lost",
+  "text": "연결 끊김"
+ },
+ "c7e915d7": {
+  "en": "Wi-Fi scan failed",
+  "text": "Wi-Fi 검색 실패"
+ },
+ "34dfb5f5": {
+  "en": "Wi-Fi scan timed out",
+  "text": "Wi-Fi 검색 시간 초과"
+ },
+ "71494765": {
+  "en": "SSID 1-32 bytes, password empty or 8-63",
+  "text": "SSID 1-32바이트, 비밀번호 없음 또는 8-63"
+ },
+ "db65b4b4": {
+  "en": "Tile is not 256 or 512 px",
+  "text": "타일이 256/512 px가 아님"
+ },
+ "172eebcb": {
+  "en": "Not a PNG image",
+  "text": "PNG 이미지가 아님"
+ },
+ "e234f405": {
+  "en": "No location",
+  "text": "IP 위치를 찾지 못함"
+ },
+ "fd387bbd": {
+  "en": "SD full: web tiles not cached",
+  "text": "SD 가득 참: 웹 타일 저장 안 됨"
+ },
+ "d8e1dad5": {
+  "en": "Wi-Fi client on",
+  "text": "Wi-Fi 클라이언트 켜짐"
+ },
+ "0e9eb651": {
+  "en": "Wi-Fi client off",
+  "text": "Wi-Fi 클라이언트 꺼짐"
+ },
+ "b1374eac": {
+  "en": "Connecting to ",
+  "text": "연결 중: "
  },
  "5b61220f": {
   "en": "Forgotten: ",
@@ -519,13 +1927,13 @@
   "en": "Radio TX error",
   "text": "무선 송신 오류"
  },
- "54279dd1": {
-  "en": "No repeat heard",
-  "text": "재전송 수신 안 됨"
- },
  "60e47df0": {
   "en": "On",
   "text": "켬"
+ },
+ "54279dd1": {
+  "en": "No repeat heard",
+  "text": "재전송 수신 안 됨"
  },
  "1f7c35ca": {
   "en": "hold OK",
@@ -800,1413 +2208,9 @@
   "en": "Add a channel",
   "text": "채널 추가"
  },
- "af34335c": {
-  "en": "Internet",
-  "text": "인터넷"
- },
- "0b728291": {
-  "en": "All off",
-  "text": "모두 꺼짐"
- },
- "c0b2703d": {
-  "en": {
-   "one": "new message",
-   "other": "new messages"
-  },
-  "forms": {
-   "other": "새 메시지 {n}개"
-  }
- },
- "8f7412e6": {
-  "en": " of ",
-  "text": " / "
- },
- "4f1014c0": {
-  "en": " nearby",
-  "text": " 근처"
- },
- "84e158a3": {
-  "en": "GPS: searching",
-  "text": "GPS: 검색 중"
- },
- "7f9b88be": {
-  "en": "GPS off",
-  "text": "GPS 꺼짐"
- },
- "e50e2dad": {
-  "en": {
-   "one": "sat",
-   "other": "sats"
-  },
-  "forms": {
-   "other": "위성 {n}개"
-  }
- },
- "517f4378": {
-  "en": "Online map",
-  "text": "온라인 지도"
- },
- "b40c44cd": {
-  "en": "No SD card",
-  "text": "SD 카드 없음"
- },
- "2c64a5cf": {
-  "en": "No maps yet",
-  "text": "지도 없음"
- },
- "4b896fbb": {
-  "en": "Radar",
-  "text": "레이더"
- },
- "c0de6b7d": {
-  "en": {
-   "one": "point",
-   "other": "points"
-  },
-  "forms": {
-   "other": "{n}개 지점"
-  }
- },
- "db89a899": {
-  "en": "Connect",
-  "text": "연결"
- },
- "010ffdb6": {
-  "en": "All OK",
-  "text": "모두 정상"
- },
- "a4bb08e5": {
-  "en": {
-   "one": "fault",
-   "other": "faults"
-  },
-  "forms": {
-   "other": "오류 {n}"
-  }
- },
- "67a31c2c": {
-  "en": "Radio, screen",
-  "text": "무선, 화면"
- },
- "1520e768": {
-  "en": " MHz · SF",
-  "text": " MHz · SF"
- },
- "168512be": {
-  "en": "Radio error ",
-  "text": "무선 오류 "
- },
- "538b10e9": {
-  "en": "Open",
-  "text": "열기"
- },
- "3750eb16": {
-  "en": "Radio controls",
-  "text": "무선 제어"
- },
- "832f1cca": {
-  "en": " waiting",
-  "text": " 대기 중"
- },
- "19ede191": {
-  "en": {
-   "one": "app",
-   "other": "apps"
-  },
-  "forms": {
-   "other": "앱 {n}개"
-  }
- },
- "2c6a14ea": {
-  "en": "Folders and order: web page or app",
-  "text": "폴더와 순서: 웹 페이지 또는 앱"
- },
- "6e19da59": {
-  "en": "No apps in this folder",
-  "text": "이 폴더에 앱 없음"
- },
- "00c6075a": {
-  "en": "Menu",
-  "text": "메인 메뉴"
- },
- "3e892b4d": {
-  "en": "Select",
+ "73c66160": {
+  "en": "Choose",
   "text": "선택"
- },
- "66836516": {
-  "en": "You: ",
-  "text": "나: "
- },
- "51e7624c": {
-  "en": "No messages yet",
-  "text": "메시지 없음"
- },
- "32e97c4a": {
-  "en": "Open MeshCore channel",
-  "text": "MeshCore 공개 채널"
- },
- "9c9c5d7e": {
-  "en": "Open channel · no messages yet",
-  "text": "공개 채널 · 메시지 없음"
- },
- "543bd3e9": {
-  "en": "Private channel · no messages yet",
-  "text": "비공개 채널 · 메시지 없음"
- },
- "e65fb504": {
-  "en": "Actions",
-  "text": "동작"
- },
- "33a4b02f": {
-  "en": "Next unread",
-  "text": "다음 안 읽음"
- },
- "4648e8a8": {
-  "en": "Private channel · senders unverified · no ACK",
-  "text": "비공개 채널 · 발신자 미검증 · ACK 없음"
- },
- "46718231": {
-  "en": "Open channel · senders unverified · no ACK",
-  "text": "공개 채널 · 발신자 미검증 · ACK 없음"
- },
- "c4e598ca": {
-  "en": "logged in",
-  "text": "로그인됨"
- },
- "ab1fafa1": {
-  "en": "log in: node card > Server",
-  "text": "로그인: 노드 카드 > 서버"
- },
- "91455582": {
-  "en": "Not in contacts",
-  "text": "연락처에 없음"
- },
- "e99aa76f": {
-  "en": "not confirmed",
-  "text": "미확인"
- },
- "1a940c2a": {
-  "en": "Type and press OK to send",
-  "text": "입력 후 OK를 눌러 보내기"
- },
- "f574869a": {
-  "en": "Message...",
-  "text": "메시지..."
- },
- "f28e14cf": {
-  "en": "Send",
-  "text": "전송"
- },
- "68f399b1": {
-  "en": "Clipboard",
-  "text": "복사 메뉴"
- },
- "72d06ea7": {
-  "en": "Finding location by IP...",
-  "text": "IP로 위치 찾는 중..."
- },
- "851e5ac2": {
-  "en": "Needs Wi-Fi internet or an SD card",
-  "text": "Wi-Fi 인터넷 또는 SD 카드 필요"
- },
- "77c28af9": {
-  "en": "Connect Wi-Fi or load a map",
-  "text": "Wi-Fi를 연결하거나 지도를 넣으세요"
- },
- "119314d0": {
-  "en": "GPS will take over after a fix",
-  "text": "GPS 위치가 잡히면 그쪽으로 이동"
- },
- "c19b47bb": {
-  "en": "Connections > Internet over Wi-Fi",
-  "text": "연결 > Wi-Fi 인터넷"
- },
- "b59a5b35": {
-  "en": "Downloading map...",
-  "text": "지도 다운로드 중..."
- },
- "e6aae7d4": {
-  "en": "Reading map from SD...",
-  "text": "SD에서 지도 읽는 중..."
- },
- "ba994464": {
-  "en": "Tiles unavailable",
-  "text": "타일 사용 불가"
- },
- "66643a4a": {
-  "en": "This zoom is not downloaded",
-  "text": "이 배율은 받지 않음"
- },
- "29cc0d19": {
-  "en": "+/- zoom · Wi-Fi internet loads maps",
-  "text": "+/- 배율 · Wi-Fi 인터넷으로 지도 로드"
- },
- "a3b1d86e": {
-  "en": "Offline map",
-  "text": "오프라인 지도"
- },
- "59317dec": {
-  "en": " · loading",
-  "text": " · 로드 중"
- },
- "1d1e1a72": {
-  "en": "GPS: old date",
-  "text": "GPS: 오래된 날짜"
- },
- "b45aef8c": {
-  "en": "Pan",
-  "text": "이동"
- },
- "62399752": {
-  "en": "Zoom",
-  "text": "배율"
- },
- "9fa2c938": {
-  "en": "Following",
-  "text": "따라가기"
- },
- "3f654d20": {
-  "en": "To GPS",
-  "text": "GPS로"
- },
- "04dfc93c": {
-  "en": "No saved maps",
-  "text": "저장된 지도 없음"
- },
- "dcf1e39a": {
-  "en": "Upload a map via Wi-Fi or USB",
-  "text": "Wi-Fi나 USB로 지도를 올리세요"
- },
- "7c620193": {
-  "en": {
-   "one": "tile on SD",
-   "other": "tiles on SD"
-  },
-  "forms": {
-   "other": "SD에 타일 {n}개"
-  }
- },
- "bd794432": {
-  "en": "No matching contacts",
-  "text": "일치하는 연락처 없음"
- },
- "4e5a0349": {
-  "en": "No nodes discovered yet",
-  "text": "발견된 노드 없음"
- },
- "8a8a895b": {
-  "en": "F: edit tag filter",
-  "text": "F: 태그 필터 편집"
- },
- "2ad4b008": {
-  "en": "Advertise my node",
-  "text": "내 노드 알리기"
- },
- "e2339f44": {
-  "en": "saved",
-  "text": "저장됨"
- },
- "0ec24245": {
-  "en": "Details",
-  "text": "정보"
- },
- "f4a9c097": {
-  "en": "Filter",
-  "text": "필터"
- },
- "c2954bc2": {
-  "en": "Back",
-  "text": "뒤로"
- },
- "c416a424": {
-  "en": "Node was removed",
-  "text": "노드가 삭제됨"
- },
- "81ef07a9": {
-  "en": "Last heard",
-  "text": "마지막 수신"
- },
- "4f0a0e98": {
-  "en": " ago",
-  "text": " 전"
- },
- "1ae89b50": {
-  "en": "not since boot",
-  "text": "부팅 후 수신 없음"
- },
- "2fce4529": {
-  "en": "Signal",
-  "text": "신호"
- },
- "d7d630be": {
-  "en": "Route",
-  "text": "경로"
- },
- "cd08221c": {
-  "en": " · flood",
-  "text": " · flood"
- },
- "e27f342a": {
-  "en": "Position",
-  "text": "위치"
- },
- "a3ad51f3": {
-  "en": "not shared",
-  "text": "공유 안 함"
- },
- "b8297e9a": {
-  "en": "Room",
-  "text": "룸"
- },
- "ae0ed984": {
-  "en": "Message",
-  "text": "메시지"
- },
- "8f635566": {
-  "en": "On map",
-  "text": "지도에"
- },
- "db5485e7": {
-  "en": "Reset path",
-  "text": "경로 초기화"
- },
- "2d44294d": {
-  "en": "Sure?",
-  "text": "정말?"
- },
- "6e3fab8c": {
-  "en": "Forget",
-  "text": "삭제"
- },
- "6d7302f2": {
-  "en": "Server",
-  "text": "서버"
- },
- "26f8e74e": {
-  "en": "Trace",
-  "text": "추적"
- },
- "0a77a91f": {
-  "en": "Action",
-  "text": "작업"
- },
- "8d57e66a": {
-  "en": "Run",
-  "text": "실행"
- },
- "0ff01b6a": {
-  "en": "Notes",
-  "text": "메모"
- },
- "d112e127": {
-  "en": "hold flat",
-  "text": "평평하게 드세요"
- },
- "1a45dda5": {
-  "en": "not calibrated",
-  "text": "보정 안 됨"
- },
- "ab3a8a0a": {
-  "en": "off",
-  "text": "꺼짐"
- },
- "b2e48278": {
-  "en": "fix",
-  "text": "위치 확보"
- },
- "620f3cc6": {
-  "en": "old date",
-  "text": "오래된 날짜"
- },
- "67ce0277": {
-  "en": "searching",
-  "text": "검색 중"
- },
- "f5e7befb": {
-  "en": "Satellites",
-  "text": "위성"
- },
- "a2009955": {
-  "en": " in view",
-  "text": " 보임"
- },
- "6d7e4165": {
-  "en": "Latitude",
-  "text": "위도"
- },
- "671964ee": {
-  "en": "Longitude",
-  "text": "경도"
- },
- "bb5f80fd": {
-  "en": "Clock",
-  "text": "시계"
- },
- "ffa35e26": {
-  "en": "not set",
-  "text": "미설정"
- },
- "219101e3": {
-  "en": "manual",
-  "text": "수동"
- },
- "d2cdcecb": {
-  "en": " · trusted",
-  "text": " · 신뢰됨"
- },
- "bb77a2cf": {
-  "en": "Compass",
-  "text": "나침반"
- },
- "37b8f592": {
-  "en": "calibrated",
-  "text": "보정됨"
- },
- "75c3ffb2": {
-  "en": "needs calibration",
-  "text": "보정 필요"
- },
- "1db880db": {
-  "en": {
-   "one": "sample",
-   "other": "samples"
-  },
-  "forms": {
-   "other": "샘플 {n}개"
-  }
- },
- "ff05911b": {
-  "en": "Share position",
-  "text": "위치 공유"
- },
- "7629db5a": {
-  "en": "Finish calibration",
-  "text": "보정 완료"
- },
- "6f59150a": {
-  "en": "Calibrate compass",
-  "text": "나침반 보정"
- },
- "e125a9a1": {
-  "en": "Advert with GPS",
-  "text": "GPS 포함 알림"
- },
- "10b78d8a": {
-  "en": "Needs a fresh GPS fix",
-  "text": "새 GPS 위치 필요"
- },
- "a603b11c": {
-  "en": "Rotate in all directions",
-  "text": "장치를 모든 방향으로 돌리세요"
- },
- "7f8e9f6b": {
-  "en": "Rotate for 20+ seconds",
-  "text": "20초 이상 돌리세요"
- },
- "45465004": {
-  "en": "GPS on",
-  "text": "GPS 켜기"
- },
- "4930944f": {
-  "en": "Phone",
-  "text": "휴대폰"
- },
- "ec266ec8": {
-  "en": "Watch",
-  "text": "시계"
- },
- "89a2ef46": {
-  "en": "Headphones",
-  "text": "헤드폰"
- },
- "fae1ce6b": {
-  "en": "Phone/watch",
-  "text": "휴대폰/시계"
- },
- "7e3d4120": {
-  "en": "BLE device",
-  "text": "BLE 장치"
- },
- "9e13a743": {
-  "en": "Hidden network",
-  "text": "숨겨진 네트워크"
- },
- "90cbadfa": {
-  "en": "Bluetooth busy: probe",
-  "text": "Bluetooth 사용 중: 검사"
- },
- "e5e4ab77": {
-  "en": "Bluetooth error",
-  "text": "Bluetooth 오류"
- },
- "983f66dc": {
-  "en": "Wi-Fi busy: access point",
-  "text": "Wi-Fi 사용 중: 액세스 포인트"
- },
- "35c403f6": {
-  "en": "Wi-Fi busy: probe",
-  "text": "Wi-Fi 사용 중: 검사"
- },
- "1be7979b": {
-  "en": "Wi-Fi error",
-  "text": "Wi-Fi 오류"
- },
- "89414ad6": {
-  "en": "Scanning Wi-Fi...",
-  "text": "Wi-Fi 검색 중..."
- },
- "542d8f50": {
-  "en": "closer to centre = stronger",
-  "text": "중심에 가까울수록 강함"
- },
- "fde56fad": {
-  "en": "List paused",
-  "text": "목록 일시 정지"
- },
- "503d6eed": {
-  "en": {
-   "one": "phone/watch nearby",
-   "other": "phones/watches nearby"
-  },
-  "forms": {
-   "other": "근처 휴대폰/시계 {n}대"
-  }
- },
- "49031ccd": {
-  "en": "No signals yet",
-  "text": "아직 신호 없음"
- },
- "8d2937a1": {
-  "en": "List",
-  "text": "목록"
- },
- "454d1d8a": {
-  "en": "Resume",
-  "text": "재개"
- },
- "44f9bf2d": {
-  "en": "Pause",
-  "text": "일시 정지"
- },
- "3368e695": {
-  "en": "Home in",
-  "text": "추적"
- },
- "aad07647": {
-  "en": "Motion",
-  "text": "움직임"
- },
- "84397af6": {
-  "en": " · direct packets only",
-  "text": " · 직접 패킷만"
- },
- "b8a018ba": {
-  "en": " · address changes over time",
-  "text": " · 주소가 수시로 바뀜"
- },
- "a8e7e5cc": {
-  "en": "channel ",
-  "text": "채널 "
- },
- "64db285b": {
-  "en": "Lost",
-  "text": "놓침"
- },
- "46102346": {
-  "en": "No signal",
-  "text": "신호 없음"
- },
- "3b06b3cd": {
-  "en": "Stronger",
-  "text": "강해짐"
- },
- "4dd880a2": {
-  "en": "Weaker",
-  "text": "약해짐"
- },
- "cd945433": {
-  "en": "Steady",
-  "text": "유지"
- },
- "184745be": {
-  "en": "keep moving",
-  "text": "계속 이동"
- },
- "78c14fb6": {
-  "en": "peak ",
-  "text": "최고 "
- },
- "b991041c": {
-  "en": "Waiting for samples",
-  "text": "샘플 대기 중"
- },
- "0ec969ac": {
-  "en": " adverts/s",
-  "text": " 알림/초"
- },
- "93382782": {
-  "en": " beacons/s",
-  "text": " 비콘/초"
- },
- "cde081d3": {
-  "en": {
-   "one": "packet",
-   "other": "packets"
-  },
-  "forms": {
-   "other": "패킷 {n}개"
-  }
- },
- "42cfcb2d": {
-  "en": " s ago",
-  "text": " 초 전"
- },
- "3f609f74": {
-  "en": "Mute",
-  "text": "음소거"
- },
- "b3ca9a34": {
-  "en": "Sound",
-  "text": "소리"
- },
- "68f7fd73": {
-  "en": "Reset peak",
-  "text": "최고치 초기화"
- },
- "394ec4f2": {
-  "en": "Turn the access point off",
-  "text": "액세스 포인트를 끄세요"
- },
- "fccfe8a5": {
-  "en": "Beacon for another board",
-  "text": "다른 보드용 비콘"
- },
- "bfacb4d0": {
-  "en": " frames/s on channel 1",
-  "text": " 프레임/초, 채널 1"
- },
- "6d3d79bb": {
-  "en": "beacon ",
-  "text": "비콘 "
- },
- "d7972182": {
-  "en": " frames/s · ",
-  "text": " 프레임/초 · "
- },
- "b85b81cf": {
-  "en": "waiting: set the other board to CSI beacon",
-  "text": "대기 중: 다른 보드를 CSI 비콘으로 설정"
- },
- "1d0cdb24": {
-  "en": "NO WI-FI",
-  "text": "WI-FI 없음"
- },
- "e9a87b56": {
-  "en": "BEACON ON",
-  "text": "비콘 켜짐"
- },
- "564cdaca": {
-  "en": "NO BEACON",
-  "text": "비콘 없음"
- },
- "9a1796e8": {
-  "en": "CSI FROZEN",
-  "text": "CSI 정지됨"
- },
- "dd26ae1f": {
-  "en": "CALIBRATING ",
-  "text": "보정 중 "
- },
- "5ec52fe4": {
-  "en": " s",
-  "text": " 초"
- },
- "4d851fe7": {
-  "en": "MOTION",
-  "text": "움직임"
- },
- "6fce5d71": {
-  "en": "STILL",
-  "text": "정지"
- },
- "13d6d724": {
-  "en": "activity ",
-  "text": "활동 "
- },
- "1e3add08": {
-  "en": "threshold ",
-  "text": "임계값 "
- },
- "dda163c5": {
-  "en": " (default)",
-  "text": " (기본값)"
- },
- "19deef04": {
-  "en": "Walk between the boards to see the trace",
-  "text": "보드 사이를 걸으면 흔적이 보입니다"
- },
- "faa0c1ab": {
-  "en": "Calibrate with the area empty and still (10 s)",
-  "text": "구역을 비우고 움직임 없이 보정 (10초)"
- },
- "4204187c": {
-  "en": "Place the boards 2-5 m apart; motion between them is sensed",
-  "text": "보드를 2-5 m 간격으로 두면 그 사이 움직임 감지"
- },
- "9bb72cae": {
-  "en": "Signals",
-  "text": "신호"
- },
- "6fb7daa2": {
-  "en": "Calibrate",
-  "text": "보정"
- },
- "4d580639": {
-  "en": "Beacon",
-  "text": "비콘"
- },
- "5427923a": {
-  "en": "To turn on, hold the trackball pressed",
-  "text": "켜기: 트랙볼을 누른 채 유지"
- },
- "b1e20664": {
-  "en": "To turn on: RESET or the power switch",
-  "text": "켜기: RESET 또는 전원 스위치"
- },
- "cba7fbe8": {
-  "en": "Device is off",
-  "text": "기기가 꺼졌습니다"
- },
- "2697628b": {
-  "en": "Turning off...",
-  "text": "끄는 중..."
- },
- "b639f585": {
-  "en": "GPS & compass",
-  "text": "GPS 및 나침반"
- },
- "dde0a6be": {
-  "en": "Keys & help",
-  "text": "키 및 도움말"
- },
- "cd03e04b": {
-  "en": "Turn off",
-  "text": "끄기"
- },
- "a21b5cde": {
-  "en": "Brightness ",
-  "text": "밝기 "
- },
- "e1b4bdaa": {
-  "en": "compass calibrated",
-  "text": "나침반 보정됨"
- },
- "e8f719bd": {
-  "en": "compass not calibrated",
-  "text": "나침반 보정 안 됨"
- },
- "7316bebd": {
-  "en": " relayed",
-  "text": " 중계됨"
- },
- "4f18c10c": {
-  "en": "What every key does",
-  "text": "각 키의 기능"
- },
- "7e8a19d5": {
-  "en": "Searching: ",
-  "text": "검색 중: "
- },
- "9a555563": {
-  "en": {
-   "one": "repeater",
-   "other": "repeaters"
-  },
-  "forms": {
-   "other": "리피터 {n}개"
-  }
- },
- "99f30427": {
-  "en": "OK: start",
-  "text": "OK: 시작"
- },
- "1a8c15c3": {
-  "en": {
-   "one": "region",
-   "other": "regions"
-  },
-  "forms": {
-   "other": "지역 {n}개"
-  }
- },
- "9fca3c9e": {
-  "en": "Listening ",
-  "text": "수신 중 "
- },
- "a3980ce8": {
-  "en": "Nothing new",
-  "text": "새 항목 없음"
- },
- "443ffd47": {
-  "en": "OK: test ",
-  "text": "OK: 테스트 "
- },
- "2265ebb1": {
-  "en": "Current profile: ",
-  "text": "현재 프로필: "
- },
- "34f428b1": {
-  "en": "Try every regional preset",
-  "text": "모든 지역 프리셋 시도"
- },
- "c91eb13e": {
-  "en": "Preset",
-  "text": "프리셋"
- },
- "8d9206a1": {
-  "en": "Frequency",
-  "text": "주파수"
- },
- "008f5512": {
-  "en": "Bandwidth",
-  "text": "대역폭"
- },
- "d174bc31": {
-  "en": "Spreading factor",
-  "text": "확산 계수"
- },
- "3c2364a7": {
-  "en": "Coding rate",
-  "text": "부호율"
- },
- "92d39d44": {
-  "en": "TX power",
-  "text": "송신 출력"
- },
- "175749a2": {
-  "en": "Relay hop limit",
-  "text": "중계 홉 한도"
- },
- "75193707": {
-  "en": "Relay packets",
-  "text": "패킷 중계"
- },
- "2197c64b": {
-  "en": "Path hash size",
-  "text": "경로 해시 크기"
- },
- "492e789d": {
-  "en": "Region",
-  "text": "지역"
- },
- "b872ed2b": {
-  "en": "Find regions",
-  "text": "지역 찾기"
- },
- "eb38bf4c": {
-  "en": "Find network",
-  "text": "네트워크 찾기"
- },
- "24646b98": {
-  "en": "Radio test",
-  "text": "무선 테스트"
- },
- "0614ba0b": {
-  "en": "Previous radio",
-  "text": "이전 무선"
- },
- "0fe07306": {
-  "en": "Name",
-  "text": "이름"
- },
- "9a73db9b": {
-  "en": "Language",
-  "text": "언어"
- },
- "df6e627c": {
-  "en": "Day brightness",
-  "text": "주간 밝기"
- },
- "73d459b4": {
-  "en": "Home layout",
-  "text": "메인 화면 보기"
- },
- "4ef0ddc5": {
-  "en": "Sounds",
-  "text": "소리"
- },
- "300ec32d": {
-  "en": "Auto lock",
-  "text": "자동 잠금"
- },
- "1f0bca87": {
-  "en": "Dim screen",
-  "text": "화면 어둡게"
- },
- "37976ee4": {
-  "en": "GPS receiver",
-  "text": "GPS 수신기"
- },
- "f050c5bc": {
-  "en": "UTC offset",
-  "text": "UTC 오프셋"
- },
- "caa82244": {
-  "en": "Battery shows",
-  "text": "배터리 표시"
- },
- "fecd422a": {
-  "en": "Lock screen",
-  "text": "잠금 화면"
- },
- "667ad2f5": {
-  "en": "Wake on message",
-  "text": "메시지로 깨우기"
- },
- "98b6a9f6": {
-  "en": "Message popup",
-  "text": "메시지 팝업"
- },
- "4eaf7c92": {
-  "en": "Theme",
-  "text": "테마"
- },
- "ac7ce48d": {
-  "en": "Accent colour",
-  "text": "강조 색상"
- },
- "548b7cf8": {
-  "en": "Night brightness",
-  "text": "야간 밝기"
- },
- "1c076c32": {
-  "en": "Screen password",
-  "text": "화면 암호"
- },
- "9525b78e": {
-  "en": "Custom",
-  "text": "사용자 지정"
- },
- "dc6bfbe0": {
-  "en": " MHz",
-  "text": " MHz"
- },
- "1ffe2452": {
-  "en": " kHz",
-  "text": " kHz"
- },
- "304ff7fb": {
-  "en": "None",
-  "text": "없음"
- },
- "9023a2b0": {
-  "en": "OK: keep",
-  "text": "OK: 유지"
- },
- "49e98b8b": {
-  "en": {
-   "one": "byte",
-   "other": "bytes"
-  },
-  "forms": {
-   "other": "{n}바이트"
-  }
- },
- "45570065": {
-  "en": "Dark",
-  "text": "어둡게"
- },
- "8ad2f8cf": {
-  "en": "Light",
-  "text": "밝게"
- },
- "126befb6": {
-  "en": "Auto",
-  "text": "자동"
- },
- "880f97dc": {
-  "en": "Lime",
-  "text": "라임"
- },
- "e9dd1fed": {
-  "en": "Blue",
-  "text": "블루"
- },
- "f03bdf12": {
-  "en": "Violet",
-  "text": "보라"
- },
- "15903060": {
-  "en": "Amber",
-  "text": "Amber"
- },
- "0dad9117": {
-  "en": "Same as day",
-  "text": "주간과 같음"
- },
- "8581156e": {
-  "en": "Tiles",
-  "text": "타일"
- },
- "87c7093b": {
-  "en": "Volts",
-  "text": "전압"
- },
- "ff1537fa": {
-  "en": "Percent",
-  "text": "퍼센트"
- },
- "3c2dfe59": {
-  "en": "Hidden",
-  "text": "숨김"
- },
- "75afe364": {
-  "en": "All",
-  "text": "전체"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "멘션"
- },
- "f0b87eb8": {
-  "en": "MeshCore regional settings: frequency, BW, SF, CR",
-  "text": "MeshCore 지역 설정: 주파수, BW, SF, CR"
- },
- "21ff842c": {
-  "en": "1 kHz steps; must match every node",
-  "text": "1 kHz 단위, 모든 노드와 같아야 함"
- },
- "7608c344": {
-  "en": "62.5 / 125 / 250 / 500 kHz",
-  "text": "62.5 / 125 / 250 / 500 kHz"
- },
- "943a47cb": {
-  "en": "Higher SF: longer range, slower",
-  "text": "SF가 높을수록 멀리, 느리게"
- },
- "c52a8c0f": {
-  "en": "Error correction 4/5 to 4/8",
-  "text": "오류 정정 4/5 ~ 4/8"
- },
- "af53f6b8": {
-  "en": "Radio chip setting, 0-22 dBm",
-  "text": "무선 칩 설정, 0-22 dBm"
- },
- "3f328711": {
-  "en": "Relay packets with fewer hops than this",
-  "text": "홉 수가 이보다 적은 패킷 중계"
- },
- "7cd202ed": {
-  "en": "Forward other nodes' MeshCore packets",
-  "text": "다른 노드의 MeshCore 패킷 중계"
- },
- "fa81bada": {
-  "en": "Per hop in our floods; older MeshCore drops 2-3",
-  "text": "플러드 패킷 홉당 크기; 구 MeshCore는 2-3 폐기"
- },
- "8513a98e": {
-  "en": "Repeaters pass on our floods by it; OK: type",
-  "text": "리피터가 이에 따라 전달; OK: 입력"
- },
- "33a9cb6d": {
-  "en": "Found: ",
-  "text": "찾음: "
- },
- "2fd16ea7": {
-  "en": "Asks repeaters that hear this device",
-  "text": "이 기기를 듣는 리피터에 문의"
- },
- "d284a6e4": {
-  "en": "A restart returns ",
-  "text": "재시작 시 복귀 "
- },
- "51c955b1": {
-  "en": "OK: return to it",
-  "text": "OK: 되돌리기"
- },
- "5261f68a": {
-  "en": "Kept on a change of frequency, BW, SF or CR",
-  "text": "주파수, BW, SF, CR 변경 시 기억"
- },
- "85dde262": {
-  "en": "Applied to the radio when saved",
-  "text": "저장하면 무선에 적용"
- },
- "7c3b11a9": {
-  "en": "OK: set or change password",
-  "text": "OK: 암호 설정 또는 변경"
- },
- "e754fa0d": {
-  "en": "Day 07:00–20:00, local time",
-  "text": "주간 07:00–20:00, 현지 시간"
- },
- "34fd54b2": {
-  "en": "OK: edit, 1-24 UTF-8 bytes",
-  "text": "OK: 편집, 1-24 UTF-8 바이트"
- },
- "7ecd2a4c": {
-  "en": "Menu language",
-  "text": "메뉴 언어"
- },
- "018eb564": {
-  "en": "Applies to Home and all folders",
-  "text": "메인 화면과 모든 폴더에 적용"
- },
- "b265628f": {
-  "en": "Tone for messages and ACKs",
-  "text": "메시지 및 ACK 알림음"
- },
- "969a0678": {
-  "en": "0 = off, 30-600 s",
-  "text": "0 = 끔, 30-600초"
- },
- "ab5a04f6": {
-  "en": "0 = off, 10-600 s",
-  "text": "0 = 끔, 10-600초"
- },
- "48707a29": {
-  "en": "Receiver power",
-  "text": "수신기 전원"
- },
- "ed88bd72": {
-  "en": "Local time, 15 minute steps",
-  "text": "현지 시간, 15분 단위"
- },
- "5d6af097": {
-  "en": "Status bar: charge estimate or measured voltage",
-  "text": "상태 표시줄: 추정 잔량 또는 측정 전압"
- },
- "e4f5443f": {
-  "en": "Message senders while locked",
-  "text": "잠금 중 보낸 사람"
- },
- "6cf00f88": {
-  "en": "Stored in device memory",
-  "text": "장치 메모리에 저장"
- },
- "1dd4ab8a": {
-  "en": "Listening",
-  "text": "수신"
- },
- "2fe2598e": {
-  "en": "pings",
-  "text": "핑"
- },
- "9296739d": {
-  "en": "Phone: ",
-  "text": "휴대폰: "
- },
- "4aba2ce0": {
-  "en": "No position: GPS fix or phone app",
-  "text": "위치 없음: GPS 또는 휴대폰"
- },
- "53e32296": {
-  "en": "Ping sent, listening for repeaters...",
-  "text": "핑 전송됨, 리피터 수신 대기..."
- },
- "140b9a3a": {
-  "en": "No pings yet: P sends one",
-  "text": "핑 없음: P로 전송"
- },
- "39b7127d": {
-  "en": "Last ping: ",
-  "text": "최근 핑: "
- },
- "1983dffb": {
-  "en": "Last ping: no repeater heard it",
-  "text": "최근 핑: 응답한 리피터 없음"
- },
- "8504bdd5": {
-  "en": "No repeaters heard yet",
-  "text": "아직 들린 리피터 없음"
- },
- "6c03392d": {
-  "en": "OK starts listening and pings",
-  "text": "OK: 수신과 핑 시작"
- },
- "0aed7015": {
-  "en": "rx ",
-  "text": "수신 "
- },
- "04be6123": {
-  "en": " · echo ",
-  "text": " · 에코 "
- },
- "4b7f7705": {
-  "en": "Stop",
-  "text": "중지"
- },
- "0ae8097f": {
-  "en": "Start",
-  "text": "시작"
- },
- "7fb7f0a9": {
-  "en": "Ping",
-  "text": "핑"
- },
- "5f7eec60": {
-  "en": "Wardrive on",
-  "text": "워드라이빙 켜짐"
- },
- "8ae160ba": {
-  "en": "Wardrive off",
-  "text": "워드라이빙 꺼짐"
- },
- "54f6c01a": {
-  "en": "Ping queued",
-  "text": "핑 대기 중"
- },
- "dfe5ac67": {
-  "en": "No position yet",
-  "text": "아직 위치 없음"
- },
- "0cf72110": {
-  "en": "Wait: a ping is under way",
-  "text": "잠시만요: 핑 진행 중"
- },
- "46ff9c40": {
-  "en": "choose",
-  "text": "선택"
- },
- "11c2662d": {
-  "en": "select",
-  "text": "확정"
- },
- "7261c8af": {
-  "en": "send",
-  "text": "전송"
- },
- "cded1a85": {
-  "en": "exit",
-  "text": "종료"
- },
- "61efb279": {
-  "en": "Save changes",
-  "text": "변경 사항 저장"
- },
- "a2c6becb": {
-  "en": "No changes",
-  "text": "변경 없음"
- },
- "4d2d5d68": {
-  "en": "Save",
-  "text": "저장"
- },
- "c2c76cb1": {
-  "en": "Edit",
-  "text": "변경"
- },
- "35afca3b": {
-  "en": "Cancel",
-  "text": "취소"
- },
- "701eaa88": {
-  "en": "Edit name",
-  "text": "이름 편집"
- },
- "555cbe68": {
-  "en": "Keep",
-  "text": "유지"
- },
- "cc01b1df": {
-  "en": "Return",
-  "text": "되돌리기"
- },
- "2ffcbe05": {
-  "en": "Test",
-  "text": "테스트"
- },
- "c646a2c9": {
-  "en": "Search",
-  "text": "검색"
- },
- "0abaed3f": {
-  "en": "Found",
-  "text": "찾은 것"
- },
- "d155d06d": {
-  "en": "Type",
-  "text": "입력"
- },
- "a1de2fdd": {
-  "en": "Change",
-  "text": "변경"
- },
- "c3a34509": {
-  "en": "Next value",
-  "text": "다음 값"
- },
- "4d7ef753": {
-  "en": "Wi-Fi access point",
-  "text": "Wi-Fi 액세스 포인트"
- },
- "ba5122e7": {
-  "en": "Web chat and map upload",
-  "text": "웹 채팅과 지도 업로드"
- },
- "4dbe556f": {
-  "en": "MeshCore identity",
-  "text": "MeshCore 키"
- },
- "18ac79a2": {
-  "en": "Networks",
-  "text": "네트워크"
- },
- "6cf1ba25": {
-  "en": "Toggle",
-  "text": "전환"
- },
- "75a04256": {
-  "en": "Wrong password or refused: ",
-  "text": "비밀번호 오류 또는 거부: "
- },
- "e2dabf28": {
-  "en": "No answer from ",
-  "text": "응답 없음: "
- },
- "09974b89": {
-  "en": "Connection lost",
-  "text": "연결 끊김"
- },
- "c7e915d7": {
-  "en": "Wi-Fi scan failed",
-  "text": "Wi-Fi 검색 실패"
- },
- "34dfb5f5": {
-  "en": "Wi-Fi scan timed out",
-  "text": "Wi-Fi 검색 시간 초과"
- },
- "71494765": {
-  "en": "SSID 1-32 bytes, password empty or 8-63",
-  "text": "SSID 1-32바이트, 비밀번호 없음 또는 8-63"
- },
- "db65b4b4": {
-  "en": "Tile is not 256 or 512 px",
-  "text": "타일이 256/512 px가 아님"
- },
- "172eebcb": {
-  "en": "Not a PNG image",
-  "text": "PNG 이미지가 아님"
- },
- "e234f405": {
-  "en": "No location",
-  "text": "IP 위치를 찾지 못함"
- },
- "fd387bbd": {
-  "en": "SD full: web tiles not cached",
-  "text": "SD 가득 참: 웹 타일 저장 안 됨"
- },
- "d8e1dad5": {
-  "en": "Wi-Fi client on",
-  "text": "Wi-Fi 클라이언트 켜짐"
- },
- "0e9eb651": {
-  "en": "Wi-Fi client off",
-  "text": "Wi-Fi 클라이언트 꺼짐"
- },
- "b1374eac": {
-  "en": "Connecting to ",
-  "text": "연결 중: "
  },
  "1716578a": {
   "en": "Channel details",
@@ -2231,154 +2235,6 @@
  "f51b5247": {
   "en": "Show on map",
   "text": "지도에 표시"
- },
- "73c66160": {
-  "en": "Choose",
-  "text": "선택"
- },
- "22d86644": {
-  "en": "Default: ",
-  "text": "기본: "
- },
- "7bb181d6": {
-  "en": "Default: none",
-  "text": "기본: 없음"
- },
- "b75c3188": {
-  "en": "Channel removed",
-  "text": "채널 삭제됨"
- },
- "f476e036": {
-  "en": "Channel added",
-  "text": "채널 추가됨"
- },
- "1a11ab03": {
-  "en": "Hash ",
-  "text": "해시 "
- },
- "172ac002": {
-  "en": "Key:",
-  "text": "키:"
- },
- "d92dbe47": {
-  "en": "Every MeshCore node has it",
-  "text": "모든 MeshCore 노드에 있음"
- },
- "fac028c3": {
-  "en": "Scan with MeshMesh or the MeshCore app",
-  "text": "MeshMesh 또는 MeshCore 앱으로 스캔"
- },
- "023fb5d9": {
-  "en": "Already in this channel",
-  "text": "이미 참여한 채널"
- },
- "2b8b882d": {
-  "en": "Sound on new messages",
-  "text": "새 메시지 소리"
- },
- "edaf9d4d": {
-  "en": "Region · OK: save",
-  "text": "지역 · OK: 저장"
- },
- "59997b30": {
-  "en": "Invite",
-  "text": "초대"
- },
- "542f08f5": {
-  "en": "8 channels at most",
-  "text": "채널은 최대 8개"
- },
- "afa5c9cd": {
-  "en": "No chat contacts",
-  "text": "채팅 연락처 없음"
- },
- "be00fde1": {
-  "en": "Sure? OK again",
-  "text": "정말? 다시 OK"
- },
- "86b1d2eb": {
-  "en": "Leave channel",
-  "text": "채널 나가기"
- },
- "73ac94c3": {
-  "en": "Contact",
-  "text": "연락처"
- },
- "a30a5085": {
-  "en": "Sound on",
-  "text": "소리 켬"
- },
- "bc5128a1": {
-  "en": "Sound off",
-  "text": "소리 끔"
- },
- "7f264f8d": {
-  "en": "Name: 1-31 bytes",
-  "text": "이름: 1-31 바이트"
- },
- "8bf3cae2": {
-  "en": "Region saved",
-  "text": "지역 저장됨"
- },
- "78fdcc66": {
-  "en": "Key: 32 hex or base64",
-  "text": "키: 32 hex 또는 base64"
- },
- "6c129c2a": {
-  "en": "Discover a chat contact first: ADV",
-  "text": "먼저 채팅 연락처를 찾으세요: ADV"
- },
- "a3ed15d0": {
-  "en": "Invitation queued to ",
-  "text": "초대 대기 중: "
- },
- "4c8675ff": {
-  "en": "Invitation not sent",
-  "text": "초대 전송 안 됨"
- },
- "203aefe9": {
-  "en": "History stays; joining again shows it",
-  "text": "기록은 유지, 다시 참여하면 표시"
- },
- "41ae3d10": {
-  "en": "Left ",
-  "text": "나감: "
- },
- "c4227caa": {
-  "en": "Cannot leave while sending",
-  "text": "전송 중에는 나갈 수 없음"
- },
- "f3f514aa": {
-  "en": "Not a channel link",
-  "text": "채널 링크가 아님"
- },
- "62722f4e": {
-  "en": "Not in this mode",
-  "text": "이 모드에서 불가"
- },
- "1c9c7d52": {
-  "en": "Channel not saved",
-  "text": "채널 저장 안 됨"
- },
- "30025399": {
-  "en": "Join",
-  "text": "참여"
- },
- "c4749f82": {
-  "en": "Open channel",
-  "text": "채널로"
- },
- "5eb421e1": {
-  "en": "Channel invitation: ",
-  "text": "채널 초대: "
- },
- "25d966fa": {
-  "en": "you are in it",
-  "text": "참여 중"
- },
- "f42b49b2": {
-  "en": "<- join",
-  "text": "<- 참여"
  },
  "e3abda16": {
   "en": "Join by hashtag",
@@ -2416,6 +2272,10 @@
   "en": "Unknown channel ",
   "text": "알 수 없는 채널 "
  },
+ "b743d77a": {
+  "en": "Public channel of MeshCore",
+  "text": "MeshCore 공개 채널"
+ },
  "63703628": {
   "en": " · OK: try a #name",
   "text": " · OK: #이름 찾기"
@@ -2424,6 +2284,10 @@
   "en": "Full: 8 channels, Public included",
   "text": "가득 참: Public 포함 8개 채널"
  },
+ "8e4165b7": {
+  "en": "Private channel",
+  "text": "비공개 채널"
+ },
  "5fc765a7": {
   "en": "Other channels heard: none",
   "text": "다른 채널 수신 없음"
@@ -2431,6 +2295,10 @@
  "4cda3fd3": {
   "en": "Channels heard on air will appear here",
   "text": "수신된 채널이 여기에 표시됩니다"
+ },
+ "1f5d2384": {
+  "en": "Hashtag channel",
+  "text": "해시태그 채널"
  },
  "0700b8a7": {
   "en": "Channel name",
@@ -2448,10 +2316,6 @@
   "en": "32 hex digits or base64 (16 bytes)",
   "text": "32자리 hex 또는 base64 (16바이트)"
  },
- "74d4cc9d": {
-  "en": "Same #name, same channel as in MeshCore apps",
-  "text": "같은 #이름이면 MeshCore 앱과 같은 채널"
- },
  "d3bcc1f1": {
   "en": {
    "one": "message",
@@ -2461,17 +2325,13 @@
    "other": "메시지 {n}개"
   }
  },
- "b743d77a": {
-  "en": "Public channel of MeshCore",
-  "text": "MeshCore 공개 채널"
+ "74d4cc9d": {
+  "en": "Same #name, same channel as in MeshCore apps",
+  "text": "같은 #이름이면 MeshCore 앱과 같은 채널"
  },
- "8e4165b7": {
-  "en": "Private channel",
-  "text": "비공개 채널"
- },
- "1f5d2384": {
-  "en": "Hashtag channel",
-  "text": "해시태그 채널"
+ "f476e036": {
+  "en": "Channel added",
+  "text": "채널 추가됨"
  },
  "12a760c5": {
   "en": "The key is made on this device",
@@ -2492,6 +2352,154 @@
  "087a6114": {
   "en": "OK: join   BACK: cancel",
   "text": "OK: 참여   BACK: 취소"
+ },
+ "023fb5d9": {
+  "en": "Already in this channel",
+  "text": "이미 참여한 채널"
+ },
+ "542f08f5": {
+  "en": "8 channels at most",
+  "text": "채널은 최대 8개"
+ },
+ "7f264f8d": {
+  "en": "Name: 1-31 bytes",
+  "text": "이름: 1-31 바이트"
+ },
+ "78fdcc66": {
+  "en": "Key: 32 hex or base64",
+  "text": "키: 32 hex 또는 base64"
+ },
+ "f3f514aa": {
+  "en": "Not a channel link",
+  "text": "채널 링크가 아님"
+ },
+ "62722f4e": {
+  "en": "Not in this mode",
+  "text": "이 모드에서 불가"
+ },
+ "22d86644": {
+  "en": "Default: ",
+  "text": "기본: "
+ },
+ "7bb181d6": {
+  "en": "Default: none",
+  "text": "기본: 없음"
+ },
+ "b75c3188": {
+  "en": "Channel removed",
+  "text": "채널 삭제됨"
+ },
+ "1c9c7d52": {
+  "en": "Channel not saved",
+  "text": "채널 저장 안 됨"
+ },
+ "1a11ab03": {
+  "en": "Hash ",
+  "text": "해시 "
+ },
+ "172ac002": {
+  "en": "Key:",
+  "text": "키:"
+ },
+ "d92dbe47": {
+  "en": "Every MeshCore node has it",
+  "text": "모든 MeshCore 노드에 있음"
+ },
+ "fac028c3": {
+  "en": "Scan with MeshMesh or the MeshCore app",
+  "text": "MeshMesh 또는 MeshCore 앱으로 스캔"
+ },
+ "2b8b882d": {
+  "en": "Sound on new messages",
+  "text": "새 메시지 소리"
+ },
+ "edaf9d4d": {
+  "en": "Region · OK: save",
+  "text": "지역 · OK: 저장"
+ },
+ "59997b30": {
+  "en": "Invite",
+  "text": "초대"
+ },
+ "afa5c9cd": {
+  "en": "No chat contacts",
+  "text": "채팅 연락처 없음"
+ },
+ "be00fde1": {
+  "en": "Sure? OK again",
+  "text": "정말? 다시 OK"
+ },
+ "86b1d2eb": {
+  "en": "Leave channel",
+  "text": "채널 나가기"
+ },
+ "73ac94c3": {
+  "en": "Contact",
+  "text": "연락처"
+ },
+ "a30a5085": {
+  "en": "Sound on",
+  "text": "소리 켬"
+ },
+ "bc5128a1": {
+  "en": "Sound off",
+  "text": "소리 끔"
+ },
+ "8bf3cae2": {
+  "en": "Region saved",
+  "text": "지역 저장됨"
+ },
+ "6c129c2a": {
+  "en": "Discover a chat contact first: ADV",
+  "text": "먼저 채팅 연락처를 찾으세요: ADV"
+ },
+ "a3ed15d0": {
+  "en": "Invitation queued to ",
+  "text": "초대 대기 중: "
+ },
+ "4c8675ff": {
+  "en": "Invitation not sent",
+  "text": "초대 전송 안 됨"
+ },
+ "203aefe9": {
+  "en": "History stays; joining again shows it",
+  "text": "기록은 유지, 다시 참여하면 표시"
+ },
+ "41ae3d10": {
+  "en": "Left ",
+  "text": "나감: "
+ },
+ "c4227caa": {
+  "en": "Cannot leave while sending",
+  "text": "전송 중에는 나갈 수 없음"
+ },
+ "30025399": {
+  "en": "Join",
+  "text": "참여"
+ },
+ "c4749f82": {
+  "en": "Open channel",
+  "text": "채널로"
+ },
+ "5eb421e1": {
+  "en": "Channel invitation: ",
+  "text": "채널 초대: "
+ },
+ "25d966fa": {
+  "en": "you are in it",
+  "text": "참여 중"
+ },
+ "f42b49b2": {
+  "en": "<- join",
+  "text": "<- 참여"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "복사한 텍스트 없음"
+ },
+ "8dc21305": {
+  "en": "Copied",
+  "text": "복사됨"
  },
  "6426ce4b": {
   "en": "Copy text",
@@ -2521,14 +2529,6 @@
   "en": "Invalid text for this field",
   "text": "이 필드에 사용할 수 없는 텍스트"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "복사한 텍스트 없음"
- },
- "8dc21305": {
-  "en": "Copied",
-  "text": "복사됨"
- },
  "76bda0c0": {
   "en": "Tags",
   "text": "태그"
@@ -2540,98 +2540,6 @@
  "0685388d": {
   "en": "Save failed",
   "text": "저장 실패"
- },
- "e01eca3a": {
-  "en": "waiting for an answer...",
-  "text": "응답 대기 중..."
- },
- "60acd1e3": {
-  "en": "refused",
-  "text": "거부"
- },
- "1b68d598": {
-  "en": "no answer",
-  "text": "응답 없음"
- },
- "8bdf7f34": {
-  "en": "not logged in · password saved",
-  "text": "로그인 안 됨 · 비밀번호 저장됨"
- },
- "4c80d01f": {
-  "en": "not logged in",
-  "text": "로그인 안 됨"
- },
- "ea1182ad": {
-  "en": "logged in as admin",
-  "text": "관리자로 로그인"
- },
- "08c8675d": {
-  "en": "Status: ",
-  "text": "상태: "
- },
- "012245ac": {
-  "en": "Status: not asked yet",
-  "text": "상태: 아직 요청 안 함"
- },
- "eb20490a": {
-  "en": "Battery ",
-  "text": "배터리 "
- },
- "7bc55d8b": {
-  "en": " V",
-  "text": " V"
- },
- "c515b220": {
-  "en": "Up ",
-  "text": "가동 "
- },
- "8e85bb8c": {
-  "en": "Rx/tx ",
-  "text": "수신/송신 "
- },
- "67b05c83": {
-  "en": "Noise ",
-  "text": "잡음 "
- },
- "d725d6d4": {
-  "en": "Posts ",
-  "text": "게시물 "
- },
- "4f5720b5": {
-  "en": "Air ",
-  "text": "송출 "
- },
- "c14c68f4": {
-  "en": "Trace: ",
-  "text": "추적: "
- },
- "cef097f4": {
-  "en": "you ",
-  "text": "나 "
- },
- "9685740f": {
-  "en": " h ",
-  "text": " 시간 "
- },
- "6e8fc273": {
-  "en": " d ",
-  "text": " 일 "
- },
- "c57453ef": {
-  "en": "Trace shows the SNR at every repeater of the route",
-  "text": "추적은 경로의 각 리피터에서 SNR을 보여줍니다"
- },
- "d4460949": {
-  "en": "No route through repeaters to trace",
-  "text": "추적할 리피터 경로가 없음"
- },
- "3f688bff": {
-  "en": "Replies:",
-  "text": "응답:"
- },
- "343e2f48": {
-  "en": "Command: ",
-  "text": "명령: "
  },
  "55edebd2": {
   "en": "Login",
@@ -2677,6 +2585,102 @@
   "en": "Command sent",
   "text": "명령 보냄"
  },
+ "e01eca3a": {
+  "en": "waiting for an answer...",
+  "text": "응답 대기 중..."
+ },
+ "60acd1e3": {
+  "en": "refused",
+  "text": "거부"
+ },
+ "1b68d598": {
+  "en": "no answer",
+  "text": "응답 없음"
+ },
+ "8bdf7f34": {
+  "en": "not logged in · password saved",
+  "text": "로그인 안 됨 · 비밀번호 저장됨"
+ },
+ "4c80d01f": {
+  "en": "not logged in",
+  "text": "로그인 안 됨"
+ },
+ "ea1182ad": {
+  "en": "logged in as admin",
+  "text": "관리자로 로그인"
+ },
+ "08c8675d": {
+  "en": "Status: ",
+  "text": "상태: "
+ },
+ "012245ac": {
+  "en": "Status: not asked yet",
+  "text": "상태: 아직 요청 안 함"
+ },
+ "eb20490a": {
+  "en": "Battery ",
+  "text": "배터리 "
+ },
+ "7bc55d8b": {
+  "en": " V",
+  "text": " V"
+ },
+ "9685740f": {
+  "en": " h ",
+  "text": " 시간 "
+ },
+ "c515b220": {
+  "en": "Up ",
+  "text": "가동 "
+ },
+ "8e85bb8c": {
+  "en": "Rx/tx ",
+  "text": "수신/송신 "
+ },
+ "67b05c83": {
+  "en": "Noise ",
+  "text": "잡음 "
+ },
+ "d725d6d4": {
+  "en": "Posts ",
+  "text": "게시물 "
+ },
+ "4f5720b5": {
+  "en": "Air ",
+  "text": "송출 "
+ },
+ "6e8fc273": {
+  "en": " d ",
+  "text": " 일 "
+ },
+ "c14c68f4": {
+  "en": "Trace: ",
+  "text": "추적: "
+ },
+ "cef097f4": {
+  "en": "you ",
+  "text": "나 "
+ },
+ "c57453ef": {
+  "en": "Trace shows the SNR at every repeater of the route",
+  "text": "추적은 경로의 각 리피터에서 SNR을 보여줍니다"
+ },
+ "d4460949": {
+  "en": "No route through repeaters to trace",
+  "text": "추적할 리피터 경로가 없음"
+ },
+ "3f688bff": {
+  "en": "Replies:",
+  "text": "응답:"
+ },
+ "343e2f48": {
+  "en": "Command: ",
+  "text": "명령: "
+ },
+ "eca63717": {
+  "en": "Passwords differ",
+  "text": "암호 불일치"
+ },
  "9c799975": {
   "en": "Unlock",
   "text": "잠금 해제"
@@ -2717,9 +2721,33 @@
   "en": "Incorrect password",
   "text": "암호 오류"
  },
- "eca63717": {
-  "en": "Passwords differ",
-  "text": "암호 불일치"
+ "46120854": {
+  "en": "8 counters at most",
+  "text": "카운터는 최대 8개"
+ },
+ "28fa2654": {
+  "en": "Counter reset",
+  "text": "카운터 초기화됨"
+ },
+ "fa0f5fe6": {
+  "en": "The last counter stays",
+  "text": "마지막 카운터는 남습니다"
+ },
+ "45bb420e": {
+  "en": "Counter deleted",
+  "text": "카운터 삭제됨"
+ },
+ "61342fd0": {
+  "en": "on",
+  "text": "켬"
+ },
+ "d1b37a61": {
+  "en": "Name saved",
+  "text": "이름 저장됨"
+ },
+ "154900f6": {
+  "en": "Name: up to 23 UTF-8 bytes",
+  "text": "이름: 최대 23바이트 UTF-8"
  },
  "2ab44d95": {
   "en": "New counter",
@@ -2756,33 +2784,5 @@
  "73f035c7": {
   "en": "R again: reset to 0",
   "text": "R 다시: 0으로 초기화"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "카운터는 최대 8개"
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "카운터 초기화됨"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "마지막 카운터는 남습니다"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "카운터 삭제됨"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "켬"
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "이름 저장됨"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "이름: 최대 23바이트 UTF-8"
  }
 }

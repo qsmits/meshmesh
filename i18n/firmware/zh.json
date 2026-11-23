@@ -55,10 +55,6 @@
   "en": "Counter ",
   "text": "计数器 "
  },
- "f2d8afbf": {
-  "en": "Choose recipient",
-  "text": "选择收件人"
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "收到"
@@ -90,6 +86,1418 @@
  "e774d890": {
   "en": "Battery low",
   "text": "电量低"
+ },
+ "f2d8afbf": {
+  "en": "Choose recipient",
+  "text": "选择收件人"
+ },
+ "af34335c": {
+  "en": "Internet",
+  "text": "互联网"
+ },
+ "0b728291": {
+  "en": "All off",
+  "text": "全部关闭"
+ },
+ "c0b2703d": {
+  "en": {
+   "one": "new message",
+   "other": "new messages"
+  },
+  "forms": {
+   "other": "{n} 条新消息"
+  }
+ },
+ "8f7412e6": {
+  "en": " of ",
+  "text": " / "
+ },
+ "4f1014c0": {
+  "en": " nearby",
+  "text": " 在附近"
+ },
+ "e50e2dad": {
+  "en": {
+   "one": "sat",
+   "other": "sats"
+  },
+  "forms": {
+   "other": "{n} 颗卫星"
+  }
+ },
+ "84e158a3": {
+  "en": "GPS: searching",
+  "text": "GPS: 搜索中"
+ },
+ "7f9b88be": {
+  "en": "GPS off",
+  "text": "GPS 已关闭"
+ },
+ "517f4378": {
+  "en": "Online map",
+  "text": "在线地图"
+ },
+ "b40c44cd": {
+  "en": "No SD card",
+  "text": "无 SD 卡"
+ },
+ "2c64a5cf": {
+  "en": "No maps yet",
+  "text": "暂无地图"
+ },
+ "4b896fbb": {
+  "en": "Radar",
+  "text": "雷达"
+ },
+ "c0de6b7d": {
+  "en": {
+   "one": "point",
+   "other": "points"
+  },
+  "forms": {
+   "other": "{n} 个点"
+  }
+ },
+ "db89a899": {
+  "en": "Connect",
+  "text": "连接"
+ },
+ "a4bb08e5": {
+  "en": {
+   "one": "fault",
+   "other": "faults"
+  },
+  "forms": {
+   "other": "{n}个故障"
+  }
+ },
+ "010ffdb6": {
+  "en": "All OK",
+  "text": "一切正常"
+ },
+ "67a31c2c": {
+  "en": "Radio, screen",
+  "text": "无线电,屏幕"
+ },
+ "1520e768": {
+  "en": " MHz · SF",
+  "text": " MHz · SF"
+ },
+ "168512be": {
+  "en": "Radio error ",
+  "text": "无线电错误 "
+ },
+ "538b10e9": {
+  "en": "Open",
+  "text": "打开"
+ },
+ "3750eb16": {
+  "en": "Radio controls",
+  "text": "无线控制"
+ },
+ "19ede191": {
+  "en": {
+   "one": "app",
+   "other": "apps"
+  },
+  "forms": {
+   "other": "{n} 个应用"
+  }
+ },
+ "832f1cca": {
+  "en": " waiting",
+  "text": " 局待走"
+ },
+ "2c6a14ea": {
+  "en": "Folders and order: web page or app",
+  "text": "文件夹和顺序: 网页或应用"
+ },
+ "6e19da59": {
+  "en": "No apps in this folder",
+  "text": "此文件夹没有应用"
+ },
+ "00c6075a": {
+  "en": "Menu",
+  "text": "主菜单"
+ },
+ "3e892b4d": {
+  "en": "Select",
+  "text": "选择"
+ },
+ "66836516": {
+  "en": "You: ",
+  "text": "我: "
+ },
+ "51e7624c": {
+  "en": "No messages yet",
+  "text": "暂无消息"
+ },
+ "32e97c4a": {
+  "en": "Open MeshCore channel",
+  "text": "MeshCore 公开频道"
+ },
+ "9c9c5d7e": {
+  "en": "Open channel · no messages yet",
+  "text": "公开频道 · 暂无消息"
+ },
+ "543bd3e9": {
+  "en": "Private channel · no messages yet",
+  "text": "私密频道 · 暂无消息"
+ },
+ "e65fb504": {
+  "en": "Actions",
+  "text": "操作"
+ },
+ "33a4b02f": {
+  "en": "Next unread",
+  "text": "下一条未读"
+ },
+ "4648e8a8": {
+  "en": "Private channel · senders unverified · no ACK",
+  "text": "私密频道 · 发送者未验证 · 无 ACK"
+ },
+ "46718231": {
+  "en": "Open channel · senders unverified · no ACK",
+  "text": "公开频道 · 发送者未验证 · 无 ACK"
+ },
+ "c4e598ca": {
+  "en": "logged in",
+  "text": "已登录"
+ },
+ "ab1fafa1": {
+  "en": "log in: node card > Server",
+  "text": "登录：节点卡片 > 服务器"
+ },
+ "91455582": {
+  "en": "Not in contacts",
+  "text": "不在联系人中"
+ },
+ "e99aa76f": {
+  "en": "not confirmed",
+  "text": "未确认"
+ },
+ "1a940c2a": {
+  "en": "Type and press OK to send",
+  "text": "输入文字后按 OK 发送"
+ },
+ "f574869a": {
+  "en": "Message...",
+  "text": "消息..."
+ },
+ "f28e14cf": {
+  "en": "Send",
+  "text": "发送"
+ },
+ "68f399b1": {
+  "en": "Clipboard",
+  "text": "复制菜单"
+ },
+ "72d06ea7": {
+  "en": "Finding location by IP...",
+  "text": "正在通过 IP 定位..."
+ },
+ "851e5ac2": {
+  "en": "Needs Wi-Fi internet or an SD card",
+  "text": "需要 Wi-Fi 上网或 SD 卡"
+ },
+ "77c28af9": {
+  "en": "Connect Wi-Fi or load a map",
+  "text": "请连接 Wi-Fi 或载入地图"
+ },
+ "119314d0": {
+  "en": "GPS will take over after a fix",
+  "text": "GPS 定位后将自动切换"
+ },
+ "c19b47bb": {
+  "en": "Connections > Internet over Wi-Fi",
+  "text": "连接 > Wi-Fi 上网"
+ },
+ "b59a5b35": {
+  "en": "Downloading map...",
+  "text": "正在下载地图..."
+ },
+ "e6aae7d4": {
+  "en": "Reading map from SD...",
+  "text": "正在从 SD 读取地图..."
+ },
+ "ba994464": {
+  "en": "Tiles unavailable",
+  "text": "瓦片不可用"
+ },
+ "66643a4a": {
+  "en": "This zoom is not downloaded",
+  "text": "此缩放级别未下载"
+ },
+ "29cc0d19": {
+  "en": "+/- zoom · Wi-Fi internet loads maps",
+  "text": "+/- 缩放 · Wi-Fi 上网可加载地图"
+ },
+ "a3b1d86e": {
+  "en": "Offline map",
+  "text": "离线地图"
+ },
+ "59317dec": {
+  "en": " · loading",
+  "text": " · 加载中"
+ },
+ "1d1e1a72": {
+  "en": "GPS: old date",
+  "text": "GPS: 日期过旧"
+ },
+ "b45aef8c": {
+  "en": "Pan",
+  "text": "平移"
+ },
+ "62399752": {
+  "en": "Zoom",
+  "text": "缩放"
+ },
+ "9fa2c938": {
+  "en": "Following",
+  "text": "跟随中"
+ },
+ "3f654d20": {
+  "en": "To GPS",
+  "text": "回到 GPS"
+ },
+ "04dfc93c": {
+  "en": "No saved maps",
+  "text": "没有已存地图"
+ },
+ "dcf1e39a": {
+  "en": "Upload a map via Wi-Fi or USB",
+  "text": "请通过 Wi-Fi 或 USB 上传地图"
+ },
+ "7c620193": {
+  "en": {
+   "one": "tile on SD",
+   "other": "tiles on SD"
+  },
+  "forms": {
+   "other": "SD 上 {n} 个瓦片"
+  }
+ },
+ "bd794432": {
+  "en": "No matching contacts",
+  "text": "没有符合条件的联系人"
+ },
+ "4e5a0349": {
+  "en": "No nodes discovered yet",
+  "text": "尚未发现节点"
+ },
+ "8a8a895b": {
+  "en": "F: edit tag filter",
+  "text": "F: 选择标签"
+ },
+ "2ad4b008": {
+  "en": "Advertise my node",
+  "text": "广播我的节点"
+ },
+ "e2339f44": {
+  "en": "saved",
+  "text": "已保存"
+ },
+ "0ec24245": {
+  "en": "Details",
+  "text": "详情"
+ },
+ "f4a9c097": {
+  "en": "Filter",
+  "text": "选择标签"
+ },
+ "c2954bc2": {
+  "en": "Back",
+  "text": "返回"
+ },
+ "c416a424": {
+  "en": "Node was removed",
+  "text": "节点已删除"
+ },
+ "81ef07a9": {
+  "en": "Last heard",
+  "text": "最后收到"
+ },
+ "4f0a0e98": {
+  "en": " ago",
+  "text": " 前"
+ },
+ "1ae89b50": {
+  "en": "not since boot",
+  "text": "启动后未收到"
+ },
+ "2fce4529": {
+  "en": "Signal",
+  "text": "信号"
+ },
+ "d7d630be": {
+  "en": "Route",
+  "text": "路由"
+ },
+ "cd08221c": {
+  "en": " · flood",
+  "text": " · 泛洪"
+ },
+ "e27f342a": {
+  "en": "Position",
+  "text": "位置"
+ },
+ "a3ad51f3": {
+  "en": "not shared",
+  "text": "未共享"
+ },
+ "b8297e9a": {
+  "en": "Room",
+  "text": "房间"
+ },
+ "ae0ed984": {
+  "en": "Message",
+  "text": "发消息"
+ },
+ "8f635566": {
+  "en": "On map",
+  "text": "在地图上"
+ },
+ "db5485e7": {
+  "en": "Reset path",
+  "text": "重置路径"
+ },
+ "2d44294d": {
+  "en": "Sure?",
+  "text": "确定?"
+ },
+ "6e3fab8c": {
+  "en": "Forget",
+  "text": "忘记"
+ },
+ "6d7302f2": {
+  "en": "Server",
+  "text": "服务器"
+ },
+ "26f8e74e": {
+  "en": "Trace",
+  "text": "追踪"
+ },
+ "0a77a91f": {
+  "en": "Action",
+  "text": "操作"
+ },
+ "8d57e66a": {
+  "en": "Run",
+  "text": "执行"
+ },
+ "0ff01b6a": {
+  "en": "Notes",
+  "text": "备注"
+ },
+ "d112e127": {
+  "en": "hold flat",
+  "text": "请保持水平"
+ },
+ "1a45dda5": {
+  "en": "not calibrated",
+  "text": "未校准"
+ },
+ "ab3a8a0a": {
+  "en": "off",
+  "text": "已关闭"
+ },
+ "b2e48278": {
+  "en": "fix",
+  "text": "已定位"
+ },
+ "620f3cc6": {
+  "en": "old date",
+  "text": "日期过旧"
+ },
+ "67ce0277": {
+  "en": "searching",
+  "text": "搜索中"
+ },
+ "f5e7befb": {
+  "en": "Satellites",
+  "text": "卫星"
+ },
+ "a2009955": {
+  "en": " in view",
+  "text": " 颗可见"
+ },
+ "6d7e4165": {
+  "en": "Latitude",
+  "text": "纬度"
+ },
+ "671964ee": {
+  "en": "Longitude",
+  "text": "经度"
+ },
+ "bb5f80fd": {
+  "en": "Clock",
+  "text": "时钟"
+ },
+ "ffa35e26": {
+  "en": "not set",
+  "text": "未设置"
+ },
+ "219101e3": {
+  "en": "manual",
+  "text": "手动"
+ },
+ "d2cdcecb": {
+  "en": " · trusted",
+  "text": " · 可信"
+ },
+ "bb77a2cf": {
+  "en": "Compass",
+  "text": "指南针"
+ },
+ "1db880db": {
+  "en": {
+   "one": "sample",
+   "other": "samples"
+  },
+  "forms": {
+   "other": "{n} 个样本"
+  }
+ },
+ "37b8f592": {
+  "en": "calibrated",
+  "text": "已校准"
+ },
+ "75c3ffb2": {
+  "en": "needs calibration",
+  "text": "需要校准"
+ },
+ "ff05911b": {
+  "en": "Share position",
+  "text": "共享位置"
+ },
+ "7629db5a": {
+  "en": "Finish calibration",
+  "text": "完成校准"
+ },
+ "6f59150a": {
+  "en": "Calibrate compass",
+  "text": "校准指南针"
+ },
+ "e125a9a1": {
+  "en": "Advert with GPS",
+  "text": "带 GPS 的通告"
+ },
+ "10b78d8a": {
+  "en": "Needs a fresh GPS fix",
+  "text": "需要最新 GPS 定位"
+ },
+ "a603b11c": {
+  "en": "Rotate in all directions",
+  "text": "向各个方向旋转设备"
+ },
+ "7f8e9f6b": {
+  "en": "Rotate for 20+ seconds",
+  "text": "旋转 20 秒以上"
+ },
+ "45465004": {
+  "en": "GPS on",
+  "text": "开启 GPS"
+ },
+ "4930944f": {
+  "en": "Phone",
+  "text": "手机"
+ },
+ "ec266ec8": {
+  "en": "Watch",
+  "text": "手表"
+ },
+ "89a2ef46": {
+  "en": "Headphones",
+  "text": "耳机"
+ },
+ "fae1ce6b": {
+  "en": "Phone/watch",
+  "text": "手机/手表"
+ },
+ "7e3d4120": {
+  "en": "BLE device",
+  "text": "BLE 设备"
+ },
+ "9e13a743": {
+  "en": "Hidden network",
+  "text": "隐藏网络"
+ },
+ "90cbadfa": {
+  "en": "Bluetooth busy: probe",
+  "text": "Bluetooth 忙: 正在检测"
+ },
+ "e5e4ab77": {
+  "en": "Bluetooth error",
+  "text": "Bluetooth 错误"
+ },
+ "983f66dc": {
+  "en": "Wi-Fi busy: access point",
+  "text": "Wi-Fi 被热点占用"
+ },
+ "35c403f6": {
+  "en": "Wi-Fi busy: probe",
+  "text": "Wi-Fi 忙: 正在检测"
+ },
+ "1be7979b": {
+  "en": "Wi-Fi error",
+  "text": "Wi-Fi 错误"
+ },
+ "89414ad6": {
+  "en": "Scanning Wi-Fi...",
+  "text": "正在扫描 Wi-Fi..."
+ },
+ "542d8f50": {
+  "en": "closer to centre = stronger",
+  "text": "越靠近中心信号越强"
+ },
+ "fde56fad": {
+  "en": "List paused",
+  "text": "列表已暂停"
+ },
+ "503d6eed": {
+  "en": {
+   "one": "phone/watch nearby",
+   "other": "phones/watches nearby"
+  },
+  "forms": {
+   "other": "附近 {n} 部手机/手表"
+  }
+ },
+ "49031ccd": {
+  "en": "No signals yet",
+  "text": "暂无信号"
+ },
+ "8d2937a1": {
+  "en": "List",
+  "text": "列表"
+ },
+ "454d1d8a": {
+  "en": "Resume",
+  "text": "继续"
+ },
+ "44f9bf2d": {
+  "en": "Pause",
+  "text": "暂停"
+ },
+ "3368e695": {
+  "en": "Home in",
+  "text": "测向"
+ },
+ "aad07647": {
+  "en": "Motion",
+  "text": "移动"
+ },
+ "84397af6": {
+  "en": " · direct packets only",
+  "text": " · 仅直接收到的包"
+ },
+ "b8a018ba": {
+  "en": " · address changes over time",
+  "text": " · 地址会随时间变化"
+ },
+ "a8e7e5cc": {
+  "en": "channel ",
+  "text": "信道 "
+ },
+ "64db285b": {
+  "en": "Lost",
+  "text": "丢失"
+ },
+ "46102346": {
+  "en": "No signal",
+  "text": "无信号"
+ },
+ "3b06b3cd": {
+  "en": "Stronger",
+  "text": "变强"
+ },
+ "4dd880a2": {
+  "en": "Weaker",
+  "text": "变弱"
+ },
+ "cd945433": {
+  "en": "Steady",
+  "text": "稳定"
+ },
+ "184745be": {
+  "en": "keep moving",
+  "text": "继续移动"
+ },
+ "78c14fb6": {
+  "en": "peak ",
+  "text": "峰值 "
+ },
+ "b991041c": {
+  "en": "Waiting for samples",
+  "text": "等待样本"
+ },
+ "cde081d3": {
+  "en": {
+   "one": "packet",
+   "other": "packets"
+  },
+  "forms": {
+   "other": "{n} 个包"
+  }
+ },
+ "0ec969ac": {
+  "en": " adverts/s",
+  "text": " 通告/秒"
+ },
+ "93382782": {
+  "en": " beacons/s",
+  "text": " 信标/秒"
+ },
+ "42cfcb2d": {
+  "en": " s ago",
+  "text": " 秒前"
+ },
+ "3f609f74": {
+  "en": "Mute",
+  "text": "静音"
+ },
+ "b3ca9a34": {
+  "en": "Sound",
+  "text": "声音"
+ },
+ "68f7fd73": {
+  "en": "Reset peak",
+  "text": "重置峰值"
+ },
+ "394ec4f2": {
+  "en": "Turn the access point off",
+  "text": "请关闭热点"
+ },
+ "fccfe8a5": {
+  "en": "Beacon for another board",
+  "text": "为另一块板发信标"
+ },
+ "bfacb4d0": {
+  "en": " frames/s on channel 1",
+  "text": " 帧/秒,信道 1"
+ },
+ "6d3d79bb": {
+  "en": "beacon ",
+  "text": "信标 "
+ },
+ "d7972182": {
+  "en": " frames/s · ",
+  "text": " 帧/秒 · "
+ },
+ "b85b81cf": {
+  "en": "waiting: set the other board to CSI beacon",
+  "text": "等待中: 请将另一块板设为 CSI 信标"
+ },
+ "1d0cdb24": {
+  "en": "NO WI-FI",
+  "text": "无 WI-FI"
+ },
+ "e9a87b56": {
+  "en": "BEACON ON",
+  "text": "信标工作中"
+ },
+ "564cdaca": {
+  "en": "NO BEACON",
+  "text": "无信标"
+ },
+ "9a1796e8": {
+  "en": "CSI FROZEN",
+  "text": "CSI 无变化"
+ },
+ "dd26ae1f": {
+  "en": "CALIBRATING ",
+  "text": "校准中 "
+ },
+ "5ec52fe4": {
+  "en": " s",
+  "text": " 秒"
+ },
+ "4d851fe7": {
+  "en": "MOTION",
+  "text": "有移动"
+ },
+ "6fce5d71": {
+  "en": "STILL",
+  "text": "静止"
+ },
+ "13d6d724": {
+  "en": "activity ",
+  "text": "活动 "
+ },
+ "1e3add08": {
+  "en": "threshold ",
+  "text": "阈值 "
+ },
+ "dda163c5": {
+  "en": " (default)",
+  "text": " (默认)"
+ },
+ "19deef04": {
+  "en": "Walk between the boards to see the trace",
+  "text": "在两块板之间走动即可看到轨迹"
+ },
+ "faa0c1ab": {
+  "en": "Calibrate with the area empty and still (10 s)",
+  "text": "校准时区域内须无人且静止 (10 秒)"
+ },
+ "4204187c": {
+  "en": "Place the boards 2-5 m apart; motion between them is sensed",
+  "text": "两块板相距 2-5 米放置,可感知其间的移动"
+ },
+ "9bb72cae": {
+  "en": "Signals",
+  "text": "信号"
+ },
+ "6fb7daa2": {
+  "en": "Calibrate",
+  "text": "校准"
+ },
+ "4d580639": {
+  "en": "Beacon",
+  "text": "信标"
+ },
+ "5427923a": {
+  "en": "To turn on, hold the trackball pressed",
+  "text": "开机：按住轨迹球"
+ },
+ "b1e20664": {
+  "en": "To turn on: RESET or the power switch",
+  "text": "开机：RESET 或电源开关"
+ },
+ "cba7fbe8": {
+  "en": "Device is off",
+  "text": "设备已关机"
+ },
+ "2697628b": {
+  "en": "Turning off...",
+  "text": "正在关机..."
+ },
+ "b639f585": {
+  "en": "GPS & compass",
+  "text": "GPS 与指南针"
+ },
+ "dde0a6be": {
+  "en": "Keys & help",
+  "text": "按键与帮助"
+ },
+ "cd03e04b": {
+  "en": "Turn off",
+  "text": "关机"
+ },
+ "a21b5cde": {
+  "en": "Brightness ",
+  "text": "亮度 "
+ },
+ "e1b4bdaa": {
+  "en": "compass calibrated",
+  "text": "指南针已校准"
+ },
+ "e8f719bd": {
+  "en": "compass not calibrated",
+  "text": "指南针未校准"
+ },
+ "7316bebd": {
+  "en": " relayed",
+  "text": " 已转发"
+ },
+ "4f18c10c": {
+  "en": "What every key does",
+  "text": "各按键功能"
+ },
+ "7e8a19d5": {
+  "en": "Searching: ",
+  "text": "搜索中: "
+ },
+ "9a555563": {
+  "en": {
+   "one": "repeater",
+   "other": "repeaters"
+  },
+  "forms": {
+   "other": "{n} 个中继"
+  }
+ },
+ "1a8c15c3": {
+  "en": {
+   "one": "region",
+   "other": "regions"
+  },
+  "forms": {
+   "other": "{n} 个区域"
+  }
+ },
+ "99f30427": {
+  "en": "OK: start",
+  "text": "OK: 开始"
+ },
+ "9fca3c9e": {
+  "en": "Listening ",
+  "text": "监听 "
+ },
+ "a3980ce8": {
+  "en": "Nothing new",
+  "text": "无新网络"
+ },
+ "443ffd47": {
+  "en": "OK: test ",
+  "text": "OK：测试 "
+ },
+ "2265ebb1": {
+  "en": "Current profile: ",
+  "text": "当前配置： "
+ },
+ "34f428b1": {
+  "en": "Try every regional preset",
+  "text": "尝试每个地区设置"
+ },
+ "c91eb13e": {
+  "en": "Preset",
+  "text": "区域配置"
+ },
+ "8d9206a1": {
+  "en": "Frequency",
+  "text": "频率"
+ },
+ "008f5512": {
+  "en": "Bandwidth",
+  "text": "带宽"
+ },
+ "d174bc31": {
+  "en": "Spreading factor",
+  "text": "扩频因子"
+ },
+ "3c2364a7": {
+  "en": "Coding rate",
+  "text": "编码率"
+ },
+ "92d39d44": {
+  "en": "TX power",
+  "text": "发射功率"
+ },
+ "175749a2": {
+  "en": "Relay hop limit",
+  "text": "转发跳数上限"
+ },
+ "75193707": {
+  "en": "Relay packets",
+  "text": "转发数据包"
+ },
+ "2197c64b": {
+  "en": "Path hash size",
+  "text": "路径哈希长度"
+ },
+ "492e789d": {
+  "en": "Region",
+  "text": "区域"
+ },
+ "b872ed2b": {
+  "en": "Find regions",
+  "text": "查找区域"
+ },
+ "eb38bf4c": {
+  "en": "Find network",
+  "text": "查找网络"
+ },
+ "24646b98": {
+  "en": "Radio test",
+  "text": "无线电测试"
+ },
+ "0614ba0b": {
+  "en": "Previous radio",
+  "text": "原无线电设置"
+ },
+ "0fe07306": {
+  "en": "Name",
+  "text": "名称"
+ },
+ "9a73db9b": {
+  "en": "Language",
+  "text": "语言"
+ },
+ "df6e627c": {
+  "en": "Day brightness",
+  "text": "日间亮度"
+ },
+ "73d459b4": {
+  "en": "Home layout",
+  "text": "主页布局"
+ },
+ "4ef0ddc5": {
+  "en": "Sounds",
+  "text": "声音"
+ },
+ "300ec32d": {
+  "en": "Auto lock",
+  "text": "自动锁定"
+ },
+ "1f0bca87": {
+  "en": "Dim screen",
+  "text": "屏幕变暗"
+ },
+ "37976ee4": {
+  "en": "GPS receiver",
+  "text": "GPS 接收器"
+ },
+ "f050c5bc": {
+  "en": "UTC offset",
+  "text": "UTC 偏移"
+ },
+ "caa82244": {
+  "en": "Battery shows",
+  "text": "电池显示"
+ },
+ "fecd422a": {
+  "en": "Lock screen",
+  "text": "锁屏"
+ },
+ "667ad2f5": {
+  "en": "Wake on message",
+  "text": "消息唤醒"
+ },
+ "98b6a9f6": {
+  "en": "Message popup",
+  "text": "消息弹窗"
+ },
+ "4eaf7c92": {
+  "en": "Theme",
+  "text": "主题"
+ },
+ "ac7ce48d": {
+  "en": "Accent colour",
+  "text": "强调色"
+ },
+ "548b7cf8": {
+  "en": "Night brightness",
+  "text": "20:00–07:00 亮度"
+ },
+ "1c076c32": {
+  "en": "Screen password",
+  "text": "屏幕密码"
+ },
+ "9525b78e": {
+  "en": "Custom",
+  "text": "自定义"
+ },
+ "dc6bfbe0": {
+  "en": " MHz",
+  "text": " MHz"
+ },
+ "1ffe2452": {
+  "en": " kHz",
+  "text": " kHz"
+ },
+ "49e98b8b": {
+  "en": {
+   "one": "byte",
+   "other": "bytes"
+  },
+  "forms": {
+   "other": "{n} 字节"
+  }
+ },
+ "304ff7fb": {
+  "en": "None",
+  "text": "无"
+ },
+ "9023a2b0": {
+  "en": "OK: keep",
+  "text": "OK: 保留"
+ },
+ "45570065": {
+  "en": "Dark",
+  "text": "深色"
+ },
+ "8ad2f8cf": {
+  "en": "Light",
+  "text": "明亮"
+ },
+ "126befb6": {
+  "en": "Auto",
+  "text": "自动"
+ },
+ "880f97dc": {
+  "en": "Lime",
+  "text": "Lime"
+ },
+ "e9dd1fed": {
+  "en": "Blue",
+  "text": "Blue"
+ },
+ "f03bdf12": {
+  "en": "Violet",
+  "text": "Violet"
+ },
+ "15903060": {
+  "en": "Amber",
+  "text": "Amber"
+ },
+ "0dad9117": {
+  "en": "Same as day",
+  "text": "与日间相同"
+ },
+ "8581156e": {
+  "en": "Tiles",
+  "text": "网格"
+ },
+ "87c7093b": {
+  "en": "Volts",
+  "text": "电压"
+ },
+ "ff1537fa": {
+  "en": "Percent",
+  "text": "百分比"
+ },
+ "3c2dfe59": {
+  "en": "Hidden",
+  "text": "隐藏"
+ },
+ "75afe364": {
+  "en": "All",
+  "text": "全部"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "提及"
+ },
+ "f0b87eb8": {
+  "en": "MeshCore regional settings: frequency, BW, SF, CR",
+  "text": "MeshCore 地区设置：频率、BW、SF、CR"
+ },
+ "21ff842c": {
+  "en": "1 kHz steps; must match every node",
+  "text": "步进 1 kHz,须与所有节点一致"
+ },
+ "7608c344": {
+  "en": "62.5 / 125 / 250 / 500 kHz",
+  "text": "62.5 / 125 / 250 / 500 kHz"
+ },
+ "943a47cb": {
+  "en": "Higher SF: longer range, slower",
+  "text": "SF 越高: 距离越远,速度越慢"
+ },
+ "c52a8c0f": {
+  "en": "Error correction 4/5 to 4/8",
+  "text": "纠错编码 4/5 至 4/8"
+ },
+ "af53f6b8": {
+  "en": "Radio chip setting, 0-22 dBm",
+  "text": "射频芯片设置,0-22 dBm"
+ },
+ "3f328711": {
+  "en": "Relay packets with fewer hops than this",
+  "text": "转发跳数少于此值的数据包"
+ },
+ "7cd202ed": {
+  "en": "Forward other nodes' MeshCore packets",
+  "text": "转发其他节点的 MeshCore 数据包"
+ },
+ "fa81bada": {
+  "en": "Per hop in our floods; older MeshCore drops 2-3",
+  "text": "我们的泛洪包每跳字节数；旧版 MeshCore 丢弃 2-3"
+ },
+ "8513a98e": {
+  "en": "Repeaters pass on our floods by it; OK: type",
+  "text": "中继器据此转发我们的包; OK: 输入"
+ },
+ "33a9cb6d": {
+  "en": "Found: ",
+  "text": "已找到: "
+ },
+ "2fd16ea7": {
+  "en": "Asks repeaters that hear this device",
+  "text": "询问能听到本设备的中继器"
+ },
+ "d284a6e4": {
+  "en": "A restart returns ",
+  "text": "重启后恢复为 "
+ },
+ "51c955b1": {
+  "en": "OK: return to it",
+  "text": "OK: 恢复"
+ },
+ "5261f68a": {
+  "en": "Kept on a change of frequency, BW, SF or CR",
+  "text": "更改频率/BW/SF/CR时记住"
+ },
+ "85dde262": {
+  "en": "Applied to the radio when saved",
+  "text": "保存后应用到无线电"
+ },
+ "7c3b11a9": {
+  "en": "OK: set or change password",
+  "text": "OK: 设置或更改密码"
+ },
+ "e754fa0d": {
+  "en": "Day 07:00–20:00, local time",
+  "text": "日间 07:00–20:00，本地时间"
+ },
+ "34fd54b2": {
+  "en": "OK: edit, 1-24 UTF-8 bytes",
+  "text": "OK: 编辑,1-24 字节 UTF-8"
+ },
+ "7ecd2a4c": {
+  "en": "Menu language",
+  "text": "菜单语言"
+ },
+ "018eb564": {
+  "en": "Applies to Home and all folders",
+  "text": "用于主页和所有文件夹"
+ },
+ "b265628f": {
+  "en": "Tone for messages and ACKs",
+  "text": "消息和 ACK 提示音"
+ },
+ "969a0678": {
+  "en": "0 = off, 30-600 s",
+  "text": "0 = 关闭, 30-600 秒"
+ },
+ "ab5a04f6": {
+  "en": "0 = off, 10-600 s",
+  "text": "0 = 关闭, 10-600 秒"
+ },
+ "48707a29": {
+  "en": "Receiver power",
+  "text": "接收器电源"
+ },
+ "ed88bd72": {
+  "en": "Local time, 15 minute steps",
+  "text": "本地时间,步进 15 分钟"
+ },
+ "5d6af097": {
+  "en": "Status bar: charge estimate or measured voltage",
+  "text": "状态栏: 估算电量或实测电压"
+ },
+ "e4f5443f": {
+  "en": "Message senders while locked",
+  "text": "锁定时显示发送者"
+ },
+ "6cf00f88": {
+  "en": "Stored in device memory",
+  "text": "保存在设备内存中"
+ },
+ "1dd4ab8a": {
+  "en": "Listening",
+  "text": "接收"
+ },
+ "2fe2598e": {
+  "en": "pings",
+  "text": "ping"
+ },
+ "9296739d": {
+  "en": "Phone: ",
+  "text": "手机: "
+ },
+ "4aba2ce0": {
+  "en": "No position: GPS fix or phone app",
+  "text": "无位置：GPS 或手机"
+ },
+ "53e32296": {
+  "en": "Ping sent, listening for repeaters...",
+  "text": "已发送 ping，正在监听中继..."
+ },
+ "140b9a3a": {
+  "en": "No pings yet: P sends one",
+  "text": "暂无 ping：按 P 发送"
+ },
+ "39b7127d": {
+  "en": "Last ping: ",
+  "text": "上次 ping: "
+ },
+ "1983dffb": {
+  "en": "Last ping: no repeater heard it",
+  "text": "上次 ping：无中继听到"
+ },
+ "8504bdd5": {
+  "en": "No repeaters heard yet",
+  "text": "尚未听到中继"
+ },
+ "6c03392d": {
+  "en": "OK starts listening and pings",
+  "text": "OK 开始接收和 ping"
+ },
+ "0aed7015": {
+  "en": "rx ",
+  "text": "接收 "
+ },
+ "04be6123": {
+  "en": " · echo ",
+  "text": " · 回声 "
+ },
+ "4b7f7705": {
+  "en": "Stop",
+  "text": "停止"
+ },
+ "0ae8097f": {
+  "en": "Start",
+  "text": "开始"
+ },
+ "7fb7f0a9": {
+  "en": "Ping",
+  "text": "Ping"
+ },
+ "5f7eec60": {
+  "en": "Wardrive on",
+  "text": "扫街测绘已开启"
+ },
+ "8ae160ba": {
+  "en": "Wardrive off",
+  "text": "扫街测绘已关闭"
+ },
+ "54f6c01a": {
+  "en": "Ping queued",
+  "text": "ping 已排队"
+ },
+ "dfe5ac67": {
+  "en": "No position yet",
+  "text": "暂无位置"
+ },
+ "0cf72110": {
+  "en": "Wait: a ping is under way",
+  "text": "请稍候：ping 正在进行"
+ },
+ "46ff9c40": {
+  "en": "choose",
+  "text": "选择"
+ },
+ "11c2662d": {
+  "en": "select",
+  "text": "选定"
+ },
+ "7261c8af": {
+  "en": "send",
+  "text": "发送"
+ },
+ "cded1a85": {
+  "en": "exit",
+  "text": "退出"
+ },
+ "61efb279": {
+  "en": "Save changes",
+  "text": "保存更改"
+ },
+ "a2c6becb": {
+  "en": "No changes",
+  "text": "无更改"
+ },
+ "4d2d5d68": {
+  "en": "Save",
+  "text": "保存"
+ },
+ "c2c76cb1": {
+  "en": "Edit",
+  "text": "修改"
+ },
+ "35afca3b": {
+  "en": "Cancel",
+  "text": "取消"
+ },
+ "701eaa88": {
+  "en": "Edit name",
+  "text": "编辑名称"
+ },
+ "555cbe68": {
+  "en": "Keep",
+  "text": "保留"
+ },
+ "cc01b1df": {
+  "en": "Return",
+  "text": "恢复"
+ },
+ "2ffcbe05": {
+  "en": "Test",
+  "text": "测试"
+ },
+ "c646a2c9": {
+  "en": "Search",
+  "text": "搜索"
+ },
+ "0abaed3f": {
+  "en": "Found",
+  "text": "已找到"
+ },
+ "d155d06d": {
+  "en": "Type",
+  "text": "输入"
+ },
+ "a1de2fdd": {
+  "en": "Change",
+  "text": "更改"
+ },
+ "c3a34509": {
+  "en": "Next value",
+  "text": "下一个值"
+ },
+ "4d7ef753": {
+  "en": "Wi-Fi access point",
+  "text": "Wi-Fi 热点"
+ },
+ "ba5122e7": {
+  "en": "Web chat and map upload",
+  "text": "网页聊天和地图上传"
+ },
+ "4dbe556f": {
+  "en": "MeshCore identity",
+  "text": "MeshCore 身份"
+ },
+ "18ac79a2": {
+  "en": "Networks",
+  "text": "网络"
+ },
+ "6cf1ba25": {
+  "en": "Toggle",
+  "text": "切换"
+ },
+ "75a04256": {
+  "en": "Wrong password or refused: ",
+  "text": "密码错误或被拒绝: "
+ },
+ "e2dabf28": {
+  "en": "No answer from ",
+  "text": "未收到应答: "
+ },
+ "09974b89": {
+  "en": "Connection lost",
+  "text": "连接已断开"
+ },
+ "c7e915d7": {
+  "en": "Wi-Fi scan failed",
+  "text": "Wi-Fi 扫描失败"
+ },
+ "34dfb5f5": {
+  "en": "Wi-Fi scan timed out",
+  "text": "Wi-Fi 扫描超时"
+ },
+ "71494765": {
+  "en": "SSID 1-32 bytes, password empty or 8-63",
+  "text": "SSID 1-32 字节,密码为空或 8-63 位"
+ },
+ "db65b4b4": {
+  "en": "Tile is not 256 or 512 px",
+  "text": "瓦片不是 256 或 512 px"
+ },
+ "172eebcb": {
+  "en": "Not a PNG image",
+  "text": "不是 PNG 图像"
+ },
+ "e234f405": {
+  "en": "No location",
+  "text": "无法通过 IP 定位"
+ },
+ "fd387bbd": {
+  "en": "SD full: web tiles not cached",
+  "text": "SD 已满: 网络瓦片未缓存"
+ },
+ "d8e1dad5": {
+  "en": "Wi-Fi client on",
+  "text": "Wi-Fi 客户端已开启"
+ },
+ "0e9eb651": {
+  "en": "Wi-Fi client off",
+  "text": "Wi-Fi 客户端已关闭"
+ },
+ "b1374eac": {
+  "en": "Connecting to ",
+  "text": "正在连接 "
  },
  "5b61220f": {
   "en": "Forgotten: ",
@@ -519,13 +1927,13 @@
   "en": "Radio TX error",
   "text": "无线电发送错误"
  },
- "54279dd1": {
-  "en": "No repeat heard",
-  "text": "未听到转发"
- },
  "60e47df0": {
   "en": "On",
   "text": "开"
+ },
+ "54279dd1": {
+  "en": "No repeat heard",
+  "text": "未听到转发"
  },
  "1f7c35ca": {
   "en": "hold OK",
@@ -800,1413 +2208,9 @@
   "en": "Add a channel",
   "text": "添加频道"
  },
- "af34335c": {
-  "en": "Internet",
-  "text": "互联网"
- },
- "0b728291": {
-  "en": "All off",
-  "text": "全部关闭"
- },
- "c0b2703d": {
-  "en": {
-   "one": "new message",
-   "other": "new messages"
-  },
-  "forms": {
-   "other": "{n} 条新消息"
-  }
- },
- "8f7412e6": {
-  "en": " of ",
-  "text": " / "
- },
- "4f1014c0": {
-  "en": " nearby",
-  "text": " 在附近"
- },
- "84e158a3": {
-  "en": "GPS: searching",
-  "text": "GPS: 搜索中"
- },
- "7f9b88be": {
-  "en": "GPS off",
-  "text": "GPS 已关闭"
- },
- "e50e2dad": {
-  "en": {
-   "one": "sat",
-   "other": "sats"
-  },
-  "forms": {
-   "other": "{n} 颗卫星"
-  }
- },
- "517f4378": {
-  "en": "Online map",
-  "text": "在线地图"
- },
- "b40c44cd": {
-  "en": "No SD card",
-  "text": "无 SD 卡"
- },
- "2c64a5cf": {
-  "en": "No maps yet",
-  "text": "暂无地图"
- },
- "4b896fbb": {
-  "en": "Radar",
-  "text": "雷达"
- },
- "c0de6b7d": {
-  "en": {
-   "one": "point",
-   "other": "points"
-  },
-  "forms": {
-   "other": "{n} 个点"
-  }
- },
- "db89a899": {
-  "en": "Connect",
-  "text": "连接"
- },
- "010ffdb6": {
-  "en": "All OK",
-  "text": "一切正常"
- },
- "a4bb08e5": {
-  "en": {
-   "one": "fault",
-   "other": "faults"
-  },
-  "forms": {
-   "other": "{n}个故障"
-  }
- },
- "67a31c2c": {
-  "en": "Radio, screen",
-  "text": "无线电,屏幕"
- },
- "1520e768": {
-  "en": " MHz · SF",
-  "text": " MHz · SF"
- },
- "168512be": {
-  "en": "Radio error ",
-  "text": "无线电错误 "
- },
- "538b10e9": {
-  "en": "Open",
-  "text": "打开"
- },
- "3750eb16": {
-  "en": "Radio controls",
-  "text": "无线控制"
- },
- "832f1cca": {
-  "en": " waiting",
-  "text": " 局待走"
- },
- "19ede191": {
-  "en": {
-   "one": "app",
-   "other": "apps"
-  },
-  "forms": {
-   "other": "{n} 个应用"
-  }
- },
- "2c6a14ea": {
-  "en": "Folders and order: web page or app",
-  "text": "文件夹和顺序: 网页或应用"
- },
- "6e19da59": {
-  "en": "No apps in this folder",
-  "text": "此文件夹没有应用"
- },
- "00c6075a": {
-  "en": "Menu",
-  "text": "主菜单"
- },
- "3e892b4d": {
-  "en": "Select",
+ "73c66160": {
+  "en": "Choose",
   "text": "选择"
- },
- "66836516": {
-  "en": "You: ",
-  "text": "我: "
- },
- "51e7624c": {
-  "en": "No messages yet",
-  "text": "暂无消息"
- },
- "32e97c4a": {
-  "en": "Open MeshCore channel",
-  "text": "MeshCore 公开频道"
- },
- "9c9c5d7e": {
-  "en": "Open channel · no messages yet",
-  "text": "公开频道 · 暂无消息"
- },
- "543bd3e9": {
-  "en": "Private channel · no messages yet",
-  "text": "私密频道 · 暂无消息"
- },
- "e65fb504": {
-  "en": "Actions",
-  "text": "操作"
- },
- "33a4b02f": {
-  "en": "Next unread",
-  "text": "下一条未读"
- },
- "4648e8a8": {
-  "en": "Private channel · senders unverified · no ACK",
-  "text": "私密频道 · 发送者未验证 · 无 ACK"
- },
- "46718231": {
-  "en": "Open channel · senders unverified · no ACK",
-  "text": "公开频道 · 发送者未验证 · 无 ACK"
- },
- "c4e598ca": {
-  "en": "logged in",
-  "text": "已登录"
- },
- "ab1fafa1": {
-  "en": "log in: node card > Server",
-  "text": "登录：节点卡片 > 服务器"
- },
- "91455582": {
-  "en": "Not in contacts",
-  "text": "不在联系人中"
- },
- "e99aa76f": {
-  "en": "not confirmed",
-  "text": "未确认"
- },
- "1a940c2a": {
-  "en": "Type and press OK to send",
-  "text": "输入文字后按 OK 发送"
- },
- "f574869a": {
-  "en": "Message...",
-  "text": "消息..."
- },
- "f28e14cf": {
-  "en": "Send",
-  "text": "发送"
- },
- "68f399b1": {
-  "en": "Clipboard",
-  "text": "复制菜单"
- },
- "72d06ea7": {
-  "en": "Finding location by IP...",
-  "text": "正在通过 IP 定位..."
- },
- "851e5ac2": {
-  "en": "Needs Wi-Fi internet or an SD card",
-  "text": "需要 Wi-Fi 上网或 SD 卡"
- },
- "77c28af9": {
-  "en": "Connect Wi-Fi or load a map",
-  "text": "请连接 Wi-Fi 或载入地图"
- },
- "119314d0": {
-  "en": "GPS will take over after a fix",
-  "text": "GPS 定位后将自动切换"
- },
- "c19b47bb": {
-  "en": "Connections > Internet over Wi-Fi",
-  "text": "连接 > Wi-Fi 上网"
- },
- "b59a5b35": {
-  "en": "Downloading map...",
-  "text": "正在下载地图..."
- },
- "e6aae7d4": {
-  "en": "Reading map from SD...",
-  "text": "正在从 SD 读取地图..."
- },
- "ba994464": {
-  "en": "Tiles unavailable",
-  "text": "瓦片不可用"
- },
- "66643a4a": {
-  "en": "This zoom is not downloaded",
-  "text": "此缩放级别未下载"
- },
- "29cc0d19": {
-  "en": "+/- zoom · Wi-Fi internet loads maps",
-  "text": "+/- 缩放 · Wi-Fi 上网可加载地图"
- },
- "a3b1d86e": {
-  "en": "Offline map",
-  "text": "离线地图"
- },
- "59317dec": {
-  "en": " · loading",
-  "text": " · 加载中"
- },
- "1d1e1a72": {
-  "en": "GPS: old date",
-  "text": "GPS: 日期过旧"
- },
- "b45aef8c": {
-  "en": "Pan",
-  "text": "平移"
- },
- "62399752": {
-  "en": "Zoom",
-  "text": "缩放"
- },
- "9fa2c938": {
-  "en": "Following",
-  "text": "跟随中"
- },
- "3f654d20": {
-  "en": "To GPS",
-  "text": "回到 GPS"
- },
- "04dfc93c": {
-  "en": "No saved maps",
-  "text": "没有已存地图"
- },
- "dcf1e39a": {
-  "en": "Upload a map via Wi-Fi or USB",
-  "text": "请通过 Wi-Fi 或 USB 上传地图"
- },
- "7c620193": {
-  "en": {
-   "one": "tile on SD",
-   "other": "tiles on SD"
-  },
-  "forms": {
-   "other": "SD 上 {n} 个瓦片"
-  }
- },
- "bd794432": {
-  "en": "No matching contacts",
-  "text": "没有符合条件的联系人"
- },
- "4e5a0349": {
-  "en": "No nodes discovered yet",
-  "text": "尚未发现节点"
- },
- "8a8a895b": {
-  "en": "F: edit tag filter",
-  "text": "F: 选择标签"
- },
- "2ad4b008": {
-  "en": "Advertise my node",
-  "text": "广播我的节点"
- },
- "e2339f44": {
-  "en": "saved",
-  "text": "已保存"
- },
- "0ec24245": {
-  "en": "Details",
-  "text": "详情"
- },
- "f4a9c097": {
-  "en": "Filter",
-  "text": "选择标签"
- },
- "c2954bc2": {
-  "en": "Back",
-  "text": "返回"
- },
- "c416a424": {
-  "en": "Node was removed",
-  "text": "节点已删除"
- },
- "81ef07a9": {
-  "en": "Last heard",
-  "text": "最后收到"
- },
- "4f0a0e98": {
-  "en": " ago",
-  "text": " 前"
- },
- "1ae89b50": {
-  "en": "not since boot",
-  "text": "启动后未收到"
- },
- "2fce4529": {
-  "en": "Signal",
-  "text": "信号"
- },
- "d7d630be": {
-  "en": "Route",
-  "text": "路由"
- },
- "cd08221c": {
-  "en": " · flood",
-  "text": " · 泛洪"
- },
- "e27f342a": {
-  "en": "Position",
-  "text": "位置"
- },
- "a3ad51f3": {
-  "en": "not shared",
-  "text": "未共享"
- },
- "b8297e9a": {
-  "en": "Room",
-  "text": "房间"
- },
- "ae0ed984": {
-  "en": "Message",
-  "text": "发消息"
- },
- "8f635566": {
-  "en": "On map",
-  "text": "在地图上"
- },
- "db5485e7": {
-  "en": "Reset path",
-  "text": "重置路径"
- },
- "2d44294d": {
-  "en": "Sure?",
-  "text": "确定?"
- },
- "6e3fab8c": {
-  "en": "Forget",
-  "text": "忘记"
- },
- "6d7302f2": {
-  "en": "Server",
-  "text": "服务器"
- },
- "26f8e74e": {
-  "en": "Trace",
-  "text": "追踪"
- },
- "0a77a91f": {
-  "en": "Action",
-  "text": "操作"
- },
- "8d57e66a": {
-  "en": "Run",
-  "text": "执行"
- },
- "0ff01b6a": {
-  "en": "Notes",
-  "text": "备注"
- },
- "d112e127": {
-  "en": "hold flat",
-  "text": "请保持水平"
- },
- "1a45dda5": {
-  "en": "not calibrated",
-  "text": "未校准"
- },
- "ab3a8a0a": {
-  "en": "off",
-  "text": "已关闭"
- },
- "b2e48278": {
-  "en": "fix",
-  "text": "已定位"
- },
- "620f3cc6": {
-  "en": "old date",
-  "text": "日期过旧"
- },
- "67ce0277": {
-  "en": "searching",
-  "text": "搜索中"
- },
- "f5e7befb": {
-  "en": "Satellites",
-  "text": "卫星"
- },
- "a2009955": {
-  "en": " in view",
-  "text": " 颗可见"
- },
- "6d7e4165": {
-  "en": "Latitude",
-  "text": "纬度"
- },
- "671964ee": {
-  "en": "Longitude",
-  "text": "经度"
- },
- "bb5f80fd": {
-  "en": "Clock",
-  "text": "时钟"
- },
- "ffa35e26": {
-  "en": "not set",
-  "text": "未设置"
- },
- "219101e3": {
-  "en": "manual",
-  "text": "手动"
- },
- "d2cdcecb": {
-  "en": " · trusted",
-  "text": " · 可信"
- },
- "bb77a2cf": {
-  "en": "Compass",
-  "text": "指南针"
- },
- "37b8f592": {
-  "en": "calibrated",
-  "text": "已校准"
- },
- "75c3ffb2": {
-  "en": "needs calibration",
-  "text": "需要校准"
- },
- "1db880db": {
-  "en": {
-   "one": "sample",
-   "other": "samples"
-  },
-  "forms": {
-   "other": "{n} 个样本"
-  }
- },
- "ff05911b": {
-  "en": "Share position",
-  "text": "共享位置"
- },
- "7629db5a": {
-  "en": "Finish calibration",
-  "text": "完成校准"
- },
- "6f59150a": {
-  "en": "Calibrate compass",
-  "text": "校准指南针"
- },
- "e125a9a1": {
-  "en": "Advert with GPS",
-  "text": "带 GPS 的通告"
- },
- "10b78d8a": {
-  "en": "Needs a fresh GPS fix",
-  "text": "需要最新 GPS 定位"
- },
- "a603b11c": {
-  "en": "Rotate in all directions",
-  "text": "向各个方向旋转设备"
- },
- "7f8e9f6b": {
-  "en": "Rotate for 20+ seconds",
-  "text": "旋转 20 秒以上"
- },
- "45465004": {
-  "en": "GPS on",
-  "text": "开启 GPS"
- },
- "4930944f": {
-  "en": "Phone",
-  "text": "手机"
- },
- "ec266ec8": {
-  "en": "Watch",
-  "text": "手表"
- },
- "89a2ef46": {
-  "en": "Headphones",
-  "text": "耳机"
- },
- "fae1ce6b": {
-  "en": "Phone/watch",
-  "text": "手机/手表"
- },
- "7e3d4120": {
-  "en": "BLE device",
-  "text": "BLE 设备"
- },
- "9e13a743": {
-  "en": "Hidden network",
-  "text": "隐藏网络"
- },
- "90cbadfa": {
-  "en": "Bluetooth busy: probe",
-  "text": "Bluetooth 忙: 正在检测"
- },
- "e5e4ab77": {
-  "en": "Bluetooth error",
-  "text": "Bluetooth 错误"
- },
- "983f66dc": {
-  "en": "Wi-Fi busy: access point",
-  "text": "Wi-Fi 被热点占用"
- },
- "35c403f6": {
-  "en": "Wi-Fi busy: probe",
-  "text": "Wi-Fi 忙: 正在检测"
- },
- "1be7979b": {
-  "en": "Wi-Fi error",
-  "text": "Wi-Fi 错误"
- },
- "89414ad6": {
-  "en": "Scanning Wi-Fi...",
-  "text": "正在扫描 Wi-Fi..."
- },
- "542d8f50": {
-  "en": "closer to centre = stronger",
-  "text": "越靠近中心信号越强"
- },
- "fde56fad": {
-  "en": "List paused",
-  "text": "列表已暂停"
- },
- "503d6eed": {
-  "en": {
-   "one": "phone/watch nearby",
-   "other": "phones/watches nearby"
-  },
-  "forms": {
-   "other": "附近 {n} 部手机/手表"
-  }
- },
- "49031ccd": {
-  "en": "No signals yet",
-  "text": "暂无信号"
- },
- "8d2937a1": {
-  "en": "List",
-  "text": "列表"
- },
- "454d1d8a": {
-  "en": "Resume",
-  "text": "继续"
- },
- "44f9bf2d": {
-  "en": "Pause",
-  "text": "暂停"
- },
- "3368e695": {
-  "en": "Home in",
-  "text": "测向"
- },
- "aad07647": {
-  "en": "Motion",
-  "text": "移动"
- },
- "84397af6": {
-  "en": " · direct packets only",
-  "text": " · 仅直接收到的包"
- },
- "b8a018ba": {
-  "en": " · address changes over time",
-  "text": " · 地址会随时间变化"
- },
- "a8e7e5cc": {
-  "en": "channel ",
-  "text": "信道 "
- },
- "64db285b": {
-  "en": "Lost",
-  "text": "丢失"
- },
- "46102346": {
-  "en": "No signal",
-  "text": "无信号"
- },
- "3b06b3cd": {
-  "en": "Stronger",
-  "text": "变强"
- },
- "4dd880a2": {
-  "en": "Weaker",
-  "text": "变弱"
- },
- "cd945433": {
-  "en": "Steady",
-  "text": "稳定"
- },
- "184745be": {
-  "en": "keep moving",
-  "text": "继续移动"
- },
- "78c14fb6": {
-  "en": "peak ",
-  "text": "峰值 "
- },
- "b991041c": {
-  "en": "Waiting for samples",
-  "text": "等待样本"
- },
- "0ec969ac": {
-  "en": " adverts/s",
-  "text": " 通告/秒"
- },
- "93382782": {
-  "en": " beacons/s",
-  "text": " 信标/秒"
- },
- "cde081d3": {
-  "en": {
-   "one": "packet",
-   "other": "packets"
-  },
-  "forms": {
-   "other": "{n} 个包"
-  }
- },
- "42cfcb2d": {
-  "en": " s ago",
-  "text": " 秒前"
- },
- "3f609f74": {
-  "en": "Mute",
-  "text": "静音"
- },
- "b3ca9a34": {
-  "en": "Sound",
-  "text": "声音"
- },
- "68f7fd73": {
-  "en": "Reset peak",
-  "text": "重置峰值"
- },
- "394ec4f2": {
-  "en": "Turn the access point off",
-  "text": "请关闭热点"
- },
- "fccfe8a5": {
-  "en": "Beacon for another board",
-  "text": "为另一块板发信标"
- },
- "bfacb4d0": {
-  "en": " frames/s on channel 1",
-  "text": " 帧/秒,信道 1"
- },
- "6d3d79bb": {
-  "en": "beacon ",
-  "text": "信标 "
- },
- "d7972182": {
-  "en": " frames/s · ",
-  "text": " 帧/秒 · "
- },
- "b85b81cf": {
-  "en": "waiting: set the other board to CSI beacon",
-  "text": "等待中: 请将另一块板设为 CSI 信标"
- },
- "1d0cdb24": {
-  "en": "NO WI-FI",
-  "text": "无 WI-FI"
- },
- "e9a87b56": {
-  "en": "BEACON ON",
-  "text": "信标工作中"
- },
- "564cdaca": {
-  "en": "NO BEACON",
-  "text": "无信标"
- },
- "9a1796e8": {
-  "en": "CSI FROZEN",
-  "text": "CSI 无变化"
- },
- "dd26ae1f": {
-  "en": "CALIBRATING ",
-  "text": "校准中 "
- },
- "5ec52fe4": {
-  "en": " s",
-  "text": " 秒"
- },
- "4d851fe7": {
-  "en": "MOTION",
-  "text": "有移动"
- },
- "6fce5d71": {
-  "en": "STILL",
-  "text": "静止"
- },
- "13d6d724": {
-  "en": "activity ",
-  "text": "活动 "
- },
- "1e3add08": {
-  "en": "threshold ",
-  "text": "阈值 "
- },
- "dda163c5": {
-  "en": " (default)",
-  "text": " (默认)"
- },
- "19deef04": {
-  "en": "Walk between the boards to see the trace",
-  "text": "在两块板之间走动即可看到轨迹"
- },
- "faa0c1ab": {
-  "en": "Calibrate with the area empty and still (10 s)",
-  "text": "校准时区域内须无人且静止 (10 秒)"
- },
- "4204187c": {
-  "en": "Place the boards 2-5 m apart; motion between them is sensed",
-  "text": "两块板相距 2-5 米放置,可感知其间的移动"
- },
- "9bb72cae": {
-  "en": "Signals",
-  "text": "信号"
- },
- "6fb7daa2": {
-  "en": "Calibrate",
-  "text": "校准"
- },
- "4d580639": {
-  "en": "Beacon",
-  "text": "信标"
- },
- "5427923a": {
-  "en": "To turn on, hold the trackball pressed",
-  "text": "开机：按住轨迹球"
- },
- "b1e20664": {
-  "en": "To turn on: RESET or the power switch",
-  "text": "开机：RESET 或电源开关"
- },
- "cba7fbe8": {
-  "en": "Device is off",
-  "text": "设备已关机"
- },
- "2697628b": {
-  "en": "Turning off...",
-  "text": "正在关机..."
- },
- "b639f585": {
-  "en": "GPS & compass",
-  "text": "GPS 与指南针"
- },
- "dde0a6be": {
-  "en": "Keys & help",
-  "text": "按键与帮助"
- },
- "cd03e04b": {
-  "en": "Turn off",
-  "text": "关机"
- },
- "a21b5cde": {
-  "en": "Brightness ",
-  "text": "亮度 "
- },
- "e1b4bdaa": {
-  "en": "compass calibrated",
-  "text": "指南针已校准"
- },
- "e8f719bd": {
-  "en": "compass not calibrated",
-  "text": "指南针未校准"
- },
- "7316bebd": {
-  "en": " relayed",
-  "text": " 已转发"
- },
- "4f18c10c": {
-  "en": "What every key does",
-  "text": "各按键功能"
- },
- "7e8a19d5": {
-  "en": "Searching: ",
-  "text": "搜索中: "
- },
- "9a555563": {
-  "en": {
-   "one": "repeater",
-   "other": "repeaters"
-  },
-  "forms": {
-   "other": "{n} 个中继"
-  }
- },
- "99f30427": {
-  "en": "OK: start",
-  "text": "OK: 开始"
- },
- "1a8c15c3": {
-  "en": {
-   "one": "region",
-   "other": "regions"
-  },
-  "forms": {
-   "other": "{n} 个区域"
-  }
- },
- "9fca3c9e": {
-  "en": "Listening ",
-  "text": "监听 "
- },
- "a3980ce8": {
-  "en": "Nothing new",
-  "text": "无新网络"
- },
- "443ffd47": {
-  "en": "OK: test ",
-  "text": "OK：测试 "
- },
- "2265ebb1": {
-  "en": "Current profile: ",
-  "text": "当前配置： "
- },
- "34f428b1": {
-  "en": "Try every regional preset",
-  "text": "尝试每个地区设置"
- },
- "c91eb13e": {
-  "en": "Preset",
-  "text": "区域配置"
- },
- "8d9206a1": {
-  "en": "Frequency",
-  "text": "频率"
- },
- "008f5512": {
-  "en": "Bandwidth",
-  "text": "带宽"
- },
- "d174bc31": {
-  "en": "Spreading factor",
-  "text": "扩频因子"
- },
- "3c2364a7": {
-  "en": "Coding rate",
-  "text": "编码率"
- },
- "92d39d44": {
-  "en": "TX power",
-  "text": "发射功率"
- },
- "175749a2": {
-  "en": "Relay hop limit",
-  "text": "转发跳数上限"
- },
- "75193707": {
-  "en": "Relay packets",
-  "text": "转发数据包"
- },
- "2197c64b": {
-  "en": "Path hash size",
-  "text": "路径哈希长度"
- },
- "492e789d": {
-  "en": "Region",
-  "text": "区域"
- },
- "b872ed2b": {
-  "en": "Find regions",
-  "text": "查找区域"
- },
- "eb38bf4c": {
-  "en": "Find network",
-  "text": "查找网络"
- },
- "24646b98": {
-  "en": "Radio test",
-  "text": "无线电测试"
- },
- "0614ba0b": {
-  "en": "Previous radio",
-  "text": "原无线电设置"
- },
- "0fe07306": {
-  "en": "Name",
-  "text": "名称"
- },
- "9a73db9b": {
-  "en": "Language",
-  "text": "语言"
- },
- "df6e627c": {
-  "en": "Day brightness",
-  "text": "日间亮度"
- },
- "73d459b4": {
-  "en": "Home layout",
-  "text": "主页布局"
- },
- "4ef0ddc5": {
-  "en": "Sounds",
-  "text": "声音"
- },
- "300ec32d": {
-  "en": "Auto lock",
-  "text": "自动锁定"
- },
- "1f0bca87": {
-  "en": "Dim screen",
-  "text": "屏幕变暗"
- },
- "37976ee4": {
-  "en": "GPS receiver",
-  "text": "GPS 接收器"
- },
- "f050c5bc": {
-  "en": "UTC offset",
-  "text": "UTC 偏移"
- },
- "caa82244": {
-  "en": "Battery shows",
-  "text": "电池显示"
- },
- "fecd422a": {
-  "en": "Lock screen",
-  "text": "锁屏"
- },
- "667ad2f5": {
-  "en": "Wake on message",
-  "text": "消息唤醒"
- },
- "98b6a9f6": {
-  "en": "Message popup",
-  "text": "消息弹窗"
- },
- "4eaf7c92": {
-  "en": "Theme",
-  "text": "主题"
- },
- "ac7ce48d": {
-  "en": "Accent colour",
-  "text": "强调色"
- },
- "548b7cf8": {
-  "en": "Night brightness",
-  "text": "20:00–07:00 亮度"
- },
- "1c076c32": {
-  "en": "Screen password",
-  "text": "屏幕密码"
- },
- "9525b78e": {
-  "en": "Custom",
-  "text": "自定义"
- },
- "dc6bfbe0": {
-  "en": " MHz",
-  "text": " MHz"
- },
- "1ffe2452": {
-  "en": " kHz",
-  "text": " kHz"
- },
- "304ff7fb": {
-  "en": "None",
-  "text": "无"
- },
- "9023a2b0": {
-  "en": "OK: keep",
-  "text": "OK: 保留"
- },
- "49e98b8b": {
-  "en": {
-   "one": "byte",
-   "other": "bytes"
-  },
-  "forms": {
-   "other": "{n} 字节"
-  }
- },
- "45570065": {
-  "en": "Dark",
-  "text": "深色"
- },
- "8ad2f8cf": {
-  "en": "Light",
-  "text": "明亮"
- },
- "126befb6": {
-  "en": "Auto",
-  "text": "自动"
- },
- "880f97dc": {
-  "en": "Lime",
-  "text": "Lime"
- },
- "e9dd1fed": {
-  "en": "Blue",
-  "text": "Blue"
- },
- "f03bdf12": {
-  "en": "Violet",
-  "text": "Violet"
- },
- "15903060": {
-  "en": "Amber",
-  "text": "Amber"
- },
- "0dad9117": {
-  "en": "Same as day",
-  "text": "与日间相同"
- },
- "8581156e": {
-  "en": "Tiles",
-  "text": "网格"
- },
- "87c7093b": {
-  "en": "Volts",
-  "text": "电压"
- },
- "ff1537fa": {
-  "en": "Percent",
-  "text": "百分比"
- },
- "3c2dfe59": {
-  "en": "Hidden",
-  "text": "隐藏"
- },
- "75afe364": {
-  "en": "All",
-  "text": "全部"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "提及"
- },
- "f0b87eb8": {
-  "en": "MeshCore regional settings: frequency, BW, SF, CR",
-  "text": "MeshCore 地区设置：频率、BW、SF、CR"
- },
- "21ff842c": {
-  "en": "1 kHz steps; must match every node",
-  "text": "步进 1 kHz,须与所有节点一致"
- },
- "7608c344": {
-  "en": "62.5 / 125 / 250 / 500 kHz",
-  "text": "62.5 / 125 / 250 / 500 kHz"
- },
- "943a47cb": {
-  "en": "Higher SF: longer range, slower",
-  "text": "SF 越高: 距离越远,速度越慢"
- },
- "c52a8c0f": {
-  "en": "Error correction 4/5 to 4/8",
-  "text": "纠错编码 4/5 至 4/8"
- },
- "af53f6b8": {
-  "en": "Radio chip setting, 0-22 dBm",
-  "text": "射频芯片设置,0-22 dBm"
- },
- "3f328711": {
-  "en": "Relay packets with fewer hops than this",
-  "text": "转发跳数少于此值的数据包"
- },
- "7cd202ed": {
-  "en": "Forward other nodes' MeshCore packets",
-  "text": "转发其他节点的 MeshCore 数据包"
- },
- "fa81bada": {
-  "en": "Per hop in our floods; older MeshCore drops 2-3",
-  "text": "我们的泛洪包每跳字节数；旧版 MeshCore 丢弃 2-3"
- },
- "8513a98e": {
-  "en": "Repeaters pass on our floods by it; OK: type",
-  "text": "中继器据此转发我们的包; OK: 输入"
- },
- "33a9cb6d": {
-  "en": "Found: ",
-  "text": "已找到: "
- },
- "2fd16ea7": {
-  "en": "Asks repeaters that hear this device",
-  "text": "询问能听到本设备的中继器"
- },
- "d284a6e4": {
-  "en": "A restart returns ",
-  "text": "重启后恢复为 "
- },
- "51c955b1": {
-  "en": "OK: return to it",
-  "text": "OK: 恢复"
- },
- "5261f68a": {
-  "en": "Kept on a change of frequency, BW, SF or CR",
-  "text": "更改频率/BW/SF/CR时记住"
- },
- "85dde262": {
-  "en": "Applied to the radio when saved",
-  "text": "保存后应用到无线电"
- },
- "7c3b11a9": {
-  "en": "OK: set or change password",
-  "text": "OK: 设置或更改密码"
- },
- "e754fa0d": {
-  "en": "Day 07:00–20:00, local time",
-  "text": "日间 07:00–20:00，本地时间"
- },
- "34fd54b2": {
-  "en": "OK: edit, 1-24 UTF-8 bytes",
-  "text": "OK: 编辑,1-24 字节 UTF-8"
- },
- "7ecd2a4c": {
-  "en": "Menu language",
-  "text": "菜单语言"
- },
- "018eb564": {
-  "en": "Applies to Home and all folders",
-  "text": "用于主页和所有文件夹"
- },
- "b265628f": {
-  "en": "Tone for messages and ACKs",
-  "text": "消息和 ACK 提示音"
- },
- "969a0678": {
-  "en": "0 = off, 30-600 s",
-  "text": "0 = 关闭, 30-600 秒"
- },
- "ab5a04f6": {
-  "en": "0 = off, 10-600 s",
-  "text": "0 = 关闭, 10-600 秒"
- },
- "48707a29": {
-  "en": "Receiver power",
-  "text": "接收器电源"
- },
- "ed88bd72": {
-  "en": "Local time, 15 minute steps",
-  "text": "本地时间,步进 15 分钟"
- },
- "5d6af097": {
-  "en": "Status bar: charge estimate or measured voltage",
-  "text": "状态栏: 估算电量或实测电压"
- },
- "e4f5443f": {
-  "en": "Message senders while locked",
-  "text": "锁定时显示发送者"
- },
- "6cf00f88": {
-  "en": "Stored in device memory",
-  "text": "保存在设备内存中"
- },
- "1dd4ab8a": {
-  "en": "Listening",
-  "text": "接收"
- },
- "2fe2598e": {
-  "en": "pings",
-  "text": "ping"
- },
- "9296739d": {
-  "en": "Phone: ",
-  "text": "手机: "
- },
- "4aba2ce0": {
-  "en": "No position: GPS fix or phone app",
-  "text": "无位置：GPS 或手机"
- },
- "53e32296": {
-  "en": "Ping sent, listening for repeaters...",
-  "text": "已发送 ping，正在监听中继..."
- },
- "140b9a3a": {
-  "en": "No pings yet: P sends one",
-  "text": "暂无 ping：按 P 发送"
- },
- "39b7127d": {
-  "en": "Last ping: ",
-  "text": "上次 ping: "
- },
- "1983dffb": {
-  "en": "Last ping: no repeater heard it",
-  "text": "上次 ping：无中继听到"
- },
- "8504bdd5": {
-  "en": "No repeaters heard yet",
-  "text": "尚未听到中继"
- },
- "6c03392d": {
-  "en": "OK starts listening and pings",
-  "text": "OK 开始接收和 ping"
- },
- "0aed7015": {
-  "en": "rx ",
-  "text": "接收 "
- },
- "04be6123": {
-  "en": " · echo ",
-  "text": " · 回声 "
- },
- "4b7f7705": {
-  "en": "Stop",
-  "text": "停止"
- },
- "0ae8097f": {
-  "en": "Start",
-  "text": "开始"
- },
- "7fb7f0a9": {
-  "en": "Ping",
-  "text": "Ping"
- },
- "5f7eec60": {
-  "en": "Wardrive on",
-  "text": "扫街测绘已开启"
- },
- "8ae160ba": {
-  "en": "Wardrive off",
-  "text": "扫街测绘已关闭"
- },
- "54f6c01a": {
-  "en": "Ping queued",
-  "text": "ping 已排队"
- },
- "dfe5ac67": {
-  "en": "No position yet",
-  "text": "暂无位置"
- },
- "0cf72110": {
-  "en": "Wait: a ping is under way",
-  "text": "请稍候：ping 正在进行"
- },
- "46ff9c40": {
-  "en": "choose",
-  "text": "选择"
- },
- "11c2662d": {
-  "en": "select",
-  "text": "选定"
- },
- "7261c8af": {
-  "en": "send",
-  "text": "发送"
- },
- "cded1a85": {
-  "en": "exit",
-  "text": "退出"
- },
- "61efb279": {
-  "en": "Save changes",
-  "text": "保存更改"
- },
- "a2c6becb": {
-  "en": "No changes",
-  "text": "无更改"
- },
- "4d2d5d68": {
-  "en": "Save",
-  "text": "保存"
- },
- "c2c76cb1": {
-  "en": "Edit",
-  "text": "修改"
- },
- "35afca3b": {
-  "en": "Cancel",
-  "text": "取消"
- },
- "701eaa88": {
-  "en": "Edit name",
-  "text": "编辑名称"
- },
- "555cbe68": {
-  "en": "Keep",
-  "text": "保留"
- },
- "cc01b1df": {
-  "en": "Return",
-  "text": "恢复"
- },
- "2ffcbe05": {
-  "en": "Test",
-  "text": "测试"
- },
- "c646a2c9": {
-  "en": "Search",
-  "text": "搜索"
- },
- "0abaed3f": {
-  "en": "Found",
-  "text": "已找到"
- },
- "d155d06d": {
-  "en": "Type",
-  "text": "输入"
- },
- "a1de2fdd": {
-  "en": "Change",
-  "text": "更改"
- },
- "c3a34509": {
-  "en": "Next value",
-  "text": "下一个值"
- },
- "4d7ef753": {
-  "en": "Wi-Fi access point",
-  "text": "Wi-Fi 热点"
- },
- "ba5122e7": {
-  "en": "Web chat and map upload",
-  "text": "网页聊天和地图上传"
- },
- "4dbe556f": {
-  "en": "MeshCore identity",
-  "text": "MeshCore 身份"
- },
- "18ac79a2": {
-  "en": "Networks",
-  "text": "网络"
- },
- "6cf1ba25": {
-  "en": "Toggle",
-  "text": "切换"
- },
- "75a04256": {
-  "en": "Wrong password or refused: ",
-  "text": "密码错误或被拒绝: "
- },
- "e2dabf28": {
-  "en": "No answer from ",
-  "text": "未收到应答: "
- },
- "09974b89": {
-  "en": "Connection lost",
-  "text": "连接已断开"
- },
- "c7e915d7": {
-  "en": "Wi-Fi scan failed",
-  "text": "Wi-Fi 扫描失败"
- },
- "34dfb5f5": {
-  "en": "Wi-Fi scan timed out",
-  "text": "Wi-Fi 扫描超时"
- },
- "71494765": {
-  "en": "SSID 1-32 bytes, password empty or 8-63",
-  "text": "SSID 1-32 字节,密码为空或 8-63 位"
- },
- "db65b4b4": {
-  "en": "Tile is not 256 or 512 px",
-  "text": "瓦片不是 256 或 512 px"
- },
- "172eebcb": {
-  "en": "Not a PNG image",
-  "text": "不是 PNG 图像"
- },
- "e234f405": {
-  "en": "No location",
-  "text": "无法通过 IP 定位"
- },
- "fd387bbd": {
-  "en": "SD full: web tiles not cached",
-  "text": "SD 已满: 网络瓦片未缓存"
- },
- "d8e1dad5": {
-  "en": "Wi-Fi client on",
-  "text": "Wi-Fi 客户端已开启"
- },
- "0e9eb651": {
-  "en": "Wi-Fi client off",
-  "text": "Wi-Fi 客户端已关闭"
- },
- "b1374eac": {
-  "en": "Connecting to ",
-  "text": "正在连接 "
  },
  "1716578a": {
   "en": "Channel details",
@@ -2231,154 +2235,6 @@
  "f51b5247": {
   "en": "Show on map",
   "text": "在地图上显示"
- },
- "73c66160": {
-  "en": "Choose",
-  "text": "选择"
- },
- "22d86644": {
-  "en": "Default: ",
-  "text": "默认: "
- },
- "7bb181d6": {
-  "en": "Default: none",
-  "text": "默认: 无"
- },
- "b75c3188": {
-  "en": "Channel removed",
-  "text": "频道已删除"
- },
- "f476e036": {
-  "en": "Channel added",
-  "text": "已添加频道"
- },
- "1a11ab03": {
-  "en": "Hash ",
-  "text": "哈希 "
- },
- "172ac002": {
-  "en": "Key:",
-  "text": "密钥:"
- },
- "d92dbe47": {
-  "en": "Every MeshCore node has it",
-  "text": "每个 MeshCore 节点都有"
- },
- "fac028c3": {
-  "en": "Scan with MeshMesh or the MeshCore app",
-  "text": "用 MeshMesh 或 MeshCore 应用扫描"
- },
- "023fb5d9": {
-  "en": "Already in this channel",
-  "text": "已在此频道中"
- },
- "2b8b882d": {
-  "en": "Sound on new messages",
-  "text": "新消息声音"
- },
- "edaf9d4d": {
-  "en": "Region · OK: save",
-  "text": "区域 · OK: 保存"
- },
- "59997b30": {
-  "en": "Invite",
-  "text": "邀请"
- },
- "542f08f5": {
-  "en": "8 channels at most",
-  "text": "最多 8 个频道"
- },
- "afa5c9cd": {
-  "en": "No chat contacts",
-  "text": "无聊天联系人"
- },
- "be00fde1": {
-  "en": "Sure? OK again",
-  "text": "确定? 再按 OK"
- },
- "86b1d2eb": {
-  "en": "Leave channel",
-  "text": "退出频道"
- },
- "73ac94c3": {
-  "en": "Contact",
-  "text": "联系人"
- },
- "a30a5085": {
-  "en": "Sound on",
-  "text": "声音已开启"
- },
- "bc5128a1": {
-  "en": "Sound off",
-  "text": "声音已关闭"
- },
- "7f264f8d": {
-  "en": "Name: 1-31 bytes",
-  "text": "名称: 1-31 字节"
- },
- "8bf3cae2": {
-  "en": "Region saved",
-  "text": "区域已保存"
- },
- "78fdcc66": {
-  "en": "Key: 32 hex or base64",
-  "text": "密钥: 32 hex 或 base64"
- },
- "6c129c2a": {
-  "en": "Discover a chat contact first: ADV",
-  "text": "请先发现聊天联系人: ADV"
- },
- "a3ed15d0": {
-  "en": "Invitation queued to ",
-  "text": "邀请已排队: "
- },
- "4c8675ff": {
-  "en": "Invitation not sent",
-  "text": "邀请未发送"
- },
- "203aefe9": {
-  "en": "History stays; joining again shows it",
-  "text": "历史会保留, 重新加入后显示"
- },
- "41ae3d10": {
-  "en": "Left ",
-  "text": "已退出 "
- },
- "c4227caa": {
-  "en": "Cannot leave while sending",
-  "text": "发送中无法退出"
- },
- "f3f514aa": {
-  "en": "Not a channel link",
-  "text": "不是频道链接"
- },
- "62722f4e": {
-  "en": "Not in this mode",
-  "text": "此模式下不可用"
- },
- "1c9c7d52": {
-  "en": "Channel not saved",
-  "text": "频道未保存"
- },
- "30025399": {
-  "en": "Join",
-  "text": "加入"
- },
- "c4749f82": {
-  "en": "Open channel",
-  "text": "进入频道"
- },
- "5eb421e1": {
-  "en": "Channel invitation: ",
-  "text": "频道邀请: "
- },
- "25d966fa": {
-  "en": "you are in it",
-  "text": "你已加入"
- },
- "f42b49b2": {
-  "en": "<- join",
-  "text": "<- 加入"
  },
  "e3abda16": {
   "en": "Join by hashtag",
@@ -2416,6 +2272,10 @@
   "en": "Unknown channel ",
   "text": "未知频道 "
  },
+ "b743d77a": {
+  "en": "Public channel of MeshCore",
+  "text": "MeshCore 公开频道"
+ },
  "63703628": {
   "en": " · OK: try a #name",
   "text": " · OK: 尝试 #名称"
@@ -2424,6 +2284,10 @@
   "en": "Full: 8 channels, Public included",
   "text": "已满: 8 个频道 (含 Public)"
  },
+ "8e4165b7": {
+  "en": "Private channel",
+  "text": "私密频道"
+ },
  "5fc765a7": {
   "en": "Other channels heard: none",
   "text": "空中未收到其他频道"
@@ -2431,6 +2295,10 @@
  "4cda3fd3": {
   "en": "Channels heard on air will appear here",
   "text": "空中收到的频道会显示在这里"
+ },
+ "1f5d2384": {
+  "en": "Hashtag channel",
+  "text": "#标签频道"
  },
  "0700b8a7": {
   "en": "Channel name",
@@ -2448,10 +2316,6 @@
   "en": "32 hex digits or base64 (16 bytes)",
   "text": "32 位 hex 或 base64 (16 字节)"
  },
- "74d4cc9d": {
-  "en": "Same #name, same channel as in MeshCore apps",
-  "text": "相同 #名称即 MeshCore 应用中的同一频道"
- },
  "d3bcc1f1": {
   "en": {
    "one": "message",
@@ -2461,17 +2325,13 @@
    "other": "{n} 条消息"
   }
  },
- "b743d77a": {
-  "en": "Public channel of MeshCore",
-  "text": "MeshCore 公开频道"
+ "74d4cc9d": {
+  "en": "Same #name, same channel as in MeshCore apps",
+  "text": "相同 #名称即 MeshCore 应用中的同一频道"
  },
- "8e4165b7": {
-  "en": "Private channel",
-  "text": "私密频道"
- },
- "1f5d2384": {
-  "en": "Hashtag channel",
-  "text": "#标签频道"
+ "f476e036": {
+  "en": "Channel added",
+  "text": "已添加频道"
  },
  "12a760c5": {
   "en": "The key is made on this device",
@@ -2492,6 +2352,154 @@
  "087a6114": {
   "en": "OK: join   BACK: cancel",
   "text": "OK: 加入   BACK: 取消"
+ },
+ "023fb5d9": {
+  "en": "Already in this channel",
+  "text": "已在此频道中"
+ },
+ "542f08f5": {
+  "en": "8 channels at most",
+  "text": "最多 8 个频道"
+ },
+ "7f264f8d": {
+  "en": "Name: 1-31 bytes",
+  "text": "名称: 1-31 字节"
+ },
+ "78fdcc66": {
+  "en": "Key: 32 hex or base64",
+  "text": "密钥: 32 hex 或 base64"
+ },
+ "f3f514aa": {
+  "en": "Not a channel link",
+  "text": "不是频道链接"
+ },
+ "62722f4e": {
+  "en": "Not in this mode",
+  "text": "此模式下不可用"
+ },
+ "22d86644": {
+  "en": "Default: ",
+  "text": "默认: "
+ },
+ "7bb181d6": {
+  "en": "Default: none",
+  "text": "默认: 无"
+ },
+ "b75c3188": {
+  "en": "Channel removed",
+  "text": "频道已删除"
+ },
+ "1c9c7d52": {
+  "en": "Channel not saved",
+  "text": "频道未保存"
+ },
+ "1a11ab03": {
+  "en": "Hash ",
+  "text": "哈希 "
+ },
+ "172ac002": {
+  "en": "Key:",
+  "text": "密钥:"
+ },
+ "d92dbe47": {
+  "en": "Every MeshCore node has it",
+  "text": "每个 MeshCore 节点都有"
+ },
+ "fac028c3": {
+  "en": "Scan with MeshMesh or the MeshCore app",
+  "text": "用 MeshMesh 或 MeshCore 应用扫描"
+ },
+ "2b8b882d": {
+  "en": "Sound on new messages",
+  "text": "新消息声音"
+ },
+ "edaf9d4d": {
+  "en": "Region · OK: save",
+  "text": "区域 · OK: 保存"
+ },
+ "59997b30": {
+  "en": "Invite",
+  "text": "邀请"
+ },
+ "afa5c9cd": {
+  "en": "No chat contacts",
+  "text": "无聊天联系人"
+ },
+ "be00fde1": {
+  "en": "Sure? OK again",
+  "text": "确定? 再按 OK"
+ },
+ "86b1d2eb": {
+  "en": "Leave channel",
+  "text": "退出频道"
+ },
+ "73ac94c3": {
+  "en": "Contact",
+  "text": "联系人"
+ },
+ "a30a5085": {
+  "en": "Sound on",
+  "text": "声音已开启"
+ },
+ "bc5128a1": {
+  "en": "Sound off",
+  "text": "声音已关闭"
+ },
+ "8bf3cae2": {
+  "en": "Region saved",
+  "text": "区域已保存"
+ },
+ "6c129c2a": {
+  "en": "Discover a chat contact first: ADV",
+  "text": "请先发现聊天联系人: ADV"
+ },
+ "a3ed15d0": {
+  "en": "Invitation queued to ",
+  "text": "邀请已排队: "
+ },
+ "4c8675ff": {
+  "en": "Invitation not sent",
+  "text": "邀请未发送"
+ },
+ "203aefe9": {
+  "en": "History stays; joining again shows it",
+  "text": "历史会保留, 重新加入后显示"
+ },
+ "41ae3d10": {
+  "en": "Left ",
+  "text": "已退出 "
+ },
+ "c4227caa": {
+  "en": "Cannot leave while sending",
+  "text": "发送中无法退出"
+ },
+ "30025399": {
+  "en": "Join",
+  "text": "加入"
+ },
+ "c4749f82": {
+  "en": "Open channel",
+  "text": "进入频道"
+ },
+ "5eb421e1": {
+  "en": "Channel invitation: ",
+  "text": "频道邀请: "
+ },
+ "25d966fa": {
+  "en": "you are in it",
+  "text": "你已加入"
+ },
+ "f42b49b2": {
+  "en": "<- join",
+  "text": "<- 加入"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "没有已复制的文本"
+ },
+ "8dc21305": {
+  "en": "Copied",
+  "text": "已复制"
  },
  "6426ce4b": {
   "en": "Copy text",
@@ -2521,14 +2529,6 @@
   "en": "Invalid text for this field",
   "text": "此字段的文本无效"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "没有已复制的文本"
- },
- "8dc21305": {
-  "en": "Copied",
-  "text": "已复制"
- },
  "76bda0c0": {
   "en": "Tags",
   "text": "标签"
@@ -2540,98 +2540,6 @@
  "0685388d": {
   "en": "Save failed",
   "text": "保存失败"
- },
- "e01eca3a": {
-  "en": "waiting for an answer...",
-  "text": "等待应答..."
- },
- "60acd1e3": {
-  "en": "refused",
-  "text": "被拒"
- },
- "1b68d598": {
-  "en": "no answer",
-  "text": "无应答"
- },
- "8bdf7f34": {
-  "en": "not logged in · password saved",
-  "text": "未登录 · 密码已保存"
- },
- "4c80d01f": {
-  "en": "not logged in",
-  "text": "未登录"
- },
- "ea1182ad": {
-  "en": "logged in as admin",
-  "text": "已作为管理员登录"
- },
- "08c8675d": {
-  "en": "Status: ",
-  "text": "状态: "
- },
- "012245ac": {
-  "en": "Status: not asked yet",
-  "text": "状态：尚未查询"
- },
- "eb20490a": {
-  "en": "Battery ",
-  "text": "电池 "
- },
- "7bc55d8b": {
-  "en": " V",
-  "text": " V"
- },
- "c515b220": {
-  "en": "Up ",
-  "text": "运行 "
- },
- "8e85bb8c": {
-  "en": "Rx/tx ",
-  "text": "收/发 "
- },
- "67b05c83": {
-  "en": "Noise ",
-  "text": "噪声 "
- },
- "d725d6d4": {
-  "en": "Posts ",
-  "text": "帖子 "
- },
- "4f5720b5": {
-  "en": "Air ",
-  "text": "发射 "
- },
- "c14c68f4": {
-  "en": "Trace: ",
-  "text": "追踪: "
- },
- "cef097f4": {
-  "en": "you ",
-  "text": "你 "
- },
- "9685740f": {
-  "en": " h ",
-  "text": " 小时 "
- },
- "6e8fc273": {
-  "en": " d ",
-  "text": " 天 "
- },
- "c57453ef": {
-  "en": "Trace shows the SNR at every repeater of the route",
-  "text": "追踪会显示路由上每个中继器的 SNR"
- },
- "d4460949": {
-  "en": "No route through repeaters to trace",
-  "text": "没有经中继器的路由可追踪"
- },
- "3f688bff": {
-  "en": "Replies:",
-  "text": "应答："
- },
- "343e2f48": {
-  "en": "Command: ",
-  "text": "命令: "
  },
  "55edebd2": {
   "en": "Login",
@@ -2677,6 +2585,102 @@
   "en": "Command sent",
   "text": "已发送命令"
  },
+ "e01eca3a": {
+  "en": "waiting for an answer...",
+  "text": "等待应答..."
+ },
+ "60acd1e3": {
+  "en": "refused",
+  "text": "被拒"
+ },
+ "1b68d598": {
+  "en": "no answer",
+  "text": "无应答"
+ },
+ "8bdf7f34": {
+  "en": "not logged in · password saved",
+  "text": "未登录 · 密码已保存"
+ },
+ "4c80d01f": {
+  "en": "not logged in",
+  "text": "未登录"
+ },
+ "ea1182ad": {
+  "en": "logged in as admin",
+  "text": "已作为管理员登录"
+ },
+ "08c8675d": {
+  "en": "Status: ",
+  "text": "状态: "
+ },
+ "012245ac": {
+  "en": "Status: not asked yet",
+  "text": "状态：尚未查询"
+ },
+ "eb20490a": {
+  "en": "Battery ",
+  "text": "电池 "
+ },
+ "7bc55d8b": {
+  "en": " V",
+  "text": " V"
+ },
+ "9685740f": {
+  "en": " h ",
+  "text": " 小时 "
+ },
+ "c515b220": {
+  "en": "Up ",
+  "text": "运行 "
+ },
+ "8e85bb8c": {
+  "en": "Rx/tx ",
+  "text": "收/发 "
+ },
+ "67b05c83": {
+  "en": "Noise ",
+  "text": "噪声 "
+ },
+ "d725d6d4": {
+  "en": "Posts ",
+  "text": "帖子 "
+ },
+ "4f5720b5": {
+  "en": "Air ",
+  "text": "发射 "
+ },
+ "6e8fc273": {
+  "en": " d ",
+  "text": " 天 "
+ },
+ "c14c68f4": {
+  "en": "Trace: ",
+  "text": "追踪: "
+ },
+ "cef097f4": {
+  "en": "you ",
+  "text": "你 "
+ },
+ "c57453ef": {
+  "en": "Trace shows the SNR at every repeater of the route",
+  "text": "追踪会显示路由上每个中继器的 SNR"
+ },
+ "d4460949": {
+  "en": "No route through repeaters to trace",
+  "text": "没有经中继器的路由可追踪"
+ },
+ "3f688bff": {
+  "en": "Replies:",
+  "text": "应答："
+ },
+ "343e2f48": {
+  "en": "Command: ",
+  "text": "命令: "
+ },
+ "eca63717": {
+  "en": "Passwords differ",
+  "text": "两次密码不同"
+ },
  "9c799975": {
   "en": "Unlock",
   "text": "解锁"
@@ -2717,9 +2721,33 @@
   "en": "Incorrect password",
   "text": "密码错误"
  },
- "eca63717": {
-  "en": "Passwords differ",
-  "text": "两次密码不同"
+ "46120854": {
+  "en": "8 counters at most",
+  "text": "最多 8 个计数器"
+ },
+ "28fa2654": {
+  "en": "Counter reset",
+  "text": "计数器已归零"
+ },
+ "fa0f5fe6": {
+  "en": "The last counter stays",
+  "text": "最后一个计数器保留"
+ },
+ "45bb420e": {
+  "en": "Counter deleted",
+  "text": "计数器已删除"
+ },
+ "61342fd0": {
+  "en": "on",
+  "text": "开"
+ },
+ "d1b37a61": {
+  "en": "Name saved",
+  "text": "名字已保存"
+ },
+ "154900f6": {
+  "en": "Name: up to 23 UTF-8 bytes",
+  "text": "名称：最多 23 字节 UTF-8"
  },
  "2ab44d95": {
   "en": "New counter",
@@ -2756,33 +2784,5 @@
  "73f035c7": {
   "en": "R again: reset to 0",
   "text": "再按 R：归零"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "最多 8 个计数器"
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "计数器已归零"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "最后一个计数器保留"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "计数器已删除"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "开"
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "名字已保存"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "名称：最多 23 字节 UTF-8"
  }
 }

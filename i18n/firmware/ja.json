@@ -55,10 +55,6 @@
   "en": "Counter ",
   "text": "カウンタ "
  },
- "f2d8afbf": {
-  "en": "Choose recipient",
-  "text": "送信先を選択"
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "了解"
@@ -90,6 +86,1418 @@
  "e774d890": {
   "en": "Battery low",
   "text": "電池残量が少ない"
+ },
+ "f2d8afbf": {
+  "en": "Choose recipient",
+  "text": "送信先を選択"
+ },
+ "af34335c": {
+  "en": "Internet",
+  "text": "インターネット"
+ },
+ "0b728291": {
+  "en": "All off",
+  "text": "すべてオフ"
+ },
+ "c0b2703d": {
+  "en": {
+   "one": "new message",
+   "other": "new messages"
+  },
+  "forms": {
+   "other": "新着メッセージ{n}件"
+  }
+ },
+ "8f7412e6": {
+  "en": " of ",
+  "text": " / "
+ },
+ "4f1014c0": {
+  "en": " nearby",
+  "text": " 付近"
+ },
+ "e50e2dad": {
+  "en": {
+   "one": "sat",
+   "other": "sats"
+  },
+  "forms": {
+   "other": "衛星{n}基"
+  }
+ },
+ "84e158a3": {
+  "en": "GPS: searching",
+  "text": "GPS: 測位中"
+ },
+ "7f9b88be": {
+  "en": "GPS off",
+  "text": "GPSオフ"
+ },
+ "517f4378": {
+  "en": "Online map",
+  "text": "オンライン地図"
+ },
+ "b40c44cd": {
+  "en": "No SD card",
+  "text": "SDカードなし"
+ },
+ "2c64a5cf": {
+  "en": "No maps yet",
+  "text": "地図なし"
+ },
+ "4b896fbb": {
+  "en": "Radar",
+  "text": "レーダー"
+ },
+ "c0de6b7d": {
+  "en": {
+   "one": "point",
+   "other": "points"
+  },
+  "forms": {
+   "other": "{n} 地点"
+  }
+ },
+ "db89a899": {
+  "en": "Connect",
+  "text": "接続"
+ },
+ "a4bb08e5": {
+  "en": {
+   "one": "fault",
+   "other": "faults"
+  },
+  "forms": {
+   "other": "異常{n}件"
+  }
+ },
+ "010ffdb6": {
+  "en": "All OK",
+  "text": "すべて正常"
+ },
+ "67a31c2c": {
+  "en": "Radio, screen",
+  "text": "無線、画面"
+ },
+ "1520e768": {
+  "en": " MHz · SF",
+  "text": " MHz · SF"
+ },
+ "168512be": {
+  "en": "Radio error ",
+  "text": "無線エラー "
+ },
+ "538b10e9": {
+  "en": "Open",
+  "text": "開く"
+ },
+ "3750eb16": {
+  "en": "Radio controls",
+  "text": "無線設定"
+ },
+ "19ede191": {
+  "en": {
+   "one": "app",
+   "other": "apps"
+  },
+  "forms": {
+   "other": "アプリ{n}個"
+  }
+ },
+ "832f1cca": {
+  "en": " waiting",
+  "text": " 件待ち"
+ },
+ "2c6a14ea": {
+  "en": "Folders and order: web page or app",
+  "text": "フォルダと順序: Webかアプリ"
+ },
+ "6e19da59": {
+  "en": "No apps in this folder",
+  "text": "このフォルダにアプリなし"
+ },
+ "00c6075a": {
+  "en": "Menu",
+  "text": "メインメニュー"
+ },
+ "3e892b4d": {
+  "en": "Select",
+  "text": "選択"
+ },
+ "66836516": {
+  "en": "You: ",
+  "text": "自分: "
+ },
+ "51e7624c": {
+  "en": "No messages yet",
+  "text": "メッセージなし"
+ },
+ "32e97c4a": {
+  "en": "Open MeshCore channel",
+  "text": "MeshCore公開チャンネル"
+ },
+ "9c9c5d7e": {
+  "en": "Open channel · no messages yet",
+  "text": "公開チャンネル · メッセージなし"
+ },
+ "543bd3e9": {
+  "en": "Private channel · no messages yet",
+  "text": "非公開チャンネル · メッセージなし"
+ },
+ "e65fb504": {
+  "en": "Actions",
+  "text": "操作"
+ },
+ "33a4b02f": {
+  "en": "Next unread",
+  "text": "次の未読"
+ },
+ "4648e8a8": {
+  "en": "Private channel · senders unverified · no ACK",
+  "text": "非公開チャンネル · 送信者未確認 · ACKなし"
+ },
+ "46718231": {
+  "en": "Open channel · senders unverified · no ACK",
+  "text": "公開チャンネル · 送信者未確認 · ACKなし"
+ },
+ "c4e598ca": {
+  "en": "logged in",
+  "text": "ログイン済み"
+ },
+ "ab1fafa1": {
+  "en": "log in: node card > Server",
+  "text": "ログイン：ノードカード > サーバー"
+ },
+ "91455582": {
+  "en": "Not in contacts",
+  "text": "連絡先に未登録"
+ },
+ "e99aa76f": {
+  "en": "not confirmed",
+  "text": "未確認"
+ },
+ "1a940c2a": {
+  "en": "Type and press OK to send",
+  "text": "入力してOKで送信"
+ },
+ "f574869a": {
+  "en": "Message...",
+  "text": "メッセージ..."
+ },
+ "f28e14cf": {
+  "en": "Send",
+  "text": "送信"
+ },
+ "68f399b1": {
+  "en": "Clipboard",
+  "text": "クリップボード"
+ },
+ "72d06ea7": {
+  "en": "Finding location by IP...",
+  "text": "IPで位置を取得中..."
+ },
+ "851e5ac2": {
+  "en": "Needs Wi-Fi internet or an SD card",
+  "text": "Wi-FiインターネットかSDカードが必要"
+ },
+ "77c28af9": {
+  "en": "Connect Wi-Fi or load a map",
+  "text": "Wi-Fiに接続するか地図を読み込む"
+ },
+ "119314d0": {
+  "en": "GPS will take over after a fix",
+  "text": "GPS測位後はGPS位置に切替"
+ },
+ "c19b47bb": {
+  "en": "Connections > Internet over Wi-Fi",
+  "text": "通信 > Wi-Fiでインターネット"
+ },
+ "b59a5b35": {
+  "en": "Downloading map...",
+  "text": "地図をダウンロード中..."
+ },
+ "e6aae7d4": {
+  "en": "Reading map from SD...",
+  "text": "SDから地図を読込中..."
+ },
+ "ba994464": {
+  "en": "Tiles unavailable",
+  "text": "タイルを取得できません"
+ },
+ "66643a4a": {
+  "en": "This zoom is not downloaded",
+  "text": "この縮尺は未ダウンロード"
+ },
+ "29cc0d19": {
+  "en": "+/- zoom · Wi-Fi internet loads maps",
+  "text": "+/- 縮尺 · Wi-Fiで地図取得"
+ },
+ "a3b1d86e": {
+  "en": "Offline map",
+  "text": "オフライン地図"
+ },
+ "59317dec": {
+  "en": " · loading",
+  "text": " · 読込中"
+ },
+ "1d1e1a72": {
+  "en": "GPS: old date",
+  "text": "GPS: 古い日付"
+ },
+ "b45aef8c": {
+  "en": "Pan",
+  "text": "移動"
+ },
+ "62399752": {
+  "en": "Zoom",
+  "text": "縮尺"
+ },
+ "9fa2c938": {
+  "en": "Following",
+  "text": "追従中"
+ },
+ "3f654d20": {
+  "en": "To GPS",
+  "text": "GPSへ"
+ },
+ "04dfc93c": {
+  "en": "No saved maps",
+  "text": "保存した地図なし"
+ },
+ "dcf1e39a": {
+  "en": "Upload a map via Wi-Fi or USB",
+  "text": "Wi-FiかUSBで地図を転送"
+ },
+ "7c620193": {
+  "en": {
+   "one": "tile on SD",
+   "other": "tiles on SD"
+  },
+  "forms": {
+   "other": "SDに{n}タイル"
+  }
+ },
+ "bd794432": {
+  "en": "No matching contacts",
+  "text": "一致する連絡先なし"
+ },
+ "4e5a0349": {
+  "en": "No nodes discovered yet",
+  "text": "ノード未検出"
+ },
+ "8a8a895b": {
+  "en": "F: edit tag filter",
+  "text": "F: タグを編集"
+ },
+ "2ad4b008": {
+  "en": "Advertise my node",
+  "text": "自分のノードを通知"
+ },
+ "e2339f44": {
+  "en": "saved",
+  "text": "保存済み"
+ },
+ "0ec24245": {
+  "en": "Details",
+  "text": "詳細"
+ },
+ "f4a9c097": {
+  "en": "Filter",
+  "text": "フィルター"
+ },
+ "c2954bc2": {
+  "en": "Back",
+  "text": "戻る"
+ },
+ "c416a424": {
+  "en": "Node was removed",
+  "text": "ノード削除済み"
+ },
+ "81ef07a9": {
+  "en": "Last heard",
+  "text": "最終受信"
+ },
+ "4f0a0e98": {
+  "en": " ago",
+  "text": " 前"
+ },
+ "1ae89b50": {
+  "en": "not since boot",
+  "text": "起動後未受信"
+ },
+ "2fce4529": {
+  "en": "Signal",
+  "text": "信号"
+ },
+ "d7d630be": {
+  "en": "Route",
+  "text": "経路"
+ },
+ "cd08221c": {
+  "en": " · flood",
+  "text": " · フラッド"
+ },
+ "e27f342a": {
+  "en": "Position",
+  "text": "位置"
+ },
+ "a3ad51f3": {
+  "en": "not shared",
+  "text": "未共有"
+ },
+ "b8297e9a": {
+  "en": "Room",
+  "text": "ルーム"
+ },
+ "ae0ed984": {
+  "en": "Message",
+  "text": "メッセージ"
+ },
+ "8f635566": {
+  "en": "On map",
+  "text": "地図で表示"
+ },
+ "db5485e7": {
+  "en": "Reset path",
+  "text": "経路リセット"
+ },
+ "2d44294d": {
+  "en": "Sure?",
+  "text": "削除する?"
+ },
+ "6e3fab8c": {
+  "en": "Forget",
+  "text": "削除"
+ },
+ "6d7302f2": {
+  "en": "Server",
+  "text": "サーバー"
+ },
+ "26f8e74e": {
+  "en": "Trace",
+  "text": "トレース"
+ },
+ "0a77a91f": {
+  "en": "Action",
+  "text": "操作"
+ },
+ "8d57e66a": {
+  "en": "Run",
+  "text": "実行"
+ },
+ "0ff01b6a": {
+  "en": "Notes",
+  "text": "メモ"
+ },
+ "d112e127": {
+  "en": "hold flat",
+  "text": "水平に保持"
+ },
+ "1a45dda5": {
+  "en": "not calibrated",
+  "text": "未校正"
+ },
+ "ab3a8a0a": {
+  "en": "off",
+  "text": "オフ"
+ },
+ "b2e48278": {
+  "en": "fix",
+  "text": "測位済み"
+ },
+ "620f3cc6": {
+  "en": "old date",
+  "text": "古い日付"
+ },
+ "67ce0277": {
+  "en": "searching",
+  "text": "測位中"
+ },
+ "f5e7befb": {
+  "en": "Satellites",
+  "text": "衛星"
+ },
+ "a2009955": {
+  "en": " in view",
+  "text": " 個可視"
+ },
+ "6d7e4165": {
+  "en": "Latitude",
+  "text": "緯度"
+ },
+ "671964ee": {
+  "en": "Longitude",
+  "text": "経度"
+ },
+ "bb5f80fd": {
+  "en": "Clock",
+  "text": "時計"
+ },
+ "ffa35e26": {
+  "en": "not set",
+  "text": "未設定"
+ },
+ "219101e3": {
+  "en": "manual",
+  "text": "手動"
+ },
+ "d2cdcecb": {
+  "en": " · trusted",
+  "text": " · 信頼済み"
+ },
+ "bb77a2cf": {
+  "en": "Compass",
+  "text": "コンパス"
+ },
+ "1db880db": {
+  "en": {
+   "one": "sample",
+   "other": "samples"
+  },
+  "forms": {
+   "other": "{n}サンプル"
+  }
+ },
+ "37b8f592": {
+  "en": "calibrated",
+  "text": "校正済み"
+ },
+ "75c3ffb2": {
+  "en": "needs calibration",
+  "text": "要校正"
+ },
+ "ff05911b": {
+  "en": "Share position",
+  "text": "位置を共有"
+ },
+ "7629db5a": {
+  "en": "Finish calibration",
+  "text": "校正を完了"
+ },
+ "6f59150a": {
+  "en": "Calibrate compass",
+  "text": "コンパスを校正"
+ },
+ "e125a9a1": {
+  "en": "Advert with GPS",
+  "text": "GPS付きアドバート"
+ },
+ "10b78d8a": {
+  "en": "Needs a fresh GPS fix",
+  "text": "新しいGPS測位が必要"
+ },
+ "a603b11c": {
+  "en": "Rotate in all directions",
+  "text": "本体を全方向に回転させてください"
+ },
+ "7f8e9f6b": {
+  "en": "Rotate for 20+ seconds",
+  "text": "20秒以上回転"
+ },
+ "45465004": {
+  "en": "GPS on",
+  "text": "GPSオン"
+ },
+ "4930944f": {
+  "en": "Phone",
+  "text": "スマホ"
+ },
+ "ec266ec8": {
+  "en": "Watch",
+  "text": "ウォッチ"
+ },
+ "89a2ef46": {
+  "en": "Headphones",
+  "text": "ヘッドホン"
+ },
+ "fae1ce6b": {
+  "en": "Phone/watch",
+  "text": "スマホ/ウォッチ"
+ },
+ "7e3d4120": {
+  "en": "BLE device",
+  "text": "BLE機器"
+ },
+ "9e13a743": {
+  "en": "Hidden network",
+  "text": "隠しネットワーク"
+ },
+ "90cbadfa": {
+  "en": "Bluetooth busy: probe",
+  "text": "Bluetooth: テスト中"
+ },
+ "e5e4ab77": {
+  "en": "Bluetooth error",
+  "text": "Bluetoothエラー"
+ },
+ "983f66dc": {
+  "en": "Wi-Fi busy: access point",
+  "text": "Wi-Fi使用中: アクセスポイント"
+ },
+ "35c403f6": {
+  "en": "Wi-Fi busy: probe",
+  "text": "Wi-Fi: テスト中"
+ },
+ "1be7979b": {
+  "en": "Wi-Fi error",
+  "text": "Wi-Fiエラー"
+ },
+ "89414ad6": {
+  "en": "Scanning Wi-Fi...",
+  "text": "Wi-Fiスキャン中..."
+ },
+ "542d8f50": {
+  "en": "closer to centre = stronger",
+  "text": "中心に近いほど強い"
+ },
+ "fde56fad": {
+  "en": "List paused",
+  "text": "一覧を一時停止中"
+ },
+ "503d6eed": {
+  "en": {
+   "one": "phone/watch nearby",
+   "other": "phones/watches nearby"
+  },
+  "forms": {
+   "other": "付近にスマホ/ウォッチ{n}台"
+  }
+ },
+ "49031ccd": {
+  "en": "No signals yet",
+  "text": "信号なし"
+ },
+ "8d2937a1": {
+  "en": "List",
+  "text": "一覧"
+ },
+ "454d1d8a": {
+  "en": "Resume",
+  "text": "再開"
+ },
+ "44f9bf2d": {
+  "en": "Pause",
+  "text": "一時停止"
+ },
+ "3368e695": {
+  "en": "Home in",
+  "text": "探索"
+ },
+ "aad07647": {
+  "en": "Motion",
+  "text": "動き"
+ },
+ "84397af6": {
+  "en": " · direct packets only",
+  "text": " · 直接パケットのみ"
+ },
+ "b8a018ba": {
+  "en": " · address changes over time",
+  "text": " · アドレスは随時変化"
+ },
+ "a8e7e5cc": {
+  "en": "channel ",
+  "text": "チャンネル "
+ },
+ "64db285b": {
+  "en": "Lost",
+  "text": "ロスト"
+ },
+ "46102346": {
+  "en": "No signal",
+  "text": "信号なし"
+ },
+ "3b06b3cd": {
+  "en": "Stronger",
+  "text": "強くなった"
+ },
+ "4dd880a2": {
+  "en": "Weaker",
+  "text": "弱くなった"
+ },
+ "cd945433": {
+  "en": "Steady",
+  "text": "変化なし"
+ },
+ "184745be": {
+  "en": "keep moving",
+  "text": "移動を続けて"
+ },
+ "78c14fb6": {
+  "en": "peak ",
+  "text": "ピーク "
+ },
+ "b991041c": {
+  "en": "Waiting for samples",
+  "text": "サンプル待ち"
+ },
+ "cde081d3": {
+  "en": {
+   "one": "packet",
+   "other": "packets"
+  },
+  "forms": {
+   "other": "{n}パケット"
+  }
+ },
+ "0ec969ac": {
+  "en": " adverts/s",
+  "text": " アドバート/秒"
+ },
+ "93382782": {
+  "en": " beacons/s",
+  "text": " ビーコン/秒"
+ },
+ "42cfcb2d": {
+  "en": " s ago",
+  "text": " 秒前"
+ },
+ "3f609f74": {
+  "en": "Mute",
+  "text": "消音"
+ },
+ "b3ca9a34": {
+  "en": "Sound",
+  "text": "音あり"
+ },
+ "68f7fd73": {
+  "en": "Reset peak",
+  "text": "ピーク初期化"
+ },
+ "394ec4f2": {
+  "en": "Turn the access point off",
+  "text": "アクセスポイントをオフに"
+ },
+ "fccfe8a5": {
+  "en": "Beacon for another board",
+  "text": "別のボード用ビーコン"
+ },
+ "bfacb4d0": {
+  "en": " frames/s on channel 1",
+  "text": " フレーム/秒 (チャンネル1)"
+ },
+ "6d3d79bb": {
+  "en": "beacon ",
+  "text": "ビーコン "
+ },
+ "d7972182": {
+  "en": " frames/s · ",
+  "text": " フレーム/秒 · "
+ },
+ "b85b81cf": {
+  "en": "waiting: set the other board to CSI beacon",
+  "text": "待機中: 別のボードを「CSIビーコン」に設定"
+ },
+ "1d0cdb24": {
+  "en": "NO WI-FI",
+  "text": "Wi-Fiなし"
+ },
+ "e9a87b56": {
+  "en": "BEACON ON",
+  "text": "ビーコン送信中"
+ },
+ "564cdaca": {
+  "en": "NO BEACON",
+  "text": "ビーコンなし"
+ },
+ "9a1796e8": {
+  "en": "CSI FROZEN",
+  "text": "CSI停止"
+ },
+ "dd26ae1f": {
+  "en": "CALIBRATING ",
+  "text": "校正中 "
+ },
+ "5ec52fe4": {
+  "en": " s",
+  "text": " 秒"
+ },
+ "4d851fe7": {
+  "en": "MOTION",
+  "text": "動きあり"
+ },
+ "6fce5d71": {
+  "en": "STILL",
+  "text": "静止"
+ },
+ "13d6d724": {
+  "en": "activity ",
+  "text": "活動 "
+ },
+ "1e3add08": {
+  "en": "threshold ",
+  "text": "しきい値 "
+ },
+ "dda163c5": {
+  "en": " (default)",
+  "text": " (既定)"
+ },
+ "19deef04": {
+  "en": "Walk between the boards to see the trace",
+  "text": "ボードの間を歩くと軌跡が表示"
+ },
+ "faa0c1ab": {
+  "en": "Calibrate with the area empty and still (10 s)",
+  "text": "無人で静止した状態で校正 (10秒)"
+ },
+ "4204187c": {
+  "en": "Place the boards 2-5 m apart; motion between them is sensed",
+  "text": "ボードを2-5 m離して置く。間の動きを検知"
+ },
+ "9bb72cae": {
+  "en": "Signals",
+  "text": "信号"
+ },
+ "6fb7daa2": {
+  "en": "Calibrate",
+  "text": "校正"
+ },
+ "4d580639": {
+  "en": "Beacon",
+  "text": "ビーコン"
+ },
+ "5427923a": {
+  "en": "To turn on, hold the trackball pressed",
+  "text": "電源オン：トラックボールを長押し"
+ },
+ "b1e20664": {
+  "en": "To turn on: RESET or the power switch",
+  "text": "電源オン：RESET または電源スイッチ"
+ },
+ "cba7fbe8": {
+  "en": "Device is off",
+  "text": "電源オフしました"
+ },
+ "2697628b": {
+  "en": "Turning off...",
+  "text": "電源オフ中..."
+ },
+ "b639f585": {
+  "en": "GPS & compass",
+  "text": "GPSとコンパス"
+ },
+ "dde0a6be": {
+  "en": "Keys & help",
+  "text": "キーとヘルプ"
+ },
+ "cd03e04b": {
+  "en": "Turn off",
+  "text": "電源オフ"
+ },
+ "a21b5cde": {
+  "en": "Brightness ",
+  "text": "明るさ "
+ },
+ "e1b4bdaa": {
+  "en": "compass calibrated",
+  "text": "コンパス校正済み"
+ },
+ "e8f719bd": {
+  "en": "compass not calibrated",
+  "text": "コンパス未校正"
+ },
+ "7316bebd": {
+  "en": " relayed",
+  "text": " 件中継"
+ },
+ "4f18c10c": {
+  "en": "What every key does",
+  "text": "各キーの機能"
+ },
+ "7e8a19d5": {
+  "en": "Searching: ",
+  "text": "検索中: "
+ },
+ "9a555563": {
+  "en": {
+   "one": "repeater",
+   "other": "repeaters"
+  },
+  "forms": {
+   "other": "{n} 台の中継"
+  }
+ },
+ "1a8c15c3": {
+  "en": {
+   "one": "region",
+   "other": "regions"
+  },
+  "forms": {
+   "other": "{n} 地域"
+  }
+ },
+ "99f30427": {
+  "en": "OK: start",
+  "text": "OK: 開始"
+ },
+ "9fca3c9e": {
+  "en": "Listening ",
+  "text": "受信中 "
+ },
+ "a3980ce8": {
+  "en": "Nothing new",
+  "text": "新規なし"
+ },
+ "443ffd47": {
+  "en": "OK: test ",
+  "text": "OK：テスト "
+ },
+ "2265ebb1": {
+  "en": "Current profile: ",
+  "text": "現在のプロファイル： "
+ },
+ "34f428b1": {
+  "en": "Try every regional preset",
+  "text": "各地域プリセットを試す"
+ },
+ "c91eb13e": {
+  "en": "Preset",
+  "text": "プリセット"
+ },
+ "8d9206a1": {
+  "en": "Frequency",
+  "text": "周波数"
+ },
+ "008f5512": {
+  "en": "Bandwidth",
+  "text": "帯域幅"
+ },
+ "d174bc31": {
+  "en": "Spreading factor",
+  "text": "拡散率 SF"
+ },
+ "3c2364a7": {
+  "en": "Coding rate",
+  "text": "符号化率 CR"
+ },
+ "92d39d44": {
+  "en": "TX power",
+  "text": "送信出力"
+ },
+ "175749a2": {
+  "en": "Relay hop limit",
+  "text": "中継ホップ上限"
+ },
+ "75193707": {
+  "en": "Relay packets",
+  "text": "パケット中継"
+ },
+ "2197c64b": {
+  "en": "Path hash size",
+  "text": "パスハッシュ長"
+ },
+ "492e789d": {
+  "en": "Region",
+  "text": "地域"
+ },
+ "b872ed2b": {
+  "en": "Find regions",
+  "text": "地域を検索"
+ },
+ "eb38bf4c": {
+  "en": "Find network",
+  "text": "ネット検索"
+ },
+ "24646b98": {
+  "en": "Radio test",
+  "text": "無線テスト"
+ },
+ "0614ba0b": {
+  "en": "Previous radio",
+  "text": "以前の無線"
+ },
+ "0fe07306": {
+  "en": "Name",
+  "text": "名前"
+ },
+ "9a73db9b": {
+  "en": "Language",
+  "text": "言語"
+ },
+ "df6e627c": {
+  "en": "Day brightness",
+  "text": "日中の明るさ"
+ },
+ "73d459b4": {
+  "en": "Home layout",
+  "text": "ホームの表示"
+ },
+ "4ef0ddc5": {
+  "en": "Sounds",
+  "text": "サウンド"
+ },
+ "300ec32d": {
+  "en": "Auto lock",
+  "text": "自動ロック"
+ },
+ "1f0bca87": {
+  "en": "Dim screen",
+  "text": "画面減光"
+ },
+ "37976ee4": {
+  "en": "GPS receiver",
+  "text": "GPS受信機"
+ },
+ "f050c5bc": {
+  "en": "UTC offset",
+  "text": "UTCとの時差"
+ },
+ "caa82244": {
+  "en": "Battery shows",
+  "text": "電池表示"
+ },
+ "fecd422a": {
+  "en": "Lock screen",
+  "text": "ロック画面"
+ },
+ "667ad2f5": {
+  "en": "Wake on message",
+  "text": "メッセージで起動"
+ },
+ "98b6a9f6": {
+  "en": "Message popup",
+  "text": "メッセージ表示"
+ },
+ "4eaf7c92": {
+  "en": "Theme",
+  "text": "テーマ"
+ },
+ "ac7ce48d": {
+  "en": "Accent colour",
+  "text": "アクセント色"
+ },
+ "548b7cf8": {
+  "en": "Night brightness",
+  "text": "ナイトの明るさ"
+ },
+ "1c076c32": {
+  "en": "Screen password",
+  "text": "画面パスワード"
+ },
+ "9525b78e": {
+  "en": "Custom",
+  "text": "カスタム"
+ },
+ "dc6bfbe0": {
+  "en": " MHz",
+  "text": " MHz"
+ },
+ "1ffe2452": {
+  "en": " kHz",
+  "text": " kHz"
+ },
+ "49e98b8b": {
+  "en": {
+   "one": "byte",
+   "other": "bytes"
+  },
+  "forms": {
+   "other": "{n} バイト"
+  }
+ },
+ "304ff7fb": {
+  "en": "None",
+  "text": "なし"
+ },
+ "9023a2b0": {
+  "en": "OK: keep",
+  "text": "OK: 維持"
+ },
+ "45570065": {
+  "en": "Dark",
+  "text": "ダーク"
+ },
+ "8ad2f8cf": {
+  "en": "Light",
+  "text": "ライト"
+ },
+ "126befb6": {
+  "en": "Auto",
+  "text": "自動"
+ },
+ "880f97dc": {
+  "en": "Lime",
+  "text": "ライム"
+ },
+ "e9dd1fed": {
+  "en": "Blue",
+  "text": "ブルー"
+ },
+ "f03bdf12": {
+  "en": "Violet",
+  "text": "バイオレット"
+ },
+ "15903060": {
+  "en": "Amber",
+  "text": "アンバー"
+ },
+ "0dad9117": {
+  "en": "Same as day",
+  "text": "日中と同じ"
+ },
+ "8581156e": {
+  "en": "Tiles",
+  "text": "タイル"
+ },
+ "87c7093b": {
+  "en": "Volts",
+  "text": "電圧"
+ },
+ "ff1537fa": {
+  "en": "Percent",
+  "text": "パーセント"
+ },
+ "3c2dfe59": {
+  "en": "Hidden",
+  "text": "非表示"
+ },
+ "75afe364": {
+  "en": "All",
+  "text": "すべて"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "メンション"
+ },
+ "f0b87eb8": {
+  "en": "MeshCore regional settings: frequency, BW, SF, CR",
+  "text": "MeshCore 地域設定：周波数、BW、SF、CR"
+ },
+ "21ff842c": {
+  "en": "1 kHz steps; must match every node",
+  "text": "1 kHz刻み、全ノードで同じ値に"
+ },
+ "7608c344": {
+  "en": "62.5 / 125 / 250 / 500 kHz",
+  "text": "62.5 / 125 / 250 / 500 kHz"
+ },
+ "943a47cb": {
+  "en": "Higher SF: longer range, slower",
+  "text": "SFが大きいほど遠くへ、ただし低速"
+ },
+ "c52a8c0f": {
+  "en": "Error correction 4/5 to 4/8",
+  "text": "誤り訂正 4/5〜4/8"
+ },
+ "af53f6b8": {
+  "en": "Radio chip setting, 0-22 dBm",
+  "text": "無線チップの設定、0-22 dBm"
+ },
+ "3f328711": {
+  "en": "Relay packets with fewer hops than this",
+  "text": "ホップ数がこれ未満のパケットを中継"
+ },
+ "7cd202ed": {
+  "en": "Forward other nodes' MeshCore packets",
+  "text": "他ノードのMeshCoreパケットを中継"
+ },
+ "fa81bada": {
+  "en": "Per hop in our floods; older MeshCore drops 2-3",
+  "text": "フラッドの1ホップあたり。旧MeshCoreは2-3を破棄"
+ },
+ "8513a98e": {
+  "en": "Repeaters pass on our floods by it; OK: type",
+  "text": "中継器はこれで転送; OK: 入力"
+ },
+ "33a9cb6d": {
+  "en": "Found: ",
+  "text": "検出: "
+ },
+ "2fd16ea7": {
+  "en": "Asks repeaters that hear this device",
+  "text": "この端末が届く中継器に問い合わせ"
+ },
+ "d284a6e4": {
+  "en": "A restart returns ",
+  "text": "再起動で戻る "
+ },
+ "51c955b1": {
+  "en": "OK: return to it",
+  "text": "OK: 元に戻す"
+ },
+ "5261f68a": {
+  "en": "Kept on a change of frequency, BW, SF or CR",
+  "text": "周波数/BW/SF/CR変更時に記憶"
+ },
+ "85dde262": {
+  "en": "Applied to the radio when saved",
+  "text": "保存時に無線へ適用"
+ },
+ "7c3b11a9": {
+  "en": "OK: set or change password",
+  "text": "OK: パスワードを設定・変更"
+ },
+ "e754fa0d": {
+  "en": "Day 07:00–20:00, local time",
+  "text": "日中 07:00–20:00、現地時間"
+ },
+ "34fd54b2": {
+  "en": "OK: edit, 1-24 UTF-8 bytes",
+  "text": "OK: 編集、1-24 UTF-8バイト"
+ },
+ "7ecd2a4c": {
+  "en": "Menu language",
+  "text": "メニュー言語"
+ },
+ "018eb564": {
+  "en": "Applies to Home and all folders",
+  "text": "ホームとすべてのフォルダに適用"
+ },
+ "b265628f": {
+  "en": "Tone for messages and ACKs",
+  "text": "メッセージとACKの通知音"
+ },
+ "969a0678": {
+  "en": "0 = off, 30-600 s",
+  "text": "0 = オフ、30-600 秒"
+ },
+ "ab5a04f6": {
+  "en": "0 = off, 10-600 s",
+  "text": "0 = オフ、10-600 秒"
+ },
+ "48707a29": {
+  "en": "Receiver power",
+  "text": "受信機の電源"
+ },
+ "ed88bd72": {
+  "en": "Local time, 15 minute steps",
+  "text": "現地時間、15分刻み"
+ },
+ "5d6af097": {
+  "en": "Status bar: charge estimate or measured voltage",
+  "text": "ステータスバー: 推定残量または実測電圧"
+ },
+ "e4f5443f": {
+  "en": "Message senders while locked",
+  "text": "ロック中の送信者"
+ },
+ "6cf00f88": {
+  "en": "Stored in device memory",
+  "text": "デバイスのメモリに保存"
+ },
+ "1dd4ab8a": {
+  "en": "Listening",
+  "text": "受信"
+ },
+ "2fe2598e": {
+  "en": "pings",
+  "text": "ping"
+ },
+ "9296739d": {
+  "en": "Phone: ",
+  "text": "スマホ: "
+ },
+ "4aba2ce0": {
+  "en": "No position: GPS fix or phone app",
+  "text": "位置なし: GPS かスマホ"
+ },
+ "53e32296": {
+  "en": "Ping sent, listening for repeaters...",
+  "text": "ping 送信済み、リピーター待ち..."
+ },
+ "140b9a3a": {
+  "en": "No pings yet: P sends one",
+  "text": "ping なし: P で送信"
+ },
+ "39b7127d": {
+  "en": "Last ping: ",
+  "text": "前回 ping: "
+ },
+ "1983dffb": {
+  "en": "Last ping: no repeater heard it",
+  "text": "前回 ping: 応答したリピーターなし"
+ },
+ "8504bdd5": {
+  "en": "No repeaters heard yet",
+  "text": "リピーターはまだ聞こえません"
+ },
+ "6c03392d": {
+  "en": "OK starts listening and pings",
+  "text": "OK で受信と ping を開始"
+ },
+ "0aed7015": {
+  "en": "rx ",
+  "text": "受信 "
+ },
+ "04be6123": {
+  "en": " · echo ",
+  "text": " · エコー "
+ },
+ "4b7f7705": {
+  "en": "Stop",
+  "text": "停止"
+ },
+ "0ae8097f": {
+  "en": "Start",
+  "text": "開始"
+ },
+ "7fb7f0a9": {
+  "en": "Ping",
+  "text": "Ping"
+ },
+ "5f7eec60": {
+  "en": "Wardrive on",
+  "text": "電波マップ開始"
+ },
+ "8ae160ba": {
+  "en": "Wardrive off",
+  "text": "電波マップ停止"
+ },
+ "54f6c01a": {
+  "en": "Ping queued",
+  "text": "ping を送信待ち"
+ },
+ "dfe5ac67": {
+  "en": "No position yet",
+  "text": "位置はまだありません"
+ },
+ "0cf72110": {
+  "en": "Wait: a ping is under way",
+  "text": "待機: ping 送信中"
+ },
+ "46ff9c40": {
+  "en": "choose",
+  "text": "選択"
+ },
+ "11c2662d": {
+  "en": "select",
+  "text": "決定"
+ },
+ "7261c8af": {
+  "en": "send",
+  "text": "送信"
+ },
+ "cded1a85": {
+  "en": "exit",
+  "text": "終了"
+ },
+ "61efb279": {
+  "en": "Save changes",
+  "text": "変更を保存"
+ },
+ "a2c6becb": {
+  "en": "No changes",
+  "text": "変更なし"
+ },
+ "4d2d5d68": {
+  "en": "Save",
+  "text": "保存"
+ },
+ "c2c76cb1": {
+  "en": "Edit",
+  "text": "変更"
+ },
+ "35afca3b": {
+  "en": "Cancel",
+  "text": "キャンセル"
+ },
+ "701eaa88": {
+  "en": "Edit name",
+  "text": "名前を編集"
+ },
+ "555cbe68": {
+  "en": "Keep",
+  "text": "維持"
+ },
+ "cc01b1df": {
+  "en": "Return",
+  "text": "戻す"
+ },
+ "2ffcbe05": {
+  "en": "Test",
+  "text": "テスト"
+ },
+ "c646a2c9": {
+  "en": "Search",
+  "text": "検索"
+ },
+ "0abaed3f": {
+  "en": "Found",
+  "text": "検出済み"
+ },
+ "d155d06d": {
+  "en": "Type",
+  "text": "入力"
+ },
+ "a1de2fdd": {
+  "en": "Change",
+  "text": "変更"
+ },
+ "c3a34509": {
+  "en": "Next value",
+  "text": "次の値"
+ },
+ "4d7ef753": {
+  "en": "Wi-Fi access point",
+  "text": "Wi-Fiアクセスポイント"
+ },
+ "ba5122e7": {
+  "en": "Web chat and map upload",
+  "text": "Webチャットと地図アップロード"
+ },
+ "4dbe556f": {
+  "en": "MeshCore identity",
+  "text": "MeshCore ID"
+ },
+ "18ac79a2": {
+  "en": "Networks",
+  "text": "ネットワーク"
+ },
+ "6cf1ba25": {
+  "en": "Toggle",
+  "text": "切替"
+ },
+ "75a04256": {
+  "en": "Wrong password or refused: ",
+  "text": "パスワード誤りか拒否: "
+ },
+ "e2dabf28": {
+  "en": "No answer from ",
+  "text": "応答なし: "
+ },
+ "09974b89": {
+  "en": "Connection lost",
+  "text": "接続が切れました"
+ },
+ "c7e915d7": {
+  "en": "Wi-Fi scan failed",
+  "text": "Wi-Fiスキャン失敗"
+ },
+ "34dfb5f5": {
+  "en": "Wi-Fi scan timed out",
+  "text": "Wi-Fiスキャンがタイムアウト"
+ },
+ "71494765": {
+  "en": "SSID 1-32 bytes, password empty or 8-63",
+  "text": "SSIDは1-32バイト、パスワードは空か8-63"
+ },
+ "db65b4b4": {
+  "en": "Tile is not 256 or 512 px",
+  "text": "タイルが256/512 pxではない"
+ },
+ "172eebcb": {
+  "en": "Not a PNG image",
+  "text": "PNG画像ではない"
+ },
+ "e234f405": {
+  "en": "No location",
+  "text": "IPから位置を取得できない"
+ },
+ "fd387bbd": {
+  "en": "SD full: web tiles not cached",
+  "text": "SD満杯: Webタイルを保存できない"
+ },
+ "d8e1dad5": {
+  "en": "Wi-Fi client on",
+  "text": "Wi-Fiクライアント オン"
+ },
+ "0e9eb651": {
+  "en": "Wi-Fi client off",
+  "text": "Wi-Fiクライアント オフ"
+ },
+ "b1374eac": {
+  "en": "Connecting to ",
+  "text": "接続先: "
  },
  "5b61220f": {
   "en": "Forgotten: ",
@@ -519,13 +1927,13 @@
   "en": "Radio TX error",
   "text": "無線送信エラー"
  },
- "54279dd1": {
-  "en": "No repeat heard",
-  "text": "再送を受信せず"
- },
  "60e47df0": {
   "en": "On",
   "text": "オン"
+ },
+ "54279dd1": {
+  "en": "No repeat heard",
+  "text": "再送を受信せず"
  },
  "1f7c35ca": {
   "en": "hold OK",
@@ -800,1413 +2208,9 @@
   "en": "Add a channel",
   "text": "チャンネル追加"
  },
- "af34335c": {
-  "en": "Internet",
-  "text": "インターネット"
- },
- "0b728291": {
-  "en": "All off",
-  "text": "すべてオフ"
- },
- "c0b2703d": {
-  "en": {
-   "one": "new message",
-   "other": "new messages"
-  },
-  "forms": {
-   "other": "新着メッセージ{n}件"
-  }
- },
- "8f7412e6": {
-  "en": " of ",
-  "text": " / "
- },
- "4f1014c0": {
-  "en": " nearby",
-  "text": " 付近"
- },
- "84e158a3": {
-  "en": "GPS: searching",
-  "text": "GPS: 測位中"
- },
- "7f9b88be": {
-  "en": "GPS off",
-  "text": "GPSオフ"
- },
- "e50e2dad": {
-  "en": {
-   "one": "sat",
-   "other": "sats"
-  },
-  "forms": {
-   "other": "衛星{n}基"
-  }
- },
- "517f4378": {
-  "en": "Online map",
-  "text": "オンライン地図"
- },
- "b40c44cd": {
-  "en": "No SD card",
-  "text": "SDカードなし"
- },
- "2c64a5cf": {
-  "en": "No maps yet",
-  "text": "地図なし"
- },
- "4b896fbb": {
-  "en": "Radar",
-  "text": "レーダー"
- },
- "c0de6b7d": {
-  "en": {
-   "one": "point",
-   "other": "points"
-  },
-  "forms": {
-   "other": "{n} 地点"
-  }
- },
- "db89a899": {
-  "en": "Connect",
-  "text": "接続"
- },
- "010ffdb6": {
-  "en": "All OK",
-  "text": "すべて正常"
- },
- "a4bb08e5": {
-  "en": {
-   "one": "fault",
-   "other": "faults"
-  },
-  "forms": {
-   "other": "異常{n}件"
-  }
- },
- "67a31c2c": {
-  "en": "Radio, screen",
-  "text": "無線、画面"
- },
- "1520e768": {
-  "en": " MHz · SF",
-  "text": " MHz · SF"
- },
- "168512be": {
-  "en": "Radio error ",
-  "text": "無線エラー "
- },
- "538b10e9": {
-  "en": "Open",
-  "text": "開く"
- },
- "3750eb16": {
-  "en": "Radio controls",
-  "text": "無線設定"
- },
- "832f1cca": {
-  "en": " waiting",
-  "text": " 件待ち"
- },
- "19ede191": {
-  "en": {
-   "one": "app",
-   "other": "apps"
-  },
-  "forms": {
-   "other": "アプリ{n}個"
-  }
- },
- "2c6a14ea": {
-  "en": "Folders and order: web page or app",
-  "text": "フォルダと順序: Webかアプリ"
- },
- "6e19da59": {
-  "en": "No apps in this folder",
-  "text": "このフォルダにアプリなし"
- },
- "00c6075a": {
-  "en": "Menu",
-  "text": "メインメニュー"
- },
- "3e892b4d": {
-  "en": "Select",
-  "text": "選択"
- },
- "66836516": {
-  "en": "You: ",
-  "text": "自分: "
- },
- "51e7624c": {
-  "en": "No messages yet",
-  "text": "メッセージなし"
- },
- "32e97c4a": {
-  "en": "Open MeshCore channel",
-  "text": "MeshCore公開チャンネル"
- },
- "9c9c5d7e": {
-  "en": "Open channel · no messages yet",
-  "text": "公開チャンネル · メッセージなし"
- },
- "543bd3e9": {
-  "en": "Private channel · no messages yet",
-  "text": "非公開チャンネル · メッセージなし"
- },
- "e65fb504": {
-  "en": "Actions",
-  "text": "操作"
- },
- "33a4b02f": {
-  "en": "Next unread",
-  "text": "次の未読"
- },
- "4648e8a8": {
-  "en": "Private channel · senders unverified · no ACK",
-  "text": "非公開チャンネル · 送信者未確認 · ACKなし"
- },
- "46718231": {
-  "en": "Open channel · senders unverified · no ACK",
-  "text": "公開チャンネル · 送信者未確認 · ACKなし"
- },
- "c4e598ca": {
-  "en": "logged in",
-  "text": "ログイン済み"
- },
- "ab1fafa1": {
-  "en": "log in: node card > Server",
-  "text": "ログイン：ノードカード > サーバー"
- },
- "91455582": {
-  "en": "Not in contacts",
-  "text": "連絡先に未登録"
- },
- "e99aa76f": {
-  "en": "not confirmed",
-  "text": "未確認"
- },
- "1a940c2a": {
-  "en": "Type and press OK to send",
-  "text": "入力してOKで送信"
- },
- "f574869a": {
-  "en": "Message...",
-  "text": "メッセージ..."
- },
- "f28e14cf": {
-  "en": "Send",
-  "text": "送信"
- },
- "68f399b1": {
-  "en": "Clipboard",
-  "text": "クリップボード"
- },
- "72d06ea7": {
-  "en": "Finding location by IP...",
-  "text": "IPで位置を取得中..."
- },
- "851e5ac2": {
-  "en": "Needs Wi-Fi internet or an SD card",
-  "text": "Wi-FiインターネットかSDカードが必要"
- },
- "77c28af9": {
-  "en": "Connect Wi-Fi or load a map",
-  "text": "Wi-Fiに接続するか地図を読み込む"
- },
- "119314d0": {
-  "en": "GPS will take over after a fix",
-  "text": "GPS測位後はGPS位置に切替"
- },
- "c19b47bb": {
-  "en": "Connections > Internet over Wi-Fi",
-  "text": "通信 > Wi-Fiでインターネット"
- },
- "b59a5b35": {
-  "en": "Downloading map...",
-  "text": "地図をダウンロード中..."
- },
- "e6aae7d4": {
-  "en": "Reading map from SD...",
-  "text": "SDから地図を読込中..."
- },
- "ba994464": {
-  "en": "Tiles unavailable",
-  "text": "タイルを取得できません"
- },
- "66643a4a": {
-  "en": "This zoom is not downloaded",
-  "text": "この縮尺は未ダウンロード"
- },
- "29cc0d19": {
-  "en": "+/- zoom · Wi-Fi internet loads maps",
-  "text": "+/- 縮尺 · Wi-Fiで地図取得"
- },
- "a3b1d86e": {
-  "en": "Offline map",
-  "text": "オフライン地図"
- },
- "59317dec": {
-  "en": " · loading",
-  "text": " · 読込中"
- },
- "1d1e1a72": {
-  "en": "GPS: old date",
-  "text": "GPS: 古い日付"
- },
- "b45aef8c": {
-  "en": "Pan",
-  "text": "移動"
- },
- "62399752": {
-  "en": "Zoom",
-  "text": "縮尺"
- },
- "9fa2c938": {
-  "en": "Following",
-  "text": "追従中"
- },
- "3f654d20": {
-  "en": "To GPS",
-  "text": "GPSへ"
- },
- "04dfc93c": {
-  "en": "No saved maps",
-  "text": "保存した地図なし"
- },
- "dcf1e39a": {
-  "en": "Upload a map via Wi-Fi or USB",
-  "text": "Wi-FiかUSBで地図を転送"
- },
- "7c620193": {
-  "en": {
-   "one": "tile on SD",
-   "other": "tiles on SD"
-  },
-  "forms": {
-   "other": "SDに{n}タイル"
-  }
- },
- "bd794432": {
-  "en": "No matching contacts",
-  "text": "一致する連絡先なし"
- },
- "4e5a0349": {
-  "en": "No nodes discovered yet",
-  "text": "ノード未検出"
- },
- "8a8a895b": {
-  "en": "F: edit tag filter",
-  "text": "F: タグを編集"
- },
- "2ad4b008": {
-  "en": "Advertise my node",
-  "text": "自分のノードを通知"
- },
- "e2339f44": {
-  "en": "saved",
-  "text": "保存済み"
- },
- "0ec24245": {
-  "en": "Details",
-  "text": "詳細"
- },
- "f4a9c097": {
-  "en": "Filter",
-  "text": "フィルター"
- },
- "c2954bc2": {
-  "en": "Back",
-  "text": "戻る"
- },
- "c416a424": {
-  "en": "Node was removed",
-  "text": "ノード削除済み"
- },
- "81ef07a9": {
-  "en": "Last heard",
-  "text": "最終受信"
- },
- "4f0a0e98": {
-  "en": " ago",
-  "text": " 前"
- },
- "1ae89b50": {
-  "en": "not since boot",
-  "text": "起動後未受信"
- },
- "2fce4529": {
-  "en": "Signal",
-  "text": "信号"
- },
- "d7d630be": {
-  "en": "Route",
-  "text": "経路"
- },
- "cd08221c": {
-  "en": " · flood",
-  "text": " · フラッド"
- },
- "e27f342a": {
-  "en": "Position",
-  "text": "位置"
- },
- "a3ad51f3": {
-  "en": "not shared",
-  "text": "未共有"
- },
- "b8297e9a": {
-  "en": "Room",
-  "text": "ルーム"
- },
- "ae0ed984": {
-  "en": "Message",
-  "text": "メッセージ"
- },
- "8f635566": {
-  "en": "On map",
-  "text": "地図で表示"
- },
- "db5485e7": {
-  "en": "Reset path",
-  "text": "経路リセット"
- },
- "2d44294d": {
-  "en": "Sure?",
-  "text": "削除する?"
- },
- "6e3fab8c": {
-  "en": "Forget",
-  "text": "削除"
- },
- "6d7302f2": {
-  "en": "Server",
-  "text": "サーバー"
- },
- "26f8e74e": {
-  "en": "Trace",
-  "text": "トレース"
- },
- "0a77a91f": {
-  "en": "Action",
-  "text": "操作"
- },
- "8d57e66a": {
-  "en": "Run",
-  "text": "実行"
- },
- "0ff01b6a": {
-  "en": "Notes",
-  "text": "メモ"
- },
- "d112e127": {
-  "en": "hold flat",
-  "text": "水平に保持"
- },
- "1a45dda5": {
-  "en": "not calibrated",
-  "text": "未校正"
- },
- "ab3a8a0a": {
-  "en": "off",
-  "text": "オフ"
- },
- "b2e48278": {
-  "en": "fix",
-  "text": "測位済み"
- },
- "620f3cc6": {
-  "en": "old date",
-  "text": "古い日付"
- },
- "67ce0277": {
-  "en": "searching",
-  "text": "測位中"
- },
- "f5e7befb": {
-  "en": "Satellites",
-  "text": "衛星"
- },
- "a2009955": {
-  "en": " in view",
-  "text": " 個可視"
- },
- "6d7e4165": {
-  "en": "Latitude",
-  "text": "緯度"
- },
- "671964ee": {
-  "en": "Longitude",
-  "text": "経度"
- },
- "bb5f80fd": {
-  "en": "Clock",
-  "text": "時計"
- },
- "ffa35e26": {
-  "en": "not set",
-  "text": "未設定"
- },
- "219101e3": {
-  "en": "manual",
-  "text": "手動"
- },
- "d2cdcecb": {
-  "en": " · trusted",
-  "text": " · 信頼済み"
- },
- "bb77a2cf": {
-  "en": "Compass",
-  "text": "コンパス"
- },
- "37b8f592": {
-  "en": "calibrated",
-  "text": "校正済み"
- },
- "75c3ffb2": {
-  "en": "needs calibration",
-  "text": "要校正"
- },
- "1db880db": {
-  "en": {
-   "one": "sample",
-   "other": "samples"
-  },
-  "forms": {
-   "other": "{n}サンプル"
-  }
- },
- "ff05911b": {
-  "en": "Share position",
-  "text": "位置を共有"
- },
- "7629db5a": {
-  "en": "Finish calibration",
-  "text": "校正を完了"
- },
- "6f59150a": {
-  "en": "Calibrate compass",
-  "text": "コンパスを校正"
- },
- "e125a9a1": {
-  "en": "Advert with GPS",
-  "text": "GPS付きアドバート"
- },
- "10b78d8a": {
-  "en": "Needs a fresh GPS fix",
-  "text": "新しいGPS測位が必要"
- },
- "a603b11c": {
-  "en": "Rotate in all directions",
-  "text": "本体を全方向に回転させてください"
- },
- "7f8e9f6b": {
-  "en": "Rotate for 20+ seconds",
-  "text": "20秒以上回転"
- },
- "45465004": {
-  "en": "GPS on",
-  "text": "GPSオン"
- },
- "4930944f": {
-  "en": "Phone",
-  "text": "スマホ"
- },
- "ec266ec8": {
-  "en": "Watch",
-  "text": "ウォッチ"
- },
- "89a2ef46": {
-  "en": "Headphones",
-  "text": "ヘッドホン"
- },
- "fae1ce6b": {
-  "en": "Phone/watch",
-  "text": "スマホ/ウォッチ"
- },
- "7e3d4120": {
-  "en": "BLE device",
-  "text": "BLE機器"
- },
- "9e13a743": {
-  "en": "Hidden network",
-  "text": "隠しネットワーク"
- },
- "90cbadfa": {
-  "en": "Bluetooth busy: probe",
-  "text": "Bluetooth: テスト中"
- },
- "e5e4ab77": {
-  "en": "Bluetooth error",
-  "text": "Bluetoothエラー"
- },
- "983f66dc": {
-  "en": "Wi-Fi busy: access point",
-  "text": "Wi-Fi使用中: アクセスポイント"
- },
- "35c403f6": {
-  "en": "Wi-Fi busy: probe",
-  "text": "Wi-Fi: テスト中"
- },
- "1be7979b": {
-  "en": "Wi-Fi error",
-  "text": "Wi-Fiエラー"
- },
- "89414ad6": {
-  "en": "Scanning Wi-Fi...",
-  "text": "Wi-Fiスキャン中..."
- },
- "542d8f50": {
-  "en": "closer to centre = stronger",
-  "text": "中心に近いほど強い"
- },
- "fde56fad": {
-  "en": "List paused",
-  "text": "一覧を一時停止中"
- },
- "503d6eed": {
-  "en": {
-   "one": "phone/watch nearby",
-   "other": "phones/watches nearby"
-  },
-  "forms": {
-   "other": "付近にスマホ/ウォッチ{n}台"
-  }
- },
- "49031ccd": {
-  "en": "No signals yet",
-  "text": "信号なし"
- },
- "8d2937a1": {
-  "en": "List",
-  "text": "一覧"
- },
- "454d1d8a": {
-  "en": "Resume",
-  "text": "再開"
- },
- "44f9bf2d": {
-  "en": "Pause",
-  "text": "一時停止"
- },
- "3368e695": {
-  "en": "Home in",
-  "text": "探索"
- },
- "aad07647": {
-  "en": "Motion",
-  "text": "動き"
- },
- "84397af6": {
-  "en": " · direct packets only",
-  "text": " · 直接パケットのみ"
- },
- "b8a018ba": {
-  "en": " · address changes over time",
-  "text": " · アドレスは随時変化"
- },
- "a8e7e5cc": {
-  "en": "channel ",
-  "text": "チャンネル "
- },
- "64db285b": {
-  "en": "Lost",
-  "text": "ロスト"
- },
- "46102346": {
-  "en": "No signal",
-  "text": "信号なし"
- },
- "3b06b3cd": {
-  "en": "Stronger",
-  "text": "強くなった"
- },
- "4dd880a2": {
-  "en": "Weaker",
-  "text": "弱くなった"
- },
- "cd945433": {
-  "en": "Steady",
-  "text": "変化なし"
- },
- "184745be": {
-  "en": "keep moving",
-  "text": "移動を続けて"
- },
- "78c14fb6": {
-  "en": "peak ",
-  "text": "ピーク "
- },
- "b991041c": {
-  "en": "Waiting for samples",
-  "text": "サンプル待ち"
- },
- "0ec969ac": {
-  "en": " adverts/s",
-  "text": " アドバート/秒"
- },
- "93382782": {
-  "en": " beacons/s",
-  "text": " ビーコン/秒"
- },
- "cde081d3": {
-  "en": {
-   "one": "packet",
-   "other": "packets"
-  },
-  "forms": {
-   "other": "{n}パケット"
-  }
- },
- "42cfcb2d": {
-  "en": " s ago",
-  "text": " 秒前"
- },
- "3f609f74": {
-  "en": "Mute",
-  "text": "消音"
- },
- "b3ca9a34": {
-  "en": "Sound",
-  "text": "音あり"
- },
- "68f7fd73": {
-  "en": "Reset peak",
-  "text": "ピーク初期化"
- },
- "394ec4f2": {
-  "en": "Turn the access point off",
-  "text": "アクセスポイントをオフに"
- },
- "fccfe8a5": {
-  "en": "Beacon for another board",
-  "text": "別のボード用ビーコン"
- },
- "bfacb4d0": {
-  "en": " frames/s on channel 1",
-  "text": " フレーム/秒 (チャンネル1)"
- },
- "6d3d79bb": {
-  "en": "beacon ",
-  "text": "ビーコン "
- },
- "d7972182": {
-  "en": " frames/s · ",
-  "text": " フレーム/秒 · "
- },
- "b85b81cf": {
-  "en": "waiting: set the other board to CSI beacon",
-  "text": "待機中: 別のボードを「CSIビーコン」に設定"
- },
- "1d0cdb24": {
-  "en": "NO WI-FI",
-  "text": "Wi-Fiなし"
- },
- "e9a87b56": {
-  "en": "BEACON ON",
-  "text": "ビーコン送信中"
- },
- "564cdaca": {
-  "en": "NO BEACON",
-  "text": "ビーコンなし"
- },
- "9a1796e8": {
-  "en": "CSI FROZEN",
-  "text": "CSI停止"
- },
- "dd26ae1f": {
-  "en": "CALIBRATING ",
-  "text": "校正中 "
- },
- "5ec52fe4": {
-  "en": " s",
-  "text": " 秒"
- },
- "4d851fe7": {
-  "en": "MOTION",
-  "text": "動きあり"
- },
- "6fce5d71": {
-  "en": "STILL",
-  "text": "静止"
- },
- "13d6d724": {
-  "en": "activity ",
-  "text": "活動 "
- },
- "1e3add08": {
-  "en": "threshold ",
-  "text": "しきい値 "
- },
- "dda163c5": {
-  "en": " (default)",
-  "text": " (既定)"
- },
- "19deef04": {
-  "en": "Walk between the boards to see the trace",
-  "text": "ボードの間を歩くと軌跡が表示"
- },
- "faa0c1ab": {
-  "en": "Calibrate with the area empty and still (10 s)",
-  "text": "無人で静止した状態で校正 (10秒)"
- },
- "4204187c": {
-  "en": "Place the boards 2-5 m apart; motion between them is sensed",
-  "text": "ボードを2-5 m離して置く。間の動きを検知"
- },
- "9bb72cae": {
-  "en": "Signals",
-  "text": "信号"
- },
- "6fb7daa2": {
-  "en": "Calibrate",
-  "text": "校正"
- },
- "4d580639": {
-  "en": "Beacon",
-  "text": "ビーコン"
- },
- "5427923a": {
-  "en": "To turn on, hold the trackball pressed",
-  "text": "電源オン：トラックボールを長押し"
- },
- "b1e20664": {
-  "en": "To turn on: RESET or the power switch",
-  "text": "電源オン：RESET または電源スイッチ"
- },
- "cba7fbe8": {
-  "en": "Device is off",
-  "text": "電源オフしました"
- },
- "2697628b": {
-  "en": "Turning off...",
-  "text": "電源オフ中..."
- },
- "b639f585": {
-  "en": "GPS & compass",
-  "text": "GPSとコンパス"
- },
- "dde0a6be": {
-  "en": "Keys & help",
-  "text": "キーとヘルプ"
- },
- "cd03e04b": {
-  "en": "Turn off",
-  "text": "電源オフ"
- },
- "a21b5cde": {
-  "en": "Brightness ",
-  "text": "明るさ "
- },
- "e1b4bdaa": {
-  "en": "compass calibrated",
-  "text": "コンパス校正済み"
- },
- "e8f719bd": {
-  "en": "compass not calibrated",
-  "text": "コンパス未校正"
- },
- "7316bebd": {
-  "en": " relayed",
-  "text": " 件中継"
- },
- "4f18c10c": {
-  "en": "What every key does",
-  "text": "各キーの機能"
- },
- "7e8a19d5": {
-  "en": "Searching: ",
-  "text": "検索中: "
- },
- "9a555563": {
-  "en": {
-   "one": "repeater",
-   "other": "repeaters"
-  },
-  "forms": {
-   "other": "{n} 台の中継"
-  }
- },
- "99f30427": {
-  "en": "OK: start",
-  "text": "OK: 開始"
- },
- "1a8c15c3": {
-  "en": {
-   "one": "region",
-   "other": "regions"
-  },
-  "forms": {
-   "other": "{n} 地域"
-  }
- },
- "9fca3c9e": {
-  "en": "Listening ",
-  "text": "受信中 "
- },
- "a3980ce8": {
-  "en": "Nothing new",
-  "text": "新規なし"
- },
- "443ffd47": {
-  "en": "OK: test ",
-  "text": "OK：テスト "
- },
- "2265ebb1": {
-  "en": "Current profile: ",
-  "text": "現在のプロファイル： "
- },
- "34f428b1": {
-  "en": "Try every regional preset",
-  "text": "各地域プリセットを試す"
- },
- "c91eb13e": {
-  "en": "Preset",
-  "text": "プリセット"
- },
- "8d9206a1": {
-  "en": "Frequency",
-  "text": "周波数"
- },
- "008f5512": {
-  "en": "Bandwidth",
-  "text": "帯域幅"
- },
- "d174bc31": {
-  "en": "Spreading factor",
-  "text": "拡散率 SF"
- },
- "3c2364a7": {
-  "en": "Coding rate",
-  "text": "符号化率 CR"
- },
- "92d39d44": {
-  "en": "TX power",
-  "text": "送信出力"
- },
- "175749a2": {
-  "en": "Relay hop limit",
-  "text": "中継ホップ上限"
- },
- "75193707": {
-  "en": "Relay packets",
-  "text": "パケット中継"
- },
- "2197c64b": {
-  "en": "Path hash size",
-  "text": "パスハッシュ長"
- },
- "492e789d": {
-  "en": "Region",
-  "text": "地域"
- },
- "b872ed2b": {
-  "en": "Find regions",
-  "text": "地域を検索"
- },
- "eb38bf4c": {
-  "en": "Find network",
-  "text": "ネット検索"
- },
- "24646b98": {
-  "en": "Radio test",
-  "text": "無線テスト"
- },
- "0614ba0b": {
-  "en": "Previous radio",
-  "text": "以前の無線"
- },
- "0fe07306": {
-  "en": "Name",
-  "text": "名前"
- },
- "9a73db9b": {
-  "en": "Language",
-  "text": "言語"
- },
- "df6e627c": {
-  "en": "Day brightness",
-  "text": "日中の明るさ"
- },
- "73d459b4": {
-  "en": "Home layout",
-  "text": "ホームの表示"
- },
- "4ef0ddc5": {
-  "en": "Sounds",
-  "text": "サウンド"
- },
- "300ec32d": {
-  "en": "Auto lock",
-  "text": "自動ロック"
- },
- "1f0bca87": {
-  "en": "Dim screen",
-  "text": "画面減光"
- },
- "37976ee4": {
-  "en": "GPS receiver",
-  "text": "GPS受信機"
- },
- "f050c5bc": {
-  "en": "UTC offset",
-  "text": "UTCとの時差"
- },
- "caa82244": {
-  "en": "Battery shows",
-  "text": "電池表示"
- },
- "fecd422a": {
-  "en": "Lock screen",
-  "text": "ロック画面"
- },
- "667ad2f5": {
-  "en": "Wake on message",
-  "text": "メッセージで起動"
- },
- "98b6a9f6": {
-  "en": "Message popup",
-  "text": "メッセージ表示"
- },
- "4eaf7c92": {
-  "en": "Theme",
-  "text": "テーマ"
- },
- "ac7ce48d": {
-  "en": "Accent colour",
-  "text": "アクセント色"
- },
- "548b7cf8": {
-  "en": "Night brightness",
-  "text": "ナイトの明るさ"
- },
- "1c076c32": {
-  "en": "Screen password",
-  "text": "画面パスワード"
- },
- "9525b78e": {
-  "en": "Custom",
-  "text": "カスタム"
- },
- "dc6bfbe0": {
-  "en": " MHz",
-  "text": " MHz"
- },
- "1ffe2452": {
-  "en": " kHz",
-  "text": " kHz"
- },
- "304ff7fb": {
-  "en": "None",
-  "text": "なし"
- },
- "9023a2b0": {
-  "en": "OK: keep",
-  "text": "OK: 維持"
- },
- "49e98b8b": {
-  "en": {
-   "one": "byte",
-   "other": "bytes"
-  },
-  "forms": {
-   "other": "{n} バイト"
-  }
- },
- "45570065": {
-  "en": "Dark",
-  "text": "ダーク"
- },
- "8ad2f8cf": {
-  "en": "Light",
-  "text": "ライト"
- },
- "126befb6": {
-  "en": "Auto",
-  "text": "自動"
- },
- "880f97dc": {
-  "en": "Lime",
-  "text": "ライム"
- },
- "e9dd1fed": {
-  "en": "Blue",
-  "text": "ブルー"
- },
- "f03bdf12": {
-  "en": "Violet",
-  "text": "バイオレット"
- },
- "15903060": {
-  "en": "Amber",
-  "text": "アンバー"
- },
- "0dad9117": {
-  "en": "Same as day",
-  "text": "日中と同じ"
- },
- "8581156e": {
-  "en": "Tiles",
-  "text": "タイル"
- },
- "87c7093b": {
-  "en": "Volts",
-  "text": "電圧"
- },
- "ff1537fa": {
-  "en": "Percent",
-  "text": "パーセント"
- },
- "3c2dfe59": {
-  "en": "Hidden",
-  "text": "非表示"
- },
- "75afe364": {
-  "en": "All",
-  "text": "すべて"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "メンション"
- },
- "f0b87eb8": {
-  "en": "MeshCore regional settings: frequency, BW, SF, CR",
-  "text": "MeshCore 地域設定：周波数、BW、SF、CR"
- },
- "21ff842c": {
-  "en": "1 kHz steps; must match every node",
-  "text": "1 kHz刻み、全ノードで同じ値に"
- },
- "7608c344": {
-  "en": "62.5 / 125 / 250 / 500 kHz",
-  "text": "62.5 / 125 / 250 / 500 kHz"
- },
- "943a47cb": {
-  "en": "Higher SF: longer range, slower",
-  "text": "SFが大きいほど遠くへ、ただし低速"
- },
- "c52a8c0f": {
-  "en": "Error correction 4/5 to 4/8",
-  "text": "誤り訂正 4/5〜4/8"
- },
- "af53f6b8": {
-  "en": "Radio chip setting, 0-22 dBm",
-  "text": "無線チップの設定、0-22 dBm"
- },
- "3f328711": {
-  "en": "Relay packets with fewer hops than this",
-  "text": "ホップ数がこれ未満のパケットを中継"
- },
- "7cd202ed": {
-  "en": "Forward other nodes' MeshCore packets",
-  "text": "他ノードのMeshCoreパケットを中継"
- },
- "fa81bada": {
-  "en": "Per hop in our floods; older MeshCore drops 2-3",
-  "text": "フラッドの1ホップあたり。旧MeshCoreは2-3を破棄"
- },
- "8513a98e": {
-  "en": "Repeaters pass on our floods by it; OK: type",
-  "text": "中継器はこれで転送; OK: 入力"
- },
- "33a9cb6d": {
-  "en": "Found: ",
-  "text": "検出: "
- },
- "2fd16ea7": {
-  "en": "Asks repeaters that hear this device",
-  "text": "この端末が届く中継器に問い合わせ"
- },
- "d284a6e4": {
-  "en": "A restart returns ",
-  "text": "再起動で戻る "
- },
- "51c955b1": {
-  "en": "OK: return to it",
-  "text": "OK: 元に戻す"
- },
- "5261f68a": {
-  "en": "Kept on a change of frequency, BW, SF or CR",
-  "text": "周波数/BW/SF/CR変更時に記憶"
- },
- "85dde262": {
-  "en": "Applied to the radio when saved",
-  "text": "保存時に無線へ適用"
- },
- "7c3b11a9": {
-  "en": "OK: set or change password",
-  "text": "OK: パスワードを設定・変更"
- },
- "e754fa0d": {
-  "en": "Day 07:00–20:00, local time",
-  "text": "日中 07:00–20:00、現地時間"
- },
- "34fd54b2": {
-  "en": "OK: edit, 1-24 UTF-8 bytes",
-  "text": "OK: 編集、1-24 UTF-8バイト"
- },
- "7ecd2a4c": {
-  "en": "Menu language",
-  "text": "メニュー言語"
- },
- "018eb564": {
-  "en": "Applies to Home and all folders",
-  "text": "ホームとすべてのフォルダに適用"
- },
- "b265628f": {
-  "en": "Tone for messages and ACKs",
-  "text": "メッセージとACKの通知音"
- },
- "969a0678": {
-  "en": "0 = off, 30-600 s",
-  "text": "0 = オフ、30-600 秒"
- },
- "ab5a04f6": {
-  "en": "0 = off, 10-600 s",
-  "text": "0 = オフ、10-600 秒"
- },
- "48707a29": {
-  "en": "Receiver power",
-  "text": "受信機の電源"
- },
- "ed88bd72": {
-  "en": "Local time, 15 minute steps",
-  "text": "現地時間、15分刻み"
- },
- "5d6af097": {
-  "en": "Status bar: charge estimate or measured voltage",
-  "text": "ステータスバー: 推定残量または実測電圧"
- },
- "e4f5443f": {
-  "en": "Message senders while locked",
-  "text": "ロック中の送信者"
- },
- "6cf00f88": {
-  "en": "Stored in device memory",
-  "text": "デバイスのメモリに保存"
- },
- "1dd4ab8a": {
-  "en": "Listening",
-  "text": "受信"
- },
- "2fe2598e": {
-  "en": "pings",
-  "text": "ping"
- },
- "9296739d": {
-  "en": "Phone: ",
-  "text": "スマホ: "
- },
- "4aba2ce0": {
-  "en": "No position: GPS fix or phone app",
-  "text": "位置なし: GPS かスマホ"
- },
- "53e32296": {
-  "en": "Ping sent, listening for repeaters...",
-  "text": "ping 送信済み、リピーター待ち..."
- },
- "140b9a3a": {
-  "en": "No pings yet: P sends one",
-  "text": "ping なし: P で送信"
- },
- "39b7127d": {
-  "en": "Last ping: ",
-  "text": "前回 ping: "
- },
- "1983dffb": {
-  "en": "Last ping: no repeater heard it",
-  "text": "前回 ping: 応答したリピーターなし"
- },
- "8504bdd5": {
-  "en": "No repeaters heard yet",
-  "text": "リピーターはまだ聞こえません"
- },
- "6c03392d": {
-  "en": "OK starts listening and pings",
-  "text": "OK で受信と ping を開始"
- },
- "0aed7015": {
-  "en": "rx ",
-  "text": "受信 "
- },
- "04be6123": {
-  "en": " · echo ",
-  "text": " · エコー "
- },
- "4b7f7705": {
-  "en": "Stop",
-  "text": "停止"
- },
- "0ae8097f": {
-  "en": "Start",
-  "text": "開始"
- },
- "7fb7f0a9": {
-  "en": "Ping",
-  "text": "Ping"
- },
- "5f7eec60": {
-  "en": "Wardrive on",
-  "text": "電波マップ開始"
- },
- "8ae160ba": {
-  "en": "Wardrive off",
-  "text": "電波マップ停止"
- },
- "54f6c01a": {
-  "en": "Ping queued",
-  "text": "ping を送信待ち"
- },
- "dfe5ac67": {
-  "en": "No position yet",
-  "text": "位置はまだありません"
- },
- "0cf72110": {
-  "en": "Wait: a ping is under way",
-  "text": "待機: ping 送信中"
- },
- "46ff9c40": {
-  "en": "choose",
-  "text": "選択"
- },
- "11c2662d": {
-  "en": "select",
+ "73c66160": {
+  "en": "Choose",
   "text": "決定"
- },
- "7261c8af": {
-  "en": "send",
-  "text": "送信"
- },
- "cded1a85": {
-  "en": "exit",
-  "text": "終了"
- },
- "61efb279": {
-  "en": "Save changes",
-  "text": "変更を保存"
- },
- "a2c6becb": {
-  "en": "No changes",
-  "text": "変更なし"
- },
- "4d2d5d68": {
-  "en": "Save",
-  "text": "保存"
- },
- "c2c76cb1": {
-  "en": "Edit",
-  "text": "変更"
- },
- "35afca3b": {
-  "en": "Cancel",
-  "text": "キャンセル"
- },
- "701eaa88": {
-  "en": "Edit name",
-  "text": "名前を編集"
- },
- "555cbe68": {
-  "en": "Keep",
-  "text": "維持"
- },
- "cc01b1df": {
-  "en": "Return",
-  "text": "戻す"
- },
- "2ffcbe05": {
-  "en": "Test",
-  "text": "テスト"
- },
- "c646a2c9": {
-  "en": "Search",
-  "text": "検索"
- },
- "0abaed3f": {
-  "en": "Found",
-  "text": "検出済み"
- },
- "d155d06d": {
-  "en": "Type",
-  "text": "入力"
- },
- "a1de2fdd": {
-  "en": "Change",
-  "text": "変更"
- },
- "c3a34509": {
-  "en": "Next value",
-  "text": "次の値"
- },
- "4d7ef753": {
-  "en": "Wi-Fi access point",
-  "text": "Wi-Fiアクセスポイント"
- },
- "ba5122e7": {
-  "en": "Web chat and map upload",
-  "text": "Webチャットと地図アップロード"
- },
- "4dbe556f": {
-  "en": "MeshCore identity",
-  "text": "MeshCore ID"
- },
- "18ac79a2": {
-  "en": "Networks",
-  "text": "ネットワーク"
- },
- "6cf1ba25": {
-  "en": "Toggle",
-  "text": "切替"
- },
- "75a04256": {
-  "en": "Wrong password or refused: ",
-  "text": "パスワード誤りか拒否: "
- },
- "e2dabf28": {
-  "en": "No answer from ",
-  "text": "応答なし: "
- },
- "09974b89": {
-  "en": "Connection lost",
-  "text": "接続が切れました"
- },
- "c7e915d7": {
-  "en": "Wi-Fi scan failed",
-  "text": "Wi-Fiスキャン失敗"
- },
- "34dfb5f5": {
-  "en": "Wi-Fi scan timed out",
-  "text": "Wi-Fiスキャンがタイムアウト"
- },
- "71494765": {
-  "en": "SSID 1-32 bytes, password empty or 8-63",
-  "text": "SSIDは1-32バイト、パスワードは空か8-63"
- },
- "db65b4b4": {
-  "en": "Tile is not 256 or 512 px",
-  "text": "タイルが256/512 pxではない"
- },
- "172eebcb": {
-  "en": "Not a PNG image",
-  "text": "PNG画像ではない"
- },
- "e234f405": {
-  "en": "No location",
-  "text": "IPから位置を取得できない"
- },
- "fd387bbd": {
-  "en": "SD full: web tiles not cached",
-  "text": "SD満杯: Webタイルを保存できない"
- },
- "d8e1dad5": {
-  "en": "Wi-Fi client on",
-  "text": "Wi-Fiクライアント オン"
- },
- "0e9eb651": {
-  "en": "Wi-Fi client off",
-  "text": "Wi-Fiクライアント オフ"
- },
- "b1374eac": {
-  "en": "Connecting to ",
-  "text": "接続先: "
  },
  "1716578a": {
   "en": "Channel details",
@@ -2231,154 +2235,6 @@
  "f51b5247": {
   "en": "Show on map",
   "text": "地図に表示"
- },
- "73c66160": {
-  "en": "Choose",
-  "text": "決定"
- },
- "22d86644": {
-  "en": "Default: ",
-  "text": "既定: "
- },
- "7bb181d6": {
-  "en": "Default: none",
-  "text": "既定: なし"
- },
- "b75c3188": {
-  "en": "Channel removed",
-  "text": "チャンネル削除済み"
- },
- "f476e036": {
-  "en": "Channel added",
-  "text": "チャンネルを追加"
- },
- "1a11ab03": {
-  "en": "Hash ",
-  "text": "ハッシュ "
- },
- "172ac002": {
-  "en": "Key:",
-  "text": "鍵:"
- },
- "d92dbe47": {
-  "en": "Every MeshCore node has it",
-  "text": "どのMeshCoreノードにもある"
- },
- "fac028c3": {
-  "en": "Scan with MeshMesh or the MeshCore app",
-  "text": "MeshMeshかMeshCoreアプリでスキャン"
- },
- "023fb5d9": {
-  "en": "Already in this channel",
-  "text": "参加済みのチャンネル"
- },
- "2b8b882d": {
-  "en": "Sound on new messages",
-  "text": "新着メッセージの音"
- },
- "edaf9d4d": {
-  "en": "Region · OK: save",
-  "text": "地域 · OK: 保存"
- },
- "59997b30": {
-  "en": "Invite",
-  "text": "招待"
- },
- "542f08f5": {
-  "en": "8 channels at most",
-  "text": "チャンネルは8個まで"
- },
- "afa5c9cd": {
-  "en": "No chat contacts",
-  "text": "チャット連絡先なし"
- },
- "be00fde1": {
-  "en": "Sure? OK again",
-  "text": "本当に? 再度OK"
- },
- "86b1d2eb": {
-  "en": "Leave channel",
-  "text": "チャンネルを退出"
- },
- "73ac94c3": {
-  "en": "Contact",
-  "text": "連絡先"
- },
- "a30a5085": {
-  "en": "Sound on",
-  "text": "音オン"
- },
- "bc5128a1": {
-  "en": "Sound off",
-  "text": "音オフ"
- },
- "7f264f8d": {
-  "en": "Name: 1-31 bytes",
-  "text": "名前: 1-31バイト"
- },
- "8bf3cae2": {
-  "en": "Region saved",
-  "text": "地域を保存"
- },
- "78fdcc66": {
-  "en": "Key: 32 hex or base64",
-  "text": "鍵: 32 hexかbase64"
- },
- "6c129c2a": {
-  "en": "Discover a chat contact first: ADV",
-  "text": "先にチャット連絡先を見つけて: ADV"
- },
- "a3ed15d0": {
-  "en": "Invitation queued to ",
-  "text": "招待を送信待ち: "
- },
- "4c8675ff": {
-  "en": "Invitation not sent",
-  "text": "招待を送信できず"
- },
- "203aefe9": {
-  "en": "History stays; joining again shows it",
-  "text": "履歴は残り、再参加で表示"
- },
- "41ae3d10": {
-  "en": "Left ",
-  "text": "退出: "
- },
- "c4227caa": {
-  "en": "Cannot leave while sending",
-  "text": "送信中は退出できません"
- },
- "f3f514aa": {
-  "en": "Not a channel link",
-  "text": "チャンネルリンクでない"
- },
- "62722f4e": {
-  "en": "Not in this mode",
-  "text": "このモードでは使えません"
- },
- "1c9c7d52": {
-  "en": "Channel not saved",
-  "text": "チャンネル保存失敗"
- },
- "30025399": {
-  "en": "Join",
-  "text": "参加"
- },
- "c4749f82": {
-  "en": "Open channel",
-  "text": "チャンネルへ"
- },
- "5eb421e1": {
-  "en": "Channel invitation: ",
-  "text": "チャンネル招待: "
- },
- "25d966fa": {
-  "en": "you are in it",
-  "text": "参加済み"
- },
- "f42b49b2": {
-  "en": "<- join",
-  "text": "<- 参加"
  },
  "e3abda16": {
   "en": "Join by hashtag",
@@ -2416,6 +2272,10 @@
   "en": "Unknown channel ",
   "text": "不明なチャンネル "
  },
+ "b743d77a": {
+  "en": "Public channel of MeshCore",
+  "text": "MeshCoreの公開チャンネル"
+ },
  "63703628": {
   "en": " · OK: try a #name",
   "text": " · OK: #名前を試す"
@@ -2424,6 +2284,10 @@
   "en": "Full: 8 channels, Public included",
   "text": "満杯: Public含め8チャンネル"
  },
+ "8e4165b7": {
+  "en": "Private channel",
+  "text": "非公開チャンネル"
+ },
  "5fc765a7": {
   "en": "Other channels heard: none",
   "text": "他のチャンネルは受信なし"
@@ -2431,6 +2295,10 @@
  "4cda3fd3": {
   "en": "Channels heard on air will appear here",
   "text": "受信したチャンネルがここに表示"
+ },
+ "1f5d2384": {
+  "en": "Hashtag channel",
+  "text": "#タグチャンネル"
  },
  "0700b8a7": {
   "en": "Channel name",
@@ -2448,10 +2316,6 @@
   "en": "32 hex digits or base64 (16 bytes)",
   "text": "32桁のhexかbase64 (16バイト)"
  },
- "74d4cc9d": {
-  "en": "Same #name, same channel as in MeshCore apps",
-  "text": "同じ#名前ならMeshCoreアプリと同じチャンネル"
- },
  "d3bcc1f1": {
   "en": {
    "one": "message",
@@ -2461,17 +2325,13 @@
    "other": "{n}通"
   }
  },
- "b743d77a": {
-  "en": "Public channel of MeshCore",
-  "text": "MeshCoreの公開チャンネル"
+ "74d4cc9d": {
+  "en": "Same #name, same channel as in MeshCore apps",
+  "text": "同じ#名前ならMeshCoreアプリと同じチャンネル"
  },
- "8e4165b7": {
-  "en": "Private channel",
-  "text": "非公開チャンネル"
- },
- "1f5d2384": {
-  "en": "Hashtag channel",
-  "text": "#タグチャンネル"
+ "f476e036": {
+  "en": "Channel added",
+  "text": "チャンネルを追加"
  },
  "12a760c5": {
   "en": "The key is made on this device",
@@ -2492,6 +2352,154 @@
  "087a6114": {
   "en": "OK: join   BACK: cancel",
   "text": "OK: 参加   BACK: キャンセル"
+ },
+ "023fb5d9": {
+  "en": "Already in this channel",
+  "text": "参加済みのチャンネル"
+ },
+ "542f08f5": {
+  "en": "8 channels at most",
+  "text": "チャンネルは8個まで"
+ },
+ "7f264f8d": {
+  "en": "Name: 1-31 bytes",
+  "text": "名前: 1-31バイト"
+ },
+ "78fdcc66": {
+  "en": "Key: 32 hex or base64",
+  "text": "鍵: 32 hexかbase64"
+ },
+ "f3f514aa": {
+  "en": "Not a channel link",
+  "text": "チャンネルリンクでない"
+ },
+ "62722f4e": {
+  "en": "Not in this mode",
+  "text": "このモードでは使えません"
+ },
+ "22d86644": {
+  "en": "Default: ",
+  "text": "既定: "
+ },
+ "7bb181d6": {
+  "en": "Default: none",
+  "text": "既定: なし"
+ },
+ "b75c3188": {
+  "en": "Channel removed",
+  "text": "チャンネル削除済み"
+ },
+ "1c9c7d52": {
+  "en": "Channel not saved",
+  "text": "チャンネル保存失敗"
+ },
+ "1a11ab03": {
+  "en": "Hash ",
+  "text": "ハッシュ "
+ },
+ "172ac002": {
+  "en": "Key:",
+  "text": "鍵:"
+ },
+ "d92dbe47": {
+  "en": "Every MeshCore node has it",
+  "text": "どのMeshCoreノードにもある"
+ },
+ "fac028c3": {
+  "en": "Scan with MeshMesh or the MeshCore app",
+  "text": "MeshMeshかMeshCoreアプリでスキャン"
+ },
+ "2b8b882d": {
+  "en": "Sound on new messages",
+  "text": "新着メッセージの音"
+ },
+ "edaf9d4d": {
+  "en": "Region · OK: save",
+  "text": "地域 · OK: 保存"
+ },
+ "59997b30": {
+  "en": "Invite",
+  "text": "招待"
+ },
+ "afa5c9cd": {
+  "en": "No chat contacts",
+  "text": "チャット連絡先なし"
+ },
+ "be00fde1": {
+  "en": "Sure? OK again",
+  "text": "本当に? 再度OK"
+ },
+ "86b1d2eb": {
+  "en": "Leave channel",
+  "text": "チャンネルを退出"
+ },
+ "73ac94c3": {
+  "en": "Contact",
+  "text": "連絡先"
+ },
+ "a30a5085": {
+  "en": "Sound on",
+  "text": "音オン"
+ },
+ "bc5128a1": {
+  "en": "Sound off",
+  "text": "音オフ"
+ },
+ "8bf3cae2": {
+  "en": "Region saved",
+  "text": "地域を保存"
+ },
+ "6c129c2a": {
+  "en": "Discover a chat contact first: ADV",
+  "text": "先にチャット連絡先を見つけて: ADV"
+ },
+ "a3ed15d0": {
+  "en": "Invitation queued to ",
+  "text": "招待を送信待ち: "
+ },
+ "4c8675ff": {
+  "en": "Invitation not sent",
+  "text": "招待を送信できず"
+ },
+ "203aefe9": {
+  "en": "History stays; joining again shows it",
+  "text": "履歴は残り、再参加で表示"
+ },
+ "41ae3d10": {
+  "en": "Left ",
+  "text": "退出: "
+ },
+ "c4227caa": {
+  "en": "Cannot leave while sending",
+  "text": "送信中は退出できません"
+ },
+ "30025399": {
+  "en": "Join",
+  "text": "参加"
+ },
+ "c4749f82": {
+  "en": "Open channel",
+  "text": "チャンネルへ"
+ },
+ "5eb421e1": {
+  "en": "Channel invitation: ",
+  "text": "チャンネル招待: "
+ },
+ "25d966fa": {
+  "en": "you are in it",
+  "text": "参加済み"
+ },
+ "f42b49b2": {
+  "en": "<- join",
+  "text": "<- 参加"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "クリップボードは空です"
+ },
+ "8dc21305": {
+  "en": "Copied",
+  "text": "コピーしました"
  },
  "6426ce4b": {
   "en": "Copy text",
@@ -2521,14 +2529,6 @@
   "en": "Invalid text for this field",
   "text": "この項目に使えない文字です"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "クリップボードは空です"
- },
- "8dc21305": {
-  "en": "Copied",
-  "text": "コピーしました"
- },
  "76bda0c0": {
   "en": "Tags",
   "text": "タグ"
@@ -2540,98 +2540,6 @@
  "0685388d": {
   "en": "Save failed",
   "text": "保存失敗"
- },
- "e01eca3a": {
-  "en": "waiting for an answer...",
-  "text": "応答待ち..."
- },
- "60acd1e3": {
-  "en": "refused",
-  "text": "拒否"
- },
- "1b68d598": {
-  "en": "no answer",
-  "text": "応答なし"
- },
- "8bdf7f34": {
-  "en": "not logged in · password saved",
-  "text": "未ログイン · パスワード保存済み"
- },
- "4c80d01f": {
-  "en": "not logged in",
-  "text": "未ログイン"
- },
- "ea1182ad": {
-  "en": "logged in as admin",
-  "text": "管理者でログイン"
- },
- "08c8675d": {
-  "en": "Status: ",
-  "text": "状態: "
- },
- "012245ac": {
-  "en": "Status: not asked yet",
-  "text": "状態：未取得"
- },
- "eb20490a": {
-  "en": "Battery ",
-  "text": "電池 "
- },
- "7bc55d8b": {
-  "en": " V",
-  "text": " V"
- },
- "c515b220": {
-  "en": "Up ",
-  "text": "稼働 "
- },
- "8e85bb8c": {
-  "en": "Rx/tx ",
-  "text": "受信/送信 "
- },
- "67b05c83": {
-  "en": "Noise ",
-  "text": "ノイズ "
- },
- "d725d6d4": {
-  "en": "Posts ",
-  "text": "投稿 "
- },
- "4f5720b5": {
-  "en": "Air ",
-  "text": "送信時間 "
- },
- "c14c68f4": {
-  "en": "Trace: ",
-  "text": "トレース: "
- },
- "cef097f4": {
-  "en": "you ",
-  "text": "あなた "
- },
- "9685740f": {
-  "en": " h ",
-  "text": " 時間 "
- },
- "6e8fc273": {
-  "en": " d ",
-  "text": " 日 "
- },
- "c57453ef": {
-  "en": "Trace shows the SNR at every repeater of the route",
-  "text": "トレースは経路上の各リピーターの SNR を表示"
- },
- "d4460949": {
-  "en": "No route through repeaters to trace",
-  "text": "トレースできるリピーター経路なし"
- },
- "3f688bff": {
-  "en": "Replies:",
-  "text": "応答："
- },
- "343e2f48": {
-  "en": "Command: ",
-  "text": "コマンド: "
  },
  "55edebd2": {
   "en": "Login",
@@ -2677,6 +2585,102 @@
   "en": "Command sent",
   "text": "コマンドを送信"
  },
+ "e01eca3a": {
+  "en": "waiting for an answer...",
+  "text": "応答待ち..."
+ },
+ "60acd1e3": {
+  "en": "refused",
+  "text": "拒否"
+ },
+ "1b68d598": {
+  "en": "no answer",
+  "text": "応答なし"
+ },
+ "8bdf7f34": {
+  "en": "not logged in · password saved",
+  "text": "未ログイン · パスワード保存済み"
+ },
+ "4c80d01f": {
+  "en": "not logged in",
+  "text": "未ログイン"
+ },
+ "ea1182ad": {
+  "en": "logged in as admin",
+  "text": "管理者でログイン"
+ },
+ "08c8675d": {
+  "en": "Status: ",
+  "text": "状態: "
+ },
+ "012245ac": {
+  "en": "Status: not asked yet",
+  "text": "状態：未取得"
+ },
+ "eb20490a": {
+  "en": "Battery ",
+  "text": "電池 "
+ },
+ "7bc55d8b": {
+  "en": " V",
+  "text": " V"
+ },
+ "9685740f": {
+  "en": " h ",
+  "text": " 時間 "
+ },
+ "c515b220": {
+  "en": "Up ",
+  "text": "稼働 "
+ },
+ "8e85bb8c": {
+  "en": "Rx/tx ",
+  "text": "受信/送信 "
+ },
+ "67b05c83": {
+  "en": "Noise ",
+  "text": "ノイズ "
+ },
+ "d725d6d4": {
+  "en": "Posts ",
+  "text": "投稿 "
+ },
+ "4f5720b5": {
+  "en": "Air ",
+  "text": "送信時間 "
+ },
+ "6e8fc273": {
+  "en": " d ",
+  "text": " 日 "
+ },
+ "c14c68f4": {
+  "en": "Trace: ",
+  "text": "トレース: "
+ },
+ "cef097f4": {
+  "en": "you ",
+  "text": "あなた "
+ },
+ "c57453ef": {
+  "en": "Trace shows the SNR at every repeater of the route",
+  "text": "トレースは経路上の各リピーターの SNR を表示"
+ },
+ "d4460949": {
+  "en": "No route through repeaters to trace",
+  "text": "トレースできるリピーター経路なし"
+ },
+ "3f688bff": {
+  "en": "Replies:",
+  "text": "応答："
+ },
+ "343e2f48": {
+  "en": "Command: ",
+  "text": "コマンド: "
+ },
+ "eca63717": {
+  "en": "Passwords differ",
+  "text": "入力が一致しません"
+ },
  "9c799975": {
   "en": "Unlock",
   "text": "ロック解除"
@@ -2717,9 +2721,33 @@
   "en": "Incorrect password",
   "text": "パスワードエラー"
  },
- "eca63717": {
-  "en": "Passwords differ",
-  "text": "入力が一致しません"
+ "46120854": {
+  "en": "8 counters at most",
+  "text": "カウンターは8個まで"
+ },
+ "28fa2654": {
+  "en": "Counter reset",
+  "text": "カウンターをリセット"
+ },
+ "fa0f5fe6": {
+  "en": "The last counter stays",
+  "text": "最後のカウンターは残ります"
+ },
+ "45bb420e": {
+  "en": "Counter deleted",
+  "text": "カウンタを削除"
+ },
+ "61342fd0": {
+  "en": "on",
+  "text": "オン"
+ },
+ "d1b37a61": {
+  "en": "Name saved",
+  "text": "名前を保存"
+ },
+ "154900f6": {
+  "en": "Name: up to 23 UTF-8 bytes",
+  "text": "名前：最大23バイト UTF-8"
  },
  "2ab44d95": {
   "en": "New counter",
@@ -2756,33 +2784,5 @@
  "73f035c7": {
   "en": "R again: reset to 0",
   "text": "もう一度R：0にリセット"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "カウンターは8個まで"
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "カウンターをリセット"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "最後のカウンターは残ります"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "カウンタを削除"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "オン"
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "名前を保存"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "名前：最大23バイト UTF-8"
  }
 }

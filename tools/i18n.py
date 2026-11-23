@@ -91,19 +91,20 @@ def cells(s):
 
 
 def extract():
-    """Every translatable string in the sources: {key: entry}."""
+    """Every translatable string in the sources: {key: entry}. Calls may span lines."""
     entries = {}
     for name in SOURCES:
-        lines = (ROOT/name).read_text().split('\n')
-        for n, line in enumerate(lines, 1):
-            found = [('text', m) for m in TEXT.finditer(line)] + [('plural', m) for m in COUNT.finditer(line)]
-            for kind, m in found:
-                parts = [c_string(g) for g in m.groups()]
-                k = key(*parts)
-                e = entries.setdefault(k, {'kind': kind, 'where': []})
-                e['en'] = parts[0] if kind == 'text' else {'one': parts[0], 'other': parts[1]}
-                if len(e['where']) < 3:
-                    e['where'].append(f'{name}:{n}: {line.strip()[:220]}')
+        text = (ROOT/name).read_text()
+        lines = text.split('\n')
+        found = [('text', m) for m in TEXT.finditer(text)] + [('plural', m) for m in COUNT.finditer(text)]
+        for kind, m in sorted(found, key=lambda f: f[1].start()):
+            parts = [c_string(g) for g in m.groups()]
+            k = key(*parts)
+            e = entries.setdefault(k, {'kind': kind, 'where': []})
+            e['en'] = parts[0] if kind == 'text' else {'one': parts[0], 'other': parts[1]}
+            n = text.count('\n', 0, m.start()) + 1
+            if len(e['where']) < 3:
+                e['where'].append(f'{name}:{n}: {lines[n - 1].strip()[:220]}')
     return entries
 
 

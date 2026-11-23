@@ -23,215 +23,606 @@
 
 namespace {
 WebServer server(80);
-bool wifiOn=false,bluetoothOn=false;
+bool wifiOn = false, bluetoothOn = false;
 // The page is served on the access point and, while the Wi-Fi client is online, on the home network.
-bool serving=false;
+bool serving = false;
 String password;
-uint32_t pinCode=123456;
-NimBLECharacteristic* bleTx=nullptr;
-QueueHandle_t commands=nullptr;
+uint32_t pinCode = 123456;
+NimBLECharacteristic* bleTx = nullptr;
+QueueHandle_t commands = nullptr;
 String bleResponse;
-unsigned bleOffset=0;
+unsigned bleOffset = 0;
 // "messages" goes out from a snapshot in small blocks (HistoryReply), as over USB and on the nRF52: the whole
 // history as one string (and its copy) did not fit the heap of boards without PSRAM (Heltec V3, BLE + radar).
 std::unique_ptr<HistoryReply> bleHistory;
-uint32_t nextNotification=0;
-struct BleCommand {char text[256];};
+uint32_t nextNotification = 0;
+struct BleCommand {
+  char text[256];
+};
 // MeshCore companion apps: the Nordic UART service of stock MeshCore, one frame per write and notification.
-const char* const NusService="6E400001-B5A3-F393-E0A9-E50E24DCCA9E";
-NimBLECharacteristic* appTx=nullptr;
-QueueHandle_t appFrames=nullptr;
-struct AppFrame {uint8_t length;uint8_t data[companion::MaxFrame];};
-uint32_t nextAppNotification=0;
+const char* const NusService = "6E400001-B5A3-F393-E0A9-E50E24DCCA9E";
+NimBLECharacteristic* appTx = nullptr;
+QueueHandle_t appFrames = nullptr;
+struct AppFrame {
+  uint8_t length;
+  uint8_t data[companion::MaxFrame];
+};
+uint32_t nextAppNotification = 0;
 // The web radar page holds the radar while it polls; the screen may hold it too (uiRadarPage).
-bool webRadar=false;uint32_t webRadarAt=0;
-bool wifiOffPending=false; // the web page turns the access point off after its reply is sent
-void webRadarRelease(){if(!webRadar)return;webRadar=false;if(!uiRadarPage()&&!wardrive::holdsRadar())radar.close();}
-int radarIndex(uint32_t ref,const String& kind){const char* kinds[]={"wifi","ble","lora"};for(unsigned i=0;i<radar.count;i++)if(Radar::placement(radar.targets[i])==ref&&kind==kinds[radar.targets[i].kind])return i;return -1;}
-String radarAction(JsonObjectConst v){
-  String action=v["action"]|"";
-  if(action=="close"){webRadarRelease();return "OK radar released";}
-  if(!radar.active)return "ERR radar is not open";
-  if(action=="track"){int i=radarIndex(v["ref"]|0u,v["kind"]|"");if(i<0||!radar.track(i))return "ERR signal is gone";return "OK homing";}
-  if(action=="untrack"){radar.untrack();return "OK homing stopped";}
-  if(action=="peak"){radar.resetPeak();return "OK peak reset";}
-  if(action=="csi"){String role=v["role"]|"";if(role!="off"&&role!="beacon"&&role!="sensor")return "ERR CSI role off|beacon|sensor";radar.setCsi(role=="beacon"?Radar::CsiBeacon:role=="sensor"?Radar::CsiSensor:Radar::CsiOff);return "OK CSI "+role;}
-  if(action=="calibrate"){if(!radar.beaconHeard())return "ERR needs a heard beacon";radar.calibrate();return "OK calibrating 10 s";}
+bool webRadar = false;
+uint32_t webRadarAt = 0;
+bool wifiOffPending = false; // the web page turns the access point off after its reply is sent
+void webRadarRelease() {
+  if (!webRadar) return;
+  webRadar = false;
+  if (!uiRadarPage() && !wardrive::holdsRadar()) radar.close();
+}
+int radarIndex(uint32_t ref, const String& kind) {
+  const char* kinds[] = {"wifi", "ble", "lora"};
+  for (unsigned i = 0; i < radar.count; i++)
+    if (Radar::placement(radar.targets[i]) == ref && kind == kinds[radar.targets[i].kind]) return i;
+  return -1;
+}
+String radarAction(JsonObjectConst v) {
+  String action = v["action"] | "";
+  if (action == "close") {
+    webRadarRelease();
+    return "OK radar released";
+  }
+  if (!radar.active) return "ERR radar is not open";
+  if (action == "track") {
+    int i = radarIndex(v["ref"] | 0u, v["kind"] | "");
+    if (i < 0 || !radar.track(i)) return "ERR signal is gone";
+    return "OK homing";
+  }
+  if (action == "untrack") {
+    radar.untrack();
+    return "OK homing stopped";
+  }
+  if (action == "peak") {
+    radar.resetPeak();
+    return "OK peak reset";
+  }
+  if (action == "csi") {
+    String role = v["role"] | "";
+    if (role != "off" && role != "beacon" && role != "sensor") return "ERR CSI role off|beacon|sensor";
+    radar.setCsi(role == "beacon" ? Radar::CsiBeacon : role == "sensor" ? Radar::CsiSensor : Radar::CsiOff);
+    return "OK CSI " + role;
+  }
+  if (action == "calibrate") {
+    if (!radar.beaconHeard()) return "ERR needs a heard beacon";
+    radar.calibrate();
+    return "OK calibrating 10 s";
+  }
   return "ERR radar action";
 }
 bool authorized() {
-  if(server.authenticate("meshmesh",password.c_str()))return true;
-  server.send(401,"text/plain","Authentication required");return false;
+  if (server.authenticate("meshmesh", password.c_str())) return true;
+  server.send(401, "text/plain", "Authentication required");
+  return false;
 }
-void answer(const String& value,bool success=true) {server.send(success?200:400,"application/json",value);}
-class BleCallbacks:public NimBLECharacteristicCallbacks {
- void onWrite(NimBLECharacteristic* c) override {
-   auto value=c->getValue();if(value.size()>255 || !commands)return;
-   BleCommand command{};memcpy(command.text,value.data(),value.size());xQueueSend(commands,&command,0);
- }
+void answer(const String& value, bool success = true) {
+  server.send(success ? 200 : 400, "application/json", value);
+}
+class BleCallbacks : public NimBLECharacteristicCallbacks {
+  void onWrite(NimBLECharacteristic* c) override {
+    auto value = c->getValue();
+    if (value.size() > 255 || !commands) return;
+    BleCommand command{};
+    memcpy(command.text, value.data(), value.size());
+    xQueueSend(commands, &command, 0);
+  }
 };
 BleCallbacks bleCallbacks;
-class AppCallbacks:public NimBLECharacteristicCallbacks {
- void onWrite(NimBLECharacteristic* c) override {
-   auto value=c->getValue();if(!value.size()||value.size()>companion::MaxFrame||!appFrames)return;
-   AppFrame frame{};frame.length=value.size();memcpy(frame.data,value.data(),value.size());xQueueSend(appFrames,&frame,0);
- }
+class AppCallbacks : public NimBLECharacteristicCallbacks {
+  void onWrite(NimBLECharacteristic* c) override {
+    auto value = c->getValue();
+    if (!value.size() || value.size() > companion::MaxFrame || !appFrames) return;
+    AppFrame frame{};
+    frame.length = value.size();
+    memcpy(frame.data, value.data(), value.size());
+    xQueueSend(appFrames, &frame, 0);
+  }
 };
 AppCallbacks appCallbacks;
 // The advert of stock MeshCore (its service, "MeshCore-<name>" in the scan response): MeshCore apps find the board
 // by the name. The MeshMesh app finds it by the "MM" mark in the manufacturer data (company ID 0xFFFF: no company);
 // our own service still answers.
-void advertise(){
-  String name=bleName();NimBLEDevice::setDeviceName(name.c_str());
-  NimBLEAdvertisementData adv,scan;adv.setFlags(BLE_HS_ADV_F_DISC_GEN|BLE_HS_ADV_F_BREDR_UNSUP);
-  adv.setCompleteServices(NimBLEUUID(NusService));adv.setManufacturerData(std::string("\xff\xffMM",4));scan.setName(name.c_str());
-  auto* a=NimBLEDevice::getAdvertising();a->setAdvertisementData(adv);a->setScanResponseData(scan);
+void advertise() {
+  String name = bleName();
+  NimBLEDevice::setDeviceName(name.c_str());
+  NimBLEAdvertisementData adv, scan;
+  adv.setFlags(BLE_HS_ADV_F_DISC_GEN | BLE_HS_ADV_F_BREDR_UNSUP);
+  adv.setCompleteServices(NimBLEUUID(NusService));
+  adv.setManufacturerData(std::string("\xff\xffMM", 4));
+  scan.setName(name.c_str());
+  auto* a = NimBLEDevice::getAdvertising();
+  a->setAdvertisementData(adv);
+  a->setScanResponseData(scan);
 }
-}
-String bleName(){
+} // namespace
+String bleName() {
   // The scan response holds 29 bytes: the name cut to 15, then 4 hex digits of the node key, so boards
   // with the same name differ in the list of devices.
-  String name=config.name;while(name.length()>15){unsigned cut=name.length()-1;while(cut&&(uint8_t(name[cut])&0xc0)==0x80)cut--;name.remove(cut);}
-  return "MeshCore-"+name+" "+meshRadio.idText(meshRadio.nodeId).substring(0,4);
+  String name = config.name;
+  while (name.length() > 15) {
+    unsigned cut = name.length() - 1;
+    while (cut && (uint8_t(name[cut]) & 0xc0) == 0x80) cut--;
+    name.remove(cut);
+  }
+  return "MeshCore-" + name + " " + meshRadio.idText(meshRadio.nodeId).substring(0, 4);
 }
-bool webRadarActive() {return webRadar;}
+bool webRadarActive() {
+  return webRadar;
+}
 // The page's radar over USB or BLE (the Android app): the same hold, JSON and actions as /api/radar.
 // Unlike the diagnostic "radar", it carries network and device names, as the web page does.
-String webRadarCommand(const String& line){
-  if(line=="radar web"){if(!radar.active)radar.open();webRadar=true;webRadarAt=millis();return radar.webJson();}
-  StaticJsonDocument<256>d;if(deserializeJson(d,line.substring(9))||!d.is<JsonObject>())return "ERR radar do {JSON}";
-  if(webRadar)webRadarAt=millis();return radarAction(d.as<JsonObjectConst>());
+String webRadarCommand(const String& line) {
+  if (line == "radar web") {
+    if (!radar.active) radar.open();
+    webRadar = true;
+    webRadarAt = millis();
+    return radar.webJson();
+  }
+  StaticJsonDocument<256> d;
+  if (deserializeJson(d, line.substring(9)) || !d.is<JsonObject>()) return "ERR radar do {JSON}";
+  if (webRadar) webRadarAt = millis();
+  return radarAction(d.as<JsonObjectConst>());
 }
-bool portalActive() {return wifiOn;}String portalPassword() {return password;}
-bool bleActive() {return bluetoothOn;}
-uint32_t blePin() {return pinCode;}
+bool portalActive() {
+  return wifiOn;
+}
+String portalPassword() {
+  return password;
+}
+bool bleActive() {
+  return bluetoothOn;
+}
+uint32_t blePin() {
+  return pinCode;
+}
 String connectionCredentials() {
-  StaticJsonDocument<512> d;d["wifi"]=wifiOn;d["ssid"]="MM-"+meshRadio.idText(meshRadio.nodeId).substring(6);
-  d["password"]=password;d["ip"]="192.168.4.1";if(internet.online())d["lan_ip"]=internet.address();d["ble"]=bluetoothOn;
-  d["ble_name"]=bleName();d["pin"]=pinCode;
-  if(bluetoothOn)d["ble_address"]=NimBLEDevice::getAddress().toString().c_str();
-  String result;serializeJson(d,result);return result;
+  StaticJsonDocument<512> d;
+  d["wifi"] = wifiOn;
+  d["ssid"] = "MM-" + meshRadio.idText(meshRadio.nodeId).substring(6);
+  d["password"] = password;
+  d["ip"] = "192.168.4.1";
+  if (internet.online()) d["lan_ip"] = internet.address();
+  d["ble"] = bluetoothOn;
+  d["ble_name"] = bleName();
+  d["pin"] = pinCode;
+  if (bluetoothOn) d["ble_address"] = NimBLEDevice::getAddress().toString().c_str();
+  String result;
+  serializeJson(d, result);
+  return result;
 }
 void portalBegin() {
-  uint8_t entropy[12];bootloader_random_enable();esp_fill_random(entropy,sizeof(entropy));bootloader_random_disable();
-  const char alphabet[]="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  for(int i=0;i<12;i++) password+=alphabet[entropy[i]%32];pinCode=config.blePin;
+  uint8_t entropy[12];
+  bootloader_random_enable();
+  esp_fill_random(entropy, sizeof(entropy));
+  bootloader_random_disable();
+  const char alphabet[] = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  for (int i = 0; i < 12; i++) password += alphabet[entropy[i] % 32];
+  pinCode = config.blePin;
   // The page and its dictionaries (i18n/<lang>.js), kept compressed in flash and sent as they are.
-  server.on("/",HTTP_GET,[]{server.sendHeader("Content-Encoding","gzip");server.send_P(200,"text/html; charset=utf-8",(PGM_P)portalPage,portalPageSize);});
-  server.on("/i18n/keys.js",HTTP_GET,[]{server.sendHeader("Content-Encoding","gzip");server.sendHeader("Cache-Control","no-cache");server.send_P(200,"application/javascript; charset=utf-8",(PGM_P)portalKeys,sizeof(portalKeys));}); // the keys of every dictionary (tools/pio_web.py)
-  for(const PortalLang& l:portalLangs){const PortalLang* p=&l;server.on(String("/i18n/")+l.code+".js",HTTP_GET,[p]{server.sendHeader("Content-Encoding","gzip");server.sendHeader("Cache-Control","no-cache");server.send_P(200,"application/javascript; charset=utf-8",(PGM_P)p->data,p->size);});}
-  server.on("/api/clock",HTTP_GET,[]{if(authorized())answer(hardware.clockInfo());});
-  server.on("/api/status",HTTP_GET,[]{if(authorized())answer(statusJson());});
-  server.on("/api/nodes",HTTP_GET,[]{if(authorized())answer(nodesJson());});
-  server.on("/api/navigation",HTTP_GET,[]{if(authorized())answer(navigation.info());});
-  server.on("/api/maps/areas",HTTP_GET,[]{if(authorized())answer(maps.areas());});
-  server.on("/api/maps",HTTP_GET,[]{if(authorized())answer(maps.info());});
-  server.on("/api/maps/chunk",HTTP_POST,[]{if(!authorized())return;DynamicJsonDocument d(4096);if(deserializeJson(d,server.arg("plain"))||!d["data"].is<const char*>()){answer("ERR map chunk JSON",false);return;}String encoded=d["data"];uint8_t bytes[2048];size_t n=0;if(mbedtls_base64_decode(bytes,sizeof(bytes),&n,(const uint8_t*)encoded.c_str(),encoded.length())){answer("ERR map base64",false);return;}bool ok=maps.uploadChunk(bytes,n);answer(ok?"OK map chunk":"ERR "+maps.error,ok);});
-  server.on("/api/maps/tile",HTTP_GET,[]{if(!authorized())return;if(!server.hasArg("z")||!server.hasArg("x")||!server.hasArg("y")){answer("ERR tile coordinates",false);return;}File f=maps.openTile(server.arg("z").toInt(),server.arg("x").toInt(),server.arg("y").toInt());if(!f){server.send(404,"text/plain","Map tile not saved");return;}server.streamFile(f,"application/octet-stream");f.close();});
-  server.on("/api/connections",HTTP_GET,[]{if(authorized())answer(connectionCredentials());});
-  server.on("/api/radar",HTTP_GET,[]{if(!authorized())return;if(server.arg("open")=="1"){if(!radar.active)radar.open();webRadar=true;webRadarAt=millis();}answer(radar.webJson());});
-  server.on("/api/radar",HTTP_POST,[]{if(!authorized())return;StaticJsonDocument<256>d;if(deserializeJson(d,server.arg("plain"))||!d.is<JsonObject>()){answer("Invalid JSON",false);return;}if(webRadar)webRadarAt=millis();String reply=radarAction(d.as<JsonObjectConst>());answer(reply,reply.startsWith("OK"));});
+  server.on("/", HTTP_GET, [] {
+    server.sendHeader("Content-Encoding", "gzip");
+    server.send_P(200, "text/html; charset=utf-8", (PGM_P)portalPage, portalPageSize);
+  });
+  server.on("/i18n/keys.js", HTTP_GET, [] {
+    server.sendHeader("Content-Encoding", "gzip");
+    server.sendHeader("Cache-Control", "no-cache");
+    server.send_P(200, "application/javascript; charset=utf-8", (PGM_P)portalKeys, sizeof(portalKeys));
+  }); // the keys of every dictionary (tools/pio_web.py)
+  for (const PortalLang& l : portalLangs) {
+    const PortalLang* p = &l;
+    server.on(String("/i18n/") + l.code + ".js", HTTP_GET, [p] {
+      server.sendHeader("Content-Encoding", "gzip");
+      server.sendHeader("Cache-Control", "no-cache");
+      server.send_P(200, "application/javascript; charset=utf-8", (PGM_P)p->data, p->size);
+    });
+  }
+  server.on("/api/clock", HTTP_GET, [] {
+    if (authorized()) answer(hardware.clockInfo());
+  });
+  server.on("/api/status", HTTP_GET, [] {
+    if (authorized()) answer(statusJson());
+  });
+  server.on("/api/nodes", HTTP_GET, [] {
+    if (authorized()) answer(nodesJson());
+  });
+  server.on("/api/navigation", HTTP_GET, [] {
+    if (authorized()) answer(navigation.info());
+  });
+  server.on("/api/maps/areas", HTTP_GET, [] {
+    if (authorized()) answer(maps.areas());
+  });
+  server.on("/api/maps", HTTP_GET, [] {
+    if (authorized()) answer(maps.info());
+  });
+  server.on("/api/maps/chunk", HTTP_POST, [] {
+    if (!authorized()) return;
+    DynamicJsonDocument d(4096);
+    if (deserializeJson(d, server.arg("plain")) || !d["data"].is<const char*>()) {
+      answer("ERR map chunk JSON", false);
+      return;
+    }
+    String encoded = d["data"];
+    uint8_t bytes[2048];
+    size_t n = 0;
+    if (mbedtls_base64_decode(bytes, sizeof(bytes), &n, (const uint8_t*)encoded.c_str(), encoded.length())) {
+      answer("ERR map base64", false);
+      return;
+    }
+    bool ok = maps.uploadChunk(bytes, n);
+    answer(ok ? "OK map chunk" : "ERR " + maps.error, ok);
+  });
+  server.on("/api/maps/tile", HTTP_GET, [] {
+    if (!authorized()) return;
+    if (!server.hasArg("z") || !server.hasArg("x") || !server.hasArg("y")) {
+      answer("ERR tile coordinates", false);
+      return;
+    }
+    File f = maps.openTile(server.arg("z").toInt(), server.arg("x").toInt(), server.arg("y").toInt());
+    if (!f) {
+      server.send(404, "text/plain", "Map tile not saved");
+      return;
+    }
+    server.streamFile(f, "application/octet-stream");
+    f.close();
+  });
+  server.on("/api/connections", HTTP_GET, [] {
+    if (authorized()) answer(connectionCredentials());
+  });
+  server.on("/api/radar", HTTP_GET, [] {
+    if (!authorized()) return;
+    if (server.arg("open") == "1") {
+      if (!radar.active) radar.open();
+      webRadar = true;
+      webRadarAt = millis();
+    }
+    answer(radar.webJson());
+  });
+  server.on("/api/radar", HTTP_POST, [] {
+    if (!authorized()) return;
+    StaticJsonDocument<256> d;
+    if (deserializeJson(d, server.arg("plain")) || !d.is<JsonObject>()) {
+      answer("Invalid JSON", false);
+      return;
+    }
+    if (webRadar) webRadarAt = millis();
+    String reply = radarAction(d.as<JsonObjectConst>());
+    answer(reply, reply.startsWith("OK"));
+  });
   // Channels: the private keys only over the access point, as /api/key (the home network carries plain HTTP).
-  server.on("/api/channels",HTTP_GET,[]{if(authorized())answer(channelsJson(wifiOn));});
-  server.on("/api/channels",HTTP_POST,[]{if(!authorized())return;StaticJsonDocument<512>d;if(deserializeJson(d,server.arg("plain"))||!d.is<JsonObject>()){answer("Invalid JSON",false);return;}String reply=channelCommand(d.as<JsonObjectConst>());answer(reply,!reply.startsWith("ERR"));});
-  server.on("/api/wardrive",HTTP_GET,[]{if(authorized())answer(executeCommand("wardrive"));});
-  server.on("/api/wardrive",HTTP_POST,[]{if(authorized()){String reply=executeCommand("wardrive do "+server.arg("plain"));answer(reply,!reply.startsWith("ERR"));}});
-  server.on("/api/wardrive/log",HTTP_GET,[]{if(authorized()){String reply=executeCommand("wardrive log "+server.arg("kind")+" "+String(server.arg("from").toInt()));answer(reply,!reply.startsWith("ERR"));}});
-  server.on("/api/people",HTTP_GET,[]{if(authorized())server.send(200,"application/json",executeCommand("people"));});
-  server.on("/api/people",HTTP_POST,[]{if(authorized()){String reply=executeCommand("people do "+server.arg("plain"));server.send(reply.startsWith("ERR")?400:200,"text/plain",reply);}});
-  server.on("/api/quick",HTTP_GET,[]{if(authorized())answer(executeCommand("quick"));});
-  server.on("/api/quick",HTTP_POST,[]{if(authorized()){String reply=executeCommand("quick do "+server.arg("plain"));answer(reply,!reply.startsWith("ERR"));}});
-  server.on("/api/messages",HTTP_GET,[]{if(!authorized())return;HistoryReply h;if(!h.begin()){server.send(503,"text/plain","ERR history snapshot memory");return;}
-    server.setContentLength(CONTENT_LENGTH_UNKNOWN);server.send(200,"application/json","");
-    for(size_t n=0;;){const uint8_t* b=h.peek(n);if(!b||!n)break;server.sendContent((const char*)b,n);h.advance(n);}server.sendContent("");});
-  server.on("/api/config",HTTP_GET,[]{if(authorized())answer(configJson());});
+  server.on("/api/channels", HTTP_GET, [] {
+    if (authorized()) answer(channelsJson(wifiOn));
+  });
+  server.on("/api/channels", HTTP_POST, [] {
+    if (!authorized()) return;
+    StaticJsonDocument<512> d;
+    if (deserializeJson(d, server.arg("plain")) || !d.is<JsonObject>()) {
+      answer("Invalid JSON", false);
+      return;
+    }
+    String reply = channelCommand(d.as<JsonObjectConst>());
+    answer(reply, !reply.startsWith("ERR"));
+  });
+  server.on("/api/wardrive", HTTP_GET, [] {
+    if (authorized()) answer(executeCommand("wardrive"));
+  });
+  server.on("/api/wardrive", HTTP_POST, [] {
+    if (authorized()) {
+      String reply = executeCommand("wardrive do " + server.arg("plain"));
+      answer(reply, !reply.startsWith("ERR"));
+    }
+  });
+  server.on("/api/wardrive/log", HTTP_GET, [] {
+    if (authorized()) {
+      String reply = executeCommand("wardrive log " + server.arg("kind") + " " + String(server.arg("from").toInt()));
+      answer(reply, !reply.startsWith("ERR"));
+    }
+  });
+  server.on("/api/people", HTTP_GET, [] {
+    if (authorized()) server.send(200, "application/json", executeCommand("people"));
+  });
+  server.on("/api/people", HTTP_POST, [] {
+    if (authorized()) {
+      String reply = executeCommand("people do " + server.arg("plain"));
+      server.send(reply.startsWith("ERR") ? 400 : 200, "text/plain", reply);
+    }
+  });
+  server.on("/api/quick", HTTP_GET, [] {
+    if (authorized()) answer(executeCommand("quick"));
+  });
+  server.on("/api/quick", HTTP_POST, [] {
+    if (authorized()) {
+      String reply = executeCommand("quick do " + server.arg("plain"));
+      answer(reply, !reply.startsWith("ERR"));
+    }
+  });
+  server.on("/api/messages", HTTP_GET, [] {
+    if (!authorized()) return;
+    HistoryReply h;
+    if (!h.begin()) {
+      server.send(503, "text/plain", "ERR history snapshot memory");
+      return;
+    }
+    server.setContentLength(CONTENT_LENGTH_UNKNOWN);
+    server.send(200, "application/json", "");
+    for (size_t n = 0;;) {
+      const uint8_t* b = h.peek(n);
+      if (!b || !n) break;
+      server.sendContent((const char*)b, n);
+      h.advance(n);
+    }
+    server.sendContent("");
+  });
+  server.on("/api/config", HTTP_GET, [] {
+    if (authorized()) answer(configJson());
+  });
   // The private key only over the access point: on the home network the page is plain HTTP.
-  server.on("/api/key",HTTP_GET,[]{if(!authorized())return;if(!wifiOn){answer("ERR the key is given out on the device access point only",false);return;}answer(configJson(true));});
-  server.on("/api/config",HTTP_POST,[]{if(!authorized())return;StaticJsonDocument<2048>d;if(deserializeJson(d,server.arg("plain"))||!d.is<JsonObject>()){answer("Invalid JSON",false);return;}String reply=applySettings(d.as<JsonObjectConst>());answer(reply,reply.startsWith("OK"));});
+  server.on("/api/key", HTTP_GET, [] {
+    if (!authorized()) return;
+    if (!wifiOn) {
+      answer("ERR the key is given out on the device access point only", false);
+      return;
+    }
+    answer(configJson(true));
+  });
+  server.on("/api/config", HTTP_POST, [] {
+    if (!authorized()) return;
+    StaticJsonDocument<2048> d;
+    if (deserializeJson(d, server.arg("plain")) || !d.is<JsonObject>()) {
+      answer("Invalid JSON", false);
+      return;
+    }
+    String reply = applySettings(d.as<JsonObjectConst>());
+    answer(reply, reply.startsWith("OK"));
+  });
   // Commands can enter SD/FAT while the WebServer call chain is on the loop stack.
-  server.on("/api/command",HTTP_POST,[]{if(!authorized())return;DynamicJsonDocument d(2048);if(deserializeJson(d,server.arg("plain"))||!d["command"].is<const char*>()){answer("Invalid command",false);return;}if(d["command"]=="wifi"){wifiOffPending=true;answer("OK Wi-Fi off after this reply");return;}String line=d["command"].as<String>();line.trim();if(!wifiOn&&line.startsWith("identity")){answer("ERR the key is given out on the device access point only",false);return;}String reply=executeCommand(d["command"].as<String>());answer(reply,!reply.startsWith("ERR"));});
-  server.on("/api/send",HTTP_POST,[]{if(!authorized())return;StaticJsonDocument<1024>d;if(deserializeJson(d,server.arg("plain"))||!d["text"].is<const char*>()||!d["to"].is<const char*>()){answer("Invalid message",false);return;}String reply=executeCommand("send "+d["to"].as<String>()+" "+d["text"].as<String>());answer(reply,reply.startsWith("OK"));});
-  server.onNotFound([]{server.send(404,"text/plain","Not found");});
+  server.on("/api/command", HTTP_POST, [] {
+    if (!authorized()) return;
+    DynamicJsonDocument d(2048);
+    if (deserializeJson(d, server.arg("plain")) || !d["command"].is<const char*>()) {
+      answer("Invalid command", false);
+      return;
+    }
+    if (d["command"] == "wifi") {
+      wifiOffPending = true;
+      answer("OK Wi-Fi off after this reply");
+      return;
+    }
+    String line = d["command"].as<String>();
+    line.trim();
+    if (!wifiOn && line.startsWith("identity")) {
+      answer("ERR the key is given out on the device access point only", false);
+      return;
+    }
+    String reply = executeCommand(d["command"].as<String>());
+    answer(reply, !reply.startsWith("ERR"));
+  });
+  server.on("/api/send", HTTP_POST, [] {
+    if (!authorized()) return;
+    StaticJsonDocument<1024> d;
+    if (deserializeJson(d, server.arg("plain")) || !d["text"].is<const char*>() || !d["to"].is<const char*>()) {
+      answer("Invalid message", false);
+      return;
+    }
+    String reply = executeCommand("send " + d["to"].as<String>() + " " + d["text"].as<String>());
+    answer(reply, reply.startsWith("OK"));
+  });
+  server.onNotFound([] { server.send(404, "text/plain", "Not found"); });
 }
 void portalToggle() {
-  if(wifiProbeActive()){meshRadio.event="Wi-Fi probe busy";meshRadio.dirty=true;return;}
-  radar.release(); // the radar stops its Wi-Fi use (sweeps, homing, CSI beacon on the access point)
-  if(wifiOn) {server.stop();serving=false;WiFi.softAPdisconnect(true);WiFi.mode(WIFI_OFF);wifiOn=false;webRadarRelease();meshRadio.event="Wi-Fi off";}
-  else {
-    server.stop();serving=false; // portalTick starts it again on the access point
-    people::releaseWifi();internet.yieldRadio(); // the Wi-Fi client resumes when the access point is off
-    String ssid="MM-"+meshRadio.idText(meshRadio.nodeId).substring(6);WiFi.mode(WIFI_AP);
-    wifiOn=WiFi.softAP(ssid.c_str(),password.c_str(),1,false,2);meshRadio.event=wifiOn?"Wi-Fi: 192.168.4.1":"Wi-Fi failed";
+  if (wifiProbeActive()) {
+    meshRadio.event = "Wi-Fi probe busy";
+    meshRadio.dirty = true;
+    return;
   }
-  meshRadio.dirty=true;
+  radar.release(); // the radar stops its Wi-Fi use (sweeps, homing, CSI beacon on the access point)
+  if (wifiOn) {
+    server.stop();
+    serving = false;
+    WiFi.softAPdisconnect(true);
+    WiFi.mode(WIFI_OFF);
+    wifiOn = false;
+    webRadarRelease();
+    meshRadio.event = "Wi-Fi off";
+  } else {
+    server.stop();
+    serving = false; // portalTick starts it again on the access point
+    people::releaseWifi();
+    internet.yieldRadio(); // the Wi-Fi client resumes when the access point is off
+    String ssid = "MM-" + meshRadio.idText(meshRadio.nodeId).substring(6);
+    WiFi.mode(WIFI_AP);
+    wifiOn = WiFi.softAP(ssid.c_str(), password.c_str(), 1, false, 2);
+    meshRadio.event = wifiOn ? "Wi-Fi: 192.168.4.1" : "Wi-Fi failed";
+  }
+  meshRadio.dirty = true;
 }
-void bleRename(){if(!bluetoothOn)return;auto* a=NimBLEDevice::getAdvertising();a->stop();advertise();a->start();}
+void bleRename() {
+  if (!bluetoothOn) return;
+  auto* a = NimBLEDevice::getAdvertising();
+  a->stop();
+  advertise();
+  a->start();
+}
 void bleToggle() {
-  if(bleProbeActive()) {meshRadio.event="BLE probe busy";meshRadio.dirty=true;return;}
+  if (bleProbeActive()) {
+    meshRadio.event = "BLE probe busy";
+    meshRadio.dirty = true;
+    return;
+  }
   radar.releaseBle(); // stops the radar scan; it scans on the stack again next tick
   // The Bluetooth controller starts once per boot and is never deinitialised: a deinit and a later
   // init left Wi-Fi CSI data frozen until reboot (ESP32-S3, IDF 4.4). "Off" means no advertising,
   // no connections and no service commands.
-  NimBLEServer* b=NimBLEDevice::getInitialized()?NimBLEDevice::getServer():nullptr;
-  if(bluetoothOn) {
-    if(b){b->advertiseOnDisconnect(false);NimBLEDevice::getAdvertising()->stop();for(uint16_t id:b->getPeerDevices())b->disconnect(id);}
-    bluetoothOn=false;bleResponse="";bleHistory.reset();bleOffset=0;if(commands){vQueueDelete(commands);commands=nullptr;}
-    if(appFrames){vQueueDelete(appFrames);appFrames=nullptr;}companion::disconnected(companion::LinkBle);meshRadio.event="BLE off";
-  }
-  else {
-    commands=xQueueCreate(4,sizeof(BleCommand));appFrames=xQueueCreate(4,sizeof(AppFrame));
-    if(!commands||!appFrames){if(commands)vQueueDelete(commands);if(appFrames)vQueueDelete(appFrames);commands=nullptr;appFrames=nullptr;meshRadio.event="BLE: insufficient RAM";return;}
-    String name="MeshMesh "+meshRadio.idText(meshRadio.nodeId).substring(6);NimBLEDevice::init(name.c_str());NimBLEDevice::setDeviceName(name.c_str()); // the radar may have started the stack unnamed
-    NimBLEDevice::setSecurityAuth(true,true,true);NimBLEDevice::setSecurityIOCap(BLE_HS_IO_DISPLAY_ONLY);NimBLEDevice::setSecurityPasskey(pinCode);
-    if(!b){
-      b=NimBLEDevice::createServer();NimBLEService* s=b->createService("7a9e0001-98bd-4d56-89a8-c4eab4179010");
-      bleTx=s->createCharacteristic("7a9e0003-98bd-4d56-89a8-c4eab4179010",NIMBLE_PROPERTY::READ|NIMBLE_PROPERTY::READ_AUTHEN|NIMBLE_PROPERTY::NOTIFY);
-      auto rx=s->createCharacteristic("7a9e0002-98bd-4d56-89a8-c4eab4179010",NIMBLE_PROPERTY::WRITE|NIMBLE_PROPERTY::WRITE_AUTHEN);
-      rx->setCallbacks(&bleCallbacks);s->start();
-      NimBLEService* nus=b->createService(NusService);
-      appTx=nus->createCharacteristic("6E400003-B5A3-F393-E0A9-E50E24DCCA9E",NIMBLE_PROPERTY::READ|NIMBLE_PROPERTY::READ_AUTHEN|NIMBLE_PROPERTY::NOTIFY);
-      auto appRx=nus->createCharacteristic("6E400002-B5A3-F393-E0A9-E50E24DCCA9E",NIMBLE_PROPERTY::WRITE|NIMBLE_PROPERTY::WRITE_AUTHEN);
-      appRx->setCallbacks(&appCallbacks);nus->start();
+  NimBLEServer* b = NimBLEDevice::getInitialized() ? NimBLEDevice::getServer() : nullptr;
+  if (bluetoothOn) {
+    if (b) {
+      b->advertiseOnDisconnect(false);
+      NimBLEDevice::getAdvertising()->stop();
+      for (uint16_t id : b->getPeerDevices()) b->disconnect(id);
     }
-    advertise();b->advertiseOnDisconnect(true);NimBLEDevice::getAdvertising()->start();bluetoothOn=true;meshRadio.event="BLE PIN: "+String(pinCode);
+    bluetoothOn = false;
+    bleResponse = "";
+    bleHistory.reset();
+    bleOffset = 0;
+    if (commands) {
+      vQueueDelete(commands);
+      commands = nullptr;
+    }
+    if (appFrames) {
+      vQueueDelete(appFrames);
+      appFrames = nullptr;
+    }
+    companion::disconnected(companion::LinkBle);
+    meshRadio.event = "BLE off";
+  } else {
+    commands = xQueueCreate(4, sizeof(BleCommand));
+    appFrames = xQueueCreate(4, sizeof(AppFrame));
+    if (!commands || !appFrames) {
+      if (commands) vQueueDelete(commands);
+      if (appFrames) vQueueDelete(appFrames);
+      commands = nullptr;
+      appFrames = nullptr;
+      meshRadio.event = "BLE: insufficient RAM";
+      return;
+    }
+    String name = "MeshMesh " + meshRadio.idText(meshRadio.nodeId).substring(6);
+    NimBLEDevice::init(name.c_str());
+    NimBLEDevice::setDeviceName(name.c_str()); // the radar may have started the stack unnamed
+    NimBLEDevice::setSecurityAuth(true, true, true);
+    NimBLEDevice::setSecurityIOCap(BLE_HS_IO_DISPLAY_ONLY);
+    NimBLEDevice::setSecurityPasskey(pinCode);
+    if (!b) {
+      b = NimBLEDevice::createServer();
+      NimBLEService* s = b->createService("7a9e0001-98bd-4d56-89a8-c4eab4179010");
+      bleTx = s->createCharacteristic("7a9e0003-98bd-4d56-89a8-c4eab4179010",
+                                      NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::READ_AUTHEN | NIMBLE_PROPERTY::NOTIFY);
+      auto rx = s->createCharacteristic("7a9e0002-98bd-4d56-89a8-c4eab4179010",
+                                        NIMBLE_PROPERTY::WRITE | NIMBLE_PROPERTY::WRITE_AUTHEN);
+      rx->setCallbacks(&bleCallbacks);
+      s->start();
+      NimBLEService* nus = b->createService(NusService);
+      appTx = nus->createCharacteristic("6E400003-B5A3-F393-E0A9-E50E24DCCA9E",
+                                        NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::READ_AUTHEN | NIMBLE_PROPERTY::NOTIFY);
+      auto appRx = nus->createCharacteristic("6E400002-B5A3-F393-E0A9-E50E24DCCA9E",
+                                             NIMBLE_PROPERTY::WRITE | NIMBLE_PROPERTY::WRITE_AUTHEN);
+      appRx->setCallbacks(&appCallbacks);
+      nus->start();
+    }
+    advertise();
+    b->advertiseOnDisconnect(true);
+    NimBLEDevice::getAdvertising()->start();
+    bluetoothOn = true;
+    meshRadio.event = "BLE PIN: " + String(pinCode);
   }
-  config.saveBle(bluetoothOn);meshRadio.dirty=true;
+  config.saveBle(bluetoothOn);
+  meshRadio.dirty = true;
 }
 void portalTick() {
-  bool serve=wifiOn||internet.online();
-  if(serve!=serving){if(serve)server.begin();else server.stop();serving=serve;}
-  if(serving)server.handleClient();
-  if(wifiOffPending){wifiOffPending=false;if(wifiOn)portalToggle();}
-  if(webRadar&&millis()-webRadarAt>10000)webRadarRelease(); // the page was closed or the phone left
-  if(commands && !bleResponse.length() && !bleHistory) {
+  bool serve = wifiOn || internet.online();
+  if (serve != serving) {
+    if (serve)
+      server.begin();
+    else
+      server.stop();
+    serving = serve;
+  }
+  if (serving) server.handleClient();
+  if (wifiOffPending) {
+    wifiOffPending = false;
+    if (wifiOn) portalToggle();
+  }
+  if (webRadar && millis() - webRadarAt > 10000) webRadarRelease(); // the page was closed or the phone left
+  if (commands && !bleResponse.length() && !bleHistory) {
     BleCommand cmd;
-    if(xQueueReceive(commands,&cmd,0)==pdTRUE) {
-      powerWake();String line=cmd.text;line.trim();
-      if(line=="messages"&&bleTx){bleHistory.reset(new(std::nothrow) HistoryReply);if(!bleHistory||!bleHistory->begin()){bleHistory.reset();bleResponse="ERR history snapshot memory\n";}}
-      else{String response=executeCommand(cmd.text);if(bleTx){response+='\n';bleResponse=std::move(response);}} // no second copy of a large answer
-      bleOffset=0;nextNotification=millis();
+    if (xQueueReceive(commands, &cmd, 0) == pdTRUE) {
+      powerWake();
+      String line = cmd.text;
+      line.trim();
+      if (line == "messages" && bleTx) {
+        bleHistory.reset(new (std::nothrow) HistoryReply);
+        if (!bleHistory || !bleHistory->begin()) {
+          bleHistory.reset();
+          bleResponse = "ERR history snapshot memory\n";
+        }
+      } else {
+        String response = executeCommand(cmd.text);
+        if (bleTx) {
+          response += '\n';
+          bleResponse = std::move(response);
+        }
+      } // no second copy of a large answer
+      bleOffset = 0;
+      nextNotification = millis();
     }
   }
   // Companion frames: one per write, one per notification, while the host has spare buffers.
-  if(appFrames){AppFrame frame;if(xQueueReceive(appFrames,&frame,0)==pdTRUE){powerWake();companion::command(frame.data,frame.length,companion::LinkBle);}}
-  if(appTx&&companion::connected()&&!appTx->getSubscribedCount())companion::disconnected(companion::LinkBle);
-  else if(appTx&&int32_t(millis()-nextAppNotification)>=0&&os_msys_num_free()>=6){
-    uint8_t frame[companion::MaxFrame];size_t length=companion::next(frame,companion::LinkBle);
-    if(length){appTx->notify(frame,length);nextAppNotification=millis()+(length>20?8:15);}
+  if (appFrames) {
+    AppFrame frame;
+    if (xQueueReceive(appFrames, &frame, 0) == pdTRUE) {
+      powerWake();
+      companion::command(frame.data, frame.length, companion::LinkBle);
+    }
   }
-  if(bleTx && (bleResponse.length()||bleHistory) && int32_t(millis()-nextNotification)>=0) {
-    if(!bleTx->getSubscribedCount()) {bleResponse="";bleHistory.reset();bleOffset=0;return;}
+  if (appTx && companion::connected() && !appTx->getSubscribedCount())
+    companion::disconnected(companion::LinkBle);
+  else if (appTx && int32_t(millis() - nextAppNotification) >= 0 && os_msys_num_free() >= 6) {
+    uint8_t frame[companion::MaxFrame];
+    size_t length = companion::next(frame, companion::LinkBle);
+    if (length) {
+      appTx->notify(frame, length);
+      nextAppNotification = millis() + (length > 20 ? 8 : 15);
+    }
+  }
+  if (bleTx && (bleResponse.length() || bleHistory) && int32_t(millis() - nextNotification) >= 0) {
+    if (!bleTx->getSubscribedCount()) {
+      bleResponse = "";
+      bleHistory.reset();
+      bleOffset = 0;
+      return;
+    }
     // Notifications as large as the smallest negotiated MTU allows (20 bytes without an exchange),
     // sent only while the host has spare buffers: a dropped notification would corrupt the reply.
-    if(os_msys_num_free()<6){nextNotification=millis()+4;return;}
-    unsigned room=244;NimBLEServer* s=NimBLEDevice::getServer();
-    for(uint16_t id:s->getPeerDevices()){unsigned mtu=s->getPeerMTU(id);if(mtu>=23&&mtu-3<room)room=mtu-3;}
-    if(bleHistory){size_t size=0;const uint8_t* bytes=bleHistory->peek(size);
-      if(size){size=min(size_t(room),size);bleTx->notify(bytes,size);bleHistory->advance(size);nextNotification=millis()+(size>20?8:15);}
-      if(bleHistory->finished()){bool okay=bleHistory->okay();bleHistory.reset();if(!okay){bleResponse="\nERR history stream memory\n";bleOffset=0;}}
-      return;}
-    unsigned length=min(room,bleResponse.length()-bleOffset);
-    bleTx->notify((const uint8_t*)bleResponse.c_str()+bleOffset,length);bleOffset+=length;nextNotification=millis()+(length>20?8:15);
-    if(bleOffset==bleResponse.length()) {bleResponse="";bleOffset=0;}
+    if (os_msys_num_free() < 6) {
+      nextNotification = millis() + 4;
+      return;
+    }
+    unsigned room = 244;
+    NimBLEServer* s = NimBLEDevice::getServer();
+    for (uint16_t id : s->getPeerDevices()) {
+      unsigned mtu = s->getPeerMTU(id);
+      if (mtu >= 23 && mtu - 3 < room) room = mtu - 3;
+    }
+    if (bleHistory) {
+      size_t size = 0;
+      const uint8_t* bytes = bleHistory->peek(size);
+      if (size) {
+        size = min(size_t(room), size);
+        bleTx->notify(bytes, size);
+        bleHistory->advance(size);
+        nextNotification = millis() + (size > 20 ? 8 : 15);
+      }
+      if (bleHistory->finished()) {
+        bool okay = bleHistory->okay();
+        bleHistory.reset();
+        if (!okay) {
+          bleResponse = "\nERR history stream memory\n";
+          bleOffset = 0;
+        }
+      }
+      return;
+    }
+    unsigned length = min(room, bleResponse.length() - bleOffset);
+    bleTx->notify((const uint8_t*)bleResponse.c_str() + bleOffset, length);
+    bleOffset += length;
+    nextNotification = millis() + (length > 20 ? 8 : 15);
+    if (bleOffset == bleResponse.length()) {
+      bleResponse = "";
+      bleOffset = 0;
+    }
   }
 }

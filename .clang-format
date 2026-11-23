@@ -1,0 +1,19 @@
+# Source style of the firmware. Generated files are listed in .clang-format-ignore.
+BasedOnStyle: LLVM
+IndentWidth: 2
+ColumnLimit: 120
+# Interface strings are extracted by tools/i18n.py: never split a literal.
+BreakStringLiterals: false
+# Include order matters for the .inc fragments and the Arduino headers.
+SortIncludes: Never
+ReflowComments: false
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLoopsOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortEnumsOnASingleLine: true
+AllowShortBlocksOnASingleLine: Never
+AlignTrailingComments: false
+PointerAlignment: Left
+SpaceAfterCStyleCast: false
+AccessModifierOffset: -2

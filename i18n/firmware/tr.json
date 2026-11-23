@@ -55,10 +55,6 @@
   "en": "Counter ",
   "text": "Sayaç "
  },
- "f2d8afbf": {
-  "en": "Choose recipient",
-  "text": "Alıcı seç"
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "Anlaşıldı"
@@ -90,6 +86,1430 @@
  "e774d890": {
   "en": "Battery low",
   "text": "Pil az"
+ },
+ "f2d8afbf": {
+  "en": "Choose recipient",
+  "text": "Alıcı seç"
+ },
+ "af34335c": {
+  "en": "Internet",
+  "text": "İnternet"
+ },
+ "0b728291": {
+  "en": "All off",
+  "text": "Tümü kapalı"
+ },
+ "c0b2703d": {
+  "en": {
+   "one": "new message",
+   "other": "new messages"
+  },
+  "forms": {
+   "one": "{n} yeni mesaj",
+   "other": "{n} yeni mesaj"
+  }
+ },
+ "8f7412e6": {
+  "en": " of ",
+  "text": " / "
+ },
+ "4f1014c0": {
+  "en": " nearby",
+  "text": " yakında"
+ },
+ "e50e2dad": {
+  "en": {
+   "one": "sat",
+   "other": "sats"
+  },
+  "forms": {
+   "one": "{n} uydu",
+   "other": "{n} uydu"
+  }
+ },
+ "84e158a3": {
+  "en": "GPS: searching",
+  "text": "GPS: aranıyor"
+ },
+ "7f9b88be": {
+  "en": "GPS off",
+  "text": "GPS kapalı"
+ },
+ "517f4378": {
+  "en": "Online map",
+  "text": "Çevrimiçi harita"
+ },
+ "b40c44cd": {
+  "en": "No SD card",
+  "text": "SD kart yok"
+ },
+ "2c64a5cf": {
+  "en": "No maps yet",
+  "text": "Henüz harita yok"
+ },
+ "4b896fbb": {
+  "en": "Radar",
+  "text": "Radar"
+ },
+ "c0de6b7d": {
+  "en": {
+   "one": "point",
+   "other": "points"
+  },
+  "forms": {
+   "one": "{n} nokta",
+   "other": "{n} nokta"
+  }
+ },
+ "db89a899": {
+  "en": "Connect",
+  "text": "Bağlan"
+ },
+ "a4bb08e5": {
+  "en": {
+   "one": "fault",
+   "other": "faults"
+  },
+  "forms": {
+   "one": "{n} hata",
+   "other": "{n} hata"
+  }
+ },
+ "010ffdb6": {
+  "en": "All OK",
+  "text": "Sorun yok"
+ },
+ "67a31c2c": {
+  "en": "Radio, screen",
+  "text": "Radyo, ekran"
+ },
+ "1520e768": {
+  "en": " MHz · SF",
+  "text": " MHz · SF"
+ },
+ "168512be": {
+  "en": "Radio error ",
+  "text": "Radyo hatası "
+ },
+ "538b10e9": {
+  "en": "Open",
+  "text": "Aç"
+ },
+ "3750eb16": {
+  "en": "Radio controls",
+  "text": "Radyo denetimleri"
+ },
+ "19ede191": {
+  "en": {
+   "one": "app",
+   "other": "apps"
+  },
+  "forms": {
+   "one": "{n} uygulama",
+   "other": "{n} uygulama"
+  }
+ },
+ "832f1cca": {
+  "en": " waiting",
+  "text": " bekliyor"
+ },
+ "2c6a14ea": {
+  "en": "Folders and order: web page or app",
+  "text": "Klasör ve sıra: web sayfası veya uygulama"
+ },
+ "6e19da59": {
+  "en": "No apps in this folder",
+  "text": "Klasörde uygulama yok"
+ },
+ "00c6075a": {
+  "en": "Menu",
+  "text": "Ana menü"
+ },
+ "3e892b4d": {
+  "en": "Select",
+  "text": "Seç"
+ },
+ "66836516": {
+  "en": "You: ",
+  "text": "Siz: "
+ },
+ "51e7624c": {
+  "en": "No messages yet",
+  "text": "Henüz mesaj yok"
+ },
+ "32e97c4a": {
+  "en": "Open MeshCore channel",
+  "text": "Açık MeshCore kanalı"
+ },
+ "9c9c5d7e": {
+  "en": "Open channel · no messages yet",
+  "text": "Açık kanal · henüz mesaj yok"
+ },
+ "543bd3e9": {
+  "en": "Private channel · no messages yet",
+  "text": "Özel kanal · henüz mesaj yok"
+ },
+ "e65fb504": {
+  "en": "Actions",
+  "text": "İşlemler"
+ },
+ "33a4b02f": {
+  "en": "Next unread",
+  "text": "Okunmamış"
+ },
+ "4648e8a8": {
+  "en": "Private channel · senders unverified · no ACK",
+  "text": "Özel kanal · gönderen doğrulanmaz · ACK yok"
+ },
+ "46718231": {
+  "en": "Open channel · senders unverified · no ACK",
+  "text": "Açık kanal · gönderen doğrulanmaz · ACK yok"
+ },
+ "c4e598ca": {
+  "en": "logged in",
+  "text": "giriş yapıldı"
+ },
+ "ab1fafa1": {
+  "en": "log in: node card > Server",
+  "text": "giriş: düğüm kartı > Sunucu"
+ },
+ "91455582": {
+  "en": "Not in contacts",
+  "text": "Kişilerde yok"
+ },
+ "e99aa76f": {
+  "en": "not confirmed",
+  "text": "onaylanmadı"
+ },
+ "1a940c2a": {
+  "en": "Type and press OK to send",
+  "text": "Yazıp OK ile gönderin"
+ },
+ "f574869a": {
+  "en": "Message...",
+  "text": "Mesaj..."
+ },
+ "f28e14cf": {
+  "en": "Send",
+  "text": "Gönder"
+ },
+ "68f399b1": {
+  "en": "Clipboard",
+  "text": "Pano"
+ },
+ "72d06ea7": {
+  "en": "Finding location by IP...",
+  "text": "Konum IP ile bulunuyor..."
+ },
+ "851e5ac2": {
+  "en": "Needs Wi-Fi internet or an SD card",
+  "text": "Wi-Fi interneti veya SD kart gerekli"
+ },
+ "77c28af9": {
+  "en": "Connect Wi-Fi or load a map",
+  "text": "Wi-Fi bağlayın veya harita yükleyin"
+ },
+ "119314d0": {
+  "en": "GPS will take over after a fix",
+  "text": "GPS konum bulunca harita ona geçer"
+ },
+ "c19b47bb": {
+  "en": "Connections > Internet over Wi-Fi",
+  "text": "Bağlantılar > Wi-Fi ile internet"
+ },
+ "b59a5b35": {
+  "en": "Downloading map...",
+  "text": "Harita indiriliyor..."
+ },
+ "e6aae7d4": {
+  "en": "Reading map from SD...",
+  "text": "Harita SD'den okunuyor..."
+ },
+ "ba994464": {
+  "en": "Tiles unavailable",
+  "text": "Karolar kullanılamıyor"
+ },
+ "66643a4a": {
+  "en": "This zoom is not downloaded",
+  "text": "Bu ölçek indirilmemiş"
+ },
+ "29cc0d19": {
+  "en": "+/- zoom · Wi-Fi internet loads maps",
+  "text": "+/- ölçek · harita Wi-Fi ile iner"
+ },
+ "a3b1d86e": {
+  "en": "Offline map",
+  "text": "Çevrimdışı harita"
+ },
+ "59317dec": {
+  "en": " · loading",
+  "text": " · yükleniyor"
+ },
+ "1d1e1a72": {
+  "en": "GPS: old date",
+  "text": "GPS: eski tarih"
+ },
+ "b45aef8c": {
+  "en": "Pan",
+  "text": "Kaydır"
+ },
+ "62399752": {
+  "en": "Zoom",
+  "text": "Ölçek"
+ },
+ "9fa2c938": {
+  "en": "Following",
+  "text": "Takipte"
+ },
+ "3f654d20": {
+  "en": "To GPS",
+  "text": "GPS'e"
+ },
+ "04dfc93c": {
+  "en": "No saved maps",
+  "text": "Kayıtlı harita yok"
+ },
+ "dcf1e39a": {
+  "en": "Upload a map via Wi-Fi or USB",
+  "text": "Wi-Fi veya USB ile harita yükleyin"
+ },
+ "7c620193": {
+  "en": {
+   "one": "tile on SD",
+   "other": "tiles on SD"
+  },
+  "forms": {
+   "one": "SD'de {n} karo",
+   "other": "SD'de {n} karo"
+  }
+ },
+ "bd794432": {
+  "en": "No matching contacts",
+  "text": "Eşleşen kişi yok"
+ },
+ "4e5a0349": {
+  "en": "No nodes discovered yet",
+  "text": "Henüz düğüm bulunmadı"
+ },
+ "8a8a895b": {
+  "en": "F: edit tag filter",
+  "text": "F: filtreyi düzenle"
+ },
+ "2ad4b008": {
+  "en": "Advertise my node",
+  "text": "Düğümümü duyur"
+ },
+ "e2339f44": {
+  "en": "saved",
+  "text": "kayıtlı"
+ },
+ "0ec24245": {
+  "en": "Details",
+  "text": "Ayrıntı"
+ },
+ "f4a9c097": {
+  "en": "Filter",
+  "text": "Filtre"
+ },
+ "c2954bc2": {
+  "en": "Back",
+  "text": "Geri"
+ },
+ "c416a424": {
+  "en": "Node was removed",
+  "text": "Düğüm silindi"
+ },
+ "81ef07a9": {
+  "en": "Last heard",
+  "text": "Son duyulma"
+ },
+ "4f0a0e98": {
+  "en": " ago",
+  "text": " önce"
+ },
+ "1ae89b50": {
+  "en": "not since boot",
+  "text": "açılıştan beri yok"
+ },
+ "2fce4529": {
+  "en": "Signal",
+  "text": "Sinyal"
+ },
+ "d7d630be": {
+  "en": "Route",
+  "text": "Rota"
+ },
+ "cd08221c": {
+  "en": " · flood",
+  "text": " · flood"
+ },
+ "e27f342a": {
+  "en": "Position",
+  "text": "Konum"
+ },
+ "a3ad51f3": {
+  "en": "not shared",
+  "text": "paylaşılmadı"
+ },
+ "b8297e9a": {
+  "en": "Room",
+  "text": "Oda"
+ },
+ "ae0ed984": {
+  "en": "Message",
+  "text": "Mesaj yaz"
+ },
+ "8f635566": {
+  "en": "On map",
+  "text": "Haritada"
+ },
+ "db5485e7": {
+  "en": "Reset path",
+  "text": "Yolu sıfırla"
+ },
+ "2d44294d": {
+  "en": "Sure?",
+  "text": "Silinsin mi?"
+ },
+ "6e3fab8c": {
+  "en": "Forget",
+  "text": "Unut"
+ },
+ "6d7302f2": {
+  "en": "Server",
+  "text": "Sunucu"
+ },
+ "26f8e74e": {
+  "en": "Trace",
+  "text": "İz"
+ },
+ "0a77a91f": {
+  "en": "Action",
+  "text": "İşlem"
+ },
+ "8d57e66a": {
+  "en": "Run",
+  "text": "Uygula"
+ },
+ "0ff01b6a": {
+  "en": "Notes",
+  "text": "Notlar"
+ },
+ "d112e127": {
+  "en": "hold flat",
+  "text": "düz tutun"
+ },
+ "1a45dda5": {
+  "en": "not calibrated",
+  "text": "kalibre edilmedi"
+ },
+ "ab3a8a0a": {
+  "en": "off",
+  "text": "kapalı"
+ },
+ "b2e48278": {
+  "en": "fix",
+  "text": "konum var"
+ },
+ "620f3cc6": {
+  "en": "old date",
+  "text": "eski tarih"
+ },
+ "67ce0277": {
+  "en": "searching",
+  "text": "aranıyor"
+ },
+ "f5e7befb": {
+  "en": "Satellites",
+  "text": "Uydular"
+ },
+ "a2009955": {
+  "en": " in view",
+  "text": " görünür"
+ },
+ "6d7e4165": {
+  "en": "Latitude",
+  "text": "Enlem"
+ },
+ "671964ee": {
+  "en": "Longitude",
+  "text": "Boylam"
+ },
+ "bb5f80fd": {
+  "en": "Clock",
+  "text": "Saat"
+ },
+ "ffa35e26": {
+  "en": "not set",
+  "text": "ayarlanmadı"
+ },
+ "219101e3": {
+  "en": "manual",
+  "text": "elle"
+ },
+ "d2cdcecb": {
+  "en": " · trusted",
+  "text": " · güvenilir"
+ },
+ "bb77a2cf": {
+  "en": "Compass",
+  "text": "Pusula"
+ },
+ "1db880db": {
+  "en": {
+   "one": "sample",
+   "other": "samples"
+  },
+  "forms": {
+   "one": "{n} örnek",
+   "other": "{n} örnek"
+  }
+ },
+ "37b8f592": {
+  "en": "calibrated",
+  "text": "kalibre edildi"
+ },
+ "75c3ffb2": {
+  "en": "needs calibration",
+  "text": "kalibrasyon gerekli"
+ },
+ "ff05911b": {
+  "en": "Share position",
+  "text": "Konumu paylaş"
+ },
+ "7629db5a": {
+  "en": "Finish calibration",
+  "text": "Kalibrasyonu bitir"
+ },
+ "6f59150a": {
+  "en": "Calibrate compass",
+  "text": "Pusulayı kalibre et"
+ },
+ "e125a9a1": {
+  "en": "Advert with GPS",
+  "text": "GPS'li duyuru"
+ },
+ "10b78d8a": {
+  "en": "Needs a fresh GPS fix",
+  "text": "Güncel GPS konumu gerekli"
+ },
+ "a603b11c": {
+  "en": "Rotate in all directions",
+  "text": "Cihazı her yöne döndürün"
+ },
+ "7f8e9f6b": {
+  "en": "Rotate for 20+ seconds",
+  "text": "20+ saniye döndürün"
+ },
+ "45465004": {
+  "en": "GPS on",
+  "text": "GPS aç"
+ },
+ "4930944f": {
+  "en": "Phone",
+  "text": "Telefon"
+ },
+ "ec266ec8": {
+  "en": "Watch",
+  "text": "Saat"
+ },
+ "89a2ef46": {
+  "en": "Headphones",
+  "text": "Kulaklık"
+ },
+ "fae1ce6b": {
+  "en": "Phone/watch",
+  "text": "Telefon/saat"
+ },
+ "7e3d4120": {
+  "en": "BLE device",
+  "text": "BLE cihazı"
+ },
+ "9e13a743": {
+  "en": "Hidden network",
+  "text": "Gizli ağ"
+ },
+ "90cbadfa": {
+  "en": "Bluetooth busy: probe",
+  "text": "Bluetooth meşgul: test"
+ },
+ "e5e4ab77": {
+  "en": "Bluetooth error",
+  "text": "Bluetooth hatası"
+ },
+ "983f66dc": {
+  "en": "Wi-Fi busy: access point",
+  "text": "Wi-Fi meşgul: erişim noktası"
+ },
+ "35c403f6": {
+  "en": "Wi-Fi busy: probe",
+  "text": "Wi-Fi meşgul: test"
+ },
+ "1be7979b": {
+  "en": "Wi-Fi error",
+  "text": "Wi-Fi hatası"
+ },
+ "89414ad6": {
+  "en": "Scanning Wi-Fi...",
+  "text": "Wi-Fi taranıyor..."
+ },
+ "542d8f50": {
+  "en": "closer to centre = stronger",
+  "text": "merkeze yakın = daha güçlü"
+ },
+ "fde56fad": {
+  "en": "List paused",
+  "text": "Liste duraklatıldı"
+ },
+ "503d6eed": {
+  "en": {
+   "one": "phone/watch nearby",
+   "other": "phones/watches nearby"
+  },
+  "forms": {
+   "one": "{n} telefon/saat yakında",
+   "other": "{n} telefon/saat yakında"
+  }
+ },
+ "49031ccd": {
+  "en": "No signals yet",
+  "text": "Henüz sinyal yok"
+ },
+ "8d2937a1": {
+  "en": "List",
+  "text": "Liste"
+ },
+ "454d1d8a": {
+  "en": "Resume",
+  "text": "Sürdür"
+ },
+ "44f9bf2d": {
+  "en": "Pause",
+  "text": "Duraklat"
+ },
+ "3368e695": {
+  "en": "Home in",
+  "text": "Yön bul"
+ },
+ "aad07647": {
+  "en": "Motion",
+  "text": "Hareket"
+ },
+ "84397af6": {
+  "en": " · direct packets only",
+  "text": " · yalnızca doğrudan paketler"
+ },
+ "b8a018ba": {
+  "en": " · address changes over time",
+  "text": " · adres zamanla değişir"
+ },
+ "a8e7e5cc": {
+  "en": "channel ",
+  "text": "kanal "
+ },
+ "64db285b": {
+  "en": "Lost",
+  "text": "Kayıp"
+ },
+ "46102346": {
+  "en": "No signal",
+  "text": "Sinyal yok"
+ },
+ "3b06b3cd": {
+  "en": "Stronger",
+  "text": "Isınıyor"
+ },
+ "4dd880a2": {
+  "en": "Weaker",
+  "text": "Soğuyor"
+ },
+ "cd945433": {
+  "en": "Steady",
+  "text": "Sabit"
+ },
+ "184745be": {
+  "en": "keep moving",
+  "text": "hareket edin"
+ },
+ "78c14fb6": {
+  "en": "peak ",
+  "text": "tepe "
+ },
+ "b991041c": {
+  "en": "Waiting for samples",
+  "text": "Örnekler bekleniyor"
+ },
+ "cde081d3": {
+  "en": {
+   "one": "packet",
+   "other": "packets"
+  },
+  "forms": {
+   "one": "{n} paket",
+   "other": "{n} paket"
+  }
+ },
+ "0ec969ac": {
+  "en": " adverts/s",
+  "text": " yayın/sn"
+ },
+ "93382782": {
+  "en": " beacons/s",
+  "text": " işaret/sn"
+ },
+ "42cfcb2d": {
+  "en": " s ago",
+  "text": " sn önce"
+ },
+ "3f609f74": {
+  "en": "Mute",
+  "text": "Sessiz"
+ },
+ "b3ca9a34": {
+  "en": "Sound",
+  "text": "Ses"
+ },
+ "68f7fd73": {
+  "en": "Reset peak",
+  "text": "Tepeyi sıfırla"
+ },
+ "394ec4f2": {
+  "en": "Turn the access point off",
+  "text": "Erişim noktasını kapatın"
+ },
+ "fccfe8a5": {
+  "en": "Beacon for another board",
+  "text": "Diğer kart için verici"
+ },
+ "bfacb4d0": {
+  "en": " frames/s on channel 1",
+  "text": " kare/sn, kanal 1"
+ },
+ "6d3d79bb": {
+  "en": "beacon ",
+  "text": "verici "
+ },
+ "d7972182": {
+  "en": " frames/s · ",
+  "text": " kare/sn · "
+ },
+ "b85b81cf": {
+  "en": "waiting: set the other board to CSI beacon",
+  "text": "bekleniyor: diğer kartta CSI verici açın"
+ },
+ "1d0cdb24": {
+  "en": "NO WI-FI",
+  "text": "WI-FI YOK"
+ },
+ "e9a87b56": {
+  "en": "BEACON ON",
+  "text": "VERİCİ AÇIK"
+ },
+ "564cdaca": {
+  "en": "NO BEACON",
+  "text": "VERİCİ YOK"
+ },
+ "9a1796e8": {
+  "en": "CSI FROZEN",
+  "text": "CSI DONDU"
+ },
+ "dd26ae1f": {
+  "en": "CALIBRATING ",
+  "text": "KALİBRASYON "
+ },
+ "5ec52fe4": {
+  "en": " s",
+  "text": " sn"
+ },
+ "4d851fe7": {
+  "en": "MOTION",
+  "text": "HAREKET"
+ },
+ "6fce5d71": {
+  "en": "STILL",
+  "text": "SAKİN"
+ },
+ "13d6d724": {
+  "en": "activity ",
+  "text": "aktivite "
+ },
+ "1e3add08": {
+  "en": "threshold ",
+  "text": "eşik "
+ },
+ "dda163c5": {
+  "en": " (default)",
+  "text": " (varsayılan)"
+ },
+ "19deef04": {
+  "en": "Walk between the boards to see the trace",
+  "text": "İz için kartlar arasında yürüyün"
+ },
+ "faa0c1ab": {
+  "en": "Calibrate with the area empty and still (10 s)",
+  "text": "Kalibrasyon: alan boş ve hareketsiz olsun (10 sn)"
+ },
+ "4204187c": {
+  "en": "Place the boards 2-5 m apart; motion between them is sensed",
+  "text": "Kartları 2-5 m arayla koyun; aradaki hareket algılanır"
+ },
+ "9bb72cae": {
+  "en": "Signals",
+  "text": "Sinyaller"
+ },
+ "6fb7daa2": {
+  "en": "Calibrate",
+  "text": "Kalibre et"
+ },
+ "4d580639": {
+  "en": "Beacon",
+  "text": "Verici"
+ },
+ "5427923a": {
+  "en": "To turn on, hold the trackball pressed",
+  "text": "Açmak için trackball'u basılı tutun"
+ },
+ "b1e20664": {
+  "en": "To turn on: RESET or the power switch",
+  "text": "Açmak için: RESET veya güç anahtarı"
+ },
+ "cba7fbe8": {
+  "en": "Device is off",
+  "text": "Cihaz kapalı"
+ },
+ "2697628b": {
+  "en": "Turning off...",
+  "text": "Kapanıyor..."
+ },
+ "b639f585": {
+  "en": "GPS & compass",
+  "text": "GPS ve pusula"
+ },
+ "dde0a6be": {
+  "en": "Keys & help",
+  "text": "Tuşlar ve ipuçları"
+ },
+ "cd03e04b": {
+  "en": "Turn off",
+  "text": "Kapat"
+ },
+ "a21b5cde": {
+  "en": "Brightness ",
+  "text": "Parlaklık "
+ },
+ "e1b4bdaa": {
+  "en": "compass calibrated",
+  "text": "pusula kalibre edildi"
+ },
+ "e8f719bd": {
+  "en": "compass not calibrated",
+  "text": "pusula kalibre edilmedi"
+ },
+ "7316bebd": {
+  "en": " relayed",
+  "text": " aktarıldı"
+ },
+ "4f18c10c": {
+  "en": "What every key does",
+  "text": "Her tuşun görevi"
+ },
+ "7e8a19d5": {
+  "en": "Searching: ",
+  "text": "Aranıyor: "
+ },
+ "9a555563": {
+  "en": {
+   "one": "repeater",
+   "other": "repeaters"
+  },
+  "forms": {
+   "one": "{n} röle",
+   "other": "{n} röle"
+  }
+ },
+ "1a8c15c3": {
+  "en": {
+   "one": "region",
+   "other": "regions"
+  },
+  "forms": {
+   "one": "{n} bölge",
+   "other": "{n} bölge"
+  }
+ },
+ "99f30427": {
+  "en": "OK: start",
+  "text": "OK: başlat"
+ },
+ "9fca3c9e": {
+  "en": "Listening ",
+  "text": "Dinleniyor "
+ },
+ "a3980ce8": {
+  "en": "Nothing new",
+  "text": "Yeni yok"
+ },
+ "443ffd47": {
+  "en": "OK: test ",
+  "text": "OK: dene "
+ },
+ "2265ebb1": {
+  "en": "Current profile: ",
+  "text": "Geçerli profil: "
+ },
+ "34f428b1": {
+  "en": "Try every regional preset",
+  "text": "Tüm bölge ön ayarlarını dene"
+ },
+ "c91eb13e": {
+  "en": "Preset",
+  "text": "Ön ayar"
+ },
+ "8d9206a1": {
+  "en": "Frequency",
+  "text": "Frekans"
+ },
+ "008f5512": {
+  "en": "Bandwidth",
+  "text": "Bant gen."
+ },
+ "d174bc31": {
+  "en": "Spreading factor",
+  "text": "Yayılma faktörü"
+ },
+ "3c2364a7": {
+  "en": "Coding rate",
+  "text": "Kodlama oranı"
+ },
+ "92d39d44": {
+  "en": "TX power",
+  "text": "TX gücü"
+ },
+ "175749a2": {
+  "en": "Relay hop limit",
+  "text": "Aktarma atlama sınırı"
+ },
+ "75193707": {
+  "en": "Relay packets",
+  "text": "Paket aktarma"
+ },
+ "2197c64b": {
+  "en": "Path hash size",
+  "text": "Yol hash boyutu"
+ },
+ "492e789d": {
+  "en": "Region",
+  "text": "Bölge"
+ },
+ "b872ed2b": {
+  "en": "Find regions",
+  "text": "Bölge ara"
+ },
+ "eb38bf4c": {
+  "en": "Find network",
+  "text": "Ağ bul"
+ },
+ "24646b98": {
+  "en": "Radio test",
+  "text": "Radyo testi"
+ },
+ "0614ba0b": {
+  "en": "Previous radio",
+  "text": "Önceki radyo"
+ },
+ "0fe07306": {
+  "en": "Name",
+  "text": "Ad"
+ },
+ "9a73db9b": {
+  "en": "Language",
+  "text": "Dil"
+ },
+ "df6e627c": {
+  "en": "Day brightness",
+  "text": "Gündüz parlaklığı"
+ },
+ "73d459b4": {
+  "en": "Home layout",
+  "text": "Ana ekran düzeni"
+ },
+ "4ef0ddc5": {
+  "en": "Sounds",
+  "text": "Sesler"
+ },
+ "300ec32d": {
+  "en": "Auto lock",
+  "text": "Otomatik kilit"
+ },
+ "1f0bca87": {
+  "en": "Dim screen",
+  "text": "Ekranı karart"
+ },
+ "37976ee4": {
+  "en": "GPS receiver",
+  "text": "GPS alıcısı"
+ },
+ "f050c5bc": {
+  "en": "UTC offset",
+  "text": "UTC farkı"
+ },
+ "caa82244": {
+  "en": "Battery shows",
+  "text": "Pil göstergesi"
+ },
+ "fecd422a": {
+  "en": "Lock screen",
+  "text": "Kilit ekranı"
+ },
+ "667ad2f5": {
+  "en": "Wake on message",
+  "text": "Mesajla uyandır"
+ },
+ "98b6a9f6": {
+  "en": "Message popup",
+  "text": "Mesaj penceresi"
+ },
+ "4eaf7c92": {
+  "en": "Theme",
+  "text": "Tema"
+ },
+ "ac7ce48d": {
+  "en": "Accent colour",
+  "text": "Vurgu rengi"
+ },
+ "548b7cf8": {
+  "en": "Night brightness",
+  "text": "Gece parlaklığı"
+ },
+ "1c076c32": {
+  "en": "Screen password",
+  "text": "Ekran parolası"
+ },
+ "9525b78e": {
+  "en": "Custom",
+  "text": "Özel"
+ },
+ "dc6bfbe0": {
+  "en": " MHz",
+  "text": " MHz"
+ },
+ "1ffe2452": {
+  "en": " kHz",
+  "text": " kHz"
+ },
+ "49e98b8b": {
+  "en": {
+   "one": "byte",
+   "other": "bytes"
+  },
+  "forms": {
+   "one": "{n} bayt",
+   "other": "{n} bayt"
+  }
+ },
+ "304ff7fb": {
+  "en": "None",
+  "text": "Yok"
+ },
+ "9023a2b0": {
+  "en": "OK: keep",
+  "text": "OK: tut"
+ },
+ "45570065": {
+  "en": "Dark",
+  "text": "Koyu"
+ },
+ "8ad2f8cf": {
+  "en": "Light",
+  "text": "Açık"
+ },
+ "126befb6": {
+  "en": "Auto",
+  "text": "Otomatik"
+ },
+ "880f97dc": {
+  "en": "Lime",
+  "text": "Limon"
+ },
+ "e9dd1fed": {
+  "en": "Blue",
+  "text": "Mavi"
+ },
+ "f03bdf12": {
+  "en": "Violet",
+  "text": "Mor"
+ },
+ "15903060": {
+  "en": "Amber",
+  "text": "Kehribar"
+ },
+ "0dad9117": {
+  "en": "Same as day",
+  "text": "Gündüz gibi"
+ },
+ "8581156e": {
+  "en": "Tiles",
+  "text": "Kutucuklar"
+ },
+ "87c7093b": {
+  "en": "Volts",
+  "text": "Volt"
+ },
+ "ff1537fa": {
+  "en": "Percent",
+  "text": "Yüzde"
+ },
+ "3c2dfe59": {
+  "en": "Hidden",
+  "text": "Gizli"
+ },
+ "75afe364": {
+  "en": "All",
+  "text": "Tümü"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "Bahsetmeler"
+ },
+ "f0b87eb8": {
+  "en": "MeshCore regional settings: frequency, BW, SF, CR",
+  "text": "MeshCore bölge ayarları: frekans, BW, SF, CR"
+ },
+ "21ff842c": {
+  "en": "1 kHz steps; must match every node",
+  "text": "1 kHz adım; tüm düğümlerde aynı olmalı"
+ },
+ "7608c344": {
+  "en": "62.5 / 125 / 250 / 500 kHz",
+  "text": "62.5 / 125 / 250 / 500 kHz"
+ },
+ "943a47cb": {
+  "en": "Higher SF: longer range, slower",
+  "text": "Yüksek SF: daha uzak, daha yavaş"
+ },
+ "c52a8c0f": {
+  "en": "Error correction 4/5 to 4/8",
+  "text": "Hata düzeltme 4/5 ... 4/8"
+ },
+ "af53f6b8": {
+  "en": "Radio chip setting, 0-22 dBm",
+  "text": "Radyo çipi ayarı, 0-22 dBm"
+ },
+ "3f328711": {
+  "en": "Relay packets with fewer hops than this",
+  "text": "Bundan az atlamalı paketleri aktar"
+ },
+ "7cd202ed": {
+  "en": "Forward other nodes' MeshCore packets",
+  "text": "Diğer düğümlerin MeshCore paketlerini aktar"
+ },
+ "fa81bada": {
+  "en": "Per hop in our floods; older MeshCore drops 2-3",
+  "text": "Floodlarımızda atlama başına; eski MeshCore 2-3 atar"
+ },
+ "8513a98e": {
+  "en": "Repeaters pass on our floods by it; OK: type",
+  "text": "Röleler buna göre iletir; OK: yaz"
+ },
+ "33a9cb6d": {
+  "en": "Found: ",
+  "text": "Bulunan: "
+ },
+ "2fd16ea7": {
+  "en": "Asks repeaters that hear this device",
+  "text": "Bu cihazı duyan rölelere sorar"
+ },
+ "d284a6e4": {
+  "en": "A restart returns ",
+  "text": "Yeniden başlatınca: "
+ },
+ "51c955b1": {
+  "en": "OK: return to it",
+  "text": "OK: geri dön"
+ },
+ "5261f68a": {
+  "en": "Kept on a change of frequency, BW, SF or CR",
+  "text": "Frekans, BW, SF veya CR değişince saklanır"
+ },
+ "85dde262": {
+  "en": "Applied to the radio when saved",
+  "text": "Kaydedince radyoya uygulanır"
+ },
+ "7c3b11a9": {
+  "en": "OK: set or change password",
+  "text": "OK: parola belirle veya değiştir"
+ },
+ "e754fa0d": {
+  "en": "Day 07:00–20:00, local time",
+  "text": "Gündüz 07:00–20:00, yerel saat"
+ },
+ "34fd54b2": {
+  "en": "OK: edit, 1-24 UTF-8 bytes",
+  "text": "OK: düzenle, 1-24 bayt UTF-8"
+ },
+ "7ecd2a4c": {
+  "en": "Menu language",
+  "text": "Menü dili"
+ },
+ "018eb564": {
+  "en": "Applies to Home and all folders",
+  "text": "Ana ekran ve tüm klasörler için"
+ },
+ "b265628f": {
+  "en": "Tone for messages and ACKs",
+  "text": "Mesaj ve ACK sesi"
+ },
+ "969a0678": {
+  "en": "0 = off, 30-600 s",
+  "text": "0 = kapalı, 30-600 sn"
+ },
+ "ab5a04f6": {
+  "en": "0 = off, 10-600 s",
+  "text": "0 = kapalı, 10-600 sn"
+ },
+ "48707a29": {
+  "en": "Receiver power",
+  "text": "Alıcı beslemesi"
+ },
+ "ed88bd72": {
+  "en": "Local time, 15 minute steps",
+  "text": "Yerel saat, 15 dk adımlarla"
+ },
+ "5d6af097": {
+  "en": "Status bar: charge estimate or measured voltage",
+  "text": "Durum çubuğu: tahmini şarj veya ölçülen gerilim"
+ },
+ "e4f5443f": {
+  "en": "Message senders while locked",
+  "text": "Kilitliyken gönderenler"
+ },
+ "6cf00f88": {
+  "en": "Stored in device memory",
+  "text": "Cihaz belleğinde saklanır"
+ },
+ "1dd4ab8a": {
+  "en": "Listening",
+  "text": "Dinleme"
+ },
+ "2fe2598e": {
+  "en": "pings",
+  "text": "ping"
+ },
+ "9296739d": {
+  "en": "Phone: ",
+  "text": "Telefon: "
+ },
+ "4aba2ce0": {
+  "en": "No position: GPS fix or phone app",
+  "text": "Konum yok: GPS veya telefon"
+ },
+ "53e32296": {
+  "en": "Ping sent, listening for repeaters...",
+  "text": "Ping gönderildi, röleler dinleniyor..."
+ },
+ "140b9a3a": {
+  "en": "No pings yet: P sends one",
+  "text": "Henüz ping yok: P gönderir"
+ },
+ "39b7127d": {
+  "en": "Last ping: ",
+  "text": "Son ping: "
+ },
+ "1983dffb": {
+  "en": "Last ping: no repeater heard it",
+  "text": "Son ping: hiçbir röle duymadı"
+ },
+ "8504bdd5": {
+  "en": "No repeaters heard yet",
+  "text": "Henüz röle duyulmadı"
+ },
+ "6c03392d": {
+  "en": "OK starts listening and pings",
+  "text": "OK dinleme ve ping başlatır"
+ },
+ "0aed7015": {
+  "en": "rx ",
+  "text": "rx "
+ },
+ "04be6123": {
+  "en": " · echo ",
+  "text": " · yankı "
+ },
+ "4b7f7705": {
+  "en": "Stop",
+  "text": "Durdur"
+ },
+ "0ae8097f": {
+  "en": "Start",
+  "text": "Başlat"
+ },
+ "7fb7f0a9": {
+  "en": "Ping",
+  "text": "Ping"
+ },
+ "5f7eec60": {
+  "en": "Wardrive on",
+  "text": "Wardriving açık"
+ },
+ "8ae160ba": {
+  "en": "Wardrive off",
+  "text": "Wardriving kapalı"
+ },
+ "54f6c01a": {
+  "en": "Ping queued",
+  "text": "Ping sırada"
+ },
+ "dfe5ac67": {
+  "en": "No position yet",
+  "text": "Henüz konum yok"
+ },
+ "0cf72110": {
+  "en": "Wait: a ping is under way",
+  "text": "Bekleyin: ping sürüyor"
+ },
+ "46ff9c40": {
+  "en": "choose",
+  "text": "seçim"
+ },
+ "11c2662d": {
+  "en": "select",
+  "text": "seç"
+ },
+ "7261c8af": {
+  "en": "send",
+  "text": "gönder"
+ },
+ "cded1a85": {
+  "en": "exit",
+  "text": "çık"
+ },
+ "61efb279": {
+  "en": "Save changes",
+  "text": "Değişiklikleri kaydet"
+ },
+ "a2c6becb": {
+  "en": "No changes",
+  "text": "Değişiklik yok"
+ },
+ "4d2d5d68": {
+  "en": "Save",
+  "text": "Kaydet"
+ },
+ "c2c76cb1": {
+  "en": "Edit",
+  "text": "Düzenle"
+ },
+ "35afca3b": {
+  "en": "Cancel",
+  "text": "İptal"
+ },
+ "701eaa88": {
+  "en": "Edit name",
+  "text": "Adı düzenle"
+ },
+ "555cbe68": {
+  "en": "Keep",
+  "text": "Tut"
+ },
+ "cc01b1df": {
+  "en": "Return",
+  "text": "Geri al"
+ },
+ "2ffcbe05": {
+  "en": "Test",
+  "text": "Test"
+ },
+ "c646a2c9": {
+  "en": "Search",
+  "text": "Ara"
+ },
+ "0abaed3f": {
+  "en": "Found",
+  "text": "Bulunan"
+ },
+ "d155d06d": {
+  "en": "Type",
+  "text": "Yaz"
+ },
+ "a1de2fdd": {
+  "en": "Change",
+  "text": "Değiştir"
+ },
+ "c3a34509": {
+  "en": "Next value",
+  "text": "Sonraki"
+ },
+ "4d7ef753": {
+  "en": "Wi-Fi access point",
+  "text": "Wi-Fi erişim noktası"
+ },
+ "ba5122e7": {
+  "en": "Web chat and map upload",
+  "text": "Web sohbet ve harita yükleme"
+ },
+ "4dbe556f": {
+  "en": "MeshCore identity",
+  "text": "MeshCore kimliği"
+ },
+ "18ac79a2": {
+  "en": "Networks",
+  "text": "Ağlar"
+ },
+ "6cf1ba25": {
+  "en": "Toggle",
+  "text": "Aç/kapat"
+ },
+ "75a04256": {
+  "en": "Wrong password or refused: ",
+  "text": "Yanlış şifre veya ret: "
+ },
+ "e2dabf28": {
+  "en": "No answer from ",
+  "text": "Yanıt yok: "
+ },
+ "09974b89": {
+  "en": "Connection lost",
+  "text": "Bağlantı koptu"
+ },
+ "c7e915d7": {
+  "en": "Wi-Fi scan failed",
+  "text": "Wi-Fi tarama hatası"
+ },
+ "34dfb5f5": {
+  "en": "Wi-Fi scan timed out",
+  "text": "Wi-Fi tarama süresi doldu"
+ },
+ "71494765": {
+  "en": "SSID 1-32 bytes, password empty or 8-63",
+  "text": "SSID 1-32 bayt, şifre boş veya 8-63"
+ },
+ "db65b4b4": {
+  "en": "Tile is not 256 or 512 px",
+  "text": "Karo 256 veya 512 px değil"
+ },
+ "172eebcb": {
+  "en": "Not a PNG image",
+  "text": "PNG resmi değil"
+ },
+ "e234f405": {
+  "en": "No location",
+  "text": "Konum bulunamadı"
+ },
+ "fd387bbd": {
+  "en": "SD full: web tiles not cached",
+  "text": "SD dolu: web karoları saklanmıyor"
+ },
+ "d8e1dad5": {
+  "en": "Wi-Fi client on",
+  "text": "Wi-Fi istemcisi açık"
+ },
+ "0e9eb651": {
+  "en": "Wi-Fi client off",
+  "text": "Wi-Fi istemcisi kapalı"
+ },
+ "b1374eac": {
+  "en": "Connecting to ",
+  "text": "Bağlanıyor: "
  },
  "5b61220f": {
   "en": "Forgotten: ",
@@ -519,13 +1939,13 @@
   "en": "Radio TX error",
   "text": "Radyo TX hatası"
  },
- "54279dd1": {
-  "en": "No repeat heard",
-  "text": "Tekrar duyulmadı"
- },
  "60e47df0": {
   "en": "On",
   "text": "Açık"
+ },
+ "54279dd1": {
+  "en": "No repeat heard",
+  "text": "Tekrar duyulmadı"
  },
  "1f7c35ca": {
   "en": "hold OK",
@@ -801,1425 +2221,9 @@
   "en": "Add a channel",
   "text": "Kanal ekle"
  },
- "af34335c": {
-  "en": "Internet",
-  "text": "İnternet"
- },
- "0b728291": {
-  "en": "All off",
-  "text": "Tümü kapalı"
- },
- "c0b2703d": {
-  "en": {
-   "one": "new message",
-   "other": "new messages"
-  },
-  "forms": {
-   "one": "{n} yeni mesaj",
-   "other": "{n} yeni mesaj"
-  }
- },
- "8f7412e6": {
-  "en": " of ",
-  "text": " / "
- },
- "4f1014c0": {
-  "en": " nearby",
-  "text": " yakında"
- },
- "84e158a3": {
-  "en": "GPS: searching",
-  "text": "GPS: aranıyor"
- },
- "7f9b88be": {
-  "en": "GPS off",
-  "text": "GPS kapalı"
- },
- "e50e2dad": {
-  "en": {
-   "one": "sat",
-   "other": "sats"
-  },
-  "forms": {
-   "one": "{n} uydu",
-   "other": "{n} uydu"
-  }
- },
- "517f4378": {
-  "en": "Online map",
-  "text": "Çevrimiçi harita"
- },
- "b40c44cd": {
-  "en": "No SD card",
-  "text": "SD kart yok"
- },
- "2c64a5cf": {
-  "en": "No maps yet",
-  "text": "Henüz harita yok"
- },
- "4b896fbb": {
-  "en": "Radar",
-  "text": "Radar"
- },
- "c0de6b7d": {
-  "en": {
-   "one": "point",
-   "other": "points"
-  },
-  "forms": {
-   "one": "{n} nokta",
-   "other": "{n} nokta"
-  }
- },
- "db89a899": {
-  "en": "Connect",
-  "text": "Bağlan"
- },
- "010ffdb6": {
-  "en": "All OK",
-  "text": "Sorun yok"
- },
- "a4bb08e5": {
-  "en": {
-   "one": "fault",
-   "other": "faults"
-  },
-  "forms": {
-   "one": "{n} hata",
-   "other": "{n} hata"
-  }
- },
- "67a31c2c": {
-  "en": "Radio, screen",
-  "text": "Radyo, ekran"
- },
- "1520e768": {
-  "en": " MHz · SF",
-  "text": " MHz · SF"
- },
- "168512be": {
-  "en": "Radio error ",
-  "text": "Radyo hatası "
- },
- "538b10e9": {
-  "en": "Open",
-  "text": "Aç"
- },
- "3750eb16": {
-  "en": "Radio controls",
-  "text": "Radyo denetimleri"
- },
- "832f1cca": {
-  "en": " waiting",
-  "text": " bekliyor"
- },
- "19ede191": {
-  "en": {
-   "one": "app",
-   "other": "apps"
-  },
-  "forms": {
-   "one": "{n} uygulama",
-   "other": "{n} uygulama"
-  }
- },
- "2c6a14ea": {
-  "en": "Folders and order: web page or app",
-  "text": "Klasör ve sıra: web sayfası veya uygulama"
- },
- "6e19da59": {
-  "en": "No apps in this folder",
-  "text": "Klasörde uygulama yok"
- },
- "00c6075a": {
-  "en": "Menu",
-  "text": "Ana menü"
- },
- "3e892b4d": {
-  "en": "Select",
+ "73c66160": {
+  "en": "Choose",
   "text": "Seç"
- },
- "66836516": {
-  "en": "You: ",
-  "text": "Siz: "
- },
- "51e7624c": {
-  "en": "No messages yet",
-  "text": "Henüz mesaj yok"
- },
- "32e97c4a": {
-  "en": "Open MeshCore channel",
-  "text": "Açık MeshCore kanalı"
- },
- "9c9c5d7e": {
-  "en": "Open channel · no messages yet",
-  "text": "Açık kanal · henüz mesaj yok"
- },
- "543bd3e9": {
-  "en": "Private channel · no messages yet",
-  "text": "Özel kanal · henüz mesaj yok"
- },
- "e65fb504": {
-  "en": "Actions",
-  "text": "İşlemler"
- },
- "33a4b02f": {
-  "en": "Next unread",
-  "text": "Okunmamış"
- },
- "4648e8a8": {
-  "en": "Private channel · senders unverified · no ACK",
-  "text": "Özel kanal · gönderen doğrulanmaz · ACK yok"
- },
- "46718231": {
-  "en": "Open channel · senders unverified · no ACK",
-  "text": "Açık kanal · gönderen doğrulanmaz · ACK yok"
- },
- "c4e598ca": {
-  "en": "logged in",
-  "text": "giriş yapıldı"
- },
- "ab1fafa1": {
-  "en": "log in: node card > Server",
-  "text": "giriş: düğüm kartı > Sunucu"
- },
- "91455582": {
-  "en": "Not in contacts",
-  "text": "Kişilerde yok"
- },
- "e99aa76f": {
-  "en": "not confirmed",
-  "text": "onaylanmadı"
- },
- "1a940c2a": {
-  "en": "Type and press OK to send",
-  "text": "Yazıp OK ile gönderin"
- },
- "f574869a": {
-  "en": "Message...",
-  "text": "Mesaj..."
- },
- "f28e14cf": {
-  "en": "Send",
-  "text": "Gönder"
- },
- "68f399b1": {
-  "en": "Clipboard",
-  "text": "Pano"
- },
- "72d06ea7": {
-  "en": "Finding location by IP...",
-  "text": "Konum IP ile bulunuyor..."
- },
- "851e5ac2": {
-  "en": "Needs Wi-Fi internet or an SD card",
-  "text": "Wi-Fi interneti veya SD kart gerekli"
- },
- "77c28af9": {
-  "en": "Connect Wi-Fi or load a map",
-  "text": "Wi-Fi bağlayın veya harita yükleyin"
- },
- "119314d0": {
-  "en": "GPS will take over after a fix",
-  "text": "GPS konum bulunca harita ona geçer"
- },
- "c19b47bb": {
-  "en": "Connections > Internet over Wi-Fi",
-  "text": "Bağlantılar > Wi-Fi ile internet"
- },
- "b59a5b35": {
-  "en": "Downloading map...",
-  "text": "Harita indiriliyor..."
- },
- "e6aae7d4": {
-  "en": "Reading map from SD...",
-  "text": "Harita SD'den okunuyor..."
- },
- "ba994464": {
-  "en": "Tiles unavailable",
-  "text": "Karolar kullanılamıyor"
- },
- "66643a4a": {
-  "en": "This zoom is not downloaded",
-  "text": "Bu ölçek indirilmemiş"
- },
- "29cc0d19": {
-  "en": "+/- zoom · Wi-Fi internet loads maps",
-  "text": "+/- ölçek · harita Wi-Fi ile iner"
- },
- "a3b1d86e": {
-  "en": "Offline map",
-  "text": "Çevrimdışı harita"
- },
- "59317dec": {
-  "en": " · loading",
-  "text": " · yükleniyor"
- },
- "1d1e1a72": {
-  "en": "GPS: old date",
-  "text": "GPS: eski tarih"
- },
- "b45aef8c": {
-  "en": "Pan",
-  "text": "Kaydır"
- },
- "62399752": {
-  "en": "Zoom",
-  "text": "Ölçek"
- },
- "9fa2c938": {
-  "en": "Following",
-  "text": "Takipte"
- },
- "3f654d20": {
-  "en": "To GPS",
-  "text": "GPS'e"
- },
- "04dfc93c": {
-  "en": "No saved maps",
-  "text": "Kayıtlı harita yok"
- },
- "dcf1e39a": {
-  "en": "Upload a map via Wi-Fi or USB",
-  "text": "Wi-Fi veya USB ile harita yükleyin"
- },
- "7c620193": {
-  "en": {
-   "one": "tile on SD",
-   "other": "tiles on SD"
-  },
-  "forms": {
-   "one": "SD'de {n} karo",
-   "other": "SD'de {n} karo"
-  }
- },
- "bd794432": {
-  "en": "No matching contacts",
-  "text": "Eşleşen kişi yok"
- },
- "4e5a0349": {
-  "en": "No nodes discovered yet",
-  "text": "Henüz düğüm bulunmadı"
- },
- "8a8a895b": {
-  "en": "F: edit tag filter",
-  "text": "F: filtreyi düzenle"
- },
- "2ad4b008": {
-  "en": "Advertise my node",
-  "text": "Düğümümü duyur"
- },
- "e2339f44": {
-  "en": "saved",
-  "text": "kayıtlı"
- },
- "0ec24245": {
-  "en": "Details",
-  "text": "Ayrıntı"
- },
- "f4a9c097": {
-  "en": "Filter",
-  "text": "Filtre"
- },
- "c2954bc2": {
-  "en": "Back",
-  "text": "Geri"
- },
- "c416a424": {
-  "en": "Node was removed",
-  "text": "Düğüm silindi"
- },
- "81ef07a9": {
-  "en": "Last heard",
-  "text": "Son duyulma"
- },
- "4f0a0e98": {
-  "en": " ago",
-  "text": " önce"
- },
- "1ae89b50": {
-  "en": "not since boot",
-  "text": "açılıştan beri yok"
- },
- "2fce4529": {
-  "en": "Signal",
-  "text": "Sinyal"
- },
- "d7d630be": {
-  "en": "Route",
-  "text": "Rota"
- },
- "cd08221c": {
-  "en": " · flood",
-  "text": " · flood"
- },
- "e27f342a": {
-  "en": "Position",
-  "text": "Konum"
- },
- "a3ad51f3": {
-  "en": "not shared",
-  "text": "paylaşılmadı"
- },
- "b8297e9a": {
-  "en": "Room",
-  "text": "Oda"
- },
- "ae0ed984": {
-  "en": "Message",
-  "text": "Mesaj yaz"
- },
- "8f635566": {
-  "en": "On map",
-  "text": "Haritada"
- },
- "db5485e7": {
-  "en": "Reset path",
-  "text": "Yolu sıfırla"
- },
- "2d44294d": {
-  "en": "Sure?",
-  "text": "Silinsin mi?"
- },
- "6e3fab8c": {
-  "en": "Forget",
-  "text": "Unut"
- },
- "6d7302f2": {
-  "en": "Server",
-  "text": "Sunucu"
- },
- "26f8e74e": {
-  "en": "Trace",
-  "text": "İz"
- },
- "0a77a91f": {
-  "en": "Action",
-  "text": "İşlem"
- },
- "8d57e66a": {
-  "en": "Run",
-  "text": "Uygula"
- },
- "0ff01b6a": {
-  "en": "Notes",
-  "text": "Notlar"
- },
- "d112e127": {
-  "en": "hold flat",
-  "text": "düz tutun"
- },
- "1a45dda5": {
-  "en": "not calibrated",
-  "text": "kalibre edilmedi"
- },
- "ab3a8a0a": {
-  "en": "off",
-  "text": "kapalı"
- },
- "b2e48278": {
-  "en": "fix",
-  "text": "konum var"
- },
- "620f3cc6": {
-  "en": "old date",
-  "text": "eski tarih"
- },
- "67ce0277": {
-  "en": "searching",
-  "text": "aranıyor"
- },
- "f5e7befb": {
-  "en": "Satellites",
-  "text": "Uydular"
- },
- "a2009955": {
-  "en": " in view",
-  "text": " görünür"
- },
- "6d7e4165": {
-  "en": "Latitude",
-  "text": "Enlem"
- },
- "671964ee": {
-  "en": "Longitude",
-  "text": "Boylam"
- },
- "bb5f80fd": {
-  "en": "Clock",
-  "text": "Saat"
- },
- "ffa35e26": {
-  "en": "not set",
-  "text": "ayarlanmadı"
- },
- "219101e3": {
-  "en": "manual",
-  "text": "elle"
- },
- "d2cdcecb": {
-  "en": " · trusted",
-  "text": " · güvenilir"
- },
- "bb77a2cf": {
-  "en": "Compass",
-  "text": "Pusula"
- },
- "37b8f592": {
-  "en": "calibrated",
-  "text": "kalibre edildi"
- },
- "75c3ffb2": {
-  "en": "needs calibration",
-  "text": "kalibrasyon gerekli"
- },
- "1db880db": {
-  "en": {
-   "one": "sample",
-   "other": "samples"
-  },
-  "forms": {
-   "one": "{n} örnek",
-   "other": "{n} örnek"
-  }
- },
- "ff05911b": {
-  "en": "Share position",
-  "text": "Konumu paylaş"
- },
- "7629db5a": {
-  "en": "Finish calibration",
-  "text": "Kalibrasyonu bitir"
- },
- "6f59150a": {
-  "en": "Calibrate compass",
-  "text": "Pusulayı kalibre et"
- },
- "e125a9a1": {
-  "en": "Advert with GPS",
-  "text": "GPS'li duyuru"
- },
- "10b78d8a": {
-  "en": "Needs a fresh GPS fix",
-  "text": "Güncel GPS konumu gerekli"
- },
- "a603b11c": {
-  "en": "Rotate in all directions",
-  "text": "Cihazı her yöne döndürün"
- },
- "7f8e9f6b": {
-  "en": "Rotate for 20+ seconds",
-  "text": "20+ saniye döndürün"
- },
- "45465004": {
-  "en": "GPS on",
-  "text": "GPS aç"
- },
- "4930944f": {
-  "en": "Phone",
-  "text": "Telefon"
- },
- "ec266ec8": {
-  "en": "Watch",
-  "text": "Saat"
- },
- "89a2ef46": {
-  "en": "Headphones",
-  "text": "Kulaklık"
- },
- "fae1ce6b": {
-  "en": "Phone/watch",
-  "text": "Telefon/saat"
- },
- "7e3d4120": {
-  "en": "BLE device",
-  "text": "BLE cihazı"
- },
- "9e13a743": {
-  "en": "Hidden network",
-  "text": "Gizli ağ"
- },
- "90cbadfa": {
-  "en": "Bluetooth busy: probe",
-  "text": "Bluetooth meşgul: test"
- },
- "e5e4ab77": {
-  "en": "Bluetooth error",
-  "text": "Bluetooth hatası"
- },
- "983f66dc": {
-  "en": "Wi-Fi busy: access point",
-  "text": "Wi-Fi meşgul: erişim noktası"
- },
- "35c403f6": {
-  "en": "Wi-Fi busy: probe",
-  "text": "Wi-Fi meşgul: test"
- },
- "1be7979b": {
-  "en": "Wi-Fi error",
-  "text": "Wi-Fi hatası"
- },
- "89414ad6": {
-  "en": "Scanning Wi-Fi...",
-  "text": "Wi-Fi taranıyor..."
- },
- "542d8f50": {
-  "en": "closer to centre = stronger",
-  "text": "merkeze yakın = daha güçlü"
- },
- "fde56fad": {
-  "en": "List paused",
-  "text": "Liste duraklatıldı"
- },
- "503d6eed": {
-  "en": {
-   "one": "phone/watch nearby",
-   "other": "phones/watches nearby"
-  },
-  "forms": {
-   "one": "{n} telefon/saat yakında",
-   "other": "{n} telefon/saat yakında"
-  }
- },
- "49031ccd": {
-  "en": "No signals yet",
-  "text": "Henüz sinyal yok"
- },
- "8d2937a1": {
-  "en": "List",
-  "text": "Liste"
- },
- "454d1d8a": {
-  "en": "Resume",
-  "text": "Sürdür"
- },
- "44f9bf2d": {
-  "en": "Pause",
-  "text": "Duraklat"
- },
- "3368e695": {
-  "en": "Home in",
-  "text": "Yön bul"
- },
- "aad07647": {
-  "en": "Motion",
-  "text": "Hareket"
- },
- "84397af6": {
-  "en": " · direct packets only",
-  "text": " · yalnızca doğrudan paketler"
- },
- "b8a018ba": {
-  "en": " · address changes over time",
-  "text": " · adres zamanla değişir"
- },
- "a8e7e5cc": {
-  "en": "channel ",
-  "text": "kanal "
- },
- "64db285b": {
-  "en": "Lost",
-  "text": "Kayıp"
- },
- "46102346": {
-  "en": "No signal",
-  "text": "Sinyal yok"
- },
- "3b06b3cd": {
-  "en": "Stronger",
-  "text": "Isınıyor"
- },
- "4dd880a2": {
-  "en": "Weaker",
-  "text": "Soğuyor"
- },
- "cd945433": {
-  "en": "Steady",
-  "text": "Sabit"
- },
- "184745be": {
-  "en": "keep moving",
-  "text": "hareket edin"
- },
- "78c14fb6": {
-  "en": "peak ",
-  "text": "tepe "
- },
- "b991041c": {
-  "en": "Waiting for samples",
-  "text": "Örnekler bekleniyor"
- },
- "0ec969ac": {
-  "en": " adverts/s",
-  "text": " yayın/sn"
- },
- "93382782": {
-  "en": " beacons/s",
-  "text": " işaret/sn"
- },
- "cde081d3": {
-  "en": {
-   "one": "packet",
-   "other": "packets"
-  },
-  "forms": {
-   "one": "{n} paket",
-   "other": "{n} paket"
-  }
- },
- "42cfcb2d": {
-  "en": " s ago",
-  "text": " sn önce"
- },
- "3f609f74": {
-  "en": "Mute",
-  "text": "Sessiz"
- },
- "b3ca9a34": {
-  "en": "Sound",
-  "text": "Ses"
- },
- "68f7fd73": {
-  "en": "Reset peak",
-  "text": "Tepeyi sıfırla"
- },
- "394ec4f2": {
-  "en": "Turn the access point off",
-  "text": "Erişim noktasını kapatın"
- },
- "fccfe8a5": {
-  "en": "Beacon for another board",
-  "text": "Diğer kart için verici"
- },
- "bfacb4d0": {
-  "en": " frames/s on channel 1",
-  "text": " kare/sn, kanal 1"
- },
- "6d3d79bb": {
-  "en": "beacon ",
-  "text": "verici "
- },
- "d7972182": {
-  "en": " frames/s · ",
-  "text": " kare/sn · "
- },
- "b85b81cf": {
-  "en": "waiting: set the other board to CSI beacon",
-  "text": "bekleniyor: diğer kartta CSI verici açın"
- },
- "1d0cdb24": {
-  "en": "NO WI-FI",
-  "text": "WI-FI YOK"
- },
- "e9a87b56": {
-  "en": "BEACON ON",
-  "text": "VERİCİ AÇIK"
- },
- "564cdaca": {
-  "en": "NO BEACON",
-  "text": "VERİCİ YOK"
- },
- "9a1796e8": {
-  "en": "CSI FROZEN",
-  "text": "CSI DONDU"
- },
- "dd26ae1f": {
-  "en": "CALIBRATING ",
-  "text": "KALİBRASYON "
- },
- "5ec52fe4": {
-  "en": " s",
-  "text": " sn"
- },
- "4d851fe7": {
-  "en": "MOTION",
-  "text": "HAREKET"
- },
- "6fce5d71": {
-  "en": "STILL",
-  "text": "SAKİN"
- },
- "13d6d724": {
-  "en": "activity ",
-  "text": "aktivite "
- },
- "1e3add08": {
-  "en": "threshold ",
-  "text": "eşik "
- },
- "dda163c5": {
-  "en": " (default)",
-  "text": " (varsayılan)"
- },
- "19deef04": {
-  "en": "Walk between the boards to see the trace",
-  "text": "İz için kartlar arasında yürüyün"
- },
- "faa0c1ab": {
-  "en": "Calibrate with the area empty and still (10 s)",
-  "text": "Kalibrasyon: alan boş ve hareketsiz olsun (10 sn)"
- },
- "4204187c": {
-  "en": "Place the boards 2-5 m apart; motion between them is sensed",
-  "text": "Kartları 2-5 m arayla koyun; aradaki hareket algılanır"
- },
- "9bb72cae": {
-  "en": "Signals",
-  "text": "Sinyaller"
- },
- "6fb7daa2": {
-  "en": "Calibrate",
-  "text": "Kalibre et"
- },
- "4d580639": {
-  "en": "Beacon",
-  "text": "Verici"
- },
- "5427923a": {
-  "en": "To turn on, hold the trackball pressed",
-  "text": "Açmak için trackball'u basılı tutun"
- },
- "b1e20664": {
-  "en": "To turn on: RESET or the power switch",
-  "text": "Açmak için: RESET veya güç anahtarı"
- },
- "cba7fbe8": {
-  "en": "Device is off",
-  "text": "Cihaz kapalı"
- },
- "2697628b": {
-  "en": "Turning off...",
-  "text": "Kapanıyor..."
- },
- "b639f585": {
-  "en": "GPS & compass",
-  "text": "GPS ve pusula"
- },
- "dde0a6be": {
-  "en": "Keys & help",
-  "text": "Tuşlar ve ipuçları"
- },
- "cd03e04b": {
-  "en": "Turn off",
-  "text": "Kapat"
- },
- "a21b5cde": {
-  "en": "Brightness ",
-  "text": "Parlaklık "
- },
- "e1b4bdaa": {
-  "en": "compass calibrated",
-  "text": "pusula kalibre edildi"
- },
- "e8f719bd": {
-  "en": "compass not calibrated",
-  "text": "pusula kalibre edilmedi"
- },
- "7316bebd": {
-  "en": " relayed",
-  "text": " aktarıldı"
- },
- "4f18c10c": {
-  "en": "What every key does",
-  "text": "Her tuşun görevi"
- },
- "7e8a19d5": {
-  "en": "Searching: ",
-  "text": "Aranıyor: "
- },
- "9a555563": {
-  "en": {
-   "one": "repeater",
-   "other": "repeaters"
-  },
-  "forms": {
-   "one": "{n} röle",
-   "other": "{n} röle"
-  }
- },
- "99f30427": {
-  "en": "OK: start",
-  "text": "OK: başlat"
- },
- "1a8c15c3": {
-  "en": {
-   "one": "region",
-   "other": "regions"
-  },
-  "forms": {
-   "one": "{n} bölge",
-   "other": "{n} bölge"
-  }
- },
- "9fca3c9e": {
-  "en": "Listening ",
-  "text": "Dinleniyor "
- },
- "a3980ce8": {
-  "en": "Nothing new",
-  "text": "Yeni yok"
- },
- "443ffd47": {
-  "en": "OK: test ",
-  "text": "OK: dene "
- },
- "2265ebb1": {
-  "en": "Current profile: ",
-  "text": "Geçerli profil: "
- },
- "34f428b1": {
-  "en": "Try every regional preset",
-  "text": "Tüm bölge ön ayarlarını dene"
- },
- "c91eb13e": {
-  "en": "Preset",
-  "text": "Ön ayar"
- },
- "8d9206a1": {
-  "en": "Frequency",
-  "text": "Frekans"
- },
- "008f5512": {
-  "en": "Bandwidth",
-  "text": "Bant gen."
- },
- "d174bc31": {
-  "en": "Spreading factor",
-  "text": "Yayılma faktörü"
- },
- "3c2364a7": {
-  "en": "Coding rate",
-  "text": "Kodlama oranı"
- },
- "92d39d44": {
-  "en": "TX power",
-  "text": "TX gücü"
- },
- "175749a2": {
-  "en": "Relay hop limit",
-  "text": "Aktarma atlama sınırı"
- },
- "75193707": {
-  "en": "Relay packets",
-  "text": "Paket aktarma"
- },
- "2197c64b": {
-  "en": "Path hash size",
-  "text": "Yol hash boyutu"
- },
- "492e789d": {
-  "en": "Region",
-  "text": "Bölge"
- },
- "b872ed2b": {
-  "en": "Find regions",
-  "text": "Bölge ara"
- },
- "eb38bf4c": {
-  "en": "Find network",
-  "text": "Ağ bul"
- },
- "24646b98": {
-  "en": "Radio test",
-  "text": "Radyo testi"
- },
- "0614ba0b": {
-  "en": "Previous radio",
-  "text": "Önceki radyo"
- },
- "0fe07306": {
-  "en": "Name",
-  "text": "Ad"
- },
- "9a73db9b": {
-  "en": "Language",
-  "text": "Dil"
- },
- "df6e627c": {
-  "en": "Day brightness",
-  "text": "Gündüz parlaklığı"
- },
- "73d459b4": {
-  "en": "Home layout",
-  "text": "Ana ekran düzeni"
- },
- "4ef0ddc5": {
-  "en": "Sounds",
-  "text": "Sesler"
- },
- "300ec32d": {
-  "en": "Auto lock",
-  "text": "Otomatik kilit"
- },
- "1f0bca87": {
-  "en": "Dim screen",
-  "text": "Ekranı karart"
- },
- "37976ee4": {
-  "en": "GPS receiver",
-  "text": "GPS alıcısı"
- },
- "f050c5bc": {
-  "en": "UTC offset",
-  "text": "UTC farkı"
- },
- "caa82244": {
-  "en": "Battery shows",
-  "text": "Pil göstergesi"
- },
- "fecd422a": {
-  "en": "Lock screen",
-  "text": "Kilit ekranı"
- },
- "667ad2f5": {
-  "en": "Wake on message",
-  "text": "Mesajla uyandır"
- },
- "98b6a9f6": {
-  "en": "Message popup",
-  "text": "Mesaj penceresi"
- },
- "4eaf7c92": {
-  "en": "Theme",
-  "text": "Tema"
- },
- "ac7ce48d": {
-  "en": "Accent colour",
-  "text": "Vurgu rengi"
- },
- "548b7cf8": {
-  "en": "Night brightness",
-  "text": "Gece parlaklığı"
- },
- "1c076c32": {
-  "en": "Screen password",
-  "text": "Ekran parolası"
- },
- "9525b78e": {
-  "en": "Custom",
-  "text": "Özel"
- },
- "dc6bfbe0": {
-  "en": " MHz",
-  "text": " MHz"
- },
- "1ffe2452": {
-  "en": " kHz",
-  "text": " kHz"
- },
- "304ff7fb": {
-  "en": "None",
-  "text": "Yok"
- },
- "9023a2b0": {
-  "en": "OK: keep",
-  "text": "OK: tut"
- },
- "49e98b8b": {
-  "en": {
-   "one": "byte",
-   "other": "bytes"
-  },
-  "forms": {
-   "one": "{n} bayt",
-   "other": "{n} bayt"
-  }
- },
- "45570065": {
-  "en": "Dark",
-  "text": "Koyu"
- },
- "8ad2f8cf": {
-  "en": "Light",
-  "text": "Açık"
- },
- "126befb6": {
-  "en": "Auto",
-  "text": "Otomatik"
- },
- "880f97dc": {
-  "en": "Lime",
-  "text": "Limon"
- },
- "e9dd1fed": {
-  "en": "Blue",
-  "text": "Mavi"
- },
- "f03bdf12": {
-  "en": "Violet",
-  "text": "Mor"
- },
- "15903060": {
-  "en": "Amber",
-  "text": "Kehribar"
- },
- "0dad9117": {
-  "en": "Same as day",
-  "text": "Gündüz gibi"
- },
- "8581156e": {
-  "en": "Tiles",
-  "text": "Kutucuklar"
- },
- "87c7093b": {
-  "en": "Volts",
-  "text": "Volt"
- },
- "ff1537fa": {
-  "en": "Percent",
-  "text": "Yüzde"
- },
- "3c2dfe59": {
-  "en": "Hidden",
-  "text": "Gizli"
- },
- "75afe364": {
-  "en": "All",
-  "text": "Tümü"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "Bahsetmeler"
- },
- "f0b87eb8": {
-  "en": "MeshCore regional settings: frequency, BW, SF, CR",
-  "text": "MeshCore bölge ayarları: frekans, BW, SF, CR"
- },
- "21ff842c": {
-  "en": "1 kHz steps; must match every node",
-  "text": "1 kHz adım; tüm düğümlerde aynı olmalı"
- },
- "7608c344": {
-  "en": "62.5 / 125 / 250 / 500 kHz",
-  "text": "62.5 / 125 / 250 / 500 kHz"
- },
- "943a47cb": {
-  "en": "Higher SF: longer range, slower",
-  "text": "Yüksek SF: daha uzak, daha yavaş"
- },
- "c52a8c0f": {
-  "en": "Error correction 4/5 to 4/8",
-  "text": "Hata düzeltme 4/5 ... 4/8"
- },
- "af53f6b8": {
-  "en": "Radio chip setting, 0-22 dBm",
-  "text": "Radyo çipi ayarı, 0-22 dBm"
- },
- "3f328711": {
-  "en": "Relay packets with fewer hops than this",
-  "text": "Bundan az atlamalı paketleri aktar"
- },
- "7cd202ed": {
-  "en": "Forward other nodes' MeshCore packets",
-  "text": "Diğer düğümlerin MeshCore paketlerini aktar"
- },
- "fa81bada": {
-  "en": "Per hop in our floods; older MeshCore drops 2-3",
-  "text": "Floodlarımızda atlama başına; eski MeshCore 2-3 atar"
- },
- "8513a98e": {
-  "en": "Repeaters pass on our floods by it; OK: type",
-  "text": "Röleler buna göre iletir; OK: yaz"
- },
- "33a9cb6d": {
-  "en": "Found: ",
-  "text": "Bulunan: "
- },
- "2fd16ea7": {
-  "en": "Asks repeaters that hear this device",
-  "text": "Bu cihazı duyan rölelere sorar"
- },
- "d284a6e4": {
-  "en": "A restart returns ",
-  "text": "Yeniden başlatınca: "
- },
- "51c955b1": {
-  "en": "OK: return to it",
-  "text": "OK: geri dön"
- },
- "5261f68a": {
-  "en": "Kept on a change of frequency, BW, SF or CR",
-  "text": "Frekans, BW, SF veya CR değişince saklanır"
- },
- "85dde262": {
-  "en": "Applied to the radio when saved",
-  "text": "Kaydedince radyoya uygulanır"
- },
- "7c3b11a9": {
-  "en": "OK: set or change password",
-  "text": "OK: parola belirle veya değiştir"
- },
- "e754fa0d": {
-  "en": "Day 07:00–20:00, local time",
-  "text": "Gündüz 07:00–20:00, yerel saat"
- },
- "34fd54b2": {
-  "en": "OK: edit, 1-24 UTF-8 bytes",
-  "text": "OK: düzenle, 1-24 bayt UTF-8"
- },
- "7ecd2a4c": {
-  "en": "Menu language",
-  "text": "Menü dili"
- },
- "018eb564": {
-  "en": "Applies to Home and all folders",
-  "text": "Ana ekran ve tüm klasörler için"
- },
- "b265628f": {
-  "en": "Tone for messages and ACKs",
-  "text": "Mesaj ve ACK sesi"
- },
- "969a0678": {
-  "en": "0 = off, 30-600 s",
-  "text": "0 = kapalı, 30-600 sn"
- },
- "ab5a04f6": {
-  "en": "0 = off, 10-600 s",
-  "text": "0 = kapalı, 10-600 sn"
- },
- "48707a29": {
-  "en": "Receiver power",
-  "text": "Alıcı beslemesi"
- },
- "ed88bd72": {
-  "en": "Local time, 15 minute steps",
-  "text": "Yerel saat, 15 dk adımlarla"
- },
- "5d6af097": {
-  "en": "Status bar: charge estimate or measured voltage",
-  "text": "Durum çubuğu: tahmini şarj veya ölçülen gerilim"
- },
- "e4f5443f": {
-  "en": "Message senders while locked",
-  "text": "Kilitliyken gönderenler"
- },
- "6cf00f88": {
-  "en": "Stored in device memory",
-  "text": "Cihaz belleğinde saklanır"
- },
- "1dd4ab8a": {
-  "en": "Listening",
-  "text": "Dinleme"
- },
- "2fe2598e": {
-  "en": "pings",
-  "text": "ping"
- },
- "9296739d": {
-  "en": "Phone: ",
-  "text": "Telefon: "
- },
- "4aba2ce0": {
-  "en": "No position: GPS fix or phone app",
-  "text": "Konum yok: GPS veya telefon"
- },
- "53e32296": {
-  "en": "Ping sent, listening for repeaters...",
-  "text": "Ping gönderildi, röleler dinleniyor..."
- },
- "140b9a3a": {
-  "en": "No pings yet: P sends one",
-  "text": "Henüz ping yok: P gönderir"
- },
- "39b7127d": {
-  "en": "Last ping: ",
-  "text": "Son ping: "
- },
- "1983dffb": {
-  "en": "Last ping: no repeater heard it",
-  "text": "Son ping: hiçbir röle duymadı"
- },
- "8504bdd5": {
-  "en": "No repeaters heard yet",
-  "text": "Henüz röle duyulmadı"
- },
- "6c03392d": {
-  "en": "OK starts listening and pings",
-  "text": "OK dinleme ve ping başlatır"
- },
- "0aed7015": {
-  "en": "rx ",
-  "text": "rx "
- },
- "04be6123": {
-  "en": " · echo ",
-  "text": " · yankı "
- },
- "4b7f7705": {
-  "en": "Stop",
-  "text": "Durdur"
- },
- "0ae8097f": {
-  "en": "Start",
-  "text": "Başlat"
- },
- "7fb7f0a9": {
-  "en": "Ping",
-  "text": "Ping"
- },
- "5f7eec60": {
-  "en": "Wardrive on",
-  "text": "Wardriving açık"
- },
- "8ae160ba": {
-  "en": "Wardrive off",
-  "text": "Wardriving kapalı"
- },
- "54f6c01a": {
-  "en": "Ping queued",
-  "text": "Ping sırada"
- },
- "dfe5ac67": {
-  "en": "No position yet",
-  "text": "Henüz konum yok"
- },
- "0cf72110": {
-  "en": "Wait: a ping is under way",
-  "text": "Bekleyin: ping sürüyor"
- },
- "46ff9c40": {
-  "en": "choose",
-  "text": "seçim"
- },
- "11c2662d": {
-  "en": "select",
-  "text": "seç"
- },
- "7261c8af": {
-  "en": "send",
-  "text": "gönder"
- },
- "cded1a85": {
-  "en": "exit",
-  "text": "çık"
- },
- "61efb279": {
-  "en": "Save changes",
-  "text": "Değişiklikleri kaydet"
- },
- "a2c6becb": {
-  "en": "No changes",
-  "text": "Değişiklik yok"
- },
- "4d2d5d68": {
-  "en": "Save",
-  "text": "Kaydet"
- },
- "c2c76cb1": {
-  "en": "Edit",
-  "text": "Düzenle"
- },
- "35afca3b": {
-  "en": "Cancel",
-  "text": "İptal"
- },
- "701eaa88": {
-  "en": "Edit name",
-  "text": "Adı düzenle"
- },
- "555cbe68": {
-  "en": "Keep",
-  "text": "Tut"
- },
- "cc01b1df": {
-  "en": "Return",
-  "text": "Geri al"
- },
- "2ffcbe05": {
-  "en": "Test",
-  "text": "Test"
- },
- "c646a2c9": {
-  "en": "Search",
-  "text": "Ara"
- },
- "0abaed3f": {
-  "en": "Found",
-  "text": "Bulunan"
- },
- "d155d06d": {
-  "en": "Type",
-  "text": "Yaz"
- },
- "a1de2fdd": {
-  "en": "Change",
-  "text": "Değiştir"
- },
- "c3a34509": {
-  "en": "Next value",
-  "text": "Sonraki"
- },
- "4d7ef753": {
-  "en": "Wi-Fi access point",
-  "text": "Wi-Fi erişim noktası"
- },
- "ba5122e7": {
-  "en": "Web chat and map upload",
-  "text": "Web sohbet ve harita yükleme"
- },
- "4dbe556f": {
-  "en": "MeshCore identity",
-  "text": "MeshCore kimliği"
- },
- "18ac79a2": {
-  "en": "Networks",
-  "text": "Ağlar"
- },
- "6cf1ba25": {
-  "en": "Toggle",
-  "text": "Aç/kapat"
- },
- "75a04256": {
-  "en": "Wrong password or refused: ",
-  "text": "Yanlış şifre veya ret: "
- },
- "e2dabf28": {
-  "en": "No answer from ",
-  "text": "Yanıt yok: "
- },
- "09974b89": {
-  "en": "Connection lost",
-  "text": "Bağlantı koptu"
- },
- "c7e915d7": {
-  "en": "Wi-Fi scan failed",
-  "text": "Wi-Fi tarama hatası"
- },
- "34dfb5f5": {
-  "en": "Wi-Fi scan timed out",
-  "text": "Wi-Fi tarama süresi doldu"
- },
- "71494765": {
-  "en": "SSID 1-32 bytes, password empty or 8-63",
-  "text": "SSID 1-32 bayt, şifre boş veya 8-63"
- },
- "db65b4b4": {
-  "en": "Tile is not 256 or 512 px",
-  "text": "Karo 256 veya 512 px değil"
- },
- "172eebcb": {
-  "en": "Not a PNG image",
-  "text": "PNG resmi değil"
- },
- "e234f405": {
-  "en": "No location",
-  "text": "Konum bulunamadı"
- },
- "fd387bbd": {
-  "en": "SD full: web tiles not cached",
-  "text": "SD dolu: web karoları saklanmıyor"
- },
- "d8e1dad5": {
-  "en": "Wi-Fi client on",
-  "text": "Wi-Fi istemcisi açık"
- },
- "0e9eb651": {
-  "en": "Wi-Fi client off",
-  "text": "Wi-Fi istemcisi kapalı"
- },
- "b1374eac": {
-  "en": "Connecting to ",
-  "text": "Bağlanıyor: "
  },
  "1716578a": {
   "en": "Channel details",
@@ -2244,154 +2248,6 @@
  "f51b5247": {
   "en": "Show on map",
   "text": "Haritada göster"
- },
- "73c66160": {
-  "en": "Choose",
-  "text": "Seç"
- },
- "22d86644": {
-  "en": "Default: ",
-  "text": "Varsayılan: "
- },
- "7bb181d6": {
-  "en": "Default: none",
-  "text": "Varsayılan: yok"
- },
- "b75c3188": {
-  "en": "Channel removed",
-  "text": "Kanal silindi"
- },
- "f476e036": {
-  "en": "Channel added",
-  "text": "Kanal eklendi"
- },
- "1a11ab03": {
-  "en": "Hash ",
-  "text": "Hash "
- },
- "172ac002": {
-  "en": "Key:",
-  "text": "Anahtar:"
- },
- "d92dbe47": {
-  "en": "Every MeshCore node has it",
-  "text": "Her MeshCore düğümünde var"
- },
- "fac028c3": {
-  "en": "Scan with MeshMesh or the MeshCore app",
-  "text": "MeshMesh veya MeshCore uygulamasıyla tarayın"
- },
- "023fb5d9": {
-  "en": "Already in this channel",
-  "text": "Zaten bu kanaldasınız"
- },
- "2b8b882d": {
-  "en": "Sound on new messages",
-  "text": "Yeni mesaj sesi"
- },
- "edaf9d4d": {
-  "en": "Region · OK: save",
-  "text": "Bölge · OK: kaydet"
- },
- "59997b30": {
-  "en": "Invite",
-  "text": "Davet et"
- },
- "542f08f5": {
-  "en": "8 channels at most",
-  "text": "En fazla 8 kanal"
- },
- "afa5c9cd": {
-  "en": "No chat contacts",
-  "text": "Sohbet kişisi yok"
- },
- "be00fde1": {
-  "en": "Sure? OK again",
-  "text": "Emin misiniz? OK"
- },
- "86b1d2eb": {
-  "en": "Leave channel",
-  "text": "Kanaldan çık"
- },
- "73ac94c3": {
-  "en": "Contact",
-  "text": "Kişi"
- },
- "a30a5085": {
-  "en": "Sound on",
-  "text": "Ses açık"
- },
- "bc5128a1": {
-  "en": "Sound off",
-  "text": "Ses kapalı"
- },
- "7f264f8d": {
-  "en": "Name: 1-31 bytes",
-  "text": "Ad: 1-31 bayt"
- },
- "8bf3cae2": {
-  "en": "Region saved",
-  "text": "Bölge kaydedildi"
- },
- "78fdcc66": {
-  "en": "Key: 32 hex or base64",
-  "text": "Anahtar: 32 hex veya base64"
- },
- "6c129c2a": {
-  "en": "Discover a chat contact first: ADV",
-  "text": "Önce bir sohbet kişisi bulun: ADV"
- },
- "a3ed15d0": {
-  "en": "Invitation queued to ",
-  "text": "Davet kuyrukta: "
- },
- "4c8675ff": {
-  "en": "Invitation not sent",
-  "text": "Davet gönderilmedi"
- },
- "203aefe9": {
-  "en": "History stays; joining again shows it",
-  "text": "Geçmiş kalır; yeniden katılınca görünür"
- },
- "41ae3d10": {
-  "en": "Left ",
-  "text": "Çıkıldı: "
- },
- "c4227caa": {
-  "en": "Cannot leave while sending",
-  "text": "Gönderim sırasında çıkılamaz"
- },
- "f3f514aa": {
-  "en": "Not a channel link",
-  "text": "Kanal bağlantısı değil"
- },
- "62722f4e": {
-  "en": "Not in this mode",
-  "text": "Bu modda kullanılamaz"
- },
- "1c9c7d52": {
-  "en": "Channel not saved",
-  "text": "Kanal kaydedilmedi"
- },
- "30025399": {
-  "en": "Join",
-  "text": "Katıl"
- },
- "c4749f82": {
-  "en": "Open channel",
-  "text": "Kanala git"
- },
- "5eb421e1": {
-  "en": "Channel invitation: ",
-  "text": "Kanal daveti: "
- },
- "25d966fa": {
-  "en": "you are in it",
-  "text": "üyesiniz"
- },
- "f42b49b2": {
-  "en": "<- join",
-  "text": "<- katıl"
  },
  "e3abda16": {
   "en": "Join by hashtag",
@@ -2429,6 +2285,10 @@
   "en": "Unknown channel ",
   "text": "Bilinmeyen kanal "
  },
+ "b743d77a": {
+  "en": "Public channel of MeshCore",
+  "text": "MeshCore genel kanalı"
+ },
  "63703628": {
   "en": " · OK: try a #name",
   "text": " · OK: #ad deneyin"
@@ -2437,6 +2297,10 @@
   "en": "Full: 8 channels, Public included",
   "text": "Dolu: Public dahil 8 kanal"
  },
+ "8e4165b7": {
+  "en": "Private channel",
+  "text": "Özel kanal"
+ },
  "5fc765a7": {
   "en": "Other channels heard: none",
   "text": "Başka kanal duyulmadı"
@@ -2444,6 +2308,10 @@
  "4cda3fd3": {
   "en": "Channels heard on air will appear here",
   "text": "Havada duyulan kanallar burada görünür"
+ },
+ "1f5d2384": {
+  "en": "Hashtag channel",
+  "text": "Hashtag kanalı"
  },
  "0700b8a7": {
   "en": "Channel name",
@@ -2461,10 +2329,6 @@
   "en": "32 hex digits or base64 (16 bytes)",
   "text": "32 hex rakam veya base64 (16 bayt)"
  },
- "74d4cc9d": {
-  "en": "Same #name, same channel as in MeshCore apps",
-  "text": "Aynı #ad, MeshCore uygulamalarındaki aynı kanal"
- },
  "d3bcc1f1": {
   "en": {
    "one": "message",
@@ -2475,17 +2339,13 @@
    "other": "{n} mesaj"
   }
  },
- "b743d77a": {
-  "en": "Public channel of MeshCore",
-  "text": "MeshCore genel kanalı"
+ "74d4cc9d": {
+  "en": "Same #name, same channel as in MeshCore apps",
+  "text": "Aynı #ad, MeshCore uygulamalarındaki aynı kanal"
  },
- "8e4165b7": {
-  "en": "Private channel",
-  "text": "Özel kanal"
- },
- "1f5d2384": {
-  "en": "Hashtag channel",
-  "text": "Hashtag kanalı"
+ "f476e036": {
+  "en": "Channel added",
+  "text": "Kanal eklendi"
  },
  "12a760c5": {
   "en": "The key is made on this device",
@@ -2506,6 +2366,154 @@
  "087a6114": {
   "en": "OK: join   BACK: cancel",
   "text": "OK: katıl   BACK: iptal"
+ },
+ "023fb5d9": {
+  "en": "Already in this channel",
+  "text": "Zaten bu kanaldasınız"
+ },
+ "542f08f5": {
+  "en": "8 channels at most",
+  "text": "En fazla 8 kanal"
+ },
+ "7f264f8d": {
+  "en": "Name: 1-31 bytes",
+  "text": "Ad: 1-31 bayt"
+ },
+ "78fdcc66": {
+  "en": "Key: 32 hex or base64",
+  "text": "Anahtar: 32 hex veya base64"
+ },
+ "f3f514aa": {
+  "en": "Not a channel link",
+  "text": "Kanal bağlantısı değil"
+ },
+ "62722f4e": {
+  "en": "Not in this mode",
+  "text": "Bu modda kullanılamaz"
+ },
+ "22d86644": {
+  "en": "Default: ",
+  "text": "Varsayılan: "
+ },
+ "7bb181d6": {
+  "en": "Default: none",
+  "text": "Varsayılan: yok"
+ },
+ "b75c3188": {
+  "en": "Channel removed",
+  "text": "Kanal silindi"
+ },
+ "1c9c7d52": {
+  "en": "Channel not saved",
+  "text": "Kanal kaydedilmedi"
+ },
+ "1a11ab03": {
+  "en": "Hash ",
+  "text": "Hash "
+ },
+ "172ac002": {
+  "en": "Key:",
+  "text": "Anahtar:"
+ },
+ "d92dbe47": {
+  "en": "Every MeshCore node has it",
+  "text": "Her MeshCore düğümünde var"
+ },
+ "fac028c3": {
+  "en": "Scan with MeshMesh or the MeshCore app",
+  "text": "MeshMesh veya MeshCore uygulamasıyla tarayın"
+ },
+ "2b8b882d": {
+  "en": "Sound on new messages",
+  "text": "Yeni mesaj sesi"
+ },
+ "edaf9d4d": {
+  "en": "Region · OK: save",
+  "text": "Bölge · OK: kaydet"
+ },
+ "59997b30": {
+  "en": "Invite",
+  "text": "Davet et"
+ },
+ "afa5c9cd": {
+  "en": "No chat contacts",
+  "text": "Sohbet kişisi yok"
+ },
+ "be00fde1": {
+  "en": "Sure? OK again",
+  "text": "Emin misiniz? OK"
+ },
+ "86b1d2eb": {
+  "en": "Leave channel",
+  "text": "Kanaldan çık"
+ },
+ "73ac94c3": {
+  "en": "Contact",
+  "text": "Kişi"
+ },
+ "a30a5085": {
+  "en": "Sound on",
+  "text": "Ses açık"
+ },
+ "bc5128a1": {
+  "en": "Sound off",
+  "text": "Ses kapalı"
+ },
+ "8bf3cae2": {
+  "en": "Region saved",
+  "text": "Bölge kaydedildi"
+ },
+ "6c129c2a": {
+  "en": "Discover a chat contact first: ADV",
+  "text": "Önce bir sohbet kişisi bulun: ADV"
+ },
+ "a3ed15d0": {
+  "en": "Invitation queued to ",
+  "text": "Davet kuyrukta: "
+ },
+ "4c8675ff": {
+  "en": "Invitation not sent",
+  "text": "Davet gönderilmedi"
+ },
+ "203aefe9": {
+  "en": "History stays; joining again shows it",
+  "text": "Geçmiş kalır; yeniden katılınca görünür"
+ },
+ "41ae3d10": {
+  "en": "Left ",
+  "text": "Çıkıldı: "
+ },
+ "c4227caa": {
+  "en": "Cannot leave while sending",
+  "text": "Gönderim sırasında çıkılamaz"
+ },
+ "30025399": {
+  "en": "Join",
+  "text": "Katıl"
+ },
+ "c4749f82": {
+  "en": "Open channel",
+  "text": "Kanala git"
+ },
+ "5eb421e1": {
+  "en": "Channel invitation: ",
+  "text": "Kanal daveti: "
+ },
+ "25d966fa": {
+  "en": "you are in it",
+  "text": "üyesiniz"
+ },
+ "f42b49b2": {
+  "en": "<- join",
+  "text": "<- katıl"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "Pano boş"
+ },
+ "8dc21305": {
+  "en": "Copied",
+  "text": "Kopyalandı"
  },
  "6426ce4b": {
   "en": "Copy text",
@@ -2535,14 +2543,6 @@
   "en": "Invalid text for this field",
   "text": "Bu alan için geçersiz metin"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "Pano boş"
- },
- "8dc21305": {
-  "en": "Copied",
-  "text": "Kopyalandı"
- },
  "76bda0c0": {
   "en": "Tags",
   "text": "Etiketler"
@@ -2554,98 +2554,6 @@
  "0685388d": {
   "en": "Save failed",
   "text": "Kayıt başarısız"
- },
- "e01eca3a": {
-  "en": "waiting for an answer...",
-  "text": "yanıt bekleniyor..."
- },
- "60acd1e3": {
-  "en": "refused",
-  "text": "reddedildi"
- },
- "1b68d598": {
-  "en": "no answer",
-  "text": "yanıt yok"
- },
- "8bdf7f34": {
-  "en": "not logged in · password saved",
-  "text": "giriş yok · parola kayıtlı"
- },
- "4c80d01f": {
-  "en": "not logged in",
-  "text": "giriş yapılmadı"
- },
- "ea1182ad": {
-  "en": "logged in as admin",
-  "text": "yönetici girişi"
- },
- "08c8675d": {
-  "en": "Status: ",
-  "text": "Durum: "
- },
- "012245ac": {
-  "en": "Status: not asked yet",
-  "text": "Durum: henüz sorulmadı"
- },
- "eb20490a": {
-  "en": "Battery ",
-  "text": "Pil "
- },
- "7bc55d8b": {
-  "en": " V",
-  "text": " V"
- },
- "c515b220": {
-  "en": "Up ",
-  "text": "Çalışma "
- },
- "8e85bb8c": {
-  "en": "Rx/tx ",
-  "text": "Alım/gönd. "
- },
- "67b05c83": {
-  "en": "Noise ",
-  "text": "Gürültü "
- },
- "d725d6d4": {
-  "en": "Posts ",
-  "text": "İleti "
- },
- "4f5720b5": {
-  "en": "Air ",
-  "text": "Yayında "
- },
- "c14c68f4": {
-  "en": "Trace: ",
-  "text": "İz: "
- },
- "cef097f4": {
-  "en": "you ",
-  "text": "sen "
- },
- "9685740f": {
-  "en": " h ",
-  "text": " sa "
- },
- "6e8fc273": {
-  "en": " d ",
-  "text": " g "
- },
- "c57453ef": {
-  "en": "Trace shows the SNR at every repeater of the route",
-  "text": "İz, rotadaki her tekrarlayıcıdaki SNR'yi gösterir"
- },
- "d4460949": {
-  "en": "No route through repeaters to trace",
-  "text": "İzlenecek tekrarlayıcı rotası yok"
- },
- "3f688bff": {
-  "en": "Replies:",
-  "text": "Yanıtlar:"
- },
- "343e2f48": {
-  "en": "Command: ",
-  "text": "Komut: "
  },
  "55edebd2": {
   "en": "Login",
@@ -2691,6 +2599,102 @@
   "en": "Command sent",
   "text": "Komut gönderildi"
  },
+ "e01eca3a": {
+  "en": "waiting for an answer...",
+  "text": "yanıt bekleniyor..."
+ },
+ "60acd1e3": {
+  "en": "refused",
+  "text": "reddedildi"
+ },
+ "1b68d598": {
+  "en": "no answer",
+  "text": "yanıt yok"
+ },
+ "8bdf7f34": {
+  "en": "not logged in · password saved",
+  "text": "giriş yok · parola kayıtlı"
+ },
+ "4c80d01f": {
+  "en": "not logged in",
+  "text": "giriş yapılmadı"
+ },
+ "ea1182ad": {
+  "en": "logged in as admin",
+  "text": "yönetici girişi"
+ },
+ "08c8675d": {
+  "en": "Status: ",
+  "text": "Durum: "
+ },
+ "012245ac": {
+  "en": "Status: not asked yet",
+  "text": "Durum: henüz sorulmadı"
+ },
+ "eb20490a": {
+  "en": "Battery ",
+  "text": "Pil "
+ },
+ "7bc55d8b": {
+  "en": " V",
+  "text": " V"
+ },
+ "9685740f": {
+  "en": " h ",
+  "text": " sa "
+ },
+ "c515b220": {
+  "en": "Up ",
+  "text": "Çalışma "
+ },
+ "8e85bb8c": {
+  "en": "Rx/tx ",
+  "text": "Alım/gönd. "
+ },
+ "67b05c83": {
+  "en": "Noise ",
+  "text": "Gürültü "
+ },
+ "d725d6d4": {
+  "en": "Posts ",
+  "text": "İleti "
+ },
+ "4f5720b5": {
+  "en": "Air ",
+  "text": "Yayında "
+ },
+ "6e8fc273": {
+  "en": " d ",
+  "text": " g "
+ },
+ "c14c68f4": {
+  "en": "Trace: ",
+  "text": "İz: "
+ },
+ "cef097f4": {
+  "en": "you ",
+  "text": "sen "
+ },
+ "c57453ef": {
+  "en": "Trace shows the SNR at every repeater of the route",
+  "text": "İz, rotadaki her tekrarlayıcıdaki SNR'yi gösterir"
+ },
+ "d4460949": {
+  "en": "No route through repeaters to trace",
+  "text": "İzlenecek tekrarlayıcı rotası yok"
+ },
+ "3f688bff": {
+  "en": "Replies:",
+  "text": "Yanıtlar:"
+ },
+ "343e2f48": {
+  "en": "Command: ",
+  "text": "Komut: "
+ },
+ "eca63717": {
+  "en": "Passwords differ",
+  "text": "Parolalar farklı"
+ },
  "9c799975": {
   "en": "Unlock",
   "text": "Kilidi aç"
@@ -2731,9 +2735,33 @@
   "en": "Incorrect password",
   "text": "Yanlış parola"
  },
- "eca63717": {
-  "en": "Passwords differ",
-  "text": "Parolalar farklı"
+ "46120854": {
+  "en": "8 counters at most",
+  "text": "En fazla 8 sayaç"
+ },
+ "28fa2654": {
+  "en": "Counter reset",
+  "text": "Sayaç sıfırlandı"
+ },
+ "fa0f5fe6": {
+  "en": "The last counter stays",
+  "text": "Son sayaç kalır"
+ },
+ "45bb420e": {
+  "en": "Counter deleted",
+  "text": "Sayaç silindi"
+ },
+ "61342fd0": {
+  "en": "on",
+  "text": "açık"
+ },
+ "d1b37a61": {
+  "en": "Name saved",
+  "text": "Ad kaydedildi"
+ },
+ "154900f6": {
+  "en": "Name: up to 23 UTF-8 bytes",
+  "text": "Ad: en fazla 23 bayt UTF-8"
  },
  "2ab44d95": {
   "en": "New counter",
@@ -2770,33 +2798,5 @@
  "73f035c7": {
   "en": "R again: reset to 0",
   "text": "Tekrar R: 0’a sıfırla"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "En fazla 8 sayaç"
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "Sayaç sıfırlandı"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "Son sayaç kalır"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "Sayaç silindi"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "açık"
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "Ad kaydedildi"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "Ad: en fazla 23 bayt UTF-8"
  }
 }

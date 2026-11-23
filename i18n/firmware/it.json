@@ -55,10 +55,6 @@
   "en": "Counter ",
   "text": "Contatore "
  },
- "f2d8afbf": {
-  "en": "Choose recipient",
-  "text": "Scegli destinatario"
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "Ricevuto"
@@ -90,6 +86,1430 @@
  "e774d890": {
   "en": "Battery low",
   "text": "Batteria scarica"
+ },
+ "f2d8afbf": {
+  "en": "Choose recipient",
+  "text": "Scegli destinatario"
+ },
+ "af34335c": {
+  "en": "Internet",
+  "text": "Internet"
+ },
+ "0b728291": {
+  "en": "All off",
+  "text": "Tutto spento"
+ },
+ "c0b2703d": {
+  "en": {
+   "one": "new message",
+   "other": "new messages"
+  },
+  "forms": {
+   "one": "{n} nuovo messaggio",
+   "other": "{n} nuovi messaggi"
+  }
+ },
+ "8f7412e6": {
+  "en": " of ",
+  "text": " di "
+ },
+ "4f1014c0": {
+  "en": " nearby",
+  "text": " vicini"
+ },
+ "e50e2dad": {
+  "en": {
+   "one": "sat",
+   "other": "sats"
+  },
+  "forms": {
+   "one": "{n} sat",
+   "other": "{n} sat"
+  }
+ },
+ "84e158a3": {
+  "en": "GPS: searching",
+  "text": "GPS: ricerca"
+ },
+ "7f9b88be": {
+  "en": "GPS off",
+  "text": "GPS spento"
+ },
+ "517f4378": {
+  "en": "Online map",
+  "text": "Mappa online"
+ },
+ "b40c44cd": {
+  "en": "No SD card",
+  "text": "Nessuna SD"
+ },
+ "2c64a5cf": {
+  "en": "No maps yet",
+  "text": "Nessuna mappa"
+ },
+ "4b896fbb": {
+  "en": "Radar",
+  "text": "Radar"
+ },
+ "c0de6b7d": {
+  "en": {
+   "one": "point",
+   "other": "points"
+  },
+  "forms": {
+   "one": "{n} punto",
+   "other": "{n} punti"
+  }
+ },
+ "db89a899": {
+  "en": "Connect",
+  "text": "Connetti"
+ },
+ "a4bb08e5": {
+  "en": {
+   "one": "fault",
+   "other": "faults"
+  },
+  "forms": {
+   "one": "{n} errore",
+   "other": "{n} errori"
+  }
+ },
+ "010ffdb6": {
+  "en": "All OK",
+  "text": "Tutto OK"
+ },
+ "67a31c2c": {
+  "en": "Radio, screen",
+  "text": "Radio, schermo"
+ },
+ "1520e768": {
+  "en": " MHz · SF",
+  "text": " MHz · SF"
+ },
+ "168512be": {
+  "en": "Radio error ",
+  "text": "Errore radio "
+ },
+ "538b10e9": {
+  "en": "Open",
+  "text": "Apri"
+ },
+ "3750eb16": {
+  "en": "Radio controls",
+  "text": "Controlli radio"
+ },
+ "19ede191": {
+  "en": {
+   "one": "app",
+   "other": "apps"
+  },
+  "forms": {
+   "one": "{n} app",
+   "other": "{n} app"
+  }
+ },
+ "832f1cca": {
+  "en": " waiting",
+  "text": " in attesa"
+ },
+ "2c6a14ea": {
+  "en": "Folders and order: web page or app",
+  "text": "Cartelle e ordine: pagina web o app"
+ },
+ "6e19da59": {
+  "en": "No apps in this folder",
+  "text": "Nessuna app nella cartella"
+ },
+ "00c6075a": {
+  "en": "Menu",
+  "text": "Menu principale"
+ },
+ "3e892b4d": {
+  "en": "Select",
+  "text": "Scegli"
+ },
+ "66836516": {
+  "en": "You: ",
+  "text": "Tu: "
+ },
+ "51e7624c": {
+  "en": "No messages yet",
+  "text": "Nessun messaggio"
+ },
+ "32e97c4a": {
+  "en": "Open MeshCore channel",
+  "text": "Canale aperto MeshCore"
+ },
+ "9c9c5d7e": {
+  "en": "Open channel · no messages yet",
+  "text": "Canale aperto · nessun messaggio"
+ },
+ "543bd3e9": {
+  "en": "Private channel · no messages yet",
+  "text": "Canale privato · nessun messaggio"
+ },
+ "e65fb504": {
+  "en": "Actions",
+  "text": "Azioni"
+ },
+ "33a4b02f": {
+  "en": "Next unread",
+  "text": "Non letti"
+ },
+ "4648e8a8": {
+  "en": "Private channel · senders unverified · no ACK",
+  "text": "Canale privato · mittenti non verif. · no ACK"
+ },
+ "46718231": {
+  "en": "Open channel · senders unverified · no ACK",
+  "text": "Canale aperto · mittenti non verif. · no ACK"
+ },
+ "c4e598ca": {
+  "en": "logged in",
+  "text": "accesso fatto"
+ },
+ "ab1fafa1": {
+  "en": "log in: node card > Server",
+  "text": "accedi: scheda nodo > Server"
+ },
+ "91455582": {
+  "en": "Not in contacts",
+  "text": "Non nei contatti"
+ },
+ "e99aa76f": {
+  "en": "not confirmed",
+  "text": "non confermato"
+ },
+ "1a940c2a": {
+  "en": "Type and press OK to send",
+  "text": "Scrivi e premi OK per inviare"
+ },
+ "f574869a": {
+  "en": "Message...",
+  "text": "Messaggio..."
+ },
+ "f28e14cf": {
+  "en": "Send",
+  "text": "Invia"
+ },
+ "68f399b1": {
+  "en": "Clipboard",
+  "text": "Appunti"
+ },
+ "72d06ea7": {
+  "en": "Finding location by IP...",
+  "text": "Ricerca posizione via IP..."
+ },
+ "851e5ac2": {
+  "en": "Needs Wi-Fi internet or an SD card",
+  "text": "Serve internet Wi-Fi o una scheda SD"
+ },
+ "77c28af9": {
+  "en": "Connect Wi-Fi or load a map",
+  "text": "Connetti il Wi-Fi o carica una mappa"
+ },
+ "119314d0": {
+  "en": "GPS will take over after a fix",
+  "text": "Dopo il fix GPS la mappa lo segue"
+ },
+ "c19b47bb": {
+  "en": "Connections > Internet over Wi-Fi",
+  "text": "Connessioni > Internet via Wi-Fi"
+ },
+ "b59a5b35": {
+  "en": "Downloading map...",
+  "text": "Download mappa..."
+ },
+ "e6aae7d4": {
+  "en": "Reading map from SD...",
+  "text": "Lettura mappa da SD..."
+ },
+ "ba994464": {
+  "en": "Tiles unavailable",
+  "text": "Tile non disponibili"
+ },
+ "66643a4a": {
+  "en": "This zoom is not downloaded",
+  "text": "Questo zoom non è scaricato"
+ },
+ "29cc0d19": {
+  "en": "+/- zoom · Wi-Fi internet loads maps",
+  "text": "+/- zoom · mappe da internet Wi-Fi"
+ },
+ "a3b1d86e": {
+  "en": "Offline map",
+  "text": "Mappa offline"
+ },
+ "59317dec": {
+  "en": " · loading",
+  "text": " · caricamento"
+ },
+ "1d1e1a72": {
+  "en": "GPS: old date",
+  "text": "GPS: data vecchia"
+ },
+ "b45aef8c": {
+  "en": "Pan",
+  "text": "Sposta"
+ },
+ "62399752": {
+  "en": "Zoom",
+  "text": "Zoom"
+ },
+ "9fa2c938": {
+  "en": "Following",
+  "text": "Segue"
+ },
+ "3f654d20": {
+  "en": "To GPS",
+  "text": "Al GPS"
+ },
+ "04dfc93c": {
+  "en": "No saved maps",
+  "text": "Nessuna mappa salvata"
+ },
+ "dcf1e39a": {
+  "en": "Upload a map via Wi-Fi or USB",
+  "text": "Carica una mappa via Wi-Fi o USB"
+ },
+ "7c620193": {
+  "en": {
+   "one": "tile on SD",
+   "other": "tiles on SD"
+  },
+  "forms": {
+   "one": "{n} tile su SD",
+   "other": "{n} tile su SD"
+  }
+ },
+ "bd794432": {
+  "en": "No matching contacts",
+  "text": "Nessun contatto trovato"
+ },
+ "4e5a0349": {
+  "en": "No nodes discovered yet",
+  "text": "Ancora nessun nodo trovato"
+ },
+ "8a8a895b": {
+  "en": "F: edit tag filter",
+  "text": "F: modifica filtro"
+ },
+ "2ad4b008": {
+  "en": "Advertise my node",
+  "text": "Annuncia il mio nodo"
+ },
+ "e2339f44": {
+  "en": "saved",
+  "text": "salvata"
+ },
+ "0ec24245": {
+  "en": "Details",
+  "text": "Info"
+ },
+ "f4a9c097": {
+  "en": "Filter",
+  "text": "Filtro"
+ },
+ "c2954bc2": {
+  "en": "Back",
+  "text": "Indietro"
+ },
+ "c416a424": {
+  "en": "Node was removed",
+  "text": "Nodo rimosso"
+ },
+ "81ef07a9": {
+  "en": "Last heard",
+  "text": "Ultimo ascolto"
+ },
+ "4f0a0e98": {
+  "en": " ago",
+  "text": " fa"
+ },
+ "1ae89b50": {
+  "en": "not since boot",
+  "text": "non sentito dall'avvio"
+ },
+ "2fce4529": {
+  "en": "Signal",
+  "text": "Segnale"
+ },
+ "d7d630be": {
+  "en": "Route",
+  "text": "Percorso"
+ },
+ "cd08221c": {
+  "en": " · flood",
+  "text": " · flood"
+ },
+ "e27f342a": {
+  "en": "Position",
+  "text": "Posizione"
+ },
+ "a3ad51f3": {
+  "en": "not shared",
+  "text": "non condivisa"
+ },
+ "b8297e9a": {
+  "en": "Room",
+  "text": "Stanza"
+ },
+ "ae0ed984": {
+  "en": "Message",
+  "text": "Scrivi"
+ },
+ "8f635566": {
+  "en": "On map",
+  "text": "Mappa"
+ },
+ "db5485e7": {
+  "en": "Reset path",
+  "text": "Reset percorso"
+ },
+ "2d44294d": {
+  "en": "Sure?",
+  "text": "Elimino?"
+ },
+ "6e3fab8c": {
+  "en": "Forget",
+  "text": "Dimentica"
+ },
+ "6d7302f2": {
+  "en": "Server",
+  "text": "Server"
+ },
+ "26f8e74e": {
+  "en": "Trace",
+  "text": "Traccia"
+ },
+ "0a77a91f": {
+  "en": "Action",
+  "text": "Azione"
+ },
+ "8d57e66a": {
+  "en": "Run",
+  "text": "Esegui"
+ },
+ "0ff01b6a": {
+  "en": "Notes",
+  "text": "Note"
+ },
+ "d112e127": {
+  "en": "hold flat",
+  "text": "tieni in piano"
+ },
+ "1a45dda5": {
+  "en": "not calibrated",
+  "text": "non calibrata"
+ },
+ "ab3a8a0a": {
+  "en": "off",
+  "text": "spento"
+ },
+ "b2e48278": {
+  "en": "fix",
+  "text": "fix ok"
+ },
+ "620f3cc6": {
+  "en": "old date",
+  "text": "data vecchia"
+ },
+ "67ce0277": {
+  "en": "searching",
+  "text": "ricerca"
+ },
+ "f5e7befb": {
+  "en": "Satellites",
+  "text": "Satelliti"
+ },
+ "a2009955": {
+  "en": " in view",
+  "text": " visibili"
+ },
+ "6d7e4165": {
+  "en": "Latitude",
+  "text": "Latitudine"
+ },
+ "671964ee": {
+  "en": "Longitude",
+  "text": "Longitudine"
+ },
+ "bb5f80fd": {
+  "en": "Clock",
+  "text": "Orologio"
+ },
+ "ffa35e26": {
+  "en": "not set",
+  "text": "non impost."
+ },
+ "219101e3": {
+  "en": "manual",
+  "text": "manuale"
+ },
+ "d2cdcecb": {
+  "en": " · trusted",
+  "text": " · affidabile"
+ },
+ "bb77a2cf": {
+  "en": "Compass",
+  "text": "Bussola"
+ },
+ "1db880db": {
+  "en": {
+   "one": "sample",
+   "other": "samples"
+  },
+  "forms": {
+   "one": "{n} campione",
+   "other": "{n} campioni"
+  }
+ },
+ "37b8f592": {
+  "en": "calibrated",
+  "text": "calibrata"
+ },
+ "75c3ffb2": {
+  "en": "needs calibration",
+  "text": "da calibrare"
+ },
+ "ff05911b": {
+  "en": "Share position",
+  "text": "Invia posizione"
+ },
+ "7629db5a": {
+  "en": "Finish calibration",
+  "text": "Termina calibrazione"
+ },
+ "6f59150a": {
+  "en": "Calibrate compass",
+  "text": "Calibra bussola"
+ },
+ "e125a9a1": {
+  "en": "Advert with GPS",
+  "text": "Annuncio con GPS"
+ },
+ "10b78d8a": {
+  "en": "Needs a fresh GPS fix",
+  "text": "Serve un fix GPS recente"
+ },
+ "a603b11c": {
+  "en": "Rotate in all directions",
+  "text": "Ruota il dispositivo in ogni direzione"
+ },
+ "7f8e9f6b": {
+  "en": "Rotate for 20+ seconds",
+  "text": "Ruota per 20+ secondi"
+ },
+ "45465004": {
+  "en": "GPS on",
+  "text": "Accendi GPS"
+ },
+ "4930944f": {
+  "en": "Phone",
+  "text": "Telefono"
+ },
+ "ec266ec8": {
+  "en": "Watch",
+  "text": "Orologio"
+ },
+ "89a2ef46": {
+  "en": "Headphones",
+  "text": "Cuffie"
+ },
+ "fae1ce6b": {
+  "en": "Phone/watch",
+  "text": "Telefono/orologio"
+ },
+ "7e3d4120": {
+  "en": "BLE device",
+  "text": "Dispositivo BLE"
+ },
+ "9e13a743": {
+  "en": "Hidden network",
+  "text": "Rete nascosta"
+ },
+ "90cbadfa": {
+  "en": "Bluetooth busy: probe",
+  "text": "Bluetooth occupato: test"
+ },
+ "e5e4ab77": {
+  "en": "Bluetooth error",
+  "text": "Errore Bluetooth"
+ },
+ "983f66dc": {
+  "en": "Wi-Fi busy: access point",
+  "text": "Wi-Fi occupato: punto di accesso"
+ },
+ "35c403f6": {
+  "en": "Wi-Fi busy: probe",
+  "text": "Wi-Fi occupato: test"
+ },
+ "1be7979b": {
+  "en": "Wi-Fi error",
+  "text": "Errore Wi-Fi"
+ },
+ "89414ad6": {
+  "en": "Scanning Wi-Fi...",
+  "text": "Scansione Wi-Fi..."
+ },
+ "542d8f50": {
+  "en": "closer to centre = stronger",
+  "text": "più al centro = più forte"
+ },
+ "fde56fad": {
+  "en": "List paused",
+  "text": "Elenco in pausa"
+ },
+ "503d6eed": {
+  "en": {
+   "one": "phone/watch nearby",
+   "other": "phones/watches nearby"
+  },
+  "forms": {
+   "one": "{n} telefono/orologio vicino",
+   "other": "{n} telefoni/orologi vicini"
+  }
+ },
+ "49031ccd": {
+  "en": "No signals yet",
+  "text": "Ancora nessun segnale"
+ },
+ "8d2937a1": {
+  "en": "List",
+  "text": "Elenco"
+ },
+ "454d1d8a": {
+  "en": "Resume",
+  "text": "Riprendi"
+ },
+ "44f9bf2d": {
+  "en": "Pause",
+  "text": "Pausa"
+ },
+ "3368e695": {
+  "en": "Home in",
+  "text": "Cerca"
+ },
+ "aad07647": {
+  "en": "Motion",
+  "text": "Movimento"
+ },
+ "84397af6": {
+  "en": " · direct packets only",
+  "text": " · solo pacchetti diretti"
+ },
+ "b8a018ba": {
+  "en": " · address changes over time",
+  "text": " · l'indirizzo cambia nel tempo"
+ },
+ "a8e7e5cc": {
+  "en": "channel ",
+  "text": "canale "
+ },
+ "64db285b": {
+  "en": "Lost",
+  "text": "Perso"
+ },
+ "46102346": {
+  "en": "No signal",
+  "text": "Nessun segnale"
+ },
+ "3b06b3cd": {
+  "en": "Stronger",
+  "text": "Più caldo"
+ },
+ "4dd880a2": {
+  "en": "Weaker",
+  "text": "Più freddo"
+ },
+ "cd945433": {
+  "en": "Steady",
+  "text": "Stabile"
+ },
+ "184745be": {
+  "en": "keep moving",
+  "text": "muoviti"
+ },
+ "78c14fb6": {
+  "en": "peak ",
+  "text": "picco "
+ },
+ "b991041c": {
+  "en": "Waiting for samples",
+  "text": "In attesa di campioni"
+ },
+ "cde081d3": {
+  "en": {
+   "one": "packet",
+   "other": "packets"
+  },
+  "forms": {
+   "one": "{n} pacchetto",
+   "other": "{n} pacchetti"
+  }
+ },
+ "0ec969ac": {
+  "en": " adverts/s",
+  "text": " annunci/s"
+ },
+ "93382782": {
+  "en": " beacons/s",
+  "text": " beacon/s"
+ },
+ "42cfcb2d": {
+  "en": " s ago",
+  "text": " s fa"
+ },
+ "3f609f74": {
+  "en": "Mute",
+  "text": "Muto"
+ },
+ "b3ca9a34": {
+  "en": "Sound",
+  "text": "Suono"
+ },
+ "68f7fd73": {
+  "en": "Reset peak",
+  "text": "Reset picco"
+ },
+ "394ec4f2": {
+  "en": "Turn the access point off",
+  "text": "Spegni il punto di accesso"
+ },
+ "fccfe8a5": {
+  "en": "Beacon for another board",
+  "text": "Beacon per un'altra scheda"
+ },
+ "bfacb4d0": {
+  "en": " frames/s on channel 1",
+  "text": " frame/s sul canale 1"
+ },
+ "6d3d79bb": {
+  "en": "beacon ",
+  "text": "beacon "
+ },
+ "d7972182": {
+  "en": " frames/s · ",
+  "text": " frame/s · "
+ },
+ "b85b81cf": {
+  "en": "waiting: set the other board to CSI beacon",
+  "text": "in attesa: attiva il beacon CSI sull'altra scheda"
+ },
+ "1d0cdb24": {
+  "en": "NO WI-FI",
+  "text": "NO WI-FI"
+ },
+ "e9a87b56": {
+  "en": "BEACON ON",
+  "text": "BEACON ATTIVO"
+ },
+ "564cdaca": {
+  "en": "NO BEACON",
+  "text": "NO BEACON"
+ },
+ "9a1796e8": {
+  "en": "CSI FROZEN",
+  "text": "CSI BLOCCATO"
+ },
+ "dd26ae1f": {
+  "en": "CALIBRATING ",
+  "text": "CALIBRAZIONE "
+ },
+ "5ec52fe4": {
+  "en": " s",
+  "text": " s"
+ },
+ "4d851fe7": {
+  "en": "MOTION",
+  "text": "MOVIMENTO"
+ },
+ "6fce5d71": {
+  "en": "STILL",
+  "text": "FERMO"
+ },
+ "13d6d724": {
+  "en": "activity ",
+  "text": "attività "
+ },
+ "1e3add08": {
+  "en": "threshold ",
+  "text": "soglia "
+ },
+ "dda163c5": {
+  "en": " (default)",
+  "text": " (predef.)"
+ },
+ "19deef04": {
+  "en": "Walk between the boards to see the trace",
+  "text": "Cammina tra le schede per vedere la traccia"
+ },
+ "faa0c1ab": {
+  "en": "Calibrate with the area empty and still (10 s)",
+  "text": "Calibra con la zona vuota e immobile (10 s)"
+ },
+ "4204187c": {
+  "en": "Place the boards 2-5 m apart; motion between them is sensed",
+  "text": "Metti le schede a 2-5 m; si rileva il movimento tra loro"
+ },
+ "9bb72cae": {
+  "en": "Signals",
+  "text": "Segnali"
+ },
+ "6fb7daa2": {
+  "en": "Calibrate",
+  "text": "Calibra"
+ },
+ "4d580639": {
+  "en": "Beacon",
+  "text": "Beacon"
+ },
+ "5427923a": {
+  "en": "To turn on, hold the trackball pressed",
+  "text": "Per accendere, tieni premuta la trackball"
+ },
+ "b1e20664": {
+  "en": "To turn on: RESET or the power switch",
+  "text": "Per accendere: RESET o l'interruttore"
+ },
+ "cba7fbe8": {
+  "en": "Device is off",
+  "text": "Dispositivo spento"
+ },
+ "2697628b": {
+  "en": "Turning off...",
+  "text": "Spegnimento..."
+ },
+ "b639f585": {
+  "en": "GPS & compass",
+  "text": "GPS e bussola"
+ },
+ "dde0a6be": {
+  "en": "Keys & help",
+  "text": "Tasti e aiuto"
+ },
+ "cd03e04b": {
+  "en": "Turn off",
+  "text": "Spegni"
+ },
+ "a21b5cde": {
+  "en": "Brightness ",
+  "text": "Luminosità "
+ },
+ "e1b4bdaa": {
+  "en": "compass calibrated",
+  "text": "bussola calibrata"
+ },
+ "e8f719bd": {
+  "en": "compass not calibrated",
+  "text": "bussola non calibrata"
+ },
+ "7316bebd": {
+  "en": " relayed",
+  "text": " inoltrati"
+ },
+ "4f18c10c": {
+  "en": "What every key does",
+  "text": "Cosa fa ogni tasto"
+ },
+ "7e8a19d5": {
+  "en": "Searching: ",
+  "text": "Ricerca: "
+ },
+ "9a555563": {
+  "en": {
+   "one": "repeater",
+   "other": "repeaters"
+  },
+  "forms": {
+   "one": "{n} ripetitore",
+   "other": "{n} ripetitori"
+  }
+ },
+ "1a8c15c3": {
+  "en": {
+   "one": "region",
+   "other": "regions"
+  },
+  "forms": {
+   "one": "{n} regione",
+   "other": "{n} regioni"
+  }
+ },
+ "99f30427": {
+  "en": "OK: start",
+  "text": "OK: avvia"
+ },
+ "9fca3c9e": {
+  "en": "Listening ",
+  "text": "Ascolto "
+ },
+ "a3980ce8": {
+  "en": "Nothing new",
+  "text": "Niente di nuovo"
+ },
+ "443ffd47": {
+  "en": "OK: test ",
+  "text": "OK: prova "
+ },
+ "2265ebb1": {
+  "en": "Current profile: ",
+  "text": "Profilo attuale: "
+ },
+ "34f428b1": {
+  "en": "Try every regional preset",
+  "text": "Prova ogni preset regionale"
+ },
+ "c91eb13e": {
+  "en": "Preset",
+  "text": "Preimpostazione"
+ },
+ "8d9206a1": {
+  "en": "Frequency",
+  "text": "Frequenza"
+ },
+ "008f5512": {
+  "en": "Bandwidth",
+  "text": "Banda"
+ },
+ "d174bc31": {
+  "en": "Spreading factor",
+  "text": "Spreading factor"
+ },
+ "3c2364a7": {
+  "en": "Coding rate",
+  "text": "Coding rate"
+ },
+ "92d39d44": {
+  "en": "TX power",
+  "text": "Potenza TX"
+ },
+ "175749a2": {
+  "en": "Relay hop limit",
+  "text": "Limite di salti"
+ },
+ "75193707": {
+  "en": "Relay packets",
+  "text": "Inoltra pacchetti"
+ },
+ "2197c64b": {
+  "en": "Path hash size",
+  "text": "Lunghezza hash"
+ },
+ "492e789d": {
+  "en": "Region",
+  "text": "Regione"
+ },
+ "b872ed2b": {
+  "en": "Find regions",
+  "text": "Cerca regioni"
+ },
+ "eb38bf4c": {
+  "en": "Find network",
+  "text": "Cerca rete"
+ },
+ "24646b98": {
+  "en": "Radio test",
+  "text": "Test radio"
+ },
+ "0614ba0b": {
+  "en": "Previous radio",
+  "text": "Radio precedente"
+ },
+ "0fe07306": {
+  "en": "Name",
+  "text": "Nome"
+ },
+ "9a73db9b": {
+  "en": "Language",
+  "text": "Lingua"
+ },
+ "df6e627c": {
+  "en": "Day brightness",
+  "text": "Luminosità giorno"
+ },
+ "73d459b4": {
+  "en": "Home layout",
+  "text": "Vista Home"
+ },
+ "4ef0ddc5": {
+  "en": "Sounds",
+  "text": "Suoni"
+ },
+ "300ec32d": {
+  "en": "Auto lock",
+  "text": "Blocco auto"
+ },
+ "1f0bca87": {
+  "en": "Dim screen",
+  "text": "Oscura schermo"
+ },
+ "37976ee4": {
+  "en": "GPS receiver",
+  "text": "Ricevitore GPS"
+ },
+ "f050c5bc": {
+  "en": "UTC offset",
+  "text": "Offset UTC"
+ },
+ "caa82244": {
+  "en": "Battery shows",
+  "text": "Batteria mostra"
+ },
+ "fecd422a": {
+  "en": "Lock screen",
+  "text": "Schermo bloccato"
+ },
+ "667ad2f5": {
+  "en": "Wake on message",
+  "text": "Accendi con messaggio"
+ },
+ "98b6a9f6": {
+  "en": "Message popup",
+  "text": "Finestra messaggio"
+ },
+ "4eaf7c92": {
+  "en": "Theme",
+  "text": "Tema"
+ },
+ "ac7ce48d": {
+  "en": "Accent colour",
+  "text": "Colore accento"
+ },
+ "548b7cf8": {
+  "en": "Night brightness",
+  "text": "Luminosità notte"
+ },
+ "1c076c32": {
+  "en": "Screen password",
+  "text": "Password schermo"
+ },
+ "9525b78e": {
+  "en": "Custom",
+  "text": "Personalizzato"
+ },
+ "dc6bfbe0": {
+  "en": " MHz",
+  "text": " MHz"
+ },
+ "1ffe2452": {
+  "en": " kHz",
+  "text": " kHz"
+ },
+ "49e98b8b": {
+  "en": {
+   "one": "byte",
+   "other": "bytes"
+  },
+  "forms": {
+   "one": "{n} byte",
+   "other": "{n} byte"
+  }
+ },
+ "304ff7fb": {
+  "en": "None",
+  "text": "Nessuna"
+ },
+ "9023a2b0": {
+  "en": "OK: keep",
+  "text": "OK: mantieni"
+ },
+ "45570065": {
+  "en": "Dark",
+  "text": "Scuro"
+ },
+ "8ad2f8cf": {
+  "en": "Light",
+  "text": "Chiaro"
+ },
+ "126befb6": {
+  "en": "Auto",
+  "text": "Auto"
+ },
+ "880f97dc": {
+  "en": "Lime",
+  "text": "Lime"
+ },
+ "e9dd1fed": {
+  "en": "Blue",
+  "text": "Blu"
+ },
+ "f03bdf12": {
+  "en": "Violet",
+  "text": "Viola"
+ },
+ "15903060": {
+  "en": "Amber",
+  "text": "Ambra"
+ },
+ "0dad9117": {
+  "en": "Same as day",
+  "text": "Come di giorno"
+ },
+ "8581156e": {
+  "en": "Tiles",
+  "text": "Riquadri"
+ },
+ "87c7093b": {
+  "en": "Volts",
+  "text": "Volt"
+ },
+ "ff1537fa": {
+  "en": "Percent",
+  "text": "Percento"
+ },
+ "3c2dfe59": {
+  "en": "Hidden",
+  "text": "Nascosto"
+ },
+ "75afe364": {
+  "en": "All",
+  "text": "Tutti"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "Menzioni"
+ },
+ "f0b87eb8": {
+  "en": "MeshCore regional settings: frequency, BW, SF, CR",
+  "text": "Impostazioni regionali MeshCore: frequenza, BW, SF, CR"
+ },
+ "21ff842c": {
+  "en": "1 kHz steps; must match every node",
+  "text": "Passi di 1 kHz; uguale su tutti i nodi"
+ },
+ "7608c344": {
+  "en": "62.5 / 125 / 250 / 500 kHz",
+  "text": "62.5 / 125 / 250 / 500 kHz"
+ },
+ "943a47cb": {
+  "en": "Higher SF: longer range, slower",
+  "text": "SF più alto: più portata, più lento"
+ },
+ "c52a8c0f": {
+  "en": "Error correction 4/5 to 4/8",
+  "text": "Correzione errori da 4/5 a 4/8"
+ },
+ "af53f6b8": {
+  "en": "Radio chip setting, 0-22 dBm",
+  "text": "Valore del chip radio, 0-22 dBm"
+ },
+ "3f328711": {
+  "en": "Relay packets with fewer hops than this",
+  "text": "Inoltra i pacchetti con meno salti di questo"
+ },
+ "7cd202ed": {
+  "en": "Forward other nodes' MeshCore packets",
+  "text": "Inoltra i pacchetti MeshCore altrui"
+ },
+ "fa81bada": {
+  "en": "Per hop in our floods; older MeshCore drops 2-3",
+  "text": "Per salto nei nostri flood; MeshCore vecchio scarta 2-3"
+ },
+ "8513a98e": {
+  "en": "Repeaters pass on our floods by it; OK: type",
+  "text": "I ripetitori inoltrano in base a essa; OK: digita"
+ },
+ "33a9cb6d": {
+  "en": "Found: ",
+  "text": "Trovate: "
+ },
+ "2fd16ea7": {
+  "en": "Asks repeaters that hear this device",
+  "text": "Chiede ai ripetitori che sentono il dispositivo"
+ },
+ "d284a6e4": {
+  "en": "A restart returns ",
+  "text": "Il riavvio torna a "
+ },
+ "51c955b1": {
+  "en": "OK: return to it",
+  "text": "OK: ripristina"
+ },
+ "5261f68a": {
+  "en": "Kept on a change of frequency, BW, SF or CR",
+  "text": "Salvata al cambio di frequenza, BW, SF o CR"
+ },
+ "85dde262": {
+  "en": "Applied to the radio when saved",
+  "text": "Applicato alla radio al salvataggio"
+ },
+ "7c3b11a9": {
+  "en": "OK: set or change password",
+  "text": "OK: imposta o cambia password"
+ },
+ "e754fa0d": {
+  "en": "Day 07:00–20:00, local time",
+  "text": "Giorno 07:00–20:00, ora locale"
+ },
+ "34fd54b2": {
+  "en": "OK: edit, 1-24 UTF-8 bytes",
+  "text": "OK: modifica, 1-24 byte UTF-8"
+ },
+ "7ecd2a4c": {
+  "en": "Menu language",
+  "text": "Lingua del menu"
+ },
+ "018eb564": {
+  "en": "Applies to Home and all folders",
+  "text": "Per la Home e tutte le cartelle"
+ },
+ "b265628f": {
+  "en": "Tone for messages and ACKs",
+  "text": "Suono per messaggi e ACK"
+ },
+ "969a0678": {
+  "en": "0 = off, 30-600 s",
+  "text": "0 = off, 30-600 s"
+ },
+ "ab5a04f6": {
+  "en": "0 = off, 10-600 s",
+  "text": "0 = off, 10-600 s"
+ },
+ "48707a29": {
+  "en": "Receiver power",
+  "text": "Alimentazione ricevitore"
+ },
+ "ed88bd72": {
+  "en": "Local time, 15 minute steps",
+  "text": "Ora locale, passi di 15 minuti"
+ },
+ "5d6af097": {
+  "en": "Status bar: charge estimate or measured voltage",
+  "text": "Barra di stato: carica stimata o tensione misurata"
+ },
+ "e4f5443f": {
+  "en": "Message senders while locked",
+  "text": "Mittenti col blocco"
+ },
+ "6cf00f88": {
+  "en": "Stored in device memory",
+  "text": "Salvato nella memoria del dispositivo"
+ },
+ "1dd4ab8a": {
+  "en": "Listening",
+  "text": "Ascolto"
+ },
+ "2fe2598e": {
+  "en": "pings",
+  "text": "ping"
+ },
+ "9296739d": {
+  "en": "Phone: ",
+  "text": "Telefono: "
+ },
+ "4aba2ce0": {
+  "en": "No position: GPS fix or phone app",
+  "text": "Nessuna posizione: GPS o telefono"
+ },
+ "53e32296": {
+  "en": "Ping sent, listening for repeaters...",
+  "text": "Ping inviato, ascolto i ripetitori..."
+ },
+ "140b9a3a": {
+  "en": "No pings yet: P sends one",
+  "text": "Nessun ping: P ne invia uno"
+ },
+ "39b7127d": {
+  "en": "Last ping: ",
+  "text": "Ultimo ping: "
+ },
+ "1983dffb": {
+  "en": "Last ping: no repeater heard it",
+  "text": "Ultimo ping: nessun ripetitore"
+ },
+ "8504bdd5": {
+  "en": "No repeaters heard yet",
+  "text": "Nessun ripetitore ancora"
+ },
+ "6c03392d": {
+  "en": "OK starts listening and pings",
+  "text": "OK avvia ascolto e ping"
+ },
+ "0aed7015": {
+  "en": "rx ",
+  "text": "rx "
+ },
+ "04be6123": {
+  "en": " · echo ",
+  "text": " · eco "
+ },
+ "4b7f7705": {
+  "en": "Stop",
+  "text": "Ferma"
+ },
+ "0ae8097f": {
+  "en": "Start",
+  "text": "Avvia"
+ },
+ "7fb7f0a9": {
+  "en": "Ping",
+  "text": "Ping"
+ },
+ "5f7eec60": {
+  "en": "Wardrive on",
+  "text": "Wardriving attivo"
+ },
+ "8ae160ba": {
+  "en": "Wardrive off",
+  "text": "Wardriving fermo"
+ },
+ "54f6c01a": {
+  "en": "Ping queued",
+  "text": "Ping in coda"
+ },
+ "dfe5ac67": {
+  "en": "No position yet",
+  "text": "Posizione assente"
+ },
+ "0cf72110": {
+  "en": "Wait: a ping is under way",
+  "text": "Attendi: un ping è in corso"
+ },
+ "46ff9c40": {
+  "en": "choose",
+  "text": "scegli"
+ },
+ "11c2662d": {
+  "en": "select",
+  "text": "seleziona"
+ },
+ "7261c8af": {
+  "en": "send",
+  "text": "invia"
+ },
+ "cded1a85": {
+  "en": "exit",
+  "text": "esci"
+ },
+ "61efb279": {
+  "en": "Save changes",
+  "text": "Salva modifiche"
+ },
+ "a2c6becb": {
+  "en": "No changes",
+  "text": "Nessuna modifica"
+ },
+ "4d2d5d68": {
+  "en": "Save",
+  "text": "Salva"
+ },
+ "c2c76cb1": {
+  "en": "Edit",
+  "text": "Modifica"
+ },
+ "35afca3b": {
+  "en": "Cancel",
+  "text": "Annulla"
+ },
+ "701eaa88": {
+  "en": "Edit name",
+  "text": "Modifica nome"
+ },
+ "555cbe68": {
+  "en": "Keep",
+  "text": "Mantieni"
+ },
+ "cc01b1df": {
+  "en": "Return",
+  "text": "Ripristina"
+ },
+ "2ffcbe05": {
+  "en": "Test",
+  "text": "Test"
+ },
+ "c646a2c9": {
+  "en": "Search",
+  "text": "Cerca"
+ },
+ "0abaed3f": {
+  "en": "Found",
+  "text": "Trovate"
+ },
+ "d155d06d": {
+  "en": "Type",
+  "text": "Digita"
+ },
+ "a1de2fdd": {
+  "en": "Change",
+  "text": "Cambia"
+ },
+ "c3a34509": {
+  "en": "Next value",
+  "text": "Avanti"
+ },
+ "4d7ef753": {
+  "en": "Wi-Fi access point",
+  "text": "Punto di accesso Wi-Fi"
+ },
+ "ba5122e7": {
+  "en": "Web chat and map upload",
+  "text": "Chat web e caricamento mappe"
+ },
+ "4dbe556f": {
+  "en": "MeshCore identity",
+  "text": "Identità MeshCore"
+ },
+ "18ac79a2": {
+  "en": "Networks",
+  "text": "Reti"
+ },
+ "6cf1ba25": {
+  "en": "Toggle",
+  "text": "Attiva/disattiva"
+ },
+ "75a04256": {
+  "en": "Wrong password or refused: ",
+  "text": "Password errata o rifiutato: "
+ },
+ "e2dabf28": {
+  "en": "No answer from ",
+  "text": "Nessuna risposta da "
+ },
+ "09974b89": {
+  "en": "Connection lost",
+  "text": "Connessione persa"
+ },
+ "c7e915d7": {
+  "en": "Wi-Fi scan failed",
+  "text": "Scansione Wi-Fi fallita"
+ },
+ "34dfb5f5": {
+  "en": "Wi-Fi scan timed out",
+  "text": "Scansione Wi-Fi scaduta"
+ },
+ "71494765": {
+  "en": "SSID 1-32 bytes, password empty or 8-63",
+  "text": "SSID 1-32 byte, password vuota o 8-63"
+ },
+ "db65b4b4": {
+  "en": "Tile is not 256 or 512 px",
+  "text": "Tile non da 256 o 512 px"
+ },
+ "172eebcb": {
+  "en": "Not a PNG image",
+  "text": "Non è un'immagine PNG"
+ },
+ "e234f405": {
+  "en": "No location",
+  "text": "Posizione IP non trovata"
+ },
+ "fd387bbd": {
+  "en": "SD full: web tiles not cached",
+  "text": "SD piena: tile web non salvati"
+ },
+ "d8e1dad5": {
+  "en": "Wi-Fi client on",
+  "text": "Client Wi-Fi attivo"
+ },
+ "0e9eb651": {
+  "en": "Wi-Fi client off",
+  "text": "Client Wi-Fi spento"
+ },
+ "b1374eac": {
+  "en": "Connecting to ",
+  "text": "Connessione a "
  },
  "5b61220f": {
   "en": "Forgotten: ",
@@ -519,13 +1939,13 @@
   "en": "Radio TX error",
   "text": "Errore trasmissione radio"
  },
- "54279dd1": {
-  "en": "No repeat heard",
-  "text": "Ripetizione non sentita"
- },
  "60e47df0": {
   "en": "On",
   "text": "On"
+ },
+ "54279dd1": {
+  "en": "No repeat heard",
+  "text": "Ripetizione non sentita"
  },
  "1f7c35ca": {
   "en": "hold OK",
@@ -801,1425 +2221,9 @@
   "en": "Add a channel",
   "text": "Aggiungi canale"
  },
- "af34335c": {
-  "en": "Internet",
-  "text": "Internet"
- },
- "0b728291": {
-  "en": "All off",
-  "text": "Tutto spento"
- },
- "c0b2703d": {
-  "en": {
-   "one": "new message",
-   "other": "new messages"
-  },
-  "forms": {
-   "one": "{n} nuovo messaggio",
-   "other": "{n} nuovi messaggi"
-  }
- },
- "8f7412e6": {
-  "en": " of ",
-  "text": " di "
- },
- "4f1014c0": {
-  "en": " nearby",
-  "text": " vicini"
- },
- "84e158a3": {
-  "en": "GPS: searching",
-  "text": "GPS: ricerca"
- },
- "7f9b88be": {
-  "en": "GPS off",
-  "text": "GPS spento"
- },
- "e50e2dad": {
-  "en": {
-   "one": "sat",
-   "other": "sats"
-  },
-  "forms": {
-   "one": "{n} sat",
-   "other": "{n} sat"
-  }
- },
- "517f4378": {
-  "en": "Online map",
-  "text": "Mappa online"
- },
- "b40c44cd": {
-  "en": "No SD card",
-  "text": "Nessuna SD"
- },
- "2c64a5cf": {
-  "en": "No maps yet",
-  "text": "Nessuna mappa"
- },
- "4b896fbb": {
-  "en": "Radar",
-  "text": "Radar"
- },
- "c0de6b7d": {
-  "en": {
-   "one": "point",
-   "other": "points"
-  },
-  "forms": {
-   "one": "{n} punto",
-   "other": "{n} punti"
-  }
- },
- "db89a899": {
-  "en": "Connect",
-  "text": "Connetti"
- },
- "010ffdb6": {
-  "en": "All OK",
-  "text": "Tutto OK"
- },
- "a4bb08e5": {
-  "en": {
-   "one": "fault",
-   "other": "faults"
-  },
-  "forms": {
-   "one": "{n} errore",
-   "other": "{n} errori"
-  }
- },
- "67a31c2c": {
-  "en": "Radio, screen",
-  "text": "Radio, schermo"
- },
- "1520e768": {
-  "en": " MHz · SF",
-  "text": " MHz · SF"
- },
- "168512be": {
-  "en": "Radio error ",
-  "text": "Errore radio "
- },
- "538b10e9": {
-  "en": "Open",
-  "text": "Apri"
- },
- "3750eb16": {
-  "en": "Radio controls",
-  "text": "Controlli radio"
- },
- "832f1cca": {
-  "en": " waiting",
-  "text": " in attesa"
- },
- "19ede191": {
-  "en": {
-   "one": "app",
-   "other": "apps"
-  },
-  "forms": {
-   "one": "{n} app",
-   "other": "{n} app"
-  }
- },
- "2c6a14ea": {
-  "en": "Folders and order: web page or app",
-  "text": "Cartelle e ordine: pagina web o app"
- },
- "6e19da59": {
-  "en": "No apps in this folder",
-  "text": "Nessuna app nella cartella"
- },
- "00c6075a": {
-  "en": "Menu",
-  "text": "Menu principale"
- },
- "3e892b4d": {
-  "en": "Select",
+ "73c66160": {
+  "en": "Choose",
   "text": "Scegli"
- },
- "66836516": {
-  "en": "You: ",
-  "text": "Tu: "
- },
- "51e7624c": {
-  "en": "No messages yet",
-  "text": "Nessun messaggio"
- },
- "32e97c4a": {
-  "en": "Open MeshCore channel",
-  "text": "Canale aperto MeshCore"
- },
- "9c9c5d7e": {
-  "en": "Open channel · no messages yet",
-  "text": "Canale aperto · nessun messaggio"
- },
- "543bd3e9": {
-  "en": "Private channel · no messages yet",
-  "text": "Canale privato · nessun messaggio"
- },
- "e65fb504": {
-  "en": "Actions",
-  "text": "Azioni"
- },
- "33a4b02f": {
-  "en": "Next unread",
-  "text": "Non letti"
- },
- "4648e8a8": {
-  "en": "Private channel · senders unverified · no ACK",
-  "text": "Canale privato · mittenti non verif. · no ACK"
- },
- "46718231": {
-  "en": "Open channel · senders unverified · no ACK",
-  "text": "Canale aperto · mittenti non verif. · no ACK"
- },
- "c4e598ca": {
-  "en": "logged in",
-  "text": "accesso fatto"
- },
- "ab1fafa1": {
-  "en": "log in: node card > Server",
-  "text": "accedi: scheda nodo > Server"
- },
- "91455582": {
-  "en": "Not in contacts",
-  "text": "Non nei contatti"
- },
- "e99aa76f": {
-  "en": "not confirmed",
-  "text": "non confermato"
- },
- "1a940c2a": {
-  "en": "Type and press OK to send",
-  "text": "Scrivi e premi OK per inviare"
- },
- "f574869a": {
-  "en": "Message...",
-  "text": "Messaggio..."
- },
- "f28e14cf": {
-  "en": "Send",
-  "text": "Invia"
- },
- "68f399b1": {
-  "en": "Clipboard",
-  "text": "Appunti"
- },
- "72d06ea7": {
-  "en": "Finding location by IP...",
-  "text": "Ricerca posizione via IP..."
- },
- "851e5ac2": {
-  "en": "Needs Wi-Fi internet or an SD card",
-  "text": "Serve internet Wi-Fi o una scheda SD"
- },
- "77c28af9": {
-  "en": "Connect Wi-Fi or load a map",
-  "text": "Connetti il Wi-Fi o carica una mappa"
- },
- "119314d0": {
-  "en": "GPS will take over after a fix",
-  "text": "Dopo il fix GPS la mappa lo segue"
- },
- "c19b47bb": {
-  "en": "Connections > Internet over Wi-Fi",
-  "text": "Connessioni > Internet via Wi-Fi"
- },
- "b59a5b35": {
-  "en": "Downloading map...",
-  "text": "Download mappa..."
- },
- "e6aae7d4": {
-  "en": "Reading map from SD...",
-  "text": "Lettura mappa da SD..."
- },
- "ba994464": {
-  "en": "Tiles unavailable",
-  "text": "Tile non disponibili"
- },
- "66643a4a": {
-  "en": "This zoom is not downloaded",
-  "text": "Questo zoom non è scaricato"
- },
- "29cc0d19": {
-  "en": "+/- zoom · Wi-Fi internet loads maps",
-  "text": "+/- zoom · mappe da internet Wi-Fi"
- },
- "a3b1d86e": {
-  "en": "Offline map",
-  "text": "Mappa offline"
- },
- "59317dec": {
-  "en": " · loading",
-  "text": " · caricamento"
- },
- "1d1e1a72": {
-  "en": "GPS: old date",
-  "text": "GPS: data vecchia"
- },
- "b45aef8c": {
-  "en": "Pan",
-  "text": "Sposta"
- },
- "62399752": {
-  "en": "Zoom",
-  "text": "Zoom"
- },
- "9fa2c938": {
-  "en": "Following",
-  "text": "Segue"
- },
- "3f654d20": {
-  "en": "To GPS",
-  "text": "Al GPS"
- },
- "04dfc93c": {
-  "en": "No saved maps",
-  "text": "Nessuna mappa salvata"
- },
- "dcf1e39a": {
-  "en": "Upload a map via Wi-Fi or USB",
-  "text": "Carica una mappa via Wi-Fi o USB"
- },
- "7c620193": {
-  "en": {
-   "one": "tile on SD",
-   "other": "tiles on SD"
-  },
-  "forms": {
-   "one": "{n} tile su SD",
-   "other": "{n} tile su SD"
-  }
- },
- "bd794432": {
-  "en": "No matching contacts",
-  "text": "Nessun contatto trovato"
- },
- "4e5a0349": {
-  "en": "No nodes discovered yet",
-  "text": "Ancora nessun nodo trovato"
- },
- "8a8a895b": {
-  "en": "F: edit tag filter",
-  "text": "F: modifica filtro"
- },
- "2ad4b008": {
-  "en": "Advertise my node",
-  "text": "Annuncia il mio nodo"
- },
- "e2339f44": {
-  "en": "saved",
-  "text": "salvata"
- },
- "0ec24245": {
-  "en": "Details",
-  "text": "Info"
- },
- "f4a9c097": {
-  "en": "Filter",
-  "text": "Filtro"
- },
- "c2954bc2": {
-  "en": "Back",
-  "text": "Indietro"
- },
- "c416a424": {
-  "en": "Node was removed",
-  "text": "Nodo rimosso"
- },
- "81ef07a9": {
-  "en": "Last heard",
-  "text": "Ultimo ascolto"
- },
- "4f0a0e98": {
-  "en": " ago",
-  "text": " fa"
- },
- "1ae89b50": {
-  "en": "not since boot",
-  "text": "non sentito dall'avvio"
- },
- "2fce4529": {
-  "en": "Signal",
-  "text": "Segnale"
- },
- "d7d630be": {
-  "en": "Route",
-  "text": "Percorso"
- },
- "cd08221c": {
-  "en": " · flood",
-  "text": " · flood"
- },
- "e27f342a": {
-  "en": "Position",
-  "text": "Posizione"
- },
- "a3ad51f3": {
-  "en": "not shared",
-  "text": "non condivisa"
- },
- "b8297e9a": {
-  "en": "Room",
-  "text": "Stanza"
- },
- "ae0ed984": {
-  "en": "Message",
-  "text": "Scrivi"
- },
- "8f635566": {
-  "en": "On map",
-  "text": "Mappa"
- },
- "db5485e7": {
-  "en": "Reset path",
-  "text": "Reset percorso"
- },
- "2d44294d": {
-  "en": "Sure?",
-  "text": "Elimino?"
- },
- "6e3fab8c": {
-  "en": "Forget",
-  "text": "Dimentica"
- },
- "6d7302f2": {
-  "en": "Server",
-  "text": "Server"
- },
- "26f8e74e": {
-  "en": "Trace",
-  "text": "Traccia"
- },
- "0a77a91f": {
-  "en": "Action",
-  "text": "Azione"
- },
- "8d57e66a": {
-  "en": "Run",
-  "text": "Esegui"
- },
- "0ff01b6a": {
-  "en": "Notes",
-  "text": "Note"
- },
- "d112e127": {
-  "en": "hold flat",
-  "text": "tieni in piano"
- },
- "1a45dda5": {
-  "en": "not calibrated",
-  "text": "non calibrata"
- },
- "ab3a8a0a": {
-  "en": "off",
-  "text": "spento"
- },
- "b2e48278": {
-  "en": "fix",
-  "text": "fix ok"
- },
- "620f3cc6": {
-  "en": "old date",
-  "text": "data vecchia"
- },
- "67ce0277": {
-  "en": "searching",
-  "text": "ricerca"
- },
- "f5e7befb": {
-  "en": "Satellites",
-  "text": "Satelliti"
- },
- "a2009955": {
-  "en": " in view",
-  "text": " visibili"
- },
- "6d7e4165": {
-  "en": "Latitude",
-  "text": "Latitudine"
- },
- "671964ee": {
-  "en": "Longitude",
-  "text": "Longitudine"
- },
- "bb5f80fd": {
-  "en": "Clock",
-  "text": "Orologio"
- },
- "ffa35e26": {
-  "en": "not set",
-  "text": "non impost."
- },
- "219101e3": {
-  "en": "manual",
-  "text": "manuale"
- },
- "d2cdcecb": {
-  "en": " · trusted",
-  "text": " · affidabile"
- },
- "bb77a2cf": {
-  "en": "Compass",
-  "text": "Bussola"
- },
- "37b8f592": {
-  "en": "calibrated",
-  "text": "calibrata"
- },
- "75c3ffb2": {
-  "en": "needs calibration",
-  "text": "da calibrare"
- },
- "1db880db": {
-  "en": {
-   "one": "sample",
-   "other": "samples"
-  },
-  "forms": {
-   "one": "{n} campione",
-   "other": "{n} campioni"
-  }
- },
- "ff05911b": {
-  "en": "Share position",
-  "text": "Invia posizione"
- },
- "7629db5a": {
-  "en": "Finish calibration",
-  "text": "Termina calibrazione"
- },
- "6f59150a": {
-  "en": "Calibrate compass",
-  "text": "Calibra bussola"
- },
- "e125a9a1": {
-  "en": "Advert with GPS",
-  "text": "Annuncio con GPS"
- },
- "10b78d8a": {
-  "en": "Needs a fresh GPS fix",
-  "text": "Serve un fix GPS recente"
- },
- "a603b11c": {
-  "en": "Rotate in all directions",
-  "text": "Ruota il dispositivo in ogni direzione"
- },
- "7f8e9f6b": {
-  "en": "Rotate for 20+ seconds",
-  "text": "Ruota per 20+ secondi"
- },
- "45465004": {
-  "en": "GPS on",
-  "text": "Accendi GPS"
- },
- "4930944f": {
-  "en": "Phone",
-  "text": "Telefono"
- },
- "ec266ec8": {
-  "en": "Watch",
-  "text": "Orologio"
- },
- "89a2ef46": {
-  "en": "Headphones",
-  "text": "Cuffie"
- },
- "fae1ce6b": {
-  "en": "Phone/watch",
-  "text": "Telefono/orologio"
- },
- "7e3d4120": {
-  "en": "BLE device",
-  "text": "Dispositivo BLE"
- },
- "9e13a743": {
-  "en": "Hidden network",
-  "text": "Rete nascosta"
- },
- "90cbadfa": {
-  "en": "Bluetooth busy: probe",
-  "text": "Bluetooth occupato: test"
- },
- "e5e4ab77": {
-  "en": "Bluetooth error",
-  "text": "Errore Bluetooth"
- },
- "983f66dc": {
-  "en": "Wi-Fi busy: access point",
-  "text": "Wi-Fi occupato: punto di accesso"
- },
- "35c403f6": {
-  "en": "Wi-Fi busy: probe",
-  "text": "Wi-Fi occupato: test"
- },
- "1be7979b": {
-  "en": "Wi-Fi error",
-  "text": "Errore Wi-Fi"
- },
- "89414ad6": {
-  "en": "Scanning Wi-Fi...",
-  "text": "Scansione Wi-Fi..."
- },
- "542d8f50": {
-  "en": "closer to centre = stronger",
-  "text": "più al centro = più forte"
- },
- "fde56fad": {
-  "en": "List paused",
-  "text": "Elenco in pausa"
- },
- "503d6eed": {
-  "en": {
-   "one": "phone/watch nearby",
-   "other": "phones/watches nearby"
-  },
-  "forms": {
-   "one": "{n} telefono/orologio vicino",
-   "other": "{n} telefoni/orologi vicini"
-  }
- },
- "49031ccd": {
-  "en": "No signals yet",
-  "text": "Ancora nessun segnale"
- },
- "8d2937a1": {
-  "en": "List",
-  "text": "Elenco"
- },
- "454d1d8a": {
-  "en": "Resume",
-  "text": "Riprendi"
- },
- "44f9bf2d": {
-  "en": "Pause",
-  "text": "Pausa"
- },
- "3368e695": {
-  "en": "Home in",
-  "text": "Cerca"
- },
- "aad07647": {
-  "en": "Motion",
-  "text": "Movimento"
- },
- "84397af6": {
-  "en": " · direct packets only",
-  "text": " · solo pacchetti diretti"
- },
- "b8a018ba": {
-  "en": " · address changes over time",
-  "text": " · l'indirizzo cambia nel tempo"
- },
- "a8e7e5cc": {
-  "en": "channel ",
-  "text": "canale "
- },
- "64db285b": {
-  "en": "Lost",
-  "text": "Perso"
- },
- "46102346": {
-  "en": "No signal",
-  "text": "Nessun segnale"
- },
- "3b06b3cd": {
-  "en": "Stronger",
-  "text": "Più caldo"
- },
- "4dd880a2": {
-  "en": "Weaker",
-  "text": "Più freddo"
- },
- "cd945433": {
-  "en": "Steady",
-  "text": "Stabile"
- },
- "184745be": {
-  "en": "keep moving",
-  "text": "muoviti"
- },
- "78c14fb6": {
-  "en": "peak ",
-  "text": "picco "
- },
- "b991041c": {
-  "en": "Waiting for samples",
-  "text": "In attesa di campioni"
- },
- "0ec969ac": {
-  "en": " adverts/s",
-  "text": " annunci/s"
- },
- "93382782": {
-  "en": " beacons/s",
-  "text": " beacon/s"
- },
- "cde081d3": {
-  "en": {
-   "one": "packet",
-   "other": "packets"
-  },
-  "forms": {
-   "one": "{n} pacchetto",
-   "other": "{n} pacchetti"
-  }
- },
- "42cfcb2d": {
-  "en": " s ago",
-  "text": " s fa"
- },
- "3f609f74": {
-  "en": "Mute",
-  "text": "Muto"
- },
- "b3ca9a34": {
-  "en": "Sound",
-  "text": "Suono"
- },
- "68f7fd73": {
-  "en": "Reset peak",
-  "text": "Reset picco"
- },
- "394ec4f2": {
-  "en": "Turn the access point off",
-  "text": "Spegni il punto di accesso"
- },
- "fccfe8a5": {
-  "en": "Beacon for another board",
-  "text": "Beacon per un'altra scheda"
- },
- "bfacb4d0": {
-  "en": " frames/s on channel 1",
-  "text": " frame/s sul canale 1"
- },
- "6d3d79bb": {
-  "en": "beacon ",
-  "text": "beacon "
- },
- "d7972182": {
-  "en": " frames/s · ",
-  "text": " frame/s · "
- },
- "b85b81cf": {
-  "en": "waiting: set the other board to CSI beacon",
-  "text": "in attesa: attiva il beacon CSI sull'altra scheda"
- },
- "1d0cdb24": {
-  "en": "NO WI-FI",
-  "text": "NO WI-FI"
- },
- "e9a87b56": {
-  "en": "BEACON ON",
-  "text": "BEACON ATTIVO"
- },
- "564cdaca": {
-  "en": "NO BEACON",
-  "text": "NO BEACON"
- },
- "9a1796e8": {
-  "en": "CSI FROZEN",
-  "text": "CSI BLOCCATO"
- },
- "dd26ae1f": {
-  "en": "CALIBRATING ",
-  "text": "CALIBRAZIONE "
- },
- "5ec52fe4": {
-  "en": " s",
-  "text": " s"
- },
- "4d851fe7": {
-  "en": "MOTION",
-  "text": "MOVIMENTO"
- },
- "6fce5d71": {
-  "en": "STILL",
-  "text": "FERMO"
- },
- "13d6d724": {
-  "en": "activity ",
-  "text": "attività "
- },
- "1e3add08": {
-  "en": "threshold ",
-  "text": "soglia "
- },
- "dda163c5": {
-  "en": " (default)",
-  "text": " (predef.)"
- },
- "19deef04": {
-  "en": "Walk between the boards to see the trace",
-  "text": "Cammina tra le schede per vedere la traccia"
- },
- "faa0c1ab": {
-  "en": "Calibrate with the area empty and still (10 s)",
-  "text": "Calibra con la zona vuota e immobile (10 s)"
- },
- "4204187c": {
-  "en": "Place the boards 2-5 m apart; motion between them is sensed",
-  "text": "Metti le schede a 2-5 m; si rileva il movimento tra loro"
- },
- "9bb72cae": {
-  "en": "Signals",
-  "text": "Segnali"
- },
- "6fb7daa2": {
-  "en": "Calibrate",
-  "text": "Calibra"
- },
- "4d580639": {
-  "en": "Beacon",
-  "text": "Beacon"
- },
- "5427923a": {
-  "en": "To turn on, hold the trackball pressed",
-  "text": "Per accendere, tieni premuta la trackball"
- },
- "b1e20664": {
-  "en": "To turn on: RESET or the power switch",
-  "text": "Per accendere: RESET o l'interruttore"
- },
- "cba7fbe8": {
-  "en": "Device is off",
-  "text": "Dispositivo spento"
- },
- "2697628b": {
-  "en": "Turning off...",
-  "text": "Spegnimento..."
- },
- "b639f585": {
-  "en": "GPS & compass",
-  "text": "GPS e bussola"
- },
- "dde0a6be": {
-  "en": "Keys & help",
-  "text": "Tasti e aiuto"
- },
- "cd03e04b": {
-  "en": "Turn off",
-  "text": "Spegni"
- },
- "a21b5cde": {
-  "en": "Brightness ",
-  "text": "Luminosità "
- },
- "e1b4bdaa": {
-  "en": "compass calibrated",
-  "text": "bussola calibrata"
- },
- "e8f719bd": {
-  "en": "compass not calibrated",
-  "text": "bussola non calibrata"
- },
- "7316bebd": {
-  "en": " relayed",
-  "text": " inoltrati"
- },
- "4f18c10c": {
-  "en": "What every key does",
-  "text": "Cosa fa ogni tasto"
- },
- "7e8a19d5": {
-  "en": "Searching: ",
-  "text": "Ricerca: "
- },
- "9a555563": {
-  "en": {
-   "one": "repeater",
-   "other": "repeaters"
-  },
-  "forms": {
-   "one": "{n} ripetitore",
-   "other": "{n} ripetitori"
-  }
- },
- "99f30427": {
-  "en": "OK: start",
-  "text": "OK: avvia"
- },
- "1a8c15c3": {
-  "en": {
-   "one": "region",
-   "other": "regions"
-  },
-  "forms": {
-   "one": "{n} regione",
-   "other": "{n} regioni"
-  }
- },
- "9fca3c9e": {
-  "en": "Listening ",
-  "text": "Ascolto "
- },
- "a3980ce8": {
-  "en": "Nothing new",
-  "text": "Niente di nuovo"
- },
- "443ffd47": {
-  "en": "OK: test ",
-  "text": "OK: prova "
- },
- "2265ebb1": {
-  "en": "Current profile: ",
-  "text": "Profilo attuale: "
- },
- "34f428b1": {
-  "en": "Try every regional preset",
-  "text": "Prova ogni preset regionale"
- },
- "c91eb13e": {
-  "en": "Preset",
-  "text": "Preimpostazione"
- },
- "8d9206a1": {
-  "en": "Frequency",
-  "text": "Frequenza"
- },
- "008f5512": {
-  "en": "Bandwidth",
-  "text": "Banda"
- },
- "d174bc31": {
-  "en": "Spreading factor",
-  "text": "Spreading factor"
- },
- "3c2364a7": {
-  "en": "Coding rate",
-  "text": "Coding rate"
- },
- "92d39d44": {
-  "en": "TX power",
-  "text": "Potenza TX"
- },
- "175749a2": {
-  "en": "Relay hop limit",
-  "text": "Limite di salti"
- },
- "75193707": {
-  "en": "Relay packets",
-  "text": "Inoltra pacchetti"
- },
- "2197c64b": {
-  "en": "Path hash size",
-  "text": "Lunghezza hash"
- },
- "492e789d": {
-  "en": "Region",
-  "text": "Regione"
- },
- "b872ed2b": {
-  "en": "Find regions",
-  "text": "Cerca regioni"
- },
- "eb38bf4c": {
-  "en": "Find network",
-  "text": "Cerca rete"
- },
- "24646b98": {
-  "en": "Radio test",
-  "text": "Test radio"
- },
- "0614ba0b": {
-  "en": "Previous radio",
-  "text": "Radio precedente"
- },
- "0fe07306": {
-  "en": "Name",
-  "text": "Nome"
- },
- "9a73db9b": {
-  "en": "Language",
-  "text": "Lingua"
- },
- "df6e627c": {
-  "en": "Day brightness",
-  "text": "Luminosità giorno"
- },
- "73d459b4": {
-  "en": "Home layout",
-  "text": "Vista Home"
- },
- "4ef0ddc5": {
-  "en": "Sounds",
-  "text": "Suoni"
- },
- "300ec32d": {
-  "en": "Auto lock",
-  "text": "Blocco auto"
- },
- "1f0bca87": {
-  "en": "Dim screen",
-  "text": "Oscura schermo"
- },
- "37976ee4": {
-  "en": "GPS receiver",
-  "text": "Ricevitore GPS"
- },
- "f050c5bc": {
-  "en": "UTC offset",
-  "text": "Offset UTC"
- },
- "caa82244": {
-  "en": "Battery shows",
-  "text": "Batteria mostra"
- },
- "fecd422a": {
-  "en": "Lock screen",
-  "text": "Schermo bloccato"
- },
- "667ad2f5": {
-  "en": "Wake on message",
-  "text": "Accendi con messaggio"
- },
- "98b6a9f6": {
-  "en": "Message popup",
-  "text": "Finestra messaggio"
- },
- "4eaf7c92": {
-  "en": "Theme",
-  "text": "Tema"
- },
- "ac7ce48d": {
-  "en": "Accent colour",
-  "text": "Colore accento"
- },
- "548b7cf8": {
-  "en": "Night brightness",
-  "text": "Luminosità notte"
- },
- "1c076c32": {
-  "en": "Screen password",
-  "text": "Password schermo"
- },
- "9525b78e": {
-  "en": "Custom",
-  "text": "Personalizzato"
- },
- "dc6bfbe0": {
-  "en": " MHz",
-  "text": " MHz"
- },
- "1ffe2452": {
-  "en": " kHz",
-  "text": " kHz"
- },
- "304ff7fb": {
-  "en": "None",
-  "text": "Nessuna"
- },
- "9023a2b0": {
-  "en": "OK: keep",
-  "text": "OK: mantieni"
- },
- "49e98b8b": {
-  "en": {
-   "one": "byte",
-   "other": "bytes"
-  },
-  "forms": {
-   "one": "{n} byte",
-   "other": "{n} byte"
-  }
- },
- "45570065": {
-  "en": "Dark",
-  "text": "Scuro"
- },
- "8ad2f8cf": {
-  "en": "Light",
-  "text": "Chiaro"
- },
- "126befb6": {
-  "en": "Auto",
-  "text": "Auto"
- },
- "880f97dc": {
-  "en": "Lime",
-  "text": "Lime"
- },
- "e9dd1fed": {
-  "en": "Blue",
-  "text": "Blu"
- },
- "f03bdf12": {
-  "en": "Violet",
-  "text": "Viola"
- },
- "15903060": {
-  "en": "Amber",
-  "text": "Ambra"
- },
- "0dad9117": {
-  "en": "Same as day",
-  "text": "Come di giorno"
- },
- "8581156e": {
-  "en": "Tiles",
-  "text": "Riquadri"
- },
- "87c7093b": {
-  "en": "Volts",
-  "text": "Volt"
- },
- "ff1537fa": {
-  "en": "Percent",
-  "text": "Percento"
- },
- "3c2dfe59": {
-  "en": "Hidden",
-  "text": "Nascosto"
- },
- "75afe364": {
-  "en": "All",
-  "text": "Tutti"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "Menzioni"
- },
- "f0b87eb8": {
-  "en": "MeshCore regional settings: frequency, BW, SF, CR",
-  "text": "Impostazioni regionali MeshCore: frequenza, BW, SF, CR"
- },
- "21ff842c": {
-  "en": "1 kHz steps; must match every node",
-  "text": "Passi di 1 kHz; uguale su tutti i nodi"
- },
- "7608c344": {
-  "en": "62.5 / 125 / 250 / 500 kHz",
-  "text": "62.5 / 125 / 250 / 500 kHz"
- },
- "943a47cb": {
-  "en": "Higher SF: longer range, slower",
-  "text": "SF più alto: più portata, più lento"
- },
- "c52a8c0f": {
-  "en": "Error correction 4/5 to 4/8",
-  "text": "Correzione errori da 4/5 a 4/8"
- },
- "af53f6b8": {
-  "en": "Radio chip setting, 0-22 dBm",
-  "text": "Valore del chip radio, 0-22 dBm"
- },
- "3f328711": {
-  "en": "Relay packets with fewer hops than this",
-  "text": "Inoltra i pacchetti con meno salti di questo"
- },
- "7cd202ed": {
-  "en": "Forward other nodes' MeshCore packets",
-  "text": "Inoltra i pacchetti MeshCore altrui"
- },
- "fa81bada": {
-  "en": "Per hop in our floods; older MeshCore drops 2-3",
-  "text": "Per salto nei nostri flood; MeshCore vecchio scarta 2-3"
- },
- "8513a98e": {
-  "en": "Repeaters pass on our floods by it; OK: type",
-  "text": "I ripetitori inoltrano in base a essa; OK: digita"
- },
- "33a9cb6d": {
-  "en": "Found: ",
-  "text": "Trovate: "
- },
- "2fd16ea7": {
-  "en": "Asks repeaters that hear this device",
-  "text": "Chiede ai ripetitori che sentono il dispositivo"
- },
- "d284a6e4": {
-  "en": "A restart returns ",
-  "text": "Il riavvio torna a "
- },
- "51c955b1": {
-  "en": "OK: return to it",
-  "text": "OK: ripristina"
- },
- "5261f68a": {
-  "en": "Kept on a change of frequency, BW, SF or CR",
-  "text": "Salvata al cambio di frequenza, BW, SF o CR"
- },
- "85dde262": {
-  "en": "Applied to the radio when saved",
-  "text": "Applicato alla radio al salvataggio"
- },
- "7c3b11a9": {
-  "en": "OK: set or change password",
-  "text": "OK: imposta o cambia password"
- },
- "e754fa0d": {
-  "en": "Day 07:00–20:00, local time",
-  "text": "Giorno 07:00–20:00, ora locale"
- },
- "34fd54b2": {
-  "en": "OK: edit, 1-24 UTF-8 bytes",
-  "text": "OK: modifica, 1-24 byte UTF-8"
- },
- "7ecd2a4c": {
-  "en": "Menu language",
-  "text": "Lingua del menu"
- },
- "018eb564": {
-  "en": "Applies to Home and all folders",
-  "text": "Per la Home e tutte le cartelle"
- },
- "b265628f": {
-  "en": "Tone for messages and ACKs",
-  "text": "Suono per messaggi e ACK"
- },
- "969a0678": {
-  "en": "0 = off, 30-600 s",
-  "text": "0 = off, 30-600 s"
- },
- "ab5a04f6": {
-  "en": "0 = off, 10-600 s",
-  "text": "0 = off, 10-600 s"
- },
- "48707a29": {
-  "en": "Receiver power",
-  "text": "Alimentazione ricevitore"
- },
- "ed88bd72": {
-  "en": "Local time, 15 minute steps",
-  "text": "Ora locale, passi di 15 minuti"
- },
- "5d6af097": {
-  "en": "Status bar: charge estimate or measured voltage",
-  "text": "Barra di stato: carica stimata o tensione misurata"
- },
- "e4f5443f": {
-  "en": "Message senders while locked",
-  "text": "Mittenti col blocco"
- },
- "6cf00f88": {
-  "en": "Stored in device memory",
-  "text": "Salvato nella memoria del dispositivo"
- },
- "1dd4ab8a": {
-  "en": "Listening",
-  "text": "Ascolto"
- },
- "2fe2598e": {
-  "en": "pings",
-  "text": "ping"
- },
- "9296739d": {
-  "en": "Phone: ",
-  "text": "Telefono: "
- },
- "4aba2ce0": {
-  "en": "No position: GPS fix or phone app",
-  "text": "Nessuna posizione: GPS o telefono"
- },
- "53e32296": {
-  "en": "Ping sent, listening for repeaters...",
-  "text": "Ping inviato, ascolto i ripetitori..."
- },
- "140b9a3a": {
-  "en": "No pings yet: P sends one",
-  "text": "Nessun ping: P ne invia uno"
- },
- "39b7127d": {
-  "en": "Last ping: ",
-  "text": "Ultimo ping: "
- },
- "1983dffb": {
-  "en": "Last ping: no repeater heard it",
-  "text": "Ultimo ping: nessun ripetitore"
- },
- "8504bdd5": {
-  "en": "No repeaters heard yet",
-  "text": "Nessun ripetitore ancora"
- },
- "6c03392d": {
-  "en": "OK starts listening and pings",
-  "text": "OK avvia ascolto e ping"
- },
- "0aed7015": {
-  "en": "rx ",
-  "text": "rx "
- },
- "04be6123": {
-  "en": " · echo ",
-  "text": " · eco "
- },
- "4b7f7705": {
-  "en": "Stop",
-  "text": "Ferma"
- },
- "0ae8097f": {
-  "en": "Start",
-  "text": "Avvia"
- },
- "7fb7f0a9": {
-  "en": "Ping",
-  "text": "Ping"
- },
- "5f7eec60": {
-  "en": "Wardrive on",
-  "text": "Wardriving attivo"
- },
- "8ae160ba": {
-  "en": "Wardrive off",
-  "text": "Wardriving fermo"
- },
- "54f6c01a": {
-  "en": "Ping queued",
-  "text": "Ping in coda"
- },
- "dfe5ac67": {
-  "en": "No position yet",
-  "text": "Posizione assente"
- },
- "0cf72110": {
-  "en": "Wait: a ping is under way",
-  "text": "Attendi: un ping è in corso"
- },
- "46ff9c40": {
-  "en": "choose",
-  "text": "scegli"
- },
- "11c2662d": {
-  "en": "select",
-  "text": "seleziona"
- },
- "7261c8af": {
-  "en": "send",
-  "text": "invia"
- },
- "cded1a85": {
-  "en": "exit",
-  "text": "esci"
- },
- "61efb279": {
-  "en": "Save changes",
-  "text": "Salva modifiche"
- },
- "a2c6becb": {
-  "en": "No changes",
-  "text": "Nessuna modifica"
- },
- "4d2d5d68": {
-  "en": "Save",
-  "text": "Salva"
- },
- "c2c76cb1": {
-  "en": "Edit",
-  "text": "Modifica"
- },
- "35afca3b": {
-  "en": "Cancel",
-  "text": "Annulla"
- },
- "701eaa88": {
-  "en": "Edit name",
-  "text": "Modifica nome"
- },
- "555cbe68": {
-  "en": "Keep",
-  "text": "Mantieni"
- },
- "cc01b1df": {
-  "en": "Return",
-  "text": "Ripristina"
- },
- "2ffcbe05": {
-  "en": "Test",
-  "text": "Test"
- },
- "c646a2c9": {
-  "en": "Search",
-  "text": "Cerca"
- },
- "0abaed3f": {
-  "en": "Found",
-  "text": "Trovate"
- },
- "d155d06d": {
-  "en": "Type",
-  "text": "Digita"
- },
- "a1de2fdd": {
-  "en": "Change",
-  "text": "Cambia"
- },
- "c3a34509": {
-  "en": "Next value",
-  "text": "Avanti"
- },
- "4d7ef753": {
-  "en": "Wi-Fi access point",
-  "text": "Punto di accesso Wi-Fi"
- },
- "ba5122e7": {
-  "en": "Web chat and map upload",
-  "text": "Chat web e caricamento mappe"
- },
- "4dbe556f": {
-  "en": "MeshCore identity",
-  "text": "Identità MeshCore"
- },
- "18ac79a2": {
-  "en": "Networks",
-  "text": "Reti"
- },
- "6cf1ba25": {
-  "en": "Toggle",
-  "text": "Attiva/disattiva"
- },
- "75a04256": {
-  "en": "Wrong password or refused: ",
-  "text": "Password errata o rifiutato: "
- },
- "e2dabf28": {
-  "en": "No answer from ",
-  "text": "Nessuna risposta da "
- },
- "09974b89": {
-  "en": "Connection lost",
-  "text": "Connessione persa"
- },
- "c7e915d7": {
-  "en": "Wi-Fi scan failed",
-  "text": "Scansione Wi-Fi fallita"
- },
- "34dfb5f5": {
-  "en": "Wi-Fi scan timed out",
-  "text": "Scansione Wi-Fi scaduta"
- },
- "71494765": {
-  "en": "SSID 1-32 bytes, password empty or 8-63",
-  "text": "SSID 1-32 byte, password vuota o 8-63"
- },
- "db65b4b4": {
-  "en": "Tile is not 256 or 512 px",
-  "text": "Tile non da 256 o 512 px"
- },
- "172eebcb": {
-  "en": "Not a PNG image",
-  "text": "Non è un'immagine PNG"
- },
- "e234f405": {
-  "en": "No location",
-  "text": "Posizione IP non trovata"
- },
- "fd387bbd": {
-  "en": "SD full: web tiles not cached",
-  "text": "SD piena: tile web non salvati"
- },
- "d8e1dad5": {
-  "en": "Wi-Fi client on",
-  "text": "Client Wi-Fi attivo"
- },
- "0e9eb651": {
-  "en": "Wi-Fi client off",
-  "text": "Client Wi-Fi spento"
- },
- "b1374eac": {
-  "en": "Connecting to ",
-  "text": "Connessione a "
  },
  "1716578a": {
   "en": "Channel details",
@@ -2244,154 +2248,6 @@
  "f51b5247": {
   "en": "Show on map",
   "text": "Mostra sulla mappa"
- },
- "73c66160": {
-  "en": "Choose",
-  "text": "Scegli"
- },
- "22d86644": {
-  "en": "Default: ",
-  "text": "Predefinita: "
- },
- "7bb181d6": {
-  "en": "Default: none",
-  "text": "Predefinita: nessuna"
- },
- "b75c3188": {
-  "en": "Channel removed",
-  "text": "Canale rimosso"
- },
- "f476e036": {
-  "en": "Channel added",
-  "text": "Canale aggiunto"
- },
- "1a11ab03": {
-  "en": "Hash ",
-  "text": "Hash "
- },
- "172ac002": {
-  "en": "Key:",
-  "text": "Chiave:"
- },
- "d92dbe47": {
-  "en": "Every MeshCore node has it",
-  "text": "Ce l'ha ogni nodo MeshCore"
- },
- "fac028c3": {
-  "en": "Scan with MeshMesh or the MeshCore app",
-  "text": "Scansiona con MeshMesh o l'app MeshCore"
- },
- "023fb5d9": {
-  "en": "Already in this channel",
-  "text": "Sei già in questo canale"
- },
- "2b8b882d": {
-  "en": "Sound on new messages",
-  "text": "Suono dei nuovi messaggi"
- },
- "edaf9d4d": {
-  "en": "Region · OK: save",
-  "text": "Regione · OK: salva"
- },
- "59997b30": {
-  "en": "Invite",
-  "text": "Invita"
- },
- "542f08f5": {
-  "en": "8 channels at most",
-  "text": "Massimo 8 canali"
- },
- "afa5c9cd": {
-  "en": "No chat contacts",
-  "text": "Nessun contatto chat"
- },
- "be00fde1": {
-  "en": "Sure? OK again",
-  "text": "Sicuro? Ancora OK"
- },
- "86b1d2eb": {
-  "en": "Leave channel",
-  "text": "Lascia canale"
- },
- "73ac94c3": {
-  "en": "Contact",
-  "text": "Contatto"
- },
- "a30a5085": {
-  "en": "Sound on",
-  "text": "Suono attivo"
- },
- "bc5128a1": {
-  "en": "Sound off",
-  "text": "Suono disattivato"
- },
- "7f264f8d": {
-  "en": "Name: 1-31 bytes",
-  "text": "Nome: 1-31 byte"
- },
- "8bf3cae2": {
-  "en": "Region saved",
-  "text": "Regione salvata"
- },
- "78fdcc66": {
-  "en": "Key: 32 hex or base64",
-  "text": "Chiave: 32 hex o base64"
- },
- "6c129c2a": {
-  "en": "Discover a chat contact first: ADV",
-  "text": "Prima trova un contatto chat: ADV"
- },
- "a3ed15d0": {
-  "en": "Invitation queued to ",
-  "text": "Invito in coda per "
- },
- "4c8675ff": {
-  "en": "Invitation not sent",
-  "text": "Invito non inviato"
- },
- "203aefe9": {
-  "en": "History stays; joining again shows it",
-  "text": "La cronologia resta; rientrando riappare"
- },
- "41ae3d10": {
-  "en": "Left ",
-  "text": "Uscito da "
- },
- "c4227caa": {
-  "en": "Cannot leave while sending",
-  "text": "Non si esce durante l'invio"
- },
- "f3f514aa": {
-  "en": "Not a channel link",
-  "text": "Non è un link di canale"
- },
- "62722f4e": {
-  "en": "Not in this mode",
-  "text": "Non in questa modalità"
- },
- "1c9c7d52": {
-  "en": "Channel not saved",
-  "text": "Canale non salvato"
- },
- "30025399": {
-  "en": "Join",
-  "text": "Entra"
- },
- "c4749f82": {
-  "en": "Open channel",
-  "text": "Vai al canale"
- },
- "5eb421e1": {
-  "en": "Channel invitation: ",
-  "text": "Invito al canale: "
- },
- "25d966fa": {
-  "en": "you are in it",
-  "text": "ne fai parte"
- },
- "f42b49b2": {
-  "en": "<- join",
-  "text": "<- entra"
  },
  "e3abda16": {
   "en": "Join by hashtag",
@@ -2429,6 +2285,10 @@
   "en": "Unknown channel ",
   "text": "Canale ignoto "
  },
+ "b743d77a": {
+  "en": "Public channel of MeshCore",
+  "text": "Canale pubblico di MeshCore"
+ },
  "63703628": {
   "en": " · OK: try a #name",
   "text": " · OK: prova un #nome"
@@ -2437,6 +2297,10 @@
   "en": "Full: 8 channels, Public included",
   "text": "Pieno: 8 canali, Public incluso"
  },
+ "8e4165b7": {
+  "en": "Private channel",
+  "text": "Canale privato"
+ },
  "5fc765a7": {
   "en": "Other channels heard: none",
   "text": "Nessun altro canale sentito"
@@ -2444,6 +2308,10 @@
  "4cda3fd3": {
   "en": "Channels heard on air will appear here",
   "text": "Qui appariranno i canali sentiti in onda"
+ },
+ "1f5d2384": {
+  "en": "Hashtag channel",
+  "text": "Canale hashtag"
  },
  "0700b8a7": {
   "en": "Channel name",
@@ -2461,10 +2329,6 @@
   "en": "32 hex digits or base64 (16 bytes)",
   "text": "32 cifre hex o base64 (16 byte)"
  },
- "74d4cc9d": {
-  "en": "Same #name, same channel as in MeshCore apps",
-  "text": "Stesso #nome, stesso canale delle app MeshCore"
- },
  "d3bcc1f1": {
   "en": {
    "one": "message",
@@ -2475,17 +2339,13 @@
    "other": "{n} messaggi"
   }
  },
- "b743d77a": {
-  "en": "Public channel of MeshCore",
-  "text": "Canale pubblico di MeshCore"
+ "74d4cc9d": {
+  "en": "Same #name, same channel as in MeshCore apps",
+  "text": "Stesso #nome, stesso canale delle app MeshCore"
  },
- "8e4165b7": {
-  "en": "Private channel",
-  "text": "Canale privato"
- },
- "1f5d2384": {
-  "en": "Hashtag channel",
-  "text": "Canale hashtag"
+ "f476e036": {
+  "en": "Channel added",
+  "text": "Canale aggiunto"
  },
  "12a760c5": {
   "en": "The key is made on this device",
@@ -2506,6 +2366,154 @@
  "087a6114": {
   "en": "OK: join   BACK: cancel",
   "text": "OK: entra   BACK: annulla"
+ },
+ "023fb5d9": {
+  "en": "Already in this channel",
+  "text": "Sei già in questo canale"
+ },
+ "542f08f5": {
+  "en": "8 channels at most",
+  "text": "Massimo 8 canali"
+ },
+ "7f264f8d": {
+  "en": "Name: 1-31 bytes",
+  "text": "Nome: 1-31 byte"
+ },
+ "78fdcc66": {
+  "en": "Key: 32 hex or base64",
+  "text": "Chiave: 32 hex o base64"
+ },
+ "f3f514aa": {
+  "en": "Not a channel link",
+  "text": "Non è un link di canale"
+ },
+ "62722f4e": {
+  "en": "Not in this mode",
+  "text": "Non in questa modalità"
+ },
+ "22d86644": {
+  "en": "Default: ",
+  "text": "Predefinita: "
+ },
+ "7bb181d6": {
+  "en": "Default: none",
+  "text": "Predefinita: nessuna"
+ },
+ "b75c3188": {
+  "en": "Channel removed",
+  "text": "Canale rimosso"
+ },
+ "1c9c7d52": {
+  "en": "Channel not saved",
+  "text": "Canale non salvato"
+ },
+ "1a11ab03": {
+  "en": "Hash ",
+  "text": "Hash "
+ },
+ "172ac002": {
+  "en": "Key:",
+  "text": "Chiave:"
+ },
+ "d92dbe47": {
+  "en": "Every MeshCore node has it",
+  "text": "Ce l'ha ogni nodo MeshCore"
+ },
+ "fac028c3": {
+  "en": "Scan with MeshMesh or the MeshCore app",
+  "text": "Scansiona con MeshMesh o l'app MeshCore"
+ },
+ "2b8b882d": {
+  "en": "Sound on new messages",
+  "text": "Suono dei nuovi messaggi"
+ },
+ "edaf9d4d": {
+  "en": "Region · OK: save",
+  "text": "Regione · OK: salva"
+ },
+ "59997b30": {
+  "en": "Invite",
+  "text": "Invita"
+ },
+ "afa5c9cd": {
+  "en": "No chat contacts",
+  "text": "Nessun contatto chat"
+ },
+ "be00fde1": {
+  "en": "Sure? OK again",
+  "text": "Sicuro? Ancora OK"
+ },
+ "86b1d2eb": {
+  "en": "Leave channel",
+  "text": "Lascia canale"
+ },
+ "73ac94c3": {
+  "en": "Contact",
+  "text": "Contatto"
+ },
+ "a30a5085": {
+  "en": "Sound on",
+  "text": "Suono attivo"
+ },
+ "bc5128a1": {
+  "en": "Sound off",
+  "text": "Suono disattivato"
+ },
+ "8bf3cae2": {
+  "en": "Region saved",
+  "text": "Regione salvata"
+ },
+ "6c129c2a": {
+  "en": "Discover a chat contact first: ADV",
+  "text": "Prima trova un contatto chat: ADV"
+ },
+ "a3ed15d0": {
+  "en": "Invitation queued to ",
+  "text": "Invito in coda per "
+ },
+ "4c8675ff": {
+  "en": "Invitation not sent",
+  "text": "Invito non inviato"
+ },
+ "203aefe9": {
+  "en": "History stays; joining again shows it",
+  "text": "La cronologia resta; rientrando riappare"
+ },
+ "41ae3d10": {
+  "en": "Left ",
+  "text": "Uscito da "
+ },
+ "c4227caa": {
+  "en": "Cannot leave while sending",
+  "text": "Non si esce durante l'invio"
+ },
+ "30025399": {
+  "en": "Join",
+  "text": "Entra"
+ },
+ "c4749f82": {
+  "en": "Open channel",
+  "text": "Vai al canale"
+ },
+ "5eb421e1": {
+  "en": "Channel invitation: ",
+  "text": "Invito al canale: "
+ },
+ "25d966fa": {
+  "en": "you are in it",
+  "text": "ne fai parte"
+ },
+ "f42b49b2": {
+  "en": "<- join",
+  "text": "<- entra"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "Appunti vuoti"
+ },
+ "8dc21305": {
+  "en": "Copied",
+  "text": "Copiato"
  },
  "6426ce4b": {
   "en": "Copy text",
@@ -2535,14 +2543,6 @@
   "en": "Invalid text for this field",
   "text": "Testo non valido per questo campo"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "Appunti vuoti"
- },
- "8dc21305": {
-  "en": "Copied",
-  "text": "Copiato"
- },
  "76bda0c0": {
   "en": "Tags",
   "text": "Tag"
@@ -2554,98 +2554,6 @@
  "0685388d": {
   "en": "Save failed",
   "text": "Salvataggio fallito"
- },
- "e01eca3a": {
-  "en": "waiting for an answer...",
-  "text": "in attesa di risposta..."
- },
- "60acd1e3": {
-  "en": "refused",
-  "text": "rifiutato"
- },
- "1b68d598": {
-  "en": "no answer",
-  "text": "nessuna risposta"
- },
- "8bdf7f34": {
-  "en": "not logged in · password saved",
-  "text": "non connesso · password salvata"
- },
- "4c80d01f": {
-  "en": "not logged in",
-  "text": "non connesso"
- },
- "ea1182ad": {
-  "en": "logged in as admin",
-  "text": "accesso da amministratore"
- },
- "08c8675d": {
-  "en": "Status: ",
-  "text": "Stato: "
- },
- "012245ac": {
-  "en": "Status: not asked yet",
-  "text": "Stato: non ancora chiesto"
- },
- "eb20490a": {
-  "en": "Battery ",
-  "text": "Batteria "
- },
- "7bc55d8b": {
-  "en": " V",
-  "text": " V"
- },
- "c515b220": {
-  "en": "Up ",
-  "text": "Attivo "
- },
- "8e85bb8c": {
-  "en": "Rx/tx ",
-  "text": "Rx/tx "
- },
- "67b05c83": {
-  "en": "Noise ",
-  "text": "Rumore "
- },
- "d725d6d4": {
-  "en": "Posts ",
-  "text": "Post "
- },
- "4f5720b5": {
-  "en": "Air ",
-  "text": "In onda "
- },
- "c14c68f4": {
-  "en": "Trace: ",
-  "text": "Traccia: "
- },
- "cef097f4": {
-  "en": "you ",
-  "text": "tu "
- },
- "9685740f": {
-  "en": " h ",
-  "text": " h "
- },
- "6e8fc273": {
-  "en": " d ",
-  "text": " g "
- },
- "c57453ef": {
-  "en": "Trace shows the SNR at every repeater of the route",
-  "text": "La traccia mostra lo SNR a ogni ripetitore del percorso"
- },
- "d4460949": {
-  "en": "No route through repeaters to trace",
-  "text": "Nessun percorso tramite ripetitori da tracciare"
- },
- "3f688bff": {
-  "en": "Replies:",
-  "text": "Risposte:"
- },
- "343e2f48": {
-  "en": "Command: ",
-  "text": "Comando: "
  },
  "55edebd2": {
   "en": "Login",
@@ -2691,6 +2599,102 @@
   "en": "Command sent",
   "text": "Comando inviato"
  },
+ "e01eca3a": {
+  "en": "waiting for an answer...",
+  "text": "in attesa di risposta..."
+ },
+ "60acd1e3": {
+  "en": "refused",
+  "text": "rifiutato"
+ },
+ "1b68d598": {
+  "en": "no answer",
+  "text": "nessuna risposta"
+ },
+ "8bdf7f34": {
+  "en": "not logged in · password saved",
+  "text": "non connesso · password salvata"
+ },
+ "4c80d01f": {
+  "en": "not logged in",
+  "text": "non connesso"
+ },
+ "ea1182ad": {
+  "en": "logged in as admin",
+  "text": "accesso da amministratore"
+ },
+ "08c8675d": {
+  "en": "Status: ",
+  "text": "Stato: "
+ },
+ "012245ac": {
+  "en": "Status: not asked yet",
+  "text": "Stato: non ancora chiesto"
+ },
+ "eb20490a": {
+  "en": "Battery ",
+  "text": "Batteria "
+ },
+ "7bc55d8b": {
+  "en": " V",
+  "text": " V"
+ },
+ "9685740f": {
+  "en": " h ",
+  "text": " h "
+ },
+ "c515b220": {
+  "en": "Up ",
+  "text": "Attivo "
+ },
+ "8e85bb8c": {
+  "en": "Rx/tx ",
+  "text": "Rx/tx "
+ },
+ "67b05c83": {
+  "en": "Noise ",
+  "text": "Rumore "
+ },
+ "d725d6d4": {
+  "en": "Posts ",
+  "text": "Post "
+ },
+ "4f5720b5": {
+  "en": "Air ",
+  "text": "In onda "
+ },
+ "6e8fc273": {
+  "en": " d ",
+  "text": " g "
+ },
+ "c14c68f4": {
+  "en": "Trace: ",
+  "text": "Traccia: "
+ },
+ "cef097f4": {
+  "en": "you ",
+  "text": "tu "
+ },
+ "c57453ef": {
+  "en": "Trace shows the SNR at every repeater of the route",
+  "text": "La traccia mostra lo SNR a ogni ripetitore del percorso"
+ },
+ "d4460949": {
+  "en": "No route through repeaters to trace",
+  "text": "Nessun percorso tramite ripetitori da tracciare"
+ },
+ "3f688bff": {
+  "en": "Replies:",
+  "text": "Risposte:"
+ },
+ "343e2f48": {
+  "en": "Command: ",
+  "text": "Comando: "
+ },
+ "eca63717": {
+  "en": "Passwords differ",
+  "text": "Password diverse"
+ },
  "9c799975": {
   "en": "Unlock",
   "text": "Sblocca"
@@ -2731,9 +2735,33 @@
   "en": "Incorrect password",
   "text": "Password errata"
  },
- "eca63717": {
-  "en": "Passwords differ",
-  "text": "Password diverse"
+ "46120854": {
+  "en": "8 counters at most",
+  "text": "Al massimo 8 contatori"
+ },
+ "28fa2654": {
+  "en": "Counter reset",
+  "text": "Contatore azzerato"
+ },
+ "fa0f5fe6": {
+  "en": "The last counter stays",
+  "text": "L’ultimo contatore resta"
+ },
+ "45bb420e": {
+  "en": "Counter deleted",
+  "text": "Contatore eliminato"
+ },
+ "61342fd0": {
+  "en": "on",
+  "text": "on"
+ },
+ "d1b37a61": {
+  "en": "Name saved",
+  "text": "Nome salvato"
+ },
+ "154900f6": {
+  "en": "Name: up to 23 UTF-8 bytes",
+  "text": "Nome: max 23 byte UTF-8"
  },
  "2ab44d95": {
   "en": "New counter",
@@ -2770,33 +2798,5 @@
  "73f035c7": {
   "en": "R again: reset to 0",
   "text": "R di nuovo: azzera"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "Al massimo 8 contatori"
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "Contatore azzerato"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "L’ultimo contatore resta"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "Contatore eliminato"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "on"
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "Nome salvato"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "Nome: max 23 byte UTF-8"
  }
 }
