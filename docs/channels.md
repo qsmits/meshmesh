@@ -1,85 +1,77 @@
-# Каналы MeshCore
+# MeshCore channels
 
-[English](en/channels.md)
+Channels are MeshCore group chats: all members share one 16-byte key (AES-128), messages flood through
+the mesh without delivery acknowledgements, and the sender's name is not verified. MeshMesh keeps up to
+8 channels, Public included; the list lives in NVS (`meshmesh-mc/channels`, the name and key of each
+joined channel, about 50 bytes each) and survives firmware updates. Keys and links use the formats of the
+MeshCore app, so channels and QR codes are interchangeable with it.
 
-Каналы — групповые чаты MeshCore: у всех участников один 16-байтовый ключ (AES-128), сообщения
-расходятся по сети flood без подтверждений доставки, имя отправителя не проверяется. MeshMesh
-держит до 8 каналов вместе с Public; список хранится в NVS (`meshmesh-mc/channels`, имя и ключ
-каждого занятого канала, около 50 байт на канал) и переживает обновления прошивки. Форматы ключей и ссылок — те же, что у приложения
-MeshCore и WadaMesh, поэтому каналы и QR-коды взаимозаменяемы с ними.
+## Adding a channel
 
-## Как добавить канал
+| Way | M9 screen | Web page |
+|---|---|---|
+| Hashtag (`#name`) | Chats → Menu → “Add a channel” | yes |
+| Link `meshcore://channel/add?...` | — (no need to type a long link: see invitations) | paste |
+| QR code | shows the QR of its channel | shows the QR |
+| Name and key (32 hex or base64) | yes | yes |
+| Create a private channel (random key) | yes, then the card with its QR | yes |
+| Hashtag heard on air | list in “Add a channel” | list |
+| Invitation in a direct message | ← in the chat: “Join” | “Join” button |
 
-| Способ | M9 и T-Deck | Веб-страница | Приложение Android | Heltec, GAT562 и др. (OLED) |
-|---|---|---|---|---|
-| Хештег (`#имя`) | Чаты → Меню → «Добавить канал» | да | да | через страницу или приложение |
-| Ссылка `meshcore://channel/add?...` | — (ввод длинной ссылки с клавиатуры не нужен: см. приглашения) | вставить | вставить, открыть из другого приложения | через страницу или приложение |
-| QR-код | показывает QR своего канала | показывает QR | сканирует камерой и показывает | — |
-| Название и ключ (32 hex или base64) | да | да | да | через страницу или приложение |
-| Создать закрытый канал (случайный ключ) | да, затем карточка с QR | да | да | через страницу или приложение |
-| Услышанный в эфире хештег | список в «Добавить канал» | список | список | пункт меню «Вступить: #имя» в «Сообщениях» |
-| Приглашение в личном сообщении | ← в чате: «Вступить» | кнопка «Вступить» | кнопка «Вступить» | пункт меню «Вступить: имя» |
+**Hashtag.** The key is the first 16 bytes of SHA-256 of the string `#name`; leading `#` and spaces are
+removed first and Latin letters lowered (as the MeshCore web client does). `#Test`, `test` and
+`# test` give the same channel `#test` with the key `9cd8fcf22a47333b591d96a2b848b73f`. A hashtag channel
+is open: anyone who knows or guesses the name can read it.
 
-**Хештег.** Ключ — первые 16 байт SHA-256 от строки `#имя`; перед этим убираются ведущие `#` и
-пробелы, латинские буквы переводятся в нижний регистр (как в WadaMesh и веб-клиенте MeshCore).
-`#Test`, `test` и `# test` дают один канал `#test` с ключом `9cd8fcf22a47333b591d96a2b848b73f`.
-Хештег-канал открыт: его может прочитать любой, кто знает или угадает имя.
+**Link and QR code.** The MeshCore format (`docs.meshcore.io/qr_codes`):
+`meshcore://channel/add?name=<URL-encoded name>&secret=<32 hex>`. The `region_scope` parameter (the channel's
+region, MeshCore App 1.47+) sets the region on joining, and MeshMesh links carry it ([regions.md](regions.md)).
+The link is found anywhere in a text, so a pasted piece of a conversation works too.
+QR code: byte mode, error correction M, versions 1–10; the encoder is our own (`src/Channels.cpp`, its
+JavaScript copy is in `web/index.html`).
 
-**Ссылка и QR-код.** Формат MeshCore (`docs.meshcore.io/qr_codes`):
-`meshcore://channel/add?name=<URL-кодированное имя>&secret=<32 hex>`. Параметр `region_scope`
-(регион канала, MeshCore App 1.47+) с 0.15.0 задаёт регион при вступлении, а ссылки MeshMesh его передают
-(`docs/regions.md`). Ссылку находит в любом тексте: вставленный кусок переписки тоже
-подходит. QR-код — байтовый режим, коррекция M, версии 1–10; кодировщик свой (`src/Channels.cpp`,
-его копия на JavaScript — в `web/index.html`), побитово сверен с python-qrcode и читается zxing.
+**Name and key.** 16 bytes: 32 hexadecimal digits or base64 (24 characters with `==`, like the Public key
+`izOH6cXN6mrJ5e26oRXNcg==`). MeshCore does not support 256-bit keys, neither does MeshMesh.
 
-**Название и ключ.** 16 байт: 32 шестнадцатеричные цифры или base64 (24 символа с `==`, как
-ключ Public `izOH6cXN6mrJ5e26oRXNcg==`). 256-битные ключи MeshCore не поддерживает, MeshMesh тоже.
+**New private channel.** The device's random number generator makes the key; then open the channel card
+and show its QR code or send an invitation. The key of a private channel is shown on the M9 card (QR and
+32 hex) and on the page over the device's own access point; the page over the home network (plain
+HTTP) does not get the links of private channels, just as it does not get the node key.
 
-**Новый закрытый канал.** Ключ создаёт генератор случайных чисел устройства; потом откройте карточку
-канала и покажите QR-код или отправьте приглашение. Ключ закрытого канала виден на карточке M9
-(QR и 32 hex), на странице через точку доступа устройства и в приложении; на странице через домашнюю
-сеть (обычный HTTP) ссылки закрытых каналов не выдаются, как и ключ узла.
+**Heard on air.** Packets of channels this node has not joined cannot be decrypted; only the channel's hash
+byte is visible. MeshMesh counts such packets per hash (relayed copies once), keeps the last six and tries
+common hashtags on them (`#test`, `#ping`, `#mesh`, `#meshcore`, `#wardrive`, `#eu` and others, the list is
+`channels::commonTags` in `src/Channels.cpp`). When a name fits, the channel is shown as “#name — join”. While a
+hashtag is being typed, the screen and the page show how many stored packets it opens. The key of a private
+channel cannot be found this way.
 
-**Услышанные в эфире.** Пакеты каналов, в которых узел не состоит, нельзя расшифровать; виден
-только байт-хеш канала. MeshMesh считает такие пакеты по хешу (повторы через ретрансляторы — один раз),
-хранит последние шесть и пробует на них распространённые хештеги (`#test`, `#ping`, `#mesh`,
-`#ru`, `#moscow`, `#kazan` и др., список — `channels::commonTags`). Если имя подошло, канал
-показывается как «#имя — вступить». При вводе хештега экран и страница показывают, сколько
-сохранённых пакетов он открывает. Ключ закрытого канала так не узнать.
+**Invitation.** Channel card → “Invite” → a chat contact: a direct message with the channel link is sent
+(encrypted with the node keys, with a delivery acknowledgement). MeshMesh shows it as “Channel invitation …”
+and offers to join; stock MeshCore shows the link text. A channel name with many non-ASCII letters may not fit
+a message (151 bytes) URL-encoded; then its letters go as they are, without percent-encoding; MeshMesh reads both.
 
-**Приглашение.** Карточка канала → «Пригласить» → чат-контакт: ему уходит личное сообщение со
-ссылкой канала (зашифровано ключами узлов, с подтверждением доставки). MeshMesh показывает его как
-«Приглашение в канал …» и предлагает вступить; штатная MeshCore покажет текст ссылки. Имя из
-кириллицы длиннее 13 букв в URL-кодировке не помещается в сообщение (151 байт) — тогда буквы
-идут как есть, без `%D0%..`; MeshMesh читает обе формы.
+## Controls
 
-## Управление
-
-- **M9, T-Deck.** В чатах видны Public, каналы и личные переписки. Клавиша U выбирает следующий непрочитанный чат. Чтобы добавить канал, откройте Чаты → Меню → Добавить канал. На строке канала
-  ←/→ открывают карточку канала, в чате канала — клавиша ←. Карточка: QR-код, хеш, ключ закрытого
-  канала, «Пригласить» (←/→ выбирают контакт), «Покинуть канал» (два раза OK).
-- **Heltec, GAT562 и другие платы с OLED.** Сообщения подписаны каналом (`Марат #kazan`), ответы
-  «OK»/«Принято» и экранная клавиатура GAT562 пишут в тот же канал.
-- **Веб-страница и приложение.** Список чатов с каналами, «+ Канал», карточка канала с QR-кодом,
-  приглашения, удаление.
-- **USB и BLE.** `channels` — список (с ключами), `channel do {JSON}`:
+- **M9 screen.** Chats shows Public, joined channels and direct conversations. Press U for the next unread
+  conversation. Use Chats → Menu → Add a channel to join or create one. On a channel row ←/→ open the channel
+  card, in a channel chat the ← key. Card: QR code, hash, key of a private channel, region, notifications
+  (including a per-channel sound), “Invite” (←/→ choose the contact), “Leave channel” (OK twice).
+- **Web page.** Chat list with the channels, “+ Channel”, channel card with the QR code, invitations, removal.
+- **USB and BLE.** `channels` lists them (with keys); `channel do {JSON}`:
   `{"action":"add","hashtag":"test"}`, `{"action":"add","link":"meshcore://..."}`,
-  `{"action":"add","name":"Друзья","key":"<32 hex>"}`, `{"action":"add","create":"Друзья"}`,
-  `{"action":"remove","channel":"<ID>"}`, `{"action":"invite","channel":"<ID>","to":"<узел>"}`,
-  `{"action":"probe","hashtag":"ru"}`. Отправка: `send <ID канала> текст`. HTTP — те же действия:
-  `GET/POST /api/channels`.
+  `{"action":"add","name":"Friends","key":"<32 hex>"}`, `{"action":"add","create":"Friends"}`,
+  `{"action":"remove","channel":"<ID>"}`, `{"action":"invite","channel":"<ID>","to":"<node>"}`,
+  `{"action":"probe","hashtag":"utrecht"}`, `{"action":"region","channel":"<ID>","region":"nl-ut"}`,
+  `{"action":"policy","channel":"<ID>","sound":1}`. Sending: `send <channel ID> text`. HTTP has the same
+  actions: `GET/POST /api/channels`.
 
-ID канала в истории — `FF` и первые 7 байт SHA-256 его ключа (Public — `ALL`). Покинутый канал
-исчезает из списка, а его сообщения остаются в истории и возвращаются при повторном вступлении.
-Public удалить нельзя.
+A channel's ID in the history is `FF` followed by the first 7 bytes of SHA-256 of its key (Public: `ALL`).
+A channel that was left disappears from the list; its messages stay in the history and come back when it
+is joined again. Public cannot be removed.
 
-## Пределы
+## Limits
 
-- Один трансивер: каналы работают на текущем радиопрофиле; канал другой частоты не услышать.
-- Подтверждений доставки в каналах нет (как и в MeshCore); имя отправителя — часть текста и не проверяется.
-- В режимах репитера и комнаты каналы не добавляются.
-- Что проверено на устройствах — [verification.md](verification.md).
+- One transceiver: channels work on the current radio profile; a channel on another frequency is not heard.
+- Channels have no delivery acknowledgements (as in MeshCore); the sender's name is part of the text and is not verified.
 
-## Новые настройки 0.19.0 / Android 0.12.0
-
-[Уведомления, быстрые ответы, приоритеты и история, периодическое время и счётчик](notifications.md).
+See also [notifications.md](notifications.md) for per-channel notifications, priority and retention.

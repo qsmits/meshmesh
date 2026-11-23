@@ -44,7 +44,7 @@ allocated because it does not fit the Arduino loop stack. Stored files and
 web packages remain unchanged. Upload data are buffered per tile in PSRAM;
 only a complete validated tile is written to SD.
 
-Web tiles (M9, Wi-Fi client with internet): a missing tile is requested from the
+Web tiles (the M9 as a Wi-Fi client with internet): a missing tile is requested from the
 tile server (default `https://tile.openstreetmap.org/{z}/{x}/{y}.png`, USB
 `internet tiles URL|default`), shown as soon as it arrives and written to SD as the
 same MMT1 file an upload produces, in 4 KB steps with the `.part`/`.old` order.
@@ -57,7 +57,7 @@ fetched, no bulk prefetch. Zoom 3-18 for viewing; uploads keep 10-17.
 Without GPS or a saved view (NVS `mm-map`), the map centres on an approximate IP
 location (get.geojs.io, then ipapi.co; this sends the public IP to that service).
 
-Relief (page and app builder, option «Рельеф и горизонтали»): elevations come from Terrain Tiles
+Relief (the relief and contour-line option of the web page's map builder): elevations come from Terrain Tiles
 (Mapzen terrarium PNG on AWS Open Data, `elevation-tiles-prod`, CORS open; elevation =
 R·256 + G + B/256 − 32768 m; sources SRTM, GMTED, ETOPO1 and others,
 https://registry.opendata.aws/terrain-tiles) at zoom 12 at most, sampled bilinearly. Hillshade
@@ -72,16 +72,7 @@ the tile is drawn without relief and the page says how many.
 Overpass: overpass-api.de, then the public mirrors maps.mail.ru and overpass.private.coffee when the
 main server answers 429/504 or does not answer.
 
-Phone storage (Android app 0.16.0, `api/MapStore.kt`): areas live in the app's own folders —
-internal memory (`files/maps`) or the phone's removable SD card (`Android/data/…/files/maps`),
-both removed with the app. One folder per area: `area.json` (the package manifest plus id,
-storage, tiles, bytes, saved, complete) and `Z/X_Y.mmt`, the same MMT1 files as on a device SD.
-A tile is validated (coordinates, RLE run count, size) and written to `.part`, then renamed; an
-area is shown only after `finish`; a failed save is deleted, one cut off by closing the app stays
-listed as not fully saved until deleted. The page reads tiles from
-`/phone-maps/tile?z=&x=&y=[&area=]` (served by the WebView) before the device SD; a newer area
-covers older ones. A phone area can be copied to the device SD tile by tile over the current link.
-The 200 MB cache of tiles read from a device SD (`TileStore`) is separate and may be trimmed.
-
-Viewing (page and app): zoom 3–18; a missing zoom shows the nearest loaded parent tile enlarged
+Viewing (web page): zoom 3–18; a missing zoom shows the nearest loaded parent tile enlarged
 (up to 6 levels). Nodes are drawn without any base map too.
+
+From a computer, `tools/maps.py build|check|upload` makes a package, validates it and uploads it over USB.

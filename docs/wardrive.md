@@ -1,99 +1,88 @@
-# Вардрайв: карта покрытия сети
+# Wardriving: a coverage map of the mesh
 
-Добавлен в прошивке 0.20.0 и Android 0.13.0. Результаты сборок и аппаратной проверки — в [verification.md](verification.md).
+Wardriving is a drive or walk with a node that logs what it hears and where. In MeshMesh it is first of all a
+MeshCore coverage map: where the mesh can be heard, through which repeater, and where the dead spots are. Logging
+Wi-Fi access points and Bluetooth devices with positions, the classic kind, is an extra part.
 
-Вардрайв (wardriving) — поездка или прогулка с узлом, который записывает, что он слышит и в какой точке. В MeshMesh
-это прежде всего карта покрытия MeshCore: где сеть слышно, через какой ретранслятор и где мёртвые зоны. Классическая
-запись Wi-Fi-точек и Bluetooth-устройств с координатами — дополнительная часть для плат ESP32.
+## What is logged
 
-## Что записывается
+Logging needs a trusted position:
 
-Запись идёт только с доверенной позицией:
+- a GPS fix of the device accepted by `gpsFix` (a date not before the build, no conflict with the phone/NTP clock,
+  HDOP 5 or less);
+- or a position sent by a connected host with the `fix` action (see Commands), at most 30 s old (accuracy 50 m or
+  better).
 
-- GPS-фикс платы, принятый `gpsFix` (дата не раньше сборки, нет конфликта с часами телефона/NTP, HDOP не больше 5);
-- или позиция телефона из приложения не старше 30 с (точность 50 м или лучше).
+A spoofed GPS fix (for example one dated before the firmware build) is rejected, so such points never reach the log. Without a
+position, received packets are only counted (`no_fix`).
 
-Подменённый GPS (фикс с датой 8 июля 2026, см. `AGENTS.md`) отклоняется, поэтому такие точки не попадают в журнал. Без
-позиции принятые пакеты только считаются (`no_fix`).
+Three parts are switched on independently:
 
-Три части включаются независимо:
-
-| Часть | Что делает | Эфир |
+| Part | What it does | On air |
 |---|---|---|
-| Приём (`passive`) | Каждый принятый пакет: тип, число переходов, SNR/RSSI и последний ретранслятор пути (у объявления, услышанного напрямую, — первые байты ключа узла). Тот же ретранслятор записывается снова после смещения на 1/4 расстояния пинга (не меньше 25 м) или через 2 мин. | Ничего не передаёт |
-| Пинги (`ping`) | Короткое сообщение `wardrive` в канал каждые `distance` метров (по умолчанию 200), не чаще раза в `interval` секунд (60). Копии, которые ретрансляторы передают в течение 30 с, — эхо: кто нас услышал и с каким SNR. Ни одного эха — ни один ретранслятор не услышал узел в этой точке. | Одно сообщение на пинг |
-| Wi-Fi и BLE (`nets`, только ESP32) | Точки доступа (BSSID, SSID, канал, шифрование, RSSI) и Bluetooth-устройства из развёртки радара. Тот же адрес записывается снова после 100 м или 5 мин. | Ничего не передаёт; радар занимает Wi-Fi |
+| Listening (`passive`) | Every packet received: type, hops, SNR/RSSI and the last repeater of its path (for an advert heard directly, the first bytes of the node's key). The same repeater is logged again after moving 1/4 of the ping distance (at least 25 m) or after 2 min. | Sends nothing |
+| Pings (`ping`) | A short `wardrive` message to a channel every `distance` metres (200 by default), at most once per `interval` seconds (60). The copies repeaters pass on within 30 s are its echoes: who heard us and at what SNR. No echo means no repeater heard the node at that spot. | One message per ping |
+| Wi-Fi and BLE (`nets`) | Access points (BSSID, SSID, channel, security, RSSI) and Bluetooth devices from the radar's sweep. The same address is logged again after 100 m or 5 min. | Sends nothing; the radar takes Wi-Fi |
 
-Пинги по умолчанию идут в канал `#wardrive`: плата вступает в него при первом пинге. Можно выбрать любой
-вступлённый канал, кроме Public. Пинг не попадает в историю чата. С настройкой «Координаты в тексте пинга»
-(`coords`) сообщение содержит широту и долготу с пятью знаками: участники канала узнают, где находится узел.
-По умолчанию координаты не передаются.
+Pings go to `#wardrive` by default; the device joins it on the first ping. Any joined channel other than Public can
+be chosen. A ping does not enter the chat history. With "Coordinates in the ping text" (`coords`) the message carries
+latitude and longitude with five decimals: the channel's members learn where the node is. Coordinates are not sent
+by default.
 
-Эхо — это копии нашего пакета, которые плата услышала сама (те же таблицы MeshCore, что и у «пути пакета»
-сообщений). Ретранслятор, который принял пинг, но которого не слышит плата, в эхо не попадёт. Отсутствие эха не
-доказывает, что пинг никто не принял.
+Echoes are the copies of our packet the device heard itself (the same MeshCore tables as the packet path of messages).
+A repeater that received the ping but cannot be heard by the device does not appear. No echo does not prove nobody
+received the ping.
 
-Пока пишутся Wi-Fi и BLE, радар остаётся открытым: точка доступа, Wi-Fi-проверка и интернет-клиент имеют
-преимущество, и развёртка в это время приостанавливается. Энергосбережение с ожиданием LoRa IRQ при открытом радаре
-не действует.
+While Wi-Fi and BLE are logged the radar stays open: the access point, the Wi-Fi probe and the internet client come
+first and pause the sweep. The power saving that waits for the LoRa IRQ does not apply while the radar is open.
 
-## Хранение
+## Storage
 
-Журнал хранится в MeshMesh storage (LittleFS): `wd-mesh.bin` и `wd-mesh.old` — точки сети, `wd-nets.bin` и
-`wd-nets.old` — Wi-Fi и BLE. Заполненный файл становится предыдущим, прежний предыдущий удаляется, поэтому всегда
-доступны последние 4096–8192 точки сети и 2048–4096 записей Wi-Fi/BLE на ESP32, 256–512 точек на nRF52.
-Записи копятся в памяти до 16 штук или 30 с; выключение (`poweroff`) и остановка вардрайва записывают их сразу.
-Файл, оборванный посреди записи, становится предыдущим: целые записи из него читаются.
+The log lives in MeshMesh storage (LittleFS): `wd-mesh.bin` and `wd-mesh.old` hold the mesh points, `wd-nets.bin`
+and `wd-nets.old` the Wi-Fi and BLE records. A full file becomes the previous one and the old previous one is
+deleted, so the last 4096–8192 mesh points and 2048–4096 Wi-Fi/BLE records are kept. Records wait in RAM for up to 16 or 30 s; power off (`poweroff`) and stopping wardriving write them at once.
+A file cut in the middle of a write becomes the previous one: its whole records stay readable.
 
-Журнал не передаётся в эфир и не выгружается сам. Экспорт — с веб-страницы или из приложения. Файлы с Wi-Fi-адресами,
-именами сетей и треком — личные данные: не публикуйте их без необходимости.
+The log never goes on air and is not uploaded anywhere. Export it from the web page. Files with Wi-Fi
+addresses, network names and your track are personal data: do not publish them needlessly.
 
-## Экраны
+## Screen
 
-- **M9 и T-Deck.** Плитка «Вардрайв»: режим, позиция, число точек, последний пинг, ретрансляторы (эхо и приём, лучший
-  SNR). OK — начать (приём + пинги) или остановить, P — пинг сейчас, N — Wi-Fi/BLE. На карте точки окрашены по
-  SNR: зелёный — 5 дБ и выше, жёлтый — от −5 дБ, оранжевый — слабее, красный — пинг без эха; пинги крупнее.
-- **Однокнопочные платы и GAT562.** Экран «Вардрайв» в списке приложений; удержание открывает меню: старт/стоп, пинг
-  сейчас, список ретрансляторов, Wi-Fi/BLE (ESP32). T114 рисует тот же экран в цвете.
+The "Wardrive" tile on the M9: mode, position, point count, last ping, repeaters (echoes and packets received, best
+SNR). OK starts (listening + pings) or stops, P pings now, N switches Wi-Fi/BLE. On the map points are coloured by
+SNR: green 5 dB and over, yellow from −5 dB, orange weaker, red a ping without echoes; pings are larger.
 
-## Веб-страница и приложение
+## Web page
 
-Раздел «Вардрайв»: состояние, позиция, счётчики, ретрансляторы, настройки, экспорт в CSV, GeoJSON и KML (точки
-сети) и CSV для WiGLE (Wi-Fi и BLE, формат WigleWifi-1.4). Кнопка «На карте» открывает карту с точками; без SD-карты
-точки рисуются на пустом фоне.
+The "Wardrive" section: state, position, counters, repeaters, settings, export to CSV, GeoJSON and KML (mesh points)
+and a CSV for WiGLE (Wi-Fi and BLE, WigleWifi-1.4 format). "On the map" opens the map with the points; without an SD
+card they are drawn on a blank background.
 
-Приложение Android может передавать позицию телефона: «Передавать позицию телефона» спрашивает доступ к точной
-геопозиции и раз в 5 с отправляет плате свежий фикс (`fix`). Пока это включено, служба приложения работает и как
-служба геопозиции, чтобы позиция шла и с погашенным экраном.
+## Commands
 
-## Команды
-
-USB, BLE и HTTP (`/api/wardrive`, `/api/wardrive/log`; приложение переводит их в те же команды):
+USB, BLE and HTTP (`/api/wardrive`, `/api/wardrive/log` map to the same commands):
 
 ```text
-wardrive                                   состояние и настройки (JSON)
+wardrive                                   state and settings (JSON)
 wardrive do {"action":"settings","passive":true,"ping":true,"coords":false,"nets":false,"distance":200,"interval":60,"channel":"FF…"}
-wardrive do {"action":"ping"}              пинг сейчас (не чаще раза в 10 с)
-wardrive do {"action":"fix","lat":55.79,"lon":49.10,"accuracy":8}   позиция телефона
-wardrive do {"action":"stop"}              выключить всё, журнал остаётся
-wardrive do {"action":"clear"}             удалить журнал
-wardrive log mesh FROM                     точки сети с номера FROM: [time,lat,lon,kind,type,hops,snr,rssi,hash,count,flags]
+wardrive do {"action":"ping"}              ping now (at most once per 10 s)
+wardrive do {"action":"fix","lat":52.09,"lon":5.12,"accuracy":8}    a position from a host
+wardrive do {"action":"stop"}              switch everything off, the log stays
+wardrive do {"action":"clear"}             delete the log
+wardrive log mesh FROM                     mesh points from number FROM: [time,lat,lon,kind,type,hops,snr,rssi,hash,count,flags]
 wardrive log nets FROM                     Wi-Fi/BLE: [time,lat,lon,kind,mac,channel,rssi,auth,name,flags]
 ```
 
-`kind` точки: 0 — принятый пакет, 1 — пинг (`count` — число ретрансляторов с эхом, `hash` и `snr` — лучший), 2 — эхо
-(один ретранслятор, позиция пинга). `lat`/`lon` — в миллионных долях градуса, `snr` — дБ, `time` — UTC (0 до установки
-часов). `flags`: 1 — позиция телефона, 2 — `hash` из ключа отправителя, 4 — прямой маршрут. Порция — 32 точки
-или 16 записей Wi-Fi/BLE; `next` — номер следующей, `total` — всего. Если `total` уменьшился, журнал очищен или
-сдвинулся: читать заново с нуля.
+Point `kind`: 0 a packet received, 1 a ping (`count` repeaters with echoes, `hash` and `snr` the best one), 2 an
+echo (one repeater, at the ping's position). `lat`/`lon` are in millionths of a degree, `snr` in dB, `time` UTC (0
+before the clock is set). `flags`: 1 a host position (`fix`), 2 `hash` from the sender's key, 4 direct route. A part
+holds 32 points or 16 Wi-Fi/BLE records; `next` is the number of the next one, `total` the count. If `total` went
+down, the log was cleared or shifted: read again from zero.
 
-На nRF52 вардрайв — отключаемый модуль (`tools/nrf52.py package ENV --without wardrive`, `MM_NO_WARDRIVE`);
-сайт и приложение ставят полный набор.
+## Limits
 
-## Ограничения
-
-- Один LoRa-трансивер: вардрайв слушает и пингует на текущем радиопрофиле.
-- Пинги расходуют эфирное время и видны участникам канала. Пределы расстояния и интервала не дают слать их часто;
-  правила эфира вашей страны имеют приоритет.
-- RSSI и SNR не дают расстояния до ретранслятора; карта показывает, где сеть слышна, а не где стоят ретрансляторы.
-- Хеш ретранслятора — первые 1–3 байта ключа, как в пути пакета: разные ретрансляторы могут совпасть по одному байту.
+- One LoRa transceiver: wardriving listens and pings on the current radio profile.
+- Pings use airtime and are seen by the channel's members. The distance and interval limits keep them rare; your
+  country's airtime rules come first.
+- RSSI and SNR give no distance to a repeater; the map shows where the mesh can be heard, not where repeaters stand.
+- A repeater hash is the first 1–3 bytes of its key, as in the packet path: different repeaters may share one byte.

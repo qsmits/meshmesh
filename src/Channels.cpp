@@ -10,8 +10,8 @@ const uint8_t publicSecret[16] = {0x8b, 0x33, 0x87, 0xe9, 0xc5, 0xcd, 0xea, 0x6a
 const char* const commonTags[] = {
     "#test",      "#testing",   "#ping",       "#bot",       "#chat",   "#general", "#local",   "#mesh",
     "#meshcore",  "#news",      "#weather",    "#emergency", "#sos",    "#help",    "#random",  "#offtopic",
-    "#repeaters", "#wardrive",  "#wardriving", "#ru",        "#russia", "#moscow",  "#msk",     "#spb",
-    "#kazan",     "#tatarstan", "#ua",         "#ukraine",   "#kyiv",   "#de",      "#germany", "#pl",
+    "#repeaters", "#wardrive",  "#wardriving", "#nl",        "#netherlands", "#holland", "#utrecht", "#amsterdam",
+    "#rotterdam", "#be",        "#belgium",  "#ua",         "#ukraine",   "#kyiv",   "#de",      "#germany", "#pl",
     "#poland",    "#uk",        "#us",         "#usa",       "#eu",     "#europe"};
 const unsigned commonTagCount = sizeof(commonTags) / sizeof(commonTags[0]);
 static void sha(uint8_t* out, size_t n, const void* data, size_t len) {

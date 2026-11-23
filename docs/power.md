@@ -1,77 +1,46 @@
-# Энергосбережение
+# Power saving
 
-С 0.4.0 все платы используют общий режим ожидания событий (`src/Power.cpp`). Он работает в обычном
-режиме чатов, репитере и комнате. При погашенном экране, исправном свободном радио, без активного
-радара/CSI и диагностических проб основная задача ожидает до 20 мс вместо опроса каждые 2 мс.
-Прерывание LoRa уведомляет задачу без ожидания тайм-аута. Между ожиданиями обслуживаются кнопки,
-GPS и USB. После команды USB/BLE или кнопки быстрый цикл удерживается 1 с: фоновый опрос Android
-каждые 8 с больше не блокирует ожидание постоянно. При передаче и очереди отправки цикл быстрый.
+Power handling lives in `src/Power.cpp`. Two mechanisms are used; neither has been measured as a current or
+battery-life gain.
 
-Это ожидание задачи FreeRTOS, а не принудительное выключение процессора. Другие задачи продолжают
-работать, BLE и Wi-Fi сохраняются. Реальный сон зависит от ядра, драйверов, USB и периферии.
-На ESP32 сохранены существующие 80 МГц и лёгкий сон репитера/комнаты при подходящих условиях;
-при работающем Wi-Fi или Bluetooth частота не меняется. Native USB с компьютером блокирует
-настоящий лёгкий сон ESP32, но не ожидание задачи. Обработка IRQ вокруг лёгкого сна не меняется.
+**Idle task waits.** With the screen off, a ready idle radio and no active radar/CSI or diagnostic probes, the
+application task waits up to 20 ms instead of polling every 2 ms. A LoRa interrupt notifies it without waiting for
+the timeout. Keys, GPS and USB are serviced between waits. USB/BLE commands or key presses keep the fast loop for
+1 s; transmission and queued sends keep it too.
 
-`status`: `idle_waits`, `idle_wait_ms`, `idle_radio_events` — ожидания задачи, их суммарное время и
-уведомления LoRa, полученные в ожидании. Это **не** измеренный ток или время сна CPU. `sleeps`,
-`sleep_ms`, `slow_ms` — отдельные счётчики существующего энергосбережения ESP32. При включённом
-экране и активном использовании длинное ожидание не включается.
+This blocks a FreeRTOS task rather than forcibly powering down the CPU. Other tasks and BLE/Wi-Fi continue running.
+Actual CPU sleep depends on the core, drivers, USB and peripherals.
 
-Проверка: `python tools/power_check.py --port PORT --peer PEER_PORT`. Она временно меняет только
-тайм-аут экрана, проверяет реальный приём объявлений во время ожидания, USB и программное
-пробуждение интерфейса, затем восстанавливает настройку. Прежнее имя `nrf52_power_check.py`
-сохранено для совместимости. `python tools/power_pair_check.py PORT1 PORT2` проверяет по три личных
-сообщения/ACK в каждую сторону, без опроса USB приёмника до ACK, и восстанавливает исходные роли. Результаты конкретных образов и ограничения — `verification.md`.
+**CPU clock.** The ESP32-S3 runs at 240 MHz while the device is in use and drops to 80 MHz otherwise. "In use"
+means: the screen is lit, the Wi-Fi access point or client is on, the radar, CSI or a Wi-Fi/BLE probe is active, a
+key, USB or BLE command arrived in the last 10 s, or the Wi-Fi driver or Bluetooth controller has been started.
+The clock never changes under a running Wi-Fi driver or Bluetooth controller (once started they stay up until a
+reboot): changing it there caused panics on the M9. There is no light sleep: LoRa reception stays continuous.
 
-## Выключение
+`status` fields `idle_waits`, `idle_wait_ms` and `idle_radio_events` count task waits, their elapsed time and LoRa
+notifications received while waiting. `cpu_mhz` is the current clock and `slow_ms` the time spent at 80 MHz. They do
+not measure current or CPU sleep. (`sleeps` and `sleep_ms` remain in `status` from the removed light-sleep path and
+stay 0.)
 
-С 0.8.0 устройство можно выключить программно: пункт «Выключить…» в меню «Настройки» однокнопочных плат,
-T114 и GAT562 (подтверждение — повторное удержание или OK), строка «Выключить» в настройках M9 и T-Deck
-(OK дважды), кнопка «Выключить устройство» в «Настройках» веб-страницы и приложения, USB-команда
-`poweroff`. Через 1,5 с (ответ успевает уйти, идущая передача пакета получает до 5 с) прошивка сохраняет
-отложенные записи (контакты, шахматы, турниры, питомец, входы и посты сервера), 3 с показывает «Устройство
-выключено» и способ включения, затем усыпляет трансивер, гасит экран, отключает GPS и питание периферии
-и выключается:
+`python tools/power_check.py --port PORT --peer PEER_PORT` temporarily changes only the screen timeout, checks real
+advert reception during idle, USB and simulated UI wake-up, then restores the setting.
+`python tools/power_pair_check.py PORT1 PORT2` checks three direct messages and ACKs in each direction without
+receiver USB polling until the ACK.
 
-| Плата | Выключение | Включение |
-|---|---|---|
-| Heltec V4, V3, Wireless Tracker, Vision Master E213, T3-S3, T-LoRa, XIAO S3, T-Deck | глубокий сон ESP32, уровни выводов удерживаются | удерживать PRG/BOOT (T-Deck — нажатый трекбол) около секунды |
-| Station G2, ThinkNode M2 | глубокий сон ESP32 | RESET: кнопка не на RTC-выводе и разбудить не может |
-| ThinkNode M9 | глубокий сон ESP32 | RESET или ползунок питания: кнопки на GPIO у M9 нет |
-| T-Beam, T-Beam Supreme | PMU AXP отключает все шины (без PMU — глубокий сон) | кнопка питания PWR платы |
-| GAT562, T114, T096, fakeTec | мягкое выключение: процессор спит в System ON и ждёт кнопку, остальное выключено | удерживать центр джойстика / USER (у fakeTec — кнопку на P1.00, без неё — RESET), пока не загорится светодиод (~1 с), и отпустить |
+## Power off
 
-На ESP32 короткое нажатие будит плату лишь на мгновение: не дождавшись удержания 0,7 с после старта, она
-снова засыпает. RESET включает всегда. На nRF52 System OFF не используется: выход из него — сброс с ещё
-нажатой кнопкой, а загрузчик T114 принимает USER, зажатую при сбросе, за вход в обновление по Bluetooth
-(`HT-n5262-OTA`, без USB). Плата оставалась в нём, а RESET в этот момент закончился потерей хранилища
-(`docs/verification.md`). Поэтому nRF52 спит в System ON (FreeRTOS опрашивает кнопку раз в 50 мс, Bluetooth
-молчит, настройка BLE сохраняется) и перезапускается обычным образом, когда кнопку отпустят. USB-порт
-выключенной nRF52 остаётся, но на команды она не отвечает. Обновление по USB требует включить плату;
-на nRF52 загрузчик также доступен по двойному RESET. На классическом ESP32
-(T-Beam, T-LoRa) IRAM заполнен, и глубокий сон в него не помещался: эти сборки заменяют заглушками
-(`src/NoLedc.cpp`) вызовы LEDC из `tone()` RadioLib, который нужен только для AFSK. Ток в выключенном
-состоянии не измерен.
+The device can be switched off in software: the "Turn off" row in the M9 settings (OK twice), the "Turn off
+device" button in the settings of the web page, and the USB/BLE command `poweroff`. After 1.5 s (the reply leaves;
+a packet on air gets up to 5 s more) the firmware flushes delayed writes (contacts, counters, the wardrive log),
+shows "Device is off" and how to turn it on for 3 s, puts the transceiver to sleep, turns the screen, GPS and
+peripheral supply off and enters ESP32 deep sleep.
 
-**Пустая батарея (GAT562, T114, с 0.27.0).** При каждом запуске плата записывает настройки (счётчик загрузок) в
-первую страницу хранилища (4 КБ), где лежит и его корень: страница стирается и записывается заново. Почти
-пустой аккумулятор проседает под нагрузкой запуска, плата перезапускается между стиранием и записью, страница
-остаётся пустой и хранилище перестаёт монтироваться («Нет хранилища»; ключ, история и настройки пропадают;
-вероятно, так хранилище T114 пропало 9 и 20 октября: последние записи — работа репитером от батареи). Теперь без USB-питания плата не запускается при батарее ниже 3,4 В: она
-сразу уходит в мягкое выключение, не трогая хранилище. Работающая плата выключается обычным образом, если
-батарея 30 с держится ниже 3,3 В (передача проседает ненадолго). Из такого выключения плата включается сама,
-когда появляется USB-питание (зарядка), или удержанием кнопки. С USB-питанием и без показаний батареи (меньше
-2,5 В — аккумулятор не подключён) всё как раньше. Пороги выбраны по разряду LiPo, а не по измерениям наших
-плат; сброс посреди записи другими путями (RESET, отключение питания) по-прежнему может повредить хранилище.
-На fakeTec этой защиты нет (`MM_NO_BATTERY_GUARD`): делитель батареи у самодельных плат бывает не установлен,
-и неподключённый вход АЦП мог бы не дать плате запуститься.
+The M9 has no button on a wake-capable GPIO: it is turned on again with RESET or the power slider.
 
-[EasySkyMesh](https://github.com/IoTThinks/EasySkyMesh/wiki/PowerSaving#3-test-results) послужил
-ориентиром. RXPS (прерывистый приём LoRa) и GPS по расписанию пока не добавлены. Приём LoRa
-остаётся непрерывным. Ток и прирост автономности MeshMesh не измерены; чужие измерения
-не переносятся на наши платы. На платах сообщества аппаратную работу подтверждают владельцы.
+The current while off has not been measured.
 
-## Новые настройки 0.19.0 / Android 0.12.0
+## Not implemented
 
-[Уведомления, быстрые ответы, приоритеты и история, периодическое время и счётчик](notifications.md).
+[EasySkyMesh](https://github.com/IoTThinks/EasySkyMesh/wiki/PowerSaving#3-test-results) informed this work. RXPS
+(duty-cycled LoRa reception) and scheduled GPS power cycling are not implemented. Measurements of other firmware do
+not establish results for this one.

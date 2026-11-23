@@ -1,106 +1,86 @@
 # Translations
 
-MeshMesh speaks 15 languages: English (`en`), Russian (`ru`), Ukrainian (`uk`), Spanish (`es`),
-Portuguese (`pt`, Brazilian), French (`fr`), German (`de`), Italian (`it`), Polish (`pl`), Turkish (`tr`),
-Chinese (`zh`, Simplified), Japanese (`ja`), Korean (`ko`), Arabic (`ar`) and Indonesian (`id`).
+MeshMesh speaks 14 languages: English (`en`, the source), Ukrainian (`uk`), Spanish (`es`), Portuguese (`pt`,
+Brazilian), French (`fr`), German (`de`), Italian (`it`), Polish (`pl`), Turkish (`tr`), Chinese (`zh`,
+Simplified), Japanese (`ja`), Korean (`ko`), Arabic (`ar`) and Indonesian (`id`).
 
 | What | Source | Translations |
 |---|---|---|
-| Device screens (firmware) | `t("English","Русский")`, `tr(...)`, `count(n,"one","many","ру1","ру2","ру5")` in `src/` | `i18n/firmware/<lang>.json` |
-| Website | `site/i18n/en.json` (and `ru.json`) | `site/i18n/<lang>.json` |
-| Device web page and Android app | the Russian text of `web/index.html` (`L(...)`, `plural(...)`, markup), `android/.../assets/host.js` and the app's Kotlin `I18n.t(...)` | `i18n/web/<lang>.json` |
-| Chess page of the website (`chess/`) | the Russian text of `web/index.html` and `web/chess-companion.js`, listed in `i18n/chess/en.json` | `i18n/chess/<lang>.json` |
-| Overview | `README.md` | `README.<lang>.md` (`README.ru.md` is the full Russian guide) |
-| Detailed documents | `docs/*.md` (Russian) | `docs/en/*.md` (English) |
+| Device screens (firmware) | English strings in `src/` | `i18n/firmware/<lang>.json` |
+| Device web page | English text of `web/index.html` | `i18n/web/<lang>.json` |
 
-The website's chess page is built from the device page; `web/chess-i18n.js` translates what the page's own
-dictionaries leave in Russian as it is drawn. Its dictionaries use the Russian
-text as the key (`{0}` keeps a name or number, `{r}` is translated again, `_pieces` gives the piece letters
-K Q R B N of the notation). After changing chess strings in `web/index.html`, add them to every
-`i18n/chess/<lang>.json` and run `node tools/chess/i18n_check.cjs`; `tools/chess_site.py` checks keys and
-placeholders when the site is built.
+## Firmware strings
+
+English is written in the code; the other languages come from `i18n/firmware/<lang>.json`.
+
+- `t("English")` — a screen string (in `src/Ui.cpp`, a macro around `tr()` that returns a `String`).
+- `tr("English")` — the translated `const char*`. The key is computed by the compiler (`include/I18n.h`).
+- `N_("English")` — marks a string in a table; it is translated where it is read, with `trText(text)`, which
+  hashes the text at run time.
+- `count(n, "one", "many")` (or `plural(n, "one", "many")`) — the number and the noun form its language needs.
+  English is given as the singular and plural noun; the number is put in front of it.
+
+A string without a translation shows English. The language number is stored in NVS, so the order of the languages
+in `include/I18n.h` (and `LANGS` in `tools/i18n.py`) never changes; new languages go to the end.
+
+Each entry of `i18n/firmware/<lang>.json` carries the English source and the translation:
+
+```json
+"0dc6b4aa": {"en": "Off", "text": "Aus"}
+```
+
+The key is an FNV-1a hash (32 bit, as 8 hex digits) of the English text; for a plural, of the two English forms
+joined by the byte 0x1f. Editing the English text in the code therefore makes a new entry and drops the old
+translation. `i18n/firmware/source.json` tells where each string is used and its width: `cells` is the English
+text in 6-pixel columns (a CJK character takes two).
+
+Plural entries have `forms` with the CLDR categories of the language, and `{n}` where the number goes:
+
+```json
+"…": {"en": {"one": "hop", "other": "hops"}, "forms": {"one": "{n} Hop", "other": "{n} Hops"}}
+```
+
+Categories: `one`/`other` (es, pt, fr, de, it, tr); `one`/`few`/`many` (uk, pl); `other` only (zh, ja, ko, id);
+`zero`/`one`/`two`/`few`/`many`/`other` (ar). Every form needs exactly one `{n}`, except that an Arabic form may
+leave the number out (`"رسالتان"`).
+
+Rules:
+
+- **Fit the screen.** The M9 screen is 320×240. Keep a translation close to `cells`; abbreviate when needed.
+  `check` reports translations that are much longer than the English.
+- **Keep the edges.** Leading and trailing spaces, line breaks and placeholders (`%d`, `%s`, `{weekday}`, `{month}`,
+  `{day}`) stay exactly as in English: the code glues these strings together. `check` enforces this.
+- **Keep the names.** MeshMesh, MeshCore, LoRa, Wi-Fi, Bluetooth, BLE, GPS, USB, SD, SNR, RSSI, dBm, ACK, UTC, PIN,
+  NTP, CSI, ESP-NOW, OSM, ThinkNode M9, and the key names written on the keyboard (OK, DEL, Enter, Sym, `@` …) are
+  not translated.
+- **Scripts.** Chinese is Simplified; Japanese mixes kana and kanji as usual UIs do; Arabic is Modern Standard
+  Arabic without harakat or tatweel, with Western digits (the screens draw Arabic right to left inside the usual
+  left-to-right layout). Only Ukrainian may contain Cyrillic.
+- **Tone.** Short, neutral interface language: infinitives or imperatives for actions, no exclamation marks.
+
+### Glyph subsets
+
+The screen fonts hold Latin-1 and Cyrillic. Other letters come from fallback fonts in `include/I18nFonts.h`: Latin
+Extended from the X11 misc-fixed fonts, Chinese, Japanese and Korean from Fusion Pixel Font (SIL OFL 1.1, licenses
+in `i18n/fonts/fusion-pixel/`), Arabic from ClearlyU 12 (`i18n/fonts/clearlyu-cu12.txt`). Only the glyphs the
+translations use are kept, so `generate` must run after every translation change; `check` reports characters
+without a glyph. Text received over the radio in these scripts shows only the glyphs that are in the subset.
+
+`generate` needs the BDF fonts and the u8g2 `bdfconv` tool in `upstream/fonts` (not in Git; see
+`tools/i18n_fonts.py`).
+
+### Commands
 
 ```sh
 python3 tools/i18n.py sync        # after changing strings in src/: new ones appear empty, removed ones go
 python3 tools/i18n.py todo de     # what German still lacks, with the code line it comes from
-python3 tools/i18n.py check       # everything below; the build of the site fails without it
+python3 tools/i18n.py check       # complete, same edges and placeholders, fits, glyphs exist, table up to date
 .venv/bin/python tools/i18n.py generate   # include/I18nTable.h and the glyph subsets in include/I18nFonts.h
 ```
 
-`generate` needs the BDF fonts and u8g2 `bdfconv` in `upstream/fonts` (see `tools/i18n_fonts.py`).
-The glyph subsets come from Fusion Pixel Font (SIL OFL 1.1, licenses in `i18n/fonts/fusion-pixel/`),
-ClearlyU 12 (`i18n/fonts/clearlyu-cu12.txt`) and the public-domain X11 misc-fixed fonts.
-Run it after every translation change, then build the boards and look at the screens:
-`.venv/bin/python tools/site_shots.py OUTDIR de` renders them on a computer.
+Then build (`pio run -e m9`) and look at the screens: `sh tools/ui_preview/build.sh m9 OUTDIR de`.
 
-## Firmware strings
+## Device web page
 
-Each entry of `i18n/firmware/<lang>.json` carries the English and Russian source and the translation:
-
-```json
-"5b0c2a7e": {"en": "Settings", "ru": "Настройки", "text": "Einstellungen"}
-```
-
-The key is a hash of the source, so editing the English or Russian text in the code makes a new entry
-(and drops the old translation). `i18n/firmware/source.json` tells where each string is used and its
-width: `cells` is the longer of the English and Russian text in 6-pixel columns (a CJK character takes two).
-
-- **Fit the screen.** The M9 screen is 320×240, the Heltec and GAT562 OLED 128×64 (21 columns).
-  Keep a translation within `cells`; abbreviate as the Russian does («Отпр.», «удерж.») when needed.
-  `check` reports translations more than 30% longer.
-- **Keep the edges.** Leading and trailing spaces, line breaks and placeholders (`%d`, `%s`,
-  `{weekday}`, `{month}`, `{day}`) stay exactly as in English: the code glues these strings together.
-- **Keep the names.** MeshMesh, MeshCore, LoRa, Wi-Fi, Bluetooth, BLE, GPS, USB, SD, SNR, RSSI, dBm, ACK, UTC,
-  PIN, NTP, CSI, ESP-NOW, OSM, board names, and the device keys written on them (OK, BACK, DEL, HOME, MSG,
-  MAP, CTRL, ADV, MIC, Enter, Sym, `@`) are not translated. `RU/EN` names the keyboard layouts and stays.
-- **Plurals.** `forms` has the categories of the language (CLDR): `one`/`other`; `one`/`few`/`many`
-  (Ukrainian, Polish); `other` only (Chinese, Japanese, Korean, Indonesian); `zero`/`one`/`two`/`few`/`many`/`other`
-  (Arabic). Write `{n}` where the number goes: `"{n} Partien"`, `"{n}局"`. An Arabic form may leave the
-  number out: `"رسالتان"`.
-- **Dates.** `{weekday}, {month} {day}` is the order of the date line; month names are in the form that
-  order needs (Russian uses the genitive «января»).
-- **Scripts.** Chinese is Simplified; Japanese mixes kana and kanji as usual UIs do; Arabic is Modern
-  Standard Arabic without harakat or tatweel, with Western digits; the screens draw Arabic right to left
-  inside the usual left-to-right layout. The firmware keeps only the glyphs the translations use, so
-  `generate` must run after every change.
-- **Tone.** Short, neutral interface language: infinitives or imperatives for actions, no exclamation marks.
-  Portuguese is Brazilian (você); Spanish and Italian use tú/tu where a person is addressed; German and
-  French address the user formally only when a sentence needs it.
-
-## Device page and app
-
-The page picks its language from `?lang=`, then the one chosen on the page (`mm-lang`), then the browser's,
-and loads `i18n/<lang>.js` (boards: `/i18n/<lang>.js` from the firmware; app: its assets). The app's own
-texts and notifications follow the page's language. `i18n/web/<lang>.json` maps the Russian text to the
-translation:
-
-```json
-"Удалить канал «{0}»?": "Delete channel “{0}”?",
-"сообщение|сообщения|сообщений": {"one": "{n} message", "other": "{n} messages"},
-"_pieces": "K Q R B N"
-```
-
-- **Placeholders.** `{0}`, `{1}`… are names, numbers or pieces of markup; keep every one, in any order.
-  Plural forms (keys `a|b|c` from `plural(n,…)`) are objects with the categories of the language, as for
-  the firmware, and `{n}` where the number goes.
-- **Markup and edges.** Keep tags (`<b>`, `<small>`, `<code>`…) and entities, and the leading and trailing
-  spaces or punctuation of a key (` · пароль сохранён` is glued to another text).
-- **Words.** Use the terms of the device screens of the same language (`i18n/firmware/<lang>.json`) for
-  apps, settings and actions. Names and keys stay as for the firmware. Short labels (buttons, tabs, compass
-  points С В Ю З) stay short. `_pieces` are the piece letters K Q R B N of the chess notation.
-- After changing page or app texts: `node tools/web_i18n.cjs sync`, translate the new entries
-  (`node tools/web_i18n.cjs todo de`), then `node tools/web_i18n.cjs check`. The tool needs
-  `npm ci --prefix tools` once.
-
-## Website
-
-`site/i18n/<lang>.json` has the keys of `en.json`. Values may hold `<b>`, `<em>` and entities; keep the
-same tags. The steps of the installer name buttons of the page (`btn.install`, `nrf.continue`), so use
-the same words; the “Erase device” checkbox belongs to ESP Web Tools, which is English only, so keep its
-English name. The page sets `dir="rtl"` for Arabic.
-
-## Overview (README)
-
-`README.<lang>.md` translates `README.md`: the same sections, tables, commands and links. The third
-line lists every language, the current one in bold. Links to detailed documents go to `docs/en/`.
-Code blocks, commands, file names and URLs are not translated.
+The page's source text is English. Translations live in `i18n/web/<lang>.json` and are maintained with
+`node tools/web_i18n.cjs sync|check` (run `npm ci --prefix tools` once).

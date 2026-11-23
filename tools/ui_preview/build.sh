@@ -1,6 +1,6 @@
 #!/bin/sh
 # Build and render the M9 screen UI on the host: tools/ui_preview/build.sh m9 OUTDIR [LANG]
-# LANG is a code of include/I18n.h (ru by default); a list with spaces ("ru en de") renders each into OUTDIR/<code>/.
+# LANG is a code of include/I18n.h (en by default); a list with spaces ("en de uk") renders each into OUTDIR/<code>/.
 set -e
 ROOT=$(cd "$(dirname "$0")/../.." && pwd)
 LIB=$ROOT/.pio/libdeps/m9
@@ -55,8 +55,8 @@ if [ -n "$simflags" ]; then
 fi
 # KEEP=PATH: keep the program (tools/ui_preview/preview.cpp "--dice" serves the dice to the web page checks).
 if [ -n "$KEEP" ];then rm -f "$KEEP";cp "$B/preview" "$KEEP";fi # a new file: macOS kills a binary overwritten in place
-# Several languages ("ru en de"): one build, a folder per language.
-case "${3:-ru}" in
+# Several languages ("en de uk"): one build, a folder per language.
+case "${3:-en}" in
 *" "*)for L in $3;do mkdir -p "$OUT/$L";"$B/preview" "$OUT/$L" $L >/dev/null;done;;
-*)"$B/preview" "$OUT" ${3:-ru};;
+*)"$B/preview" "$OUT" ${3:-en};;
 esac

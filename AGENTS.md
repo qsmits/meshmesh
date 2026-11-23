@@ -1,501 +1,88 @@
-# Работа над MeshMesh
+# Working on MeshMesh for the ThinkNode M9
 
-## Назначение и коммуникация
+## Purpose
 
-Проект — прошивка для Elecrow ThinkNode M9, Heltec V4, GAT562 30S и Heltec T114 (nRF52840): автономный интерфейс,
-чаты и каналы MeshCore (хештег, ссылка/QR, ключ, приглашения; `docs/channels.md`, `src/Channels.cpp`), регионы MeshCore
-(регион по умолчанию и у канала, поиск у соседних репитеров, команды companion 54/55/63/64; `docs/regions.md`, `src/Regions.cpp`,
-`src/RegionSearch.inc`, проверка `tools/region_check.py`), сеть города — радиопрофиль по справочнику сообщества (`site/networks.json`, `tools/networks.py`; сайт `site/netpick.js` (свёрнутый блок, только русская версия сайта) пишет его по companion, страница/приложение — `renderNet` в `web/index.html`, тест и прежний профиль на плате — `radio try|keep|revert|previous`, поиск сети в эфире — `netfind`, `src/NetFind.inc`, выжимка справочника `include/NetCatalog.h`, `docs/networks.md`), LoRa, офлайн-карты (SD устройства или память телефона в приложении — `android/.../api/MapStore.kt`; рельеф и горизонтали по Terrain Tiles при подготовке; карта узлов без подложки — `drawMap` в `web/index.html`; `docs/maps-format.md`), Wi-Fi, BLE, радар сигналов, датчик движения по Wi-Fi CSI,
-шахматы с контактами (экран M9 и веб обеих плат, личные сообщения MeshCore,
-партии на рейтинг ELO с результатом, подписанным ключами обоих узлов, — `src/ChessRating.cpp`, турниры по швейцарской системе — `src/ChessTour.cpp`; `docs/chess.md`; шашки и морской бой с контактами без рейтинга — `src/Checkers.cpp`, `src/Sea.cpp`, `src/Duel.cpp`, экраны `src/UiDuel.inc`, `src/UiDuelCompact.inc`, `docs/games.md`, проверка протокола `tools/duel_check.py`; папки приложений меню (папка «Игры») — `src/Apps.cpp`; страница сайта `chess/` играет через штатную MeshCore companion по Web Serial/Bluetooth —
-`web/chess-companion.js`, `tools/chess_site.py`), питомец сети — тамагочи, который кормится эфиром,
-растёт и может умереть (`src/Pet.cpp`, экраны `src/UiPet.inc`, `src/UiPetCompact.inc`, T114 — `src/UiHires.inc`;
-`docs/pet.md`), кости — дайсер DIC3R: RPG-броски и формулы, сетка Warhammer, лист персонажа из блоков с формулами, шаблоны D&D и Р.Э.Т., отправка листа контакту (`src/Dice.cpp`,
-экраны `src/UiDice.inc`, `src/UiDiceCompact.inc`, T114 — `src/UiHires.inc`; `docs/dice.md`), путь пакета у сообщения в вебе и приложении (репитеры по хешам пути, SNR/RSSI, повторы своих сообщений —
-`MeshRadio::echo`, `renderMsg` в `web/index.html`), уведомления веба и приложения (виды, упоминания, настройка чата, тихие часы, лента — `alertFor` в `web/index.html`, `android/.../Alerts.kt`), режимы репитера и комнаты MeshCore (выбор при загрузке, `src/MeshServer.cpp`, `docs/repeater.md`), вардрайв — карта покрытия сети: журнал принятых пакетов с позицией, пинги в `#wardrive` с эхом ретрансляторов, Wi-Fi/BLE радара на ESP32, экспорт CSV/GeoJSON/KML/WiGLE, позиция телефона из приложения (`src/Wardrive.cpp`, `docs/wardrive.md`; запись только с доверенной позицией `gpsFix` или `fix` из приложения, отключаемый модуль nRF52 `MM_NO_WARDRIVE`), резервная копия — настройки, ключ узла, каналы, контакты, быстрая отправка, счётчики и листы одним файлом JSON со страницы и приложения, восстановление с выбором (`backup*` в `web/index.html`, команды `identity`, `identity set`, `contact add`; `docs/backup.md`), диагностика, интерфейс экранов (эмодзи на экранах — `src/Emoji.cpp`, `tools/emoji.py`), веб-страница устройства, приложение и сайт на 15 языках (раздел «Языки») и приложение для Android (`android/`, `docs/android.md`). Общаться с пользователем
-по-русски. Доводить согласованные изменения до сборки, установки и проверки,
-если устройства доступны. Различать реализованную функцию, успешную сборку,
-установленную прошивку и подтверждённую аппаратную работу.
+Firmware for the Elecrow ThinkNode M9 (hardware v1.0 and v1.1, detected at runtime): a self-contained handheld
+MeshCore chat node with channels, contacts, remote admin of repeaters and rooms, regions, regional radio presets,
+offline maps, GPS/compass navigation, a signal radar with Wi-Fi CSI motion sensing, spectrum, wardriving, quick
+send, a quick counter, notifications, backup/restore, its own web page and the MeshCore companion protocol over
+BLE/USB. It is a slimmed-down fork of `IKrasnodymov/meshmesh` (MIT). The device always runs as a chat node; there
+are no repeater or room-server modes and no other boards.
 
-Актуальные результаты и ограничения — в `docs/verification.md`,
-`artifacts/release-check.json` и `artifacts/hardware-finish.json`.
-Не выдавать старые отчёты или одинаковую строку версии за проверку нового пакета.
+Answer in the language the user writes in. Code comments and documentation are in English.
 
-## Репозиторий
+## Repository layout
 
-GitHub: публичный `IKrasnodymov/meshmesh` (MIT; `README.md` — английский обзор, `README.<lang>.md` — его переводы, `README.ru.md` — полный русский; `docs/en/` — английские переводы подробных документов), основная ветка `main`. Сайт —
-GitHub Pages из `site/` (https://ikrasnodymov.github.io/meshmesh/): `.github/workflows/pages.yml`
-собирает все платы, APK и `tools/pages.py` (манифесты браузерной установки ESP Web Tools,
-запись по смещениям без стирания NVS). Скриншоты экрана — `tools/ui_preview`.
-В Git сохранять исходники, vendored MeshCore с лицензиями, инструменты и
-документацию. `backups/`, `artifacts/`, `logs/`, `upstream/`, окружение Python,
-результаты сборок и `.env` остаются локальными и исключены через `.gitignore`.
-Репозиторий публичный: не добавлять снимки flash/NVS, историю переписки, приватные ключи,
-Wi-Fi-пароли, BLE PIN, реальные адреса узлов и координаты. Перед коммитом проверять
-состав staged-файлов. Ключ подписи APK — только в секретах GitHub и локально (0600).
+- `src/`, `include/` — the application and drivers (screens `src/Ui*.cpp|inc`, radio `src/MeshRadio.cpp`,
+  companion protocol `src/Companion.inc`, web server `src/Portal.cpp`, power `src/Power.cpp`).
+- `lib/MeshCore/` — vendored MeshCore with its own license and headers; keep its original headers and attribution.
+  `lib/MeshProtocol/`, `lib/CayenneLPP/` — support libraries.
+- `web/index.html` — the device's web page; `tools/pio_web.py` compresses it and its language files into the
+  build (`PortalWeb.h` in the build directory, not in Git). `tools/web_demo.py` serves it without a device.
+- `i18n/firmware/<lang>.json` — screen translations; `i18n/web/<lang>.json` — web page translations;
+  `i18n/fonts/` — font licenses. See `i18n/README.md`.
+- `tools/` — USB device tool, map packages, translations, UI preview and hardware checks.
+- `boards/meshmesh_m9.json`, `platformio.ini`, `partitions.csv` — the build target.
+- `docs/` — feature documentation (English).
+- `backups/`, `artifacts/`, `logs/`, `upstream/`, `.venv/`, build output and `.env` stay local (`.gitignore`).
 
-## Устройства
-
-- M9: ESP32-S3, 16 МБ flash, 8 МБ PSRAM, LR1110, экран 320×240,
-  клавиатура, SD, RTC, GPS, IMU, магнитометр. Цель PlatformIO `m9`.
-- Подключённый Heltec V4: ESP32-S3, 16 МБ flash, 2 МБ PSRAM, SX1262,
-  OLED 128×64 и кнопка PRG. Цель `heltec_v4`.
-- Цель `heltec_v4_r8` предназначена для другой ревизии с 8 МБ PSRAM;
-  успешная сборка не означает аппаратную проверку этой ревизии.
-- GAT562 30S Mesh Kit (`docs/gat562.md`): nRF52840, SX1262 с усилителем мощности, OLED 128×64,
-  джойстик и кнопка «назад», зуммер (пин 33), GPS L76K по схеме (на нашем экземпляре модуль не установлен).
-  Цель `gat562_30s`; слой nRF52 — `src/nrf52/` (хранилище, `Preferences`, BLE Bluefruit, радар
-  BLE/LoRa), признаки `MM_NRF52`, `MM_NO_WIFI`, `MM_JOYSTICK`. Wi-Fi нет: страница доступна только
-  через приложение (BLE/USB). Установка, обновление и копии — `tools/nrf52.py`; с MeshMesh плата
-  сама входит в последовательный DFU по касанию 1200 бод, штатная MeshCore — только по двойному
-  RESET (диск `GAT562-BOOT`). Полная копия исходной flash — `backups/gat562/` (`CURRENT.UF2`
-  покрывает 0x1000–0xEA000, остальное — сырой дамп 0xD4000–0xF4000).
-- Heltec Mesh Node T114 V2 (`docs/t114.md`): nRF52840, SX1262, цветной TFT 240×135 (ST7789), кнопка USER,
-  GPS L76K (у нашего экземпляра есть). Цель `heltec_t114`, аппаратный слой — `src/nrf52/HardwareT114.cpp`,
-  общий слой nRF52 как у GAT562. Логика однокнопочного интерфейса Heltec, рисование — свой слой в стиле M9
-  в родном разрешении (`MM_HIRES`, `src/UiHires.inc`, иконки M9 — `include/UiIcons.h`, цвета — `include/Palette.h`);
-  предпросмотр — `tools/ui_preview/build.sh t114`.
-  USB: прошивка 239a:8071, загрузчик 239a:0071, диск `HT-n5262` по двойному RESET. Копия исходной flash
-  (Meshtastic 2.7.15, владелец разрешил её не сохранять) — `backups/t114/`.
-- Платы сообщества (`docs/boards.md`): `heltec_v3`, `heltec_tracker`, `tdeck`,
-  `tbeam`, `tbeam_supreme`, `t3s3`, `tlora_v2_1_6`, `xiao_s3_wio`, `station_g2`,
-  `thinknode_m2`, `heltec_e213` (e-ink 250×122: `src/EinkE213.cpp`, библиотека heltec-eink-modules как у MeshCore,
-  обновление в своей задаче), на nRF52 — `heltec_t096` (`src/nrf52/HardwareT096.cpp`, усилитель KCT8103L)
-  и `faketec` (`src/nrf52/HardwareFaketec.cpp`, ProMicro, выводы MeshCore `promicro` в номерах GPIO). Устройств нет:
-  проверены сборка, эмулятор и веб-страница; работу на плате подтверждают владельцы. Выводы — `include/BoardPins.h`, свойства платы —
-  `include/Board.h`; однокнопочные платы — `src/HardwareCompact.cpp` с интерфейсом
-  Heltec, T-Deck — `src/HardwareTDeck.cpp` с интерфейсом M9. Общий код различает
-  семейство (`MM_COMPACT`), трансивер (`MM_RADIO_*`) и native USB (`MM_NATIVE_USB`),
-  а не конкретные платы.
-- Последние известные порты: M9 `/dev/cu.wchusbserial110`,
-  Heltec `/dev/cu.usbmodem101`, GAT562 и T114 `/dev/cu.usbmodem1101` (VID 239a); `tools/ports.py`
-  находит их по USB-мосту.
-  Проверять наличие и идентичность устройств; имена портов меняются после
-  переподключения.
-- Параметры пользователя: 868.731 МГц, BW 62.5 кГц, SF8, CR4/6 (общий профиль сети);
-  мощность, пересылки и relay — у каждой платы свои (1 октября: M9 — 14 dBm, hops 3, relay
-  выкл.; Heltec — 10 dBm, hops 3). При обновлении сохранять его настройки; проверки сравнивают
-  между платами только профиль.
-
-## Протокол и совместимость
-
-MeshMesh начиная с 0.3.0 использует MeshCore (`docs/meshcore-migration.md`,
-`lib/MeshCore`). Архивная 0.2.0 использует MM/1 (`docs/protocol.md`,
-`lib/MeshProtocol/Mm1Packet.h`). Meshtastic не поддерживается.
-Совместимость 0.3.0 относится к радио. С 0.9.0 плата сама реализует протокол MeshCore companion
-(`src/Companion.inc`, `docs/companion.md`): BLE Nordic UART и имя `MeshCore-<имя> XXXX` (4 знака ключа) всегда (приложение MeshMesh ищет метку `MM`
-компании 0xFFFF в рекламе, свой сервис по-прежнему отвечает), USB-кадры `<`/`>`;
-с 0.10.0 — вход на репитеры и в комнаты, CLI, статус, телеметрия,
-посты комнат, трассировка и поиск пути; с 0.13.0 вход, статус, CLI, трассировка и посты комнат есть и на экране,
-веб-странице и по USB (`remote`, `include/Remote.h`, `src/Remote.inc`, M9 — `src/UiRemote.inc`); без TCP. Запросы к серверу требуют часов новее
-прошлого запроса (защита от повтора): в проверках ставить часы платы (`set_time`).
-Совпадение частоты и остальных радиопараметров не обеспечивает совместимость
-формата пакетов, объявлений, адресов, ключей, сообщений и подтверждений.
-
-WadaMesh использует ядро MeshCore; справочные исходники находятся в
-`upstream/wadamesh`. Не представлять WadaMesh как отдельный несовместимый
-с MeshCore протокол. Оригинальные заголовки и сведения об источниках сохранять.
-
-При добавлении совместимости сохранять наш UI, карты и аппаратные драйверы;
-менять сетевой слой осознанно. Новую совместимость проверять реальным сторонним
-узлом: advert в обе стороны, адреса/контакты, сообщения, ключи и ACK.
-Обнаружение пакета или радиосигнала не считать доказательством возможности
-обмена сообщениями. Не обещать одновременное обнаружение всех сетей: в каждом
-устройстве один LoRa-трансивер, разные радиопрофили требуют переключения.
-
-## Код и сборка
-
-- `src/`, `include/` — приложение и драйверы; `lib/MeshProtocol/` — MM/1.
-- `web/index.html` — исходник веб-интерфейса. Прошивка ESP32 отдаёт его и словари сжатыми (gzip):
-  `tools/pio_web.py` при сборке делает `PortalWeb.h` в папке сборки, в Git его нет. С 0.29.0 русские ключи словарей хранятся один раз (`/i18n/keys.js`), а `/i18n/<lang>.js` несёт переводы по порядку и собирает `MeshMeshWebDict` (около 300 КБ flash меньше; страница и приложение не менялись). Текст страницы —
-  `L('…')`/`` L`…${x}` `` и `plural(n,…)` (раздел «Языки»). Демо без платы — `tools/web_demo.py`.
-- `boards/`, `platformio.ini`, `partitions.csv` — аппаратные цели и сборка.
-- `android/` — приложение: WebView с `web/index.html` (копируется при сборке) и каналы
-  Wi-Fi (HTTP), BLE и USB (команды `executeCommand`). Запросы страницы `/api/*` по USB/BLE
-  переводятся в те же команды, что выполняет HTTP-обработчик (`api/CommandApi.kt`);
-  новую функцию страницы добавлять и туда. Сборка: `cd android && ./gradlew
-  testDebugUnitTest assembleRelease` (JDK из Android Studio). Проверка с платой в эмуляторе:
-  `tools/usb_tcp_bridge.py` (USB-протокол), `tools/web_usb_bridge.py` (HTTP).
-- `tools/` — упаковка, установка, USB-управление, карты и аппаратные проверки.
-- Зависимости закреплены в `platformio.ini`; менять их только по необходимости.
+## Commands
 
 ```sh
-.venv/bin/pio run -e m9 -e heltec_v4 -e heltec_v4_r8
-.venv/bin/python tools/package.py m9
-.venv/bin/python tools/package.py heltec_v4
-.venv/bin/python tools/package.py heltec_v4_r8
-# платы сообщества: те же команды с их целями; пакет включает factory-образ и INSTALL.txt
+python3 -m venv .venv && .venv/bin/pip install platformio esptool pyserial cryptography
+.venv/bin/pio run -e m9                      # build
+.venv/bin/pio run -e m9 -t upload            # flash over USB (115200 baud)
+sh tools/ui_preview/build.sh m9 OUTDIR [LANG]  # render the screens on a computer (after one pio build)
+python3 tools/i18n.py sync|check|todo LANG   # firmware translations
+.venv/bin/python tools/i18n.py generate      # include/I18nTable.h and glyph subsets (needs upstream/fonts)
+node tools/web_i18n.cjs sync|check           # web page translations (npm ci --prefix tools once)
+python tools/device.py --port PORT status|config|channels   # any text command
 ```
 
-Собирать затронутые платы. Повторять и расширять проверки по обнаруженным
-ошибкам и изменениям; не добавлять тесты, просто дублирующие реализацию.
+The firmware version lives in `versions.properties`; after changing it run `python tools/version.py --generate`
+(`include/Version.h` is generated and committed). The firmware reports `version`, `revision` (Git SHA, `-dirty`
+locally) and `build_sha256`: the same SemVer does not prove the same image.
 
-## Версии и публикация
+## Hardware notes (M9)
 
-Публичные версии прошивки и Android независимы, SemVer; единственный источник —
-`versions.properties`. После изменения: `python tools/version.py --generate`, затем `--check`;
-`include/Version.h` генерируется и коммитится. Подробности — `docs/releases.md` и `docs/en/releases.md`.
-Прошивка сообщает `version`, `revision` (Git SHA + `-dirty` локально), `build_sha256`; пакеты и сайт
-содержат ревизию и хэши. Не считать одинаковую SemVer доказательством одинакового образа.
-Android: `versionName=<android>+<code>`, CI `code=1000000+run_number*100+run_attempt`, локально
-код 1000000 и суффикс `+local`. Код нельзя уменьшать; `tools/app_release.py` берёт значения из
-Gradle `output-metadata.json`, не вычисляет их из версии прошивки.
-Пуш `main` запускает `.github/workflows/pages.yml`: проверки версий и переводов (экраны, страница, шахматы),
-18 плат и все языковые пакеты, скриншоты, тесты и подписанный APK, сайт, затем Pages. Любая
-обязательная ошибка блокирует публикацию. Проверять завершение Actions и публичные `release.json`,
-`app/version.json` после пуша. Сборка/деплой не прошивает платы и не устанавливает APK на телефон.
-Документацию и эти инструкции обновлять вручную по фактическим результатам до коммита.
+- ESP32-S3, 16 MB flash, 8 MB PSRAM, LR1110 LoRa transceiver, 320×240 screen, keyboard on I2C (0x6c on v1.0,
+  0x6d on v1.1 — this is how the revision is detected), SD card, RTC, GPS, IMU and magnetometer (compass).
+- USB goes through a CH340 USB-serial bridge, which is only reliable at 115200 baud. `tools/device.py` handles
+  DTR/RTS and partial replies; one process owns a USB port at a time.
+- Flashing only the application at `0x10000` (bootloader, partitions and `boot_app0` untouched) keeps NVS and
+  LittleFS: node identity, settings, channels, contacts and history survive. Do not erase flash, format the SD card
+  or reset settings as part of an ordinary update.
+- NVS is about 20 KB and shared with Wi-Fi and BLE: keep large or frequently changing data (contacts, read marks,
+  history) in LittleFS. `status` reports `nvs_free`.
+- With BLE on, keep Wi-Fi modem sleep enabled for the station client (`WiFi.setSleep(true)`); disabling it caused
+  an ESP32-S3 driver `abort()`.
+- Do not change the CPU clock while the Wi-Fi driver or Bluetooth controller is running, and do not deinitialise
+  the Bluetooth controller once started: both caused panics on the M9.
+- The radar uses Wi-Fi only while it is open and only with the access point and Wi-Fi probe off.
+- GPS/RTC time earlier than the firmware build is rejected (`src/Clock.cpp`, `gps_conflict`); never treat such a fix
+  as a real position. A stored compass calibration does not prove accuracy.
+- One LoRa transceiver: different radio profiles need switching; never promise simultaneous coverage of all
+  networks.
 
-## Языки
+## Compatibility
 
-Экраны прошивки — 15 языков (`include/I18n.h`; номер языка хранится в NVS, порядок не менять).
-Английский и русский пишутся в коде: `t("English","Русский")`, `tr(...)`, `count(n,...)`; остальные —
-`i18n/firmware/<lang>.json` по правилам `i18n/README.md`. После правки строк: `tools/i18n.py sync`,
-перевести новые записи, `.venv/bin/python tools/i18n.py generate` (таблица и подмножества шрифтов
-из `upstream/fonts`), `tools/i18n.py check`, сборка и просмотр экранов `tools/site_shots.py OUTDIR <lang>`.
-Сайт — `site/i18n/<lang>.json`, обзор — `README.<lang>.md`, подробные документы переводятся в
-`docs/en/` вместе с правкой русского оригинала. Веб-страница устройства и приложение — тоже 15 языков (с 0.22.0 / Android 0.15.0):
-русский текст в коде — ключ словаря `i18n/web/<lang>.json`; в `web/index.html` и `host.js` писать `L('…')`, `` L`…${x}` ``
-(не склеивать фразу из кусков), `plural(n,'одна','две','пять')`, в Kotlin — `I18n.t("… {0}", x)`. Затем
-`node tools/web_i18n.cjs sync`, перевести новые записи во всех 14 словарях, `node tools/web_i18n.cjs check`
-(нужен `npm ci --prefix tools`). Язык страницы — `?lang=`, выбор на экране входа/в «Настройках» (`mm-lang`),
-иначе язык браузера; приложение получает его через `MeshNative.language`. Снимки страницы для сайта на всех
-языках — `tools/web_shots.py` (демо-данные `tools/web_demo.py`, в CI), в `site/img` — запасные ru/en.
-Шахматная страница сайта (`chess/`) получает те же словари и дополнительно переводит при отрисовке
-(`web/chess-i18n.js`, `i18n/chess/<lang>.json`, проверка `node tools/chess/i18n_check.cjs`): новые строки шахмат добавлять и туда.
-Сайт ставит прошивку с выбранным языком: ESP32 — `partitions-<lang>.bin` с меткой в 0x8C00, nRF52 —
-поле `MMLANG:` в образе (`site/nrf52dfu.js`); метка применяется один раз. GAT562 и T114 (1 МБ flash) получают
-образ «английский + русский» или «английский + выбранный язык» без русских строк (`lang/<код>/`, `MM_LANG`,
-`MM_NO_RU`, `tools/pio_lang.py`; ключ перевода `tr()` считается при компиляции, `include/I18n.h`; `docs/gat562.md`):
-размер проверять по самому большому, китайскому (`tools/nrf52.py package`). На nRF52 `UiHeltec.cpp`, `Dice.cpp`, `Wardrive.cpp`, `Clock.cpp`, `Config.cpp`, `Navigation.cpp`, `RadarModel.cpp`, `Power.cpp`, `nrf52/PortalNrf.cpp`, `nrf52/Platform.cpp`, `nrf52/HardwareT114.cpp`, `nrf52/RadarNrf.cpp`
-и `MeshRadio.cpp` (с протоколом companion), а также `App.cpp`, шахматы, `Pet.cpp`, `Channels.cpp`, `MeshServer.cpp`, `main.cpp`, `UiIcons.cpp` и `I18n.cpp` собираются с `-Os` (прагма в файле, остальной наш код `-O2` через `build_src_flags`); библиотеки и ядро nRF52 с 0.25.0 собираются с `-Os` (`build_flags`): иначе китайский образ T114 не помещался.
-Шахматы, питомец, кости и вардрайв на nRF52 — отключаемые модули (`include/Modules.h`, `MM_NO_CHESS|PET|DICE|WARDRIVE`,
-`tools/nrf52.py package ENV --without …`, `docs/gat562.md`); сайт и приложение ставят полный набор. Шашки и морской бой
-(`MM_CHECKERS`, `MM_SEA`, общий `MM_DUEL`) на nRF52 по умолчанию выключены (места нет: китайский T114 и без них — 2,6 КБ
-свободно); образ с ними — `--with-games`, только en+ru, на T114 — ещё и `--without chess`. Строки, которые есть только в коде игр,
-не входят в таблицу переводов образа без них (`tools/i18n.py`, `GAMES`). Новые
-обращения к этим модулям из общего кода и компактного интерфейса обёртывать `#if MM_CHESS` и т. п. и проверять
-сборку без них. Кириллические шрифты остаются во всех
-образах: по радио приходят русские сообщения.
+The radio layer is MeshCore. Matching radio parameters alone do not prove compatibility: check new compatibility
+work against a real third-party MeshCore node (adverts both ways, contacts, messages, keys and ACKs). Seeing a
+packet or a signal is not proof that messages can be exchanged. Requests to repeaters and rooms need a clock newer
+than the previous request (replay protection): set the device clock in checks.
 
-## Установка и сохранность данных
+Keep the radio serviced during maps, USB transfers and the lock screen. Split long operations; watch memory,
+lengths, CRCs, UTF-8, timeouts and atomic saves. Show DELIVERED only after the matching ACK.
 
-Обе исходные flash сохранены и проверены в `backups/` вместе с метаданными.
-Перед записью проверять полный backup, модель, MAC и digest компонентов через
-`tools/flash.py`. Использовать DIO, 80 МГц, 16 МБ и предусмотренные смещения
-четырёх компонентов. QIO ранее приводил к циклу перезапусков на этих платах.
+## Rules
 
-Сохранять историю, ключ сети, NVS, калибровку и SD-карты. NVS — 20 КБ на всех платах ESP32 и делится с Wi-Fi и BLE: крупные и часто
-меняющиеся данные (контакты `/meshmesh/contacts.bin`, отметки прочтения `/meshmesh/read.bin`, история)
-держать в LittleFS; запас виден в `status` (`nvs_free`, `contacts_saved`). Не форматировать SD
-и не сбрасывать настройки в рамках обычного обновления. Резервные копии,
-файлы с ключами, паролями, PIN и историями держать с правами 0600;
-секреты не выводить в общий журнал и отчёт.
-
-У пользователя уже согласован порядок: сначала завершить M9, затем Heltec.
-Авторизация на необходимые обновления сохраняется в пределах согласованной
-задачи; повторно запрашивать её без новой причины не нужно.
-
-```sh
-.venv/bin/python tools/finish_on_hardware.py --check
-.venv/bin/python tools/finish_on_hardware.py
-```
-
-Первый режим проверяет пакеты без USB. Второй устанавливает и проверяет
-обе платы последовательно, прекращая выполнение при ошибке. Полный прогон
-(20–30 мин) запускать для итогового пакета, а не после каждой правки: при
-отладке прошивать затронутую плату через `tools/flash.py` и делать точечные
-проверки, явно отмечая в отчёте, что полный прогон не выполнялся. Отдельные шаги
-пишутся в `logs/finish-*.log`, предыдущие отчёты архивируются. Причину ошибки
-и фактическое состояние установленных устройств сообщать точно. Если среда
-запрещает USB (`Operation not permitted`), не обходить ограничения доступа.
-
-## Обслуживание и аппаратная проверка
-
-Радио продолжает обслуживаться во время карт, USB-выгрузки и блокировки.
-Длительные операции дробить; контролировать память, длины, CRC, UTF-8,
-тайм-ауты и атомарность сохранения. Состояние DELIVERED показывать только
-после подходящего ACK; незавершённую отправку после перезапуска не считать
-доставленной. Язык ввода независим от языка интерфейса.
-
-Для STA-клиента при включённом BLE оставлять Wi-Fi modem sleep включённым:
-`WiFi.setSleep(true)`. Его отключение вызвало подтверждённый `abort()` драйвера
-ESP32-S3 (`logs/heltec-wifi-reset-trace.log`). Не маскировать проблему
-отключением BLE в проверке совместной работы интерфейсов.
-
-Один процесс владеет каждым USB-портом. В том же рабочем дереве могут работать
-другие сессии: согласовывать с ними USB-порты и общие файлы (особенно `src/Ui.cpp`)
-и не собирать пакеты из чужих незавершённых правок. Не запускать несколько чтений или
-прошивку поверх активной проверки того же порта. Использовать `tools/device.py`:
-он учитывает DTR/RTS и накопление неполных ответов native USB Heltec.
-
-Проверки LoRa и BLE должны подтверждать реальный радиообмен, рост RX/TX,
-отсутствие перезапусков, отсутствие USB-инъекций и одну копию сообщения.
-Номера загрузок в отчётах должны соответствовать проверяемой установке.
-USB-события клавиш проверяют производственный UI, но не физические кнопки.
-Node-проверки JavaScript не заменяют визуальную проверку в браузере.
-
-## Энергосбережение
-
-С 0.4.0 общий код всех плат ожидает уведомление LoRa IRQ до 20 мс при погашенном экране и
-отсутствии активной отправки, радара/CSI и проб. Это работает во всех ролях, включая обычные чаты.
-После USB/BLE-команды или кнопки быстрый цикл удерживается 1 с (10 с блокировали ожидание при
-фоновом опросе Android каждые 8 с). `idle_waits`, `idle_wait_ms`, `idle_radio_events` измеряют
-ожидание задачи, не сон CPU и не ток. Проверка — `tools/power_check.py --port PORT --peer PORT`;
-при проверке личного сообщения не опрашивать USB приёмника до ACK. Экран после сообщения может
-снова погаснуть по таймеру — позднее чтение `screen_off` не доказывает отсутствие пробуждения.
-`docs/power.md`, `docs/en/power.md`; RXPS и циклическое питание GPS пока не реализованы.
-Напряжение батареи (0.30.3): делитель с ключом читается через 10 мс после включения, не останавливая цикл
-(`dividerOn` в `src/HardwareCompact.cpp`, `src/nrf52/HardwareT114.cpp`, `HardwareT096.cpp`); Heltec V3/Tracker/V4 — 2,5 дБ
-и 4,9 × 1,045, E213 — × 1,03 (Meshtastic), остальные — как MeshCore. Новые множители сверять с вольтметром владельца, а не
-с другой прошивкой. Отзыв V3 (занижение на 3–6 %) — `docs/verification.md`; на железе пока не проверено.
-
-`src/Power.cpp`: 80 МГц при погашенном экране без Wi-Fi/радара, лёгкий сон в режимах репитера и комнаты
-(`docs/repeater.md`). На линии IRQ трансивера висит прерывание RadioLib по фронту: уровневый тип для
-пробуждения ставить только в критической секции и после сна возвращать `GPIO_INTR_POSEDGE` —
-иначе шторм прерываний (interrupt watchdog на M9) или потеря приёма. Байты, разбудившие плату по
-USB-UART, теряются: перед командой слать CR (`tools/device.py`, `UsbLink.kt`). Частоту не менять при
-запущенном драйвере Wi-Fi или контроллере Bluetooth: после CSI это давало панику M9 при загрузке карты.
-
-Локальный выпуск 0.4.0: шесть сообщений/ACK из ожидания между T114 и V4 прошли при включённом BLE
-(`artifacts/power-040-pair.json`). Два предварительных сбоя (пустой ответ истории до перезапуска и
-один тайм-аут ACK) не засчитаны; причины не установлены, подробности — `docs/verification.md`.
-Не переносить эти результаты на другие образы по одному номеру версии.
-С 0.4.1 история сериализуется по одной записи вместо дополнительного JSON-пула 32 КБ;
-нехватка памяти возвращает явную ошибку, а `status.history_count` позволяет проверить полноту.
-После смены репитера на обычный режим аппаратный тест ждёт advert с типом CHAT, а не только ключ.
-
-## Радар и Wi-Fi CSI
-
-`src/Radar*.cpp`: развёртка Wi-Fi/BLE/LoRa, пеленг по RSSI и CSI-датчик движения
-(маяк ESP-NOW ↔ приёмник). Правила, найденные на железе:
-- Радар использует Wi-Fi только пока открыт и только при выключенной точке
-  доступа и Wi-Fi-проверке; `portalToggle()` вызывает `radar.release()`.
-- Bluetooth-контроллер после первого запуска не деинициализировать
-  (`NimBLEDevice::deinit`): деинициализация сразу после остановки сканирования
-  давала панику M9 в задаче NimBLE, а деинициализация с повторным запуском
-  «замораживала» данные CSI до перезагрузки. «BLE выкл.» — нет рекламы и
-  соединений. Сообщение `wifi:timeout when WiFi un-init, type=4` при выключении
-  Wi-Fi с живым контроллером сбоев не вызывало.
-- Сканирование Wi-Fi — через `esp_wifi_scan_start` с обнулённой конфигурацией:
-  `scanNetworks()` Arduino 2.0.17 не заполняет `home_chan_dwell_time`.
-- Маяк CSI: ESP-NOW, OFDM 6 Мбит/с, канал 1 (кадры MCS0 в эфир не выходили);
-  при остановке маяка возвращать скорость по умолчанию, иначе CSI при приёме
-  на этой же плате «замерзает».
-- USB `radar` не выводит имена чужих сетей и Bluetooth-адреса; `radar web` (для приложения)
-  выводит имена, как веб-страница, и удерживает радар 10 с, как `/api/radar`.
-- Проверки: `tools/radar_check.py`, `tools/csi_check.py` (реальный радиоприём).
-  Обнаружение движения проверяется только с человеком, который ходит между
-  платами; автоматическая проверка подтверждает лишь поток и изменение CSI.
-
-RSSI не даёт направления и расстояния; BLE-адреса телефонов меняются, счёт
-устройств приблизительный. CSI между двумя платами обнаруживает движение в зоне
-между ними, но не положение людей. Дыхание и пульс по CSI описаны в
-исследованиях (человек неподвижен, модель на эталонных данных), в прошивке их нет;
-пеленговать сердцебиение одной антенной ESP32 нельзя. Локализация людей без
-устройств требует трёх и более узлов вокруг зоны и обучения по сетке точек.
-
-## Карты, GPS и пределы проверки
-
-На SD сохранены Казань (1022 тайла, z12–14) и подробный участок около 4×4 км
-(218 тайлов, z15–16). Пакеты — `artifacts/maps/*.mmmap`. Подробный масштаб
-не покрывает весь город. Сохранять карту, каталог и предыдущие целые тайлы
-при повреждённых или прерванных загрузках. Точка доступа M9 интернет не
-предоставляет. M9 как Wi-Fi-клиент (`src/Internet.cpp`, «Связь → Интернет по Wi-Fi»)
-сам загружает недостающие тайлы OSM, время NTP и положение по IP, кешируя тайлы
-на SD. Клиент уступает Wi-Fi точке доступа, радару и Wi-Fi-пробе
-(`internet.yieldRadio()` перед сменой режима) и переподключается после них.
-
-GPS-модули M9 и Heltec V4 получают подменённый сигнал: фикс по 10 спутникам с датой 8 июля 2026.
-Время GPS/RTC раньше даты сборки отклоняется (`src/Clock.cpp`, `gps_conflict`, позиция не используется),
-GPS не перезаписывает время с телефона/NTP; такую дату нельзя принимать за актуальную позицию,
-использовать для следования, отправки координат или перезаписи доверенного времени. Время ESP32
-переживает перезапуск (не выключение питания) и сохраняется лишь с известным источником; сообщения,
-записанные до установки часов, получают время при её установке (`MeshRadio::stampLate`).
-Сохранённая калибровка компаса не доказывает точность и ориентацию осей.
-
-Режимы репитера и комнаты (`src/MeshServer.cpp`, `docs/repeater.md`) проверяются со стороны
-официальной MeshCore companion: `tools/repeater_check.py`, `tools/room_check.py`. Для этого Heltec
-временно прошивается штатной companion из `upstream/meshcore-stock`
-(сборка `meshmesh_stock_interop` под нашу разметку flash). Порядок: снимки JSON и полная копия
-flash в `backups/` с `verify-flash`, проверки, затем копия записывается обратно и сверяется.
-Штатная прошивка форматирует наш LittleFS, поэтому без копии её не ставить.
-`tools/stock_roundtrip.py` входит в полный прогон: штатные протокол/исходники v1.17.1, DIO/dio_qspi,
-согласованные загрузчик и таблица разделов (только метка LittleFS заменена на SPIFFS, геометрия та же).
-Первый запуск может занимать больше 45 с; инструмент ждёт готовности USB. Восстановление полной
-16-МБ копии сверяется побайтно до запуска. При восстановлении из загрузчика используется watchdog-reset.
-Пока плата в серверном режиме, её контакты обычного режима не обновляются.
-
-Радиосовместимость со штатной MeshCore проверена на окончательном ELF M9;
-отдельное MeshCore-устройство пользователя он проверяет самостоятельно.
-Свежий GPS под открытым небом, точность компаса, дальность LoRa, пересылка
-через третий ретранслятор и визуальная проверка нового веб-оформления на телефоне остаются отдельными
-неподтверждёнными проверками, как и пеленг радаром в движении на улице,
-шахматы страницы `chess/` через BLE-companion (Web Bluetooth) и в Chrome на Android,
-точность классификации BLE-устройств и порог CSI после калибровки (порог выбран
-по одному опыту с ходьбой). Приложение для Android проверено в эмуляторе с платами через компьютер; на телефоне (Nubia
-NX729J, Android 15) подтверждено BLE-сопряжение с PIN и чтение данных M9; USB OTG и вход
-в точку доступа на реальном телефоне не проверены. Голос, построение маршрутов
-и OTA пока отсутствуют.
-Карты в приложении (0.23.0 / Android 0.16.0): области хранятся в телефоне (`MapStore`, папки приложения: внутренняя
-память или SD-карта телефона), страница берёт тайл сначала из телефона (`/phone-maps/tile`), потом с SD платы; карта
-узлов рисуется и без подложки. Рельеф: высоты Terrain Tiles (AWS, CORS открыт) при подготовке в браузере/приложении,
-отмывка ступенями (длинные серии RLE) и горизонтали с интервалом по крутизне области. Overpass перебирает зеркала:
-основной сервер часто отвечает 504/429. Проверено в эмуляторе Android с M9 через `usb_tcp_bridge.py`; на телефоне,
-по BLE и копирование области телефона на SD реальной платы — нет. `tools/maps.py` рельеф не рисует.
-Не проверены также пересылка и отказ в пересылке пакета с регионом репитером (поиск регионов у реального
-репитера и коды регионов в кадрах подтверждены, `docs/regions.md`), меню регионов приложения MeshCore, установка с выбранным языком с сайта в Chrome и переводы носителями
-языков; арабский 12 px на OLED перекрывает соседние строки (меньшего пиксельного шрифта нет).
-Обновлять эти сведения по фактическим результатам, а не по предположениям.
-
-## Уведомления, быстрые ответы и счётчик (0.19.0)
-
-`docs/notifications.md`, `src/Notifications.cpp`, `src/QuickSend.cpp`, `src/ChannelPolicy.cpp`,
-`src/History.cpp` и `src/HistoryStorage.cpp`: независимые уведомления и очередь событий,
-10 шаблонов с адресатом по ID, приоритет и глубина каналов. `src/People.cpp` и `src/PeopleWifi.cpp` —
-отдельный ручной счёт и приблизительное число BLE/Wi-Fi-устройств; счётчик не зависит от `MM_DICE`.
-Android 0.12.0 хранит ограниченный архив каждого узла по публичному ключу (`api/ArchiveApi.kt`).
-Компактные ESP32 используют общий Wi-Fi-клиент и необязательный периодический NTP; nRF52 Wi-Fi не имеет.
-Цвет светодиода зависит от аппаратуры; отсутствие повтора не считать доказательством недоставки.
-На nRF52 `messages` по USB/BLE выдаёт неизменяемый снимок порциями (`src/HistoryReply.cpp`), без второго
-большого непрерывного JSON-буфера. Пакетная запись `Preferences` применяется только внутри `Config::save`;
-временные метки защиты от повторов сохраняются синхронно. Итоговые адресные проверки 0.19.0 —
-`docs/verification.md` и локальные `artifacts/wishlist/`: полный прогон M9/V4 прошёл на образах
-189E200C9C56… / BC6A4D591373… и загрузках 242/251. Quick Send и ручной счёт проверены на обеих;
-исходные настройки и ключи сохранены, M9 Wi-Fi/BLE выключены, V4 Wi-Fi выключен/BLE включён.
-Ранние адресные проверки V4/T114 относятся только к 4F071425B1BF… / E798B587599A…;
-физические кнопки, Android на телефоне и успешная NTP-синхронизация с доступной сетью пока не подтверждены.
-
-## Получатель Quick Send (0.19.1)
-
-Выбор получателя — отдельная плашка в начале списка, видна при прокрутке шаблонов.
-Итоговая точечная проверка M9: `50B447386207…`, загрузка 244; V4 как peer —
-`BC6A4D591373…`, загрузка 251, на 0.19.0. Отчёт `artifacts/quick-recipient-check.json`,
-пакеты — `artifacts/quick-recipient-release/`. Шаблоны и настройки возвращены;
-полный прогон 0.19.1 не выполнялся, предыдущие полные отчёты относятся к 0.19.0.
-
-Плашка адресата перенесена вверх также в общий компактный интерфейс и T114; на OLED она выделена
-рамкой/инверсией, на T114 — цветом. Собраны все 15 целей, нативные сценарии пяти интерфейсов
-прошли на ru/en/zh/ar; для T-Deck проверены касания плашки и крайних шаблонов. Полные китайские
-образы GAT562/T114 — 671032/702124 байта, варианты без chess/pet/dice тоже собраны и упакованы.
-Отчёт сборок — `artifacts/quick-recipient-all-check.json`. Эти новые образы на платы не устанавливались:
-USB занят сессией Wardrive. Результат M9 50B447386207… выше относится только к предыдущему пакету.
-
-## Закрытые экраны однокнопочных плат (0.20.1)
-
-На однокнопочных платах (`UiHeltec.cpp`, не джойстик) экраны, где клик действует (быстрая отправка, ручной счётчик,
-кости), при перелистывании закрыты: клик — следующий экран, удержание — открыть (`appOpen`, `app_open` в `ui`);
-`showPage` закрывает их снова. Новые такие экраны добавлять в `appPage()`. Веб-разделы, перерисовываемые по таймеру,
-не пересобирать под полем ввода с фокусом (иначе на Android закрывается клавиатура). Проверено на T114 по USB-клавишам
-(`3AC3F556FAAB…`, загрузка 16); M9/V4 0.20.1 не ставились.
-
-## Быстрый счётчик, порядок приложений и хэш пути (0.24.0)
-
-«Счётчик людей» стал «Быстрым счётчиком»: до 8 карточек (`people::Tally` в `include/People.h`, файл `/meshmesh/tally`;
-ручной счёт прежних версий переходит в первую карточку), открытая карточка общая для экрана, страницы и приложения.
-M9/T-Deck — `src/UiTally.inc` (влево/вправо листают, за последней — «Новый счётчик»), компактные — меню в `UiHeltec.cpp`,
-T114 — `UiHires.inc`, веб — карусель `renderPeople`/`tallyAct` в `web/index.html`. Идентификатор приложения и команды
-остались `people`. Порядок по умолчанию (`uiApps`): сообщения, места, инструменты, игры, устройство; сохранённый `apps`
-пользователя не меняется. Иконки `IcSend`/`IcTally` (`UiIcons.cpp`, на странице `send`/`tally`). `path_hash` по умолчанию 2;
-платы со значением 1 один раз переходят на 2 (ключ NVS `path_hash2`), репитер и комната берут ту же настройку.
-
-## Лист персонажа (0.25.0)
-
-Третий режим костей — лист из блоков (`include/Dice.h`: стат, шкала, отметки, способность, заметка, заголовок; до 64,
-ширина 1/6…вся строка из 12 колонок), вместо прежних счётчиков: `dice.bin` 0.24 при первом запуске переводится
-(счётчики → шкалы, сохранённые броски → способности; подтверждено на M9, «Пупиг» 10/19/23). Формулы ссылаются на коды
-блоков (`@dex`, `@dex!`), правила стата — обычное число, модификатор D&D, бонус к d20, куб Р.Э.Т. по уровню (`rN`,
-успех добавляет куб следующего уровня, единица — провал с d4). Шаблоны D&D 5e и Р.Э.Т. — в прошивке (названия на языке
-экрана, коды латинские). Лист каждого персонажа — `/meshmesh/sheetN.bin`, в памяти только текущий. Строка листа
-`MMS1~…` — экспорт, импорт и передача: частями `🎲S ID K/N` личными сообщениями с ACK, получатель видит предложение.
-С телефона длинные строки — `dice sheet put K/N` (запись BLE — 255 байт). Конструктор — на странице и в приложении
-(`sheetBuild`, команды `dice sheet set/add/move/del`). Проверка с браузером: `tools/ui_preview/build.sh` с `KEEP=PATH`
-оставляет программу, `PATH --dice` отвечает на команды `dice` из stdin (`loopback` возвращает отправленные части как
-принятые). Чтобы китайский образ T114 поместился, библиотеки nRF52 собираются с `-Os` — радиообмен с этим изменением
-проверять на T114/GAT562.
-С 0.26.0 блоки правятся и на экране M9/T-Deck (`E` — блок, `A` — новый, поля строками, `src/UiDice.inc` `drawDiceBlock`),
-а плата один раз добавляет персонажей «D&D 5e» и «Р.Э.Т.» (`State::flags`, `dice.bin` версии 3; версия 2 читается).
-
-## Сеть города (0.27.0 / Android 0.19.0)
-
-Справочник — копия `catalog.json` VoxMesh/meshcore-local-networks в `site/networks.json` (`tools/networks.py update|check`,
-проверка в Pages); приложение вшивает его рядом со страницей, кнопка «Обновить» хранит новую копию в браузере. Прошивка и
-сайт не меняют радио без явного выбора и подтверждения на каждую плату; меняются только частота, BW, SF, CR. Плата помнит
-профиль до последней смены (`Config::previous`, NVS `radio_prev`) и тест (`Config::trial`: `Config::save` пишет сохранённый
-профиль, перезапуск возвращает его). Экраны: строка «Прежнее радио»/«Тест радио» (M9/T-Deck), «Прежние»/«Тест» (компактные).
-Страница ESP32 получает справочник из прошивки (`/networks.json`, `tools/pio_web.py`). Проверено на M9: команды `radio`, откат
-перезапуском, экран, запись по companion USB как у сайта, страница через `tools/web_usb_bridge.py`. Не проверено: другие платы,
-Web Serial/Bluetooth из браузера, штатная MeshCore, положение телефона в приложении.
-nRF52 с 0.27.0 не запускается без USB при батарее ниже 3,4 В и выключается после 30 с ниже 3,3 В (`src/Power.cpp`,
-`docs/power.md`): сброс на пустой батарее посреди перезаписи первой страницы хранилища, вероятно, дважды стёр хранилище T114.
-Срабатывание на разряженной батарее не проверено; китайский образ T114 — 712108 байт (`Platform.cpp`, `Power.cpp` с `-Os`).
-
-## Поиск сети в эфире (0.29.0 / Android 0.20.0)
-
-`src/NetFind.inc` (в `MeshRadio.cpp`), `include/NetFind.h`: плата перебирает профили встроенной выжимки справочника
-(`include/NetCatalog.h`; пишет `tools/networks.py update`, сверяет `check` в Pages): текущий, затем места в 150 км от
-доверенной позиции (GPS-фикс или телефон из приложения через `wardrive::position`), без позиции — все профили. На каждом —
-`MeshRadio::tune` (трансивер без записи настроек, `applyConfig` возвращает настройки и прекращает поиск), zero-hop запрос
-обнаружения репитеров и 8 с приёма; затем сохранённый профиль. Пока идёт поиск, наши сообщения ждут, relay выключен.
-Найденное применяется только человеком как `radio try` (`netfind use N`, строка «Найти сеть» на экранах, блок на странице).
-`net_auto` (NVS `net_auto`, по умолчанию вкл.): рядом с местом, в сетях которого нет текущего профиля, поиск запускается сам
-раз за загрузку для этого места; экран сообщает «Рядом сеть». Страница и приложение — `netScan`/`renderNetScan` в
-`web/index.html` (через `/api/command`, Kotlin не менялся). Чтобы китайский образ T114 поместился, очереди уведомлений и
-радар создаются в куче (раньше их начальные значения занимали ~9,7 КБ flash в .data), `Chess.cpp` на nRF52 — `-Os`.
-Проверено: сборка всех плат, экраны в `tools/ui_preview`, страница с `tools/web_demo.py`; на T114 (`4802e8f`, загрузка 8)
-поиск по всем профилям и по координатам, остановка, возврат профиля, тест и откат (`docs/verification.md`). Находка другой
-сети, автоматический запуск по GPS/телефону, экраны на платах и остальные платы на железе не проверены.
-
-## Эмодзи на экранах и подсветка T114 (0.32.0)
-
-`tools/emoji.py` делает из Twemoji 15.1 (CC-BY 4.0, атрибуция в README и заголовке) `include/EmojiData.h`: ~300 эмодзи
-12×12, общая палитра 31 цвет, битовая упаковка (локальная палитра, «как пиксель сверху», гамма-коды; ~10 КБ). Картинки
-кешируются в `upstream/twemoji`. `src/Emoji.cpp` — поиск и декодер, `include/Emoji.h` — модификаторы (FE0F, тона кожи,
-ZWJ — нулевой ширины), флаги буквами, рамка для эмодзи без картинки, `mono()` для монохромных экранов. Рисуют `glyph()`
-в `src/Ui.cpp` (M9/T-Deck, RGB565), `emojiGlyph()`/`glyph()` в `src/UiHeltec.cpp` (цвета палитры `ColEmoji0…` на ST7735,
-силуэт на OLED/e-ink), `hiGlyph()` (T114, 16 px); ширина в колонках — `glyphCells()` (2). Чтобы китайский T114 поместился,
-T114 (`MM_HIRES`) не берёт 8-px CJK-шрифты (`fallbackFonts` в `src/I18n.cpp`): мелкий текст там и так рисуется шрифтами
-12–13 px. Новые эмодзи — в список `EMOJI` генератора; размер проверять по китайскому T114.
-Подсветка T114/T096: после `analogWrite` вывод LEDA принадлежит модулю ШИМ, `digitalWrite` его не выключает — `light()`
-сначала снимает вывод с ШИМ (`HwPWMx[i]->removePin`). На ESP32 подсветка через LEDC такой проблемы не имеет.
-
-## Двойной клик — назад (0.31.0)
-
-Однокнопочные платы (`MM_ONE_BUTTON` в `include/Board.h`: компактные без джойстика): `config.doubleBack` (NVS `dbl_back`,
-`double_back` в `/api/config` только у них; по умолчанию выкл.). `uiKey` в `src/UiHeltec.cpp` держит клик 0,4 с (`clickAt`,
-`click_wait` в `ui`), второй клик — `stepBack()`, другая клавиша сначала отдаёт ждущий клик; счётчик и счёт кнопкой в костях
-(`fastClicks`) не ждут. Новые вложенные состояния однокнопочного интерфейса добавлять в `stepBack()`. Проверка — сценарий
-`tools/ui_preview` (heltec/t114); на железе не проверено.
-
-## Резервная копия (0.30.0 / Android 0.21.0)
-
-`docs/backup.md`: страница («Настройки → Резервная копия», `renderBackup`/`backupSave`/`backupRestore` в `web/index.html`)
-собирает копию обычными командами и пишет обратно только отмеченное, ключ узла последним (`identity set` перезапускает плату
-через 1,5 с; `restartTick` теперь сначала вызывает `meshRadio.flush()`). Новые команды прошивки — `identity` (закрытый ключ
-MeshCore, 128 hex), `identity set`, `contact add {JSON}` (`MeshRadio::privateKeyText/restoreKey/learnContact`); по Wi-Fi ключ
-выдаётся только через точку доступа (`Portal.cpp`). Команды по BLE не длиннее 255 байт: настройки пишутся порциями до 200 байт,
-путь контакта в копию не входит. Чтобы китайский T114 поместился, `Dispatcher::calcRxDelay` и `MeshServer` считают задержку
-через `powf` (двойной `pow` больше не линкуется, ~3,5 КБ; `lib/MeshCore/PATCHES.md`): китайский T114 — 709672 байта.
-Проверено: сборка всех плат, сохранение и восстановление на странице с `tools/web_demo.py` в браузере. На железе (команды
-`identity`/`contact add`, перенос ключа на другую плату, приложение по BLE) не проверено: платы не были подключены.
-0.30.1 / Android 0.21.1: открытый ключ в копии один (`node.public_key`), имя файла по местному времени; без хранилища
-(`status.storage=false`, nRF52 после Meshtastic/MeshCore) страница показывает карточку «Хранилище не создано» с `fsformat`
-(`storageCard` в `web/index.html`, демо — `tools/web_demo.py --no-storage`), сайт — шаг `uf2.step4`.
-0.30.2: nRF52 сам создаёт хранилище, если в начале области 0xD4000 нет файловой системы (ни `littlefs`, ни заголовка блока
-littlefs v1) — там код заводской Meshtastic T114 (`foreignCode` в `src/nrf52/Platform.cpp`); чужую littlefs (MeshCore) и
-нашу порванную — по-прежнему только по `fsformat`. На железе не проверено.
-
-
-## Шашки, морской бой и папки (0.33.0 / Android 0.22.0)
-
-`docs/games.md`: русские шашки (`src/Checkers.cpp`) и морской бой (`src/Sea.cpp`) с контактами личными сообщениями
-`🏁…`/`🚢…` с ACK и повтором как у шахмат, без рейтинга; партии обеих игр — `src/Duel.cpp` (`duels`, до 6, файл
-`/meshmesh/duels.0|1`), USB `duel …`, `GET /api/duel`. Победитель морского боя отправляет расстановку, проигравший сверяет её
-с ответами. Экраны: M9/T-Deck — `src/UiDuel.inc`, компактные и T114 — `src/UiDuelCompact.inc`, `UiHires.inc`; страница —
-разделы `checkers`, `sea`, `duel`, плитка «Игры» (`games`) и редактор папок в `renderApps` (`web/index.html`), приложение —
-`DuelNews.kt`. Папки: настройка `apps` — `{ИМЯ id …}`, `-{…}` скрыта, `games` — «Игры» на языке экрана; при первом запуске
-0.33.0 сохранённый порядок один раз переносит игры в папку (`appsAddGames`, NVS `apps3`). Проверка протокола —
-`tools/duel_check.py` (два экземпляра кода через `tools/ui_preview` `--duel`, потери сообщений; в CI), экраны — сценарии
-`tools/ui_preview/scenario_games_*.inc`. Чтобы китайский T114 поместился с папками: `quickSend::state` и черновик радио
-в обнуляемой памяти (не в `.data`), крупный шрифт T114 без русского — `inr24_mr`. По BLE `set` не длиннее 255 байт: страница
-не сохраняет порядок приложений длиннее 240 байт. На железе не проверено: плат на USB не было.
+- The repository is public. Never commit private data: flash/NVS dumps, message history, private or channel keys,
+  Wi-Fi passwords, BLE PINs, real node IDs or addresses, real coordinates. Check the staged files before each
+  commit. Keep backups and files with secrets local with mode 0600 and out of logs and reports.
+- Distinguish "builds" from "verified on hardware" in every report. Say exactly what was run (build, preview,
+  host test, USB command, real radio exchange) and what was not. Host previews and Node checks do not replace a
+  look at the real screen or browser; USB key events test the UI code, not the physical keys.
+- Hardware checks of LoRa and BLE must show a real radio exchange: RX/TX counters growing, no restarts, one copy of
+  each message.
+- Keep dependencies pinned in `platformio.ini`; change them only when needed.
+- Update `docs/` and this file by hand to match what was actually done.
