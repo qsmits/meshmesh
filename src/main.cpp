@@ -244,6 +244,11 @@ void appLoop() {
         else{pinMode(n,OUTPUT);digitalWrite(n,arg.toInt()?HIGH:LOW);usbLine("OK gpio "+String(n)+"="+String(arg.toInt()?1:0));}}
       else if(command=="i2cscan"){String r="I2C";for(uint8_t a=1;a<127;a++){Wire.beginTransmission(a);if(!Wire.endTransmission())r+=" 0x"+String(a,HEX);}usbLine(r);}
 #endif
+#if !defined(MM_COMPACT) && !defined(MM_BOARD_TDECK) && !defined(MM_NRF52)
+      // M9 GPS bring-up: "gps raw" shows about a second of receiver output (escaped), "gps baud N" changes the UART rate.
+      else if(command=="gps raw"){if(!config.gps){usbLine("ERR GPS off");}else{String r="GPS ";uint32_t start=millis();while(millis()-start<1200&&r.length()<700){while(Serial1.available()&&r.length()<700){int c=Serial1.read();if(c=='\r')r+="\\r";else if(c=='\n')r+="\\n";else if(c>=32&&c<127)r+=char(c);else{char h[5];snprintf(h,sizeof h,"\\x%02x",c);r+=h;}}delay(2);}usbLine(r);}}
+      else if(command.startsWith("gps baud ")){long b=command.substring(9).toInt();if(b<1200||b>921600||!config.gps)usbLine("ERR gps baud 1200..921600, GPS on");else{Serial1.updateBaudRate(b);usbLine("OK gps baud "+String(b));}}
+#endif
       else if(command.startsWith("uikey ")) {uiKey(strtol(command.substring(6).c_str(),nullptr,0));usbLine("OK UI key");}
 #if !defined(MM_COMPACT)
       // "uitouch t|h X Y" or "uitouch u|d|l|r": the T-Deck touch gestures, for checks without a finger.
