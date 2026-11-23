@@ -1549,6 +1549,11 @@
   "ru": "Блокировка (микрофона нет)",
   "text": "Blokada ekranu (brak mikrofonu)"
  },
+ "0b8ec4a3": {
+  "en": "Home screen: lock",
+  "ru": "Главный экран: блокировка",
+  "text": "Ekran główny: blokada"
+ },
  "a21c0730": {
   "en": "Open / send; twice or hold: unlock",
   "ru": "Открыть / отправить; дважды или удерж.: вход",

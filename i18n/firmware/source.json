@@ -704,7 +704,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1353: else if(page==Network){if(selected==0)portalToggle();if(selected==1){if(config.role!=RoleNormal)notice(t(\"Internet over Wi-Fi is off in this mode\",\"Интернет по Wi-Fi выключен в этом режиме\"),warn);else change(NetList);}i"
+   "src/Ui.cpp:1355: else if(page==Network){if(selected==0)portalToggle();if(selected==1){if(config.role!=RoleNormal)notice(t(\"Internet over Wi-Fi is off in this mode\",\"Интернет по Wi-Fi выключен в этом режиме\"),warn);else change(NetList);}i"
   ]
  },
  "0ab238b8": {
@@ -740,7 +740,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1274: if(key==KeyHome){change(homePage());return;}if(config.role!=RoleNormal&&(key==KeyMsg||key==KeyMap)){notice(t(\"Not in this mode: Settings > Device mode\",\"Недоступно в этом режиме: Настройки > Режим работы\"),warn);return;}"
+   "src/Ui.cpp:1276: if(key==KeyHome){change(homePage());return;}if(config.role!=RoleNormal&&(key==KeyMsg||key==KeyMap)){notice(t(\"Not in this mode: Settings > Device mode\",\"Недоступно в этом режиме: Настройки > Режим работы\"),warn);return;}"
   ]
  },
  "0b300371": {
@@ -759,6 +759,15 @@
   ],
   "where": [
    "src/Ui.cpp:915: const char* names[]={tr(\"Name\",\"Имя\"),tr(\"Language\",\"Язык\"),tr(\"Typing language\",\"Язык ввода\"),tr(\"Day brightness\",\"Яркость днём\"),tr(\"Home layout\",\"Вид главного экрана\"),tr(\"Sounds\",\"Звуки\"),tr(\"Auto lock\",\"Автоблокиров"
+  ]
+ },
+ "0b8ec4a3": {
+  "cells": 25,
+  "families": [
+   "full"
+  ],
+  "where": [
+   "src/Ui.cpp:1095: {tr(\"Map pin\",\"Геометка\"),t(\"Announce this node; hold: GPS on/off\",\"Объявить узел; удерж.: GPS вкл/выкл\")},{tr(\"Menu\",\"Меню\"),t(\"App actions and radio controls\",\"Действия и управление связью\")},hardware.micKey?Hint{\"MIC\""
   ]
  },
  "0b905bda": {
@@ -1006,7 +1015,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1363: else if(page==Diagnostics){hardware.beep();bool passed=meshRadio.selfTest();notice(passed?t(\"Encryption test passed\",\"Проверка шифрования пройдена\"):t(\"Encryption test failed\",\"Ошибка шифрования\"),passed?ok:bad);}}"
+   "src/Ui.cpp:1365: else if(page==Diagnostics){hardware.beep();bool passed=meshRadio.selfTest();notice(passed?t(\"Encryption test passed\",\"Проверка шифрования пройдена\"):t(\"Encryption test failed\",\"Ошибка шифрования\"),passed?ok:bad);}}"
   ]
  },
  "0ec65cbb": {
@@ -1225,7 +1234,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1095: {tr(\"Map pin\",\"Геометка\"),t(\"Announce this node; hold: GPS on/off\",\"Объявить узел; удерж.: GPS вкл/выкл\")},{tr(\"Menu\",\"Меню\"),t(\"App actions and radio controls\",\"Действия и управление связью\")},{\"MIC\",t(\"Lock screen (the"
+   "src/Ui.cpp:1095: {tr(\"Map pin\",\"Геометка\"),t(\"Announce this node; hold: GPS on/off\",\"Объявить узел; удерж.: GPS вкл/выкл\")},{tr(\"Menu\",\"Меню\"),t(\"App actions and radio controls\",\"Действия и управление связью\")},hardware.micKey?Hint{\"MIC\""
   ]
  },
  "121d540b": {
@@ -1760,7 +1769,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1262: if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){",
+   "src/Ui.cpp:1264: if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){",
    "src/UiChannels.inc:143: else notice(t(\"Region: letters, digits, '-'\",\"Регион: буквы, цифры, '-'\"),bad);",
    "src/UiChannels.inc:161: String r=regions::normalize(edit);if(edit.length()&&!r.length()){notice(t(\"Region: letters, digits, '-'\",\"Регион: буквы, цифры, '-'\"),bad);return;}"
   ]
@@ -1873,7 +1882,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1354: else if(page==Sensors){if(selected==0)gpsToggle();else if(selected==1){bool sent=meshRadio.sendPosition();notice(sent?t(\"Position shared\",\"Позиция передана\"):t(\"Waiting for GPS fix\",\"Ожидание GPS-позиции\"),sent?ok:warn);",
+   "src/Ui.cpp:1356: else if(page==Sensors){if(selected==0)gpsToggle();else if(selected==1){bool sent=meshRadio.sendPosition();notice(sent?t(\"Position shared\",\"Позиция передана\"):t(\"Waiting for GPS fix\",\"Ожидание GPS-позиции\"),sent?ok:warn);",
    "src/UiHeltec.cpp:652: case ActPosition:notice(meshRadio.sendPosition()?t(\"Position shared\",\"Позиция передана\"):t(\"Needs a GPS fix\",\"Нужна позиция GPS\"));break;"
   ]
  },
@@ -1885,7 +1894,7 @@
   ],
   "where": [
    "src/Ui.cpp:1203: if(!netfind::start(all))notice(meshRadio.busy()||regions::searching()?t(\"Radio busy, retry\",\"Радио занято, повторите\"):t(\"Radio offline\",\"Радио недоступно\"),bad);",
-   "src/Ui.cpp:1351: else if(page==Radio&&selected==RowFind){if(config.role!=RoleNormal)notice(t(\"Not in this mode\",\"Недоступно в этом режиме\"),warn);else if(!regions::find())notice(t(\"Radio offline\",\"Радио недоступно\"),bad);}",
+   "src/Ui.cpp:1353: else if(page==Radio&&selected==RowFind){if(config.role!=RoleNormal)notice(t(\"Not in this mode\",\"Недоступно в этом режиме\"),warn);else if(!regions::find())notice(t(\"Radio offline\",\"Радио недоступно\"),bad);}",
    "src/UiHeltec.cpp:376: case RowFind:if(!regions::find())notice(t(\"Radio offline\",\"Радио недоступно\"));break;"
   ]
  },
@@ -2327,7 +2336,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1349: notice(done?t(\"Radio settings changed\",\"Настройки радио изменены\"):r.startsWith(\"ERR radio busy\")?t(\"Radio busy, retry\",\"Радио занято, повторите\"):r.substring(4),done?ok:bad);}",
+   "src/Ui.cpp:1351: notice(done?t(\"Radio settings changed\",\"Настройки радио изменены\"):r.startsWith(\"ERR radio busy\")?t(\"Radio busy, retry\",\"Радио занято, повторите\"):r.substring(4),done?ok:bad);}",
    "src/UiHeltec.cpp:383: notice(done?t(\"Radio settings changed\",\"Настройки радио изменены\"):r.startsWith(\"ERR radio busy\")?t(\"Radio busy, retry\",\"Радио занято, повторите\"):r.substring(4));break;}"
   ]
  },
@@ -2403,7 +2412,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1359: else if(page==Homing){radarSound=!radarSound;notice(radarSound?(config.sound?t(\"Ping on\",\"Звук пеленга включён\"):t(\"Device sound is off in settings\",\"Звук устройства выключен в настройках\")):t(\"Ping off\",\"Звук пеленга вы"
+   "src/Ui.cpp:1361: else if(page==Homing){radarSound=!radarSound;notice(radarSound?(config.sound?t(\"Ping on\",\"Звук пеленга включён\"):t(\"Device sound is off in settings\",\"Звук устройства выключен в настройках\")):t(\"Ping off\",\"Звук пеленга вы"
   ]
  },
  "21df9772": {
@@ -2719,7 +2728,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1399: String eventLabel(const String& value){if(value.startsWith(\"New message from \"))return tr(\"New message from \",\"Сообщение от \")+value.substring(17);if(value.startsWith(\"Delivered to \"))return tr(\"Delivered to \",\"Доставлен"
+   "src/Ui.cpp:1401: String eventLabel(const String& value){if(value.startsWith(\"New message from \"))return tr(\"New message from \",\"Сообщение от \")+value.substring(17);if(value.startsWith(\"Delivered to \"))return tr(\"Delivered to \",\"Доставлен"
   ]
  },
  "26113478": {
@@ -2757,7 +2766,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1330: if(page==Motion&&(key=='b'||key=='B')){csiBeaconRole=!csiBeaconRole;radar.setCsi(csiBeaconRole?Radar::CsiBeacon:Radar::CsiSensor);notice(csiBeaconRole?t(\"This board is now the beacon\",\"Эта плата — маяк\"):t(\"This board is"
+   "src/Ui.cpp:1332: if(page==Motion&&(key=='b'||key=='B')){csiBeaconRole=!csiBeaconRole;radar.setCsi(csiBeaconRole?Radar::CsiBeacon:Radar::CsiSensor);notice(csiBeaconRole?t(\"This board is now the beacon\",\"Эта плата — маяк\"):t(\"This board is"
   ]
  },
  "2655c924": {
@@ -3437,7 +3446,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1399: String eventLabel(const String& value){if(value.startsWith(\"New message from \"))return tr(\"New message from \",\"Сообщение от \")+value.substring(17);if(value.startsWith(\"Delivered to \"))return tr(\"Delivered to \",\"Доставлен"
+   "src/Ui.cpp:1401: String eventLabel(const String& value){if(value.startsWith(\"New message from \"))return tr(\"New message from \",\"Сообщение от \")+value.substring(17);if(value.startsWith(\"Delivered to \"))return tr(\"Delivered to \",\"Доставлен"
   ]
  },
  "2d1dce7b": {
@@ -3953,7 +3962,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1354: else if(page==Sensors){if(selected==0)gpsToggle();else if(selected==1){bool sent=meshRadio.sendPosition();notice(sent?t(\"Position shared\",\"Позиция передана\"):t(\"Waiting for GPS fix\",\"Ожидание GPS-позиции\"),sent?ok:warn);"
+   "src/Ui.cpp:1356: else if(page==Sensors){if(selected==0)gpsToggle();else if(selected==1){bool sent=meshRadio.sendPosition();notice(sent?t(\"Position shared\",\"Позиция передана\"):t(\"Waiting for GPS fix\",\"Ожидание GPS-позиции\"),sent?ok:warn);"
   ]
  },
  "339828cc": {
@@ -4092,8 +4101,8 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1399: String eventLabel(const String& value){if(value.startsWith(\"New message from \"))return tr(\"New message from \",\"Сообщение от \")+value.substring(17);if(value.startsWith(\"Delivered to \"))return tr(\"Delivered to \",\"Доставлен",
-   "src/Ui.cpp:1403: if(notifications::enabled(notifications::mode(notification.message,config.notifyPopup,2),notification.mention)&&page!=DiceView&&page!=PeopleView)notice(t(\"New message from \",\"Сообщение от \")+notification.message.name,acc"
+   "src/Ui.cpp:1401: String eventLabel(const String& value){if(value.startsWith(\"New message from \"))return tr(\"New message from \",\"Сообщение от \")+value.substring(17);if(value.startsWith(\"Delivered to \"))return tr(\"Delivered to \",\"Доставлен",
+   "src/Ui.cpp:1405: if(notifications::enabled(notifications::mode(notification.message,config.notifyPopup,2),notification.mention)&&page!=DiceView&&page!=PeopleView)notice(t(\"New message from \",\"Сообщение от \")+notification.message.name,acc"
   ]
  },
  "3648955c": {
@@ -4485,7 +4494,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1354: else if(page==Sensors){if(selected==0)gpsToggle();else if(selected==1){bool sent=meshRadio.sendPosition();notice(sent?t(\"Position shared\",\"Позиция передана\"):t(\"Waiting for GPS fix\",\"Ожидание GPS-позиции\"),sent?ok:warn);"
+   "src/Ui.cpp:1356: else if(page==Sensors){if(selected==0)gpsToggle();else if(selected==1){bool sent=meshRadio.sendPosition();notice(sent?t(\"Position shared\",\"Позиция передана\"):t(\"Waiting for GPS fix\",\"Ожидание GPS-позиции\"),sent?ok:warn);"
   ]
  },
  "3db61861": {
@@ -4655,7 +4664,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1399: String eventLabel(const String& value){if(value.startsWith(\"New message from \"))return tr(\"New message from \",\"Сообщение от \")+value.substring(17);if(value.startsWith(\"Delivered to \"))return tr(\"Delivered to \",\"Доставлен"
+   "src/Ui.cpp:1401: String eventLabel(const String& value){if(value.startsWith(\"New message from \"))return tr(\"New message from \",\"Сообщение от \")+value.substring(17);if(value.startsWith(\"Delivered to \"))return tr(\"Delivered to \",\"Доставлен"
   ]
  },
  "4058de21": {
@@ -5158,8 +5167,8 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1399: String eventLabel(const String& value){if(value.startsWith(\"New message from \"))return tr(\"New message from \",\"Сообщение от \")+value.substring(17);if(value.startsWith(\"Delivered to \"))return tr(\"Delivered to \",\"Доставлен",
-   "src/Ui.cpp:1403: if(notifications::enabled(notifications::mode(notification.message,config.notifyPopup,2),notification.mention)&&page!=DiceView&&page!=PeopleView)notice(t(\"New message from \",\"Сообщение от \")+notification.message.name,acc"
+   "src/Ui.cpp:1401: String eventLabel(const String& value){if(value.startsWith(\"New message from \"))return tr(\"New message from \",\"Сообщение от \")+value.substring(17);if(value.startsWith(\"Delivered to \"))return tr(\"Delivered to \",\"Доставлен",
+   "src/Ui.cpp:1405: if(notifications::enabled(notifications::mode(notification.message,config.notifyPopup,2),notification.mention)&&page!=DiceView&&page!=PeopleView)notice(t(\"New message from \",\"Сообщение от \")+notification.message.name,acc"
   ]
  },
  "47db2ee3": {
@@ -5594,7 +5603,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1363: else if(page==Diagnostics){hardware.beep();bool passed=meshRadio.selfTest();notice(passed?t(\"Encryption test passed\",\"Проверка шифрования пройдена\"):t(\"Encryption test failed\",\"Ошибка шифрования\"),passed?ok:bad);}}"
+   "src/Ui.cpp:1365: else if(page==Diagnostics){hardware.beep();bool passed=meshRadio.selfTest();notice(passed?t(\"Encryption test passed\",\"Проверка шифрования пройдена\"):t(\"Encryption test failed\",\"Ошибка шифрования\"),passed?ok:bad);}}"
   ]
  },
  "4d885d93": {
@@ -5854,7 +5863,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1306: if(page==Chat){if(key==Enter){if(meshRadio.sendMessage(composer,recipient)){composer=\"\";chatOffset=0;notice(t(\"Message queued\",\"Сообщение в очереди\"));}else notice(t(\"Cannot send: empty, full queue or radio\",\"Не отправле"
+   "src/Ui.cpp:1308: if(page==Chat){if(key==Enter){if(meshRadio.sendMessage(composer,recipient)){composer=\"\";chatOffset=0;notice(t(\"Message queued\",\"Сообщение в очереди\"));}else notice(t(\"Cannot send: empty, full queue or radio\",\"Не отправле"
   ]
  },
  "509eb141": {
@@ -5958,7 +5967,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1358: else if(page==Motion){if(radar.csi==Radar::CsiSensor&&radar.beaconHeard()){radar.calibrate();notice(t(\"Calibrating: keep the area still for 10 s\",\"Калибровка: 10 с без движения в зоне\"),info);}else notice(t(\"Needs a hear"
+   "src/Ui.cpp:1360: else if(page==Motion){if(radar.csi==Radar::CsiSensor&&radar.beaconHeard()){radar.calibrate();notice(t(\"Calibrating: keep the area still for 10 s\",\"Калибровка: 10 с без движения в зоне\"),info);}else notice(t(\"Needs a hear"
   ]
  },
  "5226c78b": {
@@ -6085,7 +6094,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1399: String eventLabel(const String& value){if(value.startsWith(\"New message from \"))return tr(\"New message from \",\"Сообщение от \")+value.substring(17);if(value.startsWith(\"Delivered to \"))return tr(\"Delivered to \",\"Доставлен"
+   "src/Ui.cpp:1401: String eventLabel(const String& value){if(value.startsWith(\"New message from \"))return tr(\"New message from \",\"Сообщение от \")+value.substring(17);if(value.startsWith(\"Delivered to \"))return tr(\"Delivered to \",\"Доставлен"
   ]
  },
  "53ed2c15": {
@@ -6464,7 +6473,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1274: if(key==KeyHome){change(homePage());return;}if(config.role!=RoleNormal&&(key==KeyMsg||key==KeyMap)){notice(t(\"Not in this mode: Settings > Device mode\",\"Недоступно в этом режиме: Настройки > Режим работы\"),warn);return;}"
+   "src/Ui.cpp:1276: if(key==KeyHome){change(homePage());return;}if(config.role!=RoleNormal&&(key==KeyMsg||key==KeyMap)){notice(t(\"Not in this mode: Settings > Device mode\",\"Недоступно в этом режиме: Настройки > Режим работы\"),warn);return;}"
   ]
  },
  "5b4bc08f": {
@@ -6920,7 +6929,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1095: {tr(\"Map pin\",\"Геометка\"),t(\"Announce this node; hold: GPS on/off\",\"Объявить узел; удерж.: GPS вкл/выкл\")},{tr(\"Menu\",\"Меню\"),t(\"App actions and radio controls\",\"Действия и управление связью\")},{\"MIC\",t(\"Lock screen (the"
+   "src/Ui.cpp:1095: {tr(\"Map pin\",\"Геометка\"),t(\"Announce this node; hold: GPS on/off\",\"Объявить узел; удерж.: GPS вкл/выкл\")},{tr(\"Menu\",\"Меню\"),t(\"App actions and radio controls\",\"Действия и управление связью\")},hardware.micKey?Hint{\"MIC\""
   ]
  },
  "60f6ab26": {
@@ -6975,7 +6984,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1116: icon(IcLock,160,chess&&n?210:200,chess&&n?6:7,dim);footer({{\"OK\",chess?t(\"Twice or hold: the game\",\"Дважды или удерж.: партия\"):t(\"Twice or hold: unlock\",\"Дважды или удерж.: вход\")},{\"MIC\",t(\"Lock\",\"Блок\")}});"
+   "src/Ui.cpp:1116: icon(IcLock,160,chess&&n?210:200,chess&&n?6:7,dim);String unlock=chess?t(\"Twice or hold: the game\",\"Дважды или удерж.: партия\"):t(\"Twice or hold: unlock\",\"Дважды или удерж.: вход\");if(hardware.micKey)footer({{\"OK\",unlock"
   ]
  },
  "61991a0e": {
@@ -7114,7 +7123,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1116: icon(IcLock,160,chess&&n?210:200,chess&&n?6:7,dim);footer({{\"OK\",chess?t(\"Twice or hold: the game\",\"Дважды или удерж.: партия\"):t(\"Twice or hold: unlock\",\"Дважды или удерж.: вход\")},{\"MIC\",t(\"Lock\",\"Блок\")}});"
+   "src/Ui.cpp:1116: icon(IcLock,160,chess&&n?210:200,chess&&n?6:7,dim);String unlock=chess?t(\"Twice or hold: the game\",\"Дважды или удерж.: партия\"):t(\"Twice or hold: unlock\",\"Дважды или удерж.: вход\");if(hardware.micKey)footer({{\"OK\",unlock"
   ]
  },
  "645b364a": {
@@ -7265,7 +7274,7 @@
   ],
   "where": [
    "src/Ui.cpp:1044: if(r.saved||r.open){if(!r.saved&&!internet.save(r.ssid,\"\")){notice(netError(),bad);return;}internet.connectTo(r.ssid);notice(t(\"Connecting to \",\"Подключение к \")+r.ssid);return;}",
-   "src/Ui.cpp:1262: if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){"
+   "src/Ui.cpp:1264: if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){"
   ]
  },
  "67559138": {
@@ -8550,7 +8559,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1362: armed=0;String r=executeCommand(\"fsformat\");bool done=r.startsWith(\"OK\");if(done)executeCommand(\"restart\");notice(done?t(\"Storage created, restart\",\"Создано, перезапуск\"):r,done?ok:bad);}",
+   "src/Ui.cpp:1364: armed=0;String r=executeCommand(\"fsformat\");bool done=r.startsWith(\"OK\");if(done)executeCommand(\"restart\");notice(done?t(\"Storage created, restart\",\"Создано, перезапуск\"):r,done?ok:bad);}",
    "src/UiHeltec.cpp:615: armed=0;String r=executeCommand(\"fsformat\");if(r.startsWith(\"OK\"))executeCommand(\"restart\");notice(r.startsWith(\"OK\")?t(\"Storage created, restart\",\"Создано, перезапуск\"):r);break;}"
   ]
  },
@@ -8716,8 +8725,8 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1308: if(page==Map){if(key=='l'||key=='L'){change(Library);return;}if(key==KeyLeft)maps.pan(-70,0);if(key==KeyRight)maps.pan(70,0);if(key==KeyUp)maps.pan(0,-70);if(key==KeyDown)maps.pan(0,70);if(key=='+'||key=='=')maps.changeZ",
-   "src/Ui.cpp:1354: else if(page==Sensors){if(selected==0)gpsToggle();else if(selected==1){bool sent=meshRadio.sendPosition();notice(sent?t(\"Position shared\",\"Позиция передана\"):t(\"Waiting for GPS fix\",\"Ожидание GPS-позиции\"),sent?ok:warn);"
+   "src/Ui.cpp:1310: if(page==Map){if(key=='l'||key=='L'){change(Library);return;}if(key==KeyLeft)maps.pan(-70,0);if(key==KeyRight)maps.pan(70,0);if(key==KeyUp)maps.pan(0,-70);if(key==KeyDown)maps.pan(0,70);if(key=='+'||key=='=')maps.changeZ",
+   "src/Ui.cpp:1356: else if(page==Sensors){if(selected==0)gpsToggle();else if(selected==1){bool sent=meshRadio.sendPosition();notice(sent?t(\"Position shared\",\"Позиция передана\"):t(\"Waiting for GPS fix\",\"Ожидание GPS-позиции\"),sent?ok:warn);"
   ]
  },
  "7a9fed24": {
@@ -9658,7 +9667,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1116: icon(IcLock,160,chess&&n?210:200,chess&&n?6:7,dim);footer({{\"OK\",chess?t(\"Twice or hold: the game\",\"Дважды или удерж.: партия\"):t(\"Twice or hold: unlock\",\"Дважды или удерж.: вход\")},{\"MIC\",t(\"Lock\",\"Блок\")}});"
+   "src/Ui.cpp:1116: icon(IcLock,160,chess&&n?210:200,chess&&n?6:7,dim);String unlock=chess?t(\"Twice or hold: the game\",\"Дважды или удерж.: партия\"):t(\"Twice or hold: unlock\",\"Дважды или удерж.: вход\");if(hardware.micKey)footer({{\"OK\",unlock"
   ]
  },
  "86655252": {
@@ -9914,7 +9923,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1337: else if(page==Library&&library.size()){if(maps.selectArea(library[selected][\"id\"].as<String>()))change(Map);else notice(t(\"Map unavailable\",\"Карта недоступна\"),bad);}"
+   "src/Ui.cpp:1339: else if(page==Library&&library.size()){if(maps.selectArea(library[selected][\"id\"].as<String>()))change(Map);else notice(t(\"Map unavailable\",\"Карта недоступна\"),bad);}"
   ]
  },
  "8b4f535c": {
@@ -10368,7 +10377,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1309: if((page==Nodes||page==Node)&&(key=='p'||key=='P')){if(Peer* p=focusedPeer()){if(p->position){maps.follow=false;maps.center(p->latitude,p->longitude);change(Map);}else notice(t(\"This node has not shared GPS\",\"Узел пока н"
+   "src/Ui.cpp:1311: if((page==Nodes||page==Node)&&(key=='p'||key=='P')){if(Peer* p=focusedPeer()){if(p->position){maps.follow=false;maps.center(p->latitude,p->longitude);change(Map);}else notice(t(\"This node has not shared GPS\",\"Узел пока н"
   ]
  },
  "9172832f": {
@@ -10738,7 +10747,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1342: else if(page==Settings&&selected==settingsCount-1){if(!powerArmed||millis()-powerArmed>5000){powerArmed=millis();notice(t(\"OK again: turn off\",\"Ещё раз OK: выключить\"),warn);return;}powerArmed=0;powerOff();}",
+   "src/Ui.cpp:1344: else if(page==Settings&&selected==settingsCount-1){if(!powerArmed||millis()-powerArmed>5000){powerArmed=millis();notice(t(\"OK again: turn off\",\"Ещё раз OK: выключить\"),warn);return;}powerArmed=0;powerOff();}",
    "src/UiHeltec.cpp:679: notice(t(\"OK again: turn off\",\"Ещё раз OK: выключить\"));"
   ]
  },
@@ -10999,7 +11008,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1358: else if(page==Motion){if(radar.csi==Radar::CsiSensor&&radar.beaconHeard()){radar.calibrate();notice(t(\"Calibrating: keep the area still for 10 s\",\"Калибровка: 10 с без движения в зоне\"),info);}else notice(t(\"Needs a hear"
+   "src/Ui.cpp:1360: else if(page==Motion){if(radar.csi==Radar::CsiSensor&&radar.beaconHeard()){radar.calibrate();notice(t(\"Calibrating: keep the area still for 10 s\",\"Калибровка: 10 с без движения в зоне\"),info);}else notice(t(\"Needs a hear"
   ]
  },
  "9b52bbc9": {
@@ -11394,7 +11403,7 @@
   "where": [
    "src/Ui.cpp:1202: notice(done?t(\"Radio test: a restart returns the saved one\",\"Тест радио: перезапуск вернёт сохранённое\"):r.startsWith(\"ERR radio busy\")?t(\"Radio busy, retry\",\"Радио занято, повторите\"):r.substring(4),done?ok:bad);return;",
    "src/Ui.cpp:1203: if(!netfind::start(all))notice(meshRadio.busy()||regions::searching()?t(\"Radio busy, retry\",\"Радио занято, повторите\"):t(\"Radio offline\",\"Радио недоступно\"),bad);",
-   "src/Ui.cpp:1349: notice(done?t(\"Radio settings changed\",\"Настройки радио изменены\"):r.startsWith(\"ERR radio busy\")?t(\"Radio busy, retry\",\"Радио занято, повторите\"):r.substring(4),done?ok:bad);}"
+   "src/Ui.cpp:1351: notice(done?t(\"Radio settings changed\",\"Настройки радио изменены\"):r.startsWith(\"ERR radio busy\")?t(\"Radio busy, retry\",\"Радио занято, повторите\"):r.substring(4),done?ok:bad);}"
   ]
  },
  "a07143b9": {
@@ -11440,7 +11449,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1344: else if(page==Radio||page==Display){if(selected==settingRows()-1){if(draftChanged())saveDraft();else notice(t(\"Nothing to save\",\"Изменений нет\"),dim);}else if(page==Display&&selected==RowPassword){credentialPrompt(creden",
+   "src/Ui.cpp:1346: else if(page==Radio||page==Display){if(selected==settingRows()-1){if(draftChanged())saveDraft();else notice(t(\"Nothing to save\",\"Изменений нет\"),dim);}else if(page==Display&&selected==RowPassword){credentialPrompt(creden",
    "src/UiHeltec.cpp:387: if(!radioChanged()){radioEdit=false;notice(t(\"Nothing to save\",\"Изменений нет\"));return;}"
   ]
  },
@@ -11650,7 +11659,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1262: if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){",
+   "src/Ui.cpp:1264: if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){",
    "src/UiDice.inc:392: case EditName:if(diceSel<int(count)&&dicer.editRoll(diceSel,dicer.sheet.block[block].formula,edit)){editing=false;notice(t(\"Name saved\",\"Имя сохранено\"),ok);}else bad1(nameError);return;",
    "src/UiDice.inc:397: default:if(dicer.renameCharacter(edit)){editing=false;notice(t(\"Name saved\",\"Имя сохранено\"),ok);}else bad1(nameError);return;"
   ]
@@ -11735,7 +11744,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1331: if(page==Homing&&(key==KeyLeft||key==KeyRight)){radar.resetPeak();notice(t(\"Peak reset\",\"Пик сброшен\"),dim);return;}",
+   "src/Ui.cpp:1333: if(page==Homing&&(key==KeyLeft||key==KeyRight)){radar.resetPeak();notice(t(\"Peak reset\",\"Пик сброшен\"),dim);return;}",
    "src/UiHeltec.cpp:661: case ActStopHoming:radar.untrack();break;case ActResetPeak:radar.resetPeak();notice(t(\"Peak reset\",\"Пик сброшен\"));break;"
   ]
  },
@@ -11839,7 +11848,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1262: if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){"
+   "src/Ui.cpp:1264: if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){"
   ]
  },
  "a651a0e2": {
@@ -12139,7 +12148,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1306: if(page==Chat){if(key==Enter){if(meshRadio.sendMessage(composer,recipient)){composer=\"\";chatOffset=0;notice(t(\"Message queued\",\"Сообщение в очереди\"));}else notice(t(\"Cannot send: empty, full queue or radio\",\"Не отправле"
+   "src/Ui.cpp:1308: if(page==Chat){if(key==Enter){if(meshRadio.sendMessage(composer,recipient)){composer=\"\";chatOffset=0;notice(t(\"Message queued\",\"Сообщение в очереди\"));}else notice(t(\"Cannot send: empty, full queue or radio\",\"Не отправле"
   ]
  },
  "aacd4928": {
@@ -12268,7 +12277,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1403: if(notifications::enabled(notifications::mode(notification.message,config.notifyPopup,2),notification.mention)&&page!=DiceView&&page!=PeopleView)notice(t(\"New message from \",\"Сообщение от \")+notification.message.name,acc"
+   "src/Ui.cpp:1405: if(notifications::enabled(notifications::mode(notification.message,config.notifyPopup,2),notification.mention)&&page!=DiceView&&page!=PeopleView)notice(t(\"New message from \",\"Сообщение от \")+notification.message.name,acc"
   ]
  },
  "ad5eec0a": {
@@ -12656,7 +12665,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1353: else if(page==Network){if(selected==0)portalToggle();if(selected==1){if(config.role!=RoleNormal)notice(t(\"Internet over Wi-Fi is off in this mode\",\"Интернет по Wi-Fi выключен в этом режиме\"),warn);else change(NetList);}i"
+   "src/Ui.cpp:1355: else if(page==Network){if(selected==0)portalToggle();if(selected==1){if(config.role!=RoleNormal)notice(t(\"Internet over Wi-Fi is off in this mode\",\"Интернет по Wi-Fi выключен в этом режиме\"),warn);else change(NetList);}i"
   ]
  },
  "b478a72f": {
@@ -12915,7 +12924,7 @@
   "where": [
    "src/Ui.cpp:1074: switch(k){case 0:return \"-\";case KeyMsg:return \"MSG\";case KeyHome:return \"HOME\";case KeyMenu:return t(\"Menu\",\"Меню\");case KeyAdv:return t(\"Map pin\",\"Геометка\");case KeyGps:return t(\"Map pin\",\"Геометка\")+\" (GPS)\";case Key",
    "src/Ui.cpp:1074: switch(k){case 0:return \"-\";case KeyMsg:return \"MSG\";case KeyHome:return \"HOME\";case KeyMenu:return t(\"Menu\",\"Меню\");case KeyAdv:return t(\"Map pin\",\"Геометка\");case KeyGps:return t(\"Map pin\",\"Геометка\")+\" (GPS)\";case Key",
-   "src/Ui.cpp:1095: {tr(\"Map pin\",\"Геометка\"),t(\"Announce this node; hold: GPS on/off\",\"Объявить узел; удерж.: GPS вкл/выкл\")},{tr(\"Menu\",\"Меню\"),t(\"App actions and radio controls\",\"Действия и управление связью\")},{\"MIC\",t(\"Lock screen (the"
+   "src/Ui.cpp:1095: {tr(\"Map pin\",\"Геометка\"),t(\"Announce this node; hold: GPS on/off\",\"Объявить узел; удерж.: GPS вкл/выкл\")},{tr(\"Menu\",\"Меню\"),t(\"App actions and radio controls\",\"Действия и управление связью\")},hardware.micKey?Hint{\"MIC\""
   ]
  },
  "b8237894": {
@@ -13833,7 +13842,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1357: else if(page==Scope){int i=liveScopeIndex();if(i>=0&&radar.track(i)){scopeHeld=true;pingedSamples=radar.samples;change(Homing);}else notice(scopeCount?t(\"Signal no longer listed\",\"Сигнала уже нет в списке\"):t(\"No signal "
+   "src/Ui.cpp:1359: else if(page==Scope){int i=liveScopeIndex();if(i>=0&&radar.track(i)){scopeHeld=true;pingedSamples=radar.samples;change(Homing);}else notice(scopeCount?t(\"Signal no longer listed\",\"Сигнала уже нет в списке\"):t(\"No signal "
   ]
  },
  "c399344e": {
@@ -13851,7 +13860,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1330: if(page==Motion&&(key=='b'||key=='B')){csiBeaconRole=!csiBeaconRole;radar.setCsi(csiBeaconRole?Radar::CsiBeacon:Radar::CsiSensor);notice(csiBeaconRole?t(\"This board is now the beacon\",\"Эта плата — маяк\"):t(\"This board is"
+   "src/Ui.cpp:1332: if(page==Motion&&(key=='b'||key=='B')){csiBeaconRole=!csiBeaconRole;radar.setCsi(csiBeaconRole?Radar::CsiBeacon:Radar::CsiSensor);notice(csiBeaconRole?t(\"This board is now the beacon\",\"Эта плата — маяк\"):t(\"This board is"
   ]
  },
  "c43c60c7": {
@@ -14250,7 +14259,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1357: else if(page==Scope){int i=liveScopeIndex();if(i>=0&&radar.track(i)){scopeHeld=true;pingedSamples=radar.samples;change(Homing);}else notice(scopeCount?t(\"Signal no longer listed\",\"Сигнала уже нет в списке\"):t(\"No signal "
+   "src/Ui.cpp:1359: else if(page==Scope){int i=liveScopeIndex();if(i>=0&&radar.track(i)){scopeHeld=true;pingedSamples=radar.samples;change(Homing);}else notice(scopeCount?t(\"Signal no longer listed\",\"Сигнала уже нет в списке\"):t(\"No signal "
   ]
  },
  "cafbc847": {
@@ -14323,7 +14332,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1262: if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){"
+   "src/Ui.cpp:1264: if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){"
   ]
  },
  "cbd8b642": {
@@ -14537,7 +14546,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1274: if(key==KeyHome){change(homePage());return;}if(config.role!=RoleNormal&&(key==KeyMsg||key==KeyMap)){notice(t(\"Not in this mode: Settings > Device mode\",\"Недоступно в этом режиме: Настройки > Режим работы\"),warn);return;}",
+   "src/Ui.cpp:1276: if(key==KeyHome){change(homePage());return;}if(config.role!=RoleNormal&&(key==KeyMsg||key==KeyMap)){notice(t(\"Not in this mode: Settings > Device mode\",\"Недоступно в этом режиме: Настройки > Режим работы\"),warn);return;}",
    "src/UiHeltec.cpp:645: case ActAdvert:notice(meshRadio.sendHello()?t(\"Node announced\",\"Узел объявлен\"):t(\"Announcement failed\",\"Объявление не отправлено\"));break;"
   ]
  },
@@ -14612,7 +14621,7 @@
   ],
   "where": [
    "src/Ui.cpp:1199: auto& s=netfind::state;if(config.role!=RoleNormal){notice(t(\"Not in this mode\",\"Недоступно в этом режиме\"),warn);return;}",
-   "src/Ui.cpp:1351: else if(page==Radio&&selected==RowFind){if(config.role!=RoleNormal)notice(t(\"Not in this mode\",\"Недоступно в этом режиме\"),warn);else if(!regions::find())notice(t(\"Radio offline\",\"Радио недоступно\"),bad);}",
+   "src/Ui.cpp:1353: else if(page==Radio&&selected==RowFind){if(config.role!=RoleNormal)notice(t(\"Not in this mode\",\"Недоступно в этом режиме\"),warn);else if(!regions::find())notice(t(\"Radio offline\",\"Радио недоступно\"),bad);}",
    "src/UiChannels.inc:17: case MeshRadio::ChannelUnavailable:return t(\"Not in this mode\",\"Недоступно в этом режиме\");"
   ]
  },
@@ -14965,7 +14974,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1359: else if(page==Homing){radarSound=!radarSound;notice(radarSound?(config.sound?t(\"Ping on\",\"Звук пеленга включён\"):t(\"Device sound is off in settings\",\"Звук устройства выключен в настройках\")):t(\"Ping off\",\"Звук пеленга вы"
+   "src/Ui.cpp:1361: else if(page==Homing){radarSound=!radarSound;notice(radarSound?(config.sound?t(\"Ping on\",\"Звук пеленга включён\"):t(\"Device sound is off in settings\",\"Звук устройства выключен в настройках\")):t(\"Ping off\",\"Звук пеленга вы"
   ]
  },
  "d3cc0c6b": {
@@ -15039,7 +15048,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1262: if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){"
+   "src/Ui.cpp:1264: if(editing){if(key==KeyBack){editing=false;return;}if(key==Erase){edit.remove(meshmesh::previousCharacter(edit.c_str(),edit.length()));return;}if(key==KeyRight&&page!=Network){toggleLastCase(edit);return;}if(key==Enter){"
   ]
  },
  "d4637825": {
@@ -15198,7 +15207,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1306: if(page==Chat){if(key==Enter){if(meshRadio.sendMessage(composer,recipient)){composer=\"\";chatOffset=0;notice(t(\"Message queued\",\"Сообщение в очереди\"));}else notice(t(\"Cannot send: empty, full queue or radio\",\"Не отправле"
+   "src/Ui.cpp:1308: if(page==Chat){if(key==Enter){if(meshRadio.sendMessage(composer,recipient)){composer=\"\";chatOffset=0;notice(t(\"Message queued\",\"Сообщение в очереди\"));}else notice(t(\"Cannot send: empty, full queue or radio\",\"Не отправле"
   ]
  },
  "d79bbe1b": {
@@ -15431,7 +15440,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1095: {tr(\"Map pin\",\"Геометка\"),t(\"Announce this node; hold: GPS on/off\",\"Объявить узел; удерж.: GPS вкл/выкл\")},{tr(\"Menu\",\"Меню\"),t(\"App actions and radio controls\",\"Действия и управление связью\")},{\"MIC\",t(\"Lock screen (the"
+   "src/Ui.cpp:1095: {tr(\"Map pin\",\"Геометка\"),t(\"Announce this node; hold: GPS on/off\",\"Объявить узел; удерж.: GPS вкл/выкл\")},{tr(\"Menu\",\"Меню\"),t(\"App actions and radio controls\",\"Действия и управление связью\")},hardware.micKey?Hint{\"MIC\""
   ]
  },
  "dba65692": {
@@ -15647,7 +15656,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1403: if(notifications::enabled(notifications::mode(notification.message,config.notifyPopup,2),notification.mention)&&page!=DiceView&&page!=PeopleView)notice(t(\"New message from \",\"Сообщение от \")+notification.message.name,acc",
+   "src/Ui.cpp:1405: if(notifications::enabled(notifications::mode(notification.message,config.notifyPopup,2),notification.mention)&&page!=DiceView&&page!=PeopleView)notice(t(\"New message from \",\"Сообщение от \")+notification.message.name,acc",
    "src/UiHeltec.cpp:1156: }else if(config.notifyFailed&&(e.kind==notifications::TxError||e.kind==notifications::Unconfirmed)){ledAt=now;ledPattern=3;notice(e.kind==notifications::TxError?t(\"Radio TX error\",\"Ошибка передачи\"):channels::isChannel(e"
   ]
  },
@@ -16662,7 +16671,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1414: notice(t(\"Network nearby: \",\"Рядом сеть: \")+(r.place!=255?netfind::placeName(r.place)+\" \":String())+\"SF\"+String(r.radio.sf)+t(\" · Settings > Radio\",\" · Настройки › Радио\"),info);"
+   "src/Ui.cpp:1416: notice(t(\"Network nearby: \",\"Рядом сеть: \")+(r.place!=255?netfind::placeName(r.place)+\" \":String())+\"SF\"+String(r.radio.sf)+t(\" · Settings > Radio\",\" · Настройки › Радио\"),info);"
   ]
  },
  "ee710f30": {
@@ -16954,7 +16963,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1414: notice(t(\"Network nearby: \",\"Рядом сеть: \")+(r.place!=255?netfind::placeName(r.place)+\" \":String())+\"SF\"+String(r.radio.sf)+t(\" · Settings > Radio\",\" · Настройки › Радио\"),info);",
+   "src/Ui.cpp:1416: notice(t(\"Network nearby: \",\"Рядом сеть: \")+(r.place!=255?netfind::placeName(r.place)+\" \":String())+\"SF\"+String(r.radio.sf)+t(\" · Settings > Radio\",\" · Настройки › Радио\"),info);",
    "src/UiHeltec.cpp:1161: notice(t(\"Network nearby: \",\"Рядом сеть: \")+(r.place!=255?netfind::placeName(r.place)+\" \":String())+\"SF\"+String(r.radio.sf));ledAt=now;ledPattern=1;"
   ]
  },
@@ -17316,7 +17325,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1354: else if(page==Sensors){if(selected==0)gpsToggle();else if(selected==1){bool sent=meshRadio.sendPosition();notice(sent?t(\"Position shared\",\"Позиция передана\"):t(\"Waiting for GPS fix\",\"Ожидание GPS-позиции\"),sent?ok:warn);"
+   "src/Ui.cpp:1356: else if(page==Sensors){if(selected==0)gpsToggle();else if(selected==1){bool sent=meshRadio.sendPosition();notice(sent?t(\"Position shared\",\"Позиция передана\"):t(\"Waiting for GPS fix\",\"Ожидание GPS-позиции\"),sent?ok:warn);"
   ]
  },
  "f97b258a": {
@@ -17426,7 +17435,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1359: else if(page==Homing){radarSound=!radarSound;notice(radarSound?(config.sound?t(\"Ping on\",\"Звук пеленга включён\"):t(\"Device sound is off in settings\",\"Звук устройства выключен в настройках\")):t(\"Ping off\",\"Звук пеленга вы"
+   "src/Ui.cpp:1361: else if(page==Homing){radarSound=!radarSound;notice(radarSound?(config.sound?t(\"Ping on\",\"Звук пеленга включён\"):t(\"Device sound is off in settings\",\"Звук устройства выключен в настройках\")):t(\"Ping off\",\"Звук пеленга вы"
   ]
  },
  "fad010ec": {
@@ -17612,7 +17621,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1347: else if(page==Radio&&selected==RowPrev){if(!config.trial.set()&&!config.previous.set()){notice(t(\"No previous settings\",\"Прежних настроек нет\"),dim);return;}",
+   "src/Ui.cpp:1349: else if(page==Radio&&selected==RowPrev){if(!config.trial.set()&&!config.previous.set()){notice(t(\"No previous settings\",\"Прежних настроек нет\"),dim);return;}",
    "src/UiHeltec.cpp:381: case RowPrev:{if(!config.trial.set()&&!config.previous.set()){notice(t(\"No previous settings\",\"Прежних настроек нет\"));break;}"
   ]
  },
@@ -17770,7 +17779,7 @@
    "full"
   ],
   "where": [
-   "src/Ui.cpp:1361: static uint32_t armed=0;if(!armed||millis()-armed>5000){armed=millis();notice(t(\"OK again: erase old data\",\"Ещё раз OK: стереть\"),warn);return;}",
+   "src/Ui.cpp:1363: static uint32_t armed=0;if(!armed||millis()-armed>5000){armed=millis();notice(t(\"OK again: erase old data\",\"Ещё раз OK: стереть\"),warn);return;}",
    "src/UiHeltec.cpp:611: if(!armed||millis()-armed>5000){armed=millis();notice(t(\"OK again: erase old data\",\"Ещё раз OK: стереть\"));break;}"
   ]
  },

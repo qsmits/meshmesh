@@ -42,6 +42,8 @@ class Hardware {
 #endif
   uint32_t gpsBytes=0, lastKey=0, keyCount=0, utc=0;
   uint8_t keyboardHw=0, keyboardFw=0;
+  const char* boardName=MM_BOARD_NAME; // the M9 adds its revision once the keyboard answers (Hardware.cpp)
+  bool micKey=true; // false on the M9 V1.1: no MIC key, hold OK on the home screen locks instead (Ui.cpp)
 #if defined(MM_HELTEC_V4)
   Hardware():display(128,64,&Wire,pins::oledReset) {}
 #elif defined(MM_COMPACT)

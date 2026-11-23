@@ -36,6 +36,8 @@ void Hardware::probeM9Keyboard() {
     if (!read(Wire1,address,0,&keyboardHw,1,true)) continue;
     keyboardOk=true;
     keyboardAddress=address;
+    boardName=address==keyboardV11?"ThinkNode M9 v1.1":"ThinkNode M9 v1.0";
+    micKey=address!=keyboardV11;
     read(Wire1,address,0xfe,&keyboardFw,1,true);
     break;
   }
@@ -89,7 +91,7 @@ void Hardware::begin() {
   if(read(Wire,0x6b,0,&id,1) && id==5) {
     imuOk=write(0x6b,0x02,0x40)&&write(0x6b,0x03,0x07)&&write(0x6b,0x04,0)&&write(0x6b,0x06,1)&&write(0x6b,0x08,1);
   }
-  Serial.printf("HW keyboard=%d hw=%02x fw=%02x rtc=%d valid=%d sd=%d fs=%d compass=%d imu=%d psram=%u\n",keyboardOk,keyboardHw,keyboardFw,rtcOk,rtcValid,sdOk,fsOk,compassOk,imuOk,ESP.getPsramSize());
+  Serial.printf("HW %s keyboard=%d at=%02x hw=%02x fw=%02x rtc=%d valid=%d sd=%d fs=%d compass=%d imu=%d psram=%u\n",boardName,keyboardOk,keyboardAddress,keyboardHw,keyboardFw,rtcOk,rtcValid,sdOk,fsOk,compassOk,imuOk,ESP.getPsramSize());
 }
 void Hardware::tick() {
   if(gpsEnabled) {
