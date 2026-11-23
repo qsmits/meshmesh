@@ -4,7 +4,7 @@ import argparse,base64,json,math,struct,time,urllib.request,urllib.parse,zlib
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 from device import connect,command
-from ports import M9_PORT, HELTEC_PORT
+from ports import M9_PORT
 MAGIC=b'MMAP1\n'
 ATTRIBUTION='© OpenStreetMap contributors · ODbL 1.0 · openstreetmap.org/copyright'
 

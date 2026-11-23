@@ -31,7 +31,7 @@ void Radar::open() {
     int rssi;
   } aps[] = {{0x5A1F0C9E1101ULL, "MM-9E77D2", 1, false, -41},     {0x34E8941A2B3CULL, "Ziggo-4471", 6, false, -58},
              {0xA0F3C1223344ULL, "TP-Link_5GHz", 11, false, -66}, {0x10FEED000001ULL, "", 3, false, -72},
-             {0x28CDC1ABCDEFULL, "Кафе Бахетле", 1, true, -79},   {0xB827EB000102ULL, "DIRECT-HP-M28", 6, false, -88}};
+             {0x28CDC1ABCDEFULL, "Cafe de Zaak", 1, true, -79},   {0xB827EB000102ULL, "DIRECT-HP-M28", 6, false, -88}};
   for (auto& a : aps) {
     RadarTarget* t = upsert(RadarTarget::Wifi, a.id);
     strcpy(t->name, a.name);

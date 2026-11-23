@@ -2,8 +2,8 @@
 # in the build folder: web/index.html and the page's dictionaries (i18n/web/<lang>.json).
 # Each is gzip-compressed and served with a gzip content encoding (src/Portal.cpp). The header is rewritten
 # only when its contents change.
-# The dictionaries share their keys, the Russian text, which is most of each: i18n/keys.js has them once, and
-# i18n/<lang>.js the translations in their order; it loads keys.js and makes globalThis.MeshMeshWebDict as
+# The dictionaries share their keys, the English text of the page, which is most of each: i18n/keys.js has them
+# once, and i18n/<lang>.js the translations in their order (English is the page's own text and has none); it loads keys.js and makes globalThis.MeshMeshWebDict as
 # tools/web_i18n.cjs build does (about 300 KB less flash than whole dictionaries).
 import gzip
 import json
@@ -13,7 +13,7 @@ try:
     Import('env')  # noqa: F821
 except NameError:  # imported by a check, not run by PlatformIO
     env = None
-LANGS = ['en', 'uk', 'es', 'pt', 'fr', 'de', 'it', 'pl', 'tr', 'zh', 'ja', 'ko', 'ar', 'id']
+LANGS = ['uk', 'es', 'pt', 'fr', 'de', 'it', 'pl', 'tr', 'zh', 'ja', 'ko', 'ar', 'id']
 
 
 def packed(data):

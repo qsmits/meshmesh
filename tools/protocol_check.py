@@ -12,7 +12,7 @@ import time
 from pathlib import Path
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 from device import connect,command
-from ports import M9_PORT, HELTEC_PORT
+from ports import M9_PORT
 
 HEADER=struct.Struct('<2sBBIQQIIBBBB')
 ALL=2**64-1
@@ -39,7 +39,7 @@ def main():
         node=int(json.loads(command(s,'status'))['node'],16)
         check('Device crypto self-test',command(s,'selftest').startswith('OK'))
         before=json.loads(command(s,'status'));peer_session=int(time.time())
-        name=b'USB-TEST';text='Привет с независимого виртуального узла'.encode()
+        name=b'USB-TEST';text='Hallo from an independent virtual node ✓'.encode()
         body=struct.pack('<I',901)+bytes([len(name)])+name+text
         raw=seal(key,1,PEER,node,peer_session,1,body)
         check('Independent AES-GCM packet accepted',command(s,'ingest '+raw.hex()).startswith('OK'))

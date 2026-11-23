@@ -9,7 +9,7 @@ import sys
 import tempfile
 from pathlib import Path
 from version import VERSION
-from ports import M9_PORT, HELTEC_PORT
+from ports import M9_PORT
 
 ROOT=Path(__file__).resolve().parents[1]
 

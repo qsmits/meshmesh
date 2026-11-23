@@ -2,10 +2,9 @@
 """Screenshots of the device page for the site, in every language: tools/web_demo.py with made-up data in a
 headless Chromium.
 
-tools/web_shots.py OUTDIR [LANG...]   (all 15 languages by default)
+tools/web_shots.py OUTDIR [LANG...]   (all 14 languages by default)
 Writes OUTDIR/web-<name>-<lang>.webp, the phone at 390x844 CSS pixels x2 and the desktop at 1280x800 x2.
 Chromium: $CHROME, otherwise google-chrome / chromium on the PATH or Playwright's headless shell.
-tools/pages.py copies them into the site; the ones in site/img (ru, en) stay as the fallback.
 """
 import glob
 import os
@@ -23,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'tools'))
 import web_demo  # noqa: E402
 
-LANGS = ['en', 'ru'] + web_demo.LANGS[1:]
+LANGS = web_demo.LANGS
 ANNA = next(m for m in web_demo.messages('en') if m['name'] == 'Anna' and m['destination'] == 'FFFFFFFFFFFFFFFF')
 MINE = next(m for m in web_demo.messages('en') if m['outgoing'] and m.get('echoes'))
 key = lambda m: f"{m['source']}.{m['session']}.{m['id']}"  # msgKey() of the page
@@ -40,9 +39,8 @@ SHOTS = {
     'web-homing': ('homing', 'homing=1', '', False),
     'web-motion': ('motion', 'csi=1', '', False),
     'web-radio': ('radio', '', '', False),
-    # The networks catalogue: a network chosen in the list, then a test that runs (state of the page only).
-    'web-networks': ('radio', '', "netAction('open').then(()=>{netPick.net='mow-01';renderNetList()})", False),
-    'web-networks-test': ('radio', '', "config.radio_trial={frequency:config.frequency,bandwidth:config.bandwidth,sf:config.sf,cr:config.cr};Object.assign(config,{frequency:868.731,sf:7,cr:7});netPick.check={n:3};buildEditor('radio');renderNet(true)", False),
+    # A radio test that runs (state of the page only).
+    'web-networks-test': ('radio', '', "config.radio_trial={frequency:config.frequency,bandwidth:config.bandwidth,sf:config.sf,cr:config.cr};Object.assign(config,{frequency:869.618,sf:7,cr:5});netPick.check={n:3};buildEditor('radio');renderNet()", False),
     # The network search of the board: the answers of the demo (tools/web_demo.py NETFIND).
     'web-netfind': ('radio', '', "netScanLoad().then(()=>{$('netScan').scrollIntoView({block:'start'});scrollBy(0,-120)})", False),
     # Backup (docs/backup.md): the save card, then the preview of a restore from a made-up copy of this demo board.

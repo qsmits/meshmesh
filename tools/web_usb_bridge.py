@@ -48,8 +48,6 @@ def main():
             try:
                 if url.path == '/':
                     self.reply(200, (ROOT / 'web/index.html').read_bytes(), 'text/html; charset=utf-8')
-                elif url.path == '/networks.json':
-                    self.reply(200, (ROOT / 'site/networks.json').read_bytes())
                 elif url.path == '/api/connections':
                     self.reply(200, usb('connections'))
                 elif url.path == '/api/wardrive/log':

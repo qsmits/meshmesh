@@ -21,8 +21,6 @@ HOME = (46.0207, 7.7491)  # an imaginary valley
 
 # Messages of the demo in each language: (from, text, minutes ago). "me" sends.
 CHATS = {
-    'ru': {'bob': [('bob', 'Радиотест V4 → M9, как слышно?', 62), ('me', 'Принято, слышу хорошо. SNR около 9 дБ', 60), ('bob', 'Отлично. Поднимусь на холм и проверю дальность', 59), ('me', 'Давай. Я пока объявлю узел и передам позицию', 57), ('bob', 'С холма вижу ретранслятор напрямую, −83 dBm', 25), ('me', 'Супер, сообщения доходят с первой попытки', 24), ('bob', 'Возвращаюсь. Встретимся у входа через 10 минут', 7), ('me', 'Договорились, жду у входа', 6)],
-           'pub': [('anna', 'Всем привет! Кто на связи у озера?', 40), ('me', 'Я на связи, M9 у моста', 38), ('rita', 'Слышу вас через North Hill', 30), ('anna', 'До вечера!', 2)]},
     'en': {'bob': [('bob', 'Radio test V4 → M9, how do you copy?', 62), ('me', 'Copy, loud and clear. SNR about 9 dB', 60), ('bob', 'Great. Going up the hill to check the range', 59), ('me', 'Go ahead. I will advert the node and share my position', 57), ('bob', 'From the hill I see the repeater directly, −83 dBm', 25), ('me', 'Nice, messages get through on the first try', 24), ('bob', 'Heading back. Meet at the entrance in 10 minutes', 7), ('me', 'Deal, waiting at the entrance', 6)],
            'pub': [('anna', 'Hi all! Anyone on air near the lake?', 40), ('me', 'Here, M9 by the bridge', 38), ('rita', 'Hearing you through North Hill', 30), ('anna', 'See you tonight!', 2)]},
     'uk': {'bob': [('bob', 'Радіотест V4 → M9, як чути?', 62), ('me', 'Прийнято, чую добре. SNR близько 9 дБ', 60), ('bob', 'Чудово. Піднімуся на пагорб і перевірю дальність', 59), ('me', 'Давай. Я поки оголошу вузол і передам позицію', 57), ('bob', 'З пагорба бачу ретранслятор напряму, −83 dBm', 25), ('me', 'Супер, повідомлення доходять з першої спроби', 24), ('bob', 'Повертаюся. Зустрінемося біля входу за 10 хвилин', 7), ('me', 'Домовились, чекаю біля входу', 6)],
@@ -64,7 +62,7 @@ NODES = [  # id, name, type (1 chat, 2 repeater, 3 room), key, lat, lon, snr, rs
 
 
 def lang_of(query):
-    code = query.get('lang', ['ru'])[0]
+    code = query.get('lang', ['en'])[0]
     return code if code in CHATS else 'en'
 
 
@@ -99,7 +97,7 @@ def nodes():
 CHANNEL_COUNT = 3
 STATUS = {
     'version': VERSION, 'board': 'm9', 'board_name': 'Elecrow ThinkNode M9', 'max_power': 22, 'family': 'm9', 'button': '',
-    'absent': [], 'firmware': 'MeshMesh ' + VERSION, 'role': 'chat', 'node': ME, 'name': 'M9', 'network': 1,
+    'absent': [], 'firmware': 'MeshMesh ' + VERSION, 'node': ME, 'name': 'M9', 'network': 1,
     'build_sha256': '0' * 64, 'protocol': 'MeshCore', 'public_key': '5a7c21e0' + '0' * 56, 'channel': 'Public', 'channels': CHANNEL_COUNT,
     'public_message_limit': 133, 'unix_time': NOW, 'clock_source': 'phone', 'clock_age_seconds': 60, 'clock_conflict': False,
     'uptime': 15360, 'boot': 42, 'reset_reason': 1, 'heap': 180000, 'psram': 7800000, 'cpu_mhz': 80, 'history_count': 12,
@@ -109,14 +107,14 @@ STATUS = {
     'imu': True, 'imu_sample': True, 'gps_bytes': 120000, 'gps_sentences': 3000, 'gps_fix': True, 'satellites': 9,
     'latitude': HOME[0], 'longitude': HOME[1], 'mag': [0, 0, 0], 'accel': [0, 0, 0], 'clock_trusted': True, 'busy': False,
     'rx_age': 40, 'quick_send': True, 'people_counter': True, 'wardrive': True, 'notification_dropped': 0,
-    'notification_led': True, 'event': '', 'wifi': True, 'wifi_radio': True, 'langs': ' '.join(['en', 'ru'] + LANGS[1:]),
+    'notification_led': True, 'event': '', 'wifi': True, 'wifi_radio': True, 'langs': ' '.join(LANGS),
     'internet': False, 'ble': True, 'companion': True,
 }
 CONFIG = {
     'name': 'M9', 'frequency': 869.618, 'bandwidth': 62.5, 'sf': 8, 'cr': 8, 'power': 14, 'hops': 3, 'path_hash': 2,
-    'relay': False, 'gps': True, 'sound': True, 'battery_volts': False, 'lang': 'en', 'russian': False, 'brightness': 180,
+    'relay': False, 'gps': True, 'sound': True, 'battery_volts': False, 'lang': 'en', 'brightness': 180,
     'auto_lock': 120, 'dim_after': 30, 'lock_details': False, 'notify_led': 1, 'notify_wake': 1, 'notify_popup': 1,
-    'notify_failed': True, 'notify_words': '', 'utc_offset': 120, 'region': '', 'net_auto': True,
+    'notify_failed': True, 'notify_words': '', 'utc_offset': 120, 'region': '',
     'apps': 'chats quick nodes nav map radar wardrive people connect health settings',
 }
 CHANNELS = {'max': 8, 'channels': [
@@ -207,25 +205,22 @@ def radio_command(line):
     return 'ERR radio try {JSON}|keep|revert|previous'
 
 
-# The network search of the board (netfind): a finished one, the Moscow profile answered by three repeaters.
-NETFIND = {'state': 'done', 'auto': False, 'located': True, 'step': 3, 'total': 3, 'best': 1, 'found': 0, 'enabled': True,
-           'catalogue': '2026-10-29', 'results': [
-               {'frequency': 869.618, 'bandwidth': 62.5, 'sf': 8, 'cr': 8, 'current': True, 'done': True, 'repeaters': 0, 'packets': 0},
-               {'frequency': 868.731, 'bandwidth': 62.5, 'sf': 7, 'cr': 7, 'place': 'Москва и Московская область', 'done': True,
-                'repeaters': 3, 'packets': 4, 'snr': 6.5},
-               {'frequency': 868.731, 'bandwidth': 62.5, 'sf': 8, 'cr': 8, 'place': 'Москва и Московская область', 'done': True,
-                'repeaters': 0, 'packets': 0}]}
+# The network search of the board (netfind): a finished one, the Switzerland preset answered by three repeaters.
+NETFIND = {'state': 'done', 'step': 3, 'total': 3, 'best': 1, 'results': [
+    {'frequency': 869.618, 'bandwidth': 62.5, 'sf': 8, 'cr': 8, 'place': 'EU/UK (Narrow)', 'current': True, 'done': True, 'repeaters': 0, 'packets': 0},
+    {'frequency': 869.618, 'bandwidth': 62.5, 'sf': 7, 'cr': 5, 'place': 'Netherlands', 'done': True, 'repeaters': 3, 'packets': 4, 'snr': 6.5},
+    {'frequency': 869.432, 'bandwidth': 62.5, 'sf': 7, 'cr': 5, 'place': 'Czech Republic (Narrow)', 'done': True, 'repeaters': 0, 'packets': 0}]}
 
 
 def netfind_command(line):
     if line == 'netfind':
         return json.dumps(NETFIND, ensure_ascii=False)
-    if line == 'netfind stop' or line.startswith('netfind start'):
-        return 'OK network search started' if line.startswith('netfind start') else 'OK network search stopped'
+    if line in ('netfind start', 'netfind stop'):
+        return 'OK network search ' + ('started' if line == 'netfind start' else 'stopped')
     if line.startswith('netfind use '):
         r = NETFIND['results'][int(line[12:])]
         return radio_set({k: r[k] for k in ('frequency', 'bandwidth', 'sf', 'cr')}, 'try')
-    return 'ERR netfind start [all|LAT LON]|stop|use N'
+    return 'ERR netfind start|stop|use N'
 
 
 DEMO_KEY = '5a7c' + '00' * 62  # a demo node key (not a real one): "identity" for the backup page (docs/backup.md)
@@ -264,7 +259,7 @@ def answer(path, query):
     if path == '/api/nodes':
         return nodes()
     if path == '/api/config':
-        return {**CONFIG, 'lang': lang if lang != 'ru' else 'ru', 'russian': lang == 'ru'}
+        return {**CONFIG, 'lang': lang}
     if path == '/api/navigation':
         return {'available': True, 'calibrated': True, 'calibrating': False, 'samples': 0, 'heading_valid': True, 'magnetic_heading': 37, 'note': ''}
     if path == '/api/maps':
@@ -330,8 +325,6 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send(404, 'no', 'text/plain')
             d = {k: v for k, v in json.loads(f.read_text()).items() if (v if isinstance(v, str) else any(v.values()))}
             return self.send(200, 'globalThis.MeshMeshWebDict=' + json.dumps(d, ensure_ascii=False) + ';', 'application/javascript; charset=utf-8')
-        if url.path == '/networks.json':  # the catalogue the app carries next to the page
-            return self.send(200, (ROOT / 'site/networks.json').read_text(), 'application/json; charset=utf-8')
         if url.path == '/api/maps/tile':
             f = ROOT / 'tools/web_demo/tiles' / f"{query.get('z', [''])[0]}_{query.get('x', [''])[0]}_{query.get('y', [''])[0]}.png"
             return self.send(200, mmt(f, query), 'application/octet-stream') if f.exists() else self.send(404, 'Map tile not saved', 'text/plain')

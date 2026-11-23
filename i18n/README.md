@@ -82,5 +82,15 @@ Then build (`pio run -e m9`) and look at the screens: `sh tools/ui_preview/build
 
 ## Device web page
 
-The page's source text is English. Translations live in `i18n/web/<lang>.json` and are maintained with
-`node tools/web_i18n.cjs sync|check` (run `npm ci --prefix tools` once).
+The page's source text is English: `L('Text')` (also `` L`Text ${x}` ``) in the code and the text of the markup.
+`i18n/web/<lang>.json` maps the English text to the translation; `{0}`, `{1}` stand for the inserted values.
+Plurals are `plural(n,'message','messages')`, keyed `"message|messages"`, with the language's CLDR forms and
+`{n}` where the number goes. Text that must stay as it is carries `translate="no"`. Ukrainian is the only
+language that may contain Cyrillic. The page picks its language from `?lang=`, then the one chosen on the page,
+then the browser's; English needs no dictionary.
+
+```sh
+npm ci --prefix tools          # once
+node tools/web_i18n.cjs sync   # after changing page text: new keys appear empty, removed ones go
+node tools/web_i18n.cjs check
+```

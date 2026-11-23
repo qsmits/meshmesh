@@ -6,7 +6,7 @@ import time
 from pathlib import Path
 import serial
 from serial.tools.list_ports import comports
-from ports import M9_PORT, HELTEC_PORT
+from ports import M9_PORT
 
 def connect(port):
     s=serial.Serial(port=None,baudrate=115200,timeout=.5,exclusive=True)

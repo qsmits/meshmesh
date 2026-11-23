@@ -34,13 +34,13 @@ int main() {
   packet[3] = 5;
   assert(!decodeHeader(packet, MaxPacket, got));
   packet[3] = 1;
-  const char* valid[] = {"Hi", "Привет, мир!", "\xf0\x9f\x98\x80", "line\nline"};
+  const char* valid[] = {"Hi", "Grüß dich, wereld! ¡Olé!", "\xf0\x9f\x98\x80", "line\nline"};
   for (auto p : valid) assert(validUtf8((const uint8_t*)p, strlen(p)));
   const char* invalid[] = {"\xc0\x80", "\xed\xa0\x80", "\xf4\x90\x80\x80", "\xe2\x82", "\x80", "\x1b"};
   for (auto p : invalid) assert(!validUtf8((const uint8_t*)p, strlen(p)));
-  const char* ru = "Я";
-  assert(previousCharacter(ru, 2) == 0);
-  assert(previousCharacter("aЯ", 3) == 1);
+  const char* two = "é";
+  assert(previousCharacter(two, 2) == 0);
+  assert(previousCharacter("aé", 3) == 1);
   assert(previousCharacter("", 0) == 0);
   SeenCache seen;
   assert(!seen.contains(h));

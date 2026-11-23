@@ -3,7 +3,7 @@
 import sys,json,time,subprocess
 from pathlib import Path
 from device import connect,command
-from ports import M9_PORT, HELTEC_PORT
+from ports import M9_PORT
 
 def read(d):return json.loads(command(d,'clock'))
 def main():

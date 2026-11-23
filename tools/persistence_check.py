@@ -3,9 +3,9 @@
 import json
 from pathlib import Path
 from device import connect,command
-from radio_check import RADIO_FIELDS
+RADIO_FIELDS = ('frequency', 'bandwidth', 'sf', 'cr', 'power', 'hops')
 from version import FIRMWARE
-from ports import M9_PORT, HELTEC_PORT
+from ports import M9_PORT
 
 def read(d,n):return json.loads(command(d,n))
 def main():
@@ -41,7 +41,7 @@ def main():
   assert config['key']==original_config['key'] and nav['calibrated'] and not nav['calibrating']
   areas=read(d,'map areas')
   # Remove only the catalog entry created by our one-tile compression test.
-  if any(a['id']=='1a766b0e' and 'тест сжатой' in a['name'] for a in areas):
+  if any(a['id']=='1a766b0e' and 'compressed test' in a['name'] for a in areas):
    assert command(d,'map forget 1a766b0e').startswith('OK')
   areas=read(d,'map areas');assert sorted(a['tiles'] for a in areas)==[218,1022]
   city=next(a for a in areas if a['tiles']==1022);assert command(d,'map select '+city['id']).startswith('OK')

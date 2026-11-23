@@ -1,10 +1,9 @@
 #!/usr/bin/env node
-// Languages of the device page and the Android app (i18n/README.md). The Russian text of web/index.html,
-// android/.../assets/host.js and the app's Kotlin code is the key of i18n/web/<lang>.json:
-//   L('текст'), L`текст ${x}` (the key has {0}, {1}… for the values) and the markup of web/index.html;
-//   plural(n,'одна','две','пять') — the key "одна|две|пять", its value the forms of the language with {n};
-//   I18n.t("текст {0}", x) in Kotlin; "_pieces" — the letters K Q R B N of the chess notation.
-// Needs acorn: npm ci --prefix tools.
+// Languages of the device page (i18n/README.md). The English text of web/index.html is the key of
+// i18n/web/<lang>.json: L('text'), L`text ${x}` (the key has {0}, {1}… for the values), the markup of the page
+// (text, title, placeholder, aria-label, the value of an input; not inside translate="no");
+// plural(n,'message','messages') — the key "message|messages", its value the forms of the language with {n}.
+// English needs no dictionary. Needs acorn: npm ci --prefix tools.
 //   node tools/web_i18n.cjs sync          keys of the code into every dictionary (new ones empty, old ones go)
 //   node tools/web_i18n.cjs todo LANG     what LANG still lacks
 //   node tools/web_i18n.cjs check         complete and consistent dictionaries, for the code as it is
@@ -12,8 +11,9 @@
 'use strict';
 const fs=require('fs'),path=require('path');
 const ROOT=path.resolve(__dirname,'..'),DIR=path.join(ROOT,'i18n/web');
-const LANGS=['en','uk','es','pt','fr','de','it','pl','tr','zh','ja','ko','ar','id'];
-const CYR=/[А-Яа-яЁё]/;
+const LANGS=['uk','es','pt','fr','de','it','pl','tr','zh','ja','ko','ar','id'];
+const CYR=/[\u0400-\u04FF]/,LETTER=/[A-Za-z]/;
+const VOID=new Set(['area','base','br','col','embed','hr','img','input','link','meta','source','track','wbr']);
 
 function keys(){
  const acorn=require('acorn'),out=new Map(),add=(k,kind,where)=>{if(!out.has(k))out.set(k,{kind,where})};
@@ -28,7 +28,7 @@ function keys(){
     add(a.value,'text',line)}
    if(n.type==='TaggedTemplateExpression'&&n.tag.type==='Identifier'&&n.tag.name==='L')
     add(n.quasi.quasis.map((q,i)=>(i?`{${i-1}}`:'')+q.value.cooked).join(''),'text',line);
-   if(n.type==='CallExpression'&&n.callee.type==='Identifier'&&n.callee.name==='plural'&&n.arguments.length===4){
+   if(n.type==='CallExpression'&&n.callee.type==='Identifier'&&n.callee.name==='plural'&&n.arguments.length===3){
     const f=n.arguments.slice(1);
     if(f.every(a=>a.type==='Literal'&&typeof a.value==='string'))add(f.map(a=>a.value).join('|'),'plural',line);
     else if(!f.every(a=>a.type==='Identifier'))throw Error(`${line}: plural() takes the forms as strings`)}
@@ -38,18 +38,18 @@ function keys(){
  const html=fs.readFileSync(path.join(ROOT,'web/index.html'),'utf8');
  let markup=html;
  for(const m of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)){scan(m[1],'web/index.html',html.slice(0,m.index+m[0].indexOf('>')+1).split('\n').length-1);markup=markup.replace(m[0],'')}
- markup=markup.replace(/<style[\s\S]*?<\/style>/g,'').replace(/(<textarea[^>]*>)[\s\S]*?(<\/textarea>)/g,'$1$2');
+ markup=markup.replace(/<style[\s\S]*?<\/style>/g,'').replace(/(<textarea[^>]*>)[\s\S]*?(<\/textarea>)/g,'$1$2').replace(/<!--[\s\S]*?-->/g,'');
  const decode=s=>s.replace(/&nbsp;/g,'\u00a0').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&#(\d+);/g,(m,n)=>String.fromCodePoint(+n)).replace(/&amp;/g,'&');
- for(const part of markup.split(/<[^>]*>/)){const t=decode(part).trim();if(CYR.test(t))add(t,'markup','web/index.html')}
- for(const m of markup.matchAll(/\s(?:title|placeholder|aria-label|value)="([^"]*)"/g)){const t=decode(m[1]).trim();if(CYR.test(t))add(t,'markup','web/index.html')}
- scan(fs.readFileSync(path.join(ROOT,'android/app/src/main/assets/host.js'),'utf8'),'host.js');
- // Kotlin: I18n.t("…") with the Russian text as it is written.
- const kt=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?kt(path.join(d,e.name)):e.name.endsWith('.kt')?[path.join(d,e.name)]:[]);
- for(const f of kt(path.join(ROOT,'android/app/src/main/java'))){
-  const src=fs.readFileSync(f,'utf8');
-  for(const m of src.matchAll(/I18n\.t\("((?:\\.|[^"\\])*)"/g))add(m[1].replace(/\\(.)/g,(x,c)=>({n:'\n',t:'\t'}[c]??c)),'text',path.relative(ROOT,f));
-  const left=src.split('\n').map((l,i)=>[l,i+1]).filter(([l])=>CYR.test(l.replace(/\/\/.*$/,'').replace(/^\s*\*.*$/,'').replace(/I18n\.t\("(?:\\.|[^"\\])*"/g,'')));
-  if(!f.endsWith('/I18n.kt'))for(const [l,i] of left)if(/"[^"]*[А-Яа-яЁё]/.test(l))throw Error(`${path.relative(ROOT,f)}:${i}: Russian text outside I18n.t: ${l.trim()}`)}
+ const text=t=>{t=decode(t).trim();if(LETTER.test(t)||CYR.test(t))add(t,'markup','web/index.html')};
+ const stack=[{name:'',no:false}]; // the open elements; no: inside translate="no"
+ for(const m of markup.matchAll(/<(\/?)([a-zA-Z][\w-]*)([^>]*)>|<![^>]*>|([^<]+)/g)){
+  const [,close,tag,attrs,body]=m,off=stack[stack.length-1].no;
+  if(tag===undefined){if(body!==undefined&&!off)text(body);continue}
+  const name=tag.toLowerCase();
+  if(close){const i=stack.map(e=>e.name).lastIndexOf(name);if(i>0)stack.length=i;continue}
+  const no=off||/\stranslate="no"/.test(attrs);
+  if(!no)for(const a of attrs.matchAll(/\s(title|placeholder|aria-label|value)="([^"]*)"/g))if(a[1]!=='value'||name==='input')text(a[2]);
+  if(!VOID.has(name)&&!/\/\s*$/.test(attrs))stack.push({name,no})}
  return out}
 
 const file=l=>path.join(DIR,l+'.json');
@@ -62,17 +62,18 @@ const filled=v=>typeof v==='string'?v!=='':v&&typeof v==='object'&&Object.values
 function sync(){
  const k=keys();fs.mkdirSync(DIR,{recursive:true});
  for(const l of LANGS){
-  const old=read(l),next={_pieces:old._pieces||''};
+  const old=read(l),next={};
   for(const [key,{kind}] of k)next[key]=old[key]!==undefined?old[key]:kind==='plural'?{}:'';
   write(l,next)}
  console.log(`${k.size} keys in ${LANGS.length} dictionaries`)}
 
 function problems(l,k){
  const d=read(l),out=[],cats=new Intl.PluralRules(l).resolvedOptions().pluralCategories;
- if(String(d._pieces||'').split(' ').length!==5)out.push('_pieces: five letters K Q R B N');
  for(const [key,{kind,where}] of k){
+  if(CYR.test(key)){out.push(`Cyrillic in a key (${where}): ${key}`);continue}
   const v=d[key];
   if(!filled(v)){out.push(`missing (${where}): ${key}`);continue}
+  if(l!=='uk'&&CYR.test(JSON.stringify(v)))out.push(`Cyrillic in ${l}: ${key}`);
   if(kind==='plural'){
    if(typeof v!=='object'){out.push(`plural forms expected: ${key}`);continue}
    for(const c of cats)if(!v[c]&&!(c!=='other'&&v.other))out.push(`plural "${c}" missing: ${key}`);
@@ -81,7 +82,7 @@ function problems(l,k){
   if(holes(v)!==holes(key))out.push(`placeholders differ: ${key} -> ${v}`);
   if(tags(v)!==tags(key))out.push(`markup differs: ${key} -> ${v}`);
   if(/^\s|\s$/.test(key)&&(key.match(/^\s*/)[0]!==v.match(/^\s*/)[0]||key.match(/\s*$/)[0]!==v.match(/\s*$/)[0]))out.push(`edge spaces differ: "${key}" -> "${v}"`)}
- for(const key of Object.keys(d))if(key!=='_pieces'&&!k.has(key))out.push(`not in the code: ${key}`);
+ for(const key of Object.keys(d))if(!k.has(key))out.push(`not in the code: ${key}`);
  return out}
 
 function build(outDir){
@@ -95,6 +96,6 @@ else if(cmd==='todo'){const k=keys();for(const p of problems(arg,k))console.log(
 else if(cmd==='check'){
  const k=keys();let bad=0;
  for(const l of LANGS){const p=problems(l,k);if(p.length){bad+=p.length;console.error(`${l}: ${p.length} problems\n  `+p.slice(0,20).join('\n  '))}}
- if(bad)process.exit(1);console.log(`PASS page and app languages: ${k.size} keys, ${LANGS.length} dictionaries`)}
+ if(bad)process.exit(1);console.log(`PASS page languages: ${k.size} keys, ${LANGS.length} dictionaries`)}
 else if(cmd==='build'&&arg)build(path.resolve(arg));
 else{console.error('usage: web_i18n.cjs sync | todo LANG | check | build DIR');process.exit(2)}
