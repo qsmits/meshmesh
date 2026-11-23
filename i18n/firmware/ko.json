@@ -1764,6 +1764,11 @@
   "ru": "Радио недоступно",
   "text": "무선 사용 불가"
  },
+ "277c1960": {
+  "en": "No preset for this radio",
+  "ru": "Нет пресетов для этого радио",
+  "text": "이 무선용 프리셋 없음"
+ },
  "2ae7cabc": {
   "en": "Settings saved",
   "ru": "Настройки сохранены",
@@ -3652,6 +3657,11 @@
   "ru": "Профили справочника городов; <>: все",
   "text": "도시 목록의 프로필; <>: 전체"
  },
+ "1564fefe": {
+  "en": "Preset",
+  "ru": "Пресет",
+  "text": "프리셋"
+ },
  "0210412b": {
   "en": "Frequency",
   "ru": "Частота",
@@ -3807,6 +3817,11 @@
   "ru": "Пароль экрана",
   "text": "화면 암호"
  },
+ "e4f63c27": {
+  "en": "Custom",
+  "ru": "Свой",
+  "text": "사용자 지정"
+ },
  "f53b39c9": {
   "en": " MHz",
   "ru": " МГц",
@@ -3915,6 +3930,11 @@
   "en": "Mentions",
   "ru": "Упоминания",
   "text": "멘션"
+ },
+ "29e13631": {
+  "en": "MeshCore regional settings: frequency, BW, SF, CR",
+  "ru": "Региональные настройки MeshCore: частота, BW, SF, CR",
+  "text": "MeshCore 지역 설정: 주파수, BW, SF, CR"
  },
  "e1f39c44": {
   "en": "1 kHz steps; must match every node",

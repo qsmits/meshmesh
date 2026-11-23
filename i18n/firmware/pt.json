@@ -1764,6 +1764,11 @@
   "ru": "Радио недоступно",
   "text": "Rádio indisponível"
  },
+ "277c1960": {
+  "en": "No preset for this radio",
+  "ru": "Нет пресетов для этого радио",
+  "text": "Nenhuma predefinição para este rádio"
+ },
  "2ae7cabc": {
   "en": "Settings saved",
   "ru": "Настройки сохранены",
@@ -3664,6 +3669,11 @@
   "ru": "Профили справочника городов; <>: все",
   "text": "Perfis do catálogo de cidades; <>: todos"
  },
+ "1564fefe": {
+  "en": "Preset",
+  "ru": "Пресет",
+  "text": "Predefinição"
+ },
  "0210412b": {
   "en": "Frequency",
   "ru": "Частота",
@@ -3819,6 +3829,11 @@
   "ru": "Пароль экрана",
   "text": "Senha da tela"
  },
+ "e4f63c27": {
+  "en": "Custom",
+  "ru": "Свой",
+  "text": "Personalizado"
+ },
  "f53b39c9": {
   "en": " MHz",
   "ru": " МГц",
@@ -3928,6 +3943,11 @@
   "en": "Mentions",
   "ru": "Упоминания",
   "text": "Menções"
+ },
+ "29e13631": {
+  "en": "MeshCore regional settings: frequency, BW, SF, CR",
+  "ru": "Региональные настройки MeshCore: частота, BW, SF, CR",
+  "text": "Configurações regionais do MeshCore: frequência, BW, SF, CR"
  },
  "e1f39c44": {
   "en": "1 kHz steps; must match every node",
