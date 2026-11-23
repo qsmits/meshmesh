@@ -1,7 +1,6 @@
 """Canonical public versions and build identity. Run --generate after editing versions.properties."""
 import argparse
 import json
-import os
 import re
 import subprocess
 from pathlib import Path
@@ -9,10 +8,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 VERSIONS = dict(line.split('=', 1) for line in (ROOT / 'versions.properties').read_text().splitlines()
                 if line and not line.startswith('#'))
-if set(VERSIONS) != {'firmware', 'android'} or any(not re.fullmatch(r'(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)', v) for v in VERSIONS.values()):
-    raise ValueError('versions.properties must contain firmware and android SemVer versions')
+if set(VERSIONS) != {'firmware'} or any(not re.fullmatch(r'(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)', v) for v in VERSIONS.values()):
+    raise ValueError('versions.properties must contain the firmware SemVer version')
 VERSION = VERSIONS['firmware']
-ANDROID_VERSION = VERSIONS['android']
 FIRMWARE = 'MeshMesh ' + VERSION
 
 
@@ -32,26 +30,16 @@ def revision():
     return sha + ('-dirty' if dirty else '')
 
 
-def android_code(run=None, attempt=None):
-    run = int(run if run is not None else os.environ.get('GITHUB_RUN_NUMBER', '0'))
-    attempt = int(attempt if attempt is not None else os.environ.get('GITHUB_RUN_ATTEMPT', '0'))
-    if not 0 <= run <= 20000000 or not 0 <= attempt < 100:
-        raise ValueError('Build number/attempt out of range')
-    return 1000000 + run * 100 + attempt
-
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--generate', action='store_true')
     p.add_argument('--check', action='store_true')
-    p.add_argument('--android-code', action='store_true')
     args = p.parse_args()
     if args.generate:
         target = ROOT / 'include/Version.h'
         if not target.exists() or target.read_text() != header():
             target.write_text(header())
     check()
-    if args.android_code:
-        print(android_code())
-    elif not args.check and not args.generate:
-        print(json.dumps({**VERSIONS, 'revision': revision(), 'android_code': android_code()}))
+    if not args.check and not args.generate:
+        print(json.dumps({**VERSIONS, 'revision': revision()}))

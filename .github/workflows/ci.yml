@@ -1,0 +1,43 @@
+# Builds the M9 firmware, checks the translations and runs the screen preview scenario.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: actions/cache@v4
+        with:
+          path: ~/.platformio
+          key: pio-${{ hashFiles('platformio.ini') }}
+          restore-keys: pio-
+      - run: pip install platformio
+      - name: Versions and translations
+        run: |
+          python tools/version.py --check
+          python tools/i18n.py check
+          npm ci --prefix tools
+          node tools/web_i18n.cjs check
+      - name: Firmware
+        run: pio run -e m9
+      - name: Screen preview scenario
+        run: sh tools/ui_preview/build.sh m9 artifacts/ui-preview en
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m9-firmware
+          path: .pio/build/m9/firmware.bin
