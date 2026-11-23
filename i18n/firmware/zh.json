@@ -4320,6 +4320,11 @@
   "ru": "Вы уже в этом канале",
   "text": "已在此频道中"
  },
+ "9eaab780": {
+  "en": "Sound on new messages",
+  "ru": "Звук новых сообщений",
+  "text": "新消息声音"
+ },
  "5364d9de": {
   "en": "Region · OK: save",
   "ru": "Регион · OK: сохранить",
@@ -4329,6 +4334,11 @@
   "en": "Invite",
   "ru": "Пригласить",
   "text": "邀请"
+ },
+ "b4ff4ddb": {
+  "en": "8 channels at most",
+  "ru": "Не больше 8 каналов",
+  "text": "最多 8 个频道"
  },
  "a01f083e": {
   "en": "No chat contacts",
@@ -4350,20 +4360,30 @@
   "ru": "Контакт",
   "text": "联系人"
  },
- "b4ff4ddb": {
-  "en": "8 channels at most",
-  "ru": "Не больше 8 каналов",
-  "text": "最多 8 个频道"
+ "c9a493d6": {
+  "en": "Sound on",
+  "ru": "Звук включён",
+  "text": "声音已开启"
+ },
+ "8e2bb943": {
+  "en": "Sound off",
+  "ru": "Звук выключен",
+  "text": "声音已关闭"
+ },
+ "df759f29": {
+  "en": "Name: 1-31 bytes",
+  "ru": "Имя: 1-31 байт",
+  "text": "名称: 1-31 字节"
  },
  "34bbbe05": {
   "en": "Region saved",
   "ru": "Регион сохранён",
   "text": "区域已保存"
  },
- "df759f29": {
-  "en": "Name: 1-31 bytes",
-  "ru": "Имя: 1-31 байт",
-  "text": "名称: 1-31 字节"
+ "efa35629": {
+  "en": "Key: 32 hex or base64",
+  "ru": "Ключ: 32 hex или base64",
+  "text": "密钥: 32 hex 或 base64"
  },
  "9c1eb940": {
   "en": "Discover a chat contact first: ADV",
@@ -4394,11 +4414,6 @@
   "en": "Cannot leave while sending",
   "ru": "Нельзя во время отправки",
   "text": "发送中无法退出"
- },
- "efa35629": {
-  "en": "Key: 32 hex or base64",
-  "ru": "Ключ: 32 hex или base64",
-  "text": "密钥: 32 hex 或 base64"
  },
  "a6f0f217": {
   "en": "Not a channel link",

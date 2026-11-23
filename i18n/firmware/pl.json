@@ -4348,6 +4348,11 @@
   "ru": "Вы уже в этом канале",
   "text": "Już jesteś na tym kanale"
  },
+ "9eaab780": {
+  "en": "Sound on new messages",
+  "ru": "Звук новых сообщений",
+  "text": "Dźwięk nowych wiadomości"
+ },
  "5364d9de": {
   "en": "Region · OK: save",
   "ru": "Регион · OK: сохранить",
@@ -4357,6 +4362,11 @@
   "en": "Invite",
   "ru": "Пригласить",
   "text": "Zaproś"
+ },
+ "b4ff4ddb": {
+  "en": "8 channels at most",
+  "ru": "Не больше 8 каналов",
+  "text": "Najwyżej 8 kanałów"
  },
  "a01f083e": {
   "en": "No chat contacts",
@@ -4378,20 +4388,30 @@
   "ru": "Контакт",
   "text": "Kontakt"
  },
- "b4ff4ddb": {
-  "en": "8 channels at most",
-  "ru": "Не больше 8 каналов",
-  "text": "Najwyżej 8 kanałów"
+ "c9a493d6": {
+  "en": "Sound on",
+  "ru": "Звук включён",
+  "text": "Dźwięk włączony"
+ },
+ "8e2bb943": {
+  "en": "Sound off",
+  "ru": "Звук выключен",
+  "text": "Dźwięk wyłączony"
+ },
+ "df759f29": {
+  "en": "Name: 1-31 bytes",
+  "ru": "Имя: 1-31 байт",
+  "text": "Nazwa: 1-31 bajtów"
  },
  "34bbbe05": {
   "en": "Region saved",
   "ru": "Регион сохранён",
   "text": "Region zapisany"
  },
- "df759f29": {
-  "en": "Name: 1-31 bytes",
-  "ru": "Имя: 1-31 байт",
-  "text": "Nazwa: 1-31 bajtów"
+ "efa35629": {
+  "en": "Key: 32 hex or base64",
+  "ru": "Ключ: 32 hex или base64",
+  "text": "Klucz: 32 hex lub base64"
  },
  "9c1eb940": {
   "en": "Discover a chat contact first: ADV",
@@ -4422,11 +4442,6 @@
   "en": "Cannot leave while sending",
   "ru": "Нельзя во время отправки",
   "text": "Nie teraz: trwa wysyłanie"
- },
- "efa35629": {
-  "en": "Key: 32 hex or base64",
-  "ru": "Ключ: 32 hex или base64",
-  "text": "Klucz: 32 hex lub base64"
  },
  "a6f0f217": {
   "en": "Not a channel link",

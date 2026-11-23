@@ -60,7 +60,7 @@ String statusJson() {
   } // "poweroff": what turns the board on again
   d["radio"]=meshRadio.ready;d["radio_error"]=meshRadio.radioError;d["tx"]=meshRadio.txCount;d["radio_recal"]=meshRadio.recalibrations;d["rx"]=meshRadio.rxCount;d["rejected"]=meshRadio.rejected;d["relayed"]=meshRadio.relayed;d["contacts_replaced"]=meshRadio.replaced;d["contacts_saved"]=meshRadio.contactsSaved;
   d["diagnostic_rx"]=meshRadio.diagnosticRx;d["rssi"]=meshRadio.lastRssi;d["snr"]=meshRadio.lastSnr;d["keyboard"]=hardware.keyboardOk;d["key_count"]=hardware.keyCount;d["last_key"]=hardware.lastKey;
-  d["battery_mv"]=hardware.batteryMv;d["sd"]=hardware.sdOk;d["storage"]=hardware.fsOk;d["rtc"]=hardware.rtcOk;d["rtc_valid"]=hardware.rtcValid;
+  d["battery_mv"]=hardware.batteryMv;if(hardware.usbPower>=0)d["usb_power"]=hardware.usbPower>0;d["sd"]=hardware.sdOk;d["storage"]=hardware.fsOk;d["rtc"]=hardware.rtcOk;d["rtc_valid"]=hardware.rtcValid;
   d["compass"]=hardware.compassOk;d["compass_sample"]=hardware.compassSample;d["imu"]=hardware.imuOk;d["imu_sample"]=hardware.imuSample;
   d["gps_bytes"]=hardware.gpsBytes;d["gps_sentences"]=hardware.gps.passedChecksum();d["gps_failed"]=hardware.gps.failedChecksum();d["gps_fix"]=hardware.gpsFix();d["satellites"]=hardware.gps.satellites.value();
   if(d["gps_fix"].as<bool>()) {d["latitude"]=hardware.gps.location.lat();d["longitude"]=hardware.gps.location.lng();}
@@ -99,7 +99,7 @@ String channelsJson(bool secrets){
   DynamicJsonDocument d(6144);d["max"]=channels::Max;JsonArray a=d.createNestedArray("channels");
   for(unsigned i=0;i<meshRadio.channelCount;i++){const auto& c=meshRadio.channelList[i];JsonObject j=a.createNestedObject();bool open=!i||channels::isHashtag(c);
    j["id"]=meshRadio.idText(c.id);j["name"]=c.name;j["kind"]=!i?"public":open?"hashtag":"private";char hash[3];snprintf(hash,3,"%02X",channels::hashOf(c.secret));j["hash"]=hash;
-   if(secrets||open)j["link"]=channels::link(c);j["region"]=c.region;JsonObject policy=j.createNestedObject("policy");policy["led"]=c.policy.led;policy["wake"]=c.policy.wake;policy["popup"]=c.policy.popup;policy["priority"]=c.policy.priority;policy["device_limit"]=c.policy.deviceLimit;policy["app_limit"]=c.policy.appLimit;}
+   if(secrets||open)j["link"]=channels::link(c);j["region"]=c.region;JsonObject policy=j.createNestedObject("policy");policy["led"]=c.policy.led;policy["wake"]=c.policy.wake;policy["popup"]=c.policy.popup;policy["priority"]=c.policy.priority;policy["device_limit"]=c.policy.deviceLimit;policy["app_limit"]=c.policy.appLimit;policy["sound"]=c.policy.sound;}
   a=d.createNestedArray("heard");
   for(unsigned i=0;i<meshRadio.heardCount;i++){const auto& h=meshRadio.heard[i];JsonObject j=a.createNestedObject();char hash[3];snprintf(hash,3,"%02X",h.hash);j["hash"]=hash;j["packets"]=h.packets;j["age"]=(millis()-h.at)/1000;if(h.name[0])j["name"]=h.name;}
   d["samples"]=meshRadio.heardSamples;d["region"]=config.region;

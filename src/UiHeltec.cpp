@@ -1152,7 +1152,7 @@ void uiTick(){
    counting=counting||page==DicePage;
 #endif
    if(!counting&&notifications::enabled(notifications::mode(e.message,config.notifyPopup,2),e.mention)){popupAt=now;menuOpen=false;}
-   hardware.beep();dirty=true;
+   if(notifications::sound(e.message))hardware.beep();dirty=true;
   }else if(config.notifyFailed&&(e.kind==notifications::TxError||e.kind==notifications::Unconfirmed)){ledAt=now;ledPattern=3;notice(e.kind==notifications::TxError?t("Radio TX error","Ошибка передачи"):channels::isChannel(e.message.destination)?t("No repeat heard","Повтор не услышан"):t("Delivery not confirmed","Доставка не подтверждена"));}
   if(wake){if(screenOff){screenOff=false;hardware.brightness(config.brightness);}lastInput=now;}
  }

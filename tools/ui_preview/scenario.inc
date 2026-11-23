@@ -161,7 +161,7 @@ static void scenario(){
  key(0x81);shot("threads");key(13);shot("chat-public");key(0x86);
  // Channels: the list, a hashtag channel's card, a private channel and its card, adding one, an invitation.
  key(0xb6);shot("threads-channels");key(0xb7);shot("channel-hashtag");key(0x86);
- key(0xb6);key(13);shot("chat-channel");key(0xb4);shot("channel-private");key(0xb7);shot("channel-region");key(0xb4);key(0xb6);key(0xb6);key(13);shot("channel-leave");key(0x86);key(0x86);
+ key(0xb6);key(13);shot("chat-channel");key(0xb4);shot("channel-private");key(0xb7);shot("channel-region");key(0xb4);key(0xb6);shot("channel-sound");{auto sound=[&]{String st=uiStatus();for(unsigned i=0;i<meshRadio.channelCount;i++){const auto& c=meshRadio.channelList[i];if(st.indexOf("\"channel\":\""+meshRadio.idText(c.id)+"\"")>=0)return int(c.policy.sound);}return -1;};if(sound()!=1){printf("FAIL channel sound default: %d\n",sound());exit(1);}key(13);if(sound()!=0){printf("FAIL channel sound off: %d\n",sound());exit(1);}key(13);if(sound()!=1){printf("FAIL channel sound on: %d\n",sound());exit(1);}}key(0xb6);key(0xb6);key(13);shot("channel-leave");key(0x86);key(0x86);
  key(0x81);key(0x83);key(13);shot("channel-add");key(13);key(0x83);for(char ch:std::string("test"))key(ch);shot("channel-add-tag");key(0x83);key(0x86);key(0x86);
  key(0x81);for(unsigned i=0;i<meshRadio.channelCount;i++)key(0xb6);key(13);shot("chat-invite");key(0xb4);shot("chat-invite-joined");key(0x86);
  if(!meshRadio.channel(channels::idOf(meshRadio.channelList[3].secret))||strcmp(meshRadio.channelList[3].name,"Походы")){printf("FAIL invitation not joined\n");exit(1);}

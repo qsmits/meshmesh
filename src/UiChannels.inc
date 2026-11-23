@@ -102,10 +102,11 @@ void channelEditSave(){
  }
 }
 
-// Channel card: QR of its link on white, name, kind, key of a private channel; its region; invite a chat contact; leave.
+// Channel card: QR of its link on white, name, kind, key of a private channel; its region; the beep of its new
+// messages (per-channel sound, after Bas van Dijk); invite a chat contact; leave.
 int chatContacts(Peer** out){int n=0;for(unsigned i=0;i<meshRadio.peerCount;i++)if(meshRadio.peers[i].type==1)out[n++]=&meshRadio.peers[i];return n;}
-enum InfoAction {InfoRegion,InfoInvite,InfoLeave};
-int infoActions(){const channels::Channel* c=meshRadio.channel(focusChannel);return !c?0:channels::isPublic(c->secret)?1:3;} // Public: its region only
+enum InfoAction {InfoRegion,InfoSound,InfoInvite,InfoLeave};
+int infoActions(){const channels::Channel* c=meshRadio.channel(focusChannel);return !c?0:channels::isPublic(c->secret)?2:4;} // Public: its region and sound only
 String channelRegionText(const String& r){
  if(r==regions::Unscoped)return t("None","Без региона");
  if(r.length())return r;
@@ -127,8 +128,11 @@ void drawChannelInfo(){
  String rows[3];unsigned n=wrap(channels::isPublic(c->secret)?t("Every MeshCore node has it","Он есть у каждого узла MeshCore"):t("Scan with MeshMesh or the MeshCore app","Сканируйте в MeshMesh или приложении MeshCore"),rows,priv&&actions>1?0:actions>1?2:3,w,small);
  for(unsigned i=0;i<n;i++){text(x,y,rows[i],dim,small);y+=10;}
  Peer* list[24];int people=chatContacts(list);inviteTo=people?(inviteTo%people+people)%people:0;selected=constrain(selected,0,actions-1);
- for(int i=0;i<actions;i++){int ry=218-(actions-i)*26,cx=x-2+(w+2)/2;bool focus=selected==i,danger=i==InfoLeave;target(x-2,ry,w+2,24,i);
-  panel(x-2,ry,w+2,24,focus?(danger&&deleteArmed?bad:cardHi):card,7);if(focus)ring(x-2,ry,w+2,24,7,danger?bad:accent);
+ int step=actions>3?24:26,bh=step-2;
+ for(int i=0;i<actions;i++){int ry=218-(actions-i)*step,cx=x-2+(w+2)/2;bool focus=selected==i,danger=i==InfoLeave;target(x-2,ry,w+2,bh,i);
+  panel(x-2,ry,w+2,bh,focus?(danger&&deleteArmed?bad:cardHi):card,7);if(focus)ring(x-2,ry,w+2,bh,7,danger?bad:accent);
+  if(i==InfoSound){textCenter(cx,ry+9,t("Sound on new messages","Звук новых сообщений"),dim,small);textCenter(cx,ry+19,flag(c->policy.sound),ink,small);
+   if(focus){tri(x+5,ry+14,3,3,accent);tri(x+w-7,ry+14,1,3,accent);}continue;}
   if(i==InfoRegion||(i==InfoInvite&&people)){bool region=i==InfoRegion;
    textCenter(cx,ry+9,region?(regionChoice==c->region?t("Region","Регион"):t("Region · OK: save","Регион · OK: сохранить")):t("Invite","Пригласить"),region&&regionChoice!=c->region?accent:dim,small);
    textCenter(cx,ry+20,fit(region?channelRegionText(regionChoice):String(list[inviteTo]->name),w-20,small),ink,small);
@@ -136,8 +140,12 @@ void drawChannelInfo(){
   String label=i==InfoInvite?t("No chat contacts","Нет чат-контактов"):deleteArmed?t("Sure? OK again","Точно? Ещё OK"):t("Leave channel","Покинуть канал");
   textCenter(cx,ry+16,fit(label,w-6),danger?(focus?ink:bad):i==InfoLeave?ink:dim);}
  if(selected==InfoRegion)footer({{"<>",t("Region","Регион")},{"OK",regionChoice==c->region?t("Type","Ввести"):t("Save","Сохранить")},{"^v",t("Select","Выбор")},{"BACK",t("Back","Назад")}});
+ else if(selected==InfoSound)footer({{"OK",t("Change","Изменить")},{"^v",t("Select","Выбор")},{"BACK",t("Back","Назад")}});
  else footer({{"^v",t("Select","Выбор")},{"<>",t("Contact","Контакт")},{"OK",t("Run","Выполнить")},{"BACK",t("Back","Назад")}});
 }
+// The beep of a channel's new messages, saved with its other notification settings (ChannelPolicy.h).
+void channelSoundToggle(const channels::Channel* c){StaticJsonDocument<32> d;d["sound"]=c->policy.sound?0:1;String r=channelPolicy::set(c->id,d.as<JsonObjectConst>());
+ bool saved=r.startsWith("OK");notice(saved?(c->policy.sound?t("Sound on","Звук включён"):t("Sound off","Звук выключен")):r,saved?ok:bad);}
 void saveChannelRegion(const String& r){
  if(meshRadio.setChannelRegion(focusChannel,r)){regionChoice=meshRadio.channel(focusChannel)->region;notice(t("Region saved","Регион сохранён"),ok);}
  else notice(t("Region: letters, digits, '-'","Регион: буквы, цифры, '-'"),bad);
@@ -147,8 +155,10 @@ void channelInfoKey(int key){
  if(key==KeyUp||key==KeyDown){selected=(selected+(key==KeyUp?actions-1:1))%actions;deleteArmed=false;return;}
  if(key==KeyLeft||key==KeyRight){deleteArmed=false;int dir=key==KeyLeft?-1:1;
   if(selected==InfoRegion){regionChoice=regions::cycle(regionChoice,dir,true);return;}
+  if(selected==InfoSound){channelSoundToggle(c);return;}
   inviteTo+=dir;selected=InfoInvite;return;}
  if(key!=Enter&&key!=KeyHold)return;
+ if(selected==InfoSound){deleteArmed=false;channelSoundToggle(c);return;}
  if(selected==InfoRegion){deleteArmed=false;if(regionChoice!=c->region)saveChannelRegion(regionChoice);else{edit=regionChoice==regions::Unscoped?String():regionChoice;editing=true;}return;}
  if(selected==InfoInvite){deleteArmed=false;Peer* list[24];int people=chatContacts(list);if(!people){notice(t("Discover a chat contact first: ADV","Сначала найдите чат-контакт: ADV"),warn);return;}
   Peer* p=list[(inviteTo%people+people)%people];bool sent=meshRadio.sendInvite(p->id,focusChannel);notice(sent?t("Invitation queued to ","Приглашение в очереди: ")+p->name:t("Invitation not sent","Приглашение не отправлено"),sent?ok:bad);return;}
