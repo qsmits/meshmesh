@@ -40,7 +40,7 @@ PLURALS = {
     'ar': ['zero', 'one', 'two', 'few', 'many', 'other'], 'id': ['other'],
 }
 # Interface families: the 320x240 keyboard interface and the 128x64 one; shared files go to both.
-FULL = ['src/Ui.cpp', 'src/UiServer.inc', 'src/UiSolitaire.inc', 'src/UiChess.inc', 'src/UiTour.inc', 'src/UiChannels.inc', 'src/UiPet.inc', 'src/UiDice.inc', 'src/UiTally.inc', 'src/UiRemote.inc', 'src/UiDuel.inc']
+FULL = ['src/Ui.cpp', 'src/UiActions.inc', 'src/UiServer.inc', 'src/UiSolitaire.inc', 'src/UiChess.inc', 'src/UiTour.inc', 'src/UiChannels.inc', 'src/UiClipboard.inc', 'src/UiContactNotes.inc', 'src/UiScreenLock.inc', 'src/UiPet.inc', 'src/UiDice.inc', 'src/UiTally.inc', 'src/UiRemote.inc', 'src/UiDuel.inc']
 COMPACT = ['src/UiHeltec.cpp', 'src/UiCompose.inc', 'src/UiChessCompact.inc', 'src/UiPetCompact.inc', 'src/UiDiceCompact.inc', 'src/UiHires.inc', 'src/UiDuelCompact.inc']
 SHARED = ['src/ChessNet.cpp', 'src/ChessTour.cpp', 'src/ChessSync.cpp', 'src/MeshRadio.cpp', 'src/Internet.cpp', 'src/MeshServer.cpp', 'src/App.cpp', 'src/Pet.cpp', 'src/Dice.cpp', 'src/QuickSend.cpp', 'src/People.cpp', 'src/Duel.cpp', 'src/Apps.cpp']
 

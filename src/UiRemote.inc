@@ -55,7 +55,7 @@ void remoteRun(){
  }
 }
 bool remoteKey(int key){
- if(key==KeyBack){change(Node);return true;}
+ if(key==KeyBack){change(Node,true);return true;}
  Peer* p=focusedPeer();RemoteAct acts[4];unsigned n=p?remoteActs(*p,acts):0;
  if(n&&(key==KeyLeft||key==KeyRight||key==KeyUp||key==KeyDown)){remoteAction=(remoteAction+(key==KeyLeft||key==KeyUp?-1:1)+n)%n;return true;}
  if(key==Enter){remoteRun();return true;}

@@ -69,6 +69,16 @@ class Hardware {
   void beep();
   void ping(uint16_t hz,uint16_t ms);
   void flush();
+#if !defined(MM_COMPACT)
+  void flushRect(int x,int y,int width,int height){
+#if !defined(MM_UI_PREVIEW)
+    uint16_t* row=canvas->getBuffer()+y*canvas->width()+x;
+    display.startWrite();display.setAddrWindow(x,y,width,height);
+    for(int i=0;i<height;i++,row+=canvas->width())display.writePixels(row,width);
+    display.endWrite();
+#endif
+  }
+#endif
   // Power off (Power.cpp): the screen, GPS and peripheral supplies off; the levels are held through
   // deep sleep (ESP32) or System OFF (nRF52). started: begin() ran; false on a wake that goes back to
   // sleep, when only the pin levels are set again. A board with a PMU (T-Beam) is switched off by it here.
@@ -79,6 +89,7 @@ class Hardware {
  private:
   uint32_t lastSample=0, lastProbe=0, lastGpsBaud=0;
   bool gpsEnabled=false;
+  void probeM9Keyboard();
   bool read(TwoWire& bus,uint8_t addr,uint8_t reg,uint8_t* bytes,uint8_t size,bool stop=false);
   bool write(uint8_t addr,uint8_t reg,uint8_t value);
 };

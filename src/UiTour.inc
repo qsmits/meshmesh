@@ -212,7 +212,7 @@ bool tourNewKey(int key){
 // Tournament news: a toast, and a dark screen lights up.
 void tourTick(){
  if(tour::net.events!=tourEventsSeen){tourEventsSeen=tour::net.events;
-  if(tour::net.event.length()){lastInput=millis();if(wakeOnly){wakeOnly=false;hardware.brightness(config.brightness);}if(!locked)notice(tour::net.event,accent);}
+  if(tour::net.event.length()){lastInput=millis();if(wakeOnly){wakeOnly=false;hardware.brightness(config.backlight(time(nullptr)));}if(!locked)notice(tour::net.event,accent);}
   if(page==ChessTour&&tourOpen==tour::net.eventTour&&tourOpen)tour::net.viewed(*tourOpen);}
  if(tour::net.dirty){tour::net.dirty=false;dirty=true;}
 }

@@ -264,11 +264,6 @@
   "ru": "Формула не считается",
   "text": "公式无法计算"
  },
- "26282b58": {
-  "en": "Notes",
-  "ru": "Заметки",
-  "text": "备注"
- },
  "90446a7a": {
   "en": "Section",
   "ru": "Раздел",
@@ -1159,6 +1154,676 @@
   "ru": "Батарея садится",
   "text": "电量低"
  },
+ "055dae05": {
+  "en": "Edit",
+  "ru": "Изменить",
+  "text": "修改"
+ },
+ "a33a94f9": {
+  "en": "Cancel",
+  "ru": "Отмена",
+  "text": "取消"
+ },
+ "8759568a": {
+  "en": "Edit name",
+  "ru": "Изменить имя",
+  "text": "编辑名称"
+ },
+ "9cd3c842": {
+  "en": "Keep",
+  "ru": "Оставить",
+  "text": "保留"
+ },
+ "4c9c5885": {
+  "en": "Return",
+  "ru": "Вернуть",
+  "text": "恢复"
+ },
+ "c2d572ce": {
+  "en": "Test",
+  "ru": "Тест",
+  "text": "测试"
+ },
+ "a7cb76b8": {
+  "en": "Search",
+  "ru": "Искать",
+  "text": "搜索"
+ },
+ "3f7e1a1c": {
+  "en": "Found",
+  "ru": "Найденные",
+  "text": "已找到"
+ },
+ "9deec0c8": {
+  "en": "Type",
+  "ru": "Ввести",
+  "text": "输入"
+ },
+ "9a8267a9": {
+  "en": "Change",
+  "ru": "Изменить",
+  "text": "更改"
+ },
+ "ca4fcb20": {
+  "en": "Next value",
+  "ru": "Дальше",
+  "text": "下一个值"
+ },
+ "eccc8fe2": {
+  "en": "Wi-Fi access point",
+  "ru": "Точка доступа Wi-Fi",
+  "text": "Wi-Fi 热点"
+ },
+ "e4fe0cf0": {
+  "en": "Web chat and map upload",
+  "ru": "Веб-чат и загрузка карт",
+  "text": "网页聊天和地图上传"
+ },
+ "bd132d01": {
+  "en": "Off",
+  "ru": "Выключена",
+  "text": "已关闭"
+ },
+ "061557aa": {
+  "en": "MeshCore identity",
+  "ru": "Ключ MeshCore",
+  "text": "MeshCore 身份"
+ },
+ "01f31114": {
+  "en": "Networks",
+  "ru": "Сети",
+  "text": "网络"
+ },
+ "e6b593c8": {
+  "en": "Toggle",
+  "ru": "Переключить",
+  "text": "切换"
+ },
+ "80266824": {
+  "en": "Wrong password or refused: ",
+  "ru": "Неверный пароль или отказ: ",
+  "text": "密码错误或被拒绝: "
+ },
+ "c2aec922": {
+  "en": "No answer from ",
+  "ru": "Нет ответа от ",
+  "text": "未收到应答: "
+ },
+ "4aea721f": {
+  "en": "No saved network in range",
+  "ru": "Сохранённых сетей рядом нет",
+  "text": "附近没有已存网络"
+ },
+ "77943e26": {
+  "en": "Connection lost",
+  "ru": "Связь с сетью потеряна",
+  "text": "连接已断开"
+ },
+ "3517d70a": {
+  "en": "Wi-Fi scan failed",
+  "ru": "Сбой поиска сетей",
+  "text": "Wi-Fi 扫描失败"
+ },
+ "c0a8f4d6": {
+  "en": "Wi-Fi scan timed out",
+  "ru": "Поиск сетей не завершился",
+  "text": "Wi-Fi 扫描超时"
+ },
+ "84fb5225": {
+  "en": "Clock not set",
+  "ru": "Часы не установлены",
+  "text": "时钟未设置"
+ },
+ "d85b75c4": {
+  "en": "SSID 1-32 bytes, password empty or 8-63",
+  "ru": "Имя 1-32 байта, пароль пустой или 8-63",
+  "text": "SSID 1-32 字节,密码为空或 8-63 位"
+ },
+ "32e3b1d4": {
+  "en": "Tile is not 256 or 512 px",
+  "ru": "Тайл не 256/512 пикселей",
+  "text": "瓦片不是 256 或 512 px"
+ },
+ "a218bb10": {
+  "en": "Not a PNG image",
+  "ru": "Сервер вернул не PNG",
+  "text": "不是 PNG 图像"
+ },
+ "9b52bbc9": {
+  "en": "No location",
+  "ru": "Положение по IP не найдено",
+  "text": "无法通过 IP 定位"
+ },
+ "fe92dca2": {
+  "en": "SD full: web tiles not cached",
+  "ru": "SD заполнена: тайлы не сохраняются",
+  "text": "SD 已满: 网络瓦片未缓存"
+ },
+ "45646152": {
+  "en": "Wi-Fi client on",
+  "ru": "Wi-Fi-клиент включён",
+  "text": "Wi-Fi 客户端已开启"
+ },
+ "71a638af": {
+  "en": "Wi-Fi client off",
+  "ru": "Wi-Fi-клиент выключен",
+  "text": "Wi-Fi 客户端已关闭"
+ },
+ "674356ff": {
+  "en": "Connecting to ",
+  "ru": "Подключение к ",
+  "text": "正在连接 "
+ },
+ "6fa9102f": {
+  "en": "Forgotten: ",
+  "ru": "Забыта: ",
+  "text": "已忘记: "
+ },
+ "a2c6b137": {
+  "en": "Searching...",
+  "ru": "Поиск сетей...",
+  "text": "正在搜索..."
+ },
+ "18631a5c": {
+  "en": "Wi-Fi client",
+  "ru": "Wi-Fi-клиент",
+  "text": "Wi-Fi 客户端"
+ },
+ "397eff34": {
+  "en": "Turn the client on to find networks",
+  "ru": "Включите клиент, чтобы найти сети",
+  "text": "开启客户端以搜索网络"
+ },
+ "d54b728f": {
+  "en": "Searching for networks...",
+  "ru": "Поиск сетей...",
+  "text": "正在搜索网络..."
+ },
+ "292b3500": {
+  "en": "connected",
+  "ru": "подключено",
+  "text": "已连接"
+ },
+ "7dd55181": {
+  "en": "saved",
+  "ru": "сохранена",
+  "text": "已保存"
+ },
+ "04f9d959": {
+  "en": "saved, away",
+  "ru": "сохр., не рядом",
+  "text": "已存,不在附近"
+ },
+ "c1da06cb": {
+  "en": "open",
+  "ru": "открытая",
+  "text": "开放"
+ },
+ "19405072": {
+  "en": "On/off",
+  "ru": "Вкл/выкл",
+  "text": "开/关"
+ },
+ "9ac84c77": {
+  "en": "Connect",
+  "ru": "Подключить",
+  "text": "连接"
+ },
+ "89af1769": {
+  "en": "Forget",
+  "ru": "Забыть",
+  "text": "忘记"
+ },
+ "08a7df66": {
+  "en": "Rescan",
+  "ru": "Обновить",
+  "text": "重新扫描"
+ },
+ "b7f67b6d": {
+  "en": "Map pin",
+  "ru": "Геометка",
+  "text": "地图标记"
+ },
+ "2b18cfad": {
+  "en": "Left",
+  "ru": "Влево",
+  "text": "左"
+ },
+ "734cec5d": {
+  "en": "Up",
+  "ru": "Вверх",
+  "text": "上"
+ },
+ "2a7c8f4e": {
+  "en": "Down",
+  "ru": "Вниз",
+  "text": "下"
+ },
+ "6e1282a0": {
+  "en": "Right",
+  "ru": "Вправо",
+  "text": "右"
+ },
+ "e3077ca9": {
+  "en": "space",
+  "ru": "пробел",
+  "text": "空格"
+ },
+ "d609b7de": {
+  "en": "Keyboard",
+  "ru": "Клавиатура",
+  "text": "键盘"
+ },
+ "837d5b49": {
+  "en": "n/a",
+  "ru": "нет",
+  "text": "无"
+ },
+ "aef230e2": {
+  "en": "Relayed",
+  "ru": "Переслано",
+  "text": "已转发"
+ },
+ "ebd1789d": {
+  "en": "Rejected",
+  "ru": "Отклонено",
+  "text": "已拒绝"
+ },
+ "9e543f5c": {
+  "en": "Uptime",
+  "ru": "Работа",
+  "text": "运行时间"
+ },
+ "a6022a7a": {
+  "en": "Boot ",
+  "ru": "Загрузка ",
+  "text": "启动 "
+ },
+ "fd249ae3": {
+  "en": " · last key: ",
+  "ru": " · последняя клавиша: ",
+  "text": " · 最后按键: "
+ },
+ "fe8668ce": {
+  "en": "Crypto test + sound",
+  "ru": "Тест шифрования и звука",
+  "text": "加密与声音测试"
+ },
+ "f769e02b": {
+  "en": "Create storage...",
+  "ru": "Создать хранилище...",
+  "text": "创建存储..."
+ },
+ "46b8241c": {
+  "en": "Ball, swipe",
+  "ru": "Шар, свайп",
+  "text": "轨迹球、滑动"
+ },
+ "39012b21": {
+  "en": "Move: menu, lists, map",
+  "ru": "Перемещение: меню, списки, карта",
+  "text": "移动: 菜单,列表,地图"
+ },
+ "a9849595": {
+  "en": "Click",
+  "ru": "Нажатие",
+  "text": "按下"
+ },
+ "ad13b2cf": {
+  "en": "Open / send",
+  "ru": "Открыть / отправить",
+  "text": "打开 / 发送"
+ },
+ "8082be11": {
+  "en": "Hold ball",
+  "ru": "Удерж. шар",
+  "text": "长按轨迹球"
+ },
+ "85013777": {
+  "en": "Tap",
+  "ru": "Касание",
+  "text": "轻触"
+ },
+ "e96df6ee": {
+  "en": "Open; hints below are keys; title: back",
+  "ru": "Открыть; кнопки внизу; заголовок - назад",
+  "text": "打开；底部提示即按键；标题：返回"
+ },
+ "dd425d56": {
+  "en": "Delete; with no text: back",
+  "ru": "Удалить; без текста: назад",
+  "text": "删除; 无文字时: 返回"
+ },
+ "609be88e": {
+  "en": "in text: switch RU/EN",
+  "ru": "в тексте: RU/EN",
+  "text": "输入时: 切换 RU/EN"
+ },
+ "de82dc1b": {
+  "en": "Map: saved maps",
+  "ru": "Карта: список карт",
+  "text": "地图: 已存地图"
+ },
+ "1e70c4ca": {
+  "en": "Map zoom",
+  "ru": "Масштаб карты",
+  "text": "地图缩放"
+ },
+ "75783192": {
+  "en": "Nodes: show on map",
+  "ru": "Узлы: показать на карте",
+  "text": "节点: 在地图上显示"
+ },
+ "1bd6e4b7": {
+  "en": "Menu: DEL until the tiles",
+  "ru": "Меню: DEL до плиток",
+  "text": "菜单: 连按 DEL 回主屏"
+ },
+ "b0916d3b": {
+  "en": "Map; L - saved maps",
+  "ru": "Карта; L - список карт",
+  "text": "地图; L - 已存地图"
+ },
+ "ffad6b6e": {
+  "en": "Menu",
+  "ru": "Главное меню",
+  "text": "主菜单"
+ },
+ "e446fc2f": {
+  "en": "Previous screen",
+  "ru": "Предыдущий экран",
+  "text": "返回上一屏"
+ },
+ "60ca84b7": {
+  "en": "Announce this node; hold: GPS on/off",
+  "ru": "Объявить узел; удерж.: GPS вкл/выкл",
+  "text": "通告本节点; 长按: GPS 开/关"
+ },
+ "12104748": {
+  "en": "App actions and radio controls",
+  "ru": "Действия и управление связью",
+  "text": "应用操作和无线控制"
+ },
+ "db1e8e1b": {
+  "en": "Lock screen (there is no microphone)",
+  "ru": "Блокировка (микрофона нет)",
+  "text": "锁屏 (没有麦克风)"
+ },
+ "a21c0730": {
+  "en": "Open / send; twice or hold: unlock",
+  "ru": "Открыть / отправить; дважды или удерж.: вход",
+  "text": "打开 / 发送; 按两次或长按: 解锁"
+ },
+ "9fb377cf": {
+  "en": "in text: switch RU/EN; Right: capital",
+  "ru": "в тексте: RU/EN; -> : заглавная",
+  "text": "输入时: 切换 RU/EN; 右: 大写"
+ },
+ "7311d31b": {
+  "en": "Russian layout",
+  "ru": "Русская раскладка",
+  "text": "俄文布局"
+ },
+ "127b4873": {
+  "en": "Unlock to read",
+  "ru": "Разблокируйте, чтобы прочитать",
+  "text": "解锁后阅读"
+ },
+ "12ff5cad": {
+  "en": "Last from ",
+  "ru": "Последнее от ",
+  "text": "最新来自 "
+ },
+ "7a531229": {
+  "en": "The repeater keeps relaying",
+  "ru": "Репитер продолжает пересылку",
+  "text": "中继器持续转发中"
+ },
+ "f3158c93": {
+  "en": "The room keeps serving members",
+  "ru": "Комната продолжает работать",
+  "text": "房间继续为成员服务"
+ },
+ "2bc700f4": {
+  "en": "Radio and GPS keep working",
+  "ru": "Радио и GPS продолжают работать",
+  "text": "无线电和 GPS 继续工作"
+ },
+ "b72fb804": {
+  "en": "Radio error",
+  "ru": "Ошибка радио",
+  "text": "无线电错误"
+ },
+ "863c4afd": {
+  "en": "Twice or hold: the game",
+  "ru": "Дважды или удерж.: партия",
+  "text": "按两次或长按：对局"
+ },
+ "6179a213": {
+  "en": "Twice or hold: unlock",
+  "ru": "Дважды или удерж.: вход",
+  "text": "按两次或长按解锁"
+ },
+ "64010381": {
+  "en": "Lock",
+  "ru": "Блок",
+  "text": "锁定"
+ },
+ "17628697": {
+  "en": "Filter by tag",
+  "ru": "Фильтр по метке",
+  "text": "选择标签"
+ },
+ "06e4383f": {
+  "en": "Network key · 64 hex",
+  "ru": "Ключ сети · 64 hex",
+  "text": "网络密钥 · 64 hex"
+ },
+ "5bb9392e": {
+  "en": "Tournament name",
+  "ru": "Название турнира",
+  "text": "比赛名称"
+ },
+ "4257ae5d": {
+  "en": "Pet name",
+  "ru": "Имя питомца",
+  "text": "宠物名字"
+ },
+ "f12916a4": {
+  "en": "Counter name",
+  "ru": "Имя счётчика",
+  "text": "计数器名称"
+ },
+ "7b04c300": {
+  "en": "Region of the channel",
+  "ru": "Регион канала",
+  "text": "频道区域"
+ },
+ "4b20829b": {
+  "en": "Wi-Fi password: ",
+  "ru": "Пароль Wi-Fi: ",
+  "text": "Wi-Fi 密码: "
+ },
+ "1fc05d6f": {
+  "en": "Device name",
+  "ru": "Имя устройства",
+  "text": "设备名称"
+ },
+ "20676a92": {
+  "en": " bytes",
+  "ru": " байт",
+  "text": " 字节"
+ },
+ "47f20831": {
+  "en": "Saved after a successful login",
+  "ru": "Сохраняется после удачного входа",
+  "text": "登录成功后保存"
+ },
+ "ad5eec0a": {
+  "en": "As in the MeshCore app: ver, get name, neighbors...",
+  "ru": "Как в приложении MeshCore: ver, get name, neighbors...",
+  "text": "与 MeshCore 应用相同：ver, get name, neighbors..."
+ },
+ "74df0d68": {
+  "en": "As on repeaters: msk, sao...; empty: none",
+  "ru": "Как на репитерах: msk, sao...; пусто - нет",
+  "text": "与中继器一致: msk, sao...; 空: 无"
+ },
+ "7b6f9672": {
+  "en": "As on repeaters: msk, sao...; empty: default",
+  "ru": "Как на репитерах: msk, sao...; пусто - по умолчанию",
+  "text": "与中继器一致: msk, sao...; 空: 默认"
+ },
+ "5e155c34": {
+  "en": "Separate tags with commas",
+  "ru": "Метки через запятую",
+  "text": "用 , 分开标签"
+ },
+ "f618b981": {
+  "en": "Empty shows all contacts",
+  "ru": "Пусто — все контакты",
+  "text": "留空显示全部联系人"
+ },
+ "60fa6a70": {
+  "en": "8-63 characters; -> after a letter: capital",
+  "ru": "8-63 символа; -> после буквы: заглавная",
+  "text": "8-63 个字符; 字母后按 ->: 大写"
+ },
+ "e96a0252": {
+  "en": "OK: log in   BACK: cancel",
+  "ru": "OK: войти   BACK: отменить",
+  "text": "OK：登录   BACK：取消"
+ },
+ "a000f97c": {
+  "en": "OK: send   BACK: cancel",
+  "ru": "OK: отправить   BACK: отменить",
+  "text": "OK：发送   BACK：取消"
+ },
+ "7a1da0b4": {
+  "en": "OK: post   BACK: cancel",
+  "ru": "OK: отправить   BACK: отменить",
+  "text": "OK: 发布   BACK: 取消"
+ },
+ "4bff5478": {
+  "en": "OK: save   BACK: cancel",
+  "ru": "OK: сохранить   BACK: отменить",
+  "text": "OK: 保存   BACK: 取消"
+ },
+ "70e3f7ea": {
+  "en": "Tournament",
+  "ru": "Турнир",
+  "text": "比赛"
+ },
+ "5542d75b": {
+  "en": "Chess · ",
+  "ru": "Шахматы · ",
+  "text": "国际象棋 · "
+ },
+ "99d92ee5": {
+  "en": "Input: Russian (phonetic)",
+  "ru": "Ввод: русский (фонетический)",
+  "text": "输入: 俄文 (音译)"
+ },
+ "f298c8d3": {
+  "en": "Input: English",
+  "ru": "Ввод: английский",
+  "text": "输入: 英文"
+ },
+ "c79e0520": {
+  "en": "Russian input: phonetic",
+  "ru": "Русский ввод: фонетический",
+  "text": "俄文输入: 音译"
+ },
+ "e8ecae43": {
+  "en": "2x space: RU/EN   Shift or Right after a letter: capital",
+  "ru": "2×пробел: RU/EN   Shift или -> после буквы: заглавная",
+  "text": "2x空格: RU/EN   字母后按 Shift 或右: 大写"
+ },
+ "cf39d358": {
+  "en": "Not in this mode",
+  "ru": "Недоступно в этом режиме",
+  "text": "此模式下不可用"
+ },
+ "56bf77d2": {
+  "en": "Radio test: a restart returns the saved one",
+  "ru": "Тест радио: перезапуск вернёт сохранённое",
+  "text": "无线电测试：重启恢复已保存设置"
+ },
+ "a06fdf5a": {
+  "en": "Radio busy, retry",
+  "ru": "Радио занято, повторите",
+  "text": "无线电忙,请重试"
+ },
+ "19b6c4b1": {
+  "en": "Radio offline",
+  "ru": "Радио недоступно",
+  "text": "无线电不可用"
+ },
+ "2ae7cabc": {
+  "en": "Settings saved",
+  "ru": "Настройки сохранены",
+  "text": "设置已保存"
+ },
+ "bfb7fda0": {
+  "en": "Not sent: radio or route",
+  "ru": "Не отправлено: радио или маршрут",
+  "text": "未发送：无线电或路由"
+ },
+ "315b16c1": {
+  "en": "Radio busy, try again",
+  "ru": "Радио занято, повторите",
+  "text": "无线电忙,请重试"
+ },
+ "0691ba75": {
+  "en": "Path reset: next message floods",
+  "ru": "Путь сброшен: следующее сообщение пойдёт flood",
+  "text": "路径已重置: 下条消息将泛洪"
+ },
+ "7a14a9e8": {
+  "en": "Path reset failed",
+  "ru": "Не удалось сбросить путь",
+  "text": "路径重置失败"
+ },
+ "08d31104": {
+  "en": "OK again removes the contact",
+  "ru": "Нажмите OK ещё раз для удаления",
+  "text": "再按 OK 删除联系人"
+ },
+ "17781681": {
+  "en": "Contact removed; its next advert adds it again",
+  "ru": "Контакт удалён; новое объявление вернёт его",
+  "text": "联系人已删除; 收到其新通告后会重新添加"
+ },
+ "3e33cd0f": {
+  "en": "Cannot remove while sending",
+  "ru": "Нельзя удалить во время отправки",
+  "text": "发送中无法删除"
+ },
+ "a34dbdc4": {
+  "en": "Name saved",
+  "ru": "Имя сохранено",
+  "text": "名字已保存"
+ },
+ "a64e97e5": {
+  "en": "Name: 1-15 UTF-8 bytes",
+  "ru": "Имя: 1-15 байт UTF-8",
+  "text": "名字: 1-15 字节 UTF-8"
+ },
+ "184e57b2": {
+  "en": "Region: letters, digits, '-'",
+  "ru": "Регион: буквы, цифры, '-'",
+  "text": "区域: 字母、数字、'-'"
+ },
+ "cb8d0572": {
+  "en": "Password: 8-63 characters",
+  "ru": "Пароль: 8-63 символа",
+  "text": "密码: 8-63 个字符"
+ },
+ "d4544911": {
+  "en": "Name: 1-24 UTF-8 bytes",
+  "ru": "Имя: 1-24 байта UTF-8",
+  "text": "名称: 1-24 字节 UTF-8"
+ },
  "0b2e473c": {
   "en": "Not in this mode: Settings > Device mode",
   "ru": "Недоступно в этом режиме: Настройки > Режим работы",
@@ -1268,6 +1933,11 @@
   "en": "Rotate in all directions",
   "ru": "Вращайте устройство во все стороны",
   "text": "向各个方向旋转设备"
+ },
+ "caf91d3d": {
+  "en": "Signal no longer listed",
+  "ru": "Сигнала уже нет в списке",
+  "text": "信号已不在列表中"
  },
  "c3938153": {
   "en": "No signal selected",
@@ -1379,10 +2049,20 @@
   "ru": "Выкл",
   "text": "关"
  },
+ "a1d3f60b": {
+  "en": "hold OK",
+  "ru": "удерж. OK",
+  "text": "长按 OK"
+ },
  "30b1f47d": {
   "en": "Channel",
   "ru": "Канал",
   "text": "频道"
+ },
+ "b780ae52": {
+  "en": "No unread messages",
+  "ru": "Нет непрочитанных сообщений",
+  "text": "没有未读消息"
  },
  "78219be4": {
   "en": "Clock not set",
@@ -1623,6 +2303,11 @@
   "ru": "Карта",
   "text": "地图"
  },
+ "284523ed": {
+  "en": "Contact notes",
+  "ru": "Заметки контакта",
+  "text": "联系人备注"
+ },
  "e0fef172": {
   "en": "Nodes",
   "ru": "Узлы",
@@ -1763,32 +2448,18 @@
   "ru": "Всё выключено",
   "text": "全部关闭"
  },
- "2aef0bab": {
+ "08d56a77": {
   "en": {
-   "one": "new",
-   "other": "new"
+   "one": "new message",
+   "other": "new messages"
   },
   "ru": {
-   "one": "новое",
-   "few": "новых",
-   "many": "новых"
+   "one": "новое сообщение",
+   "few": "новых сообщения",
+   "many": "новых сообщений"
   },
   "forms": {
-   "other": "{n} 未读"
-  }
- },
- "d04d1711": {
-  "en": {
-   "one": "message",
-   "other": "messages"
-  },
-  "ru": {
-   "one": "сообщение",
-   "few": "сообщения",
-   "many": "сообщений"
-  },
-  "forms": {
-   "other": "{n} 条消息"
+   "other": "{n} 条新消息"
   }
  },
  "6d76d314": {
@@ -1928,10 +2599,10 @@
   "ru": "Открыть",
   "text": "打开"
  },
- "64010381": {
-  "en": "Lock",
-  "ru": "Блок",
-  "text": "锁定"
+ "2c738f99": {
+  "en": "Radio controls",
+  "ru": "Управление связью",
+  "text": "无线控制"
  },
  "8244dadc": {
   "en": " waiting",
@@ -1972,11 +2643,6 @@
   "ru": "Выбор",
   "text": "选择"
  },
- "6bb58bc8": {
-  "en": "Hashtag, name and key, new, heard on air",
-  "ru": "Хештег, ключ, новый, услышанный в эфире",
-  "text": "#标签, 名称和密钥, 新建, 空中收到"
- },
  "2b67ee1b": {
   "en": "You: ",
   "ru": "Вы: ",
@@ -2002,10 +2668,15 @@
   "ru": "Закрытый канал · сообщений нет",
   "text": "私密频道 · 暂无消息"
  },
- "d8735ad9": {
-  "en": "Announce",
-  "ru": "Объявить",
-  "text": "通告"
+ "15f76672": {
+  "en": "Actions",
+  "ru": "Действия",
+  "text": "操作"
+ },
+ "a6dd55ad": {
+  "en": "Next unread",
+  "ru": "К непрочитанному",
+  "text": "下一条未读"
  },
  "9172b7d6": {
   "en": "Private channel · senders unverified · no ACK",
@@ -2052,30 +2723,15 @@
   "ru": "Сообщение...",
   "text": "消息..."
  },
- "f353a373": {
-  "en": "2x space: RU/EN",
-  "ru": "2×пробел: RU/EN",
-  "text": "2x空格: RU/EN"
- },
  "03b2add1": {
   "en": "Send",
   "ru": "Отпр.",
   "text": "发送"
  },
- "a1d3f60b": {
-  "en": "hold OK",
-  "ru": "удерж. OK",
-  "text": "长按 OK"
- },
- "a23ea557": {
-  "en": "Layout",
-  "ru": "Раскладка",
-  "text": "布局"
- },
- "370e8321": {
-  "en": "Back",
-  "ru": "Назад",
-  "text": "返回"
+ "66ab5aaf": {
+  "en": "Clipboard",
+  "ru": "Буфер обмена",
+  "text": "复制菜单"
  },
  "d345a7e1": {
   "en": "2x space",
@@ -2172,11 +2828,6 @@
   "ru": "К GPS",
   "text": "回到 GPS"
  },
- "cbdba42f": {
-  "en": "Maps",
-  "ru": "Карты",
-  "text": "地图"
- },
  "4dff575f": {
   "en": "No saved maps",
   "ru": "Сохранённых карт нет",
@@ -2201,15 +2852,25 @@
    "other": "SD 上 {n} 个瓦片"
   }
  },
+ "4431c5d8": {
+  "en": "No matching contacts",
+  "ru": "Нет подходящих контактов",
+  "text": "没有符合条件的联系人"
+ },
  "5bf49151": {
   "en": "No nodes discovered yet",
   "ru": "Узлы пока не обнаружены",
   "text": "尚未发现节点"
  },
- "18721989": {
-  "en": "ADV sends your announcement",
-  "ru": "ADV отправит ваше объявление",
-  "text": "按 ADV 发送通告"
+ "78df3e16": {
+  "en": "F: edit tag filter",
+  "ru": "F: изменить фильтр меток",
+  "text": "F: 选择标签"
+ },
+ "3427db83": {
+  "en": "Advertise my node",
+  "ru": "Объявить мой узел",
+  "text": "广播我的节点"
  },
  "5d2fc914": {
   "en": "saved",
@@ -2221,10 +2882,15 @@
   "ru": "Карточка",
   "text": "详情"
  },
- "10322163": {
-  "en": "On map",
-  "ru": "На карте",
-  "text": "在地图上"
+ "59d7a83a": {
+  "en": "Filter",
+  "ru": "Фильтр",
+  "text": "选择标签"
+ },
+ "370e8321": {
+  "en": "Back",
+  "ru": "Назад",
+  "text": "返回"
  },
  "8c87b0a8": {
   "en": "Play with ",
@@ -2311,6 +2977,11 @@
   "ru": "Написать",
   "text": "发消息"
  },
+ "10322163": {
+  "en": "On map",
+  "ru": "На карте",
+  "text": "在地图上"
+ },
  "3f10fa6d": {
   "en": "Reset path",
   "ru": "Сброс пути",
@@ -2350,6 +3021,11 @@
   "en": "Run",
   "ru": "Выполнить",
   "text": "执行"
+ },
+ "26282b58": {
+  "en": "Notes",
+  "ru": "Заметки",
+  "text": "备注"
  },
  "57c157c0": {
   "en": "hold flat",
@@ -2560,6 +3236,11 @@
   "ru": "ближе к центру - сильнее",
   "text": "越靠近中心信号越强"
  },
+ "48e427d0": {
+  "en": "List paused",
+  "ru": "Список на паузе",
+  "text": "列表已暂停"
+ },
  "fd8e3640": {
   "en": {
    "one": "phone/watch nearby",
@@ -2578,6 +3259,21 @@
   "en": "No signals yet",
   "ru": "Сигналов пока нет",
   "text": "暂无信号"
+ },
+ "d2606f92": {
+  "en": "List",
+  "ru": "Список",
+  "text": "列表"
+ },
+ "7b255242": {
+  "en": "Resume",
+  "ru": "Продолжить",
+  "text": "继续"
+ },
+ "2cc7f1c2": {
+  "en": "Pause",
+  "ru": "Пауза",
+  "text": "暂停"
  },
  "d06f72f8": {
   "en": "Home in",
@@ -2687,11 +3383,6 @@
   "en": "Reset peak",
   "ru": "Сброс пика",
   "text": "重置峰值"
- },
- "d2606f92": {
-  "en": "List",
-  "ru": "Список",
-  "text": "列表"
  },
  "168f4a8e": {
   "en": "Turn the access point off",
@@ -2873,11 +3564,6 @@
   "ru": "Что делает каждая клавиша",
   "text": "各按键功能"
  },
- "a02852fd": {
-  "en": "No maps",
-  "ru": "Карт нет",
-  "text": "无地图"
- },
  "a514c5d1": {
   "en": "MeshCore repeater",
   "ru": "Репитер MeshCore",
@@ -2892,20 +3578,6 @@
   "en": "Normal: chats, maps, radar",
   "ru": "Обычный: чаты, карты, радар",
   "text": "普通: 聊天,地图,雷达"
- },
- "2788e2b9": {
-  "en": {
-   "one": "tile",
-   "other": "tiles"
-  },
-  "ru": {
-   "one": "тайл",
-   "few": "тайла",
-   "many": "тайлов"
-  },
-  "forms": {
-   "other": "{n}个瓦片"
-  }
  },
  "31760903": {
   "en": "Searching: ",
@@ -3050,10 +3722,20 @@
   "ru": "Язык",
   "text": "语言"
  },
- "ee582c07": {
-  "en": "Brightness",
-  "ru": "Яркость",
-  "text": "亮度"
+ "e16f7aef": {
+  "en": "Typing language",
+  "ru": "Язык ввода",
+  "text": "输入语言"
+ },
+ "76ab246a": {
+  "en": "Day brightness",
+  "ru": "Яркость днём",
+  "text": "日间亮度"
+ },
+ "70a013c1": {
+  "en": "Home layout",
+  "ru": "Вид главного экрана",
+  "text": "主页布局"
  },
  "5e28fa87": {
   "en": "Sounds",
@@ -3100,6 +3782,26 @@
   "ru": "Окно сообщения",
   "text": "消息弹窗"
  },
+ "b59d9e82": {
+  "en": "Theme",
+  "ru": "Тема",
+  "text": "主题"
+ },
+ "cb01bf2c": {
+  "en": "Accent colour",
+  "ru": "Цвет акцента",
+  "text": "强调色"
+ },
+ "f9f14ef4": {
+  "en": "Night brightness",
+  "ru": "Яркость ночью",
+  "text": "20:00–07:00 亮度"
+ },
+ "b84ea3fd": {
+  "en": "Screen password",
+  "ru": "Пароль экрана",
+  "text": "屏幕密码"
+ },
  "f53b39c9": {
   "en": " MHz",
   "ru": " МГц",
@@ -3133,6 +3835,51 @@
   "forms": {
    "other": "{n} 字节"
   }
+ },
+ "e3914635": {
+  "en": "Dark",
+  "ru": "Тёмная",
+  "text": "深色"
+ },
+ "2f04dd5c": {
+  "en": "Light",
+  "ru": "Светлая",
+  "text": "明亮"
+ },
+ "860b2284": {
+  "en": "Auto",
+  "ru": "Авто",
+  "text": "自动"
+ },
+ "12919997": {
+  "en": "Lime",
+  "ru": "Лайм",
+  "text": "Lime"
+ },
+ "bb2f03b5": {
+  "en": "Blue",
+  "ru": "Синий",
+  "text": "Blue"
+ },
+ "73a1748b": {
+  "en": "Violet",
+  "ru": "Фиолетовый",
+  "text": "Violet"
+ },
+ "2b2b15c9": {
+  "en": "Amber",
+  "ru": "Янтарный",
+  "text": "Amber"
+ },
+ "4333e749": {
+  "en": "Same as day",
+  "ru": "Как днём",
+  "text": "与日间相同"
+ },
+ "a0b6d096": {
+  "en": "Tiles",
+  "ru": "Плитки",
+  "text": "网格"
  },
  "a9bc47f3": {
   "en": "Volts",
@@ -3239,15 +3986,35 @@
   "ru": "Применяется к радио при сохранении",
   "text": "保存后应用到无线电"
  },
+ "fe05bbbd": {
+  "en": "Double-space switches until restart",
+  "ru": "Двойной пробел меняет до перезапуска",
+  "text": "连按两次空格可切换，重启后恢复"
+ },
+ "2693ff28": {
+  "en": "OK: set or change password",
+  "ru": "OK: задать или сменить пароль",
+  "text": "OK: 设置或更改密码"
+ },
+ "839aad6b": {
+  "en": "Day 07:00–20:00, local time",
+  "ru": "День 07:00–20:00 по местному времени",
+  "text": "日间 07:00–20:00，本地时间"
+ },
  "5b61049f": {
   "en": "OK: edit, 1-24 UTF-8 bytes",
   "ru": "OK: изменить, 1-24 байта UTF-8",
   "text": "OK: 编辑,1-24 字节 UTF-8"
  },
- "3b695912": {
-  "en": "Menu language; typing layout is the @ key",
-  "ru": "Язык меню; раскладка ввода - клавиша @",
-  "text": "菜单语言; 输入布局用 @ 键切换"
+ "7022bca6": {
+  "en": "Menu language",
+  "ru": "Язык меню",
+  "text": "菜单语言"
+ },
+ "6c09b0b9": {
+  "en": "Applies to Home and all folders",
+  "ru": "Для главного экрана и всех папок",
+  "text": "用于主页和所有文件夹"
  },
  "ca6cea83": {
   "en": "Tone for messages and ACKs",
@@ -3438,679 +4205,45 @@
   "ru": "Нет изменений",
   "text": "无更改"
  },
- "8759568a": {
-  "en": "Edit name",
-  "ru": "Изменить имя",
-  "text": "编辑名称"
- },
- "a33a94f9": {
-  "en": "Cancel",
-  "ru": "Отмена",
-  "text": "取消"
- },
- "9cd3c842": {
-  "en": "Keep",
-  "ru": "Оставить",
-  "text": "保留"
- },
- "4c9c5885": {
-  "en": "Return",
-  "ru": "Вернуть",
-  "text": "恢复"
- },
- "c2d572ce": {
-  "en": "Test",
-  "ru": "Тест",
-  "text": "测试"
- },
- "a7cb76b8": {
-  "en": "Search",
-  "ru": "Искать",
-  "text": "搜索"
- },
- "3f7e1a1c": {
-  "en": "Found",
-  "ru": "Найденные",
-  "text": "已找到"
- },
- "9deec0c8": {
-  "en": "Type",
-  "ru": "Ввести",
-  "text": "输入"
- },
- "9a8267a9": {
-  "en": "Change",
-  "ru": "Изменить",
-  "text": "更改"
- },
  "0b905bda": {
   "en": "Save",
   "ru": "Сохранить",
   "text": "保存"
  },
- "ca4fcb20": {
-  "en": "Next value",
-  "ru": "Дальше",
-  "text": "下一个值"
- },
- "eccc8fe2": {
-  "en": "Wi-Fi access point",
-  "ru": "Точка доступа Wi-Fi",
-  "text": "Wi-Fi 热点"
- },
- "e4fe0cf0": {
-  "en": "Web chat and map upload",
-  "ru": "Веб-чат и загрузка карт",
-  "text": "网页聊天和地图上传"
- },
- "bd132d01": {
-  "en": "Off",
-  "ru": "Выключена",
-  "text": "已关闭"
- },
- "061557aa": {
-  "en": "MeshCore identity",
-  "ru": "Ключ MeshCore",
-  "text": "MeshCore 身份"
- },
- "01f31114": {
-  "en": "Networks",
-  "ru": "Сети",
-  "text": "网络"
- },
- "e6b593c8": {
-  "en": "Toggle",
-  "ru": "Переключить",
-  "text": "切换"
- },
- "80266824": {
-  "en": "Wrong password or refused: ",
-  "ru": "Неверный пароль или отказ: ",
-  "text": "密码错误或被拒绝: "
- },
- "c2aec922": {
-  "en": "No answer from ",
-  "ru": "Нет ответа от ",
-  "text": "未收到应答: "
- },
- "4aea721f": {
-  "en": "No saved network in range",
-  "ru": "Сохранённых сетей рядом нет",
-  "text": "附近没有已存网络"
- },
- "77943e26": {
-  "en": "Connection lost",
-  "ru": "Связь с сетью потеряна",
-  "text": "连接已断开"
- },
- "3517d70a": {
-  "en": "Wi-Fi scan failed",
-  "ru": "Сбой поиска сетей",
-  "text": "Wi-Fi 扫描失败"
- },
- "c0a8f4d6": {
-  "en": "Wi-Fi scan timed out",
-  "ru": "Поиск сетей не завершился",
-  "text": "Wi-Fi 扫描超时"
- },
- "84fb5225": {
-  "en": "Clock not set",
-  "ru": "Часы не установлены",
-  "text": "时钟未设置"
- },
- "d85b75c4": {
-  "en": "SSID 1-32 bytes, password empty or 8-63",
-  "ru": "Имя 1-32 байта, пароль пустой или 8-63",
-  "text": "SSID 1-32 字节,密码为空或 8-63 位"
- },
- "32e3b1d4": {
-  "en": "Tile is not 256 or 512 px",
-  "ru": "Тайл не 256/512 пикселей",
-  "text": "瓦片不是 256 或 512 px"
- },
- "a218bb10": {
-  "en": "Not a PNG image",
-  "ru": "Сервер вернул не PNG",
-  "text": "不是 PNG 图像"
- },
- "9b52bbc9": {
-  "en": "No location",
-  "ru": "Положение по IP не найдено",
-  "text": "无法通过 IP 定位"
- },
- "fe92dca2": {
-  "en": "SD full: web tiles not cached",
-  "ru": "SD заполнена: тайлы не сохраняются",
-  "text": "SD 已满: 网络瓦片未缓存"
- },
- "45646152": {
-  "en": "Wi-Fi client on",
-  "ru": "Wi-Fi-клиент включён",
-  "text": "Wi-Fi 客户端已开启"
- },
- "71a638af": {
-  "en": "Wi-Fi client off",
-  "ru": "Wi-Fi-клиент выключен",
-  "text": "Wi-Fi 客户端已关闭"
- },
- "674356ff": {
-  "en": "Connecting to ",
-  "ru": "Подключение к ",
-  "text": "正在连接 "
- },
- "6fa9102f": {
-  "en": "Forgotten: ",
-  "ru": "Забыта: ",
-  "text": "已忘记: "
- },
- "a2c6b137": {
-  "en": "Searching...",
-  "ru": "Поиск сетей...",
-  "text": "正在搜索..."
- },
- "18631a5c": {
-  "en": "Wi-Fi client",
-  "ru": "Wi-Fi-клиент",
-  "text": "Wi-Fi 客户端"
- },
- "397eff34": {
-  "en": "Turn the client on to find networks",
-  "ru": "Включите клиент, чтобы найти сети",
-  "text": "开启客户端以搜索网络"
- },
- "d54b728f": {
-  "en": "Searching for networks...",
-  "ru": "Поиск сетей...",
-  "text": "正在搜索网络..."
- },
- "292b3500": {
-  "en": "connected",
-  "ru": "подключено",
-  "text": "已连接"
- },
- "7dd55181": {
-  "en": "saved",
-  "ru": "сохранена",
-  "text": "已保存"
- },
- "04f9d959": {
-  "en": "saved, away",
-  "ru": "сохр., не рядом",
-  "text": "已存,不在附近"
- },
- "c1da06cb": {
-  "en": "open",
-  "ru": "открытая",
-  "text": "开放"
- },
- "19405072": {
-  "en": "On/off",
-  "ru": "Вкл/выкл",
-  "text": "开/关"
- },
- "9ac84c77": {
-  "en": "Connect",
-  "ru": "Подключить",
-  "text": "连接"
- },
- "89af1769": {
-  "en": "Forget",
-  "ru": "Забыть",
-  "text": "忘记"
- },
- "08a7df66": {
-  "en": "Rescan",
-  "ru": "Обновить",
-  "text": "重新扫描"
- },
- "f1102a51": {
-  "en": "@ (input language)",
-  "ru": "@ (язык ввода)",
-  "text": "@ (输入语言)"
- },
- "64ca9615": {
-  "en": "hold ADV (GPS)",
-  "ru": "удерж. ADV (GPS)",
-  "text": "长按 ADV (GPS)"
- },
- "2b18cfad": {
-  "en": "Left",
-  "ru": "Влево",
-  "text": "左"
- },
- "734cec5d": {
-  "en": "Up",
-  "ru": "Вверх",
-  "text": "上"
- },
- "2a7c8f4e": {
-  "en": "Down",
-  "ru": "Вниз",
-  "text": "下"
- },
- "6e1282a0": {
-  "en": "Right",
-  "ru": "Вправо",
-  "text": "右"
- },
- "e3077ca9": {
-  "en": "space",
-  "ru": "пробел",
-  "text": "空格"
- },
- "d609b7de": {
-  "en": "Keyboard",
-  "ru": "Клавиатура",
-  "text": "键盘"
- },
- "837d5b49": {
-  "en": "n/a",
-  "ru": "нет",
-  "text": "无"
- },
- "aef230e2": {
-  "en": "Relayed",
-  "ru": "Переслано",
-  "text": "已转发"
- },
- "ebd1789d": {
-  "en": "Rejected",
-  "ru": "Отклонено",
-  "text": "已拒绝"
- },
- "9e543f5c": {
-  "en": "Uptime",
-  "ru": "Работа",
-  "text": "运行时间"
- },
- "a6022a7a": {
-  "en": "Boot ",
-  "ru": "Загрузка ",
-  "text": "启动 "
- },
- "fd249ae3": {
-  "en": " · last key: ",
-  "ru": " · последняя клавиша: ",
-  "text": " · 最后按键: "
- },
- "fe8668ce": {
-  "en": "Crypto test + sound",
-  "ru": "Тест шифрования и звука",
-  "text": "加密与声音测试"
- },
- "f769e02b": {
-  "en": "Create storage...",
-  "ru": "Создать хранилище...",
-  "text": "创建存储..."
- },
- "46b8241c": {
-  "en": "Ball, swipe",
-  "ru": "Шар, свайп",
-  "text": "轨迹球、滑动"
- },
- "39012b21": {
-  "en": "Move: menu, lists, map",
-  "ru": "Перемещение: меню, списки, карта",
-  "text": "移动: 菜单,列表,地图"
- },
- "a9849595": {
-  "en": "Click",
-  "ru": "Нажатие",
-  "text": "按下"
- },
- "ad13b2cf": {
-  "en": "Open / send",
-  "ru": "Открыть / отправить",
-  "text": "打开 / 发送"
- },
- "8082be11": {
-  "en": "Hold ball",
-  "ru": "Удерж. шар",
-  "text": "长按轨迹球"
- },
- "da9299e5": {
-  "en": "Unlock; in chat: Russian layout",
-  "ru": "Вход; в чате: русская раскладка",
-  "text": "解锁; 聊天中: 俄文布局"
- },
- "85013777": {
-  "en": "Tap",
-  "ru": "Касание",
-  "text": "轻触"
- },
- "e96df6ee": {
-  "en": "Open; hints below are keys; title: back",
-  "ru": "Открыть; кнопки внизу; заголовок - назад",
-  "text": "打开；底部提示即按键；标题：返回"
- },
- "dd425d56": {
-  "en": "Delete; with no text: back",
-  "ru": "Удалить; без текста: назад",
-  "text": "删除; 无文字时: 返回"
- },
- "609be88e": {
-  "en": "in text: switch RU/EN",
-  "ru": "в тексте: RU/EN",
-  "text": "输入时: 切换 RU/EN"
- },
- "de82dc1b": {
-  "en": "Map: saved maps",
-  "ru": "Карта: список карт",
-  "text": "地图: 已存地图"
- },
- "1e70c4ca": {
-  "en": "Map zoom",
-  "ru": "Масштаб карты",
-  "text": "地图缩放"
- },
- "75783192": {
-  "en": "Nodes: show on map",
-  "ru": "Узлы: показать на карте",
-  "text": "节点: 在地图上显示"
- },
- "1bd6e4b7": {
-  "en": "Menu: DEL until the tiles",
-  "ru": "Меню: DEL до плиток",
-  "text": "菜单: 连按 DEL 回主屏"
- },
- "b0916d3b": {
-  "en": "Map; L - saved maps",
-  "ru": "Карта; L - список карт",
-  "text": "地图; L - 已存地图"
- },
- "ffad6b6e": {
-  "en": "Menu",
-  "ru": "Главное меню",
-  "text": "主菜单"
- },
- "e446fc2f": {
-  "en": "Previous screen",
-  "ru": "Предыдущий экран",
-  "text": "返回上一屏"
- },
- "60ca84b7": {
-  "en": "Announce this node; hold: GPS on/off",
-  "ru": "Объявить узел; удерж.: GPS вкл/выкл",
-  "text": "通告本节点; 长按: GPS 开/关"
- },
- "1d4452cb": {
-  "en": "function key, not Sym+@: RU/EN in chat",
-  "ru": "функц. клавиша (не Sym+@): RU/EN в чате",
-  "text": "功能键 (非 Sym+@): 聊天中切换 RU/EN"
- },
- "db1e8e1b": {
-  "en": "Lock screen (there is no microphone)",
-  "ru": "Блокировка (микрофона нет)",
-  "text": "锁屏 (没有麦克风)"
- },
- "a21c0730": {
-  "en": "Open / send; twice or hold: unlock",
-  "ru": "Открыть / отправить; дважды или удерж.: вход",
-  "text": "打开 / 发送; 按两次或长按: 解锁"
- },
- "9fb377cf": {
-  "en": "in text: switch RU/EN; Right: capital",
-  "ru": "в тексте: RU/EN; -> : заглавная",
-  "text": "输入时: 切换 RU/EN; 右: 大写"
- },
- "7311d31b": {
-  "en": "Russian layout",
-  "ru": "Русская раскладка",
-  "text": "俄文布局"
- },
- "08d56a77": {
-  "en": {
-   "one": "new message",
-   "other": "new messages"
-  },
-  "ru": {
-   "one": "новое сообщение",
-   "few": "новых сообщения",
-   "many": "новых сообщений"
-  },
-  "forms": {
-   "other": "{n} 条新消息"
-  }
- },
- "127b4873": {
-  "en": "Unlock to read",
-  "ru": "Разблокируйте, чтобы прочитать",
-  "text": "解锁后阅读"
- },
- "12ff5cad": {
-  "en": "Last from ",
-  "ru": "Последнее от ",
-  "text": "最新来自 "
- },
- "7a531229": {
-  "en": "The repeater keeps relaying",
-  "ru": "Репитер продолжает пересылку",
-  "text": "中继器持续转发中"
- },
- "f3158c93": {
-  "en": "The room keeps serving members",
-  "ru": "Комната продолжает работать",
-  "text": "房间继续为成员服务"
- },
- "2bc700f4": {
-  "en": "Radio and GPS keep working",
-  "ru": "Радио и GPS продолжают работать",
-  "text": "无线电和 GPS 继续工作"
- },
- "b72fb804": {
-  "en": "Radio error",
-  "ru": "Ошибка радио",
-  "text": "无线电错误"
- },
- "863c4afd": {
-  "en": "Twice or hold: the game",
-  "ru": "Дважды или удерж.: партия",
-  "text": "按两次或长按：对局"
- },
- "6179a213": {
-  "en": "Twice or hold: unlock",
-  "ru": "Дважды или удерж.: вход",
-  "text": "按两次或长按解锁"
- },
- "06e4383f": {
-  "en": "Network key · 64 hex",
-  "ru": "Ключ сети · 64 hex",
-  "text": "网络密钥 · 64 hex"
- },
- "5bb9392e": {
-  "en": "Tournament name",
-  "ru": "Название турнира",
-  "text": "比赛名称"
- },
- "4257ae5d": {
-  "en": "Pet name",
-  "ru": "Имя питомца",
-  "text": "宠物名字"
- },
- "f12916a4": {
-  "en": "Counter name",
-  "ru": "Имя счётчика",
-  "text": "计数器名称"
- },
- "7b04c300": {
-  "en": "Region of the channel",
-  "ru": "Регион канала",
-  "text": "频道区域"
- },
- "4b20829b": {
-  "en": "Wi-Fi password: ",
-  "ru": "Пароль Wi-Fi: ",
-  "text": "Wi-Fi 密码: "
- },
- "1fc05d6f": {
-  "en": "Device name",
-  "ru": "Имя устройства",
-  "text": "设备名称"
- },
- "20676a92": {
-  "en": " bytes",
-  "ru": " байт",
-  "text": " 字节"
- },
- "47f20831": {
-  "en": "Saved after a successful login",
-  "ru": "Сохраняется после удачного входа",
-  "text": "登录成功后保存"
- },
- "ad5eec0a": {
-  "en": "As in the MeshCore app: ver, get name, neighbors...",
-  "ru": "Как в приложении MeshCore: ver, get name, neighbors...",
-  "text": "与 MeshCore 应用相同：ver, get name, neighbors..."
- },
- "74df0d68": {
-  "en": "As on repeaters: msk, sao...; empty: none",
-  "ru": "Как на репитерах: msk, sao...; пусто - нет",
-  "text": "与中继器一致: msk, sao...; 空: 无"
- },
- "7b6f9672": {
-  "en": "As on repeaters: msk, sao...; empty: default",
-  "ru": "Как на репитерах: msk, sao...; пусто - по умолчанию",
-  "text": "与中继器一致: msk, sao...; 空: 默认"
- },
- "60fa6a70": {
-  "en": "8-63 characters; -> after a letter: capital",
-  "ru": "8-63 символа; -> после буквы: заглавная",
-  "text": "8-63 个字符; 字母后按 ->: 大写"
- },
- "e96a0252": {
-  "en": "OK: log in   BACK: cancel",
-  "ru": "OK: войти   BACK: отменить",
-  "text": "OK：登录   BACK：取消"
- },
- "a000f97c": {
-  "en": "OK: send   BACK: cancel",
-  "ru": "OK: отправить   BACK: отменить",
-  "text": "OK：发送   BACK：取消"
- },
- "7a1da0b4": {
-  "en": "OK: post   BACK: cancel",
-  "ru": "OK: отправить   BACK: отменить",
-  "text": "OK: 发布   BACK: 取消"
- },
- "4bff5478": {
-  "en": "OK: save   BACK: cancel",
-  "ru": "OK: сохранить   BACK: отменить",
-  "text": "OK: 保存   BACK: 取消"
- },
- "70e3f7ea": {
-  "en": "Tournament",
-  "ru": "Турнир",
-  "text": "比赛"
- },
- "5542d75b": {
-  "en": "Chess · ",
-  "ru": "Шахматы · ",
-  "text": "国际象棋 · "
- },
- "99d92ee5": {
-  "en": "Input: Russian (phonetic)",
-  "ru": "Ввод: русский (фонетический)",
-  "text": "输入: 俄文 (音译)"
- },
- "f298c8d3": {
-  "en": "Input: English",
-  "ru": "Ввод: английский",
-  "text": "输入: 英文"
- },
- "c79e0520": {
-  "en": "Russian input: phonetic",
-  "ru": "Русский ввод: фонетический",
-  "text": "俄文输入: 音译"
- },
- "e8ecae43": {
-  "en": "2x space: RU/EN   Shift or Right after a letter: capital",
-  "ru": "2×пробел: RU/EN   Shift или -> после буквы: заглавная",
-  "text": "2x空格: RU/EN   字母后按 Shift 或右: 大写"
- },
- "cf39d358": {
-  "en": "Not in this mode",
-  "ru": "Недоступно в этом режиме",
-  "text": "此模式下不可用"
- },
- "56bf77d2": {
-  "en": "Radio test: a restart returns the saved one",
-  "ru": "Тест радио: перезапуск вернёт сохранённое",
-  "text": "无线电测试：重启恢复已保存设置"
- },
- "a06fdf5a": {
-  "en": "Radio busy, retry",
-  "ru": "Радио занято, повторите",
-  "text": "无线电忙,请重试"
- },
- "19b6c4b1": {
-  "en": "Radio offline",
-  "ru": "Радио недоступно",
-  "text": "无线电不可用"
- },
- "2ae7cabc": {
-  "en": "Settings saved",
-  "ru": "Настройки сохранены",
-  "text": "设置已保存"
- },
- "bfb7fda0": {
-  "en": "Not sent: radio or route",
-  "ru": "Не отправлено: радио или маршрут",
-  "text": "未发送：无线电或路由"
- },
- "315b16c1": {
-  "en": "Radio busy, try again",
-  "ru": "Радио занято, повторите",
-  "text": "无线电忙,请重试"
- },
- "0691ba75": {
-  "en": "Path reset: next message floods",
-  "ru": "Путь сброшен: следующее сообщение пойдёт flood",
-  "text": "路径已重置: 下条消息将泛洪"
- },
- "7a14a9e8": {
-  "en": "Path reset failed",
-  "ru": "Не удалось сбросить путь",
-  "text": "路径重置失败"
- },
- "08d31104": {
-  "en": "OK again removes the contact",
-  "ru": "Нажмите OK ещё раз для удаления",
-  "text": "再按 OK 删除联系人"
- },
- "17781681": {
-  "en": "Contact removed; its next advert adds it again",
-  "ru": "Контакт удалён; новое объявление вернёт его",
-  "text": "联系人已删除; 收到其新通告后会重新添加"
- },
- "3e33cd0f": {
-  "en": "Cannot remove while sending",
-  "ru": "Нельзя удалить во время отправки",
-  "text": "发送中无法删除"
- },
- "a34dbdc4": {
-  "en": "Name saved",
-  "ru": "Имя сохранено",
-  "text": "名字已保存"
- },
- "a64e97e5": {
-  "en": "Name: 1-15 UTF-8 bytes",
-  "ru": "Имя: 1-15 байт UTF-8",
-  "text": "名字: 1-15 字节 UTF-8"
- },
- "184e57b2": {
-  "en": "Region: letters, digits, '-'",
-  "ru": "Регион: буквы, цифры, '-'",
-  "text": "区域: 字母、数字、'-'"
- },
- "cb8d0572": {
-  "en": "Password: 8-63 characters",
-  "ru": "Пароль: 8-63 символа",
-  "text": "密码: 8-63 个字符"
- },
- "d4544911": {
-  "en": "Name: 1-24 UTF-8 bytes",
-  "ru": "Имя: 1-24 байта UTF-8",
-  "text": "名称: 1-24 字节 UTF-8"
+ "2a05897c": {
+  "en": "Channel details",
+  "ru": "Сведения о канале",
+  "text": "频道详情"
+ },
+ "cee98a7c": {
+  "en": "Input language",
+  "ru": "Язык ввода",
+  "text": "输入语言"
+ },
+ "1cfd3c97": {
+  "en": "Full-width list",
+  "ru": "Список на весь экран",
+  "text": "全宽列表"
+ },
+ "054b5066": {
+  "en": "My location",
+  "ru": "Моя позиция",
+  "text": "我的位置"
+ },
+ "0ffd9a9b": {
+  "en": "Zoom in",
+  "ru": "Приблизить",
+  "text": "放大"
+ },
+ "822431c5": {
+  "en": "Zoom out",
+  "ru": "Отдалить",
+  "text": "缩小"
+ },
+ "7beeb338": {
+  "en": "Show on map",
+  "ru": "Показать на карте",
+  "text": "在地图上显示"
  },
  "13c4173d": {
   "en": "None",
@@ -4372,6 +4505,20 @@
   "ru": "То же #имя — тот же канал, что в приложениях MeshCore",
   "text": "相同 #名称即 MeshCore 应用中的同一频道"
  },
+ "d04d1711": {
+  "en": {
+   "one": "message",
+   "other": "messages"
+  },
+  "ru": {
+   "one": "сообщение",
+   "few": "сообщения",
+   "many": "сообщений"
+  },
+  "forms": {
+   "other": "{n} 条消息"
+  }
+ },
  "7a0b46f9": {
   "en": "Public channel of MeshCore",
   "ru": "Общий канал MeshCore",
@@ -4580,6 +4727,11 @@
   "en": "for the other player's announcement",
   "ru": "дождитесь объявления соперника",
   "text": "然后等待对方的通告"
+ },
+ "d8735ad9": {
+  "en": "Announce",
+  "ru": "Объявить",
+  "text": "通告"
  },
  "c07ba764": {
   "en": "Challenge",
@@ -5314,6 +5466,56 @@
   "ru": "Меню партии",
   "text": "对局菜单"
  },
+ "257cb074": {
+  "en": "Copied",
+  "ru": "Скопировано",
+  "text": "已复制"
+ },
+ "231cc709": {
+  "en": "Copy text",
+  "ru": "Копировать текст",
+  "text": "复制文本"
+ },
+ "0f918ede": {
+  "en": "Paste",
+  "ru": "Вставить",
+  "text": "追加文本"
+ },
+ "b30e75f7": {
+  "en": "Replace text",
+  "ru": "Заменить текст",
+  "text": "替换文本"
+ },
+ "5c137a0e": {
+  "en": "Copy message",
+  "ru": "Копировать сообщение",
+  "text": "复制消息"
+ },
+ "a23ea557": {
+  "en": "Layout",
+  "ru": "Раскладка",
+  "text": "键盘布局"
+ },
+ "acfcae49": {
+  "en": "Paste failed",
+  "ru": "Не удалось вставить",
+  "text": "追加失败"
+ },
+ "6532e62b": {
+  "en": "%u bytes (limit %u)",
+  "ru": "%u байт (лимит %u)",
+  "text": "%u 字节（上限 %u）"
+ },
+ "ee88c686": {
+  "en": "Invalid text for this field",
+  "ru": "Недопустимый текст для поля",
+  "text": "此字段的文本无效"
+ },
+ "ce94fadb": {
+  "en": "Clipboard empty",
+  "ru": "Буфер пуст",
+  "text": "没有已复制的文本"
+ },
  "8be6cc03": {
   "en": "Nothing to send",
   "ru": "Пустое сообщение",
@@ -5343,6 +5545,21 @@
   "en": "To ",
   "ru": "Кому: ",
   "text": "发给 "
+ },
+ "134a653b": {
+  "en": "Tags",
+  "ru": "Метки",
+  "text": "标签"
+ },
+ "b39f2f7d": {
+  "en": "Note",
+  "ru": "Заметка",
+  "text": "备注"
+ },
+ "7ff545e2": {
+  "en": "Save failed",
+  "ru": "Ошибка записи",
+  "text": "保存失败"
  },
  "8db3dc56": {
   "en": "Empty: write on the web page",
@@ -5403,11 +5620,6 @@
   "en": "Ability",
   "ru": "Способность",
   "text": "能力"
- },
- "b39f2f7d": {
-  "en": "Note",
-  "ru": "Заметка",
-  "text": "备注"
  },
  "91e32a8a": {
   "en": "Header",
@@ -8377,6 +8589,61 @@
   "ru": "Команда отправлена",
   "text": "已发送命令"
  },
+ "645b364a": {
+  "en": "Unlock",
+  "ru": "Разблокировать",
+  "text": "解锁"
+ },
+ "7aa3396d": {
+  "en": "Repeat password",
+  "ru": "Повторите пароль",
+  "text": "再次输入密码"
+ },
+ "c56b1817": {
+  "en": "New password",
+  "ru": "Новый пароль",
+  "text": "新密码"
+ },
+ "5761179a": {
+  "en": "Enter password",
+  "ru": "Введите пароль",
+  "text": "输入密码"
+ },
+ "7646fdc7": {
+  "en": "Empty disables the lock",
+  "ru": "Пусто — отключить пароль",
+  "text": "留空关闭锁定"
+ },
+ "5a1a59b7": {
+  "en": "4–48 characters",
+  "ru": "4–48 символов",
+  "text": "4–48 个字符"
+ },
+ "49e7a056": {
+  "en": "Confirm",
+  "ru": "Подтвердить",
+  "text": "确认"
+ },
+ "948ad5e1": {
+  "en": "Delete",
+  "ru": "Удалить",
+  "text": "删除"
+ },
+ "26bf3997": {
+  "en": "Try again later",
+  "ru": "Попробуйте позже",
+  "text": "请稍后再试"
+ },
+ "16736620": {
+  "en": "Incorrect password",
+  "ru": "Неверный пароль",
+  "text": "密码错误"
+ },
+ "2a458050": {
+  "en": "Passwords differ",
+  "ru": "Пароли не совпадают",
+  "text": "两次密码不同"
+ },
  "a851b542": {
   "en": "Announced to the network",
   "ru": "Узел объявлен в сети",
@@ -8391,11 +8658,6 @@
   "en": "Post to the room",
   "ru": "Пост в комнату",
   "text": "发帖到房间"
- },
- "c1dedaf2": {
-  "en": "Up to 151 bytes; @: input language",
-  "ru": "До 151 байта; @ - язык ввода",
-  "text": "最多 151 字节; @: 输入语言"
  },
  "a120182c": {
   "en": "1-15 characters; -> after a letter: capital",
@@ -9079,11 +9341,6 @@
   "en": "Players see it in the invitation and the standings. OK changes it, > goes on.",
   "ru": "Его увидят игроки в приглашении и таблице. OK — изменить, > — дальше.",
   "text": "棋手会在邀请和排名中看到它。OK 修改,> 继续。"
- },
- "055dae05": {
-  "en": "Edit",
-  "ru": "Изменить",
-  "text": "修改"
  },
  "e7bfbbfb": {
   "en": "Next",

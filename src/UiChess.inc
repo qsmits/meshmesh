@@ -385,7 +385,7 @@ void chessTick(){
  if(chessNet.events!=chessEventsSeen){
   chessEventsSeen=chessNet.events;
   // News the player has to act on, or a result, lights a dark screen; the locked screen shows it.
-  const ChessMatch* e=chessNet.eventMatch;if(e&&(lockNeeds(*e)||e->state==ChessMatch::Over)){lastInput=millis();if(wakeOnly){wakeOnly=false;hardware.brightness(config.brightness);}}
+  const ChessMatch* e=chessNet.eventMatch;if(e&&(lockNeeds(*e)||e->state==ChessMatch::Over)){lastInput=millis();if(wakeOnly){wakeOnly=false;hardware.brightness(config.backlight(time(nullptr)));}}
   // On the open game the news is on the board; elsewhere it is a toast.
   bool here=page==ChessBoard&&chessOpen==chessNet.eventMatch;if(here&&chessOpen)chessNet.viewed(*chessOpen);
   if(!locked&&chessNet.event.length())notice(chessNet.event,here?info:accent);

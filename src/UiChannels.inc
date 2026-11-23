@@ -22,7 +22,7 @@ void openChannelInfo(uint64_t id,Page from){focusChannel=id;infoReturn=from;invi
 // After joining: the chat of the channel; a created one opens its card, whose QR the others scan.
 void joined(MeshRadio::ChannelResult r,uint64_t id,bool card=false){
  bool in=r==MeshRadio::ChannelAdded||r==MeshRadio::ChannelExists;notice(resultText(r),in?ok:bad);if(!in)return;
- editing=false;addStep=AddNone;if(card){openChannelInfo(id,Threads);return;}recipient=id;chatReturn=Threads;composer="";change(Chat);
+ editing=false;addStep=AddNone;if(page==ChannelAdd)focusedThread=id;if(card){openChannelInfo(id,Threads);return;}recipient=id;chatReturn=Threads;composer="";change(Chat);
 }
 // The newest channel invitation in the open chat.
 bool chatInvite(String& name,uint8_t key[16]){
@@ -38,7 +38,7 @@ String chatLeftAction(){
 void chatLeft(){
  String name;uint8_t key[16];bool invite=chatInvite(name,key),in=invite&&meshRadio.channel(channels::idOf(key));
  if(channels::isChannel(recipient)&&(!invite||in)){openChannelInfo(recipient,Chat);return;}
- if(!invite)return;uint64_t id;joined(meshRadio.addChannel(channels::isPublic(key)?String("Public"):name,key,&id),id);
+ if(!invite)return;uint64_t id=0;auto result=meshRadio.addChannel(channels::isPublic(key)?String("Public"):name,key,&id);joined(result,id);
 }
 // A link in a bubble reads as an invitation.
 String bubbleText(const ChatMessage& m){
@@ -75,7 +75,7 @@ void channelAddEnter(){
  if(selected==0)startEdit(AddTag,"#");
  else if(selected==1){addName="";startEdit(AddName,"");}
  else if(selected==2)startEdit(AddCreate,"");
- else if(selected-addFixed<int(meshRadio.heardCount)){const auto& h=meshRadio.heard[selected-addFixed];if(h.name[0]){uint64_t id;joined(meshRadio.joinHashtag(h.name,&id),id);}else startEdit(AddTag,"#");}
+ else if(selected-addFixed<int(meshRadio.heardCount)){const auto& h=meshRadio.heard[selected-addFixed];if(h.name[0]){uint64_t id=0;auto result=meshRadio.joinHashtag(h.name,&id);joined(result,id);}else startEdit(AddTag,"#");}
 }
 // The editor dialog of Ui.cpp asks these for its title, limit, hints and OK.
 String channelEditTitle(){
@@ -94,10 +94,10 @@ String channelEditOk(){return addStep==AddName?t("OK: next   BACK: cancel","OK: 
 void channelEditSave(){
  uint64_t id=0;
  switch(addStep){
- case AddTag:joined(meshRadio.joinHashtag(edit,&id),id);break;
+ case AddTag:{auto result=meshRadio.joinHashtag(edit,&id);joined(result,id);break;}
  case AddName:if(!channels::validName(edit)){notice(resultText(MeshRadio::ChannelBadName),bad);break;}addName=edit;startEdit(AddKey,"");break;
- case AddKey:{uint8_t key[16];if(!channels::parseKey(edit,key)){notice(resultText(MeshRadio::ChannelBadKey),bad);break;}joined(meshRadio.addChannel(addName,key,&id),id);memset(key,0,16);break;}
- case AddCreate:joined(meshRadio.createChannel(edit,&id),id,true);break;
+ case AddKey:{uint8_t key[16];if(!channels::parseKey(edit,key)){notice(resultText(MeshRadio::ChannelBadKey),bad);break;}auto result=meshRadio.addChannel(addName,key,&id);joined(result,id);memset(key,0,16);break;}
+ case AddCreate:{auto result=meshRadio.createChannel(edit,&id);joined(result,id,true);break;}
  default:editing=false;
  }
 }
@@ -154,7 +154,7 @@ void channelInfoKey(int key){
   Peer* p=list[(inviteTo%people+people)%people];bool sent=meshRadio.sendInvite(p->id,focusChannel);notice(sent?t("Invitation queued to ","Приглашение в очереди: ")+p->name:t("Invitation not sent","Приглашение не отправлено"),sent?ok:bad);return;}
  if(!deleteArmed){deleteArmed=true;notice(t("History stays; joining again shows it","История сохранится и вернётся при вступлении"),warn);return;}
  deleteArmed=false;uint64_t id=focusChannel;String name=meshRadio.channel(id)?meshRadio.channel(id)->name:"";
- if(meshRadio.removeChannel(id)){notice(t("Left ","Покинут: ")+name,ok);change(Threads);}else notice(t("Cannot leave while sending","Нельзя во время отправки"),bad);
+ if(meshRadio.removeChannel(id)){notice(t("Left ","Покинут: ")+name,ok);change(Threads,true);}else notice(t("Cannot leave while sending","Нельзя во время отправки"),bad);
 }
 // The region typed on the card (the editor dialog of Ui.cpp): empty - the default region.
 void channelRegionSave(){

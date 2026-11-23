@@ -86,6 +86,12 @@ class MeshRadio {
   String event="Ready";bool dirty=true;
   MeshRadio():radio(new Module(pins::radioCs,pins::radioIrq,pins::radioReset,pins::radioBusy,SPI)) {}
   void begin();void tick();bool applyConfig();
+#if defined(MM_RADIO_LR1110)
+  enum class SampleResult {Ok, Busy, Error};
+  const char* spectrumWaitReason="";
+  // A band sample returns the transceiver to the mesh frequency before yielding the loop.
+  SampleResult spectrumSample(bool offChannel,float mhz,int8_t& dbm);
+#endif
   // The network search (NetFind.h): the transceiver on another profile, the settings unchanged; an unset profile
   // returns to the settings. applyConfig ends the search.
   bool tune(const RadioProfile& profile);RadioProfile tuned;

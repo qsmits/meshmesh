@@ -2,11 +2,13 @@
 #pragma GCC optimize("Os") // 1 MB flash: not speed-critical (AGENTS.md, "Языки")
 #endif
 #include "Config.h"
+#if !defined(MM_UI_PREVIEW)
 #include <esp_system.h>
 #if !defined(MM_NRF52)
 #include <nvs_flash.h>
 #endif
 #include <bootloader_random.h>
+#endif
 #include <Mm1Packet.h>
 #include "Regions.h"
 #include "App.h"
@@ -21,6 +23,7 @@ bool Config::valid() const {
     meshmesh::validUtf8((const uint8_t*)region,strlen(region)) &&
     meshmesh::validUtf8((const uint8_t*)name,strlen(name));
 }
+#if !defined(MM_UI_PREVIEW)
 void Config::load() {
 #if !defined(MM_NRF52)
   // An NVS partition that nvs_flash_init cannot open holds nothing readable: erased, so the node gets a key and
@@ -36,6 +39,18 @@ void Config::load() {
   sf=p.getUChar("sf",8); cr=p.getUChar("cr",6); power=p.getChar("power",10);
   hops=p.getUChar("hops",3); pathHash=p.getUChar("path_hash",2); relay=p.getBool("relay",true); gps=p.getBool("gps",MM_GPS_DEFAULT);
   sound=p.getBool("sound",true); batteryVolts=p.getBool("bat_v",false); brightness=p.getUChar("light",180);
+#if !defined(MM_COMPACT)
+  theme=p.getUChar("theme",0);accentColor=p.getUChar("accent",0);nightBrightness=p.getUChar("night_light",0);
+  if(theme>2)theme=0;if(accentColor>3)accentColor=0;if(nightBrightness<10)nightBrightness=0;
+  inputRussian=p.getBool("input_ru",false);
+  if(p.isKey("launcher_tiles"))launcherTiles=p.getBool("launcher_tiles",false);
+  else{
+    // Earlier M9 builds saved the footer switch in the UI namespace.
+    Preferences ui;
+    launcherTiles=ui.begin("meshmesh-ui",true)&&ui.getBool("tiles",false);
+    ui.end();
+  }
+#endif
   autoLock=p.getUShort("lock",90);dimAfter=p.getUShort("dim",30);lockDetails=p.getBool("lock_txt",true);
   notifyLed=p.getUChar("n_led",notifyLed);if(notifyLed>2)notifyLed=1;
   notifyWake=p.getUChar("n_wake",notifyWake);if(notifyWake>2)notifyWake=0;
@@ -75,6 +90,10 @@ bool Config::save() {
 #if defined(MM_NRF52)
   if(!p.beginBatch())return false;
 #endif
+#if !defined(MM_COMPACT)
+  if(p.putBool("input_ru",inputRussian)!=1){p.end();return false;}
+  if(p.putUChar("theme",theme)!=1||p.putUChar("accent",accentColor)!=1||p.putUChar("night_light",nightBrightness)!=1||p.putBool("launcher_tiles",launcherTiles)!=1){p.end();return false;}
+#endif
   p.putUChar("n_led",notifyLed);p.putUChar("n_wake",notifyWake);p.putUChar("n_popup",notifyPopup);p.putBool("n_failed",notifyFailed);p.putString("n_words",notifyWords);
   const RadioProfile kept=trial.set()?trial:radio(); // a test is not saved
   p.putString("name",name); p.putFloat("freq",kept.frequency); p.putFloat("bw",kept.bandwidth);
@@ -93,6 +112,7 @@ bool Config::save() {
 }
 bool Config::saveRole(uint8_t next){if(next>=RoleCount)return false;Preferences p;if(!p.begin("meshmesh",false))return false;bool saved=p.putUChar("role",next)==1;p.end();return saved;} // config.role keeps the running role
 void Config::saveBle(bool on){if(bleOn==on)return;bleOn=on;Preferences p;if(p.begin("meshmesh",false)){p.putBool("ble_on",on);p.end();}}
+#endif
 String Config::keyHex() const {String s; s.reserve(64);char b[3];for(auto v:key) {snprintf(b,3,"%02x",v);s+=b;}return s;}
 bool Config::setKey(const String& text) {
   if(text.length()!=64) return false;

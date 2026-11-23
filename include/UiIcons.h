@@ -12,3 +12,8 @@ void drawDieShape(Adafruit_GFX& d,uint8_t shape,int cx,int cy,int s,uint16_t fil
 // A stat's shape on the character sheet by its dice::Shape: a circle, a square, a shield, a diamond, a hexagon;
 // r: half the size, edge: a two-pixel outline in the block's colour. The value is written by the caller.
 void drawStatShape(Adafruit_GFX& d,uint8_t shape,int cx,int cy,int r,uint16_t fill,uint16_t edge);
+
+class SmoothCanvas;
+void drawIcon(SmoothCanvas& d,Icon id,int cx,int cy,int s,uint16_t c,uint16_t hole,uint16_t shade);
+void drawDieShape(SmoothCanvas& d,uint8_t shape,int cx,int cy,int s,uint16_t fill,uint16_t edge,uint16_t face,unsigned pips);
+void drawStatShape(SmoothCanvas& d,uint8_t shape,int cx,int cy,int r,uint16_t fill,uint16_t edge);

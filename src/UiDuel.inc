@@ -354,7 +354,7 @@ void duelTick(){
  if(duels.events!=duelEventsSeen){
   duelEventsSeen=duels.events;
   // News the player has to act on, or a result, lights a dark screen; the locked screen shows it.
-  const Duel* e=duels.eventGame;if(e&&e->state!=Duel::Free&&(duelNeeds(*e)||e->state==Duel::Over)){lastInput=millis();if(wakeOnly){wakeOnly=false;hardware.brightness(config.brightness);}}
+  const Duel* e=duels.eventGame;if(e&&e->state!=Duel::Free&&(duelNeeds(*e)||e->state==Duel::Over)){lastInput=millis();if(wakeOnly){wakeOnly=false;hardware.brightness(config.backlight(time(nullptr)));}}
   // On the open game the news is on its page; elsewhere it is a toast.
   bool here=(page==CheckersBoard||page==SeaBoard)&&duelOpen&&duelOpen==e;if(here)duels.viewed(*duelOpen);
   if(!locked&&duels.event.length())notice(duels.event,here?info:accent);

@@ -73,6 +73,12 @@ constexpr uint32_t irqTxDone=RADIOLIB_SX127X_CLEAR_IRQ_FLAG_TX_DONE,irqPreamble=
 #else
 constexpr uint32_t irqTxDone=RADIOLIB_LR11X0_IRQ_TX_DONE,irqPreamble=RADIOLIB_LR11X0_IRQ_PREAMBLE_DETECTED,irqRxDone=RADIOLIB_LR11X0_IRQ_RX_DONE;
 #endif
+#if defined(MM_RADIO_LR1110)
+// Spectrum may acknowledge a latched preamble before the frame ends. Keep both
+// the mesh transmitter and scanner off the receiver for a maximum packet airtime.
+static uint32_t spectrumRxSince=0,spectrumRxWindow=0;
+static bool spectrumReceiving(){return millis()-spectrumRxSince<spectrumRxWindow;}
+#endif
 static volatile bool radioIrq=false;
 static void IRAM_ATTR onRadioIrq(){radioIrq=true;powerRadioIrq();}
 void radioIrqPending(){radioIrq=true;}
@@ -99,7 +105,12 @@ class MeshCoreRadioAdapter:public mesh::Radio {
  bool isSendComplete() override{return owner.transmitting&&radioIrq&&(owner.radio.getIrqFlags()&irqTxDone);}
  void onSendFinished() override{owner.radioError=owner.radio.finishTransmit();owner.transmitting=false;radioIrq=false;owner.startReceiving();}
  bool isInRecvMode() const override{return owner.ready&&!owner.transmitting;}
- bool isReceiving() override{return !owner.transmitting&&(owner.radio.getIrqFlags()&irqPreamble);}
+ bool isReceiving() override{
+#if defined(MM_RADIO_LR1110)
+  if(spectrumReceiving())return true;
+#endif
+  return !owner.transmitting&&(owner.radio.getIrqFlags()&irqPreamble);
+ }
  void resetAGC() override{owner.recalibrate();} // the server's agc.reset.interval
  float getLastRSSI() const override{return owner.lastRssi;}
  float getLastSNR() const override{return owner.lastSnr;}
@@ -381,6 +392,54 @@ void MeshRadio::flush(){if(core)core->flush();meshServer.flush();if(echoDue){ech
 void MeshRadio::sleep(){if(ready)radio.sleep();ready=false;}
 void MeshRadio::cancelPending(){for(auto& p:pending)if(p.active){status(p.message.id,ChatMessage::Failed);p.active=false;}while(corePool.getOutboundTotal()){auto* packet=corePool.removeOutboundByIdx(0);corePool.free(packet);}}
 namespace {uint32_t recalAt=0;bool recalFailed=false;}
+#if defined(MM_RADIO_LR1110)
+MeshRadio::SampleResult MeshRadio::spectrumSample(bool offChannel,float mhz,int8_t& dbm){
+ auto defer=[this](const char* reason){spectrumWaitReason=reason;return SampleResult::Busy;};
+ spectrumWaitReason="";
+ if(!ready)return SampleResult::Error;
+ if(transmitting)return defer("tx");
+ if(tuned.set()||netfind::running())return defer("profile search");
+ if(offChannel){
+  if(busy())return defer("tx queued");
+  if(radioIrq)return defer("irq pending");
+  if(regions::searching())return defer("region search");
+  const uint32_t flags=radio.getIrqFlags();
+  if(flags&irqRxDone)return defer("packet ready"); // MeshCore owns completed packets.
+  if(flags&irqPreamble){
+   // PREAMBLE_DETECTED is a latched event, including preambles that never decode.
+   // Leave RX running. A new preamble renews the guard even if the previous one was noise.
+   if(radio.clearIrqFlags(irqPreamble))return SampleResult::Error;
+   spectrumRxSince=millis();
+   spectrumRxWindow=100+radio.getTimeOnAir(255)/1000;
+  }
+  if(spectrumRxWindow){
+   if(spectrumReceiving())return defer("preamble");
+   spectrumRxWindow=0;
+  }
+ }
+ float level=0;
+ if(!offChannel){
+  level=radio.getRSSI(false,true); // GetRssiInst only. Do not restart or interrupt mesh RX.
+ }else{
+  int16_t rc=radio.standby();
+  if(!rc)rc=radio.setFrequency(mhz);
+  if(!rc)rc=startReceiving();
+  if(!rc){delay(5);level=radio.getRSSI(false,true);}
+  // No dispatcher, TX, or screen operation runs while the receiver is off-channel.
+  int16_t restore=radio.standby();
+  if(!restore)restore=radio.setFrequency(config.frequency);
+  radioIrq=false;
+  if(!restore)restore=startReceiving();
+  if(restore){
+   recalAt=millis();recalFailed=!startRadio(true); // Recover the full configured profile or retry in tick().
+   return SampleResult::Error;
+  }
+  if(rc)return SampleResult::Error;
+ }
+ if(!(level<0&&level>=-127.5f))return SampleResult::Error; // RadioLib returns zero on an SPI error.
+ dbm=int8_t(lroundf(level));return SampleResult::Ok;
+}
+#endif
 bool MeshRadio::applyConfig(){
  if(transmitting)return false;netfind::cancel();tuned=RadioProfile();cancelPending();return startRadio(false);
 }

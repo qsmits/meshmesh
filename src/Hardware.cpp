@@ -10,6 +10,10 @@
 #include <esp_heap_caps.h>
 #include <sys/time.h>
 Hardware hardware;
+namespace {
+constexpr uint8_t keyboardV11 = 0x6d;
+uint8_t keyboardAddress = pins::keyboardAddress;
+}
 bool Hardware::read(TwoWire& bus,uint8_t addr,uint8_t reg,uint8_t* bytes,uint8_t size,bool stop) {
   bus.beginTransmission(addr);bus.write(reg);if(bus.endTransmission(stop)) return false;
   if(bus.requestFrom(int(addr),int(size))!=size) return false;
@@ -27,9 +31,20 @@ void Hardware::brightness(uint8_t level) {
   if(asleep){uint32_t slept=millis()-sleptAt;if(slept<120)delay(120-slept);display.enableSleep(false);delay(5);display.enableDisplay(true);asleep=false;}
   ledcWrite(7,255-level);
 }
+void Hardware::probeM9Keyboard() {
+  for (uint8_t address : {uint8_t(pins::keyboardAddress), keyboardV11}) {
+    if (!read(Wire1,address,0,&keyboardHw,1,true)) continue;
+    keyboardOk=true;
+    keyboardAddress=address;
+    read(Wire1,address,0xfe,&keyboardFw,1,true);
+    break;
+  }
+}
 void Hardware::setGps(bool enabled) {
   gpsEnabled=enabled;
-  digitalWrite(pins::gpsEnable,enabled?LOW:HIGH);
+  // On the M9 V1.1 the keyboard address and the GPS enable polarity both changed.
+  const int gpsOnLevel = keyboardAddress==keyboardV11 ? HIGH : LOW;
+  digitalWrite(pins::gpsEnable,enabled ? gpsOnLevel : !gpsOnLevel);
   digitalWrite(pins::gpsReset,LOW);
   // 115200 baud: the default 256-byte buffer holds 22 ms, less than a map frame; lost sentences fail their checksums.
   if(enabled) {Serial1.setRxBufferSize(2048);Serial1.begin(115200,SERIAL_8N1,pins::gpsRx,pins::gpsTx);lastGpsBaud=millis();}
@@ -41,18 +56,18 @@ void Hardware::begin() {
   for(int pin:{pins::backlight,pins::peripheralPower}) {rtc_gpio_hold_dis(gpio_num_t(pin));pinMode(pin,OUTPUT);digitalWrite(pin,LOW);}
   for(int pin:{pins::radioCs,pins::lcdCs,pins::sdCs}) {gpio_hold_dis(gpio_num_t(pin));pinMode(pin,OUTPUT);digitalWrite(pin,HIGH);}
   pinMode(pins::gpsEnable,OUTPUT);pinMode(pins::gpsReset,OUTPUT);pinMode(pins::buzzer,OUTPUT);
-  digitalWrite(pins::buzzer,LOW);setGps(config.gps);
+  digitalWrite(pins::buzzer,LOW);
   SPI.begin(pins::spiClock,pins::spiMiso,pins::spiMosi);
   display.init(240,320,SPI_MODE0);display.setSPISpeed(40000000);display.setRotation(1);display.fillScreen(0x0862);
-  ledcSetup(7,5000,8);ledcAttachPin(pins::backlight,7);brightness(config.brightness);
+  ledcSetup(7,5000,8);ledcAttachPin(pins::backlight,7);brightness(config.backlight(time(nullptr)));
   canvas=new GFXcanvas16(320,240); // Arduino ESP32 allocates this large buffer from PSRAM when available.
   if(!canvas || !canvas->getBuffer()) {Serial.println("FATAL framebuffer allocation");while(true) delay(1000);}
   font.begin(*canvas);font.setFont(u8g2_font_6x13_t_cyrillic);font.setFontMode(1);
   canvas->fillScreen(0x0862);text(14,38,MESHMM_FIRMWARE,0x07ff);text(14,65,"Starting ThinkNode M9...");flush();
   Wire.begin(pins::sda,pins::scl,100000);Wire.setTimeOut(20);
   Wire1.begin(pins::keyboardSda,pins::keyboardScl,100000);Wire1.setTimeOut(20);
-  keyboardOk=read(Wire1,pins::keyboardAddress,0,&keyboardHw,1,true);
-  if(keyboardOk) read(Wire1,pins::keyboardAddress,0xfe,&keyboardFw,1,true);
+  probeM9Keyboard();
+  setGps(config.gps);
   rtcOk=rtc.begin(&Wire);
   if(rtcOk && !rtc.lostPower()) {
     rtc.start();DateTime date=rtc.now();rtcValid=date.year()>=2025 && date.year()<2100;
@@ -95,14 +110,18 @@ void Hardware::tick() {
   if(imuOk && read(Wire,0x6b,0x2e,&status,1) && (status&1) && read(Wire,0x6b,0x35,data,6)) {
     for(int i=0;i<3;i++) accel[i]=int16_t(uint16_t(data[2*i])|(uint16_t(data[2*i+1])<<8))/16384.0f;imuSample=true;
   }
-  if(!keyboardOk && millis()-lastProbe>2000) {lastProbe=millis();keyboardOk=read(Wire1,pins::keyboardAddress,0,&keyboardHw,1,true);}
+  if(!keyboardOk && millis()-lastProbe>2000) {
+    lastProbe=millis();
+    probeM9Keyboard();
+    if(keyboardOk && keyboardAddress==keyboardV11)setGps(gpsEnabled);
+  }
 }
 int Hardware::readKey() {
   static uint32_t poll=0;if(millis()-poll<15 || !keyboardOk) return 0;poll=millis();
-  uint8_t key=0;if(!read(Wire1,pins::keyboardAddress,1,&key,1,true)) return 0;
-  if(key==0 || key==255) return 0;lastKey=key;keyCount++;brightness(config.brightness);return key;
+  uint8_t key=0;if(!read(Wire1,keyboardAddress,1,&key,1,true)) return 0;
+  if(key==0 || key==255) return 0;lastKey=key;keyCount++;brightness(config.backlight(time(nullptr)));return key;
 }
-// Off: the backlight and the screen, GPS and sensor supply off (both active LOW), the LR1110 deselected.
+// Power off the display, GPS and sensors and deselect the LR1110.
 // The M9 has no button on a GPIO: RESET or the power slider turns it on.
 void Hardware::powerDown(bool started) {
   if(started){ledcDetachPin(pins::backlight);setGps(false);}

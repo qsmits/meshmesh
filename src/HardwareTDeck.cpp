@@ -62,7 +62,7 @@ void Hardware::begin() {
   canvas=new GFXcanvas16(320,240); // in PSRAM
   if(!canvas || !canvas->getBuffer()) {Serial.println("FATAL framebuffer allocation");while(true) delay(1000);}
   font.begin(*canvas);font.setFont(u8g2_font_6x13_t_cyrillic);font.setFontMode(1);
-  canvas->fillScreen(0x0862);text(14,38,MESHMM_FIRMWARE,0x07ff);text(14,65,"Starting T-Deck...");flush();brightness(config.brightness);
+  canvas->fillScreen(0x0862);text(14,38,MESHMM_FIRMWARE,0x07ff);text(14,65,"Starting T-Deck...");flush();brightness(config.backlight(time(nullptr)));
   Wire.begin(pins::keyboardSda,pins::keyboardScl,100000);Wire.setTimeOut(20);
   // The keyboard controller boots after the ESP32; give it time before the first probe.
   for(int i=0;i<10&&!keyboardOk;i++){Wire.beginTransmission(uint8_t(pins::keyboardAddress));keyboardOk=Wire.endTransmission()==0;if(!keyboardOk)delay(50);}
@@ -108,7 +108,7 @@ int Hardware::readKey() {
     if(Wire.requestFrom(int(pins::keyboardAddress),1)==1){uint8_t c=Wire.read();if(c==0x0d)key=13;else if(c==0x08)key=8;else if(c>=0x20&&c<0x7f)key=c;}
   }
   if(!key)return 0;
-  lastKey=key;keyCount++;brightness(config.brightness);return key;
+  lastKey=key;keyCount++;brightness(config.backlight(time(nullptr)));return key;
 }
 // Touch gestures for uiTouch(): 't' tap at x,y; 'h' hold (once, while the finger stays);
 // 'u','d','l','r' swipe in that direction. The panel reports portrait coordinates (240x320);
@@ -137,11 +137,11 @@ char Hardware::readTouch(int& x,int& y) {
   else if(down&&millis()-frameAt>250)pressed=false; // the lift frame was lost
   int dx=x1-x0,dy=y1-y0,ax=abs(dx),ay=abs(dy);
   if(pressed) {
-    if(!held&&millis()-downAt>=800&&ax<16&&ay<16){held=true;x=x0;y=y0;brightness(config.brightness);return 'h';}
+    if(!held&&millis()-downAt>=800&&ax<16&&ay<16){held=true;x=x0;y=y0;brightness(config.backlight(time(nullptr)));return 'h';}
     return 0;
   }
   if(!down)return 0;
-  down=false;if(held)return 0;brightness(config.brightness);
+  down=false;if(held)return 0;brightness(config.backlight(time(nullptr)));
   if(max(ax,ay)>=40)return ax>ay?(dx<0?'l':'r'):(dy<0?'u':'d');
   if(ax<16&&ay<16){x=x0;y=y0;return 't';}
   return 0;

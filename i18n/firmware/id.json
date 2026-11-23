@@ -264,11 +264,6 @@
   "ru": "Формула не считается",
   "text": "Rumus tak bisa dihitung"
  },
- "26282b58": {
-  "en": "Notes",
-  "ru": "Заметки",
-  "text": "Catatan"
- },
  "90446a7a": {
   "en": "Section",
   "ru": "Раздел",
@@ -1159,6 +1154,676 @@
   "ru": "Батарея садится",
   "text": "Baterai lemah"
  },
+ "055dae05": {
+  "en": "Edit",
+  "ru": "Изменить",
+  "text": "Ubah"
+ },
+ "a33a94f9": {
+  "en": "Cancel",
+  "ru": "Отмена",
+  "text": "Batal"
+ },
+ "8759568a": {
+  "en": "Edit name",
+  "ru": "Изменить имя",
+  "text": "Ubah nama"
+ },
+ "9cd3c842": {
+  "en": "Keep",
+  "ru": "Оставить",
+  "text": "Pertahankan"
+ },
+ "4c9c5885": {
+  "en": "Return",
+  "ru": "Вернуть",
+  "text": "Kembalikan"
+ },
+ "c2d572ce": {
+  "en": "Test",
+  "ru": "Тест",
+  "text": "Tes"
+ },
+ "a7cb76b8": {
+  "en": "Search",
+  "ru": "Искать",
+  "text": "Cari"
+ },
+ "3f7e1a1c": {
+  "en": "Found",
+  "ru": "Найденные",
+  "text": "Ditemukan"
+ },
+ "9deec0c8": {
+  "en": "Type",
+  "ru": "Ввести",
+  "text": "Ketik"
+ },
+ "9a8267a9": {
+  "en": "Change",
+  "ru": "Изменить",
+  "text": "Ubah"
+ },
+ "ca4fcb20": {
+  "en": "Next value",
+  "ru": "Дальше",
+  "text": "Nilai lain"
+ },
+ "eccc8fe2": {
+  "en": "Wi-Fi access point",
+  "ru": "Точка доступа Wi-Fi",
+  "text": "Titik akses Wi-Fi"
+ },
+ "e4fe0cf0": {
+  "en": "Web chat and map upload",
+  "ru": "Веб-чат и загрузка карт",
+  "text": "Chat web dan unggah peta"
+ },
+ "bd132d01": {
+  "en": "Off",
+  "ru": "Выключена",
+  "text": "Mati"
+ },
+ "061557aa": {
+  "en": "MeshCore identity",
+  "ru": "Ключ MeshCore",
+  "text": "Identitas MeshCore"
+ },
+ "01f31114": {
+  "en": "Networks",
+  "ru": "Сети",
+  "text": "Jaringan"
+ },
+ "e6b593c8": {
+  "en": "Toggle",
+  "ru": "Переключить",
+  "text": "Alihkan"
+ },
+ "80266824": {
+  "en": "Wrong password or refused: ",
+  "ru": "Неверный пароль или отказ: ",
+  "text": "Sandi salah atau ditolak: "
+ },
+ "c2aec922": {
+  "en": "No answer from ",
+  "ru": "Нет ответа от ",
+  "text": "Tanpa respons dari "
+ },
+ "4aea721f": {
+  "en": "No saved network in range",
+  "ru": "Сохранённых сетей рядом нет",
+  "text": "Tak ada jaringan tersimpan"
+ },
+ "77943e26": {
+  "en": "Connection lost",
+  "ru": "Связь с сетью потеряна",
+  "text": "Koneksi terputus"
+ },
+ "3517d70a": {
+  "en": "Wi-Fi scan failed",
+  "ru": "Сбой поиска сетей",
+  "text": "Pindai Wi-Fi gagal"
+ },
+ "c0a8f4d6": {
+  "en": "Wi-Fi scan timed out",
+  "ru": "Поиск сетей не завершился",
+  "text": "Pindai Wi-Fi habis waktu"
+ },
+ "84fb5225": {
+  "en": "Clock not set",
+  "ru": "Часы не установлены",
+  "text": "Jam belum diatur"
+ },
+ "d85b75c4": {
+  "en": "SSID 1-32 bytes, password empty or 8-63",
+  "ru": "Имя 1-32 байта, пароль пустой или 8-63",
+  "text": "SSID 1-32 bait, sandi kosong atau 8-63"
+ },
+ "32e3b1d4": {
+  "en": "Tile is not 256 or 512 px",
+  "ru": "Тайл не 256/512 пикселей",
+  "text": "Tile bukan 256 atau 512 px"
+ },
+ "a218bb10": {
+  "en": "Not a PNG image",
+  "ru": "Сервер вернул не PNG",
+  "text": "Bukan gambar PNG"
+ },
+ "9b52bbc9": {
+  "en": "No location",
+  "ru": "Положение по IP не найдено",
+  "text": "Lokasi tak ditemukan"
+ },
+ "fe92dca2": {
+  "en": "SD full: web tiles not cached",
+  "ru": "SD заполнена: тайлы не сохраняются",
+  "text": "SD penuh: tile web tak disimpan"
+ },
+ "45646152": {
+  "en": "Wi-Fi client on",
+  "ru": "Wi-Fi-клиент включён",
+  "text": "Klien Wi-Fi aktif"
+ },
+ "71a638af": {
+  "en": "Wi-Fi client off",
+  "ru": "Wi-Fi-клиент выключен",
+  "text": "Klien Wi-Fi mati"
+ },
+ "674356ff": {
+  "en": "Connecting to ",
+  "ru": "Подключение к ",
+  "text": "Menghubungkan ke "
+ },
+ "6fa9102f": {
+  "en": "Forgotten: ",
+  "ru": "Забыта: ",
+  "text": "Dilupakan: "
+ },
+ "a2c6b137": {
+  "en": "Searching...",
+  "ru": "Поиск сетей...",
+  "text": "Mencari..."
+ },
+ "18631a5c": {
+  "en": "Wi-Fi client",
+  "ru": "Wi-Fi-клиент",
+  "text": "Klien Wi-Fi"
+ },
+ "397eff34": {
+  "en": "Turn the client on to find networks",
+  "ru": "Включите клиент, чтобы найти сети",
+  "text": "Aktifkan klien untuk cari jaringan"
+ },
+ "d54b728f": {
+  "en": "Searching for networks...",
+  "ru": "Поиск сетей...",
+  "text": "Mencari jaringan..."
+ },
+ "292b3500": {
+  "en": "connected",
+  "ru": "подключено",
+  "text": "terhubung"
+ },
+ "7dd55181": {
+  "en": "saved",
+  "ru": "сохранена",
+  "text": "tersimpan"
+ },
+ "04f9d959": {
+  "en": "saved, away",
+  "ru": "сохр., не рядом",
+  "text": "tersimpan, jauh"
+ },
+ "c1da06cb": {
+  "en": "open",
+  "ru": "открытая",
+  "text": "terbuka"
+ },
+ "19405072": {
+  "en": "On/off",
+  "ru": "Вкл/выкл",
+  "text": "Nyala/mati"
+ },
+ "9ac84c77": {
+  "en": "Connect",
+  "ru": "Подключить",
+  "text": "Hubungkan"
+ },
+ "89af1769": {
+  "en": "Forget",
+  "ru": "Забыть",
+  "text": "Lupakan"
+ },
+ "08a7df66": {
+  "en": "Rescan",
+  "ru": "Обновить",
+  "text": "Pindai"
+ },
+ "b7f67b6d": {
+  "en": "Map pin",
+  "ru": "Геометка",
+  "text": "Pin peta"
+ },
+ "2b18cfad": {
+  "en": "Left",
+  "ru": "Влево",
+  "text": "Kiri"
+ },
+ "734cec5d": {
+  "en": "Up",
+  "ru": "Вверх",
+  "text": "Atas"
+ },
+ "2a7c8f4e": {
+  "en": "Down",
+  "ru": "Вниз",
+  "text": "Bawah"
+ },
+ "6e1282a0": {
+  "en": "Right",
+  "ru": "Вправо",
+  "text": "Kanan"
+ },
+ "e3077ca9": {
+  "en": "space",
+  "ru": "пробел",
+  "text": "spasi"
+ },
+ "d609b7de": {
+  "en": "Keyboard",
+  "ru": "Клавиатура",
+  "text": "Keyboard"
+ },
+ "837d5b49": {
+  "en": "n/a",
+  "ru": "нет",
+  "text": "t/a"
+ },
+ "aef230e2": {
+  "en": "Relayed",
+  "ru": "Переслано",
+  "text": "Diteruskan"
+ },
+ "ebd1789d": {
+  "en": "Rejected",
+  "ru": "Отклонено",
+  "text": "Ditolak"
+ },
+ "9e543f5c": {
+  "en": "Uptime",
+  "ru": "Работа",
+  "text": "Aktif"
+ },
+ "a6022a7a": {
+  "en": "Boot ",
+  "ru": "Загрузка ",
+  "text": "Boot "
+ },
+ "fd249ae3": {
+  "en": " · last key: ",
+  "ru": " · последняя клавиша: ",
+  "text": " · tombol terakhir: "
+ },
+ "fe8668ce": {
+  "en": "Crypto test + sound",
+  "ru": "Тест шифрования и звука",
+  "text": "Tes kripto + suara"
+ },
+ "f769e02b": {
+  "en": "Create storage...",
+  "ru": "Создать хранилище...",
+  "text": "Buat penyimpanan..."
+ },
+ "46b8241c": {
+  "en": "Ball, swipe",
+  "ru": "Шар, свайп",
+  "text": "Bola, geser"
+ },
+ "39012b21": {
+  "en": "Move: menu, lists, map",
+  "ru": "Перемещение: меню, списки, карта",
+  "text": "Gerak: menu, daftar, peta"
+ },
+ "a9849595": {
+  "en": "Click",
+  "ru": "Нажатие",
+  "text": "Klik"
+ },
+ "ad13b2cf": {
+  "en": "Open / send",
+  "ru": "Открыть / отправить",
+  "text": "Buka / kirim"
+ },
+ "8082be11": {
+  "en": "Hold ball",
+  "ru": "Удерж. шар",
+  "text": "Tahan bola"
+ },
+ "85013777": {
+  "en": "Tap",
+  "ru": "Касание",
+  "text": "Ketuk"
+ },
+ "e96df6ee": {
+  "en": "Open; hints below are keys; title: back",
+  "ru": "Открыть; кнопки внизу; заголовок - назад",
+  "text": "Buka; bawah: tombol; judul: kembali"
+ },
+ "dd425d56": {
+  "en": "Delete; with no text: back",
+  "ru": "Удалить; без текста: назад",
+  "text": "Hapus; tanpa teks: kembali"
+ },
+ "609be88e": {
+  "en": "in text: switch RU/EN",
+  "ru": "в тексте: RU/EN",
+  "text": "di teks: ganti RU/EN"
+ },
+ "de82dc1b": {
+  "en": "Map: saved maps",
+  "ru": "Карта: список карт",
+  "text": "Peta: peta tersimpan"
+ },
+ "1e70c4ca": {
+  "en": "Map zoom",
+  "ru": "Масштаб карты",
+  "text": "Zoom peta"
+ },
+ "75783192": {
+  "en": "Nodes: show on map",
+  "ru": "Узлы: показать на карте",
+  "text": "Node: tampilkan di peta"
+ },
+ "1bd6e4b7": {
+  "en": "Menu: DEL until the tiles",
+  "ru": "Меню: DEL до плиток",
+  "text": "Menu: DEL hingga ubin"
+ },
+ "b0916d3b": {
+  "en": "Map; L - saved maps",
+  "ru": "Карта; L - список карт",
+  "text": "Peta; L - peta tersimpan"
+ },
+ "ffad6b6e": {
+  "en": "Menu",
+  "ru": "Главное меню",
+  "text": "Menu utama"
+ },
+ "e446fc2f": {
+  "en": "Previous screen",
+  "ru": "Предыдущий экран",
+  "text": "Layar sebelumnya"
+ },
+ "60ca84b7": {
+  "en": "Announce this node; hold: GPS on/off",
+  "ru": "Объявить узел; удерж.: GPS вкл/выкл",
+  "text": "Umumkan node ini; tahan: GPS on/off"
+ },
+ "12104748": {
+  "en": "App actions and radio controls",
+  "ru": "Действия и управление связью",
+  "text": "Tindakan aplikasi dan kontrol radio"
+ },
+ "db1e8e1b": {
+  "en": "Lock screen (there is no microphone)",
+  "ru": "Блокировка (микрофона нет)",
+  "text": "Kunci layar (tidak ada mikrofon)"
+ },
+ "a21c0730": {
+  "en": "Open / send; twice or hold: unlock",
+  "ru": "Открыть / отправить; дважды или удерж.: вход",
+  "text": "Buka / kirim; 2x atau tahan: buka kunci"
+ },
+ "9fb377cf": {
+  "en": "in text: switch RU/EN; Right: capital",
+  "ru": "в тексте: RU/EN; -> : заглавная",
+  "text": "di teks: ganti RU/EN; Kanan: kapital"
+ },
+ "7311d31b": {
+  "en": "Russian layout",
+  "ru": "Русская раскладка",
+  "text": "Tata letak Rusia"
+ },
+ "127b4873": {
+  "en": "Unlock to read",
+  "ru": "Разблокируйте, чтобы прочитать",
+  "text": "Buka kunci untuk membaca"
+ },
+ "12ff5cad": {
+  "en": "Last from ",
+  "ru": "Последнее от ",
+  "text": "Terakhir dari "
+ },
+ "7a531229": {
+  "en": "The repeater keeps relaying",
+  "ru": "Репитер продолжает пересылку",
+  "text": "Repeater tetap meneruskan"
+ },
+ "f3158c93": {
+  "en": "The room keeps serving members",
+  "ru": "Комната продолжает работать",
+  "text": "Ruang tetap melayani anggota"
+ },
+ "2bc700f4": {
+  "en": "Radio and GPS keep working",
+  "ru": "Радио и GPS продолжают работать",
+  "text": "Radio dan GPS tetap bekerja"
+ },
+ "b72fb804": {
+  "en": "Radio error",
+  "ru": "Ошибка радио",
+  "text": "Galat radio"
+ },
+ "863c4afd": {
+  "en": "Twice or hold: the game",
+  "ru": "Дважды или удерж.: партия",
+  "text": "2x atau tahan: permainan"
+ },
+ "6179a213": {
+  "en": "Twice or hold: unlock",
+  "ru": "Дважды или удерж.: вход",
+  "text": "2x atau tahan: buka kunci"
+ },
+ "64010381": {
+  "en": "Lock",
+  "ru": "Блок",
+  "text": "Kunci"
+ },
+ "17628697": {
+  "en": "Filter by tag",
+  "ru": "Фильтр по метке",
+  "text": "Filter menurut tag"
+ },
+ "06e4383f": {
+  "en": "Network key · 64 hex",
+  "ru": "Ключ сети · 64 hex",
+  "text": "Kunci jaringan · 64 hex"
+ },
+ "5bb9392e": {
+  "en": "Tournament name",
+  "ru": "Название турнира",
+  "text": "Nama turnamen"
+ },
+ "4257ae5d": {
+  "en": "Pet name",
+  "ru": "Имя питомца",
+  "text": "Nama piaraan"
+ },
+ "f12916a4": {
+  "en": "Counter name",
+  "ru": "Имя счётчика",
+  "text": "Nama hitungan"
+ },
+ "7b04c300": {
+  "en": "Region of the channel",
+  "ru": "Регион канала",
+  "text": "Wilayah kanal"
+ },
+ "4b20829b": {
+  "en": "Wi-Fi password: ",
+  "ru": "Пароль Wi-Fi: ",
+  "text": "Sandi Wi-Fi: "
+ },
+ "1fc05d6f": {
+  "en": "Device name",
+  "ru": "Имя устройства",
+  "text": "Nama perangkat"
+ },
+ "20676a92": {
+  "en": " bytes",
+  "ru": " байт",
+  "text": " bait"
+ },
+ "47f20831": {
+  "en": "Saved after a successful login",
+  "ru": "Сохраняется после удачного входа",
+  "text": "Disimpan setelah masuk berhasil"
+ },
+ "ad5eec0a": {
+  "en": "As in the MeshCore app: ver, get name, neighbors...",
+  "ru": "Как в приложении MeshCore: ver, get name, neighbors...",
+  "text": "Seperti di aplikasi MeshCore: ver, get name, neighbors..."
+ },
+ "74df0d68": {
+  "en": "As on repeaters: msk, sao...; empty: none",
+  "ru": "Как на репитерах: msk, sao...; пусто - нет",
+  "text": "Seperti di repeater: msk, sao...; kosong: tidak ada"
+ },
+ "7b6f9672": {
+  "en": "As on repeaters: msk, sao...; empty: default",
+  "ru": "Как на репитерах: msk, sao...; пусто - по умолчанию",
+  "text": "Seperti di repeater: msk, sao...; kosong: bawaan"
+ },
+ "5e155c34": {
+  "en": "Separate tags with commas",
+  "ru": "Метки через запятую",
+  "text": "Pisahkan tag dengan koma"
+ },
+ "f618b981": {
+  "en": "Empty shows all contacts",
+  "ru": "Пусто — все контакты",
+  "text": "Kosong untuk semua kontak"
+ },
+ "60fa6a70": {
+  "en": "8-63 characters; -> after a letter: capital",
+  "ru": "8-63 символа; -> после буквы: заглавная",
+  "text": "8-63 karakter; -> setelah huruf: kapital"
+ },
+ "e96a0252": {
+  "en": "OK: log in   BACK: cancel",
+  "ru": "OK: войти   BACK: отменить",
+  "text": "OK: masuk   BACK: batal"
+ },
+ "a000f97c": {
+  "en": "OK: send   BACK: cancel",
+  "ru": "OK: отправить   BACK: отменить",
+  "text": "OK: kirim   BACK: batal"
+ },
+ "7a1da0b4": {
+  "en": "OK: post   BACK: cancel",
+  "ru": "OK: отправить   BACK: отменить",
+  "text": "OK: kirim   BACK: batal"
+ },
+ "4bff5478": {
+  "en": "OK: save   BACK: cancel",
+  "ru": "OK: сохранить   BACK: отменить",
+  "text": "OK: simpan   BACK: batal"
+ },
+ "70e3f7ea": {
+  "en": "Tournament",
+  "ru": "Турнир",
+  "text": "Turnamen"
+ },
+ "5542d75b": {
+  "en": "Chess · ",
+  "ru": "Шахматы · ",
+  "text": "Catur · "
+ },
+ "99d92ee5": {
+  "en": "Input: Russian (phonetic)",
+  "ru": "Ввод: русский (фонетический)",
+  "text": "Input: Rusia (fonetik)"
+ },
+ "f298c8d3": {
+  "en": "Input: English",
+  "ru": "Ввод: английский",
+  "text": "Input: Inggris"
+ },
+ "c79e0520": {
+  "en": "Russian input: phonetic",
+  "ru": "Русский ввод: фонетический",
+  "text": "Input Rusia: fonetik"
+ },
+ "e8ecae43": {
+  "en": "2x space: RU/EN   Shift or Right after a letter: capital",
+  "ru": "2×пробел: RU/EN   Shift или -> после буквы: заглавная",
+  "text": "2x spasi: RU/EN   Shift atau Kanan setelah huruf: kapital"
+ },
+ "cf39d358": {
+  "en": "Not in this mode",
+  "ru": "Недоступно в этом режиме",
+  "text": "Tak tersedia di mode ini"
+ },
+ "56bf77d2": {
+  "en": "Radio test: a restart returns the saved one",
+  "ru": "Тест радио: перезапуск вернёт сохранённое",
+  "text": "Uji radio: mulai ulang mengembalikan yang tersimpan"
+ },
+ "a06fdf5a": {
+  "en": "Radio busy, retry",
+  "ru": "Радио занято, повторите",
+  "text": "Radio sibuk, coba lagi"
+ },
+ "19b6c4b1": {
+  "en": "Radio offline",
+  "ru": "Радио недоступно",
+  "text": "Radio tidak tersedia"
+ },
+ "2ae7cabc": {
+  "en": "Settings saved",
+  "ru": "Настройки сохранены",
+  "text": "Pengaturan tersimpan"
+ },
+ "bfb7fda0": {
+  "en": "Not sent: radio or route",
+  "ru": "Не отправлено: радио или маршрут",
+  "text": "Tidak terkirim: radio atau rute"
+ },
+ "315b16c1": {
+  "en": "Radio busy, try again",
+  "ru": "Радио занято, повторите",
+  "text": "Radio sibuk, coba lagi"
+ },
+ "0691ba75": {
+  "en": "Path reset: next message floods",
+  "ru": "Путь сброшен: следующее сообщение пойдёт flood",
+  "text": "Jalur direset: pesan berikut via flood"
+ },
+ "7a14a9e8": {
+  "en": "Path reset failed",
+  "ru": "Не удалось сбросить путь",
+  "text": "Gagal mereset jalur"
+ },
+ "08d31104": {
+  "en": "OK again removes the contact",
+  "ru": "Нажмите OK ещё раз для удаления",
+  "text": "OK sekali lagi menghapus kontak"
+ },
+ "17781681": {
+  "en": "Contact removed; its next advert adds it again",
+  "ru": "Контакт удалён; новое объявление вернёт его",
+  "text": "Kontak dihapus; kembali saat ia diumumkan lagi"
+ },
+ "3e33cd0f": {
+  "en": "Cannot remove while sending",
+  "ru": "Нельзя удалить во время отправки",
+  "text": "Tak bisa hapus saat mengirim"
+ },
+ "a34dbdc4": {
+  "en": "Name saved",
+  "ru": "Имя сохранено",
+  "text": "Nama tersimpan"
+ },
+ "a64e97e5": {
+  "en": "Name: 1-15 UTF-8 bytes",
+  "ru": "Имя: 1-15 байт UTF-8",
+  "text": "Nama: 1-15 byte UTF-8"
+ },
+ "184e57b2": {
+  "en": "Region: letters, digits, '-'",
+  "ru": "Регион: буквы, цифры, '-'",
+  "text": "Wilayah: huruf, angka, '-'"
+ },
+ "cb8d0572": {
+  "en": "Password: 8-63 characters",
+  "ru": "Пароль: 8-63 символа",
+  "text": "Sandi: 8-63 karakter"
+ },
+ "d4544911": {
+  "en": "Name: 1-24 UTF-8 bytes",
+  "ru": "Имя: 1-24 байта UTF-8",
+  "text": "Nama: 1-24 bait UTF-8"
+ },
  "0b2e473c": {
   "en": "Not in this mode: Settings > Device mode",
   "ru": "Недоступно в этом режиме: Настройки > Режим работы",
@@ -1268,6 +1933,11 @@
   "en": "Rotate in all directions",
   "ru": "Вращайте устройство во все стороны",
   "text": "Putar perangkat ke segala arah"
+ },
+ "caf91d3d": {
+  "en": "Signal no longer listed",
+  "ru": "Сигнала уже нет в списке",
+  "text": "Sinyal sudah tidak terdaftar"
  },
  "c3938153": {
   "en": "No signal selected",
@@ -1379,10 +2049,20 @@
   "ru": "Выкл",
   "text": "Off"
  },
+ "a1d3f60b": {
+  "en": "hold OK",
+  "ru": "удерж. OK",
+  "text": "tahan OK"
+ },
  "30b1f47d": {
   "en": "Channel",
   "ru": "Канал",
   "text": "Kanal"
+ },
+ "b780ae52": {
+  "en": "No unread messages",
+  "ru": "Нет непрочитанных сообщений",
+  "text": "Tidak ada pesan yang belum dibaca"
  },
  "78219be4": {
   "en": "Clock not set",
@@ -1623,6 +2303,11 @@
   "ru": "Карта",
   "text": "Peta"
  },
+ "284523ed": {
+  "en": "Contact notes",
+  "ru": "Заметки контакта",
+  "text": "Catatan kontak"
+ },
  "e0fef172": {
   "en": "Nodes",
   "ru": "Узлы",
@@ -1763,32 +2448,18 @@
   "ru": "Всё выключено",
   "text": "Semua mati"
  },
- "2aef0bab": {
+ "08d56a77": {
   "en": {
-   "one": "new",
-   "other": "new"
+   "one": "new message",
+   "other": "new messages"
   },
   "ru": {
-   "one": "новое",
-   "few": "новых",
-   "many": "новых"
+   "one": "новое сообщение",
+   "few": "новых сообщения",
+   "many": "новых сообщений"
   },
   "forms": {
-   "other": "{n} baru"
-  }
- },
- "d04d1711": {
-  "en": {
-   "one": "message",
-   "other": "messages"
-  },
-  "ru": {
-   "one": "сообщение",
-   "few": "сообщения",
-   "many": "сообщений"
-  },
-  "forms": {
-   "other": "{n} pesan"
+   "other": "{n} pesan baru"
   }
  },
  "6d76d314": {
@@ -1928,10 +2599,10 @@
   "ru": "Открыть",
   "text": "Buka"
  },
- "64010381": {
-  "en": "Lock",
-  "ru": "Блок",
-  "text": "Kunci"
+ "2c738f99": {
+  "en": "Radio controls",
+  "ru": "Управление связью",
+  "text": "Kontrol radio"
  },
  "8244dadc": {
   "en": " waiting",
@@ -1972,11 +2643,6 @@
   "ru": "Выбор",
   "text": "Pilih"
  },
- "6bb58bc8": {
-  "en": "Hashtag, name and key, new, heard on air",
-  "ru": "Хештег, ключ, новый, услышанный в эфире",
-  "text": "Hashtag, nama dan kunci, baru, terdengar"
- },
  "2b67ee1b": {
   "en": "You: ",
   "ru": "Вы: ",
@@ -2002,10 +2668,15 @@
   "ru": "Закрытый канал · сообщений нет",
   "text": "Kanal privat · belum ada pesan"
  },
- "d8735ad9": {
-  "en": "Announce",
-  "ru": "Объявить",
-  "text": "Umumkan"
+ "15f76672": {
+  "en": "Actions",
+  "ru": "Действия",
+  "text": "Tindakan"
+ },
+ "a6dd55ad": {
+  "en": "Next unread",
+  "ru": "К непрочитанному",
+  "text": "Belum dibaca"
  },
  "9172b7d6": {
   "en": "Private channel · senders unverified · no ACK",
@@ -2052,30 +2723,15 @@
   "ru": "Сообщение...",
   "text": "Pesan..."
  },
- "f353a373": {
-  "en": "2x space: RU/EN",
-  "ru": "2×пробел: RU/EN",
-  "text": "2x spasi: RU/EN"
- },
  "03b2add1": {
   "en": "Send",
   "ru": "Отпр.",
   "text": "Kirim"
  },
- "a1d3f60b": {
-  "en": "hold OK",
-  "ru": "удерж. OK",
-  "text": "tahan OK"
- },
- "a23ea557": {
-  "en": "Layout",
-  "ru": "Раскладка",
-  "text": "Tata letak"
- },
- "370e8321": {
-  "en": "Back",
-  "ru": "Назад",
-  "text": "Kembali"
+ "66ab5aaf": {
+  "en": "Clipboard",
+  "ru": "Буфер обмена",
+  "text": "Papan klip"
  },
  "d345a7e1": {
   "en": "2x space",
@@ -2172,11 +2828,6 @@
   "ru": "К GPS",
   "text": "Ke GPS"
  },
- "cbdba42f": {
-  "en": "Maps",
-  "ru": "Карты",
-  "text": "Peta"
- },
  "4dff575f": {
   "en": "No saved maps",
   "ru": "Сохранённых карт нет",
@@ -2201,15 +2852,25 @@
    "other": "{n} tile di SD"
   }
  },
+ "4431c5d8": {
+  "en": "No matching contacts",
+  "ru": "Нет подходящих контактов",
+  "text": "Tidak ada kontak yang cocok"
+ },
  "5bf49151": {
   "en": "No nodes discovered yet",
   "ru": "Узлы пока не обнаружены",
   "text": "Belum ada node ditemukan"
  },
- "18721989": {
-  "en": "ADV sends your announcement",
-  "ru": "ADV отправит ваше объявление",
-  "text": "ADV mengirim pengumuman Anda"
+ "78df3e16": {
+  "en": "F: edit tag filter",
+  "ru": "F: изменить фильтр меток",
+  "text": "F: ubah filter"
+ },
+ "3427db83": {
+  "en": "Advertise my node",
+  "ru": "Объявить мой узел",
+  "text": "Umumkan simpul saya"
  },
  "5d2fc914": {
   "en": "saved",
@@ -2221,10 +2882,15 @@
   "ru": "Карточка",
   "text": "Detail"
  },
- "10322163": {
-  "en": "On map",
-  "ru": "На карте",
-  "text": "Di peta"
+ "59d7a83a": {
+  "en": "Filter",
+  "ru": "Фильтр",
+  "text": "Filter"
+ },
+ "370e8321": {
+  "en": "Back",
+  "ru": "Назад",
+  "text": "Kembali"
  },
  "8c87b0a8": {
   "en": "Play with ",
@@ -2311,6 +2977,11 @@
   "ru": "Написать",
   "text": "Tulis"
  },
+ "10322163": {
+  "en": "On map",
+  "ru": "На карте",
+  "text": "Di peta"
+ },
  "3f10fa6d": {
   "en": "Reset path",
   "ru": "Сброс пути",
@@ -2350,6 +3021,11 @@
   "en": "Run",
   "ru": "Выполнить",
   "text": "Jalankan"
+ },
+ "26282b58": {
+  "en": "Notes",
+  "ru": "Заметки",
+  "text": "Catatan"
  },
  "57c157c0": {
   "en": "hold flat",
@@ -2560,6 +3236,11 @@
   "ru": "ближе к центру - сильнее",
   "text": "makin ke tengah = makin kuat"
  },
+ "48e427d0": {
+  "en": "List paused",
+  "ru": "Список на паузе",
+  "text": "Daftar dijeda"
+ },
  "fd8e3640": {
   "en": {
    "one": "phone/watch nearby",
@@ -2578,6 +3259,21 @@
   "en": "No signals yet",
   "ru": "Сигналов пока нет",
   "text": "Belum ada sinyal"
+ },
+ "d2606f92": {
+  "en": "List",
+  "ru": "Список",
+  "text": "Daftar"
+ },
+ "7b255242": {
+  "en": "Resume",
+  "ru": "Продолжить",
+  "text": "Lanjut"
+ },
+ "2cc7f1c2": {
+  "en": "Pause",
+  "ru": "Пауза",
+  "text": "Jeda"
  },
  "d06f72f8": {
   "en": "Home in",
@@ -2687,11 +3383,6 @@
   "en": "Reset peak",
   "ru": "Сброс пика",
   "text": "Reset puncak"
- },
- "d2606f92": {
-  "en": "List",
-  "ru": "Список",
-  "text": "Daftar"
  },
  "168f4a8e": {
   "en": "Turn the access point off",
@@ -2873,11 +3564,6 @@
   "ru": "Что делает каждая клавиша",
   "text": "Fungsi setiap tombol"
  },
- "a02852fd": {
-  "en": "No maps",
-  "ru": "Карт нет",
-  "text": "Tanpa peta"
- },
  "a514c5d1": {
   "en": "MeshCore repeater",
   "ru": "Репитер MeshCore",
@@ -2892,20 +3578,6 @@
   "en": "Normal: chats, maps, radar",
   "ru": "Обычный: чаты, карты, радар",
   "text": "Normal: chat, peta, radar"
- },
- "2788e2b9": {
-  "en": {
-   "one": "tile",
-   "other": "tiles"
-  },
-  "ru": {
-   "one": "тайл",
-   "few": "тайла",
-   "many": "тайлов"
-  },
-  "forms": {
-   "other": "{n} tile"
-  }
  },
  "31760903": {
   "en": "Searching: ",
@@ -3050,10 +3722,20 @@
   "ru": "Язык",
   "text": "Bahasa"
  },
- "ee582c07": {
-  "en": "Brightness",
-  "ru": "Яркость",
-  "text": "Kecerahan"
+ "e16f7aef": {
+  "en": "Typing language",
+  "ru": "Язык ввода",
+  "text": "Bahasa pengetikan"
+ },
+ "76ab246a": {
+  "en": "Day brightness",
+  "ru": "Яркость днём",
+  "text": "Kecerahan siang"
+ },
+ "70a013c1": {
+  "en": "Home layout",
+  "ru": "Вид главного экрана",
+  "text": "Tampilan beranda"
  },
  "5e28fa87": {
   "en": "Sounds",
@@ -3100,6 +3782,26 @@
   "ru": "Окно сообщения",
   "text": "Jendela pesan"
  },
+ "b59d9e82": {
+  "en": "Theme",
+  "ru": "Тема",
+  "text": "Tema"
+ },
+ "cb01bf2c": {
+  "en": "Accent colour",
+  "ru": "Цвет акцента",
+  "text": "Warna aksen"
+ },
+ "f9f14ef4": {
+  "en": "Night brightness",
+  "ru": "Яркость ночью",
+  "text": "Kecerahan malam"
+ },
+ "b84ea3fd": {
+  "en": "Screen password",
+  "ru": "Пароль экрана",
+  "text": "Sandi layar"
+ },
  "f53b39c9": {
   "en": " MHz",
   "ru": " МГц",
@@ -3133,6 +3835,51 @@
   "forms": {
    "other": "{n} byte"
   }
+ },
+ "e3914635": {
+  "en": "Dark",
+  "ru": "Тёмная",
+  "text": "Gelap"
+ },
+ "2f04dd5c": {
+  "en": "Light",
+  "ru": "Светлая",
+  "text": "Terang"
+ },
+ "860b2284": {
+  "en": "Auto",
+  "ru": "Авто",
+  "text": "Otomatis"
+ },
+ "12919997": {
+  "en": "Lime",
+  "ru": "Лайм",
+  "text": "Limau"
+ },
+ "bb2f03b5": {
+  "en": "Blue",
+  "ru": "Синий",
+  "text": "Biru"
+ },
+ "73a1748b": {
+  "en": "Violet",
+  "ru": "Фиолетовый",
+  "text": "Ungu"
+ },
+ "2b2b15c9": {
+  "en": "Amber",
+  "ru": "Янтарный",
+  "text": "Kuning madu"
+ },
+ "4333e749": {
+  "en": "Same as day",
+  "ru": "Как днём",
+  "text": "Seperti siang"
+ },
+ "a0b6d096": {
+  "en": "Tiles",
+  "ru": "Плитки",
+  "text": "Ubin"
  },
  "a9bc47f3": {
   "en": "Volts",
@@ -3239,15 +3986,35 @@
   "ru": "Применяется к радио при сохранении",
   "text": "Diterapkan ke radio saat disimpan"
  },
+ "fe05bbbd": {
+  "en": "Double-space switches until restart",
+  "ru": "Двойной пробел меняет до перезапуска",
+  "text": "Dua spasi beralih hingga mulai ulang"
+ },
+ "2693ff28": {
+  "en": "OK: set or change password",
+  "ru": "OK: задать или сменить пароль",
+  "text": "OK: atur atau ubah sandi"
+ },
+ "839aad6b": {
+  "en": "Day 07:00–20:00, local time",
+  "ru": "День 07:00–20:00 по местному времени",
+  "text": "Siang 07:00–20:00, waktu lokal"
+ },
  "5b61049f": {
   "en": "OK: edit, 1-24 UTF-8 bytes",
   "ru": "OK: изменить, 1-24 байта UTF-8",
   "text": "OK: ubah, 1-24 bait UTF-8"
  },
- "3b695912": {
-  "en": "Menu language; typing layout is the @ key",
-  "ru": "Язык меню; раскладка ввода - клавиша @",
-  "text": "Bahasa menu; tata letak ketik: tombol @"
+ "7022bca6": {
+  "en": "Menu language",
+  "ru": "Язык меню",
+  "text": "Bahasa menu"
+ },
+ "6c09b0b9": {
+  "en": "Applies to Home and all folders",
+  "ru": "Для главного экрана и всех папок",
+  "text": "Untuk beranda dan semua folder"
  },
  "ca6cea83": {
   "en": "Tone for messages and ACKs",
@@ -3438,679 +4205,45 @@
   "ru": "Нет изменений",
   "text": "Tak ada perubahan"
  },
- "8759568a": {
-  "en": "Edit name",
-  "ru": "Изменить имя",
-  "text": "Ubah nama"
- },
- "a33a94f9": {
-  "en": "Cancel",
-  "ru": "Отмена",
-  "text": "Batal"
- },
- "9cd3c842": {
-  "en": "Keep",
-  "ru": "Оставить",
-  "text": "Pertahankan"
- },
- "4c9c5885": {
-  "en": "Return",
-  "ru": "Вернуть",
-  "text": "Kembalikan"
- },
- "c2d572ce": {
-  "en": "Test",
-  "ru": "Тест",
-  "text": "Tes"
- },
- "a7cb76b8": {
-  "en": "Search",
-  "ru": "Искать",
-  "text": "Cari"
- },
- "3f7e1a1c": {
-  "en": "Found",
-  "ru": "Найденные",
-  "text": "Ditemukan"
- },
- "9deec0c8": {
-  "en": "Type",
-  "ru": "Ввести",
-  "text": "Ketik"
- },
- "9a8267a9": {
-  "en": "Change",
-  "ru": "Изменить",
-  "text": "Ubah"
- },
  "0b905bda": {
   "en": "Save",
   "ru": "Сохранить",
   "text": "Simpan"
  },
- "ca4fcb20": {
-  "en": "Next value",
-  "ru": "Дальше",
-  "text": "Nilai lain"
- },
- "eccc8fe2": {
-  "en": "Wi-Fi access point",
-  "ru": "Точка доступа Wi-Fi",
-  "text": "Titik akses Wi-Fi"
- },
- "e4fe0cf0": {
-  "en": "Web chat and map upload",
-  "ru": "Веб-чат и загрузка карт",
-  "text": "Chat web dan unggah peta"
- },
- "bd132d01": {
-  "en": "Off",
-  "ru": "Выключена",
-  "text": "Mati"
- },
- "061557aa": {
-  "en": "MeshCore identity",
-  "ru": "Ключ MeshCore",
-  "text": "Identitas MeshCore"
- },
- "01f31114": {
-  "en": "Networks",
-  "ru": "Сети",
-  "text": "Jaringan"
- },
- "e6b593c8": {
-  "en": "Toggle",
-  "ru": "Переключить",
-  "text": "Alihkan"
- },
- "80266824": {
-  "en": "Wrong password or refused: ",
-  "ru": "Неверный пароль или отказ: ",
-  "text": "Sandi salah atau ditolak: "
- },
- "c2aec922": {
-  "en": "No answer from ",
-  "ru": "Нет ответа от ",
-  "text": "Tanpa respons dari "
- },
- "4aea721f": {
-  "en": "No saved network in range",
-  "ru": "Сохранённых сетей рядом нет",
-  "text": "Tak ada jaringan tersimpan"
- },
- "77943e26": {
-  "en": "Connection lost",
-  "ru": "Связь с сетью потеряна",
-  "text": "Koneksi terputus"
- },
- "3517d70a": {
-  "en": "Wi-Fi scan failed",
-  "ru": "Сбой поиска сетей",
-  "text": "Pindai Wi-Fi gagal"
- },
- "c0a8f4d6": {
-  "en": "Wi-Fi scan timed out",
-  "ru": "Поиск сетей не завершился",
-  "text": "Pindai Wi-Fi habis waktu"
- },
- "84fb5225": {
-  "en": "Clock not set",
-  "ru": "Часы не установлены",
-  "text": "Jam belum diatur"
- },
- "d85b75c4": {
-  "en": "SSID 1-32 bytes, password empty or 8-63",
-  "ru": "Имя 1-32 байта, пароль пустой или 8-63",
-  "text": "SSID 1-32 bait, sandi kosong atau 8-63"
- },
- "32e3b1d4": {
-  "en": "Tile is not 256 or 512 px",
-  "ru": "Тайл не 256/512 пикселей",
-  "text": "Tile bukan 256 atau 512 px"
- },
- "a218bb10": {
-  "en": "Not a PNG image",
-  "ru": "Сервер вернул не PNG",
-  "text": "Bukan gambar PNG"
- },
- "9b52bbc9": {
-  "en": "No location",
-  "ru": "Положение по IP не найдено",
-  "text": "Lokasi tak ditemukan"
- },
- "fe92dca2": {
-  "en": "SD full: web tiles not cached",
-  "ru": "SD заполнена: тайлы не сохраняются",
-  "text": "SD penuh: tile web tak disimpan"
- },
- "45646152": {
-  "en": "Wi-Fi client on",
-  "ru": "Wi-Fi-клиент включён",
-  "text": "Klien Wi-Fi aktif"
- },
- "71a638af": {
-  "en": "Wi-Fi client off",
-  "ru": "Wi-Fi-клиент выключен",
-  "text": "Klien Wi-Fi mati"
- },
- "674356ff": {
-  "en": "Connecting to ",
-  "ru": "Подключение к ",
-  "text": "Menghubungkan ke "
- },
- "6fa9102f": {
-  "en": "Forgotten: ",
-  "ru": "Забыта: ",
-  "text": "Dilupakan: "
- },
- "a2c6b137": {
-  "en": "Searching...",
-  "ru": "Поиск сетей...",
-  "text": "Mencari..."
- },
- "18631a5c": {
-  "en": "Wi-Fi client",
-  "ru": "Wi-Fi-клиент",
-  "text": "Klien Wi-Fi"
- },
- "397eff34": {
-  "en": "Turn the client on to find networks",
-  "ru": "Включите клиент, чтобы найти сети",
-  "text": "Aktifkan klien untuk cari jaringan"
- },
- "d54b728f": {
-  "en": "Searching for networks...",
-  "ru": "Поиск сетей...",
-  "text": "Mencari jaringan..."
- },
- "292b3500": {
-  "en": "connected",
-  "ru": "подключено",
-  "text": "terhubung"
- },
- "7dd55181": {
-  "en": "saved",
-  "ru": "сохранена",
-  "text": "tersimpan"
- },
- "04f9d959": {
-  "en": "saved, away",
-  "ru": "сохр., не рядом",
-  "text": "tersimpan, jauh"
- },
- "c1da06cb": {
-  "en": "open",
-  "ru": "открытая",
-  "text": "terbuka"
- },
- "19405072": {
-  "en": "On/off",
-  "ru": "Вкл/выкл",
-  "text": "Nyala/mati"
- },
- "9ac84c77": {
-  "en": "Connect",
-  "ru": "Подключить",
-  "text": "Hubungkan"
- },
- "89af1769": {
-  "en": "Forget",
-  "ru": "Забыть",
-  "text": "Lupakan"
- },
- "08a7df66": {
-  "en": "Rescan",
-  "ru": "Обновить",
-  "text": "Pindai"
- },
- "f1102a51": {
-  "en": "@ (input language)",
-  "ru": "@ (язык ввода)",
-  "text": "@ (bahasa input)"
- },
- "64ca9615": {
-  "en": "hold ADV (GPS)",
-  "ru": "удерж. ADV (GPS)",
-  "text": "tahan ADV (GPS)"
- },
- "2b18cfad": {
-  "en": "Left",
-  "ru": "Влево",
-  "text": "Kiri"
- },
- "734cec5d": {
-  "en": "Up",
-  "ru": "Вверх",
-  "text": "Atas"
- },
- "2a7c8f4e": {
-  "en": "Down",
-  "ru": "Вниз",
-  "text": "Bawah"
- },
- "6e1282a0": {
-  "en": "Right",
-  "ru": "Вправо",
-  "text": "Kanan"
- },
- "e3077ca9": {
-  "en": "space",
-  "ru": "пробел",
-  "text": "spasi"
- },
- "d609b7de": {
-  "en": "Keyboard",
-  "ru": "Клавиатура",
-  "text": "Keyboard"
- },
- "837d5b49": {
-  "en": "n/a",
-  "ru": "нет",
-  "text": "t/a"
- },
- "aef230e2": {
-  "en": "Relayed",
-  "ru": "Переслано",
-  "text": "Diteruskan"
- },
- "ebd1789d": {
-  "en": "Rejected",
-  "ru": "Отклонено",
-  "text": "Ditolak"
- },
- "9e543f5c": {
-  "en": "Uptime",
-  "ru": "Работа",
-  "text": "Aktif"
- },
- "a6022a7a": {
-  "en": "Boot ",
-  "ru": "Загрузка ",
-  "text": "Boot "
- },
- "fd249ae3": {
-  "en": " · last key: ",
-  "ru": " · последняя клавиша: ",
-  "text": " · tombol terakhir: "
- },
- "fe8668ce": {
-  "en": "Crypto test + sound",
-  "ru": "Тест шифрования и звука",
-  "text": "Tes kripto + suara"
- },
- "f769e02b": {
-  "en": "Create storage...",
-  "ru": "Создать хранилище...",
-  "text": "Buat penyimpanan..."
- },
- "46b8241c": {
-  "en": "Ball, swipe",
-  "ru": "Шар, свайп",
-  "text": "Bola, geser"
- },
- "39012b21": {
-  "en": "Move: menu, lists, map",
-  "ru": "Перемещение: меню, списки, карта",
-  "text": "Gerak: menu, daftar, peta"
- },
- "a9849595": {
-  "en": "Click",
-  "ru": "Нажатие",
-  "text": "Klik"
- },
- "ad13b2cf": {
-  "en": "Open / send",
-  "ru": "Открыть / отправить",
-  "text": "Buka / kirim"
- },
- "8082be11": {
-  "en": "Hold ball",
-  "ru": "Удерж. шар",
-  "text": "Tahan bola"
- },
- "da9299e5": {
-  "en": "Unlock; in chat: Russian layout",
-  "ru": "Вход; в чате: русская раскладка",
-  "text": "Buka kunci; chat: tata letak Rusia"
- },
- "85013777": {
-  "en": "Tap",
-  "ru": "Касание",
-  "text": "Ketuk"
- },
- "e96df6ee": {
-  "en": "Open; hints below are keys; title: back",
-  "ru": "Открыть; кнопки внизу; заголовок - назад",
-  "text": "Buka; bawah: tombol; judul: kembali"
- },
- "dd425d56": {
-  "en": "Delete; with no text: back",
-  "ru": "Удалить; без текста: назад",
-  "text": "Hapus; tanpa teks: kembali"
- },
- "609be88e": {
-  "en": "in text: switch RU/EN",
-  "ru": "в тексте: RU/EN",
-  "text": "di teks: ganti RU/EN"
- },
- "de82dc1b": {
-  "en": "Map: saved maps",
-  "ru": "Карта: список карт",
-  "text": "Peta: peta tersimpan"
- },
- "1e70c4ca": {
-  "en": "Map zoom",
-  "ru": "Масштаб карты",
-  "text": "Zoom peta"
- },
- "75783192": {
-  "en": "Nodes: show on map",
-  "ru": "Узлы: показать на карте",
-  "text": "Node: tampilkan di peta"
- },
- "1bd6e4b7": {
-  "en": "Menu: DEL until the tiles",
-  "ru": "Меню: DEL до плиток",
-  "text": "Menu: DEL hingga ubin"
- },
- "b0916d3b": {
-  "en": "Map; L - saved maps",
-  "ru": "Карта; L - список карт",
-  "text": "Peta; L - peta tersimpan"
- },
- "ffad6b6e": {
-  "en": "Menu",
-  "ru": "Главное меню",
-  "text": "Menu utama"
- },
- "e446fc2f": {
-  "en": "Previous screen",
-  "ru": "Предыдущий экран",
-  "text": "Layar sebelumnya"
- },
- "60ca84b7": {
-  "en": "Announce this node; hold: GPS on/off",
-  "ru": "Объявить узел; удерж.: GPS вкл/выкл",
-  "text": "Umumkan node ini; tahan: GPS on/off"
- },
- "1d4452cb": {
-  "en": "function key, not Sym+@: RU/EN in chat",
-  "ru": "функц. клавиша (не Sym+@): RU/EN в чате",
-  "text": "tombol fungsi, bukan Sym+@: RU/EN di chat"
- },
- "db1e8e1b": {
-  "en": "Lock screen (there is no microphone)",
-  "ru": "Блокировка (микрофона нет)",
-  "text": "Kunci layar (tidak ada mikrofon)"
- },
- "a21c0730": {
-  "en": "Open / send; twice or hold: unlock",
-  "ru": "Открыть / отправить; дважды или удерж.: вход",
-  "text": "Buka / kirim; 2x atau tahan: buka kunci"
- },
- "9fb377cf": {
-  "en": "in text: switch RU/EN; Right: capital",
-  "ru": "в тексте: RU/EN; -> : заглавная",
-  "text": "di teks: ganti RU/EN; Kanan: kapital"
- },
- "7311d31b": {
-  "en": "Russian layout",
-  "ru": "Русская раскладка",
-  "text": "Tata letak Rusia"
- },
- "08d56a77": {
-  "en": {
-   "one": "new message",
-   "other": "new messages"
-  },
-  "ru": {
-   "one": "новое сообщение",
-   "few": "новых сообщения",
-   "many": "новых сообщений"
-  },
-  "forms": {
-   "other": "{n} pesan baru"
-  }
- },
- "127b4873": {
-  "en": "Unlock to read",
-  "ru": "Разблокируйте, чтобы прочитать",
-  "text": "Buka kunci untuk membaca"
- },
- "12ff5cad": {
-  "en": "Last from ",
-  "ru": "Последнее от ",
-  "text": "Terakhir dari "
- },
- "7a531229": {
-  "en": "The repeater keeps relaying",
-  "ru": "Репитер продолжает пересылку",
-  "text": "Repeater tetap meneruskan"
- },
- "f3158c93": {
-  "en": "The room keeps serving members",
-  "ru": "Комната продолжает работать",
-  "text": "Ruang tetap melayani anggota"
- },
- "2bc700f4": {
-  "en": "Radio and GPS keep working",
-  "ru": "Радио и GPS продолжают работать",
-  "text": "Radio dan GPS tetap bekerja"
- },
- "b72fb804": {
-  "en": "Radio error",
-  "ru": "Ошибка радио",
-  "text": "Galat radio"
- },
- "863c4afd": {
-  "en": "Twice or hold: the game",
-  "ru": "Дважды или удерж.: партия",
-  "text": "2x atau tahan: permainan"
- },
- "6179a213": {
-  "en": "Twice or hold: unlock",
-  "ru": "Дважды или удерж.: вход",
-  "text": "2x atau tahan: buka kunci"
- },
- "06e4383f": {
-  "en": "Network key · 64 hex",
-  "ru": "Ключ сети · 64 hex",
-  "text": "Kunci jaringan · 64 hex"
- },
- "5bb9392e": {
-  "en": "Tournament name",
-  "ru": "Название турнира",
-  "text": "Nama turnamen"
- },
- "4257ae5d": {
-  "en": "Pet name",
-  "ru": "Имя питомца",
-  "text": "Nama piaraan"
- },
- "f12916a4": {
-  "en": "Counter name",
-  "ru": "Имя счётчика",
-  "text": "Nama hitungan"
- },
- "7b04c300": {
-  "en": "Region of the channel",
-  "ru": "Регион канала",
-  "text": "Wilayah kanal"
- },
- "4b20829b": {
-  "en": "Wi-Fi password: ",
-  "ru": "Пароль Wi-Fi: ",
-  "text": "Sandi Wi-Fi: "
- },
- "1fc05d6f": {
-  "en": "Device name",
-  "ru": "Имя устройства",
-  "text": "Nama perangkat"
- },
- "20676a92": {
-  "en": " bytes",
-  "ru": " байт",
-  "text": " bait"
- },
- "47f20831": {
-  "en": "Saved after a successful login",
-  "ru": "Сохраняется после удачного входа",
-  "text": "Disimpan setelah masuk berhasil"
- },
- "ad5eec0a": {
-  "en": "As in the MeshCore app: ver, get name, neighbors...",
-  "ru": "Как в приложении MeshCore: ver, get name, neighbors...",
-  "text": "Seperti di aplikasi MeshCore: ver, get name, neighbors..."
- },
- "74df0d68": {
-  "en": "As on repeaters: msk, sao...; empty: none",
-  "ru": "Как на репитерах: msk, sao...; пусто - нет",
-  "text": "Seperti di repeater: msk, sao...; kosong: tidak ada"
- },
- "7b6f9672": {
-  "en": "As on repeaters: msk, sao...; empty: default",
-  "ru": "Как на репитерах: msk, sao...; пусто - по умолчанию",
-  "text": "Seperti di repeater: msk, sao...; kosong: bawaan"
- },
- "60fa6a70": {
-  "en": "8-63 characters; -> after a letter: capital",
-  "ru": "8-63 символа; -> после буквы: заглавная",
-  "text": "8-63 karakter; -> setelah huruf: kapital"
- },
- "e96a0252": {
-  "en": "OK: log in   BACK: cancel",
-  "ru": "OK: войти   BACK: отменить",
-  "text": "OK: masuk   BACK: batal"
- },
- "a000f97c": {
-  "en": "OK: send   BACK: cancel",
-  "ru": "OK: отправить   BACK: отменить",
-  "text": "OK: kirim   BACK: batal"
- },
- "7a1da0b4": {
-  "en": "OK: post   BACK: cancel",
-  "ru": "OK: отправить   BACK: отменить",
-  "text": "OK: kirim   BACK: batal"
- },
- "4bff5478": {
-  "en": "OK: save   BACK: cancel",
-  "ru": "OK: сохранить   BACK: отменить",
-  "text": "OK: simpan   BACK: batal"
- },
- "70e3f7ea": {
-  "en": "Tournament",
-  "ru": "Турнир",
-  "text": "Turnamen"
- },
- "5542d75b": {
-  "en": "Chess · ",
-  "ru": "Шахматы · ",
-  "text": "Catur · "
- },
- "99d92ee5": {
-  "en": "Input: Russian (phonetic)",
-  "ru": "Ввод: русский (фонетический)",
-  "text": "Input: Rusia (fonetik)"
- },
- "f298c8d3": {
-  "en": "Input: English",
-  "ru": "Ввод: английский",
-  "text": "Input: Inggris"
- },
- "c79e0520": {
-  "en": "Russian input: phonetic",
-  "ru": "Русский ввод: фонетический",
-  "text": "Input Rusia: fonetik"
- },
- "e8ecae43": {
-  "en": "2x space: RU/EN   Shift or Right after a letter: capital",
-  "ru": "2×пробел: RU/EN   Shift или -> после буквы: заглавная",
-  "text": "2x spasi: RU/EN   Shift atau Kanan setelah huruf: kapital"
- },
- "cf39d358": {
-  "en": "Not in this mode",
-  "ru": "Недоступно в этом режиме",
-  "text": "Tak tersedia di mode ini"
- },
- "56bf77d2": {
-  "en": "Radio test: a restart returns the saved one",
-  "ru": "Тест радио: перезапуск вернёт сохранённое",
-  "text": "Uji radio: mulai ulang mengembalikan yang tersimpan"
- },
- "a06fdf5a": {
-  "en": "Radio busy, retry",
-  "ru": "Радио занято, повторите",
-  "text": "Radio sibuk, coba lagi"
- },
- "19b6c4b1": {
-  "en": "Radio offline",
-  "ru": "Радио недоступно",
-  "text": "Radio tidak tersedia"
- },
- "2ae7cabc": {
-  "en": "Settings saved",
-  "ru": "Настройки сохранены",
-  "text": "Pengaturan tersimpan"
- },
- "bfb7fda0": {
-  "en": "Not sent: radio or route",
-  "ru": "Не отправлено: радио или маршрут",
-  "text": "Tidak terkirim: radio atau rute"
- },
- "315b16c1": {
-  "en": "Radio busy, try again",
-  "ru": "Радио занято, повторите",
-  "text": "Radio sibuk, coba lagi"
- },
- "0691ba75": {
-  "en": "Path reset: next message floods",
-  "ru": "Путь сброшен: следующее сообщение пойдёт flood",
-  "text": "Jalur direset: pesan berikut via flood"
- },
- "7a14a9e8": {
-  "en": "Path reset failed",
-  "ru": "Не удалось сбросить путь",
-  "text": "Gagal mereset jalur"
- },
- "08d31104": {
-  "en": "OK again removes the contact",
-  "ru": "Нажмите OK ещё раз для удаления",
-  "text": "OK sekali lagi menghapus kontak"
- },
- "17781681": {
-  "en": "Contact removed; its next advert adds it again",
-  "ru": "Контакт удалён; новое объявление вернёт его",
-  "text": "Kontak dihapus; kembali saat ia diumumkan lagi"
- },
- "3e33cd0f": {
-  "en": "Cannot remove while sending",
-  "ru": "Нельзя удалить во время отправки",
-  "text": "Tak bisa hapus saat mengirim"
- },
- "a34dbdc4": {
-  "en": "Name saved",
-  "ru": "Имя сохранено",
-  "text": "Nama tersimpan"
- },
- "a64e97e5": {
-  "en": "Name: 1-15 UTF-8 bytes",
-  "ru": "Имя: 1-15 байт UTF-8",
-  "text": "Nama: 1-15 byte UTF-8"
- },
- "184e57b2": {
-  "en": "Region: letters, digits, '-'",
-  "ru": "Регион: буквы, цифры, '-'",
-  "text": "Wilayah: huruf, angka, '-'"
- },
- "cb8d0572": {
-  "en": "Password: 8-63 characters",
-  "ru": "Пароль: 8-63 символа",
-  "text": "Sandi: 8-63 karakter"
- },
- "d4544911": {
-  "en": "Name: 1-24 UTF-8 bytes",
-  "ru": "Имя: 1-24 байта UTF-8",
-  "text": "Nama: 1-24 bait UTF-8"
+ "2a05897c": {
+  "en": "Channel details",
+  "ru": "Сведения о канале",
+  "text": "Detail kanal"
+ },
+ "cee98a7c": {
+  "en": "Input language",
+  "ru": "Язык ввода",
+  "text": "Bahasa masukan"
+ },
+ "1cfd3c97": {
+  "en": "Full-width list",
+  "ru": "Список на весь экран",
+  "text": "Daftar lebar penuh"
+ },
+ "054b5066": {
+  "en": "My location",
+  "ru": "Моя позиция",
+  "text": "Lokasi saya"
+ },
+ "0ffd9a9b": {
+  "en": "Zoom in",
+  "ru": "Приблизить",
+  "text": "Perbesar"
+ },
+ "822431c5": {
+  "en": "Zoom out",
+  "ru": "Отдалить",
+  "text": "Perkecil"
+ },
+ "7beeb338": {
+  "en": "Show on map",
+  "ru": "Показать на карте",
+  "text": "Tampilkan di peta"
  },
  "13c4173d": {
   "en": "None",
@@ -4372,6 +4505,20 @@
   "ru": "То же #имя — тот же канал, что в приложениях MeshCore",
   "text": "#nama sama, kanal sama seperti di aplikasi MeshCore"
  },
+ "d04d1711": {
+  "en": {
+   "one": "message",
+   "other": "messages"
+  },
+  "ru": {
+   "one": "сообщение",
+   "few": "сообщения",
+   "many": "сообщений"
+  },
+  "forms": {
+   "other": "{n} pesan"
+  }
+ },
  "7a0b46f9": {
   "en": "Public channel of MeshCore",
   "ru": "Общий канал MeshCore",
@@ -4580,6 +4727,11 @@
   "en": "for the other player's announcement",
   "ru": "дождитесь объявления соперника",
   "text": "tunggu pengumuman pemain lain"
+ },
+ "d8735ad9": {
+  "en": "Announce",
+  "ru": "Объявить",
+  "text": "Umumkan"
  },
  "c07ba764": {
   "en": "Challenge",
@@ -5314,6 +5466,56 @@
   "ru": "Меню партии",
   "text": "Menu main"
  },
+ "257cb074": {
+  "en": "Copied",
+  "ru": "Скопировано",
+  "text": "Disalin"
+ },
+ "231cc709": {
+  "en": "Copy text",
+  "ru": "Копировать текст",
+  "text": "Salin teks"
+ },
+ "0f918ede": {
+  "en": "Paste",
+  "ru": "Вставить",
+  "text": "Tempel"
+ },
+ "b30e75f7": {
+  "en": "Replace text",
+  "ru": "Заменить текст",
+  "text": "Ganti teks"
+ },
+ "5c137a0e": {
+  "en": "Copy message",
+  "ru": "Копировать сообщение",
+  "text": "Salin pesan"
+ },
+ "a23ea557": {
+  "en": "Layout",
+  "ru": "Раскладка",
+  "text": "Tata letak"
+ },
+ "acfcae49": {
+  "en": "Paste failed",
+  "ru": "Не удалось вставить",
+  "text": "Gagal menempel"
+ },
+ "6532e62b": {
+  "en": "%u bytes (limit %u)",
+  "ru": "%u байт (лимит %u)",
+  "text": "%u byte (batas %u)"
+ },
+ "ee88c686": {
+  "en": "Invalid text for this field",
+  "ru": "Недопустимый текст для поля",
+  "text": "Teks tidak valid untuk kolom ini"
+ },
+ "ce94fadb": {
+  "en": "Clipboard empty",
+  "ru": "Буфер пуст",
+  "text": "Papan klip kosong"
+ },
  "8be6cc03": {
   "en": "Nothing to send",
   "ru": "Пустое сообщение",
@@ -5343,6 +5545,21 @@
   "en": "To ",
   "ru": "Кому: ",
   "text": "Ke "
+ },
+ "134a653b": {
+  "en": "Tags",
+  "ru": "Метки",
+  "text": "Tag"
+ },
+ "b39f2f7d": {
+  "en": "Note",
+  "ru": "Заметка",
+  "text": "Catatan"
+ },
+ "7ff545e2": {
+  "en": "Save failed",
+  "ru": "Ошибка записи",
+  "text": "Gagal menyimpan"
  },
  "8db3dc56": {
   "en": "Empty: write on the web page",
@@ -5403,11 +5620,6 @@
   "en": "Ability",
   "ru": "Способность",
   "text": "Kemampuan"
- },
- "b39f2f7d": {
-  "en": "Note",
-  "ru": "Заметка",
-  "text": "Catatan"
  },
  "91e32a8a": {
   "en": "Header",
@@ -8377,6 +8589,61 @@
   "ru": "Команда отправлена",
   "text": "Perintah terkirim"
  },
+ "645b364a": {
+  "en": "Unlock",
+  "ru": "Разблокировать",
+  "text": "Buka kunci"
+ },
+ "7aa3396d": {
+  "en": "Repeat password",
+  "ru": "Повторите пароль",
+  "text": "Ulangi sandi"
+ },
+ "c56b1817": {
+  "en": "New password",
+  "ru": "Новый пароль",
+  "text": "Sandi baru"
+ },
+ "5761179a": {
+  "en": "Enter password",
+  "ru": "Введите пароль",
+  "text": "Masukkan sandi"
+ },
+ "7646fdc7": {
+  "en": "Empty disables the lock",
+  "ru": "Пусто — отключить пароль",
+  "text": "Kosong untuk mematikan kunci"
+ },
+ "5a1a59b7": {
+  "en": "4–48 characters",
+  "ru": "4–48 символов",
+  "text": "4–48 karakter"
+ },
+ "49e7a056": {
+  "en": "Confirm",
+  "ru": "Подтвердить",
+  "text": "Konfirmasi"
+ },
+ "948ad5e1": {
+  "en": "Delete",
+  "ru": "Удалить",
+  "text": "Hapus"
+ },
+ "26bf3997": {
+  "en": "Try again later",
+  "ru": "Попробуйте позже",
+  "text": "Coba lagi nanti"
+ },
+ "16736620": {
+  "en": "Incorrect password",
+  "ru": "Неверный пароль",
+  "text": "Sandi salah"
+ },
+ "2a458050": {
+  "en": "Passwords differ",
+  "ru": "Пароли не совпадают",
+  "text": "Sandi berbeda"
+ },
  "a851b542": {
   "en": "Announced to the network",
   "ru": "Узел объявлен в сети",
@@ -8391,11 +8658,6 @@
   "en": "Post to the room",
   "ru": "Пост в комнату",
   "text": "Kirim ke ruang"
- },
- "c1dedaf2": {
-  "en": "Up to 151 bytes; @: input language",
-  "ru": "До 151 байта; @ - язык ввода",
-  "text": "Maks. 151 bait; @: bahasa input"
  },
  "a120182c": {
   "en": "1-15 characters; -> after a letter: capital",
@@ -9079,11 +9341,6 @@
   "en": "Players see it in the invitation and the standings. OK changes it, > goes on.",
   "ru": "Его увидят игроки в приглашении и таблице. OK — изменить, > — дальше.",
   "text": "Pemain melihatnya di undangan dan klasemen. OK mengubah, > lanjut."
- },
- "055dae05": {
-  "en": "Edit",
-  "ru": "Изменить",
-  "text": "Ubah"
  },
  "e7bfbbfb": {
   "en": "Next",

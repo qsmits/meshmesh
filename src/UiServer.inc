@@ -14,10 +14,17 @@ Page homePage(){return config.role==RoleNormal?Home:ServerHome;}
 String roleTitle(int role){return role==RoleRepeater?t("MeshCore repeater","Репитер MeshCore"):role==RoleRoom?t("MeshCore room server","Комната MeshCore"):t("Normal mode","Обычный режим");}
 void drawRolePick(){
  for(int r=0;r<RoleCount;r++){
-  int y=24+r*58;bool focus=selected==r,current=config.role==r;target(8,y,304,54,r);panel(8,y,304,54,focus?cardHi:card,8);if(focus)ring(8,y,304,54,8);
+  int y=24+r*58;bool focus=selected==r,current=config.role==r;
+  target(8,y,304,54,r);
+  if(focus)panel(8,y,304,54,cardHi,8);
+  else g().drawFastHLine(52,y+54,252,line);
   Icon ic=r==RoleRepeater?IcTower:r==RoleRoom?IcRoom:IcChat;uint16_t hue=r==RoleRepeater?violet:r==RoleRoom?warn:accent;
-  g().fillRoundRect(16,y+8,28,28,7,bg);icon(ic,30,y+22,8,hue,bg);text(54,y+19,roleTitle(r),ink,bold);
-  if(current){String now=t("running","сейчас");int w=measure(now,small)+10;g().fillRoundRect(302-w,y+8,w,14,7,rgb(0x14524b));textCenter(302-w/2,y+18,now,accent,small);}
+  g().fillRoundRect(15,y+10,30,30,8,focus?accent:card);
+  icon(ic,30,y+25,9,focus?bg:hue,focus?accent:card);
+  String now=current?t("running","сейчас"):String();
+  int titleWidth=248-(current?measure(now,small)+18:0);
+  text(54,y+19,fit(roleTitle(r),titleWidth,bold),ink,bold);
+  if(current){textRight(302,y+18,now,accent,small);g().fillCircle(295-measure(now,small),y+14,2,accent);}
   const char* about[][2]={{tr("Screen, chats, maps, radar and games","Экран, чаты, карты, радар и игры"),tr("A MeshCore chat node; relays as set","Узел-собеседник MeshCore; пересылка по настройке")},
    {tr("Relays the network's packets; no chats","Пересылает пакеты сети; без чатов"),tr("Login and settings from the MeshCore app","Вход и настройка из приложения MeshCore")},
    {tr("Keeps posts and hands them to members","Хранит посты и раздаёт их участникам"),tr("Room password and settings from the MeshCore app","Пароль комнаты и настройка из приложения MeshCore")}};
@@ -27,15 +34,16 @@ void drawRolePick(){
  else textCenter(160,212,t("A change restarts; data and settings stay","Смена перезапускает; данные и настройки сохраняются"),faint,small);
  footer({{"OK",t("Choose","Выбрать")},{"^v",t("Select","Выбор")},{"BACK",bootPick?t("Continue","Продолжить"):t("Cancel","Отмена")}});
 }
+Page roleReturn=Home;
 bool rolePickKey(int key){
  bootPick=false;
  if(key==KeyUp||key==KeyDown){selected=(selected+(key==KeyUp?RoleCount-1:1))%RoleCount;return true;}
- if(key==KeyBack){change(homePage());return true;}
+ if(key==KeyBack){change(roleReturn,true);return true;}
  if(key!=Enter)return false; // HOME, CTRL, ADV keep their meaning
- if(selected==config.role){change(homePage());return true;}
+ if(selected==config.role){change(roleReturn,true);return true;}
  String reply=setRole(selected);bool done=reply.startsWith("OK");notice(done?t("Restarting: ","Перезапуск: ")+roleTitle(selected):reply,done?ok:bad);return true;
 }
-void openRolePick(bool atBoot){change(RolePick);selected=config.role;bootPick=atBoot;bootPickAt=millis();}
+void openRolePick(bool atBoot){roleReturn=atBoot?homePage():page;change(RolePick);selected=config.role;bootPick=atBoot;bootPickAt=millis();}
 
 // Server page: status, then the settings an owner changes on the spot.
 String uptimeText(uint32_t s){return s<3600?String(s/60)+t(" min"," мин"):s<86400?String(s/3600)+t(" h "," ч ")+String(s/60%60)+t(" min"," мин"):String(s/86400)+t(" d "," д ")+String(s/3600%24)+t(" h"," ч");}
@@ -80,8 +88,8 @@ void drawServer(){
  }
  scrollbar(first,5,rows,87,108);text(10,210,fit(serverHint(serverRow(selected)),300,small),faint,small);
  ServerRow r=serverRow(selected);
- if(r==RowAdvert||r==RowFlood)footer({{"<>",t("Change","Изменить")},{"^v",t("Select","Выбор")},{"ADV",t("Advertise","Объявить")},{"P",t("Pet","Питомец")}});
- else footer({{"OK",r==RowForward||r==RowReadOnly?t("Switch","Переключить"):t("Open","Открыть")},{"^v",t("Select","Выбор")},{"ADV",t("Advertise","Объявить")},{"P",t("Pet","Питомец")}});
+ if(r==RowAdvert||r==RowFlood)footer({{"<>",t("Change","Изменить")},{"^v",t("Select","Выбор")},{"PIN",t("Advertise","Объявить")},{"P",t("Pet","Питомец")}});
+ else footer({{"OK",r==RowForward||r==RowReadOnly?t("Switch","Переключить"):t("Open","Открыть")},{"^v",t("Select","Выбор")},{"PIN",t("Advertise","Объявить")},{"P",t("Pet","Питомец")}});
 }
 void serverNotice(const String& reply){bool done=reply.startsWith("OK")||reply.startsWith("password now");notice(done?t("Saved","Сохранено"):reply,done?ok:bad);}
 // Intervals step through the values the CLI accepts.
@@ -110,7 +118,7 @@ bool serverKey(int key){
  return true;
 }
 String serverEditTitle(){ServerRow r=serverRow(selected);return r==RowPost?t("Post to the room","Пост в комнату"):serverName(r);}
-String serverEditHint(){ServerRow r=serverRow(selected);return r==RowPost?t("Up to 151 bytes; @: input language","До 151 байта; @ - язык ввода"):r==RowAdmin?t("1-15 characters; -> after a letter: capital","1-15 символов; -> после буквы: заглавная"):t("0-15 characters; empty: blank login","0-15 символов; пусто - вход без пароля");}
+String serverEditHint(){ServerRow r=serverRow(selected);return r==RowPost?String("151")+t(" bytes"," байт")+" · "+t("Menu","Меню")+" RU/EN":r==RowAdmin?t("1-15 characters; -> after a letter: capital","1-15 символов; -> после буквы: заглавная"):t("0-15 characters; empty: blank login","0-15 символов; пусто - вход без пароля");}
 // Passwords: up to 15 bytes of printable ASCII; the admin password cannot be empty (a blank login would be admin).
 void serverSaveEdit(){
  ServerRow r=serverRow(selected);

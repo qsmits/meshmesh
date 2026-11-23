@@ -2,6 +2,9 @@
 #pragma GCC optimize("Os") // 1 MB flash: icons and shapes are not speed-critical (the rest of our nRF52 code is -O2)
 #endif
 #include "UiIcons.h"
+#if !defined(MM_COMPACT)
+#include "SmoothCanvas.h"
+#endif
 #include "Dice.h"
 #include "Modules.h"
 #include <Arduino.h>
@@ -10,8 +13,27 @@
 namespace {
 void arc(Adafruit_GFX& d,int cx,int cy,int r,int a0,int a1,uint16_t c){for(int a=a0;a<=a1;a+=3){float rad=a*M_PI/180;d.drawPixel(cx+roundf(r*sinf(rad)),cy-roundf(r*cosf(rad)),c);}}
 void thick(Adafruit_GFX& d,int x0,int y0,int x1,int y1,uint16_t c){d.drawLine(x0,y0,x1,y1,c);d.drawLine(x0+1,y0,x1+1,y1,c);}
+#if !defined(MM_COMPACT)
+// Distance to a circular arc, with round caps at the two ends. Pixel centres
+// on the included sweep use radial distance, including sweeps over 180°.
+void arc(SmoothCanvas& d,int cx,int cy,int r,int a0,int a1,uint16_t c){
+ if(r<=0)return;
+ float start=a0*float(M_PI)/180, end=a1*float(M_PI)/180;
+ float sx=sinf(start),sy=-cosf(start),ex=sinf(end),ey=-cosf(end);
+ for(int y=-r-1;y<=r+1;++y)for(int x=-r-1;x<=r+1;++x){
+  int squared=x*x+y*y;
+  if(squared<=(r-1)*(r-1) || squared>=(r+1)*(r+1))continue;
+  bool after=sx*y-sy*x>=0, before=x*ey-y*ex>=0;
+  bool inSweep=a1-a0>180 ? after||before : after&&before;
+  float distance=inSweep ? fabsf(sqrtf(float(squared))-r)
+                         : std::min(hypotf(x-r*sx,y-r*sy),hypotf(x-r*ex,y-r*ey));
+  if(distance<1)d.coveredPixel(cx+x,cy+y,c,int((1-distance)*15+0.5f));
+ }
 }
-void drawIcon(Adafruit_GFX& d,Icon id,int cx,int cy,int s,uint16_t c,uint16_t hole,uint16_t shade){
+void thick(SmoothCanvas& d,int x0,int y0,int x1,int y1,uint16_t c){d.strokeLine(x0,y0,x1,y1,1.75f,c);}
+#endif
+}
+template<class Canvas> static void paintIcon(Canvas& d,Icon id,int cx,int cy,int s,uint16_t c,uint16_t hole,uint16_t shade){
  int h=s/2,q=max(1,s/4),w=max(1,s/8);
  switch(id){
  case IcChat:d.fillRoundRect(cx-s,cy-s*3/4,2*s,s*3/2,max(2,s/3),c);d.fillTriangle(cx-h,cy+s*3/4-1,cx,cy+s*3/4-1,cx-s*3/4,cy+s,c);for(int k=-1;k<=1;k++)d.fillCircle(cx+k*h,cy,w,hole);break;
@@ -59,9 +81,9 @@ void drawIcon(Adafruit_GFX& d,Icon id,int cx,int cy,int s,uint16_t c,uint16_t ho
  }
 }
 namespace {
-void polygon(Adafruit_GFX& d,int cx,int cy,int r,int n,uint16_t c){int xp=0,yp=0;for(int k=0;k<=n;k++){float a=-M_PI/2+k*2*M_PI/n;int x=cx+roundf(r*cosf(a)),y=cy+roundf(r*sinf(a));if(k)d.fillTriangle(cx,cy,xp,yp,x,y,c);xp=x;yp=y;}}
+template<class Canvas> void polygon(Canvas& d,int cx,int cy,int r,int n,uint16_t c){int xp=0,yp=0;for(int k=0;k<=n;k++){float a=-M_PI/2+k*2*M_PI/n;int x=cx+roundf(r*cosf(a)),y=cy+roundf(r*sinf(a));if(k)d.fillTriangle(cx,cy,xp,yp,x,y,c);xp=x;yp=y;}}
 }
-void drawDieShape(Adafruit_GFX& d,uint8_t shape,int cx,int cy,int s,uint16_t fill,uint16_t edge,uint16_t face,unsigned pips){
+template<class Canvas> static void paintDie(Canvas& d,uint8_t shape,int cx,int cy,int s,uint16_t fill,uint16_t edge,uint16_t face,unsigned pips){
  switch(shape){
  case dice::D4:d.fillTriangle(cx,cy-s-1,cx-s-2,cy+s-1,cx+s+2,cy+s-1,fill);break;
  case dice::D6:d.fillRoundRect(cx-s+1,cy-s+1,2*s-1,2*s-1,max(2,s/3),fill);
@@ -74,7 +96,7 @@ void drawDieShape(Adafruit_GFX& d,uint8_t shape,int cx,int cy,int s,uint16_t fil
  default:d.fillRoundRect(cx-s-2,cy-s+3,2*s+5,2*s-5,max(2,s/3),fill);break;
  }
 }
-void drawStatShape(Adafruit_GFX& d,uint8_t shape,int cx,int cy,int r,uint16_t fill,uint16_t edge){
+template<class Canvas> static void paintStat(Canvas& d,uint8_t shape,int cx,int cy,int r,uint16_t fill,uint16_t edge){
  auto outline=[&](const int* xs,const int* ys,int n){for(int k=0;k<n;k++){int j=(k+1)%n;d.drawLine(xs[k],ys[k],xs[j],ys[j],edge);d.drawLine(xs[k]+(xs[k]<cx?1:xs[k]>cx?-1:0),ys[k]+(ys[k]<cy?1:ys[k]>cy?-1:0),xs[j]+(xs[j]<cx?1:xs[j]>cx?-1:0),ys[j]+(ys[j]<cy?1:ys[j]>cy?-1:0),edge);}};
  switch(shape){
  case dice::Square:d.fillRoundRect(cx-r,cy-r,2*r+1,2*r+1,max(2,r/3),fill);d.drawRoundRect(cx-r,cy-r,2*r+1,2*r+1,max(2,r/3),edge);d.drawRoundRect(cx-r+1,cy-r+1,2*r-1,2*r-1,max(1,r/3-1),edge);break;
@@ -86,3 +108,56 @@ void drawStatShape(Adafruit_GFX& d,uint8_t shape,int cx,int cy,int r,uint16_t fi
  default:d.fillCircle(cx,cy,r,fill);d.drawCircle(cx,cy,r,edge);d.drawCircle(cx,cy,r-1,edge);break;
  }
 }
+void drawIcon(Adafruit_GFX& d,Icon id,int cx,int cy,int s,uint16_t c,uint16_t hole,uint16_t shade) {
+  paintIcon(d, id, cx, cy, s, c, hole, shade);
+}
+void drawDieShape(Adafruit_GFX& d,uint8_t shape,int cx,int cy,int s,uint16_t fill,uint16_t edge,uint16_t face,unsigned pips) {
+  paintDie(d, shape, cx, cy, s, fill, edge, face, pips);
+}
+void drawStatShape(Adafruit_GFX& d,uint8_t shape,int cx,int cy,int r,uint16_t fill,uint16_t edge) {
+  paintStat(d, shape, cx, cy, r, fill, edge);
+}
+
+#if !defined(MM_COMPACT)
+void drawIcon(SmoothCanvas& d,Icon id,int cx,int cy,int s,uint16_t c,uint16_t hole,uint16_t shade) {
+  // Optical adjustments for the small LCD icons. Join the tail well inside
+  // the bubble and leave enough room between cutouts at status-bar sizes.
+  int half=s/2;
+  switch(id){
+  case IcChat:{
+    int left=cx-s, bottom=cy+half;
+    d.fillTriangle(left+3,bottom-3,left+s+1,bottom-3,left+3,bottom+std::max(2,s/2),c);
+    d.fillRoundRect(left,cy-s*3/4,2*s+1,bottom-(cy-s*3/4)+1,std::max(2,s/3),c);
+    for(int k=-1;k<=1;++k)d.fillCircle(cx+k*half,cy,std::max(1,s/9),hole);
+    break;
+  }
+  case IcMesh:{
+    int top=cy-s*2/3, bottom=cy+s*2/3, left=cx-s*3/4, right=cx+s*3/4;
+    d.strokeLine(cx,top,left,bottom,1.5f,c);
+    d.strokeLine(cx,top,right,bottom,1.5f,c);
+    d.strokeLine(left,bottom,right,bottom,1.5f,c);
+    int radius=std::max(2,s/4);
+    for(int i=0;i<3;++i){
+      int x=i==0?cx:i==1?left:right, y=i==0?top:bottom;
+      d.fillCircle(x,y,radius,c);
+      if(s>=9)d.fillCircle(x,y,std::max(0,radius-2),hole);
+    }
+    break;
+  }
+  case IcCompass:{
+    d.drawCircle(cx,cy,s,c);
+    int tip=std::max(2,s/2), waist=std::max(1,s/5);
+    d.fillTriangle(cx-tip,cy+tip,cx-waist,cy-waist,cx+waist,cy+waist,shade);
+    d.fillTriangle(cx+tip,cy-tip,cx-waist,cy-waist,cx+waist,cy+waist,c);
+    break;
+  }
+  default:paintIcon(d,id,cx,cy,s,c,hole,shade);break;
+  }
+}
+void drawDieShape(SmoothCanvas& d,uint8_t shape,int cx,int cy,int s,uint16_t fill,uint16_t edge,uint16_t face,unsigned pips) {
+  paintDie(d, shape, cx, cy, s, fill, edge, face, pips);
+}
+void drawStatShape(SmoothCanvas& d,uint8_t shape,int cx,int cy,int r,uint16_t fill,uint16_t edge) {
+  paintStat(d, shape, cx, cy, r, fill, edge);
+}
+#endif

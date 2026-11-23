@@ -26,6 +26,18 @@ struct Config {
   uint8_t role=RoleNormal;
   uint32_t blePin=0; // pairing PIN, made once: a restart (e.g. a USB-UART reset) keeps it
   bool bleOn=false;  // Bluetooth on after boot: the last choice, else on in the normal role
+#if !defined(MM_COMPACT)
+  uint8_t theme=0,accentColor=0,nightBrightness=0; // 0 night brightness follows daytime.
+  bool nightAt(time_t utc) const {
+    if(utc<1700000000)return false;
+    int hour=((int64_t(utc)/60+utcOffset)%1440)/60;
+    return hour<7||hour>=20;
+  }
+  bool lightAt(time_t utc) const {return theme==1||(theme==2&&utc>=1700000000&&!nightAt(utc));}
+  uint8_t backlight(time_t utc) const {return nightBrightness&&nightAt(utc)?nightBrightness:brightness;}
+  bool inputRussian=false; // Preferred physical keyboard layout at startup.
+  bool launcherTiles=false; // Home and folders default to List
+#endif
   bool lockDetails=true; // the locked screen names chess opponents, moves and message senders
   uint8_t notifyLed=1,notifyPopup=1;
 #if defined(MM_COMPACT)
