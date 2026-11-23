@@ -1,7 +1,7 @@
 #pragma once
 #include "Arduino.h"
 #include <map>
-// In-memory NVS for previews; nothing leaves the process.
+// In-memory NVS for preview fixtures.
 class Preferences {
   std::string ns;bool ro=true;
   static std::map<std::string,std::string>& store(){static std::map<std::string,std::string> s;return s;}

@@ -26,9 +26,7 @@ HardwareSerialShim Serial;EspShim ESP;SPIClass SPI;TwoWire Wire,Wire1;
 size_t Print::print(const String& s){return write((const uint8_t*)s.c_str(),s.length());}
 static uint32_t fakeMillis=100000;
 uint32_t millis(){return fakeMillis;}
-Config config;Hardware hardware;MeshRadio meshRadio;Maps maps;Navigation navigation;
-void Config::load(){}bool Config::save(){return true;}bool Config::valid() const{return true;}
-String Config::keyHex() const{return String("00");}bool Config::setKey(const String&){return false;}
+Hardware hardware;MeshRadio meshRadio;Maps maps;Navigation navigation;
 static bool wifiOn=false,bleOn=false;
 bool portalActive(){return wifiOn;}String portalPassword(){return "preview-pass";}void portalToggle(){wifiOn=!wifiOn;}
 bool bleActive(){return bleOn;}void bleToggle(){bleOn=!bleOn;}uint32_t blePin(){return 123456;}
@@ -39,10 +37,20 @@ bool login(uint64_t,const String&,bool){return true;}bool status(uint64_t){retur
 bool traceable(uint64_t id){Peer* p=nullptr;for(unsigned i=0;i<meshRadio.peerCount;i++)if(meshRadio.peers[i].id==id)p=&meshRadio.peers[i];return p&&(p->type==2||(p->pathLength!=255&&(p->pathLength&63)));}
 bool saved(uint64_t){return true;}void tick(){}String json(){return "{}";}String usbCommand(const String&){return "OK";}}
 String bleName(){return String("MeshCore-")+config.name+" 5EA1";}void bleRename(){}
-String configJson(bool){return "{}";}
-String applySettings(JsonObjectConst v){if(v.containsKey("double_back"))config.doubleBack=v["double_back"];return "OK settings saved";} // the switches the checks read back
+#include "Regions.h"
+#include "MeshServer.h"
+#include "../../src/AppSettings.inc"
+bool MeshRadio::applyConfig(){return true;}
+void MeshServer::configChanged(){}
+#ifdef MM_DESKTOP_SIMULATOR
+#include "simulator_settings.inc"
+#else
+bool Config::save(){return true;}
+#endif
+#include "private_records.inc"
+static uint8_t screenBrightness=180;
 // Hardware
-void Hardware::brightness(uint8_t){}void Hardware::beep(){}void Hardware::setGps(bool){}
+void Hardware::brightness(uint8_t level){screenBrightness=level;}void Hardware::beep(){}void Hardware::setGps(bool enabled){gps.location.valid=enabled;}
 void Hardware::flush(){}
 void Hardware::text(int x,int y,const String& v,uint16_t color){font.setForegroundColor(color);font.setCursor(x,y);font.print(v);}
 void Hardware::line(int y,const String& v,uint16_t color){text(
@@ -54,7 +62,7 @@ void Hardware::line(int y,const String& v,uint16_t color){text(
 ,y,v,color);}
 // Radio
 static uint32_t nextId=900;
-bool MeshRadio::sendMessage(const String& text,uint64_t destination){ChatMessage m;m.source=nodeId;m.destination=destination;m.outgoing=true;m.status=ChatMessage::Queued;m.timestamp=time(nullptr);m.id=++nextId;strncpy(m.name,"M9",24);strncpy(m.text,text.c_str(),160);addMessage(m,true);event="Queued: waiting for delivery";return true;}
+bool MeshRadio::sendMessage(const String& text,uint64_t destination){ChatMessage m;m.source=nodeId;m.destination=destination;m.outgoing=true;m.status=ChatMessage::Queued;m.timestamp=time(nullptr);m.id=++nextId;strlcpy(m.name,config.name,sizeof m.name);strncpy(m.text,text.c_str(),160);addMessage(m,true);event="Queued: waiting for delivery";return true;}
 bool MeshRadio::sendHello(){txCount++;return true;}
 static uint32_t previewProbe=0;
 uint32_t MeshRadio::sendProbe(const String&,uint64_t channel){txCount++;return channels::isChannel(channel)?++previewProbe:0;}
@@ -122,11 +130,27 @@ static void shot(const char* name){tick();std::string n=name;
 #endif
  save(outDir+"/"+n+".ppm");printf("%s\n",n.c_str());}
 static uint64_t peerId(int i){return (uint64_t(0x1F+i*0x2B)<<56)|0xB2C3D4E5F600ULL|uint64_t(i*0x1111);} // 8-byte IDs as MeshCore keys give
+// Start from normal mode, then exercise the actual clipboard and device-name editor.
+#if !defined(MM_COMPACT)
+static void showPasteFailure(){
+ key(0x81);key(13); // Public chat
+ for(char c:std::string("Friday field team meeting point"))key(c);
+ key(0xa3);key('c');
+ key(0x90);key(0xb6);key(13);key(13); // Screen & device, Name
+ key(0xa3);key('r');
+}
+#endif
 static void scenario();
 #include "wishlist_checks.inc"
+#ifdef MM_DESKTOP_SIMULATOR
+#include "desktop_simulator.inc"
+#endif
 int main(int argc,char** argv){
  outDir=argc>1?argv[1]:".";
  config.lang=argc>2?max(0,langFromCode(argv[2])):LangRu; // a language code, Russian by default
+#ifdef MM_DESKTOP_SIMULATOR
+ config.lang=LangEn;
+#endif
 #if defined(MM_HIRES)
  hardware.canvas=new HiresCanvas();strcpy(config.name,"T114");
 #elif defined(MM_HELTEC_V4)
@@ -191,7 +215,36 @@ int main(int argc,char** argv){
    else r=duels.command(String(line.c_str()));
    duels.tick();printf("%s\n",r.c_str());fflush(stdout);}
   return 0;}
- quickSend::begin();people::begin();wardrive::begin();wishlistChecks();uiBegin();scenario();return 0;
+ quickSend::begin();people::begin();wardrive::begin();
+#ifdef MM_DESKTOP_SIMULATOR
+ bool test=outDir=="--self-test";
+ bool proposal=outDir=="--radio-proposal";
+ bool pasteDemo=outDir=="--paste-demo";
+ bool checkReload=outDir=="--check-saved-settings";
+ if(checkReload&&argc!=3)return 1;
+ if((test||checkReload)&&argc==3){
+  if(!loadSimulatorSettings(std::string(argv[2])+"/"))return 1;
+ }else if(!test&&!pasteDemo&&!proposal){
+  char* path=SDL_GetPrefPath("MeshMesh","M9 Simulator");
+  if(!path){fprintf(stderr,"Simulator settings folder: %s\n",SDL_GetError());return 1;}
+  std::string directory=path;SDL_free(path);
+  if(!loadSimulatorSettings(directory))return 1;
+ }
+ if(checkReload){
+  if(!savedSettingsMatch()){fprintf(stderr,"Simulator settings did not survive restart\n");return 1;}
+  puts("Screen, device name, sound, and radio settings survived a fresh simulator process.");
+ }
+ hardware.brightness(config.brightness);hardware.setGps(config.gps);
+ dicer.begin();duels.begin();creature.begin();uiBegin();
+ if(proposal){config.frequency=869.618f;config.sf=7;config.cr=5;config.autoLock=0;config.dimAfter=0;key(13);}
+ if(pasteDemo){
+  config.dimAfter=0;config.autoLock=0; // Leave the example on screen for the user to explore.
+  key(13);showPasteFailure();
+ }
+ return runSimulator(test||checkReload,checkReload);
+#else
+ wishlistChecks();uiBegin();scenario();return 0;
+#endif
 }
 #include "scenario.inc"
 

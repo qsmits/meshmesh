@@ -8,6 +8,16 @@ static void tile(const char* id){
  int f=app<0?-1:appsFolderOf(uint8_t(app));
  for(unsigned i=0;i<n&&f>=0;i++)if(o[i]==(AppFolder|f)){pick(i);key(13);uint8_t in[AppEntriesMax];unsigned m=appsShown(in,f);for(unsigned j=0;j<m;j++)if(in[j]==app){pick(j);return;}}
  printf("FAIL no home tile %s\n",id);exit(1);}
+#if !defined(MM_COMPACT)
+// Switch using the same draft editor and Save action as the handheld.
+static void switchHomeLayout(){
+ key(0x90);key(0xb6);key(13);
+ for(int i=0;i<4;i++)key(0xb6);
+ key(0xb7);shot("display-home-layout");
+ for(int i=0;i<5;i++)key(0xb5);
+ key(13);key(0x82);
+}
+#endif
 static void scenario(){
 #if defined(MM_JOYSTICK)
  // GAT562: joystick arrows 0xb4..0xb7, centre 13 (hold 0xa3), Back 0x86 (hold 0x82).
@@ -37,9 +47,10 @@ static void scenario(){
  // The rightmost footer hint (BACK on most pages), found by tapping from the right edge.
  auto footerRight=[&](const char* page){for(int x=316;x>150&&uiStatus().indexOf(page)>=0;x-=4){uiTouch('t',x,230);tick();}};
  shot("tdeck-role");touch('t',160,10);expect("title bar leaves the boot choice","\"page\":\"home\"");
+ touch('t',160,131);expect("Nodes list row","\"page\":\"nodes\"");switchHomeLayout();
  touch('t',260,100);expect("Nodes tile","\"page\":\"nodes\"");shot("tdeck-nodes");
  touch('t',160,90);expect("second node row","\"page\":\"node\"");expect("second node","\"selected_node\":\"4A00B2C3D4E5F711\"");
- touch('t',160,10);expect("title bar back","\"page\":\"nodes\"");key(0x83);footerRight("\"page\":\"diagnostics\"");expect("footer BACK to where @ was pressed","\"page\":\"nodes\"");key(0x82);
+ touch('t',160,10);expect("title bar back","\"page\":\"nodes\"");key(0x83);expect("node actions","\"panel\":\"actions\"");touch('t',160,10);expect("footer BACK to where @ was pressed","\"page\":\"nodes\"");key(0x82);
  touch('d',0,0);expect("swipe down","\"selected\":3");touch('u',0,0);touch('l',0,0);expect("swipe left","\"selected\":2");
  key(0x90);touch('t',160,24+32+10);expect("Settings row","\"page\":\"display\"");
  touch('t',160,25+23+8);expect("first tap selects","\"selected\":1");shot("tdeck-display");
@@ -66,15 +77,15 @@ static void scenario(){
   tile("chess");key(13);touch('t',160,60);expect("new game","\"page\":\"chess_pick\"");touch('t',160,35);expect("colour row","\"chess_color\":0");
   touch('t',160,88+44+20);expect("first tap on another contact selects","\"selected\":1");expect("no challenge yet","\"page\":\"chess_pick\"");}
  // Channels: "add a channel" row, the hashtag editor, a channel chat, its card from the footer "<" hint.
- key(0x82);key(0x81);expect("chats","\"page\":\"threads\"");touch('t',160,24+3*48+20);expect("add row","\"page\":\"channel_add\"");
- touch('t',160,24+20);expect("hashtag editor","\"editing\":true");touch('t',160,10);expect("editor cancelled","\"editing\":false");touch('t',160,10);expect("back to chats","\"page\":\"threads\"");
+ key(0x81);key(0x83);touch('t',160,70);expect("add row","\"page\":\"channel_add\"");
+ touch('t',160,24+20);expect("hashtag editor","\"editing\":true");touch('t',160,10);expect("editor cancelled","\"editing\":false");touch('t',160,10);expect("back to chats","\"page\":\"threads\"");key(0x81);
  touch('t',160,24+48+20);expect("channel chat","\"page\":\"chat\"");
  for(int x=4;x<316&&uiStatus().indexOf("\"page\":\"chat\"")>=0;x+=4){uiTouch('t',x,230);tick();}
  expect("footer < opens the card","\"page\":\"channel\"");shot("tdeck-channel");
  {unsigned before=meshRadio.historyCount;touch('t',250,158+14);if(meshRadio.historyCount!=before+1){printf("FAIL invite row did not send\n");exit(1);}}
  touch('t',160,10);expect("card back to the chat","\"page\":\"chat\"");key(0x82);
  // Storage left by another firmware: OK on Module health, then OK again, formats and restarts.
- hardware.fsOk=false;key(0x82);key(0x83);shot("tdeck-format");previewCommands="";key(13);key(13);
+ hardware.fsOk=false;tile("health");key(13);shot("tdeck-format");previewCommands="";key(13);key(13);
  if(previewCommands!="fsformat;restart;"){printf("FAIL create storage: %s\n",previewCommands.c_str());exit(1);}hardware.fsOk=true;
  // Dice: taps on a tab, a grid die, the roll card and a sheet block (a tap chooses, a second one rolls its check).
  {dicer.begin();dicer.applyTemplate(dice::DndTemplate);tile("dice");key(13);expect("dice tile","\"page\":\"dice\"");
@@ -130,15 +141,32 @@ static void scenario(){
   key(13);expect("click leaves the list for the next game of its folder","\"page\":\"checkers\"");
   chessNet.remove(*g);}
 #else
- shot("role-boot");key(0x86);shot("home");key(0x81);shot("threads");key(13);shot("chat-public");key(0x86);
+ shot("role-boot");key(0x86);shot("home");
+ // Cover the default list, then run the existing grid keyboard scenarios.
+ {
+  auto expect=[](const char* s){if(uiStatus().indexOf(s)<0){printf("FAIL launcher: %s, wanted %s\n",uiStatus().c_str(),s);exit(1);}};
+  expect("\"layout\":\"list\"");
+  uint8_t order[AppEntriesMax];int n=appsShown(order);
+  key(0xb5);String last=String("\"selected\":")+String(n-1)+",";expect(last.c_str());key(0xb6);
+  int folder=0;while(folder<n&&!(order[folder]&AppFolder))folder++;
+  if(folder==n){printf("FAIL missing demo folder\n");exit(1);}
+  for(int i=0;i<folder;i++)key(0xb6);
+  key(13);expect("\"page\":\"folder\"");expect("\"layout\":\"list\"");shot("folder-list");
+  switchHomeLayout();expect("\"layout\":\"tiles\"");
+  for(int i=0;i<folder/3;i++)key(0xb6);for(int i=0;i<folder%3;i++)key(0xb7);
+  key(13);key(0xb7);expect("\"page\":\"folder\"");expect("\"selected\":1,");shot("folder-tiles");
+  key(13);expect("\"page\":\"checkers\"");key(0x86);expect("\"selected\":1,");
+  key(0x86);expect("\"layout\":\"tiles\"");key(0x82);shot("home-tiles");
+ }
+ key(0x81);shot("threads");key(13);shot("chat-public");key(0x86);
  // Channels: the list, a hashtag channel's card, a private channel and its card, adding one, an invitation.
  key(0xb6);shot("threads-channels");key(0xb7);shot("channel-hashtag");key(0x86);
- key(0xb6);key(0xb6);key(13);shot("chat-channel");key(0xb4);shot("channel-private");key(0xb7);shot("channel-region");key(0xb4);key(0xb6);key(0xb6);key(13);shot("channel-leave");key(0x86);key(0x86);
- key(0xb6);key(0xb6);key(0xb6);key(13);shot("channel-add");key(13);key(0x83);for(char ch:std::string("test"))key(ch);shot("channel-add-tag");key(0x83);key(0x86);key(0x86);
- for(int i=0;i<4;i++)key(0xb6);key(13);shot("chat-invite");key(0xb4);shot("chat-invite-joined");key(0x86);
+ key(0xb6);key(13);shot("chat-channel");key(0xb4);shot("channel-private");key(0xb7);shot("channel-region");key(0xb4);key(0xb6);key(0xb6);key(13);shot("channel-leave");key(0x86);key(0x86);
+ key(0x81);key(0x83);key(13);shot("channel-add");key(13);key(0x83);for(char ch:std::string("test"))key(ch);shot("channel-add-tag");key(0x83);key(0x86);key(0x86);
+ key(0x81);for(unsigned i=0;i<meshRadio.channelCount;i++)key(0xb6);key(13);shot("chat-invite");key(0xb4);shot("chat-invite-joined");key(0x86);
  if(!meshRadio.channel(channels::idOf(meshRadio.channelList[3].secret))||strcmp(meshRadio.channelList[3].name,"Походы")){printf("FAIL invitation not joined\n");exit(1);}
- for(int i=0;i<6;i++)key(0xb6);key(13);shot("chat");
- for(char ch:std::string("Privet! Kak dela? 5to novogo @ 5"))key(ch);key(0xb7);shot("compose");key(0xa3);shot("layout");key(0x86);key(0x86);key(0x86);
+ key(0xb6);key(13);shot("chat");
+ for(char ch:std::string("Privet! Kak dela? 5to novogo @ 5"))key(ch);key(0xb7);shot("compose");key(0xa3);shot("clipboard");key('l');shot("layout");key(0x86);key(0x86);key(0x86);
  key(0x85);shot("map");key(0xb7);key(0xb6);shot("map-browse");key('L');shot("library");key(0x86);
  key(0x82);key(0xb7);key(0xb7);key(13);shot("nodes");key(13);shot("node");key(0xb7);key(0xb7);key(0xb7);key(13);shot("node-forget");key(0x86);key(0x86);
  // A repeater's card and its server page: login, status, CLI replies and the trace (fake answers of the preview).
@@ -158,8 +186,8 @@ static void scenario(){
   key(0x86);config.trial=RadioProfile();config.setRadio(saved);}
  // The network search found the Moscow profile (the preview's netfind): the row offers to test it.
  key(0x90);key(13);for(int i=0;i<11;i++)key(0xb6);key(13);shot("radio-net");netfind::state.phase=netfind::State::Idle;key(0x86);
- key(0x90);shot("settings");key(13);key(0xb7);shot("radio");for(int i=0;i<7;i++)key(0xb6);key(0xb7);shot("radio-hash");key(0xb6);key(0xb6);key(13);shot("radio-regions");key(0xb5);key(0xb7);key(0xb7);key(0xb7);shot("radio-region");key(13);for(int i=0;i<3;i++)key(8);for(char ch:std::string("sao"))key(ch);shot("radio-region-type");key(0x86);key(0x86);key(0xb6);key(13);for(int i=0;i<8;i++)key(0xb6);key(0xb7);shot("display-battery");for(int i=0;i<8;i++)key(0xb5);shot("display");key(13);shot("display-name");key(0x86);key(0x86);
- tile("connect");key(13);key(13);key(0xb6);key(13);shot("network");key(13);key(0xb6);key(13);key(0x83);shot("diagnostics");key(0x90);for(int i=0;i<5;i++)key(0xb6);key(13);shot("help");key(13);shot("help-layout");key(0x86);key(13);shot("help-layout");key(0x86);
+ key(0x90);shot("settings");key(13);key(0xb7);shot("radio");for(int i=0;i<7;i++)key(0xb6);key(0xb7);shot("radio-hash");key(0xb6);key(0xb6);key(13);shot("radio-regions");key(0xb5);key(0xb7);key(0xb7);key(0xb7);shot("radio-region");key(13);for(int i=0;i<3;i++)key(8);for(char ch:std::string("sao"))key(ch);shot("radio-region-type");key(0x86);key(0x86);key(0xb6);key(13);for(int i=0;i<9;i++)key(0xb6);key(0xb7);shot("display-battery");for(int i=0;i<9;i++)key(0xb5);shot("display");key(13);shot("display-name");key(0x86);key(0x86);
+ tile("connect");key(13);key(13);key(0xb6);key(13);shot("network");key(13);key(0xb6);key(13);tile("health");key(13);shot("diagnostics");key(0x90);for(int i=0;i<5;i++)key(0xb6);key(13);shot("help");key(13);shot("help-layout");key(0x86);key(13);shot("help-layout");key(0x86);
  // Connections with Bluetooth on: the MeshCore- name the phone apps see, then off again.
  key(0x90);for(int i=0;i<3;i++)key(0xb6);key(13);key(0xb6);key(0xb6);key(13);
  if(!bleActive()||uiStatus().indexOf("\"page\":\"network\"")<0){printf("FAIL Bluetooth on: %s\n",uiStatus().c_str());exit(1);}shot("network-ble");key(13);key(0x86);key(0x86);
@@ -658,6 +686,8 @@ static void scenario(){
 #if defined(MM_HELTEC_V4)
  powerOff();shot("heltec-poweroff");uiFarewell();shot("heltec-poweroff-done");
 #else
+ key(0x82);showPasteFailure();shot("clipboard-paste-failed");
+ key(0x86);key(0x86); // Close clipboard and name editor.
  key(0x90);key(0xb5);shot("settings-poweroff");key(13);key(13);
  if(!powerOffPending()){printf("FAIL Turn off needs two OK\n");exit(1);}
  shot("poweroff");uiFarewell();shot("poweroff-done");

@@ -127,7 +127,7 @@
  nodeCard(0);must(has("\"page\":\"node\""),"node card");key(0xb7);must(has("\"action\":1"),"Play is the second action");shot("m9-node");
  key(13);must(has("\"play_menu\":true"),"Play opens the games");key(0xb6);shot("m9-node-play");key(13);
  {char want[24];snprintf(want,sizeof want,"\"selected\":%d,",pickRow(peerId(0)));must(has("\"page\":\"duel_pick\"")&&has("\"duel_kind\":\"checkers\"")&&has(want),"checkers with this contact");}shot("m9-node-play-pick");
- key(0x86);must(has("\"page\":\"node\""),"BACK to the card");key(0xb7);key(13);key(0xb6);key(0xb6);key(13);must(has("\"duel_kind\":\"sea\""),"sea from the card");
+ key(0x86);must(has("\"page\":\"node\"")&&has("\"action\":1"),"BACK to Play on the card");key(13);key(0xb6);key(0xb6);key(13);must(has("\"duel_kind\":\"sea\""),"sea from the card");
  key(13);must(has("\"page\":\"sea_board\"")&&shown()&&shown()->peer==peerId(0),"sea invitation from the card");
  nodeCard(0);key(0xb7);key(13);key(13);must(has("\"page\":\"chess_pick\""),"chess from the card");key(0x86);must(has("\"page\":\"node\""),"chess choice BACK to the card");
  // The folder hidden or emptied: its tile goes; a custom folder named on the web page.

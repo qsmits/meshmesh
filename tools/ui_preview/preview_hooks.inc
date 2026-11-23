@@ -79,7 +79,7 @@ int powerOnWay(){return 0;}
 #else
 int powerOnWay(){return -1;}
 #endif
-String executeCommand(const String& line){previewCommands+=line+";";return "OK";} // UiHeltec.cpp: the GAT562 GPS menu
+String executeCommand(const String& line){previewCommands+=line+";";if(line.startsWith("radio "))return radioCommand(line);return "OK";} // UiHeltec.cpp: the GAT562 GPS menu
 // Same as src/MeshRadio.cpp (the preview does not link the radio).
 String MeshRadio::routeText(const ChatMessage& m,bool brief) const{
  if(m.protocol!=2||m.route==ChatMessage::RouteNone||(m.outgoing&&(m.status==ChatMessage::Failed||channels::isChannel(m.destination))))return "";
