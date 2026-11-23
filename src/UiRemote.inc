@@ -1,5 +1,6 @@
 // A repeater or room of the mesh (included by Ui.cpp; include/Remote.h): login, status, CLI commands and path
 // trace, opened from the node card. A chat node's card opens it for the trace only.
+String uptimeText(uint32_t s){return s<3600?String(s/60)+t(" min"," мин"):s<86400?String(s/3600)+t(" h "," ч ")+String(s/60%60)+t(" min"," мин"):String(s/86400)+t(" d "," д ")+String(s/3600%24)+t(" h"," ч");}
 enum RemoteAct {RemLogin,RemStatus,RemCommand,RemTrace};
 enum RemoteEdit {EditNone,EditPassword,EditCommand};
 RemoteEdit remoteEdit=EditNone;int remoteAction=0;

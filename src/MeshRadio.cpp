@@ -14,7 +14,6 @@
 #include <bootloader_random.h>
 #include <time.h>
 #include <SHA256.h>
-#include "MeshServer.h"
 #include "Power.h"
 #include "Companion.h"
 #include "Remote.h"
@@ -319,7 +318,7 @@ class MeshCoreBackend:public BaseChatMesh {
 };
 int16_t MeshRadio::startReceiving(){constexpr uint32_t mask=(1UL<<RADIOLIB_IRQ_RX_DONE)|(1UL<<RADIOLIB_IRQ_CRC_ERR)|(1UL<<RADIOLIB_IRQ_HEADER_ERR)|(1UL<<RADIOLIB_IRQ_TIMEOUT);return radio.startReceive(UINT32_MAX,RADIOLIB_IRQ_RX_DEFAULT_FLAGS,mask);}
 String MeshRadio::idText(uint64_t id) const{if(id==meshmesh::Broadcast)return "ALL";char b[17];snprintf(b,sizeof(b),"%04lX%08lX",(unsigned long)(id>>32),(unsigned long)(id&0xffffffffu));return b;}
-static const mesh::LocalIdentity* selfIdentity(MeshCoreBackend* core){return core?&core->self_id:meshServer.identity();}
+static const mesh::LocalIdentity* selfIdentity(MeshCoreBackend* core){return core?&core->self_id:nullptr;}
 bool MeshRadio::learnContact(const uint8_t key[32],const char* name,uint8_t type,int32_t lat,int32_t lon){return core&&type>=ADV_TYPE_CHAT&&type<=ADV_TYPE_SENSOR&&core->learn(key,name,type,lat,lon);}
 // Backup (docs/backup.md): the node key in MeshCore's export format (the 64-byte private key, hex). A restored key is
 // stored for the next start: the running mesh keeps the old one. 1 saved, 0 the same key, -1 invalid, -2 storage.
@@ -341,14 +340,11 @@ Peer* MeshRadio::contact(uint64_t id){for(unsigned i=0;i<peerCount;i++)if(peers[
 void MeshRadio::begin(){
  nodeId=ESP.getEfuseMac();loadChannels();
  if(!applyConfig()){restoreHistory();return;}
- if(config.role!=RoleNormal){ // MeshCore repeater or room server: no chat contacts or messages, the same key
-  Preferences p;mesh::LocalIdentity self;bool created,loaded=p.begin("meshmesh-mc",false)&&loadIdentity(p,self,created);if(loaded)restoreClockFloor(p);p.end();
-  if(!loaded||!meshServer.begin(config.role,coreRadio,coreMillis,coreRandom,coreRtc,corePool,coreTables,self)){ready=false;event="MeshCore identity storage error";}else{nodeId=aliasOf(self.pub_key);event=meshServer.room()?"MeshCore room server ready":"MeshCore repeater ready";}
- } else {core=new MeshCoreBackend(*this);if(!core->initialize()){ready=false;event="MeshCore identity storage error";}}
+ core=new MeshCoreBackend(*this);if(!core->initialize()){ready=false;event="MeshCore identity storage error";}
  restoreHistory();if(ready&&core&&core->announce)autoHelloDue=millis()+3000+esp_random()%2000;
 }
 bool MeshRadio::busy() const{return transmitting||corePool.getOutboundTotal()>0;}
-void MeshRadio::flush(){if(core)core->flush();meshServer.flush();if(echoDue){echoDue=millis();tickEchoes();}}
+void MeshRadio::flush(){if(core)core->flush();if(echoDue){echoDue=millis();tickEchoes();}}
 void MeshRadio::sleep(){if(ready)radio.sleep();ready=false;}
 void MeshRadio::cancelPending(){for(auto& p:pending)if(p.active){status(p.message.id,ChatMessage::Failed);p.active=false;}while(corePool.getOutboundTotal()){auto* packet=corePool.removeOutboundByIdx(0);corePool.free(packet);}}
 namespace {uint32_t recalAt=0;bool recalFailed=false;}
@@ -418,7 +414,7 @@ bool MeshRadio::startRadio(bool quiet){
  radio.setPacketReceivedAction(onRadioIrq);radioIrq=false;radioError=startReceiving();ready=radioError==0;
  }if(!quiet||!ready){event=ready?"MeshCore radio ready":"Radio error "+String(radioError);dirty=true;}return ready;
 }
-bool MeshRadio::sendHello(){return ready&&(core?core->advertise():meshServer.advertise());}
+bool MeshRadio::sendHello(){return ready&&core&&core->advertise();}
 bool MeshRadio::sendPosition(){if(!config.gps||!hardware.gpsFix()){event="GPS: waiting for fix";dirty=true;return false;}return sendHello();}
 bool MeshRadio::sendMessage(const String& text,uint64_t destination){return queue(text,destination,false);}
 uint32_t MeshRadio::sendProbe(const String& text,uint64_t channel){return channels::isChannel(channel)?queue(text,channel,true,true):0;}
@@ -494,7 +490,7 @@ void MeshRadio::tick(){
  uint32_t now=millis();
  if(recalFailed){if(now-recalAt>=5000)recalibrate();return;} // retried until the transceiver answers again
  if(ready&&!busy()&&now-lastRxAt>=600000&&now-recalAt>=600000)recalibrate();
- if(!ready)return;if(meshServer.running()){meshServer.tick();return;}if(!core)return;core->tick();remote::tick();regions::tick();netfind::tick();now=millis();
+ if(!ready||!core)return;core->tick();remote::tick();regions::tick();netfind::tick();now=millis();
  if(netfind::running())return; // our messages wait for the saved profile
  for(auto& p:pending)if(p.active){if(!p.started){if(!busy()&&!core->startMessage(p)){p.active=false;status(p.message.id,ChatMessage::Failed);}break;}if(int32_t(now-p.due)>=0&&!busy()){if(p.app){p.active=false;continue;} // the app retries itself
   if(p.attempts>=3||channels::isChannel(p.message.destination)){p.active=false;status(p.message.id,ChatMessage::Failed);if(!p.message.game)event="No delivery ACK";if(!channels::isChannel(p.message.destination)){Peer* c=contact(p.message.destination);if(c&&c->pathLength!=255)resetPath(c->id);}}else if(!core->startMessage(p)){p.active=false;status(p.message.id,ChatMessage::Failed);}}}

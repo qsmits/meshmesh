@@ -32,7 +32,7 @@ String appsFolderName(uint8_t folder); // as shown: "_" becomes a space
 bool appsOldDefault(const char* text); // the saved order is only a default before 0.24.0 (Config::load resets it once)
 String executeCommand(const String& line);
 // Role changes restart the device; the restart waits for the reply to leave over USB, Wi-Fi or BLE.
-const char* roleName(uint8_t role);String setRole(uint8_t role);void restartTick();
+void restartTick();
 void uiUseDefaultInput();
 void uiBegin();void uiTick();void uiKey(int key);bool uiScreenOff();
 void uiFarewell(); // power off (Power.cpp): "the device is off" and how to turn it on, the last frame before the screen goes dark

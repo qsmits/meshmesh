@@ -93,7 +93,7 @@ String applySettings(JsonObjectConst v) {
   if(radioChanged&&!meshRadio.applyConfig()) {config=old;meshRadio.applyConfig();return "ERR radio rejected settings; restored previous";}
   if(!config.save()){config=old;if(radioChanged)meshRadio.applyConfig();return "ERR settings storage; restored previous";}
   if(old.inputRussian!=config.inputRussian)uiUseDefaultInput();
-  meshServer.configChanged();if(strcmp(old.name,config.name))bleRename();if(old.brightness!=config.brightness)hardware.brightness(uiScreenOff()?0:config.brightness);if(old.gps!=config.gps)hardware.setGps(config.gps);
+  if(strcmp(old.name,config.name))bleRename();if(old.brightness!=config.brightness)hardware.brightness(uiScreenOff()?0:config.brightness);if(old.gps!=config.gps)hardware.setGps(config.gps);
   meshRadio.event="Settings saved";meshRadio.dirty=true;return "OK settings saved";
 }
 // Radio profiles of the networks catalogue: "radio try {frequency,bandwidth,sf,cr}" applies one for a test (not saved:

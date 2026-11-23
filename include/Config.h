@@ -4,8 +4,6 @@
 #include "Board.h"
 #include "I18n.h"
 
-// Device role, chosen at boot: the usual chat device, a MeshCore repeater or room server. A change takes a restart.
-enum DeviceRole:uint8_t {RoleNormal=0,RoleRepeater=1,RoleRoom=2,RoleCount};
 // The radio parameters shared by a network (a profile of the networks catalogue): frequency, bandwidth, SF, CR.
 struct RadioProfile {
   float frequency=0,bandwidth=0;uint8_t sf=0,cr=0;
@@ -23,9 +21,8 @@ struct Config {
   int16_t utcOffset=180;
   uint8_t key[32]={};
   uint32_t bootCounter=0;
-  uint8_t role=RoleNormal;
   uint32_t blePin=0; // pairing PIN, made once: a restart (e.g. a USB-UART reset) keeps it
-  bool bleOn=false;  // Bluetooth on after boot: the last choice, else on in the normal role
+  bool bleOn=false;  // Bluetooth on after boot: the last choice, else on
   uint8_t theme=0,accentColor=0,nightBrightness=0; // 0 night brightness follows daytime.
   bool nightAt(time_t utc) const {
     if(utc<1700000000)return false;
@@ -59,7 +56,6 @@ struct Config {
   bool valid() const;
   String keyHex() const;
   bool setKey(const String& text);
-  bool saveRole(uint8_t next); // stored for the next boot; role stays the running one
   void saveBle(bool on);
 };
 extern Config config;

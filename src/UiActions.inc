@@ -8,7 +8,7 @@ int actionItems(ActionItem* rows){
  using A=AppAction;
  int n=0;
  if(activePanel==Panel::Radios){
-  if(config.role==RoleNormal)rows[n++]={A::Wifi,IcWifi,t("Wi-Fi client","Wi-Fi-клиент"),internet.enabled};
+  rows[n++]={A::Wifi,IcWifi,t("Wi-Fi client","Wi-Fi-клиент"),internet.enabled};
   rows[n++]={A::Hotspot,IcWifi,t("Wi-Fi access point","Точка доступа Wi-Fi"),portalActive()};
   rows[n++]={A::Ble,IcBle,"Bluetooth LE",bleActive()};
   rows[n++]={A::Gps,IcPin,"GPS",config.gps};

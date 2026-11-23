@@ -17,7 +17,7 @@ static void switchHomeLayout(){
  key(13);key(0x82);
 }
 static void scenario(){
- shot("role-boot");key(0x86);shot("home");
+ shot("home");
  // Cover the default list, then run the existing grid keyboard scenarios.
  {
   auto expect=[](const char* s){if(uiStatus().indexOf(s)<0){printf("FAIL launcher: %s, wanted %s\n",uiStatus().c_str(),s);exit(1);}};
@@ -83,10 +83,6 @@ static void scenario(){
  uiKey(13);fakeMillis+=300;uiKey(13);tick();if(uiStatus().indexOf("\"locked\":false")<0){printf("FAIL two OK presses did not unlock: %s\n",uiStatus().c_str());exit(1);}
  key(0x88);key(0xa3);key(0x82);
  key(0xb6);key(0xb7);key(0xb7);shot("home-radar");key(0xb6);shot("home-scrolled");key(0xb5);key(13);shot("radar");key(0xb6);key(0xb6);shot("radar-select");key(0xb5);key(0xb5);key(13);shot("homing");key(0x86);shot("radar-back");key(0xb7);shot("motion");key('b');for(int i=0;i<4;i++)tick();shot("motion-beacon");key('b');key(0xb7);key(0x86);
- // Device modes: the repeater and room pages, the mode choice from Settings.
- config.role=RoleRepeater;key(0x82);shot("repeater");key(0x86);
- config.role=RoleRoom;key(0x82);shot("room");key(13);for(char ch:std::string(config.lang==LangRu||config.lang==LangUk?"Vstre1a u vhoda posle obeda":"Meet at the gate after lunch"))key(ch);shot("room-post");key(0x86);
- key(0x90);key(0xb5);key(13);key(0xb6);shot("role-pick");key(0x86);config.role=RoleNormal;key(0x82);
 // Apps in the chosen order ("apps" setting): hidden ones get no tile and no click.
  {auto page=[](const char* want){std::string w=std::string("\"page\":\"")+want+"\"";if(uiStatus().indexOf(w.c_str())<0){printf("FAIL apps order, want %s: %s\n",want,uiStatus().c_str());exit(1);}};
   strlcpy(config.apps,"settings -chats -nodes map -quick -people",sizeof config.apps);

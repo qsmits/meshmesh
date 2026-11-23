@@ -88,7 +88,7 @@ esp_err_t scanStart(){WiFi.scanDelete();wifi_scan_config_t c={};c.show_hidden=fa
 bool othersUseWifi(){return portalActive()||radar.active||wifiProbeActive();}
 }
 void Internet::begin(){
-  loadNames();Preferences p;if(p.begin("mm-wifi",true)){enabled=p.getBool("on",false)&&config.role==RoleNormal;ntpEnabled=p.getBool("ntp",false);preferred=p.getString("pref","");String t=p.getString("tiles","");strlcpy(tileTemplate,t.length()?t.c_str():DefaultTiles,sizeof tileTemplate);p.end();}
+  loadNames();Preferences p;if(p.begin("mm-wifi",true)){enabled=p.getBool("on",false);ntpEnabled=p.getBool("ntp",false);preferred=p.getString("pref","");String t=p.getString("tiles","");strlcpy(tileTemplate,t.length()?t.c_str():DefaultTiles,sizeof tileTemplate);p.end();}
   else strlcpy(tileTemplate,DefaultTiles,sizeof tileTemplate);
   sntp_set_time_sync_notification_cb(ntpReady);ntpDue=millis()+60000;
   pixels=(uint16_t*)heap_caps_malloc(256*256*2,MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);body=(uint8_t*)heap_caps_malloc(BodyMax,MALLOC_CAP_SPIRAM|MALLOC_CAP_8BIT);

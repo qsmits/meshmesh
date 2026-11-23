@@ -12,7 +12,6 @@
 #include "Navigation.h"
 #include "Radar.h"
 #include "Internet.h"
-#include "MeshServer.h"
 #include "Power.h"
 #include "Regions.h"
 #include "NetFind.h"
@@ -31,7 +30,7 @@ String statusJson() {
   d["board"]=MM_BOARD_ID;d["board_name"]=hardware.boardName;d["max_power"]=MM_MAX_POWER;
   d["family"]="full";d["mic_key"]=hardware.micKey;
   {static const int absent[]={MM_ABSENT -1};JsonArray a=d.createNestedArray("absent");for(int i:absent)if(i>=0)a.add(i);}
-  d["firmware"]=MESHMM_FIRMWARE;d["role"]=roleName(config.role);d["node"]=meshRadio.idText(meshRadio.nodeId);d["name"]=config.name;d["network"]=meshRadio.networkId;
+  d["firmware"]=MESHMM_FIRMWARE;d["node"]=meshRadio.idText(meshRadio.nodeId);d["name"]=config.name;d["network"]=meshRadio.networkId;
   char buildHash[65];mesh::Utils::toHex(buildHash,esp_ota_get_app_description()->app_elf_sha256,32);d["build_sha256"]=buildHash;d["protocol"]="MeshCore";d["public_key"]=meshRadio.publicKeyText();d["channel"]="Public";d["channels"]=meshRadio.channelCount;d["public_message_limit"]=meshRadio.messageLimit();d["unix_time"]=int64_t(time(nullptr));d["clock_source"]=hardware.clockSource;d["clock_age_seconds"]=hardware.clockAge()/1000;d["clock_conflict"]=hardware.clockConflict;d["uptime"]=millis()/1000;d["boot"]=config.bootCounter;d["reset_reason"]=int(esp_reset_reason());d["heap"]=ESP.getFreeHeap();d["psram"]=ESP.getFreePsram();d["cpu_mhz"]=powerMhz();d["sleeps"]=powerSleeps();d["sleep_ms"]=powerSleptMs();d["slow_ms"]=powerSlowMs();
   d["heap_max_block"]=ESP.getMaxAllocHeap(); // the largest internal-RAM allocation: what a board without PSRAM can still answer
   d["history_count"]=meshRadio.historyCount;d["idle_waits"]=powerIdleWaits();d["idle_wait_ms"]=powerIdleMs();d["idle_radio_events"]=powerRadioEvents();
@@ -80,7 +79,7 @@ String channelCommand(JsonObjectConst v){
   String action=v["action"]|"";
   auto id=[](const char* text,uint64_t& out){String s=text?text:"";if(s=="ALL"){out=meshmesh::Broadcast;return true;}char* e=nullptr;out=strtoull(s.c_str(),&e,16);return s.length()&&s.length()<=16&&e&&!*e&&out;};
   if(action=="add"){
-    if(config.role!=RoleNormal||!meshRadio.ready)return "ERR mode: channels need the normal mode and a working radio";
+    if(!meshRadio.ready)return "ERR radio: channels need a working radio";
     MeshRadio::ChannelResult r;uint64_t added=0;
     if(v.containsKey("hashtag"))r=meshRadio.joinHashtag(v["hashtag"]|"",&added);
     else if(v.containsKey("link"))r=meshRadio.joinLink(v["link"]|"",&added);
@@ -107,16 +106,11 @@ String channelCommand(JsonObjectConst v){
     StaticJsonDocument<192>d;d["name"]=tag;char hash[3];snprintf(hash,3,"%02X",channels::hashOf(key));d["hash"]=hash;d["opened"]=n;d["samples"]=meshRadio.heardSamples;d["joined"]=meshRadio.channel(channels::idOf(key))!=nullptr;String s;serializeJson(d,s);return s;}
   if(action=="region"){uint64_t c;if(!id(v["channel"],c)||!meshRadio.channel(c))return "ERR unknown channel";
     return meshRadio.setChannelRegion(c,v["region"]|"")?"OK channel region saved":"ERR region: letters, digits and '-', up to 30 bytes; \"\" default, \"*\" none";}
-  if(action=="regions"){if(config.role!=RoleNormal)return "ERR mode: the region search needs the normal mode";return regions::find()?"OK region search started":"ERR radio: the region search needs a working radio";}
+  if(action=="regions"){return regions::find()?"OK region search started":"ERR radio: the region search needs a working radio";}
   return "ERR channel action add|remove|invite|probe|policy|region|regions";
 }
 #include "AppSettings.inc"
 namespace {uint32_t restartAt=0;}
-const char* roleName(uint8_t role){return role==RoleRepeater?"repeater":role==RoleRoom?"room":"normal";}
-String setRole(uint8_t role){
-  if(role>=RoleCount)return "ERR role normal|repeater|room";if(role==config.role)return String("OK role ")+roleName(role)+" already running";
-  if(!config.saveRole(role))return "ERR role not saved";restartAt=millis()+1500;return String("OK role ")+roleName(role)+"; restarting";
-}
 void restartTick(){if(restartAt&&int32_t(millis()-restartAt)>=0){meshRadio.flush();ESP.restart();}} // contacts saved a moment later are written first
 String executeCommand(const String& input) {
   String line=input;line.trim();
@@ -132,13 +126,7 @@ String executeCommand(const String& input) {
   if(line=="clock")return hardware.clockInfo();
   if(line.startsWith("clock ")){StaticJsonDocument<128>d;if(deserializeJson(d,line.substring(6))||!d["unix"].is<uint32_t>())return "ERR clock JSON unix seconds";return hardware.setUtc(d["unix"],d["source"]=="phone"?"phone":"manual",true)?"OK UTC clock synchronized":"ERR clock range 2025..2038";}
   if(line=="status")return statusJson();
-  if(line=="role")return String("{\"role\":\"")+roleName(config.role)+"\",\"roles\":[\"normal\",\"repeater\",\"room\"]}";
-  if(line.startsWith("role ")){String r=line.substring(5);return setRole(r=="normal"?RoleNormal:r=="repeater"?RoleRepeater:r=="room"?RoleRoom:RoleCount);}
   // Repeater or room server: status (no passwords), its passwords, its MeshCore CLI as the local admin, a room post.
-  if(line=="server")return meshServer.json();
-  if(line=="server secrets")return meshServer.json(true);
-  if(line.startsWith("server cli ")){if(!meshServer.running())return "ERR server role is not running";int at=input.indexOf("server cli ");return meshServer.command(input.substring(at+11));} // untrimmed: "set guest.password " clears it
-  if(line.startsWith("server post ")){if(!meshServer.room())return "ERR room server role is not running";return meshServer.post(line.substring(12))?"OK post stored":"ERR post: 1-151 UTF-8 bytes";}
   if(line=="config")return configJson();
   if(line.startsWith("radio "))return radioCommand(line);
   if(line=="key")return configJson(true); // explicitly requested; never put in ordinary diagnostics
@@ -166,13 +154,12 @@ String executeCommand(const String& input) {
   if(line=="netfind stop"){netfind::stop();return "OK network search stopped";}
   if(line.startsWith("netfind use "))return netfind::use(line.substring(12).toInt());
   if(line=="netfind start"||line.startsWith("netfind start ")){
-    if(config.role!=RoleNormal)return "ERR mode: the network search needs the normal mode";
     String a=line.substring(13);a.trim();float lat=0,lon=0;int space=a.indexOf(' ');bool at=space>0;
     if(at){lat=a.substring(0,space).toFloat();lon=a.substring(space+1).toFloat();if(fabsf(lat)>90||fabsf(lon)>180||(!lat&&!lon))return "ERR netfind start [all|LAT LON]";}
     else if(a.length()&&a!="all")return "ERR netfind start [all|LAT LON]";
     return netfind::start(a=="all",at?&lat:nullptr,at?&lon:nullptr)?"OK network search started":meshRadio.busy()||regions::searching()?"ERR radio busy; retry":"ERR radio offline";
   }
-  if(line=="regions find")return config.role!=RoleNormal?"ERR mode: the region search needs the normal mode":regions::find()?"OK region search started":"ERR radio offline";
+  if(line=="regions find")return regions::find()?"OK region search started":"ERR radio offline";
   if(line.startsWith("channel do ")){StaticJsonDocument<512>d;if(deserializeJson(d,line.substring(11))||!d.is<JsonObject>())return "ERR channel do {JSON}";return channelCommand(d.as<JsonObjectConst>());}
   if(line=="hello")return meshRadio.sendHello()?"OK hello queued":"ERR hello failed";
   if(line=="position")return meshRadio.sendPosition()?"OK position queued":"ERR position needs GPS fix";
@@ -215,5 +202,5 @@ String executeCommand(const String& input) {
     DynamicJsonDocument d(2048);if(deserializeJson(d,line.substring(4)) || !d.is<JsonObject>())return "ERR set {JSON object}";
     return applySettings(d.as<JsonObjectConst>());
   }
-  return "Commands: status, role, role normal|repeater|room, server, server secrets, server cli TEXT, server post TEXT, config, key, identity, identity set HEX, contact add {JSON}, connections, messages, quick, quick do {JSON}, people, people do {JSON}, wardrive, wardrive do {JSON}, wardrive log mesh|nets FROM, radar, radar web, radar do {JSON}, set {JSON}, radio try {JSON}|keep|revert|previous, send ALL|NODE_ID|CHANNEL_ID text, sendjson {JSON}, channels, channel do {JSON}, regions, regions find, netfind, netfind start [all|LAT LON]|stop|use N, hello, position, resetpath NODE_ID, forget NODE_ID, selftest, wifi, internet, ble, remote, remote login|status|cli|trace NODE_ID [text], recalibrate, fsformat, restart, poweroff";
+  return "Commands: status, config, key, identity, identity set HEX, contact add {JSON}, connections, messages, quick, quick do {JSON}, people, people do {JSON}, wardrive, wardrive do {JSON}, wardrive log mesh|nets FROM, radar, radar web, radar do {JSON}, set {JSON}, radio try {JSON}|keep|revert|previous, send ALL|NODE_ID|CHANNEL_ID text, sendjson {JSON}, channels, channel do {JSON}, regions, regions find, netfind, netfind start [all|LAT LON]|stop|use N, hello, position, resetpath NODE_ID, forget NODE_ID, selftest, wifi, internet, ble, remote, remote login|status|cli|trace NODE_ID [text], recalibrate, fsformat, restart, poweroff";
 }

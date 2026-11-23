@@ -56,7 +56,7 @@ void next(){tag=0;if(++state.step>=state.count)stage=Restore;else stage=Tune;}
 String profileText(const RadioProfile& r){return String(r.frequency,3)+" SF"+String(r.sf)+" BW"+String(r.bandwidth,1);}
 String placeName(uint8_t place){return place<netcat::placeCount?String(netcat::places[place].name):String();}
 bool start(bool all,const float* lat,const float* lon){
- if(!core()||!meshRadio.ready||config.role!=RoleNormal||!config.bootCounter)return false;
+ if(!core()||!meshRadio.ready||!config.bootCounter)return false;
  if(running())return true;if(regions::searching()||meshRadio.busy())return false;
  if(!state.results&&!(state.results=new(std::nothrow) Result[MaxResults]))return false;
  uint16_t found=state.found;Result* list=state.results;state=State();state.found=found;state.results=list;
@@ -89,7 +89,7 @@ void tick(){
   uint32_t heard=meshRadio.rxCount-rxBefore;r.packets=heard>r.repeaters?min<uint32_t>(heard-r.repeaters,65535):0;r.done=true;next();meshRadio.dirty=true;return;
  }
  // Automatic: near a place whose networks the current profile is not one of, once per place and boot.
- if(!config.netAuto||config.role!=RoleNormal||!core()||now-checkedAt<AutoEveryMs)return;checkedAt=now;
+ if(!config.netAuto||!core()||now-checkedAt<AutoEveryMs)return;checkedAt=now;
  float lat,lon,d;if(!position(lat,lon))return;int p=nearest(lat,lon,d);if(p<0||d>NearKm||p==autoPlace)return;
  for(auto& n:netcat::nets)if(covers(p,n)&&hears(profileOf(n),config.radio())){autoPlace=p;return;}
  if(config.trial.set()||meshRadio.busy()||regions::searching())return; // a test runs, or later

@@ -35,10 +35,8 @@ bool traceable(uint64_t id){Peer* p=nullptr;for(unsigned i=0;i<meshRadio.peerCou
 bool saved(uint64_t){return true;}void tick(){}String json(){return "{}";}String usbCommand(const String&){return "OK";}}
 String bleName(){return String("MeshCore-")+config.name+" 5EA1";}void bleRename(){}
 #include "Regions.h"
-#include "MeshServer.h"
 #include "../../src/AppSettings.inc"
 bool MeshRadio::applyConfig(){return true;}
-void MeshServer::configChanged(){}
 #ifdef MM_DESKTOP_SIMULATOR
 #include "simulator_settings.inc"
 #else
