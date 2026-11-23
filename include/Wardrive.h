@@ -1,7 +1,6 @@
 #pragma once
 #include <Arduino.h>
 #include <ArduinoJson.h>
-#include "Modules.h"
 // Wardriving (docs/wardrive.md): a log of where the mesh is heard. It records only with a trusted position: a GPS
 // fix (gpsFix: a date past the build, no conflict with the phone/NTP clock) or the phone's position sent by the app
 // within the last 30 s. Three parts, each switched on its own:

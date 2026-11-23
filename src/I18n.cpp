@@ -3,7 +3,6 @@
 #include "Emoji.h"
 #include <U8g2_for_Adafruit_GFX.h>
 #define MM_LANG_IN(l) 1
-#include "Modules.h" // MM_DUEL: the strings of checkers and sea battle (I18nTable.h)
 #include "I18nTable.h"
 #include "I18nFonts.h"
 #include <algorithm>

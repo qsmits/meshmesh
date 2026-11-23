@@ -12,7 +12,7 @@ String configJson(bool includeKey=false);
 String applySettings(JsonObjectConst values);
 // Apps of the screen menu (Apps.cpp): uiApps lists the IDs of this interface (Ui.cpp, UiHeltec.cpp) in the
 // default order; config.apps holds the chosen order and folders ("apps" setting): "-" before an ID hides it,
-// "{NAME id id}" is a folder ("_" for a space in the name, "games" the games folder), "-{NAME ...}" hides it.
+// "{NAME id id}" is a folder ("_" for a space in the name), "-{NAME ...}" hides it.
 constexpr unsigned AppsMax=24,FoldersMax=6,FolderNameMax=24; // FolderNameMax: bytes with the final 0
 constexpr unsigned AppEntriesMax=AppsMax+FoldersMax;
 constexpr uint8_t AppFolder=0x80; // an entry of the menu: an index into uiApps, or AppFolder|folder
@@ -28,9 +28,8 @@ const AppMenu& appsMenu();         // config.apps parsed
 // The shown entries (AppEntriesMax) at the top (folder -1) or in a folder: apps, and the folders with a shown app.
 unsigned appsShown(uint8_t* out,int folder=-1);
 int appsFolderOf(uint8_t app);     // the folder holding an app, or -1
-String appsFolderName(uint8_t folder); // as shown: spaces, the games folder in the interface language
+String appsFolderName(uint8_t folder); // as shown: "_" becomes a space
 bool appsOldDefault(const char* text); // the saved order is only a default before 0.24.0 (Config::load resets it once)
-void appsAddGames(char* text,size_t cap); // 0.33.0: the games of an order saved before go to the games folder (once)
 String executeCommand(const String& line);
 // Role changes restart the device; the restart waits for the reply to leave over USB, Wi-Fi or BLE.
 const char* roleName(uint8_t role);String setRole(uint8_t role);void restartTick();

@@ -23,12 +23,7 @@ float km(const netcat::Place& p,float lat,float lon){
 }
 // The position the board trusts: a GPS fix (Clock.cpp rejects a date before the build) or the phone's from the app.
 bool position(float& lat,float& lon){
-#if MM_WARDRIVE
  int32_t a,b;bool phone;if(!wardrive::position(a,b,phone))return false;lat=a/1e6f;lon=b/1e6f;return true;
-#else
- if(!config.gps||!hardware.gpsFix()||(hardware.gps.hdop.isValid()&&hardware.gps.hdop.hdop()>5))return false;
- lat=hardware.gps.location.lat();lon=hardware.gps.location.lng();return true;
-#endif
 }
 // The nearest place with a network; -1: none.
 int nearest(float lat,float lon,float& d){

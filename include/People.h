@@ -7,6 +7,8 @@
 namespace people {
 constexpr unsigned Counters=8,NameBytes=23,Colors=15;constexpr int32_t Limit=999999;
 struct Settings {int32_t manual=0;uint16_t window=60;int8_t rssi=-85;bool ble=false,wifi=false,personal=false;}; // manual: before 0.24.0
+// Counter colours (0xRRGGBB); a counter keeps an index into them.
+constexpr uint32_t colors[Colors]={0xff6b6b,0x4ecdc4,0x45b7d1,0xffa07a,0x98d8c8,0xf06292,0xaed581,0xffd54f,0x4dd0e1,0xba68c8,0x4fc3f7,0xfff176,0x81c784,0xdce775,0x64b5f6};
 struct Counter {char name[NameBytes+1];int32_t value;uint8_t color;};
 struct Tally {uint8_t count=1,current=0;Counter list[Counters]={};};
 extern Settings settings;extern Tally tally;

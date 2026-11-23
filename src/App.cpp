@@ -12,12 +12,7 @@
 #include "Navigation.h"
 #include "Radar.h"
 #include "Internet.h"
-#include "ChessNet.h"
-#include "Duel.h"
-#include "ChessTour.h"
 #include "MeshServer.h"
-#include "Pet.h"
-#include "Dice.h"
 #include "Power.h"
 #include "Regions.h"
 #include "NetFind.h"
@@ -52,7 +47,7 @@ String statusJson() {
   JsonArray a=d.createNestedArray("mag");for(float n:hardware.mag)a.add(n);a=d.createNestedArray("accel");for(float n:hardware.accel)a.add(n);
   d["clock_trusted"]=hardware.clockTrusted;d["busy"]=meshRadio.busy();if(meshRadio.lastRxAt)d["rx_age"]=(millis()-meshRadio.lastRxAt)/1000;
   {nvs_stats_t nvs;if(nvs_get_stats(nullptr,&nvs)==ESP_OK){d["nvs_used"]=nvs.used_entries;d["nvs_free"]=nvs.free_entries;}} // 32-byte entries; the contacts no longer live there
-  d["quick_send"]=true;d["people_counter"]=true;d["wardrive"]=bool(MM_WARDRIVE);d["notification_dropped"]=notifications::dropped();
+  d["quick_send"]=true;d["people_counter"]=true;d["wardrive"]=true;d["notification_dropped"]=notifications::dropped();
   d["notification_led"]=false;
   d["event"]=meshRadio.event;d["wifi"]=portalActive();
   d["internet"]=internet.online();d["ble"]=bleActive();d["companion"]=companion::connected();String s;serializeJson(d,s);return s;
@@ -127,11 +122,6 @@ String executeCommand(const String& input) {
   String line=input;line.trim();
   if(line.startsWith("map "))return maps.command(line);
   if(line=="internet"||line.startsWith("internet "))return internet.command(line);
-  if(line=="chess"||line.startsWith("chess "))return chessNet.command(line);
-  if(line=="pet"||line.startsWith("pet "))return creature.command(line);
-  if(line=="dice"||line.startsWith("dice "))return dicer.command(line);
-  if(line=="duel"||line.startsWith("duel "))return duels.command(line);
-  if(line=="tour"||line.startsWith("tour "))return tour::net.command(line);
   if(line=="ui")return uiStatus();
   if(line=="navigation")return navigation.info();
   if(line=="radar")return radar.json();
@@ -225,5 +215,5 @@ String executeCommand(const String& input) {
     DynamicJsonDocument d(2048);if(deserializeJson(d,line.substring(4)) || !d.is<JsonObject>())return "ERR set {JSON object}";
     return applySettings(d.as<JsonObjectConst>());
   }
-  return "Commands: status, role, role normal|repeater|room, server, server secrets, server cli TEXT, server post TEXT, config, key, identity, identity set HEX, contact add {JSON}, connections, messages, quick, quick do {JSON}, people, people do {JSON}, wardrive, wardrive do {JSON}, wardrive log mesh|nets FROM, radar, radar web, radar do {JSON}, set {JSON}, radio try {JSON}|keep|revert|previous, send ALL|NODE_ID|CHANNEL_ID text, sendjson {JSON}, channels, channel do {JSON}, regions, regions find, netfind, netfind start [all|LAT LON]|stop|use N, chess, duel, duel invite NODE_ID checkers|sea, pet, pet adopt|release|cuddle|feed|heal|mortal on|off|name NAME|skip SECONDS, hello, position, resetpath NODE_ID, forget NODE_ID, selftest, wifi, internet, ble, remote, remote login|status|cli|trace NODE_ID [text], recalibrate, fsformat, restart, poweroff";
+  return "Commands: status, role, role normal|repeater|room, server, server secrets, server cli TEXT, server post TEXT, config, key, identity, identity set HEX, contact add {JSON}, connections, messages, quick, quick do {JSON}, people, people do {JSON}, wardrive, wardrive do {JSON}, wardrive log mesh|nets FROM, radar, radar web, radar do {JSON}, set {JSON}, radio try {JSON}|keep|revert|previous, send ALL|NODE_ID|CHANNEL_ID text, sendjson {JSON}, channels, channel do {JSON}, regions, regions find, netfind, netfind start [all|LAT LON]|stop|use N, hello, position, resetpath NODE_ID, forget NODE_ID, selftest, wifi, internet, ble, remote, remote login|status|cli|trace NODE_ID [text], recalibrate, fsformat, restart, poweroff";
 }

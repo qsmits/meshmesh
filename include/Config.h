@@ -36,7 +36,7 @@ struct Config {
   uint8_t backlight(time_t utc) const {return nightBrightness&&nightAt(utc)?nightBrightness:brightness;}
   bool inputRussian=false; // Preferred physical keyboard layout at startup.
   bool launcherTiles=false; // Home and folders default to List
-  bool lockDetails=true; // the locked screen names chess opponents, moves and message senders
+  bool lockDetails=true; // the locked screen names message senders
   uint8_t notifyLed=1,notifyPopup=1;
   uint8_t notifyWake=0; // preserve the keyboard boards' existing screen-off behaviour
   bool notifyFailed=false;char notifyWords[97]="";

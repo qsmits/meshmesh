@@ -14,11 +14,6 @@
 #include <bootloader_random.h>
 #include <time.h>
 #include <SHA256.h>
-#include "ChessNet.h"
-#include "Duel.h"
-#include "ChessTour.h"
-#include "ChessSync.h"
-#include "Dice.h"
 #include "MeshServer.h"
 #include "Power.h"
 #include "Companion.h"
@@ -147,10 +142,8 @@ class MeshCoreBackend:public BaseChatMesh {
  struct ContactBlob {uint32_t version=1,count=0;SavedContact contacts[24]={};uint8_t hash[32]={};};
  struct ReceivedId{uint64_t source=0;uint32_t stamp=0,hash=0;} received[128];unsigned nextReceived=0;
  bool duplicate(uint64_t source,uint32_t stamp,const char* text){uint32_t hash;mesh::Utils::sha256((uint8_t*)&hash,4,(const uint8_t*)text,strlen(text));for(const auto& r:received)if(r.source==source&&r.stamp==stamp&&r.hash==hash)return true;received[nextReceived]={source,stamp,hash};nextReceived=(nextReceived+1)%128;return false;}
- // True for a chat message kept in the history (not a copy, a chess command or a malformed text).
+ // True for a chat message kept in the history (not a copy or a malformed text).
  bool receiveMessage(uint64_t source,uint64_t dest,uint32_t stamp,const char* name,const char* text,const mesh::Packet* packet,uint8_t hops){size_t n=strnlen(text,MAX_TEXT_LEN+1);if(!n||n>MAX_TEXT_LEN||!meshmesh::validUtf8((const uint8_t*)text,n)){owner.rejected++;return false;}if(duplicate(source,stamp,text))return false;for(unsigned i=0;i<owner.historyCount;i++){const auto& old=owner.history[i];if(old.protocol==2&&!old.outgoing&&old.source==source&&old.session==stamp&&!strcmp(old.text,text))return false;}
-  // Chess commands come only from direct messages of keyed contacts, never from the channel.
-  if(!channels::isChannel(dest)&&(chessNet.receive(source,name,text)||duels.receive(source,name,text)||tour::net.receive(source,name,text)||ledger::exchange.receive(source,name,text)||dicer.receive(source,name,text)))return false;
  ChatMessage m;m.source=source;m.destination=dest;m.timestamp=uint32_t(time(nullptr));m.session=stamp;m.route=packet->isRouteFlood()?ChatMessage::RouteFlood:ChatMessage::RouteDirect;m.hops=hops;
   // A flood packet carries the repeaters it passed; a direct one arrives with its path consumed.
   if(packet->isRouteFlood())keepPath(m,packet->path_len,packet->path);m.signal=true;m.snr=int8_t(constrain(lroundf(owner.lastSnr*4),-128,127));m.rssi=int16_t(lroundf(owner.lastRssi));m.heard=1;{uint8_t h[MAX_HASH_SIZE];packet->calculatePacketHash(h);memcpy(&m.packet,h,4);}
@@ -164,13 +157,11 @@ class MeshCoreBackend:public BaseChatMesh {
   if(heard){p->heard=true;p->seen=millis();p->rssi=owner.lastRssi;p->snr=owner.lastSnr;if(hops!=255)p->hops=hops;}owner.dirty=true;
  }
  // A full table makes room for a new node: MeshCore overwrites the contact heard longest ago that
- // is not a favourite. Favourites here are chat nodes and any node with chat history or a chess game.
+ // is not a favourite. Favourites here are chat nodes and any node with chat history.
  uint32_t protectedAt=0;
  bool keep(uint64_t id,uint8_t type){
   if(type==ADV_TYPE_CHAT)return true;
   for(unsigned i=0;i<owner.historyCount;i++){auto& m=owner.history[i];if(m.source==id||m.destination==id)return true;}
-  for(auto& g:chessNet.matches)if(g.state!=ChessMatch::Free&&g.peer==id)return true;
-  if(duels.playsWith(id))return true;
   return false;
  }
  void protectContacts(){for(int i=0;i<getNumContacts();i++){ContactInfo c;if(!getContactByIdx(i,c))continue;ContactInfo* p=lookupContactByPubKey(c.id.pub_key,32);if(p)p->flags=(p->flags&~1)|(keep(aliasOf(p->id.pub_key),p->type)?1:0);}protectedAt=millis();}
@@ -266,9 +257,7 @@ class MeshCoreBackend:public BaseChatMesh {
  }
  mesh::DispatcherAction onRecvPacket(mesh::Packet* pkt) override{
   uint8_t type=pkt->getPayloadType();
-#if MM_WARDRIVE
   if(wardrive::running()){uint8_t hash[MAX_HASH_SIZE];pkt->calculatePacketHash(hash);uint32_t id;memcpy(&id,hash,4);wardrive::heard(id,type,pkt->isRouteFlood(),pkt->path_len,pkt->path,pkt->payload,pkt->payload_len,owner.lastSnr,owner.lastRssi);}
-#endif
   if((type==PAYLOAD_TYPE_GRP_TXT||type==PAYLOAD_TYPE_GRP_DATA)&&pkt->payload_len>3){mesh::GroupChannel found[1];if(!searchChannelsByHash(pkt->payload,found,1)){uint8_t hash[8];pkt->calculatePacketHash(hash);uint32_t id;memcpy(&id,hash,4);owner.noteChannel(pkt->payload,pkt->payload_len,id);}}
   return BaseChatMesh::onRecvPacket(pkt);
  }
@@ -331,9 +320,6 @@ class MeshCoreBackend:public BaseChatMesh {
 int16_t MeshRadio::startReceiving(){constexpr uint32_t mask=(1UL<<RADIOLIB_IRQ_RX_DONE)|(1UL<<RADIOLIB_IRQ_CRC_ERR)|(1UL<<RADIOLIB_IRQ_HEADER_ERR)|(1UL<<RADIOLIB_IRQ_TIMEOUT);return radio.startReceive(UINT32_MAX,RADIOLIB_IRQ_RX_DEFAULT_FLAGS,mask);}
 String MeshRadio::idText(uint64_t id) const{if(id==meshmesh::Broadcast)return "ALL";char b[17];snprintf(b,sizeof(b),"%04lX%08lX",(unsigned long)(id>>32),(unsigned long)(id&0xffffffffu));return b;}
 static const mesh::LocalIdentity* selfIdentity(MeshCoreBackend* core){return core?&core->self_id:meshServer.identity();}
-const uint8_t* MeshRadio::nodeKey() const{auto* self=selfIdentity(core);return self?self->pub_key:nullptr;}
-bool MeshRadio::nodeSign(uint8_t sig[64],const uint8_t* data,size_t size) const{auto* self=selfIdentity(core);if(!self)return false;self->sign(sig,data,size);return true;}
-bool MeshRadio::nodeVerify(const uint8_t key[32],const uint8_t sig[64],const uint8_t* data,size_t size){mesh::Identity id(key);return id.verify(sig,data,size);}
 bool MeshRadio::learnContact(const uint8_t key[32],const char* name,uint8_t type,int32_t lat,int32_t lon){return core&&type>=ADV_TYPE_CHAT&&type<=ADV_TYPE_SENSOR&&core->learn(key,name,type,lat,lon);}
 // Backup (docs/backup.md): the node key in MeshCore's export format (the 64-byte private key, hex). A restored key is
 // stored for the next start: the running mesh keeps the old one. 1 saved, 0 the same key, -1 invalid, -2 storage.
@@ -435,7 +421,6 @@ bool MeshRadio::startRadio(bool quiet){
 bool MeshRadio::sendHello(){return ready&&(core?core->advertise():meshServer.advertise());}
 bool MeshRadio::sendPosition(){if(!config.gps||!hardware.gpsFix()){event="GPS: waiting for fix";dirty=true;return false;}return sendHello();}
 bool MeshRadio::sendMessage(const String& text,uint64_t destination){return queue(text,destination,false);}
-uint32_t MeshRadio::sendGame(const String& text,uint64_t destination){return channels::isChannel(destination)?0:queue(text,destination,true);}
 uint32_t MeshRadio::sendProbe(const String& text,uint64_t channel){return channels::isChannel(channel)?queue(text,channel,true,true):0;}
 uint32_t MeshRadio::queue(const String& text,uint64_t destination,bool game,bool probe){
  size_t n=text.length();if(!ready||!core||!config.bootCounter||!n||n>messageLimit(destination)||!meshmesh::validUtf8((const uint8_t*)text.c_str(),n)||!destination||destination==nodeId){event="Message: invalid or radio offline";dirty=true;return false;}
@@ -444,7 +429,7 @@ uint32_t MeshRadio::queue(const String& text,uint64_t destination,bool game,bool
  Pending* slot=nullptr;for(auto& wait:pending)if(!wait.active){slot=&wait;break;}if(!slot){event="Waiting for ACKs";dirty=true;return false;}
  auto& wait=*slot;wait={};wait.active=true;auto& m=wait.message;m.source=nodeId;m.destination=destination;m.session=config.bootCounter;m.id=++sequence;m.timestamp=time(nullptr);m.outgoing=true;m.status=ChatMessage::Queued;strcpy(m.name,config.name);strcpy(m.text,text.c_str());m.game=game;wait.probe=probe;wait.scoped=scopeKey(channels::isChannel(destination)?channelIndex(destination):-1,wait.scopeKey);wait.wireTimestamp=coreRtc.getCurrentTimeUnique();if(!core->reserveStamp(wait.wireTimestamp)){wait.active=false;event="MeshCore timestamp storage error";dirty=true;return 0;}if(game){dirty=true;return m.id;}addMessage(m);event=channels::isChannel(destination)?"Queued: broadcast":"Queued: waiting for delivery";return m.id;
 }
-void MeshRadio::status(uint32_t id,ChatMessage::Status value,bool txError){for(auto& p:pending)if(p.message.game&&p.message.id==id){if(p.probe){if(value==ChatMessage::Failed)wardrive::probeFailed(id);return;}if(!dicer.delivery(id,value)&&!tour::net.delivery(id,value)&&!duels.delivery(id,value))chessNet.delivery(id,value);return;}for(unsigned i=0;i<historyCount;i++)if(history[i].protocol==2&&history[i].outgoing&&history[i].source==nodeId&&history[i].session==config.bootCounter&&history[i].id==id){if(history[i].status==ChatMessage::Delivered||history[i].status==value)return;history[i].status=value;notifications::emit(txError?notifications::TxError:value==ChatMessage::Delivered?notifications::Confirmed:value==ChatMessage::Failed?notifications::Unconfirmed:notifications::Transmitted,history[i]);persist(history[i]);dirty=true;break;}}
+void MeshRadio::status(uint32_t id,ChatMessage::Status value,bool txError){for(auto& p:pending)if(p.message.game&&p.message.id==id){if(p.probe){if(value==ChatMessage::Failed)wardrive::probeFailed(id);return;}return;}for(unsigned i=0;i<historyCount;i++)if(history[i].protocol==2&&history[i].outgoing&&history[i].source==nodeId&&history[i].session==config.bootCounter&&history[i].id==id){if(history[i].status==ChatMessage::Delivered||history[i].status==value)return;history[i].status=value;notifications::emit(txError?notifications::TxError:value==ChatMessage::Delivered?notifications::Confirmed:value==ChatMessage::Failed?notifications::Unconfirmed:notifications::Transmitted,history[i]);persist(history[i]);dirty=true;break;}}
 // Route of an outgoing message: the current attempt, or the one that got the ACK. Saved with the next status.
 // The path: the route of a direct attempt, the one returned with a flood delivery; copies match the attempt's packet.
 void MeshRadio::track(const Pending& wait,unsigned attempt,bool delivered,uint8_t pathLen,const uint8_t* path){
@@ -467,9 +452,7 @@ String MeshRadio::routeText(const ChatMessage& m,bool brief) const{
 }
 void MeshRadio::echo(uint32_t packet,uint8_t pathLen,const uint8_t* path){
  if(!packet||!mesh::Packet::isValidPathLen(pathLen))return;
-#if MM_WARDRIVE
  wardrive::echo(packet,pathLen,path,lastSnr);
-#endif
  notifications::repeatPacket(packet);
  for(unsigned i=0;i<historyCount;i++){auto& m=history[i];if(m.packet!=packet)continue;
   if(m.heard<255)m.heard++;if(m.outgoing)notifications::emit(notifications::Repeat,m);uint8_t size=(pathLen>>6)+1,count=pathLen&63;

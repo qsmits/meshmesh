@@ -313,9 +313,6 @@ static int runSimulator(bool test,bool reload=false) {
       radar.tick();
       wardrive::tick();
       notifications::tick();
-      creature.tick();
-      dicer.tick();
-      duels.tick();
       uiTick();
       ok = drawWindow(renderer, texture);
       SDL_Delay(32);

@@ -2,25 +2,13 @@
 
 // The screen's apps and folders in the chosen order (config.apps): IDs separated by spaces, "-" before an ID
 // hides it; "{NAME" opens a folder (its apps follow, "}" closes it), "-{NAME" hides the folder with its apps.
-// A folder name has "_" for its spaces; "games" is the folder of the games, named in the interface language.
-// IDs the text does not name (apps new in this firmware) follow in the default place: a game goes to the games
-// folder when there is one, anything else to the end. Settings stay at the top and shown: the way to everything else.
+// A folder name has "_" for its spaces.
+// IDs the text does not name (apps new in this firmware) follow at the end. Settings stay at the top and shown: the way to everything else.
 namespace {
-const char* const GameIds[]={"chess","checkers","sea","pet","dice","solitaire"};
-const char GamesFolder[]="games";
 int appIndex(const char* id,size_t n){for(uint8_t i=0;i<uiAppCount;i++)if(strlen(uiApps[i])==n&&!strncmp(uiApps[i],id,n))return i;return -1;}
-bool isGame(uint8_t i){for(const char* g:GameIds)if(!strcmp(uiApps[i],g))return true;return false;}
 bool isSettings(uint8_t i){return !strcmp(uiApps[i],"settings");}
-int gamesFolder(const AppMenu& m){for(uint8_t f=0;f<m.folders;f++)if(!strcmp(m.folder[f].name,GamesFolder))return f;return -1;}
-// Without a saved order: the default of this interface with its games in the games folder (where the first one is).
-void defaults(AppMenu& m){
-  m=AppMenu();int games=-1;
-  for(uint8_t i=0;i<uiAppCount;i++){
-    if(!isGame(i)){m.top[m.topCount++]=i;continue;}
-    if(games<0){games=m.folders++;strcpy(m.folder[games].name,GamesFolder);m.top[m.topCount++]=uint8_t(AppFolder|games);}
-    auto& f=m.folder[games];f.apps[f.count++]=i;
-  }
-}
+// Without a saved order: every app in its default place.
+void defaults(AppMenu& m){m=AppMenu();for(uint8_t i=0;i<uiAppCount;i++)m.top[m.topCount++]=i;}
 bool validName(const char* p,size_t n){if(!n||n>=FolderNameMax)return false;for(size_t i=0;i<n;i++)if(p[i]=='{'||p[i]=='}'||(p[i]=='-'&&!i)||uint8_t(p[i])<' ')return false;return true;}
 }
 bool appsParse(const char* text,AppMenu& m,bool strict){
@@ -45,8 +33,7 @@ bool appsParse(const char* text,AppMenu& m,bool strict){
     if(close){if(open<0&&strict)return false;open=-1;}
   }
   if(open>=0&&strict)return false;
-  int games=gamesFolder(m);
-  for(uint8_t i=0;i<uiAppCount;i++)if(!seen[i]){if(isGame(i)&&games>=0){auto& f=m.folder[games];f.apps[f.count++]=i;}else m.top[m.topCount++]=i;}
+  for(uint8_t i=0;i<uiAppCount;i++)if(!seen[i])m.top[m.topCount++]=i;
   return true;
 }
 String appsText(const char* text){
@@ -73,17 +60,6 @@ bool appsOldDefault(const char* text){
     if(same&&k==n)return true;}
   return false;
 }
-// 0.33.0 brought the folders: the games of an order saved before go to the games folder, where the first of them
-// was; their order and hidden marks stay.
-void appsAddGames(char* text,size_t cap){
-  if(!*text||strchr(text,'{'))return;
-  AppMenu m;appsParse(text,m,false);String s;bool done=false;
-  for(uint8_t k=0;k<m.topCount;k++){uint8_t e=m.top[k];if(e&AppFolder)continue;
-    if(!isGame(e)){if(s.length())s+=' ';if(m.hidden[e])s+='-';s+=uiApps[e];continue;}
-    if(done)continue;done=true;if(s.length())s+=' ';s+='{';s+=GamesFolder;
-    for(uint8_t j=k;j<m.topCount;j++){uint8_t g=m.top[j];if(!(g&AppFolder)&&isGame(g)){s+=' ';if(m.hidden[g])s+='-';s+=uiApps[g];}}s+='}';}
-  if(s.length()<cap)strlcpy(text,s.c_str(),cap);
-}
 const AppMenu& appsMenu(){
   static char parsed[sizeof config.apps];static AppMenu menu;static bool ready=false; // in .bss: no flash for an initial value
   if(!ready||strcmp(parsed,config.apps)){ready=true;strlcpy(parsed,config.apps,sizeof parsed);appsParse(config.apps,menu,false);}
@@ -100,5 +76,5 @@ unsigned appsShown(uint8_t* out,int folder){
 int appsFolderOf(uint8_t app){const AppMenu& m=appsMenu();for(uint8_t f=0;f<m.folders;f++)for(uint8_t j=0;j<m.folder[f].count;j++)if(m.folder[f].apps[j]==app)return f;return -1;}
 String appsFolderName(uint8_t folder){
   const AppMenu& m=appsMenu();if(folder>=m.folders)return "";const char* n=m.folder[folder].name;
-  if(!strcmp(n,GamesFolder))return tr("Games","Игры");String s=n;s.replace('_',' ');return s;
+  String s=n;s.replace('_',' ');return s;
 }

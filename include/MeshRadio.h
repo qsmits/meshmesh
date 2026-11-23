@@ -19,7 +19,7 @@ struct ChatMessage {
   char name[25]={},text[161]={};
   bool outgoing=false;
   uint8_t protocol=2; // 1: archived MM/1; 2: MeshCore
-  bool game=false;    // a chess command: sent like a message, kept out of the chat history
+  bool game=false;    // a protocol message: sent like a message, kept out of the chat history
   enum Status:uint8_t { Received,Queued,Sent,Delivered,Failed } status=Received;
   // How it travelled: outgoing - the current attempt, then the one that got the ACK; incoming - the received packet.
   // Flood hops of a delivered message are those of the path returned with the ACK. 255: not known.
@@ -53,7 +53,7 @@ class MeshRadio {
   DeviceRadio radio;
   bool ready=false;int16_t radioError=0;
   uint64_t nodeId=0;uint32_t networkId=0,rxCount=0,txCount=0,rejected=0,relayed=0,replaced=0; // replaced: contacts overwritten by new nodes
-  uint32_t received=0,delivered=0; // chat messages received and delivery ACKs since boot (the pet counts them)
+  uint32_t received=0,delivered=0; // chat messages received and delivery ACKs since boot
   float lastRssi=0,lastSnr=0;uint32_t lastRxAt=0;
   // On the heap: in static memory it does not fit the classic ESP32 boards (dram0 segment).
   ChatMessage* const history=new ChatMessage[64];unsigned historyCount=0;
@@ -93,7 +93,6 @@ class MeshRadio {
   // Power off (Power.cpp): delayed writes now, then the transceiver sleeps until the next boot.
   void flush();void sleep();
   bool sendMessage(const String& text,uint64_t destination=meshmesh::Broadcast);
-  uint32_t sendGame(const String& text,uint64_t destination); // message ID for delivery, 0 when refused
   // A wardrive ping (Wardrive.h): a channel message kept out of the history; its packet hash goes to wardrive.
   uint32_t sendProbe(const String& text,uint64_t channel);
   bool sendHello();bool sendPosition();bool selfTest();
@@ -102,11 +101,8 @@ class MeshRadio {
   static bool clockSet();
   bool resetPath(uint64_t id);bool removeContact(uint64_t id);
   String idText(uint64_t id) const;String publicKeyText() const;
-  // The node key signs rated chess results (ChessRating.h): nullptr / false before the identity is loaded.
   String privateKeyText() const;int restoreKey(const String& hex); // backup: the node key (docs/backup.md)
-  const uint8_t* nodeKey() const;bool nodeSign(uint8_t sig[64],const uint8_t* data,size_t size) const;
-  static bool nodeVerify(const uint8_t key[32],const uint8_t sig[64],const uint8_t* data,size_t size);
-  bool learnContact(const uint8_t key[32],const char* name,uint8_t type=1,int32_t lat=0,int32_t lon=0); // a chat contact from its key (a tournament opponent)
+  bool learnContact(const uint8_t key[32],const char* name,uint8_t type=1,int32_t lat=0,int32_t lon=0); // a chat contact from its key
   unsigned messageLimit(uint64_t destination=meshmesh::Broadcast) const;
   String routeText(const ChatMessage& m,bool brief=false) const; // e.g. "via 2 rpt · 2/3"; empty when unknown
   // A copy of a flood packet heard again (the mesh tables): a message of the history counts it as a repeat.

@@ -19,10 +19,7 @@ unsigned textByteLimit(){
  case ChannelAdd:return channelEditLimit();
  case ServerHome:return serverEditLimit();
  case Remote:return remoteEditLimit();
- case DiceView:return diceEditLimit();
  case PeopleView:return people::NameBytes;
- case PetView:return 15;
- case ChessTourNew:return 32;
  default:return 24; // Device name
  }
 }

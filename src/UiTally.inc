@@ -3,7 +3,7 @@
 // after the last adds a card. N or a hold names it, C colours it, R twice resets it, DEL twice deletes it;
 // B and W count the BLE and Wi-Fi devices nearby, shown on the card.
 uint32_t tallyArmed=0;int tallyArmKey=0;
-uint16_t tallyHue(unsigned i){return rgb(dice::colors[people::tally.list[i].color%dice::Colors]);}
+uint16_t tallyHue(unsigned i){return rgb(people::colors[people::tally.list[i].color%people::Colors]);}
 bool tallyAdding(){return tallyNew&&people::tally.count<people::Counters;}
 String tallyTileDetail(){return people::name(people::tally.current)+": "+String(people::value());}
 void drawTally(){
@@ -19,7 +19,7 @@ void drawTally(){
   String index=String(c.current+1)+"/"+String(n);textRight(282,52,index,dim,small);text(40,52,fit(people::name(c.current),230-measure(index,small),bold),ink,bold);
   String v=String(people::value());bool large=measure(v,digits)<=240;textCenter(160,large?112:100,v,ink,large?digits:big);
   panel(40,124,104,32,bg,8);textCenter(92,145,"-1",people::value()?ink:faint,bold);
-  panel(176,124,104,32,mix(dice::colors[people::current().color%dice::Colors],0x131a22,.6f),8);textCenter(228,145,"+1",ink,bold);
+  panel(176,124,104,32,mix(people::colors[people::current().color%people::Colors],0x131a22,.6f),8);textCenter(228,145,"+1",ink,bold);
   if(people::settings.ble||people::settings.wifi){String near=t("Nearby: ","Рядом: ");if(people::settings.ble)near+="BLE "+String(people::count(false))+(people::saturated(false)?"+":"");
    if(people::settings.wifi)near+=String(people::settings.ble?" · ":"")+"Wi-Fi "+String(people::count(true))+(people::saturated(true)?"+":"");textCenter(160,172,near,dim,small);}
  }

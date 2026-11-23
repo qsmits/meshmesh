@@ -8,11 +8,6 @@
 #include "BleDiagnostics.h"
 #include "WifiDiagnostics.h"
 #include "Hardware.h"
-#include "ChessNet.h"
-#include "Duel.h"
-#include "ChessTour.h"
-#include "Pet.h"
-#include "Dice.h"
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include <esp_sleep.h>
@@ -64,7 +59,7 @@ int powerOnWay(){return hardware.wakePin();}
 void powerOffTick(){
   if(!offAt||int32_t(millis()-offAt)<0)return;
   if(meshRadio.busy()&&millis()-offAt<5000)return;
-  people::flush();wardrive::flush();meshRadio.flush();chessNet.flush();duels.flush();tour::net.flush();creature.flush();dicer.flush(); // counters wait 2 s before writing
+  people::flush();wardrive::flush();meshRadio.flush(); // counters wait 2 s before writing
   Serial.println("OFF");Serial.flush();
   uiFarewell();uint32_t shown=millis();
   int pin=hardware.wakePin();

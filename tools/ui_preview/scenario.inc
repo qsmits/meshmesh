@@ -22,17 +22,19 @@ static void scenario(){
  {
   auto expect=[](const char* s){if(uiStatus().indexOf(s)<0){printf("FAIL launcher: %s, wanted %s\n",uiStatus().c_str(),s);exit(1);}};
   expect("\"layout\":\"list\"");
+  strlcpy(config.apps,"chats quick {Tools radar spectrum} nodes",sizeof config.apps); // a folder to open
   uint8_t order[AppEntriesMax];int n=appsShown(order);
   key(0xb5);String last=String("\"selected\":")+String(n-1)+",";expect(last.c_str());key(0xb6);
   int folder=0;while(folder<n&&!(order[folder]&AppFolder))folder++;
-  if(folder==n){printf("FAIL missing demo folder\n");exit(1);}
+  if(folder==n){printf("FAIL missing the folder\n");exit(1);}
   for(int i=0;i<folder;i++)key(0xb6);
   key(13);expect("\"page\":\"folder\"");expect("\"layout\":\"list\"");shot("folder-list");
   switchHomeLayout();expect("\"layout\":\"tiles\"");
   for(int i=0;i<folder/3;i++)key(0xb6);for(int i=0;i<folder%3;i++)key(0xb7);
   key(13);key(0xb7);expect("\"page\":\"folder\"");expect("\"selected\":1,");shot("folder-tiles");
-  key(13);expect("\"page\":\"checkers\"");key(0x86);expect("\"selected\":1,");
+  key(13);expect("\"page\":\"spectrum\"");key(0x86);expect("\"selected\":1,");
   key(0x86);expect("\"layout\":\"tiles\"");key(0x82);shot("home-tiles");
+  config.apps[0]=0;
  }
  key(0x81);shot("threads");key(13);shot("chat-public");key(0x86);
  // Channels: the list, a hashtag channel's card, a private channel and its card, adding one, an invitation.
@@ -81,297 +83,18 @@ static void scenario(){
  uiKey(13);fakeMillis+=300;uiKey(13);tick();if(uiStatus().indexOf("\"locked\":false")<0){printf("FAIL two OK presses did not unlock: %s\n",uiStatus().c_str());exit(1);}
  key(0x88);key(0xa3);key(0x82);
  key(0xb6);key(0xb7);key(0xb7);shot("home-radar");key(0xb6);shot("home-scrolled");key(0xb5);key(13);shot("radar");key(0xb6);key(0xb6);shot("radar-select");key(0xb5);key(0xb5);key(13);shot("homing");key(0x86);shot("radar-back");key(0xb7);shot("motion");key('b');for(int i=0;i<4;i++)tick();shot("motion-beacon");key('b');key(0xb7);key(0x86);
- // Solitaire: the ninth home tile; hints, a held run and the key sheet.
- tile("solitaire");shot("home-solitaire");key(13);shot("solitaire");for(int i=0;i<12;i++){key('p');key(' ');}shot("solitaire-played");
- key(0xb5);key(0xb5);key(0xb6);key(0xb5);key(13);key(0xb7);shot("solitaire-held");key(0x86);key('h');shot("solitaire-help");key(0x86);key(0x86);
- // Chess: the tenth home tile, the list, a challenge, a game with a held piece, promotion and a won game.
- {auto sayId=[](int peer,const char* name,unsigned id,const char* body){char t[64];snprintf(t,sizeof t,"\xe2\x99\x9f%04X %s",id,body);chessNet.receive(peerId(peer),name,t);};
-  auto play=[&](int peer,const char* name,ChessMatch* m,std::initializer_list<const char*> moves){for(const char* u:moves){if(m->myTurn()){chess::Move mv;if(m->game.pos.parseUci(u,mv))chessNet.move(*m,mv);}else{char b[16];snprintf(b,sizeof b,"%u %s",m->game.plies+1,u);sayId(peer,name,m->id,b);}}};
-  tile("chess");shot("home-chess");key(13);shot("chess-empty");key(13);shot("chess-pick");key(0xb7);shot("chess-pick-white");key(13);shot("chess-inviting");
-  ChessMatch* a=nullptr;for(auto& m:chessNet.matches)if(m.state==ChessMatch::Inviting)a=&m;
-  sayId(0,"Heltec V4",a->id,"yes");play(0,"Heltec V4",a,{"e2e4","e7e5","g1f3","b8c6","f1c4","g8f6"});
-  shot("chess-italian");key(0x86);key(13);for(int i=0;i<3;i++)key(0xb6);key(13);key(0xb7);key(0xb5);key(0xb5);shot("chess-held");key(0x86);key('h');shot("chess-help");key(0x86);key(0x86);
-  ChessMatch* b=chessNet.invite(peerId(5),chess::White);sayId(5,"Марат",b->id,"yes");play(5,"Марат",b,{"e2e4","e7e5","d1h5","b8c6","f1c4","g8f6","h5f7"});
-  ChessMatch* c=chessNet.invite(peerId(0),chess::White);sayId(0,"Heltec V4",c->id,"yes");play(0,"Heltec V4",c,{"a2a4","b7b5","a4b5","a7a6","b5a6","c8b7","a6b7","b8c6"});
-  sayId(3,"Игорь T-Deck",0x4B1D,"new w · шахматы MeshMesh");
-  auto openList=[&](int row){tile("chess");key(13);for(int k=0;k<row;k++)key(0xb6);};
-  openList(0);shot("chess-list");
-  for(int i=1;i<=4;i++){openList(i);key(13);char n[32];snprintf(n,sizeof n,"chess-open%d",i);shot(n);}
-  // An undelivered move and a draw offer from the other player.
-  a->outStatus=ChatMessage::Failed;for(int i=1;i<=4;i++){openList(i);key(13);if(uiStatus().indexOf("\"chess_cursor\":\"f6\"")>=0){shot("chess-failed");break;}}
-  a->outStatus=ChatMessage::Delivered;sayId(0,"Heltec V4",a->id,"draw?");shot("chess-draw-offer");
-  // The game with the pawn on b7 opens with the cursor on c6: take b7, go to a8 and choose the piece.
-  for(int i=1;i<=4;i++){openList(i);key(13);if(uiStatus().indexOf("\"chess_cursor\":\"c6\"")>=0){key(0xb4);key(0xb5);key(13);key(0xb4);key(0xb5);shot("chess-promo-target");key(13);key(0xb7);shot("chess-promotion");key(13);shot("chess-promoted");break;}}
-  key(0x82);
-  // Rated results: my signature (made in ChessNet::tick), theirs as a message, the change on the board and
-  // the rating tab with two games.
-  {auto sayLong=[](int peer,const char* name,unsigned id,const char* body){char t[160];snprintf(t,sizeof t,"\xe2\x99\x9f%04X %s",id,body);chessNet.receive(peerId(peer),name,t);};
-   char sig[rating::SigTextSize+1],body[128];uint8_t raw[64];memset(raw,0x33,64);rating::sigText(raw,sig);
-   ChessMatch* d=chessNet.invite(peerId(3),chess::White);sayId(3,"Игорь T-Deck",d->id,"yes");play(3,"Игорь T-Deck",d,{"f2f3","e7e5","g2g4","d8h4"});
-   for(int i=0;i<2;i++){chessNet.tick();tick();}
-   snprintf(body,sizeof body,"sig 1791140000 %s",sig);sayLong(5,"Марат",b->id,body);snprintf(body,sizeof body,"sig 1791150000 %s",sig);sayLong(3,"Игорь T-Deck",d->id,body);
-   for(int i=0;i<2;i++){chessNet.tick();tick();}
-   if(b->sign!=ChessMatch::SignStored||d->sign!=ChessMatch::SignStored||rating::book.myElo()==rating::Start){printf("FAIL rated results: %d %d %d\n",b->sign,d->sign,rating::book.myElo());exit(1);}
-   // PGN of the won game, and the archive on the SD card.
-   {std::string pg=chessNet.pgn(*b).c_str();if(pg.find("1. e4 e5 2. Qh5 Nc6 3. Bc4 Nf6 4. Qxf7# {checkmate} 1-0")==std::string::npos||pg.find("[White \"M9\"]")==std::string::npos||pg.find("[Black \"Марат\"]")==std::string::npos||pg.find("[Result \"1-0\"]")==std::string::npos){printf("FAIL pgn:\n%s\n",pg.c_str());exit(1);}
-    chessNet.tick();String list=chessArchiveList();char want[16];snprintf(want,sizeof want,"-%04X.pgn",b->id);int at=list.indexOf(want);
-    if(at<0){printf("FAIL archive: %s\n",list.c_str());exit(1);}int from=at;while(from>0&&list[from-1]!='"')from--;String name=list.substring(from,at+9);
-    StaticJsonDocument<4096> d;deserializeJson(d,chessNet.command("chess archive "+name));if(chessNet.pgn(*b)!=(d["pgn"]|"")){printf("FAIL archive read %s\n",name.c_str());exit(1);}}
-   openList(0);key(0xb7);shot("chess-rating");key(0xb4);
-   char want[32];snprintf(want,sizeof want,"\"chess_game\":\"%04X\"",b->id);
-   for(int i=1;i<=5;i++){openList(i);key(13);if(uiStatus().indexOf(want)>=0){shot("chess-rated-result");break;}}
-   key(0x82);tile("chess");key(13);key(13);shot("chess-pick-rated");key(0x86);key(0x82);}
-  // Locked: a challenge arrives; its card stands above the messages, without names when details are off,
-  // and holding OK unlocks straight into the game.
-  key(0x88);sayId(5,"Марат",0x5C3E,"new b · шахматы MeshMesh");tick();shot("locked-chess");
-  config.lockDetails=false;tick();shot("locked-chess-hidden");config.lockDetails=true;
-  key(0xa3);if(uiStatus().indexOf("\"chess_game\":\"5C3E\"")<0||uiStatus().indexOf("\"locked\":false")<0){printf("FAIL hold on the locked chess card: %s\n",uiStatus().c_str());exit(1);}key(0x86);key(0x82);
-  // Swiss tournament, organiser side: the wizard with six contacts, everyone joins, the start comes by
-  // itself; four rounds with the reports of both players, then the checks of the pairings and standings.
-  // Boards: finished games nobody opened give their place to a new game, the oldest settled first; a finished
-  // game still waiting for its rating signature stays, and six games in progress refuse a seventh.
-  {auto fail=[](const char* what){printf("FAIL boards: %s\n",what);exit(1);};
-   auto game=[&](int peer,const char* name,bool rated){ChessMatch* g=chessNet.invite(peerId(peer),chess::White,rated);if(!g)fail("a free board");char t[48];snprintf(t,sizeof t,"\xe2\x99\x9f%04X yes",g->id);chessNet.receive(peerId(peer),name,t);return g;};
-   for(auto& m:chessNet.matches)m=ChessMatch();
-   ChessMatch* old[6];for(int i=0;i<6;i++){old[i]=game(0,"Heltec V4",false);chessNet.resign(*old[i]);old[i]->unseen=true;old[i]->changedAt=1000+i;}
-   old[0]->rated=true;old[0]->sign=ChessMatch::SignSent;old[0]->theirSigned=false; // the oldest waits for a signature
-   uint16_t pendingId=old[0]->id,evicted=old[1]->id;
-   ChessMatch* fresh=chessNet.invite(peerId(3),chess::White,false);if(!fresh)fail("a finished game gives its board");
-   if(!chessNet.find(pendingId))fail("the game waiting for a signature stays");if(chessNet.find(evicted)&&chessNet.find(evicted)!=fresh)fail("the oldest settled game gives its board");
-   for(auto& m:chessNet.matches)m=ChessMatch();
-   for(int i=0;i<6;i++)game(i%2?3:0,i%2?"Игорь T-Deck":"Heltec V4",false);
-   if(chessNet.room()||chessNet.invite(peerId(5),chess::White,false))fail("six games in progress refuse a seventh");
-   previewSent.clear();char t[64];snprintf(t,sizeof t,"\xe2\x99\x9f" "7777 new w r · шахматы MeshMesh");chessNet.receive(peerId(5),"Марат",t);
-   if(chessNet.find(0x7777)||previewSent.empty()||previewSent.back().text.find("7777 no")==std::string::npos)fail("a challenge to a full device is declined");}
-  {for(auto& m:chessNet.matches)m=ChessMatch(); // free boards for the tournament games
-   const char* extra[]={"Лиля","Ринат","Тимур"};for(int i=0;i<3;i++){auto& p=meshRadio.peers[meshRadio.peerCount++];p=Peer();p.id=peerId(6+i);strcpy(p.name,extra[i]);p.type=1;p.heard=true;p.seen=fakeMillis-60000*(i+1);for(int k=0;k<8;k++)p.publicKey[k]=uint8_t(p.id>>(56-8*k));p.publicKey[8]=0x70+i;}
-   auto fail=[](const char* what){printf("FAIL tournament: %s\n",what);exit(1);};
-   tile("chess");key(13);key('2');shot("tour-empty");
-   key(13);shot("tour-new-name");key(0xb7);for(int i=0;i<6;i++){key(' ');key(0xb6);}shot("tour-new-players");key(13);shot("tour-new-rules");key(13);shot("tour-new-check");
-   previewSent.clear();key(13);if(uiStatus().indexOf("\"page\":\"chess_tour\"")<0)fail("the wizard did not open the tournament");shot("tour-gathering");
-   tour::Tour* T=nullptr;for(auto& x:tour::net.tours)if(x.state==tour::Inviting)T=&x;if(!T||T->playerCount!=7)fail("seven players asked");
-   unsigned invites=0;for(auto& m:previewSent)invites+=m.text.find(" inv ")!=std::string::npos;if(invites!=6)fail("six invitations");
-   auto openTour=[&](uint16_t id){char want[24];snprintf(want,sizeof want,"\"tour\":\"%04X\"",id);for(int row=1;row<=3;row++){tile("chess");key(13);key('2');for(int k=0;k<row;k++)key(0xb6);key(13);if(uiStatus().indexOf(want)>=0)return;}fail("tournament page");};
-   char cmd[200];auto say=[&](int peer,const char* name,const char* body){snprintf(cmd,sizeof cmd,"\xe2\x99\x9e%04X %s",T->id,body);tour::net.receive(peerId(peer),name,cmd);};
-   const char* names[]={"Heltec V4","","","Игорь T-Deck","","Марат","Лиля","Ринат","Тимур"};int who[]={0,3,5,6,7,8};
-   for(int i=0;i<5;i++)say(who[i],names[who[i]],"yes");tour::net.tick();if(T->state!=tour::Inviting)fail("started before everyone answered");
-   say(who[5],names[who[5]],"yes");if(T->state!=tour::Inviting)fail("started inside the radio callback");tour::net.tick();if(T->state!=tour::Running||T->round!=1)fail("automatic start");
-   auto playerPeer=[&](uint8_t idx)->int{for(int w:who)if(T->players[idx].id==peerId(w))return w;return -1;};
-   bool met[tour::MaxPlayers][tour::MaxPlayers]={};unsigned byes[tour::MaxPlayers]={},whites[tour::MaxPlayers]={},blacks[tour::MaxPlayers]={};
-   for(unsigned round=1;round<=T->rounds;round++){
-    if(T->round!=round)fail("round order");unsigned r=round-1,bye=0;
-    for(unsigned k=0;k<T->pairCount[r];k++){const tour::Pair& p=T->pairs[r][k];
-     if(p.black==tour::NoPlayer){bye++;byes[p.white]++;continue;}
-     if(met[p.white][p.black]){printf("round %u: %s and %s again\n",round,T->players[p.white].name,T->players[p.black].name);fail("a repeated pairing");}
-     met[p.white][p.black]=met[p.black][p.white]=true;whites[p.white]++;blacks[p.black]++;}
-    if(bye!=1||T->pairCount[r]!=4)fail("three games and one bye a round");
-    if(round==1){chessNet.tick();for(int i=0;i<2;i++)tick();shot("tour-round1");}
-    // Results: White wins the first game, Black the second, a draw in the third; my own game ends by resigning.
-    for(unsigned k=0;k<T->pairCount[r];k++){tour::Pair p=T->pairs[r][k];if(p.black==tour::NoPlayer)continue;const char* res=k%3==0?"w":k%3==1?"b":"d";
-     if(T->players[p.white].id==meshRadio.nodeId||T->players[p.black].id==meshRadio.nodeId){ChessMatch* m=nullptr;for(auto& x:chessNet.matches)if(x.state==ChessMatch::Playing&&x.tour==T->id&&x.id==p.game)m=&x;if(!m)fail("my tournament game");
-      bool white=T->players[p.white].id==meshRadio.nodeId;chessNet.resign(*m);chessNet.tick();
-      char body[40];snprintf(body,sizeof body,"res %04X %s",p.game,white?"b":"w");int op=playerPeer(white?p.black:p.white);say(op,names[op],body);continue;}
-     char body[40];snprintf(body,sizeof body,"res %04X %s",p.game,res);int pw=playerPeer(p.white),pb=playerPeer(p.black);say(pw,names[pw],body);if(round==2&&k==2)snprintf(body,sizeof body,"res %04X w",p.game); // a dispute
-     say(pb,names[pb],body);}
-    tour::net.tick();
-    if(round==2&&T->round==2){openTour(T->id);key(0xb7);for(unsigned k=0;k<T->pairCount[1];k++)if(T->pairs[1][k].result==tour::Disputed){for(unsigned j=0;j<k;j++)key(0xb6);shot("tour-dispute");key('d');tour::net.tick();break;}
-     if(T->round!=3)fail("the dispute settled by the organiser");key(0xb4);}
-   }
-   if(T->state!=tour::Over)fail("finished after the last round");
-   for(unsigned i=0;i<T->playerCount;i++){if(byes[i]>1)fail("two byes for one player");if(abs(int(whites[i])-int(blacks[i]))>2)fail("colours not alternated");}
-   tour::Row rows[tour::MaxPlayers];unsigned n=tour::net.standings(*T,rows),total=0;for(unsigned i=0;i<n;i++)total+=rows[i].half;if(n!=7||total!=2*4*4)fail("standings: 4 points a round");
-   for(unsigned i=1;i<n;i++)if(rows[i].half>rows[i-1].half)fail("standings order");
-   openTour(T->id);for(int i=0;i<3;i++)tick();shot("tour-final");key(0xb7);shot("tour-final-games");key(0x86);
-   // Player side: an invitation from Игорь, the player list, a pairing with Марат's key, the standings.
-   uint16_t pid=0xA7C1;auto org=[&](const char* body){snprintf(cmd,sizeof cmd,"\xe2\x99\x9e%04X %s",pid,body);tour::net.receive(peerId(3),"Игорь T-Deck",cmd);};
-   org("inv 5 24 6 Осенняя швейцарка");tour::Tour* P=tour::net.find(pid);if(!P||P->state!=tour::Invited)fail("invitation received");
-   openTour(pid);for(int i=0;i<2;i++)tick();shot("tour-invite");previewSent.clear();key(13);if(P->state!=tour::Running||previewSent.empty()||previewSent.back().text.find(" yes")==std::string::npos)fail("joined");
-   char list[160];snprintf(list,sizeof list,"pl %06lX:Игорь,%06lX:M9,%06lX:Марат,%06lX:Лиля",(unsigned long)(peerId(3)>>40),(unsigned long)(meshRadio.nodeId>>40),(unsigned long)(peerId(5)>>40),(unsigned long)(peerId(6)>>40));org(list);
-   const Peer* marat=nullptr;for(unsigned i=0;i<meshRadio.peerCount;i++)if(meshRadio.peers[i].id==peerId(5))marat=&meshRadio.peers[i];
-   const char* b64="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";std::string key64;
-   for(int i=0;i<32;i+=3){uint32_t v=uint32_t(marat->publicKey[i])<<16|(i+1<32?marat->publicKey[i+1]<<8:0)|(i+2<32?marat->publicKey[i+2]:0);key64+=b64[v>>18&63];key64+=b64[v>>12&63];key64+=i+1<32?b64[v>>6&63]:'=';key64+=i+2<32?b64[v&63]:'=';}
-   snprintf(list,sizeof list,"r1 w 6D21 %s Марат",key64.c_str());org(list);
-   ChessMatch* g=chessNet.find(0x6D21);if(!g||g->tour!=pid||g->mine!=chess::White||g->state!=ChessMatch::Playing||g->peer!=peerId(5))fail("the pairing starts my game");
-   snprintf(list,sizeof list,"st 1 %06lX:2:3,%06lX:1:4,%06lX:1:2,%06lX:0:3",(unsigned long)(peerId(6)>>40),(unsigned long)(meshRadio.nodeId>>40),(unsigned long)(peerId(3)>>40),(unsigned long)(peerId(5)>>40));org(list);
-   for(int i=0;i<2;i++)tick();shot("tour-player");key(0x86);key('1');key(0x82);}
- }
  // Device modes: the repeater and room pages, the mode choice from Settings.
  config.role=RoleRepeater;key(0x82);shot("repeater");key(0x86);
  config.role=RoleRoom;key(0x82);shot("room");key(13);for(char ch:std::string(config.lang==LangRu||config.lang==LangUk?"Vstre1a u vhoda posle obeda":"Meet at the gate after lunch"))key(ch);shot("room-post");key(0x86);
  key(0x90);key(0xb5);key(13);key(0xb6);shot("role-pick");key(0x86);config.role=RoleNormal;key(0x82);
- // The pet: an egg, a happy kid with a new friend, a hungry adult, an ill teen and a grave with its memory.
- {auto look=[](uint8_t stage,uint16_t food,uint16_t joy,uint16_t health,uint32_t xp,const char* words,pet::Effect e){auto& s=creature.s;s.stage=stage;s.food=food;s.joy=joy;s.health=health;s.xp=xp;s.age=stage==pet::Egg?420:stage*86400+5*3600;
-   s.snacks=3;s.friends=4;s.packets=1873;creature.speech=words?words:"";creature.speechAt=words?fakeMillis:0;creature.effect=e;creature.effectAt=fakeMillis;};
-  strcpy(creature.s.name,"Ping");creature.s.species=0;uint16_t dim=config.dimAfter,lock=config.autoLock;config.dimAfter=config.autoLock=0; // dozens of shots outlast the screen timeout
-  int16_t offset=config.utcOffset;{time_t now=time(nullptr);config.utcOffset=int16_t(((12-int(now/3600%24))+24)%24*60);} // noon: awake at any hour of the build
-  tile("pet");auto snap=[&](const char* n){shot(n);};snap("home-pet");key(13);
-  if(uiStatus().indexOf("\"page\":\"pet\"")<0){printf("FAIL pet page: %s\n",uiStatus().c_str());exit(1);}
-  // Every species, young and grown, awake at noon (the gallery of tools/pet_sprites.py on the real screens).
-  {for(unsigned i=0;i<pet::Species;i++){creature.s.species=i;char n[32];
-    look(pet::Child,850,900,1000,190,nullptr,pet::NoEffect);snprintf(n,sizeof n,"pet-kind%02u-young",i);snap(n);
-    look(pet::Adult,850,900,1000,2600,nullptr,pet::NoEffect);snprintf(n,sizeof n,"pet-kind%02u-grown",i);snap(n);}
-   creature.s.species=0;}
-  look(pet::Egg,700,700,1000,0,nullptr,pet::NoEffect);snap("pet-egg");
-  look(pet::Child,820,900,1000,190,config.lang==LangRu?"Новый друг: Марат":"New friend: Marat",pet::Hearts);snap("pet-happy");
-  creature.speechAt=0;snap("pet-stats");
-  creature.s.species=3;look(pet::Adult,120,520,700,2600,nullptr,pet::NoEffect);snap("pet-hungry");
-  creature.s.species=5;look(pet::Teen,420,300,260,900,nullptr,pet::NoEffect);snap("pet-ill");
-  auto& s=creature.s;s.food=0;s.joy=0;s.health=0;creature.speech="";creature.command("pet skip 3600");
-  if(creature.alive()){printf("FAIL the pet outlived zero health: %s\n",creature.json().c_str());exit(1);}
-  snap("pet-dead");
-  creature.command("pet egg");if(!creature.alive()||creature.s.stage!=pet::Egg||creature.s.graveCount!=1){printf("FAIL new egg: %s\n",creature.json().c_str());exit(1);}
-  creature.command("pet skip 900");if(creature.s.stage!=pet::Baby){printf("FAIL hatching: %s\n",creature.json().c_str());exit(1);}
-  creature.command("pet mortal off");s.food=0;s.joy=0;creature.command("pet skip 864000");if(!creature.alive()||creature.s.health!=1){printf("FAIL death switched off: %s\n",creature.json().c_str());exit(1);}
-  creature.command("pet mortal on");s.food=s.joy=800;s.health=1000;
-  // A pet is optional: letting it go leaves no pet (and no new grave), the page offers to start one.
-  {uint8_t graves=creature.s.graveCount;creature.command("pet release");
-   if(creature.has()||creature.s.graveCount!=graves){printf("FAIL release: %s\n",creature.json().c_str());exit(1);}
-   snap("pet-none");creature.command("pet adopt");if(creature.s.stage!=pet::Egg){printf("FAIL adopt: %s\n",creature.json().c_str());exit(1);}}config.dimAfter=dim;config.autoLock=lock;config.utcOffset=offset;
-  printf("pet checks passed\n");}
- // Dice (DIC3R, Dice.h): the rules of formulas, rolls, the grid, the sheet and the commands first, then the screens.
- {uint16_t dim=config.dimAfter,lock=config.autoLock;config.dimAfter=config.autoLock=0;srand(11);dicer.begin();
-  auto must=[](bool v,const char* what){if(!v){printf("FAIL dice %s: %s\n",what,dicer.json().c_str());exit(1);}};
-  using dice::Dicer;
-  // A fresh device gets a D&D and a R.E.T. character once, the general set stays current.
-  must(dicer.s.characters==3&&dicer.s.character==0&&String(dicer.s.list[1].name)=="D&D 5e"&&(dicer.s.flags&dice::ExamplesAdded),"the two systems by default");
-  must(dicer.useCharacter(2)&&dicer.find("body")>=0&&dicer.useCharacter(1)&&dicer.find("dex")>=0,"the examples are full sheets");
-  dicer.deleteCharacter();dicer.useCharacter(1);dicer.deleteCharacter();dicer.addExamples();
-  must(dicer.s.characters==3,"added again only by addExamples");dicer.useCharacter(2);dicer.deleteCharacter();dicer.useCharacter(1);dicer.deleteCharacter();
-  dicer.applyTemplate(dice::Blank);dicer.deleteBlock(0);
-  must(Dicer::valid("2d6+1")&&Dicer::valid("d20")&&Dicer::valid("4к6-2")&&Dicer::valid("d%")&&Dicer::valid("3D8 + 2d4 - 1")&&Dicer::valid("-1d4+3")&&Dicer::valid("99d1000")&&Dicer::valid("r3+2")&&Dicer::valid("r0"),"good formulas");
-  must(!Dicer::valid("")&&!Dicer::valid("2d")&&!Dicer::valid("d1")&&!Dicer::valid("100d6")&&!Dicer::valid("2d6+")&&!Dicer::valid("abc")&&!Dicer::valid("1+1+1+1+1+1+1+1+1")&&!Dicer::valid("2d6 3")&&!Dicer::valid("0d6")&&!Dicer::valid("r9")&&!Dicer::valid("2r3"),"bad formulas");
-  for(int i=0;i<400;i++){must(dicer.roll("3d6+2"),"3d6+2");const dice::Result* r=dicer.last();must(r->total>=5&&r->total<=20&&r->parts==4&&!r->special,"3d6+2 range");}
-  {bool ends=false;for(int i=0;i<400;i++){dicer.roll("d%");unsigned v=dicer.last()->value[0];must(v>=1&&v<=100&&dicer.last()->special,"d% range");ends|=v==1||v==100;
-    dicer.roll("d66");v=dicer.last()->value[0];must(v/10>=1&&v/10<=6&&v%10>=1&&v%10<=6,"d66 digits");}must(ends,"d% reaches its ends");}
-  {must(dicer.roll("2d6-1d4-1"),"subtraction");const dice::Result* r=dicer.last();must(r->negative[2]&&r->negative[3]&&r->total==int(r->value[0]+r->value[1])-int(r->value[2])-1,"subtraction sum");}
-  must(dicer.roll("40d6")&&dicer.last()->more&&dicer.last()->parts==dice::Parts&&dicer.resultCount==dice::Results,"many dice, eight results kept");
-  // R.E.T. dice: the top value adds the die of the next level; a 1 first is a failure that drops the bonus.
-  {bool fail=false,chain=false,plain=false;for(int i=0;i<3000;i++){must(dicer.roll("r3+2"),"r3+2");const dice::Result& r=*dicer.last();
-    if(r.fail){fail=true;must(r.fail>=1&&r.fail<=4&&r.total==1&&r.value[0]==1,"failure: the die alone");continue;}
-    if(r.successes){chain=true;must(r.value[0]==6&&r.shape[1]==dice::D8&&r.total>=6+1+2,"success adds the d8");if(r.successes>=2)must(r.value[1]==8&&r.shape[2]==dice::D10,"a second success adds the d10");continue;}
-    plain=true;must(r.value[0]>=2&&r.value[0]<=5&&r.total==int(r.value[0])+2,"ordinary r3");}
-   must(fail&&chain&&plain,"failures, successes and ordinary rolls");
-   for(int i=0;i<200;i++){dicer.roll("r0");const dice::Result& r=*dicer.last();if(r.fail)continue;must(r.kind[1]==dice::PartNumber&&r.negative[1]&&r.value[1]==3&&r.total>=-1,"d6-3");}
-   for(int i=0;i<500;i++){dicer.roll("r8");const dice::Result& r=*dicer.last();must(r.parts==1||r.fail,"d100 adds no die");}}
-  dicer.gridReset();dicer.gridChoose(12);dicer.gridRoll();for(unsigned i=0;i+1<12;i++)must(dicer.grid[i]>=dicer.grid[i+1],"grid from high to low");
-  dicer.gridSetThreshold(true,4);{unsigned n=0;for(unsigned i=0;i<12;i++)n+=dicer.grid[i]>=4;must(dicer.gridSuccesses()==n,"successes");}
-  dicer.gridSetThreshold(true,99);must(dicer.s.threshold==6,"threshold within the die");
-  for(int i=0;i<8;i++)dicer.gridAddRow();must(dicer.s.gridSize==dice::GridMax,"50 dice at most");
-  must(dicer.command("dice saved add 8d6 Fire ball").startsWith("OK")&&dicer.savedCount()==1&&String(dicer.sheet.block[dicer.savedBlock(0)].name)=="Fire ball","saved add");
-  must(dicer.command("dice saved add 2d Bad").startsWith("ERR"),"a bad saved roll");
-  must(dicer.command("dice saved roll 0").startsWith("OK")&&String(dicer.last()->label)=="Fire ball","saved roll");
-  must(dicer.command("dice char add Hero").startsWith("OK")&&dicer.s.character==1&&dicer.sheet.count==1&&dicer.sheet.block[0].kind==dice::Track&&!dicer.savedCount(),"character: one counter");
-  must(dicer.command("dice sheet 0 -3").startsWith("OK")&&dicer.value(0)==17,"counter -3");
-  must(dicer.command("dice char use 0").startsWith("OK")&&dicer.savedCount()==1,"general set: its sheet comes back");
-  must(dicer.command("dice char use 1").startsWith("OK")&&dicer.value(0)==17,"the character's sheet comes back");
-  must(dicer.command("dice pool 3 d8 -2").startsWith("OK")&&dicer.poolText()=="3d8-2","pool");
-  // D&D: modifiers, derived values, skills, spending.
-  bool ru=config.lang==LangRu||config.lang==LangUk;
-  must(dicer.command("dice char new dnd Arwen").startsWith("OK")&&dicer.sheet.count>=40,"D&D template");
-  int dex=dicer.find("dex"),ac=dicer.find("ac"),init=dicer.find("init"),sl1=dicer.find("sl1");must(dex>=0&&ac>=0&&init>=0&&sl1>=0,"D&D codes");
-  must(dicer.value(ac)==10&&dicer.badge(dex)=="+0","AC 10 at DEX 10");
-  dicer.setValue(dex,16);must(dicer.value(ac)==13&&dicer.badge(dex)=="+3"&&dicer.rollFormula(init)=="d20+3"&&dicer.rollFormula(dex)=="d20+3","DEX 16: +3 everywhere");
-  dicer.setValue(dex,7);must(dicer.badge(dex)=="-2"&&dicer.value(ac)==8&&dicer.rollFormula(dex)=="d20-2","DEX 7: -2, rounded down");
-  {int stealth=-1;for(unsigned i=0;i<dicer.sheet.count;i++)if(String(dicer.sheet.block[i].formula)=="d20+@dex"&&dicer.sheet.block[i].kind==dice::Ability)stealth=i;must(stealth>=0&&dicer.rollFormula(stealth)=="d20-2","a DEX skill");
-   must(dicer.setField(stealth,"formula","d20+@dex+@pb")&&dicer.rollFormula(stealth)=="d20","a proficient skill");
-   must(dicer.setField(stealth,"use","sl1")&&dicer.setField(stealth,"spend","1"),"a cost");int slots=dicer.value(sl1);
-   must(dicer.act(stealth)&&dicer.value(sl1)==slots-1&&dicer.act(stealth)&&dicer.value(sl1)==slots-2&&!dicer.act(stealth)&&dicer.why.length(),"spending until none is left");}
-  must(!dicer.setField(ac,"formula","10+(@dex")&&!dicer.setField(0,"code","dex")&&!dicer.setField(0,"code","1x"),"bad formula and codes refused");
-  // A loop of references does not hang: the values show as wrong.
-  {int a=dicer.addBlock(dice::Stat),b=dicer.addBlock(dice::Stat);must(dicer.setField(a,"code","la")&&dicer.setField(b,"code","lb")&&dicer.setField(a,"formula","@lb+1")&&dicer.setField(b,"formula","@la+1"),"a loop is accepted");
-   must(!dicer.derivedOk(a)&&dicer.badge(a)=="?"&&dicer.sheetJson().indexOf("\"bad\":true")>0,"a loop shows as wrong");dicer.deleteBlock(b);dicer.deleteBlock(a);}
-  {DynamicJsonDocument d(32768);DeserializationError e=deserializeJson(d,dicer.sheetJson());if(e)printf("%s\n%s\n",e.c_str(),dicer.sheetJson().c_str());must(!e&&d["blocks"].size()==dicer.sheet.count,"sheet JSON parses");}
-  // R.E.T.: the tree halves upwards, dice by level, derived tracks.
-  must(dicer.command("dice char new ret Yan").startsWith("OK"),"R.E.T. template");
-  int body=dicer.find("body"),hp=dicer.find("hp"),phys=dicer.find("phys"),endu=dicer.find("endu"),lvl=dicer.find("lvl");must(body>=0&&hp>=0&&phys>=0&&endu>=0&&lvl>=0,"R.E.T. codes");
-  must(dicer.value(body)==3&&dicer.maxOf(hp)==6&&dicer.badge(body)=="d6"&&dicer.rollFormula(body)=="r3","R.E.T. start");
-  dicer.setValue(phys,5);dicer.setValue(endu,5);must(dicer.value(dicer.find("str"))==5&&dicer.value(body)==4&&dicer.badge(body)=="d8"&&dicer.maxOf(hp)==8,"R.E.T. halves upwards");
-  dicer.setValue(phys,0);dicer.setValue(endu,1);must(dicer.badge(dicer.find("str"))=="d6-3"&&dicer.rollFormula(dicer.find("str"))=="r0","a penalty level");
-  {int skill=-1;for(unsigned i=0;i<dicer.sheet.count;i++)if(String(dicer.sheet.block[i].formula)=="@cha+3")skill=i;must(skill>=0&&dicer.rollFormula(skill)=="r3+3","a R.E.T. skill");
-   int talent=-1;for(unsigned i=0;i<dicer.sheet.count;i++)if(String(dicer.sheet.block[i].formula)=="r3+@fine!")talent=i;must(talent>=0&&dicer.rollFormula(talent)=="r3+3","a R.E.T. talent");}
-  must(dicer.sheet.block[dicer.find("luck")].noteLen>0,"notes kept");
-  // The sheet as one line and back: names, notes, escapes.
-  {must(dicer.setField(0,"name","A|B~C\\D")&&dicer.setField(0,"note","line 1\nline | 2 ~ end"),"escaped fields");String text=dicer.exportText();unsigned count=dicer.sheet.count;String note=dicer.noteText(0);
-   must(text.indexOf('\n')<0&&text.startsWith("MMS1~N|Yan~"),"one line");
-   must(dicer.command("dice sheet import "+text).startsWith("OK")&&dicer.sheet.count==count&&String(dicer.sheet.block[0].name)=="A|B~C\\D"&&dicer.noteText(0)==note&&dicer.exportText()==text,"import gives the same sheet");
-   {int cut=text.indexOf(' ',60);String a=text.substring(0,cut),b=text.substring(cut);must(dicer.command("dice sheet put 1/2 "+a).startsWith("OK put 1/2")&&dicer.command("dice sheet put 2/2 "+b).startsWith("OK")&&dicer.exportText()==text,"import in pieces");dicer.command("dice char del");dicer.useCharacter(dicer.s.characters-1);
-    must(dicer.command("dice sheet put 2/2 x").startsWith("ERR"),"a piece out of order");}
-   must(dicer.command("dice sheet import MMS1~N|X~9|0").startsWith("ERR")&&dicer.command("dice sheet import hello").startsWith("ERR"),"bad text refused");
-   must(dicer.command("dice char del").startsWith("OK"),"delete the copy");}
-  // Sending to a contact: acknowledged parts in order; the contact gets it as an offer.
-  {dicer.useCharacter(3);previewSent.clear();String sent=dicer.exportText();must(dicer.command("dice sheet send "+meshRadio.idText(peerId(0))).startsWith("OK"),"send starts");size_t done=0;unsigned parts=0;
-   for(int guard=0;guard<200&&done<previewSent.size();guard++){PreviewSent p=previewSent[done++];must(p.text.size()<=151&&meshmesh::validUtf8((const uint8_t*)p.text.data(),p.text.size())&&p.text.rfind("\xf0\x9f\x8e\xb2S ",0)==0,"a part fits a message");
-    parts++;must(dicer.delivery(p.id,ChatMessage::Delivered),"its ACK");must(dicer.receive(peerId(0),"Heltec V4",p.text.c_str()),"taken as a sheet part");}
-   dicer.tick();must(dicer.out.done&&parts==dicer.out.parts&&parts>1&&dicer.offered&&String(dicer.offer.name)=="Yan"&&dicer.offer.text==sent,"delivered and offered");
-   uint8_t before=dicer.s.characters;must(dicer.command("dice sheet offer accept").startsWith("OK")&&dicer.s.characters==before+1&&dicer.exportText()==sent&&!dicer.offered,"accepted as a new character");
-   dicer.command("dice char del");previewSent.clear();
-   must(dicer.receive(peerId(0),"x","\xf0\x9f\x8e\xb2S 1234 1/2 MMS1~N|half")&&!dicer.offered,"half a sheet is not offered");dicer.tick();
-   must(!dicer.receive(peerId(0),"x","hello")&&!dicer.receive(peerId(0),"x","\xe2\x99\x9f""1234 1"),"other messages pass");}
-  // dice.bin of 0.7-0.24: counters become tracks, saved rolls abilities.
-  {struct R{char name[24];char formula[28];uint8_t color;};struct C{char name[24];int16_t value;uint8_t color;};struct H{char name[24];uint8_t rolls,counters;R roll[10];C counter[6];};
-   struct V{uint32_t version;uint8_t character,characters,mode;uint8_t type,count;int8_t mod;uint8_t gridType,gridSize,gridChosen,threshold;bool thresholdOn;H list[6];uint32_t check;};
-   V* v=new V();v->version=1;v->characters=2;v->character=1;v->mode=2;v->type=dice::D20;v->count=1;v->gridType=dice::D6;v->gridSize=20;v->threshold=4;
-   strcpy(v->list[0].roll[0].name,"Fireball");strcpy(v->list[0].roll[0].formula,"8d6");v->list[0].rolls=1;
-   strcpy(v->list[1].name,"Hero");strcpy(v->list[1].counter[0].name,"Life");v->list[1].counter[0].value=17;v->list[1].counter[0].color=3;v->list[1].counters=1;
-   uint32_t h=2166136261u;const uint8_t* p=(const uint8_t*)v;for(size_t k=0;k<offsetof(V,check);k++)h=(h^p[k])*16777619u;v->check=h;
-   must(sizeof(V)==4304||sizeof(V)>4000,"V1 layout");must(dicer.migrate((const uint8_t*)v,sizeof(V)),"V1 migrates");delete v;
-   must(dicer.s.characters==2&&dicer.s.character==1&&dicer.s.mode==dice::Sheet&&dicer.sheet.count==1&&dicer.sheet.block[0].kind==dice::Track&&dicer.value(0)==17&&!dicer.maxOf(0),"counters become tracks");
-   must(dicer.command("dice char use 0").startsWith("OK")&&dicer.savedCount()==1&&dicer.rollFormula(dicer.savedBlock(0))=="8d6","saved rolls become abilities");}
-  must(dicer.json().indexOf("\"overflowed\"")<0,"the reply fits");
-  // The screens: the general set with saved rolls, a D&D and a R.E.T. character.
-  dicer.s=dice::State();dicer.clearResults();dicer.gridReset();dicer.applyTemplate(dice::Blank);dicer.deleteBlock(0);
-  dicer.addRoll("8d6",ru?"Огненный шар":"Fireball");dicer.addRoll("d20+5",ru?"Атака мечом":"Sword attack");dicer.addRoll("2d6+3",ru?"Урон":"Damage");dicer.addRoll("d20+7",ru?"Скрытность":"Stealth");
-  dicer.colorRoll(1,1);dicer.colorRoll(2,6);dicer.colorRoll(3,9);
-  {int k=dicer.addBlock(dice::Track,0);dicer.setField(k,"name",ru?"Жизни":"Life");dicer.setValue(k,24);dicer.setField(k,"max","30");}
-  dicer.addCharacter(ru?"Арвен":"Arwen",dice::DndTemplate);
-  {const char* v[6]={"8","16","14","12","13","10"};const char* c[6]={"str","dex","con","int","wis","cha"};for(int k=0;k<6;k++)dicer.setValue(dicer.find(c[k]),atoi(v[k]));
-   dicer.setValue(dicer.find("hp"),19);dicer.setField(dicer.find("hp"),"max","27");dicer.setValue(dicer.find("dss"),1);dicer.setValue(dicer.find("sl1"),1);}
-  dicer.addCharacter(ru?"Ян":"Yan",dice::RetTemplate);dicer.setValue(dicer.find("cha"),5);dicer.setValue(dicer.find("insp"),4);dicer.setValue(dicer.find("hp"),4);
-  dicer.useCharacter(0);
-  tile("dice");shot("home-dice");key(13);
-  if(uiStatus().indexOf("\"page\":\"dice\"")<0){printf("FAIL dice page: %s\n",uiStatus().c_str());exit(1);}
-  shot("dice-empty");key(13);shot("dice-rpg");must(dicer.resultCount==1&&dicer.last()->parts==2,"OK rolls the pool");
-  dicer.roll("d4+d6+d8+d10+d12+d20");shot("dice-shapes");
-  dicer.roll("d66+d%+d66");shot("dice-d66");
-  key('s');shot("dice-saved");key(0xb6);key(13);must(String(dicer.last()->label)==(ru?"Атака мечом":"Sword attack"),"saved roll from the list");shot("dice-saved-roll");
-  key('e');for(int i=0;i<5;i++)key(8);for(char ch:std::string("4d6-2"))key(ch);shot("dice-formula");key(13);must(String(dicer.last()->formula)=="4d6-2","typed formula");
-  key('m');for(int i=0;i<10;i++)key(0xb7);key('t');key(13);must(dicer.gridRolled&&dicer.s.gridChosen==10&&dicer.s.thresholdOn,"grid roll");shot("dice-grid");
-  key('m');shot("dice-counters");key('+');must(dicer.value(0)==25,"+ on the sheet");key('v');for(int i=0;i<3;i++)key(8);key('-');key('7');key(13);must(dicer.value(0)==18,"V: -7");
-  // Characters: a new one from the R.E.T. template; the D&D sheet: arrows, OK rolls a check.
-  key('p');shot("dice-characters");key(0xb6);key(13);must(dicer.s.character==1,"choose Arwen");shot("dice-sheet");
-  key(0xb7);{uint32_t rolls=dicer.rolls;key(13);must(dicer.rolls==rolls+1&&String(dicer.last()->formula)=="d20+3"&&String(dicer.last()->label)==dicer.sheet.block[1].name,"OK rolls the DEX check");}shot("dice-sheet-roll");
-  for(int i=0;i<4;i++)tick();key(0xb6);key(0xb6);shot("dice-sheet-down");
-  auto choose=[&](int want){for(int k=0;k<80&&uiStatus().indexOf((std::string("\"sheet_block\":")+std::to_string(want)+",").c_str())<0;k++)key(0xb7);must(uiStatus().indexOf((std::string("\"sheet_block\":")+std::to_string(want)+",").c_str())>=0,"choose a block");};
-  {int atk=-1;for(unsigned i=0;i<dicer.sheet.count;i++)if(String(dicer.sheet.block[i].formula)=="d20+@str+@pb")atk=i;choose(atk);key('i');must(uiStatus().indexOf("\"sheet_note\":true")>=0,"I opens the note");shot("dice-sheet-note");key('i');}
-  // The builder: E on a block, the arrows change its kind/rule/shape, OK types a formula, A adds a block, DEL twice deletes.
-  {choose(0);unsigned blocks=dicer.sheet.count;key('e');must(uiStatus().indexOf("\"dice_sheet\":\"block\"")>=0,"E opens the builder");
-   for(int k=0;k<6;k++)key(0xb6);key(0xb7);must(dicer.sheet.block[0].rule==dice::Bonus,"the rule by the arrow");key(0xb4);
-   key(0xb5);key(0xb7);must(dicer.sheet.block[0].shape==dice::Square,"the shape by the arrow");shot("dice-builder");key(0xb4);
-   for(int k=0;k<3;k++)key(0xb6);key(13);must(uiStatus().indexOf("\"editing\":true")>=0,"OK types the formula");for(char ch:std::string("10+@dex"))key(ch);shot("dice-builder-formula");key(13);
-   must(String(dicer.sheet.block[0].formula)=="10+@dex"&&dicer.value(0)==13,"a typed formula computes");
-   key(13);for(int k=0;k<10;k++)key(8);key(13);must(!dicer.sheet.block[0].formula[0],"the formula cleared");
-   key('a');must(dicer.sheet.count==blocks+1&&uiStatus().indexOf("\"sheet_block\":1,")>=0,"A adds a block after it");key(0xb7);key(0xb7);must(dicer.sheet.block[1].kind==dice::Pips&&dicer.fresh(1)&&dicer.sheet.block[1].max==3,"a new block takes the defaults of its kind");shot("dice-builder-new");
-   key(8);key(8);must(dicer.sheet.count==blocks&&uiStatus().indexOf("\"dice_sheet\":\"main\"")>=0,"DEL twice deletes");}
-  key('p');key(0xb6);key(13);must(dicer.s.character==2,"choose Yan");choose(0);dicer.roll("r5+3",dicer.sheet.block[dicer.find("cha")].name);shot("dice-sheet-ret");
-  choose(dicer.find("insp"));for(int k=0;k<3;k++)tick();shot("dice-sheet-ret-low");
-  key('p');key('a');for(char ch:std::string(ru?"Mira":"Mira"))key(ch);key(13);must(uiStatus().indexOf("\"dice_sheet\":\"templates\"")>=0,"name, then the template");shot("dice-templates");
-  key(0xb6);key(0xb6);key(13);must(dicer.s.characters==4&&dicer.find("mind")>=0,"a R.E.T. character from the screen");
-  dicer.command("dice char del");
-  // A sheet from a contact: the mark by the name, the offer page.
-  {dicer.useCharacter(1);previewSent.clear();dicer.command("dice sheet send "+meshRadio.idText(peerId(0)));size_t done=0;
-   while(done<previewSent.size()){PreviewSent p=previewSent[done++];dicer.delivery(p.id,ChatMessage::Delivered);dicer.receive(peerId(0),"Heltec V4",p.text.c_str());}dicer.tick();
-   key('p');shot("dice-characters-offer");key('o');shot("dice-offer");key(13);must(dicer.s.characters==4&&!dicer.offered,"accepted from the screen");dicer.command("dice char del");
-   dicer.useCharacter(1);key('p');key('s');shot("dice-send");key(0x86);key(0x86);}
-  dicer.useCharacter(0);key('1');
-  config.dimAfter=dim;config.autoLock=lock;printf("dice checks passed\n");}
 // Apps in the chosen order ("apps" setting): hidden ones get no tile and no click.
  {auto page=[](const char* want){std::string w=std::string("\"page\":\"")+want+"\"";if(uiStatus().indexOf(w.c_str())<0){printf("FAIL apps order, want %s: %s\n",want,uiStatus().c_str());exit(1);}};
-  strlcpy(config.apps,"settings -chats -nodes map -dice -quick -people",sizeof config.apps);
+  strlcpy(config.apps,"settings -chats -nodes map -quick -people",sizeof config.apps);
   key(0x82);shot("home-apps");key(13);page("settings");key(0x82);key(0xb7);key(13);page("map");key(0x82);
   config.apps[0]=0;printf("apps order checks passed\n");}
-// Quick Send, manual counting and a persistent roll mode: the production key paths.
+// Quick Send and manual counting: the production key paths.
  {auto must=[](bool ok,const char* why){if(!ok){printf("FAIL wishlist UI %s: %s\n",why,uiStatus().c_str());exit(1);}};
-  strlcpy(config.apps,"quick people dice",sizeof config.apps);config.dimAfter=0;config.autoLock=0;
+  strlcpy(config.apps,"quick people",sizeof config.apps);config.dimAfter=0;config.autoLock=0;
   key(0x82);key(13);must(uiStatus().indexOf("\"page\":\"quick\"")>=0,"open Quick Send");shot("quick");
   unsigned sent=meshRadio.historyCount;key(13);must(uiStatus().indexOf("\"quick_targets\":true")>=0&&meshRadio.historyCount==sent,"first row opens recipients without sending");shot("quick-targets");
   key(0x86);must(uiStatus().indexOf("\"selected\":0")>=0,"cancel returns to recipient card");key(13);key(13);
@@ -400,6 +123,4 @@ static void scenario(){
  key(0x90);key(0xb5);shot("settings-poweroff");key(13);key(13);
  if(!powerOffPending()){printf("FAIL Turn off needs two OK\n");exit(1);}
  shot("poweroff");uiFarewell();shot("poweroff-done");
-// Checkers, sea battle and the app folders: their own files (statements of this function).
-#include "scenario_games_m9.inc"
 }

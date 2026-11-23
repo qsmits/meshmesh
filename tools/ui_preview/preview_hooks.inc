@@ -25,33 +25,8 @@ bool Radar::track(unsigned index){if(index>=count)return false;focus=targets[ind
  for(int i=0;i<90;i++){int r=-78+i/3+int((i*37)%7)-3-(i>80?(i-80)*2:0);addSample(r,millis()-(90-i)*100);}
  lastSample=millis()-300;rate=21;return true;}
 void Radar::untrack(){tracking=false;reset();}
-// Chess: the real ChessNet with its saved games kept in memory; sent commands only get an ID.
-#include "ChessNet.h"
 #include <vector>
-static std::vector<uint8_t> chessSaved;
-bool chessStoreWrite(const uint8_t* d,size_t n){chessSaved.assign(d,d+n);return true;}
-size_t chessStoreRead(uint8_t* d,size_t cap){if(chessSaved.size()>cap)return 0;memcpy(d,chessSaved.data(),chessSaved.size());return chessSaved.size();}
-struct PreviewSent{uint32_t id;uint64_t peer;std::string text;};static std::vector<PreviewSent> previewSent; // game and tournament commands sent
-uint32_t MeshRadio::sendGame(const String& text,uint64_t peer){previewSent.push_back({++nextId,peer,text.c_str()});return nextId;}
-// Rated results: the real src/ChessRating.cpp with its file in memory; the node "signs" with a fixed pattern.
-#include "ChessRating.h"
-static std::vector<uint8_t> ratingSaved;
-bool rating::storeWrite(const uint8_t* d,size_t n){ratingSaved.assign(d,d+n);return true;}
-size_t rating::storeRead(uint8_t* d,size_t cap){if(ratingSaved.size()>cap)return 0;memcpy(d,ratingSaved.data(),ratingSaved.size());return ratingSaved.size();}
-const uint8_t* MeshRadio::nodeKey() const{static const uint8_t key[32]={0x5A,0x1F,0x0C,0x9E,0x77,0xD2};return key;}
-bool MeshRadio::nodeSign(uint8_t sig[64],const uint8_t*,size_t) const{memset(sig,0x5A,64);return true;}
-bool MeshRadio::nodeVerify(const uint8_t*,const uint8_t*,const uint8_t*,size_t){return true;}
 bool MeshRadio::learnContact(const uint8_t*,const char*,uint8_t,int32_t,int32_t){return true;}
-// The SD archive of finished games: names in memory.
-static std::vector<std::pair<std::string,std::string>> previewArchive;
-bool chessArchiveWrite(const String& name,const String& text){for(auto& a:previewArchive)if(a.first==name.c_str()){a.second=text.c_str();return true;}previewArchive.push_back({name.c_str(),text.c_str()});return true;}
-String chessArchiveList(){String s="{\"games\":[";for(size_t i=0;i<previewArchive.size();i++)s+=String(i?",":"")+"\""+previewArchive[i].first.c_str()+"\"";return s+"],\"sd\":true}";}
-String chessArchiveRead(const String& name){for(auto& a:previewArchive)if(a.first==name.c_str())return a.second.c_str();return "";}
-// Tournaments: the real src/ChessTour.cpp with its file in memory.
-#include "ChessTour.h"
-static std::vector<uint8_t> tourSaved;
-bool tour::storeWrite(const uint8_t* d,size_t n){tourSaved.assign(d,d+n);return true;}
-size_t tour::storeRead(uint8_t* d,size_t cap){if(tourSaved.size()!=cap)return 0;memcpy(d,tourSaved.data(),cap);return cap;}
 // Internet over Wi-Fi and the web radar holder: switched off in the preview.
 #include "Internet.h"
 Internet internet;

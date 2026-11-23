@@ -10,7 +10,6 @@
 #include <math.h>
 namespace wardrive {
 Settings settings;
-#if MM_WARDRIVE
 namespace {
 constexpr uint32_t Magic=0x4d4d5701;
 constexpr uint8_t TypeAdvert=4; // MeshCore PAYLOAD_TYPE_ADVERT
@@ -208,14 +207,4 @@ String log(const String& args){
  else{Net r[16];unsigned n=netLog.read(from,r,16);for(unsigned i=0;i<n;i++){JsonArray o=a.createNestedArray();o.add(r[i].time);o.add(r[i].lat);o.add(r[i].lon);o.add(r[i].kind);char mac[18];snprintf(mac,sizeof mac,"%02X:%02X:%02X:%02X:%02X:%02X",r[i].mac[0],r[i].mac[1],r[i].mac[2],r[i].mac[3],r[i].mac[4],r[i].mac[5]);o.add(mac);o.add(r[i].channel);o.add(r[i].rssi);o.add(r[i].auth);r[i].name[32]=0;o.add(meshmesh::validUtf8((const uint8_t*)r[i].name,strlen(r[i].name))?r[i].name:"");o.add(r[i].flags);}d["next"]=from+n;}
  String s;serializeJson(d,s);return s;
 }
-#else
-// Left out of this image (Modules.h): the commands say so and the radio passes it nothing.
-void begin(){}void tick(){}void flush(){}bool running(){return false;}bool holdsRadar(){return false;}bool pinging(){return false;}
-bool position(int32_t&,int32_t&,bool&){return false;}bool ping(){return false;}
-static Result none;const Result& last(){return none;}unsigned repeaters(const Repeater*& out){out=nullptr;return 0;}unsigned recent(const Recent*& out){out=nullptr;return 0;}
-uint32_t points(){return 0;}uint32_t nets(){return 0;}
-void heard(uint32_t,uint8_t,bool,uint8_t,const uint8_t*,const uint8_t*,size_t,float,float){}void echo(uint32_t,uint8_t,const uint8_t*,float){}
-void probeSent(uint32_t,uint32_t){}void probeFailed(uint32_t){}void wifi(const uint8_t*,const char*,uint8_t,uint8_t,int){}void ble(uint64_t,const char*,int){}
-String json(){return "{\"supported\":false}";}String command(JsonObjectConst){return "ERR wardrive is not in this build";}String log(const String&){return "ERR wardrive is not in this build";}
-#endif
 }

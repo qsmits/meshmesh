@@ -88,8 +88,8 @@ void drawServer(){
  }
  scrollbar(first,5,rows,87,108);text(10,210,fit(serverHint(serverRow(selected)),300,small),faint,small);
  ServerRow r=serverRow(selected);
- if(r==RowAdvert||r==RowFlood)footer({{"<>",t("Change","Изменить")},{"^v",t("Select","Выбор")},{"PIN",t("Advertise","Объявить")},{"P",t("Pet","Питомец")}});
- else footer({{"OK",r==RowForward||r==RowReadOnly?t("Switch","Переключить"):t("Open","Открыть")},{"^v",t("Select","Выбор")},{"PIN",t("Advertise","Объявить")},{"P",t("Pet","Питомец")}});
+ if(r==RowAdvert||r==RowFlood)footer({{"<>",t("Change","Изменить")},{"^v",t("Select","Выбор")},{"PIN",t("Advertise","Объявить")}});
+ else footer({{"OK",r==RowForward||r==RowReadOnly?t("Switch","Переключить"):t("Open","Открыть")},{"^v",t("Select","Выбор")},{"PIN",t("Advertise","Объявить")}});
 }
 void serverNotice(const String& reply){bool done=reply.startsWith("OK")||reply.startsWith("password now");notice(done?t("Saved","Сохранено"):reply,done?ok:bad);}
 // Intervals step through the values the CLI accepts.
