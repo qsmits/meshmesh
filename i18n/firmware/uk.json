@@ -51,10 +51,6 @@
   "en": " · try ",
   "text": " · спроба "
  },
- "aeeeae59": {
-  "en": "Counter ",
-  "text": "Лічильник "
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "Прийнято"
@@ -1687,10 +1683,6 @@
   "en": "Network key · 64 hex",
   "text": "Ключ мережі · 64 hex"
  },
- "159bb5f2": {
-  "en": "Counter name",
-  "text": "Ім'я лічильника"
- },
  "58389a6e": {
   "en": "Region of the channel",
   "text": "Регіон каналу"
@@ -2214,10 +2206,6 @@
   "en": "Internet over Wi-Fi",
   "text": "Інтернет через Wi-Fi"
  },
- "1c3eeb68": {
-  "en": "Quick counter",
-  "text": "Швидкий лічильник"
- },
  "d24c9257": {
   "en": "Wardrive",
   "text": "Вардрайв"
@@ -2521,10 +2509,6 @@
   "en": "<- join",
   "text": "<- вступити"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "Буфер порожній"
- },
  "8dc21305": {
   "en": "Copied",
   "text": "Скопійовано"
@@ -2556,6 +2540,10 @@
  "a0eb78b0": {
   "en": "Invalid text for this field",
   "text": "Неприпустимий текст для цього поля"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "Буфер порожній"
  },
  "76bda0c0": {
   "en": "Tags",
@@ -2748,69 +2736,5 @@
  "c99da0c5": {
   "en": "Incorrect password",
   "text": "Хибний пароль"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "Не більше 8 лічильників"
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "Лічильник скинуто"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "Останній лічильник лишається"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "Лічильник видалено"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "увімк"
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "Ім'я збережено"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "Ім’я: до 23 байт UTF-8"
- },
- "2ab44d95": {
-  "en": "New counter",
-  "text": "Новий лічильник"
- },
- "fcfacf5c": {
-  "en": "OK: add",
-  "text": "OK: додати"
- },
- "23e607d0": {
-  "en": "Nearby: ",
-  "text": "Поруч: "
- },
- "649144ed": {
-  "en": "N: name  C: colour  R: reset  DEL: delete  B: BLE",
-  "text": "N: ім’я  C: колір  R: скид.  DEL: видал.  B: BLE"
- },
- "9dc3aa14": {
-  "en": "Add",
-  "text": "Додати"
- },
- "2a273ae4": {
-  "en": "Cards",
-  "text": "Картки"
- },
- "34ce44a5": {
-  "en": "Exit",
-  "text": "Вихід"
- },
- "8c0be2f7": {
-  "en": "DEL again: delete",
-  "text": "Ще раз DEL: видалити"
- },
- "73f035c7": {
-  "en": "R again: reset to 0",
-  "text": "Ще раз R: скинути в 0"
  }
 }

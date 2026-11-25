@@ -18,7 +18,6 @@
 #include "Notifications.h"
 #include "ChannelPolicy.h"
 #include "QuickSend.h"
-#include "People.h"
 #include "Wardrive.h"
 #include <LittleFS.h>
 #include <nvs.h>
@@ -124,7 +123,6 @@ String statusJson() {
     }
   } // 32-byte entries; the contacts no longer live there
   d["quick_send"] = true;
-  d["people_counter"] = true;
   d["wardrive"] = true;
   d["notification_dropped"] = notifications::dropped();
   d["notification_led"] = false;
@@ -402,12 +400,6 @@ String executeCommand(const String& input) {
     return wardrive::command(d.as<JsonObjectConst>());
   }
   if (line.startsWith("wardrive log ")) return wardrive::log(line.substring(13));
-  if (line == "people") return people::json();
-  if (line.startsWith("people do ")) {
-    StaticJsonDocument<256> d;
-    if (deserializeJson(d, line.substring(10)) || !d.is<JsonObject>()) return "ERR people JSON";
-    return people::command(d.as<JsonObjectConst>());
-  }
   if (line == "quick") return quickSend::json();
   if (line.startsWith("quick do ")) {
     StaticJsonDocument<512> d;
@@ -514,5 +506,5 @@ String executeCommand(const String& input) {
     if (deserializeJson(d, line.substring(4)) || !d.is<JsonObject>()) return "ERR set {JSON object}";
     return applySettings(d.as<JsonObjectConst>());
   }
-  return "Commands: status, config, key, identity, identity set HEX, contact add {JSON}, connections, messages, quick, quick do {JSON}, people, people do {JSON}, wardrive, wardrive do {JSON}, wardrive log mesh|nets FROM, radar, radar web, radar do {JSON}, set {JSON}, radio try {JSON}|keep|revert|previous, send ALL|NODE_ID|CHANNEL_ID text, sendjson {JSON}, channels, channel do {JSON}, regions, regions find, netfind, netfind start|stop|use N, hello, position, resetpath NODE_ID, forget NODE_ID, selftest, wifi, internet, ble, remote, remote login|status|cli|trace NODE_ID [text], recalibrate, fsformat, restart, poweroff";
+  return "Commands: status, config, key, identity, identity set HEX, contact add {JSON}, connections, messages, quick, quick do {JSON}, wardrive, wardrive do {JSON}, wardrive log mesh|nets FROM, radar, radar web, radar do {JSON}, set {JSON}, radio try {JSON}|keep|revert|previous, send ALL|NODE_ID|CHANNEL_ID text, sendjson {JSON}, channels, channel do {JSON}, regions, regions find, netfind, netfind start|stop|use N, hello, position, resetpath NODE_ID, forget NODE_ID, selftest, wifi, internet, ble, remote, remote login|status|cli|trace NODE_ID [text], recalibrate, fsformat, restart, poweroff";
 }

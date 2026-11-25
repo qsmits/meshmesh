@@ -17,7 +17,6 @@
 #include "Notifications.h"
 #include "ChannelPolicy.h"
 #include "QuickSend.h"
-#include "People.h"
 #include "Wardrive.h"
 #include <Preferences.h>
 #include <Mm1Packet.h>
@@ -31,8 +30,8 @@ uint8_t u8g2_IsGlyph(u8g2_font_t* u8g2, uint16_t encoding);
 int8_t u8g2_GetGlyphWidth(u8g2_font_t* u8g2, uint16_t encoding);
 // The home tiles, in drawHome() order; the chosen order and the hidden ones: config.apps (App.h).
 // The default: messages, places, tools, then the device itself.
-const char* const uiApps[] = {"chats",    "quick",    "nodes",  "nav",     "map",    "radar",
-                              "spectrum", "wardrive", "people", "connect", "health", "settings"};
+const char* const uiApps[] = {"chats",    "quick",    "nodes",   "nav",    "map",     "radar",
+                              "spectrum", "wardrive", "connect", "health", "settings"};
 const uint8_t uiAppCount = sizeof uiApps / sizeof *uiApps;
 namespace {
 enum Page {
@@ -58,16 +57,15 @@ enum Page {
   ChannelInfo,
   Remote,
   QuickView,
-  PeopleView,
   WardriveView,
   Folder,
   Memo,
   Spectrum
 };
-const char* pageNames[] = {"home",  "threads", "chat",     "map",         "nodes",         "sensors", "settings",
-                           "radio", "display", "network",  "diagnostics", "help",          "library", "node",
-                           "radar", "homing",  "motion",   "internet",    "channel_add",   "channel", "remote",
-                           "quick", "people",  "wardrive", "folder",      "contact_notes", "spectrum"};
+const char* pageNames[] = {"home",  "threads",  "chat",    "map",           "nodes",       "sensors", "settings",
+                           "radio", "display",  "network", "diagnostics",   "help",        "library", "node",
+                           "radar", "homing",   "motion",  "internet",      "channel_add", "channel", "remote",
+                           "quick", "wardrive", "folder",  "contact_notes", "spectrum"};
 enum Key {
   Enter = 13,
   Erase = 8,
@@ -93,8 +91,8 @@ Page page = Home, chatReturn = Threads,
      subReturn = Settings; // subReturn: where BACK leaves a page opened from several places
 // App folders (Apps.cpp): the folder on the Folder page, and the folder the open app came from (BACK returns there, -1: Home).
 int folderOpen = -1, appFolder = -1;
-bool quickTargets = false, tallyNew = false;
-uint64_t quickReplyTo = 0; // tallyNew: the quick counter shows its "new card"
+bool quickTargets = false;
+uint64_t quickReplyTo = 0;
 bool scopeHeld = false, scopeWide = false, csiBeaconRole = false;
 RadarTarget scopeRows[Radar::MaxTargets]; // Exactly the list last painted, including names and signal strengths.
 int scopeCount = 0, scopeRow = 0;
@@ -764,9 +762,6 @@ Peer* focusedPeer() {
   return peerOf(focusNode);
 }
 String netError();
-String tallyTileDetail();
-uint16_t tallyHue(unsigned i);
-bool tallyAdding();
 bool sharedPage(Page p) {
   return p == Radio || p == Display || p == Sensors || p == Network || p == Diagnostics || p == Help || p == Library;
 }
@@ -799,7 +794,6 @@ void change(Page next, bool back = false) {
     lastChatId = recipient;
     lastChatOffset = chatOffset;
   }
-  if (next == PeopleView) tallyNew = false;
   if (next == QuickView) quickReturn = page == Chat ? Chat : Home;
   if (sharedPage(next) && !sharedPage(page) && page != NetList) subReturn = page;
   bool radarPage = next == Scope || next == Homing || next == Motion;
@@ -956,7 +950,6 @@ String title() {
   case Homing: return t("Homing");
   case Motion: return t("Radar: motion (CSI)");
   case NetList: return t("Internet over Wi-Fi");
-  case PeopleView: return t("Quick counter");
   case WardriveView: return t("Wardrive");
   case QuickView: return t("Quick send");
   case Remote: return t("Server and route");
@@ -1102,7 +1095,6 @@ void appTiles(AppTile* out) {
       {IcPulse, info, "Spectrum", "868 MHz band", 0},
       {IcTower, wardrive::running() ? ok : dim, t("Wardrive"),
        wardrive::running() ? count(wardrive::points(), "point", "points") : t("Off"), 0},
-      {IcTally, tallyHue(people::tally.current), t("Quick counter"), tallyTileDetail(), 0},
       {IcWifi, info, t("Connect"), links, 0},
       {IcPulse, faults ? bad : ok, t("Module health"), faults ? count(faults, "fault", "faults") : t("All OK"), 0},
       {IcGear, dim, t("Settings"), t("Radio, screen"), 0}};
@@ -1226,8 +1218,8 @@ void drawFolder() {
 }
 // Opens an app of the menu (an index into uiApps) from Home or from a folder.
 void openApp(uint8_t app, int folder) {
-  Page pages[] = {Threads,  QuickView,    Nodes,      Sensors, Map,         Scope,
-                  Spectrum, WardriveView, PeopleView, Network, Diagnostics, Settings}; // as uiApps
+  Page pages[] = {Threads,  QuickView,    Nodes,   Sensors,     Map,     Scope,
+                  Spectrum, WardriveView, Network, Diagnostics, Settings}; // as uiApps
   static_assert(sizeof pages / sizeof *pages == sizeof uiApps / sizeof *uiApps, "a page for every app ID");
   if (app >= uiAppCount) return;
   if (pages[app] == QuickView) {
@@ -2836,7 +2828,6 @@ void drawEditing() {
        : page == Nodes       ? t("Filter by tag")
        : key                 ? t("Network key · 64 hex")
        : page == ChannelAdd  ? channelEditTitle()
-       : page == PeopleView  ? String(t("Counter name"))
        : page == Remote      ? remoteEditTitle()
        : page == Radio       ? String(t("Region"))
        : page == ChannelInfo ? String(t("Region of the channel"))
@@ -2877,7 +2868,6 @@ void drawEditing() {
        dim, small);
   footer({{t("hold OK").c_str(), t("Clipboard")}, {"BACK", t("Cancel")}});
 }
-#include "UiTally.inc"
 #include "UiActions.inc"
 void draw() {
   applyAppearance();
@@ -2916,7 +2906,6 @@ void draw() {
     case Homing: drawHoming(); break;
     case Motion: drawMotion(); break;
     case QuickView: drawQuick(); break;
-    case PeopleView: drawTally(); break;
     case WardriveView: drawWardrive(); break;
     case ChannelAdd: drawChannelAdd(); break;
     case ChannelInfo: drawChannelInfo(); break;
@@ -3178,11 +3167,6 @@ String uiStatus() {
   }
   d["locked"] = locked;
   d["selected"] = selected;
-  if (page == PeopleView) {
-    d["tally_current"] = people::tally.current;
-    d["tally_new"] = tallyAdding();
-    d["tally_value"] = people::value();
-  }
   if (page == QuickView) {
     d["quick_targets"] = quickTargets;
     d["quick_to"] = meshRadio.idText(quickReplyTo ? quickReplyTo : quickSend::state.to);
@@ -3282,10 +3266,6 @@ void uiKey(int key) {
         channelEditSave();
         return;
       }
-      if (page == PeopleView) {
-        tallySaveName();
-        return;
-      }
       if (page == Remote) {
         remoteSaveEdit();
         return;
@@ -3377,7 +3357,6 @@ void uiKey(int key) {
     return;
   } // the folder's tile stays selected
   if (page == QuickView && quickKey(key)) return;
-  if (page == PeopleView && tallyKey(key)) return;
   if (page == Remote && remoteKey(key)) return;
   if (page == Scope && ((key == 'l' || key == 'L') || (key == KeyBack && scopeWide))) {
     scopeWide = !scopeWide;
@@ -3751,11 +3730,6 @@ void uiTouch(char gesture, int x, int y) {
     uiKey(KeyHold);
     return;
   }
-  if (activePanel == Panel::Closed && !clipMenu && page == PeopleView && !editing &&
-      (gesture == 'l' || gesture == 'r')) {
-    uiKey(gesture == 'l' ? KeyRight : KeyLeft);
-    return;
-  } // cards follow the finger
   if (gesture != 't') {
     uiKey(gesture == 'u' ? KeyUp : gesture == 'd' ? KeyDown : gesture == 'l' ? KeyLeft : KeyRight);
     return;
@@ -3857,13 +3831,11 @@ void uiTick() {
         lastInput = now;
       }
       if (notifications::enabled(notifications::mode(notification.message, config.notifyPopup, 2),
-                                 notification.mention) &&
-          page != PeopleView)
+                                 notification.mention))
         notice(t("New message from ") + notification.message.name, accent);
       dirty = true;
     } else if (config.notifyFailed &&
-               (notification.kind == notifications::TxError || notification.kind == notifications::Unconfirmed) &&
-               page != PeopleView) {
+               (notification.kind == notifications::TxError || notification.kind == notifications::Unconfirmed)) {
       notice(notification.kind == notifications::TxError             ? t("Radio TX error")
              : channels::isChannel(notification.message.destination) ? t("No repeat heard")
                                                                      : t("No delivery ACK"),

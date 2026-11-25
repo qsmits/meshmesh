@@ -164,14 +164,6 @@ static void paintIcon(Canvas& d, Icon id, int cx, int cy, int s, uint16_t c, uin
     if (s > 5) d.drawLine(fx, fy, bx - 1, by + 1, hole);
     break;
   }
-  case IcTally: {
-    int bw = max(1, s / 5), top = cy - s * 3 / 4, len = s * 3 / 2;
-    for (int k = 0; k < 4; k++)
-      d.fillRect(cx - s * 3 / 4 + k * s / 2 - bw / 2, top, bw + (s > 6), len, c); // four strokes struck through
-    thick(d, cx - s, cy + h, cx + s, cy - h, c);
-    if (s > 6) thick(d, cx - s, cy + h + 1, cx + s, cy - h + 1, c);
-    break;
-  }
   case IcFolder:
     d.fillRoundRect(cx - s, cy - s * 5 / 8, s * 3 / 4 + 1, s / 2, max(1, s / 6), c);
     d.fillRoundRect(cx - s, cy - s * 3 / 8, 2 * s, s * 9 / 8, max(1, s / 5), c);

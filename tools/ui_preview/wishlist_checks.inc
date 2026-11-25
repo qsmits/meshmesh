@@ -14,12 +14,6 @@ static void wishlistChecks() {
     if (to) d["to"] = to;
     return quickSend::command(d.as<JsonObjectConst>());
   };
-  auto runPeople = [](const char* action, const char* key = nullptr, int value = 0) {
-    StaticJsonDocument<128> d;
-    d["action"] = action;
-    if (key) d[key] = value;
-    return people::command(d.as<JsonObjectConst>());
-  };
   bool fs = hardware.fsOk;
   hardware.fsOk = true;
   struct Value {
@@ -139,40 +133,6 @@ static void wishlistChecks() {
   hardware.clockTrusted = trust;
   hardware.clockConflict = conflict;
   hardware.clockSource = source;
-  auto peopleSettings = people::settings;
-  people::settings.ble = true;
-  people::settings.rssi = -85;
-  people::settings.window = 30;
-  people::resetWindow();
-  people::hear(false, 1, -60);
-  people::hear(false, 1, -55);
-  people::hear(false, 2, -99);
-  must(people::count(false) == 1, "BLE duplicates and RSSI threshold");
-  for (unsigned i = 2; i < 140; i++) people::hear(false, i, -60);
-  must(people::count(false) == 128 && people::saturated(false) && people::dropped(false) > 0,
-       "bounded device table reports saturation");
-  fakeMillis += 30001;
-  must(people::count(false) == 0, "device window expires");
-  must(runPeople("settings", "window", -1).startsWith("ERR"), "window validation");
-  auto tally = people::tally;
-  people::tally = people::Tally{};
-  must(!people::change(-1) && people::change(1) && people::value() == 1, "counter independent and bounded");
-  must(people::add("Coffee") && people::tally.count == 2 && people::tally.current == 1 && people::value() == 0,
-       "a new card opens at zero");
-  must(!people::add(std::string(24, 'x').c_str()), "card name byte cap");
-  must(people::change(3) && people::select(0) && people::value() == 1, "cards count apart");
-  people::flush();
-  people::tally = people::Tally{};
-  people::begin();
-  must(people::tally.count == 2 && people::tally.list[1].value == 3 && people::name(1) == "Coffee",
-       "cards survive reload");
-  must(runPeople("delete", "index", 1).startsWith("OK") && runPeople("delete", "index", 0).startsWith("ERR"),
-       "the last card stays");
-  must(people::name(0) == String(tr("Counter ")) + "1", "an unnamed card is numbered");
-  people::tally = tally;
-  people::flush();
-  people::settings = peopleSettings;
-  people::resetWindow();
   hardware.fsOk = fs;
   notifications::Event event;
   while (notifications::take(event)) {

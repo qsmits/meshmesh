@@ -51,10 +51,6 @@
   "en": " · try ",
   "text": " · 試行 "
  },
- "aeeeae59": {
-  "en": "Counter ",
-  "text": "カウンタ "
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "了解"
@@ -1663,10 +1659,6 @@
   "en": "Network key · 64 hex",
   "text": "ネットワーク鍵 · 64 hex"
  },
- "159bb5f2": {
-  "en": "Counter name",
-  "text": "カウンタ名"
- },
  "58389a6e": {
   "en": "Region of the channel",
   "text": "チャンネルの地域"
@@ -2188,10 +2180,6 @@
   "en": "Internet over Wi-Fi",
   "text": "Wi-Fiでインターネット"
  },
- "1c3eeb68": {
-  "en": "Quick counter",
-  "text": "クイックカウンター"
- },
  "d24c9257": {
   "en": "Wardrive",
   "text": "電波マップ"
@@ -2493,10 +2481,6 @@
   "en": "<- join",
   "text": "<- 参加"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "クリップボードは空です"
- },
  "8dc21305": {
   "en": "Copied",
   "text": "コピーしました"
@@ -2528,6 +2512,10 @@
  "a0eb78b0": {
   "en": "Invalid text for this field",
   "text": "この項目に使えない文字です"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "クリップボードは空です"
  },
  "76bda0c0": {
   "en": "Tags",
@@ -2720,69 +2708,5 @@
  "c99da0c5": {
   "en": "Incorrect password",
   "text": "パスワードエラー"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "カウンターは8個まで"
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "カウンターをリセット"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "最後のカウンターは残ります"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "カウンタを削除"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "オン"
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "名前を保存"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "名前：最大23バイト UTF-8"
- },
- "2ab44d95": {
-  "en": "New counter",
-  "text": "新しいカウンター"
- },
- "fcfacf5c": {
-  "en": "OK: add",
-  "text": "OK：追加"
- },
- "23e607d0": {
-  "en": "Nearby: ",
-  "text": "近く: "
- },
- "649144ed": {
-  "en": "N: name  C: colour  R: reset  DEL: delete  B: BLE",
-  "text": "N：名前  C：色  R：リセット  DEL：削除  B：BLE"
- },
- "9dc3aa14": {
-  "en": "Add",
-  "text": "追加"
- },
- "2a273ae4": {
-  "en": "Cards",
-  "text": "カード"
- },
- "34ce44a5": {
-  "en": "Exit",
-  "text": "終了"
- },
- "8c0be2f7": {
-  "en": "DEL again: delete",
-  "text": "もう一度DEL: 削除"
- },
- "73f035c7": {
-  "en": "R again: reset to 0",
-  "text": "もう一度R：0にリセット"
  }
 }

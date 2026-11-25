@@ -15,7 +15,6 @@ commands, so the same is available over USB and BLE (`tools/device.py`).
 - **Contacts**: public key, name, type, position. The path to a node is not kept: after a restore the first message
   goes through the whole mesh (flood) and the path is found again.
 - **Quick Send**: templates, recipient, position in the message.
-- **Quick counter**: cards (name, value, colour), the open card, the device counting settings.
 
 Not included: messages, maps, the wardrive log (it has its own export), the Wi-Fi access point password (new at
 every start) and the BLE PIN, and notification settings the browser keeps itself.
@@ -31,12 +30,12 @@ Once a file is chosen the page compares it with the device and shows only what w
   own warning; settings this firmware does not know are listed and skipped;
 - new channels and channels whose region or notifications differ;
 - new contacts (existing ones are not overwritten);
-- changed Quick Send templates, the counter cards;
+- changed Quick Send templates;
 - the node key, if it differs from the current one.
 
 Only what is ticked is written, in this order: settings (the radio profile in one command, the rest in pieces of up
 to 200 bytes — a BLE write holds 255; if a piece fails, its settings are retried one by one), channels, contacts,
-Quick Send, counters and, last, the node key. The result is shown line by line. A new key is stored and takes
+Quick Send and, last, the node key. The result is shown line by line. A new key is stored and takes
 effect after a restart the device makes by itself 1.5 s later; contact changes still pending are saved first.
 With the new key the device announces itself once.
 
@@ -58,7 +57,7 @@ page travels unencrypted, and the device answers `ERR the key is given out on th
 is accepted only if it gives a public key MeshCore allows (not starting with 00 or FF).
 
 Everything else is read and written with existing commands: `config`/`set`, `channels`/`channel do`, `nodes`,
-`quick`/`quick do`, `people`/`people do`.
+`quick`/`quick do`.
 
 ## File format
 
@@ -68,11 +67,10 @@ Everything else is read and written with existing commands: `config`/`set`, `cha
  "settings":{…},"identity":{"private_key":"…"},
  "channels":[{"id":"…","name":"…","kind":"private","link":"meshcore://channel/add?…","region":"","policy":{…}}],
  "contacts":[{"key":"…","name":"…","type":1,"lat":0,"lon":0}],
- "quick":{"to":"ALL","gps":true,"presets":["…"]},
- "counters":{"current":0,"counters":[{"name":"","value":0,"color":0}],"settings":{…}}}
+ "quick":{"to":"ALL","gps":true,"presets":["…"]}}
 ```
 
-`board` is always `m9`; `board_name` names the hardware revision the copy was made on.
+Files from older firmware may hold a `counters` section; it is ignored. `board` is always `m9`; `board_name` names the hardware revision the copy was made on.
 
 The file holds one public key, `node.public_key`: it shows which node the copy is from and is compared with the
 current device. A restore applies only the private key `identity.private_key`; the device derives the public key

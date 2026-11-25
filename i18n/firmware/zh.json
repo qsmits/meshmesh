@@ -51,10 +51,6 @@
   "en": " · try ",
   "text": " · 尝试 "
  },
- "aeeeae59": {
-  "en": "Counter ",
-  "text": "计数器 "
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "收到"
@@ -1663,10 +1659,6 @@
   "en": "Network key · 64 hex",
   "text": "网络密钥 · 64 hex"
  },
- "159bb5f2": {
-  "en": "Counter name",
-  "text": "计数器名称"
- },
  "58389a6e": {
   "en": "Region of the channel",
   "text": "频道区域"
@@ -2188,10 +2180,6 @@
   "en": "Internet over Wi-Fi",
   "text": "Wi-Fi 上网"
  },
- "1c3eeb68": {
-  "en": "Quick counter",
-  "text": "快速计数器"
- },
  "d24c9257": {
   "en": "Wardrive",
   "text": "扫街测绘"
@@ -2493,10 +2481,6 @@
   "en": "<- join",
   "text": "<- 加入"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "没有已复制的文本"
- },
  "8dc21305": {
   "en": "Copied",
   "text": "已复制"
@@ -2528,6 +2512,10 @@
  "a0eb78b0": {
   "en": "Invalid text for this field",
   "text": "此字段的文本无效"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "没有已复制的文本"
  },
  "76bda0c0": {
   "en": "Tags",
@@ -2720,69 +2708,5 @@
  "c99da0c5": {
   "en": "Incorrect password",
   "text": "密码错误"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "最多 8 个计数器"
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "计数器已归零"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "最后一个计数器保留"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "计数器已删除"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "开"
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "名字已保存"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "名称：最多 23 字节 UTF-8"
- },
- "2ab44d95": {
-  "en": "New counter",
-  "text": "新计数器"
- },
- "fcfacf5c": {
-  "en": "OK: add",
-  "text": "OK：添加"
- },
- "23e607d0": {
-  "en": "Nearby: ",
-  "text": "附近: "
- },
- "649144ed": {
-  "en": "N: name  C: colour  R: reset  DEL: delete  B: BLE",
-  "text": "N：名称  C：颜色  R：归零  DEL：删除  B：BLE"
- },
- "9dc3aa14": {
-  "en": "Add",
-  "text": "添加"
- },
- "2a273ae4": {
-  "en": "Cards",
-  "text": "卡片"
- },
- "34ce44a5": {
-  "en": "Exit",
-  "text": "退出"
- },
- "8c0be2f7": {
-  "en": "DEL again: delete",
-  "text": "再按 DEL: 删除"
- },
- "73f035c7": {
-  "en": "R again: reset to 0",
-  "text": "再按 R：归零"
  }
 }

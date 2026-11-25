@@ -1,5 +1,4 @@
 #include "Radar.h"
-#include "People.h"
 #include "App.h"
 #include "MeshRadio.h"
 #include "WifiDiagnostics.h"
@@ -59,7 +58,7 @@ struct Heard {
   char name[33];
 };
 Heard heard[32];
-unsigned heardHead = 0, heardTail = 0, heardDropped = 0;
+unsigned heardHead = 0, heardTail = 0;
 class Scanner : public NimBLEAdvertisedDeviceCallbacks {
   void onResult(NimBLEAdvertisedDevice* d) override {
     Heard h{};
@@ -83,8 +82,7 @@ class Scanner : public NimBLEAdvertisedDeviceCallbacks {
     if (next != heardTail) {
       heard[heardHead] = h;
       heardHead = next;
-    } else
-      heardDropped++;
+    } // a full queue drops the report
     taskEXIT_CRITICAL(&guard);
   }
 } scanner;
@@ -147,7 +145,6 @@ void Radar::releaseBle() {
 }
 // The radar never shares Wi-Fi with the access point or the USB Wi-Fi probe.
 void Radar::wifiStart() {
-  people::releaseWifi();
   internet.yieldRadio(); // scans, homing and CSI need the radio off any access point
   if (!WiFi.mode(WIFI_STA)) {
     wifi = WifiFailed;
@@ -222,11 +219,6 @@ void Radar::refreshLora(uint32_t now) {
   }
 }
 void Radar::drainBle(uint32_t now) {
-  taskENTER_CRITICAL(&guard);
-  unsigned lost = heardDropped;
-  heardDropped = 0;
-  taskEXIT_CRITICAL(&guard);
-  people::noteDropped(false, lost);
   bool homing = tracking && focus.kind == RadarTarget::Ble;
   for (unsigned k = 0; k < 32; k++) {
     Heard h;
@@ -238,9 +230,6 @@ void Radar::drainBle(uint32_t now) {
     }
     taskEXIT_CRITICAL(&guard);
     if (!any) break;
-    people::hear(
-        false, h.address, h.rssi,
-        (h.device == RadarTarget::Phone || h.device == RadarTarget::Watch || h.device == RadarTarget::Personal));
     if (!active) continue;
     wardrive::ble(h.address, h.name, h.rssi);
     if (homing && h.address == focus.id) {
@@ -325,10 +314,7 @@ void Radar::untrack() {
 }
 void Radar::tick() {
   if (!active) {
-    if (people::settings.ble)
-      bleTick(millis());
-    else if (bleScanning)
-      releaseBle();
+    if (bleScanning) releaseBle();
     return;
   }
   uint32_t now = millis();

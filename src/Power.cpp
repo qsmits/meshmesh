@@ -1,6 +1,5 @@
 #include "Power.h"
 #include "App.h"
-#include "People.h"
 #include "Wardrive.h"
 #include "BoardPins.h"
 #include "MeshRadio.h"
@@ -80,7 +79,6 @@ int powerOnWay() {
 void powerOffTick() {
   if (!offAt || int32_t(millis() - offAt) < 0) return;
   if (meshRadio.busy() && millis() - offAt < 5000) return;
-  people::flush();
   wardrive::flush();
   meshRadio.flush(); // counters wait 2 s before writing
   Serial.println("OFF");
@@ -138,13 +136,11 @@ uint32_t powerRadioEvents() {
 #include <esp_bt.h>
 #include <WiFi.h>
 #include "App.h"
-#include "People.h"
 #include "Config.h"
 #include "BoardPins.h"
 #include "MeshRadio.h"
 #include "Radar.h"
 #include "Internet.h"
-#include "People.h"
 #include "BleDiagnostics.h"
 #include "WifiDiagnostics.h"
 

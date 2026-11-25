@@ -77,34 +77,3 @@ Configure this in Connection / Internet. Commands: `internet save {"ssid":"...",
 `internet ntp on|off`, `internet` for status. `internet add` enables the persistent client. Periodic NTP defaults
 off.
 
-## Quick counter
-
-The quick counter holds up to 8 cards, each with its own name, colour and value 0–999999 (people, laps, sets). A
-card without a name shows as "Counter N". The open card is shared by the screen and the web page. Values are saved
-2 s after the last press (`/meshmesh/tally`); adding, renaming and deleting are saved at once. The last card cannot
-be deleted.
-
-- M9 screen: the page opens straight on a card — OK/up +1, down −1, left/right turn the cards, and past the last
-  one is "New counter". N or a hold names it, C colours it, R twice resets it to 0, DEL twice deletes it, B and W
-  show the BLE and Wi-Fi estimate under the card.
-- Web page: cards swipe left and right, a tap on the number is +1, with −1, "Edit" (name and value), colour,
-  reset and delete with confirmation, dots and a "New counter" card.
-
-Automatic results are BLE devices and Wi-Fi devices, kept separate from manual counting and from each other. RSSI
-threshold −100…−30 dBm, window 30/60/300 seconds, optional BLE phone/watch filter. Each table has 128 temporary
-identifiers and indicates saturation and dropped observations. No names, addresses or payloads are saved by the
-counter; identifiers are salted per boot and tables stay in RAM.
-
-Background BLE scanning is passive and shares the existing controller with advertising and connections. Passive
-Wi-Fi listens to probe requests and client frames, hopping permitted channels; it yields to access point, radar,
-CSI, probes and Internet. Both automatic modes default off.
-
-People may carry multiple devices, devices may not advertise, and addresses may change. Automatic device counts are
-estimates rather than headcounts and are not added to the manual result. The page explains this beside the
-indicators.
-
-Commands: `people` returns JSON (`counters` with `name`, `value`, `color`, `current`, `counters_max`; `manual` is the
-open card's value); `people do {"action":"change","delta":1}` (`index` picks a card, the open one by default),
-`reset`, `set` with `value`, `select`, `add` with an optional `name`, `rename` with `name`, `color` with `color`
-0–14, `delete`, `window_reset`, `settings` with `ble`, `wifi`, `personal_only`, `window`, `rssi`. HTTP GET/POST
-`/api/people` maps to the same commands.

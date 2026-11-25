@@ -31,7 +31,7 @@ receiver USB polling until the ACK.
 
 The device can be switched off in software: the "Turn off" row in the M9 settings (OK twice), the "Turn off
 device" button in the settings of the web page, and the USB/BLE command `poweroff`. After 1.5 s (the reply leaves;
-a packet on air gets up to 5 s more) the firmware flushes delayed writes (contacts, counters, the wardrive log),
+a packet on air gets up to 5 s more) the firmware flushes delayed writes (contacts, the wardrive log),
 shows "Device is off" and how to turn it on for 3 s, puts the transceiver to sleep, turns the screen, GPS and
 peripheral supply off and enters ESP32 deep sleep.
 

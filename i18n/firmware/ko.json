@@ -51,10 +51,6 @@
   "en": " · try ",
   "text": " · 시도 "
  },
- "aeeeae59": {
-  "en": "Counter ",
-  "text": "카운터 "
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "알겠습니다"
@@ -1663,10 +1659,6 @@
   "en": "Network key · 64 hex",
   "text": "네트워크 키 · 64 hex"
  },
- "159bb5f2": {
-  "en": "Counter name",
-  "text": "카운터 이름"
- },
  "58389a6e": {
   "en": "Region of the channel",
   "text": "채널 지역"
@@ -2188,10 +2180,6 @@
   "en": "Internet over Wi-Fi",
   "text": "Wi-Fi 인터넷"
  },
- "1c3eeb68": {
-  "en": "Quick counter",
-  "text": "빠른 카운터"
- },
  "d24c9257": {
   "en": "Wardrive",
   "text": "워드라이빙"
@@ -2493,10 +2481,6 @@
   "en": "<- join",
   "text": "<- 참여"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "복사한 텍스트 없음"
- },
  "8dc21305": {
   "en": "Copied",
   "text": "복사됨"
@@ -2528,6 +2512,10 @@
  "a0eb78b0": {
   "en": "Invalid text for this field",
   "text": "이 필드에 사용할 수 없는 텍스트"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "복사한 텍스트 없음"
  },
  "76bda0c0": {
   "en": "Tags",
@@ -2720,69 +2708,5 @@
  "c99da0c5": {
   "en": "Incorrect password",
   "text": "암호 오류"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "카운터는 최대 8개"
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "카운터 초기화됨"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "마지막 카운터는 남습니다"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "카운터 삭제됨"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "켬"
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "이름 저장됨"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "이름: 최대 23바이트 UTF-8"
- },
- "2ab44d95": {
-  "en": "New counter",
-  "text": "새 카운터"
- },
- "fcfacf5c": {
-  "en": "OK: add",
-  "text": "OK: 추가"
- },
- "23e607d0": {
-  "en": "Nearby: ",
-  "text": "주변: "
- },
- "649144ed": {
-  "en": "N: name  C: colour  R: reset  DEL: delete  B: BLE",
-  "text": "N: 이름  C: 색  R: 초기화  DEL: 삭제  B: BLE"
- },
- "9dc3aa14": {
-  "en": "Add",
-  "text": "추가"
- },
- "2a273ae4": {
-  "en": "Cards",
-  "text": "카드"
- },
- "34ce44a5": {
-  "en": "Exit",
-  "text": "종료"
- },
- "8c0be2f7": {
-  "en": "DEL again: delete",
-  "text": "DEL 한 번 더: 삭제"
- },
- "73f035c7": {
-  "en": "R again: reset to 0",
-  "text": "R 다시: 0으로 초기화"
  }
 }

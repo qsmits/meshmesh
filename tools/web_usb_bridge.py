@@ -18,7 +18,7 @@ from device import connect, command
 ROOT = Path(__file__).resolve().parents[1]
 GETS = {'/api/status': 'status', '/api/messages': 'messages', '/api/nodes': 'nodes', '/api/config': 'config',
         '/api/navigation': 'navigation', '/api/maps': 'map info', '/api/maps/areas': 'map areas',
-        '/api/quick': 'quick', '/api/people': 'people', '/api/clock': 'clock', '/api/key': 'key', '/api/channels': 'channels', '/api/wardrive': 'wardrive'}
+        '/api/quick': 'quick', '/api/clock': 'clock', '/api/key': 'key', '/api/channels': 'channels', '/api/wardrive': 'wardrive'}
 
 
 def main():
@@ -85,7 +85,6 @@ def main():
                     'radar do ' + json.dumps(body) if path == '/api/radar' else
                     'channel do ' + json.dumps(body, ensure_ascii=False) if path == '/api/channels' else
                     'quick do ' + json.dumps(body, ensure_ascii=False) if path == '/api/quick' else
-                    'people do ' + json.dumps(body, ensure_ascii=False) if path == '/api/people' else
                     'wardrive do ' + json.dumps(body) if path == '/api/wardrive' else None)
             if not line:
                 self.reply(404, 'Not found', 'text/plain')

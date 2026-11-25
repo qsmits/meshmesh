@@ -5,7 +5,7 @@
 Firmware for the Elecrow ThinkNode M9 (hardware v1.0 and v1.1, detected at runtime): a self-contained handheld
 MeshCore chat node with channels, contacts, remote admin of repeaters and rooms, regions, regional radio presets,
 offline maps, GPS/compass navigation, a signal radar with Wi-Fi CSI motion sensing, spectrum, wardriving, quick
-send, a quick counter, notifications, backup/restore, its own web page and the MeshCore companion protocol over
+send, notifications, backup/restore, its own web page and the MeshCore companion protocol over
 BLE/USB. It is a slimmed-down fork of `IKrasnodymov/meshmesh` (MIT). The device always runs as a chat node; there
 are no repeater or room-server modes and no other boards.
 

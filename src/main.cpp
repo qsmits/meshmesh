@@ -16,7 +16,6 @@
 #include "Companion.h"
 #include "QuickSend.h"
 #include "Notifications.h"
-#include "People.h"
 #include "Wardrive.h"
 #include <Wire.h>
 #include <esp_system.h>
@@ -174,7 +173,6 @@ void appSetup() {
   maps.begin();
   internet.begin(); // a server keeps Wi-Fi for the device page only
   quickSend::begin();
-  people::begin();
   wardrive::begin();
   BOOT("navigation");
   navigation.begin();
@@ -201,7 +199,6 @@ void appLoop() {
   maps.tick();
   navigation.tick();
   radar.tick();
-  people::tick();
   wardrive::tick();
   notifications::tick();
   int key = hardware.readKey();

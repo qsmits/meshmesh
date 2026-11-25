@@ -6,7 +6,6 @@
 #include "HistoryReply.h"
 #include "Notifications.h"
 #include "QuickSend.h"
-#include "People.h"
 #include "BlobStore.h"
 #include "Hardware.h"
 #include "Palette.h"
@@ -448,7 +447,6 @@ int main(int argc, char** argv) {
   navigation.heading = 37;
   navigation.calibrated = true;
   quickSend::begin();
-  people::begin();
   wardrive::begin();
 #ifdef MM_DESKTOP_SIMULATOR
   bool test = outDir == "--self-test";
@@ -501,14 +499,3 @@ int main(int argc, char** argv) {
 #endif
 }
 #include "scenario.inc"
-
-namespace people {
-void wifiTick() {}
-void releaseWifi() {}
-bool wifiRunning() {
-  return false;
-}
-const char* wifiState() {
-  return "off";
-}
-} // namespace people

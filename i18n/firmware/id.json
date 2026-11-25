@@ -51,10 +51,6 @@
   "en": " · try ",
   "text": " · coba "
  },
- "aeeeae59": {
-  "en": "Counter ",
-  "text": "Hitungan "
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "Diterima"
@@ -1663,10 +1659,6 @@
   "en": "Network key · 64 hex",
   "text": "Kunci jaringan · 64 hex"
  },
- "159bb5f2": {
-  "en": "Counter name",
-  "text": "Nama hitungan"
- },
  "58389a6e": {
   "en": "Region of the channel",
   "text": "Wilayah kanal"
@@ -2188,10 +2180,6 @@
   "en": "Internet over Wi-Fi",
   "text": "Internet via Wi-Fi"
  },
- "1c3eeb68": {
-  "en": "Quick counter",
-  "text": "Penghitung cepat"
- },
  "d24c9257": {
   "en": "Wardrive",
   "text": "Wardriving"
@@ -2493,10 +2481,6 @@
   "en": "<- join",
   "text": "<- gabung"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "Papan klip kosong"
- },
  "8dc21305": {
   "en": "Copied",
   "text": "Disalin"
@@ -2528,6 +2512,10 @@
  "a0eb78b0": {
   "en": "Invalid text for this field",
   "text": "Teks tidak valid untuk kolom ini"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "Papan klip kosong"
  },
  "76bda0c0": {
   "en": "Tags",
@@ -2720,69 +2708,5 @@
  "c99da0c5": {
   "en": "Incorrect password",
   "text": "Sandi salah"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "Paling banyak 8 penghitung"
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "Penghitung direset"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "Penghitung terakhir tetap"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "Hitungan dihapus"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "on"
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "Nama tersimpan"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "Nama: maks. 23 bita UTF-8"
- },
- "2ab44d95": {
-  "en": "New counter",
-  "text": "Penghitung baru"
- },
- "fcfacf5c": {
-  "en": "OK: add",
-  "text": "OK: tambah"
- },
- "23e607d0": {
-  "en": "Nearby: ",
-  "text": "Dekat: "
- },
- "649144ed": {
-  "en": "N: name  C: colour  R: reset  DEL: delete  B: BLE",
-  "text": "N: nama  C: warna  R: nol  DEL: hapus  B: BLE"
- },
- "9dc3aa14": {
-  "en": "Add",
-  "text": "Tambah"
- },
- "2a273ae4": {
-  "en": "Cards",
-  "text": "Kartu"
- },
- "34ce44a5": {
-  "en": "Exit",
-  "text": "Keluar"
- },
- "8c0be2f7": {
-  "en": "DEL again: delete",
-  "text": "DEL lagi: hapus"
- },
- "73f035c7": {
-  "en": "R again: reset to 0",
-  "text": "R lagi: atur ke 0"
  }
 }

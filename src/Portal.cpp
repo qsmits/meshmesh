@@ -9,7 +9,6 @@
 #include "WifiDiagnostics.h"
 #include "Radar.h"
 #include "Internet.h"
-#include "People.h"
 #include "Wardrive.h"
 #include "Companion.h"
 #include "HistoryReply.h"
@@ -323,15 +322,6 @@ void portalBegin() {
       answer(reply, !reply.startsWith("ERR"));
     }
   });
-  server.on("/api/people", HTTP_GET, [] {
-    if (authorized()) server.send(200, "application/json", executeCommand("people"));
-  });
-  server.on("/api/people", HTTP_POST, [] {
-    if (authorized()) {
-      String reply = executeCommand("people do " + server.arg("plain"));
-      server.send(reply.startsWith("ERR") ? 400 : 200, "text/plain", reply);
-    }
-  });
   server.on("/api/quick", HTTP_GET, [] {
     if (authorized()) answer(executeCommand("quick"));
   });
@@ -432,7 +422,6 @@ void portalToggle() {
   } else {
     server.stop();
     serving = false; // portalTick starts it again on the access point
-    people::releaseWifi();
     internet.yieldRadio(); // the Wi-Fi client resumes when the access point is off
     String ssid = "MM-" + meshRadio.idText(meshRadio.nodeId).substring(6);
     WiFi.mode(WIFI_AP);

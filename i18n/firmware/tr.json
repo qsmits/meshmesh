@@ -51,10 +51,6 @@
   "en": " · try ",
   "text": " · deneme "
  },
- "aeeeae59": {
-  "en": "Counter ",
-  "text": "Sayaç "
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "Anlaşıldı"
@@ -1675,10 +1671,6 @@
   "en": "Network key · 64 hex",
   "text": "Ağ anahtarı · 64 hex"
  },
- "159bb5f2": {
-  "en": "Counter name",
-  "text": "Sayaç adı"
- },
  "58389a6e": {
   "en": "Region of the channel",
   "text": "Kanalın bölgesi"
@@ -2201,10 +2193,6 @@
   "en": "Internet over Wi-Fi",
   "text": "Wi-Fi ile internet"
  },
- "1c3eeb68": {
-  "en": "Quick counter",
-  "text": "Hızlı sayaç"
- },
  "d24c9257": {
   "en": "Wardrive",
   "text": "Wardriving"
@@ -2507,10 +2495,6 @@
   "en": "<- join",
   "text": "<- katıl"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "Pano boş"
- },
  "8dc21305": {
   "en": "Copied",
   "text": "Kopyalandı"
@@ -2542,6 +2526,10 @@
  "a0eb78b0": {
   "en": "Invalid text for this field",
   "text": "Bu alan için geçersiz metin"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "Pano boş"
  },
  "76bda0c0": {
   "en": "Tags",
@@ -2734,69 +2722,5 @@
  "c99da0c5": {
   "en": "Incorrect password",
   "text": "Yanlış parola"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "En fazla 8 sayaç"
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "Sayaç sıfırlandı"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "Son sayaç kalır"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "Sayaç silindi"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "açık"
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "Ad kaydedildi"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "Ad: en fazla 23 bayt UTF-8"
- },
- "2ab44d95": {
-  "en": "New counter",
-  "text": "Yeni sayaç"
- },
- "fcfacf5c": {
-  "en": "OK: add",
-  "text": "OK: ekle"
- },
- "23e607d0": {
-  "en": "Nearby: ",
-  "text": "Yakında: "
- },
- "649144ed": {
-  "en": "N: name  C: colour  R: reset  DEL: delete  B: BLE",
-  "text": "N: ad  C: renk  R: sıfırla  DEL: sil  B: BLE"
- },
- "9dc3aa14": {
-  "en": "Add",
-  "text": "Ekle"
- },
- "2a273ae4": {
-  "en": "Cards",
-  "text": "Kartlar"
- },
- "34ce44a5": {
-  "en": "Exit",
-  "text": "Çık"
- },
- "8c0be2f7": {
-  "en": "DEL again: delete",
-  "text": "Tekrar DEL: sil"
- },
- "73f035c7": {
-  "en": "R again: reset to 0",
-  "text": "Tekrar R: 0’a sıfırla"
  }
 }

@@ -443,7 +443,7 @@ static void scenario() {
         exit(1);
       }
     };
-    strlcpy(config.apps, "settings -chats -nodes map -quick -people", sizeof config.apps);
+    strlcpy(config.apps, "settings -chats -nodes map -quick -wardrive", sizeof config.apps);
     key(0x82);
     shot("home-apps");
     key(13);
@@ -456,7 +456,7 @@ static void scenario() {
     config.apps[0] = 0;
     printf("apps order checks passed\n");
   }
-  // Quick Send and manual counting: the production key paths.
+  // Quick Send: the production key paths.
   {
     auto must = [](bool ok, const char* why) {
       if (!ok) {
@@ -464,7 +464,7 @@ static void scenario() {
         exit(1);
       }
     };
-    strlcpy(config.apps, "quick people", sizeof config.apps);
+    strlcpy(config.apps, "quick", sizeof config.apps);
     config.dimAfter = 0;
     config.autoLock = 0;
     key(0x82);
@@ -492,47 +492,6 @@ static void scenario() {
     must(meshRadio.historyCount == sent + 2 &&
              String(meshRadio.history[sent + 1].text) == quickSend::state.text[quickSend::Count - 1],
          "last preset remains reachable and sends its own text");
-    key(0x86);
-    key(0xb7);
-    key(13);
-    int32_t manual = people::value();
-    key(13);
-    must(people::value() == manual + 1, "counter +1");
-    key(0xb6);
-    must(people::value() == manual, "counter -1");
-    people::rename(0, "Guests");
-    people::set(0, 27);
-    shot("people");
-    key(0xb7);
-    must(uiStatus().indexOf("\"tally_new\":true") >= 0, "right of the last card: a new one");
-    shot("people-new");
-    key(13);
-    must(people::tally.count == 2 && people::tally.current == 1, "OK adds a card");
-    key('n');
-    for (char ch : std::string("Coffee")) key(ch);
-    shot("people-name");
-    key(13);
-    key(13);
-    key(13);
-    must(people::value() == 2, "the new card counts on its own");
-    key(0xb4);
-    must(people::tally.current == 0 && people::value() == 27, "left turns back to the first card");
-    key(0xb7);
-    key(0x08);
-    key(0x08);
-    must(people::tally.count == 1, "DEL twice deletes");
-    people::add("Laps");
-    people::set(1, 12);
-    people::recolor(1, 7);
-    people::add("Sets");
-    people::set(2, 4);
-    people::recolor(2, 5);
-    people::select(0);
-    fakeMillis += 4000;
-    tick();
-    shot("people-cards");
-    people::remove(2);
-    people::remove(1);
     key(0x86);
     config.apps[0] = 0;
     printf("wishlist UI checks passed\n");

@@ -19,7 +19,6 @@ unsigned textByteLimit() {
   case NetList: return 63;
   case ChannelAdd: return channelEditLimit();
   case Remote: return remoteEditLimit();
-  case PeopleView: return people::NameBytes;
   default: return 24; // Device name
   }
 }

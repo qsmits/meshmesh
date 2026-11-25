@@ -26,7 +26,6 @@ enum Icon {
   IcRadar,
   IcPower,
   IcSend,
-  IcTally,
   IcFolder
 };
 void drawIcon(Adafruit_GFX& d, Icon id, int cx, int cy, int s, uint16_t c, uint16_t hole, uint16_t shade);

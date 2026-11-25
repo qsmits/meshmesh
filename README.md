@@ -29,7 +29,7 @@ the M9 and its messaging and field tools. The device always runs as a MeshCore c
 - **Spectrum** — a waterfall of received power across the 863–870 MHz band.
 - **Wardriving** — a coverage map of the mesh (packets heard, channel pings and the repeaters that echo them), plus
   Wi-Fi and Bluetooth; export to CSV, GeoJSON, KML and WiGLE. [docs/wardrive.md](docs/wardrive.md)
-- **Quick send** and **quick counter** (people or tally counting).
+- **Quick send**: ten preset messages to a chosen contact or channel.
   [docs/notifications.md](docs/notifications.md)
 - **Notifications** — screen wake, pop-ups and sound, for all messages or mentions only.
 - **Backup and restore** of settings, channels, contacts and optionally the node key in one JSON file.

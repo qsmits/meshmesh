@@ -51,10 +51,6 @@
   "en": " · try ",
   "text": " · intento "
  },
- "aeeeae59": {
-  "en": "Counter ",
-  "text": "Contador "
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "Recibido"
@@ -1675,10 +1671,6 @@
   "en": "Network key · 64 hex",
   "text": "Clave de red · 64 hex"
  },
- "159bb5f2": {
-  "en": "Counter name",
-  "text": "Nombre contador"
- },
  "58389a6e": {
   "en": "Region of the channel",
   "text": "Región del canal"
@@ -2201,10 +2193,6 @@
   "en": "Internet over Wi-Fi",
   "text": "Internet por Wi-Fi"
  },
- "1c3eeb68": {
-  "en": "Quick counter",
-  "text": "Contador rápido"
- },
  "d24c9257": {
   "en": "Wardrive",
   "text": "Wardriving"
@@ -2507,10 +2495,6 @@
   "en": "<- join",
   "text": "<- unirse"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "Portapapeles vacío"
- },
  "8dc21305": {
   "en": "Copied",
   "text": "Copiado"
@@ -2542,6 +2526,10 @@
  "a0eb78b0": {
   "en": "Invalid text for this field",
   "text": "Texto no válido para este campo"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "Portapapeles vacío"
  },
  "76bda0c0": {
   "en": "Tags",
@@ -2734,69 +2722,5 @@
  "c99da0c5": {
   "en": "Incorrect password",
   "text": "Clave incorrecta"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "8 contadores como máx."
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "Contador a cero"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "El último contador queda"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "Contador borrado"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "sí"
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "Nombre guardado"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "Nombre: hasta 23 bytes UTF-8"
- },
- "2ab44d95": {
-  "en": "New counter",
-  "text": "Nuevo contador"
- },
- "fcfacf5c": {
-  "en": "OK: add",
-  "text": "OK: añadir"
- },
- "23e607d0": {
-  "en": "Nearby: ",
-  "text": "Cerca: "
- },
- "649144ed": {
-  "en": "N: name  C: colour  R: reset  DEL: delete  B: BLE",
-  "text": "N: nombre  C: color  R: cero  DEL: borrar  B: BLE"
- },
- "9dc3aa14": {
-  "en": "Add",
-  "text": "Añadir"
- },
- "2a273ae4": {
-  "en": "Cards",
-  "text": "Tarjetas"
- },
- "34ce44a5": {
-  "en": "Exit",
-  "text": "Salir"
- },
- "8c0be2f7": {
-  "en": "DEL again: delete",
-  "text": "DEL otra vez: borrar"
- },
- "73f035c7": {
-  "en": "R again: reset to 0",
-  "text": "R otra vez: poner a 0"
  }
 }

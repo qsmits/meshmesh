@@ -106,12 +106,6 @@ progress{width:100%;height:10px;accent-color:var(--accent)}.two{display:grid;gri
 body[data-route=chat] .wrap{padding-bottom:0}#p-chat{display:flex;flex-direction:column;min-height:calc(100vh - 56px)}#p-chat .messages{flex:1}.mapctl .btn{white-space:nowrap;padding:10px 8px}
 .inv{display:flex;align-items:center;gap:8px;margin:4px 0 2px}.inv b{flex:1;min-width:0;font-size:14px}.inv .btn{min-height:32px;padding:5px 12px}.bubble .mono{display:block;font-size:10px;color:var(--faint)}
 .qrbox{background:#fff;border-radius:8px;width:min(100%,280px);margin:0 auto 10px}.qrbox svg{display:block;width:100%}.tabs.five button{padding:9px 2px;font-size:13px}
-.dcolors{display:flex;flex-wrap:wrap;gap:6px}.dcolors button{width:26px;height:26px;border-radius:50%;border:0;padding:0;background:var(--c)}.dcolors button.on{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--ink)}
-.tally{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}.tally::-webkit-scrollbar{display:none}.tcard{flex:0 0 100%;box-sizing:border-box;scroll-snap-align:center;scroll-snap-stop:always;position:relative;overflow:hidden;padding:18px 14px 14px;margin:0}.tcard::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--c)}
-.tcard .top{display:flex;align-items:center;gap:8px;min-height:34px}.tcard .top b{flex:1;min-width:0;font-size:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tcard .top input{flex:1;min-width:0}.tcard .val{display:block;width:100%;background:none;border:0;color:var(--ink);font-size:88px;font-weight:700;line-height:1.15;margin:6px 0 10px;text-align:center;font-variant-numeric:tabular-nums;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}.tcard input.val{font-size:48px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}.tcard button.val:active{transform:scale(.96)}
-.tcard .steps{display:grid;grid-template-columns:1fr 2fr;gap:8px}.tcard .steps.two{grid-template-columns:1fr 1fr}.tcard .steps .btn{min-height:58px;font-size:24px;touch-action:manipulation}.tcard .steps .btn:not(.primary){background:var(--hi)}.tcard .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.tcard .tools .btn{min-height:36px;padding:6px 12px;background:var(--hi)}.tcard .tools .btn.armed{background:var(--bad)}.tcard .tools i{width:12px;height:12px;border-radius:50%;display:inline-block}
-.tcard.add{display:grid;place-content:center;justify-items:center;gap:8px;border:2px dashed var(--line);background:none;color:var(--dim);min-height:260px}.tcard.add::before{display:none}.tcard.add .ic{font-size:44px;color:var(--accent)}.tcard.add small{color:var(--faint)}
-.tdots{display:flex;justify-content:center;align-items:center;gap:10px;margin:10px 0 6px}.tdots button{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:var(--line)}.tdots button.on{background:var(--c);transform:scale(1.5)}.tdots button.plus{width:auto;height:auto;background:none;color:var(--faint);font-weight:700;line-height:1}.tdots button.plus.on{color:var(--accent);transform:none}
 .set.app.infolder{padding-left:22px;background:linear-gradient(90deg,var(--line) 0 3px,transparent 3px) 12px 0/100% 100% no-repeat}.set.app.folder .name{color:var(--ink)}.set.app .name small .lnk{margin-left:12px}.set.app .name small .lnk:first-child{margin-left:0}
 .lnk{border:0;background:none;padding:2px 0;color:var(--accent);font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:2px}.lnk.danger{color:var(--bad)}.lnk.danger.armed{background:var(--bad);color:var(--ink);text-decoration:none;border-radius:4px;padding:2px 6px}
 .set .name .appdir{display:block;text-align:left;margin-top:4px;max-width:100%;font-size:12px;padding:3px 6px;border-radius:6px;border:1px solid var(--line);background:var(--bg)}.appsnew{display:flex;gap:8px;padding:10px 12px}.appsnew input{flex:1;min-width:0;padding:9px;border-radius:8px;border:1px solid var(--line);background:var(--bg)}.set.app .name input{width:100%;max-width:100%;text-align:left;padding:6px 8px;border-radius:6px;border:1px solid var(--accent);background:var(--bg)}
@@ -151,7 +145,6 @@ body[data-route=chat] .wrap{padding-bottom:0}#p-chat{display:flex;flex-direction
 <symbol id="i-sent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l4.5 4.5 10-10"/></symbol>
 <symbol id="i-delivered" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 12.5L6 17l10-10M11.5 15.5L13 17l10-10"/></symbol>
 <symbol id="i-failed" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12 2a10 10 0 1 1 0 20a10 10 0 1 1 0-20zM10.8 6.5h2.4l-.4 7.5h-1.6zM10.7 16.8a1.3 1.3 0 1 0 2.6 0a1.3 1.3 0 1 0-2.6 0z"/></symbol>
-<symbol id="i-tally" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 5v14M9.7 5v14M14.3 5v14M19 5v14"/><path d="M2.5 16.5l19-9" stroke-width="2.6"/></symbol>
 <symbol id="i-bolt" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 1.5L4.5 13.5h6l-1.5 9 9.5-12.5h-6z"/></symbol>
 <symbol id="i-up" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5l7 10H5z"/></symbol>
 <symbol id="i-down" viewBox="0 0 24 24" fill="currentColor"><path d="M12 19L5 9h14z"/></symbol>
@@ -223,7 +216,6 @@ body[data-route=chat] .wrap{padding-bottom:0}#p-chat{display:flex;flex-direction
 <section class="page" id="p-device" hidden><div class="card" style="padding:4px 0" id="deviceForm"></div><button class="btn save" id="deviceSave" disabled>No changes</button><p class="small faint" style="margin:10px 4px" id="deviceNote">The menu language applies to the device screen. The radio keeps working when locked and with the screen off.</p></section>
 <section class="page" id="p-help" hidden><div id="helpKeys"></div></section>
 
-<section class="page" id="p-people" hidden><div id="peopleView" class="people-fields"></div></section>
 <section class="page" id="p-wardrive" hidden><div id="wdView" class="people-fields"></div></section>
 <section class="page" id="p-quick" hidden><div id="quickView" class="quick-fields"></div></section>
 </main>
@@ -399,7 +391,7 @@ function faults(){return moduleStates().filter((s,i)=>!s&&!absent(i)&&!(extGps()
 function eventLabel(v){if(v.startsWith('New message from '))return L`Message from ${v.slice(17)}`;if(v.startsWith('Delivered to '))return L`Delivered: ${v.slice(13)}`;return {'Queued: waiting for delivery':L('Waiting for confirmation'),'Queued: broadcast':L('Message to the public chat is being sent'),'No delivery ACK':L('The recipient did not confirm delivery'),'Settings saved':L('Settings saved')}[v]||(/^Radio TX error|^TX failed/.test(v)?L('Radio transmission error'):v)}
 
 // Pages: a hash per screen; BACK goes where the device's BACK key would.
-const PAGES={home:['MeshMesh'],chats:[L('Chats'),'home'],chat:[null,'chats'],addch:[L('New channel'),'chats'],join:[L('Channel from link'),'chats'],chinfo:[L('Channel'),'chats'],alerts:[L('Notifications'),'chats'],msg:[L('Packet path'),'chats'],map:[L('Map'),'home'],library:[L('Saved maps'),'map'],nodes:[L('Nodes'),'home'],node:[null,'nodes'],nav:[L('Navigation'),'home'],connect:[L('Connections'),'home'],radar:[L('Radar'),'home'],homing:[L('Bearing'),'radar'],motion:[L('Motion (CSI)'),'home'],modules:[L('Modules'),'home'],settings:[L('Settings'),'home'],radio:[L('Radio'),'settings'],device:[L('Screen'),'settings'],apps:[L('Apps'),'settings'],help:[L('Keys'),'settings'],backup:[L('Backup'),'settings'],quick:[L('Quick Send'),'home'],people:[L('Quick counter'),'home'],wardrive:[L('Wardrive'),'home']};
+const PAGES={home:['MeshMesh'],chats:[L('Chats'),'home'],chat:[null,'chats'],addch:[L('New channel'),'chats'],join:[L('Channel from link'),'chats'],chinfo:[L('Channel'),'chats'],alerts:[L('Notifications'),'chats'],msg:[L('Packet path'),'chats'],map:[L('Map'),'home'],library:[L('Saved maps'),'map'],nodes:[L('Nodes'),'home'],node:[null,'nodes'],nav:[L('Navigation'),'home'],connect:[L('Connections'),'home'],radar:[L('Radar'),'home'],homing:[L('Bearing'),'radar'],motion:[L('Motion (CSI)'),'home'],modules:[L('Modules'),'home'],settings:[L('Settings'),'home'],radio:[L('Radio'),'settings'],device:[L('Screen'),'settings'],apps:[L('Apps'),'settings'],help:[L('Keys'),'settings'],backup:[L('Backup'),'settings'],quick:[L('Quick Send'),'home'],wardrive:[L('Wardrive'),'home']};
 const RADAR_PAGES=['radar','homing','motion'];
 function go(target){if(location.hash==='#'+target)show();else location.hash='#'+target}
 function show(){
@@ -416,7 +408,6 @@ function parent(){return cameFrom[route]||(route==='chinfo'?'chat/'+param:PAGES[
 function leave(prev,next){
  if(prev==='chat'){drafts.set(recipient,$('text').value);setReply(null);saveChatPos();chatNewKey='';$('toBottom').hidden=true}
  if(prev==='join')joinLink=null;
- if(prev==='people'&&next!=='people'){clearTimeout(peopleTimer);peopleTimer=null;}
  if(prev==='wardrive'&&next!=='wardrive'){clearTimeout(wdTimer);wdTimer=null;}
  if(RADAR_PAGES.includes(prev)&&!RADAR_PAGES.includes(next))stopRadar();
  else if(prev==='motion'&&next!=='motion'&&radarData?.csi?.role!=='off')radarAction({action:'csi',role:'off'});
@@ -436,11 +427,10 @@ function enter(page,prev){
  if(page==='help')renderHelp();
  if(page==='backup'){backupFile=null;renderBackup()}
  if(page==='quick')loadQuick();
- if(page==='people')loadPeople();
  if(page==='wardrive'){if(!chans)loadChans();loadWardrive()}
  if(page==='map'&&status.wardrive)loadWardriveLog();
  if(page==='map')setTimeout(drawMap,0)}
-function render(){hud();const f={home:renderHome,wardrive:renderWardrive,chats:renderThreads,chat:renderChat,nodes:renderNodes,node:renderNode,map:drawMap,library:renderLibrary,nav:renderNav,connect:renderConnect,radar:renderScope,homing:renderHoming,motion:renderMotion,modules:renderModules,settings:renderSettings,quick:renderQuick,people:renderPeople,addch:renderAddCh,join:renderJoin,chinfo:renderChanInfo,msg:renderMsg,alerts:renderAlerts}[route];if(f&&(auth||standaloneMode))f()}
+function render(){hud();const f={home:renderHome,wardrive:renderWardrive,chats:renderThreads,chat:renderChat,nodes:renderNodes,node:renderNode,map:drawMap,library:renderLibrary,nav:renderNav,connect:renderConnect,radar:renderScope,homing:renderHoming,motion:renderMotion,modules:renderModules,settings:renderSettings,quick:renderQuick,addch:renderAddCh,join:renderJoin,chinfo:renderChanInfo,msg:renderMsg,alerts:renderAlerts}[route];if(f&&(auth||standaloneMode))f()}
 
 // Status bar: title on the left; unread, links, GPS, radio, clock and battery on the right.
 function hud(){
@@ -480,7 +470,6 @@ function renderHome(){
   ['map','pin','ok',L('Map'),!mapInfo.available?L('No SD card'):mapInfo.name||L('No maps yet')],
   ['radar','radar','acc',L('Radar'),noWifi()?'BLE, LoRa':'Wi-Fi, BLE, LoRa'],
   ...(status.wardrive?[['wardrive','tower',wdData&&(wdData.passive||wdData.ping||wdData.nets)?'ok':'muted',L('Wardrive'),wdData&&(wdData.passive||wdData.ping||wdData.nets)?plural(wdData.points,'point','points'):L('Network coverage map')]]:[]),
-  ...(status.people_counter?[['people','tally','ok',L('Quick counter'),tallyTile()]]:[]),
   ['connect','wifi','info',L('Connectivity'),links],
   ['modules','pulse',f?'bad':'ok',L('Modules'),f?plural(f,'error','errors'):L('All good')],
   ['settings','gear','muted',L('Settings'),L('Radio, screen')]];
@@ -488,35 +477,6 @@ function renderHome(){
 // Tiles of the home page: [page, icon, colour, name, detail, badge].
 function tilesHtml(tiles){return tiles.map(([go,i,c,name,detail,badge])=>`<button class="tile" data-go="${go}"><span class="box">${ic(i,c)}</span>${badge?`<span class="badge">${badge>99?'99+':badge}</span>`:''}<b>${name}</b><small>${esc(detail)}</small></button>`).join('')}
 
-// The quick counter: cards turned by a swipe, each counted by a tap on its number; the BLE/Wi-Fi estimate below.
-// The carousel is rebuilt only when its cards change, so a swipe or a tap in progress is not reset by the refresh.
-let peopleData=null,peopleTimer=null,peopleBusy=false,peopleQueue=Promise.resolve(),peoplePending=0,peopleShape='',peopleArmed='',peopleEdit=-1,peopleColorFor=-1,peopleScroll=null;
-const TALLY_COLORS=['#ff6b6b','#4ecdc4','#45b7d1','#ffa07a','#98d8c8','#f06292','#aed581','#ffd54f','#4dd0e1','#ba68c8','#4fc3f7','#fff176','#81c784','#dce775','#64b5f6'];
-async function loadPeople(){if(peopleBusy)return;peopleBusy=true;try{const d=await request('/api/people');if(!peoplePending)peopleData=d;if(route==='people')renderPeople()}catch(e){notify(e.message,'bad')}finally{peopleBusy=false;if(route==='people'){clearTimeout(peopleTimer);peopleTimer=setTimeout(loadPeople,2000)}}}
-const tallyCards=d=>d.counters||[{name:'',value:d.manual,color:0}]; // firmware before 0.24.0: one manual count
-const tallyName=(c,i)=>c.name||L`Counter ${i+1}`;
-function renderPeople(){if($('peopleView').contains(document.activeElement)&&['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName))return;const d=peopleData;if(!d){$('peopleView').textContent=L('Loading…');return}const state={off:L('off'),listening:L('listening'),paused:L('paused: radio busy'),failed:L('start error'),unsupported:L('no Wi-Fi')};
- const cards=tallyCards(d),multi=!!d.counters,cur=Math.min(d.current||0,cards.length-1),room=multi&&cards.length<(d.counters_max||8),hue=c=>TALLY_COLORS[c.color]||TALLY_COLORS[0];
- const shape=JSON.stringify([cards.map(c=>[c.name,c.color]),multi,peopleArmed,peopleEdit,peopleColorFor]);
- if(shape===peopleShape&&$('tally')){cards.forEach((c,i)=>{const v=document.querySelector(`[data-tval="${i}"]`);if(v)v.textContent=c.value;const m=document.querySelector(`[data-tally="minus ${i}"]`);if(m)m.disabled=!c.value});tallyDots(cur);tallyNear(d,state);return}
- const old=$('tally'),seen=old&&old.clientWidth&&old.children.length===cards.length+(room?1:0)?Math.round(old.scrollLeft/old.clientWidth):-1; // the card in view stays in view
- const card=(c,i)=>{const armed=peopleArmed,editing=peopleEdit===i;return `<div class="card tcard" style="--c:${hue(c)}"><div class="top">${editing?`<input id="tName" maxlength="40" value="${esc(c.name)}" placeholder="${esc(L`Counter ${i+1}`)}" aria-label="${L('Name')}">`:`<b>${esc(tallyName(c,i))}</b><span class="faint small">${i+1} / ${cards.length}</span>`}</div>
-  ${editing?`<input id="tValue" type="number" min="0" max="999999" value="${c.value}" class="val" aria-label="${L('Value')}"><div class="steps two"><button class="btn" data-tally="cancel">${L`Cancel`}</button><button class="btn primary" data-tally="save ${i}">${L`Save`}</button></div>`:
-  `<button class="val" data-tally="plus ${i}" aria-label="+1"><span data-tval="${i}">${c.value}</span></button><div class="steps"><button class="btn" data-tally="minus ${i}" ${c.value?'':'disabled'}>−1</button><button class="btn primary" data-tally="plus ${i}">+1</button></div>`}
-  ${editing?'':`<div class="tools">${multi?`<button class="btn" data-tally="edit ${i}">${L`Edit`}</button><button class="btn" data-tally="pal ${i}"><i style="background:var(--c)"></i>${L`Color`}</button>`:''}<button class="btn ${armed==='reset'+i?'danger armed':''}" data-tally="reset ${i}">${armed==='reset'+i?L('Really reset to 0?'):L('Reset')}</button>${multi&&cards.length>1?`<button class="btn danger${armed==='del'+i?' armed':''}" data-tally="del ${i}">${armed==='del'+i?L('Really delete?'):L('Delete')}</button>`:''}</div>`}
-  ${peopleColorFor===i?`<div class="dcolors" style="margin-top:10px">${TALLY_COLORS.map((k,j)=>`<button style="--c:${k}" class="${j===c.color?'on':''}" data-tally="color ${i} ${j}" aria-label="${L('Color')} ${j+1}"></button>`).join('')}</div>`:''}</div>`};
- $('peopleView').innerHTML=`<div class="tally" id="tally">${cards.map(card).join('')}${room?`<button class="card tcard add" data-tally="add">${ic('tally')}<b>${L`New counter`}</b><small>${L`Up to 8 cards: people, laps, sets, anything`}</small></button>`:''}</div>
-  <div class="tdots" id="tDots">${cards.map((c,i)=>`<button style="--c:${hue(c)}" data-tally="go ${i}" aria-label="${esc(tallyName(c,i))}"></button>`).join('')}${room?`<button class="plus" data-tally="go ${cards.length}" aria-label="${L('New counter')}">+</button>`:''}</div>
-  ${multi?`<p class="small faint" style="text-align:center;margin:0 0 4px">${L`Swipe the cards left and right; tap the number for +1. The card opened here opens on the device screen too.`}</p>`:''}
-  <h3>${L`Devices nearby`}</h3><div class="card pad people-fields" id="tNear"></div>`;
- peopleShape=shape;const strip=$('tally'),at=peopleEdit>=0?peopleEdit:seen>=0?seen:cur;strip.scrollLeft=at*strip.clientWidth;tallyDots(at);tallyNear(d,state);
- strip.addEventListener('scroll',()=>{clearTimeout(peopleScroll);peopleScroll=setTimeout(()=>{const i=Math.round(strip.scrollLeft/Math.max(1,strip.clientWidth)),p=peopleData;tallyDots(i);
-  if(p&&p.counters&&i<p.counters.length&&i!==p.current){p.current=i;if(peopleArmed||peopleColorFor>=0){peopleArmed='';peopleColorFor=-1;renderPeople()}peopleSend({action:'select',index:i},false)}},160)},{passive:true});
- if(peopleEdit>=0)$('tName')?.focus()}
-function tallyTile(){const d=peopleData;if(!d||!d.counters)return L('Cards for counting');const cards=tallyCards(d),i=Math.min(d.current||0,cards.length-1);return `${tallyName(cards[i],i)}: ${cards[i].value}`}
-function tallyDots(i){document.querySelectorAll('#tDots button').forEach((b,k)=>b.classList.toggle('on',k===i))}
-function tallyNear(d,state){const n=$('tNear');if(!n||n.contains(document.activeElement))return;
- n.innerHTML=`<div class="detail"><span>BLE</span><b>${d.ble_saturated?'≥':''}${d.ble_devices} · ${state[d.ble_state]||d.ble_state}</b></div>${d.wifi_supported?`<div class="detail"><span>${L`Wi-Fi clients`}</span><b>${d.wifi_saturated?'≥':''}${d.wifi_devices} · ${state[d.wifi_state]||d.wifi_state}</b></div>`:''}<p class="small muted">${L`This is an estimate of the number of devices. One person may carry several devices; random addresses change. BLE, Wi-Fi and manual counts are shown separately.`}</p><label class="two"><span>${L`Scan BLE`}</span><input type="checkbox" data-people-setting="ble" ${d.ble?'checked':''}></label>${d.wifi_supported?`<label class="two"><span>${L`Listen for Wi-Fi clients`}</span><input type="checkbox" data-people-setting="wifi" ${d.wifi?'checked':''}></label>`:''}<label class="two"><span>${L`BLE: only recognized phones and watches`}</span><input type="checkbox" data-people-setting="personal_only" ${d.personal_only?'checked':''}></label><label>${L`Counting window`}<select data-people-setting="window">${[[30,L('30 seconds')],[60,L('1 minute')],[300,L('5 minutes')]].map(([k,v])=>`<option value="${k}" ${d.window===k?'selected':''}>${v}</option>`).join('')}</select></label><label>${L`Minimum RSSI (dBm)`}<input type="number" min="-100" max="-30" value="${d.rssi}" data-people-setting="rssi"></label><p class="small faint">${L`Wi-Fi listens to client frames and yields the radio to the access point, NTP, radar and CSI. MAC addresses are not stored.`}</p><button class="btn" data-people-act="window_reset">${L`Start new window`}</button>${d.ble_dropped||d.wifi_dropped?`<p class="warn small">${L`Some devices may have been missed: buffer full.`}</p>`:''}`}
 // Wardrive (docs/wardrive.md): the log's settings and state, its points on the map page and the exports. Records of
 // "wardrive log": mesh [time,lat,lon,kind,type,hops,snr,rssi,hash,count,flags] (kind 0 heard, 1 ping, 2 echo; lat/lon
 // in 1e-6 degrees), nets [time,lat,lon,kind,mac,channel,rssi,auth,name,flags] (kind 0 Wi-Fi, 1 Bluetooth).
@@ -564,25 +524,6 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-wd-act],[d
  const a=b.dataset.wdAct;if(a==='clear'&&!confirm(L('Delete the wardrive log from the board? Export it first.')))return;if(a==='clear')wdPoints=[];wardriveDo({action:a})});
 document.addEventListener('change',e=>{const t=e.target;if(t.dataset.wdPhone!==undefined){try{MeshNative.wardriveLocation(t.checked)}catch{}setTimeout(renderWardrive,500);return}
  const k=t.dataset.wdSet;if(!k)return;if(k==='channel'&&!t.value)return;wardriveDo({action:'settings',[k]:t.type==='checkbox'?t.checked:k==='channel'?t.value:Number(t.value)})});
-async function peopleDo(body){try{await request('/api/people',body);await loadPeople()}catch(e){notify(e.message,'bad')}}
-// Counting goes out in order and shows at once; the refresh does not overwrite it while requests are under way.
-function peopleSend(body,reload){peoplePending++;peopleQueue=peopleQueue.then(()=>request('/api/people',body)).catch(e=>{notify(e.message.replace(/^ERR /,''),'bad');reload=true}).finally(()=>{if(!--peoplePending&&reload!==false)loadPeople()});return peopleQueue}
-function tallyAct(a){const d=peopleData;if(!d)return;const [op,x,y]=a.split(' '),i=+x,cards=tallyCards(d),c=cards[i],index=d.counters?{index:i}:{};
- if(op!=='reset'&&op!=='del')peopleArmed='';
- if(op==='plus'||op==='minus'){const delta=op==='plus'?1:-1;if(!c||c.value+delta<0||c.value+delta>999999)return;c.value+=delta;d.manual=cards[Math.min(d.current||0,cards.length-1)].value;renderPeople();navigator.vibrate?.(10);peopleSend({action:'change',delta,...index},false);return}
- if(op==='go'){const strip=$('tally');strip?.scrollTo({left:i*strip.clientWidth,behavior:'smooth'});return}
- if(op==='add'){peopleSend({action:'add'});return}
- if(op==='edit'){peopleEdit=i;peopleColorFor=-1;renderPeople();return}
- if(op==='cancel'){peopleEdit=-1;document.activeElement?.blur();renderPeople();return}
- if(op==='save'){const name=$('tName').value.trim(),value=Number($('tValue').value);if(new TextEncoder().encode(name).length>23){notify(L('Name: up to 23 bytes'),'warn');return}
-  if(!Number.isInteger(value)||value<0||value>999999){notify(L('Value: 0 to 999999'),'warn');return}peopleEdit=-1;document.activeElement?.blur();c.name=name;c.value=value;renderPeople();
-  peopleSend({action:'rename',index:i,name});peopleSend({action:'set',index:i,value});return}
- if(op==='pal'){peopleColorFor=peopleColorFor===i?-1:i;renderPeople();return}
- if(op==='color'){peopleColorFor=-1;c.color=+y;renderPeople();peopleSend({action:'color',index:i,color:+y});return}
- if(op==='reset'||op==='del'){if(peopleArmed!==op+i){peopleArmed=op+i;renderPeople();setTimeout(()=>{if(peopleArmed===op+i){peopleArmed='';renderPeople()}},4000);return}
-  peopleArmed='';if(op==='reset'){c.value=0;renderPeople()}peopleSend(op==='reset'?{action:'reset',...index}:{action:'delete',index:i})}}
-document.addEventListener('click',e=>{const t=e.target.closest('[data-tally]');if(t&&$('peopleView').contains(t)){tallyAct(t.dataset.tally);return}const b=e.target.closest('[data-people-act]');if(b)peopleDo({action:b.dataset.peopleAct})});
-document.addEventListener('change',e=>{const k=e.target.dataset.peopleSetting;if(k)peopleDo({action:'settings',[k]:e.target.type==='checkbox'?e.target.checked:Number(e.target.value)})});
 
 document.addEventListener('click',e=>{if(e.target.closest('#quickReply'))go('quick/'+recipient)});
 document.addEventListener('input',e=>{const form=e.target.closest('[data-quick-form]');if(!form||!quick)return;const b=form.querySelector('[data-quick-send]'),changed=e.target.value!==quick.presets[Number(form.dataset.quickForm)];b.disabled=changed||!e.target.value;b.title=changed?L('Save the template first'):''});
@@ -966,7 +907,7 @@ function renderSettings(){
  $('settingsList').innerHTML=storageCard()+items.map(([go,i,c,n,d])=>`<button class="row" data-go="${go}"><span class="icbox" style="width:34px;height:34px;border-radius:8px;background:var(--card);display:grid;place-items:center;font-size:18px;flex:none">${ic(i,c)}</span><span class="main"><b>${n}</b><small>${esc(d)}</small></span><span class="go">${ic('next')}</span></button>`).join('')}
 // Apps of the device's screen menu (firmware "apps" setting, src/Apps.cpp): IDs separated by spaces, "-" before one
 // hides it; "{NAME id id}" is a folder ("_" for the spaces of its name), "-{NAME ...}" hides the folder with its apps. Settings stay at the top level and shown.
-const APP_NAMES={chats:['chat',L('Chats')],map:['pin',L('Map')],nodes:['mesh',L('Nodes')],nav:['compass',L('Navigation')],connect:['wifi',L('Connectivity')],radar:['radar',L('Radar')],health:['pulse',L('Modules')],settings:['gear',L('Settings')],quick:['send',L('Quick Send')],people:['tally',L('Quick counter')],wardrive:['tower',L('Wardrive')],gps:['compass','GPS'],wifi:['wifi','Wi-Fi'],ble:['ble','Bluetooth']};
+const APP_NAMES={chats:['chat',L('Chats')],map:['pin',L('Map')],nodes:['mesh',L('Nodes')],nav:['compass',L('Navigation')],connect:['wifi',L('Connectivity')],radar:['radar',L('Radar')],health:['pulse',L('Modules')],settings:['gear',L('Settings')],quick:['send',L('Quick Send')],wardrive:['tower',L('Wardrive')],gps:['compass','GPS'],wifi:['wifi','Wi-Fi'],ble:['ble','Bluetooth']};
 let appsDraft=[],appsEdit=-1,appsArmed=-1;
 const isFolder=x=>x.folder!==undefined,APPS_BYTES=240; // the firmware keeps 255 bytes; "set {JSON}" over Bluetooth takes 255 in all
 function appsParse(t){const out=[];let open=null;
@@ -1024,7 +965,7 @@ function powerOnText(){const b=status.power_button;return status.power_on==='but
 // Two presses, as the device screens confirm erasing: the first arms the button for 5 s.
 async function powerOffDevice(){const b=$('powerOff');if(!powerOffDevice.armed){powerOffDevice.armed=true;b.textContent=L('Tap again — the device will turn off');b.className='btn primary';setTimeout(()=>{powerOffDevice.armed=false;b.textContent=L('Turn off device');b.className='btn'},5000);return}
  powerOffDevice.armed=false;b.disabled=true;try{await command('poweroff');notify(L`The device is turning off. ${powerOnText()}`,'ok')}catch(e){notify(e.message,'bad')}finally{setTimeout(()=>{b.disabled=false;b.textContent=L('Turn off device');b.className='btn'},5000)}}
-// Backup (docs/backup.md): one JSON file of the settings, the node key, channels, contacts, Quick Send and counters,
+// Backup (docs/backup.md): one JSON file of the settings, the node key, channels, contacts, and Quick Send,
 // read with the ordinary commands. Restore writes back only what is ticked, the node key last (a restart).
 let backupFile=null,backupBusy=false;
 const BK_SKIP=['radio_prev','radio_trial','russian','key'],BK_RADIO=['frequency','bandwidth','sf','cr'],BK_BOARD=['power','brightness','apps','gps','battery_volts'];
@@ -1035,7 +976,7 @@ function bkLabels(){const l={apps:L('Apps on screen')};for(const p of ['radio','
 const bkValue=v=>v===true?L('on'):v===false?L('off'):v===''||v==null?'—':String(v);
 function renderBackup(){
  const key=!noWifi()&&!status.wifi&&!window.MeshNative;
- $('bkSave').innerHTML=`<p class="small muted" style="margin:0 0 8px">${L('A JSON file: settings, channels with keys, contacts, Quick Send templates and counters. Messages, maps and the wardrive log are not included.')}</p>
+ $('bkSave').innerHTML=`<p class="small muted" style="margin:0 0 8px">${L('A JSON file: settings, channels with keys, contacts and Quick Send templates. Messages, maps and the wardrive log are not included.')}</p>
   <label class="small" style="display:flex;align-items:center;gap:8px;margin:0 0 6px"><input type="checkbox" id="bkKey" checked style="width:20px;flex:none">${L('Node key: the restored board stays the same node for contacts')}</label>
   <p class="small ${key?'warn':'faint'}" style="margin:0 0 8px">${key?L('The node key is only given out via the device\'s access point, the app or USB: over a home network the backup is saved without it.'):L('Keep the file like a password: its keys can be used to read your direct messages and private channels.')}</p>
   <div class="btns"><button class="btn primary" id="bkDo">${L('Save backup')}</button></div><p class="small muted" id="bkTask"></p>`;
@@ -1049,7 +990,6 @@ async function backupSave(){
   task(L('Channels…'));b.channels=bkJson(await command('channels')).channels.map(x=>({id:x.id,name:x.name,kind:x.kind,link:x.link,region:x.region,policy:x.policy}));
    task(L('Contacts…'));b.contacts=bkJson(await command('nodes')).filter(p=>p.public_key&&p.type).map(p=>({key:p.public_key,name:p.name,type:p.type,...p.position?{lat:p.latitude,lon:p.longitude}:{}}));
   if(status.quick_send){task(L('Quick Send…'));const q=bkJson(await command('quick'));b.quick={to:q.to,gps:q.gps,presets:q.presets}}
-  if(status.people_counter){task(L('Counters…'));const p=bkJson(await command('people'));b.counters={current:p.current,counters:p.counters,settings:{ble:p.ble,...p.wifi_supported?{wifi:p.wifi}:{},personal_only:p.personal_only,window:p.window,rssi:p.rssi}}}
   const now=new Date(),stamp=[now.getFullYear(),two(now.getMonth()+1),two(now.getDate()),two(now.getHours()),two(now.getMinutes())].join('-'),file=`meshmesh-backup-${String(config.name||status.node||'').replace(/[^\p{L}\p{N}_-]+/gu,'_')}-${stamp}.json`;
   download(JSON.stringify(b,null,1),file,'application/json');
   task(b.identity_error?L`Backup saved without the node key: ${b.identity_error}`:L`Backup saved: ${file}`);notify(L('Backup saved'),b.identity_error?'warn':'ok')
@@ -1057,10 +997,9 @@ async function backupSave(){
 async function backupOpen(input){
  const f=input.files&&input.files[0];if(!f)return;
  try{const b=JSON.parse(await f.text());if(b.format!=='meshmesh-backup'||!b.settings)throw Error(L('This is not a MeshMesh backup'));
-  const cur={chans:[],nodes:[],quick:null,people:null};
+  const cur={chans:[],nodes:[],quick:null};
   cur.chans=bkJson(await command('channels')).channels;cur.nodes=bkJson(await command('nodes'));
   if(status.quick_send&&b.quick)cur.quick=bkJson(await command('quick'));
-  if(status.people_counter&&b.counters)cur.people=bkJson(await command('people'));
   config=await request('/api/config');backupFile={b,cur,name:f.name};renderBackupFile()}
  catch(e){backupFile=null;notify(e instanceof SyntaxError?L('This is not a MeshMesh backup'):bkErr(e),'bad');renderBackupFile()}}
 function renderBackupFile(){
@@ -1075,8 +1014,6 @@ function renderBackupFile(){
  const keys=new Set(cur.nodes.map(p=>p.public_key)),contacts=(b.contacts||[]).filter(p=>!keys.has(p.key)&&p.key!==status.public_key);
  if(b.contacts&&contacts.length)sect('contacts',L('Contacts'),L`New: ${contacts.length}. Paths to them will be found again: the first message goes through the whole network.`);
  if(b.quick&&cur.quick){const n=b.quick.presets.filter((t,i)=>t!==cur.quick.presets[i]).length;if(n||b.quick.to!==cur.quick.to||b.quick.gps!==cur.quick.gps)sect('quick',L('Quick Send'),L`Templates changing: ${n}; recipient ${b.quick.to}`)}
- const tally=x=>JSON.stringify([x.current,x.counters.map(c=>[c.name,c.value,c.color])]);
- if(b.counters&&cur.people&&tally(b.counters)!==tally(cur.people))sect('counters',L('Quick counter'),b.counters.counters.map(c=>`${esc(c.name||L('Counter'))}: ${c.value}`).join(' · '));
  const bkPub=String(b.identity&&b.identity.public_key||b.node&&b.node.public_key||''); // files before 0.30.1 repeat the public key in identity
  if(b.identity&&b.identity.private_key&&bkPub!==status.public_key)sect('identity',L('Node key'),L`Node ${bkPub.slice(0,8)||'?'}… instead of ${String(status.public_key||'').slice(0,8)}…: contacts will recognise this board as the previous node. The board will restart. Do not run two boards with the same key.`,true);
  const note=b.identity_error?`<p class="small warn">${L`No node key in the backup: ${b.identity_error}`}</p>`:'';
@@ -1111,13 +1048,6 @@ async function backupRestore(todo){
    if(q.gps!==cur.quick.gps)try{await command('quick do '+JSON.stringify({action:'gps',enabled:q.gps}))}catch(e){failed.push(bkErr(e))}
    if(q.to!==cur.quick.to)try{await command('quick do '+JSON.stringify({action:'target',to:q.to}))}catch(e){failed.push(L`Recipient ${q.to}: ${bkErr(e)}`)}
    say(!failed.length,L('Quick Send'));for(const f of failed)say(false,f)}
-  if(on('counters')){const c=b.counters,act=a=>command('people do '+JSON.stringify(a));let failed=[];
-   try{let have=cur.people.counters.length;
-    for(let i=0;i<c.counters.length;i++){const x=c.counters[i],old=i<have?cur.people.counters[i]:{name:x.name,value:0,color:-1};if(i>=have){await act({action:'add',name:x.name});have++}else if(old.name!==x.name)await act({action:'rename',index:i,name:x.name});if(old.color!==x.color)await act({action:'color',index:i,color:x.color});if(old.value!==x.value)await act({action:'set',index:i,value:x.value})}
-    for(let i=have-1;i>=c.counters.length;i--)await act({action:'delete',index:i});
-    if(c.current<c.counters.length&&(c.current!==cur.people.current||have>cur.people.counters.length))await act({action:'select',index:c.current})}catch(e){failed.push(bkErr(e))}
-   if(c.settings&&Object.keys(c.settings).some(k=>c.settings[k]!==cur.people[k]))try{await act({action:'settings',...c.settings})}catch(e){failed.push(bkErr(e))}
-   say(!failed.length,L('Quick counter'));for(const f of failed)say(false,f)}
   if(on('identity'))try{const r=await bkCommand('identity set '+b.identity.private_key);restart=/restarting/.test(r);say(true,restart?L('Node key written; the board is restarting. Reconnect to it: the Wi-Fi access point will have a new password.'):L('Node key is already the same'))}catch(e){say(false,L('Node key')+': '+bkErr(e))}
   notify(L('Restore finished'),'ok');
  }finally{backupBusy=false;const a=$('bkApply'),x=$('bkCancel');if(a)a.disabled=true;if(x)x.disabled=false}

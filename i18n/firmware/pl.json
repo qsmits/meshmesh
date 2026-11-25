@@ -51,10 +51,6 @@
   "en": " · try ",
   "text": " · próba "
  },
- "aeeeae59": {
-  "en": "Counter ",
-  "text": "Licznik "
- },
  "4c891c6a": {
   "en": "Got it",
   "text": "Jasne"
@@ -1687,10 +1683,6 @@
   "en": "Network key · 64 hex",
   "text": "Klucz sieci · 64 hex"
  },
- "159bb5f2": {
-  "en": "Counter name",
-  "text": "Nazwa licznika"
- },
  "58389a6e": {
   "en": "Region of the channel",
   "text": "Region kanału"
@@ -2214,10 +2206,6 @@
   "en": "Internet over Wi-Fi",
   "text": "Internet przez Wi-Fi"
  },
- "1c3eeb68": {
-  "en": "Quick counter",
-  "text": "Szybki licznik"
- },
  "d24c9257": {
   "en": "Wardrive",
   "text": "Wardriving"
@@ -2521,10 +2509,6 @@
   "en": "<- join",
   "text": "<- dołącz"
  },
- "dc755d30": {
-  "en": "Clipboard empty",
-  "text": "Schowek pusty"
- },
  "8dc21305": {
   "en": "Copied",
   "text": "Skopiowano"
@@ -2556,6 +2540,10 @@
  "a0eb78b0": {
   "en": "Invalid text for this field",
   "text": "Nieprawidłowy tekst dla tego pola"
+ },
+ "dc755d30": {
+  "en": "Clipboard empty",
+  "text": "Schowek pusty"
  },
  "76bda0c0": {
   "en": "Tags",
@@ -2748,69 +2736,5 @@
  "c99da0c5": {
   "en": "Incorrect password",
   "text": "Błędne hasło"
- },
- "46120854": {
-  "en": "8 counters at most",
-  "text": "Najwyżej 8 liczników"
- },
- "28fa2654": {
-  "en": "Counter reset",
-  "text": "Licznik wyzerowany"
- },
- "fa0f5fe6": {
-  "en": "The last counter stays",
-  "text": "Ostatni licznik zostaje"
- },
- "45bb420e": {
-  "en": "Counter deleted",
-  "text": "Licznik usunięty"
- },
- "61342fd0": {
-  "en": "on",
-  "text": "wł."
- },
- "d1b37a61": {
-  "en": "Name saved",
-  "text": "Imię zapisane"
- },
- "154900f6": {
-  "en": "Name: up to 23 UTF-8 bytes",
-  "text": "Nazwa: do 23 bajtów UTF-8"
- },
- "2ab44d95": {
-  "en": "New counter",
-  "text": "Nowy licznik"
- },
- "fcfacf5c": {
-  "en": "OK: add",
-  "text": "OK: dodaj"
- },
- "23e607d0": {
-  "en": "Nearby: ",
-  "text": "Obok: "
- },
- "649144ed": {
-  "en": "N: name  C: colour  R: reset  DEL: delete  B: BLE",
-  "text": "N: nazwa  C: kolor  R: zeruj  DEL: usuń  B: BLE"
- },
- "9dc3aa14": {
-  "en": "Add",
-  "text": "Dodaj"
- },
- "2a273ae4": {
-  "en": "Cards",
-  "text": "Karty"
- },
- "34ce44a5": {
-  "en": "Exit",
-  "text": "Wyjdź"
- },
- "8c0be2f7": {
-  "en": "DEL again: delete",
-  "text": "DEL ponownie: usuń"
- },
- "73f035c7": {
-  "en": "R again: reset to 0",
-  "text": "R ponownie: wyzeruj"
  }
 }

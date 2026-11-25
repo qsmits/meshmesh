@@ -3,7 +3,6 @@ Internet internet;
 #include "App.h"
 #include "Hardware.h"
 #include "Radar.h"
-#include "People.h"
 #include "Version.h"
 #include "WifiDiagnostics.h"
 #include "RootCerts.h"
@@ -560,7 +559,6 @@ void Internet::tick() {
     return;
   }
   if (!owned) {
-    people::releaseWifi();
     if (!WiFi.mode(WIFI_STA)) {
       error = "Wi-Fi start failed";
       return;
