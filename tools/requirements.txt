@@ -1,0 +1,12 @@
+# Python packages used by tools/ (python3 -m venv .venv && .venv/bin/pip install -r tools/requirements.txt)
+# Build and flash
+platformio
+esptool
+# USB serial to the boards (tools/device.py, tools/ports.py and the *_check.py tools)
+pyserial
+# MM/1 packet crypto check (tools/protocol_check.py)
+cryptography
+# Screenshots, map tiles and the display font (tools/web_shots.py, tools/maps.py, tools/display_font.py, tools/ui_preview/sheet.py)
+pillow
+# Bluetooth link to a board (tools/ble_device.py)
+bleak

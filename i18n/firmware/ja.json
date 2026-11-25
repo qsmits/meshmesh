@@ -1783,6 +1783,10 @@
   "en": "Announcement failed",
   "text": "アドバート送信失敗"
  },
+ "cf8274c3": {
+  "en": "Unsaved: OK saves, BACK discards",
+  "text": "未保存: OK で保存、BACK で破棄"
+ },
  "726ab9e5": {
   "en": "Message queued",
   "text": "メッセージを送信待ちに追加"

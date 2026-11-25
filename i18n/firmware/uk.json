@@ -1807,6 +1807,10 @@
   "en": "Announcement failed",
   "text": "Не вдалося оголосити вузол"
  },
+ "cf8274c3": {
+  "en": "Unsaved: OK saves, BACK discards",
+  "text": "Не збережено: OK зберігає, BACK скасовує"
+ },
  "726ab9e5": {
   "en": "Message queued",
   "text": "Повідомлення в черзі"

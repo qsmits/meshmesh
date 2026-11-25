@@ -1843,6 +1843,10 @@
   "en": "Announcement failed",
   "text": "فشل الإعلان"
  },
+ "cf8274c3": {
+  "en": "Unsaved: OK saves, BACK discards",
+  "text": "غير محفوظ: OK للحفظ، BACK للتجاهل"
+ },
  "726ab9e5": {
   "en": "Message queued",
   "text": "الرسالة في الطابور"

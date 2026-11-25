@@ -1807,6 +1807,10 @@
   "en": "Announcement failed",
   "text": "Nie udało się ogłosić węzła"
  },
+ "cf8274c3": {
+  "en": "Unsaved: OK saves, BACK discards",
+  "text": "Niezapisane: OK zapisuje, BACK odrzuca"
+ },
  "726ab9e5": {
   "en": "Message queued",
   "text": "Wiadomość w kolejce"

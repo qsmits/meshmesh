@@ -104,7 +104,8 @@ uint16_t toastColor = 0;
 int selected = 0, chatOffset = 0, action = 0;
 uint64_t recipient = meshmesh::Broadcast, focusNode = 0, focusChannel = 0;
 String composer, edit;
-bool clipMenu = false, editing = false, dirty = true, locked = false, wakeOnly = false, deleteArmed = false;
+bool clipMenu = false, editing = false, dirty = true, keyed = false, locked = false, wakeOnly = false,
+     deleteArmed = false;
 Config draft;
 uint32_t lastPhysicalInput = 0;
 struct ComposerDraft {
@@ -2087,6 +2088,7 @@ void drawOff() {
   textCenter(160, 160, powerOnHint(), dim, small);
 }
 uint32_t powerArmed = 0; // the first OK on "Turn off" arms it for 5 s
+uint32_t discardArmed = 0; // the first BACK on an unsaved Radio or Display draft arms discarding it for 5 s
 void drawSettings() {
   Icon icons[] = {IcRadio, IcScreen, IcCompass, IcWifi, IcPulse, IcHelp, IcPower};
   uint16_t hues[] = {accent, info, warn, info, ok, dim, bad};
@@ -3207,6 +3209,7 @@ void uiKey(int key) {
   hardware.brightness(config.backlight(time(nullptr)));
   wakeOnly = false;
   dirty = true;
+  keyed = true; // drawn on the next pass, without the 150 ms gap
   if (locked) { // a hold (timed by the M9 keyboard controller, not by us) or two OK presses within a second unlock
     static uint32_t firstOk = 0;
     bool twice = key == Enter && firstOk && millis() - firstOk < 1000;
@@ -3367,6 +3370,15 @@ void uiKey(int key) {
     scopeHeld = scopeCount > 0 && !scopeHeld;
     return;
   }
+  // Unsaved Radio or Display changes: BACK first jumps to Save, a second BACK within 5 s discards them.
+  if (key == KeyBack && (page == Radio || page == Display) && draftChanged() &&
+      (!discardArmed || millis() - discardArmed > 5000)) {
+    discardArmed = millis();
+    selected = settingRows() - 1;
+    notice(t("Unsaved: OK saves, BACK discards"), warn);
+    return;
+  }
+  if (key == KeyBack) discardArmed = 0;
   if (key == KeyBack) {
     change(page == Memo          ? Node
            : page == ChannelAdd  ? Threads
@@ -3925,10 +3937,13 @@ void uiTick() {
   bool update =
       dirty || meshRadio.dirty || maps.dirty || internet.dirty || animate || freshList || now - lastDraw >= 1000;
   if (wakeOnly) return;
-  if (update && now - lastDraw >= 150) {
+  // A key or touch draws at once; animations run at up to 20 fps; radio, map and network updates every 150 ms.
+  uint32_t gap = keyed && dirty ? 0 : animate ? 50 : 150;
+  if (update && now - lastDraw >= gap) {
     draw();
     lastDraw = now;
     dirty = false;
+    keyed = false;
     meshRadio.dirty = false;
     maps.dirty = false;
     radar.dirty = false;

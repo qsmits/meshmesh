@@ -1795,6 +1795,10 @@
   "en": "Announcement failed",
   "text": "Ankündigung fehlgeschlagen"
  },
+ "cf8274c3": {
+  "en": "Unsaved: OK saves, BACK discards",
+  "text": "Nicht gespeichert: OK speichert, BACK verwirft"
+ },
  "726ab9e5": {
   "en": "Message queued",
   "text": "Nachricht in Warteschlange"

@@ -1783,6 +1783,10 @@
   "en": "Announcement failed",
   "text": "Pengumuman gagal"
  },
+ "cf8274c3": {
+  "en": "Unsaved: OK saves, BACK discards",
+  "text": "Belum disimpan: OK simpan, BACK buang"
+ },
  "726ab9e5": {
   "en": "Message queued",
   "text": "Pesan diantrekan"

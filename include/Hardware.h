@@ -56,12 +56,20 @@ public:
   void ping(uint16_t hz, uint16_t ms);
   void flush();
 #if !defined(MM_HELTEC_V4)
+  // The frame last sent to the panel (PSRAM): flush() sends only the bands of rows that differ, so a moved
+  // cursor, the status bar clock or a toast costs a few rows instead of the whole 150 KB frame. Without it
+  // (no PSRAM left) every flush sends the whole frame. shownValid false: the next flush sends everything.
+  uint16_t* shown = nullptr;
+  bool shownValid = false;
   void flushRect(int x, int y, int width, int height) {
 #if !defined(MM_UI_PREVIEW)
     uint16_t* row = canvas->getBuffer() + y * canvas->width() + x;
     display.startWrite();
     display.setAddrWindow(x, y, width, height);
-    for (int i = 0; i < height; i++, row += canvas->width()) display.writePixels(row, width);
+    for (int i = 0; i < height; i++, row += canvas->width()) {
+      display.writePixels(row, width);
+      if (shown) memcpy(shown + (row - canvas->getBuffer()), row, width * sizeof(uint16_t)); // keep the copy true
+    }
     display.endWrite();
 #endif
   }

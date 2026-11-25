@@ -51,6 +51,7 @@ void Hardware::brightness(uint8_t level) {
     delay(5);
     display.enableDisplay(true);
     asleep = false;
+    shownValid = false; // resend the whole frame after sleep
   }
   ledcWrite(7, 255 - level);
 }
@@ -115,7 +116,7 @@ void Hardware::begin() {
   digitalWrite(pins::gpsWake, LOW);
   SPI.begin(pins::spiClock, pins::spiMiso, pins::spiMosi);
   display.init(240, 320, SPI_MODE0);
-  display.setSPISpeed(40000000);
+  display.setSPISpeed(80000000); // APB/1; the next step down is 40 MHz
   display.setRotation(1);
   display.fillScreen(0x0862);
   ledcSetup(7, 5000, 8);
@@ -258,7 +259,30 @@ void Hardware::ping(uint16_t hz, uint16_t ms) {
   }
 }
 void Hardware::flush() {
-  display.drawRGBBitmap(0, 0, canvas->getBuffer(), 320, 240);
+  const int W = canvas->width(), H = canvas->height();
+  uint16_t* buf = canvas->getBuffer();
+  const size_t row = W * sizeof(uint16_t);
+  if (!shown) shown = (uint16_t*)heap_caps_malloc(row * H, MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
+  if (!shown) {
+    display.drawRGBBitmap(0, 0, buf, W, H);
+    return;
+  }
+  bool all = !shownValid;
+  display.startWrite();
+  for (int y = 0; y < H;) {
+    if (!all && !memcmp(buf + y * W, shown + y * W, row)) {
+      y++;
+      continue;
+    }
+    int end = y + 1;
+    while (end < H && (all || memcmp(buf + end * W, shown + end * W, row))) end++;
+    display.setAddrWindow(0, y, W, end - y);
+    display.writePixels(buf + y * W, uint32_t(end - y) * W);
+    memcpy(shown + y * W, buf + y * W, row * (end - y));
+    y = end;
+  }
+  display.endWrite();
+  shownValid = true;
 }
 void Hardware::text(int x, int y, const String& value, uint16_t color) {
   font.setForegroundColor(color);

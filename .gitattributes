@@ -1,0 +1,17 @@
+# Line endings: LF everywhere
+* text=auto eol=lf
+
+# Generated sources: committed for the firmware build, but kept out of diffs and GitHub language stats.
+# Regenerate them with the tools named in their headers instead of editing them.
+include/I18nTable.h linguist-generated=true -diff
+include/I18nFonts.h linguist-generated=true -diff
+include/EmojiData.h linguist-generated=true -diff
+include/RootCerts.h linguist-generated=true
+include/Version.h linguist-generated=true
+src/DisplayFontData.inc linguist-generated=true -diff
+
+# Binary assets
+*.png binary
+*.bin binary
+*.ttf binary
+*.otf binary

@@ -1783,6 +1783,10 @@
   "en": "Announcement failed",
   "text": "알림 전송 실패"
  },
+ "cf8274c3": {
+  "en": "Unsaved: OK saves, BACK discards",
+  "text": "저장 안 됨: OK 저장, BACK 취소"
+ },
  "726ab9e5": {
   "en": "Message queued",
   "text": "메시지 대기 중"
