@@ -75,3 +75,9 @@ is joined again. Public cannot be removed.
 - Channels have no delivery acknowledgements (as in MeshCore); the sender's name is part of the text and is not verified.
 
 See also [notifications.md](notifications.md) for per-channel notifications, priority and retention.
+
+## Replying
+
+In a channel chat, MENU → "Reply to NAME" starts your message with `@[NAME] `, MeshCore's mention (it notifies them
+as a mention). It replies to the message at the bottom of the chat: the newest, or the one you scrolled up to with
+↑/↓.

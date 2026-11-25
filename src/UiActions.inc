@@ -22,8 +22,21 @@ enum class AppAction {
   ZoomOut,
   Recenter,
   QuickReply,
-  Sound
+  Sound,
+  Reply
 };
+// The message a reply goes to: the one at the bottom of the chat (the newest, or where the chat is scrolled to),
+// when it is someone else's in a channel. A reply starts with "@[name] ", MeshCore's mention.
+const ChatMessage* replyTarget() {
+  if (page != Chat || !channels::isChannel(recipient)) return nullptr;
+  int skip = chatOffset;
+  for (int i = int(meshRadio.historyCount) - 1; i >= 0; i--) {
+    const auto& m = meshRadio.history[i];
+    if (!belongs(m, recipient) || skip-- > 0) continue;
+    return !m.outgoing && m.name[0] ? &m : nullptr;
+  }
+  return nullptr;
+}
 struct ActionItem {
   AppAction action;
   Icon icon;
@@ -31,6 +44,7 @@ struct ActionItem {
   bool on = false;
 };
 
+constexpr int MaxActions = 6, ShownActions = 5; // the menu scrolls past five rows
 int actionItems(ActionItem* rows) {
   using A = AppAction;
   int n = 0;
@@ -50,6 +64,7 @@ int actionItems(ActionItem* rows) {
         rows[n++] = {A::Sound, IcMail, t("Channel sound"), c->policy.sound != 0};
     }
   } else if (page == Chat) {
+    if (const ChatMessage* m = replyTarget()) rows[n++] = {A::Reply, IcSend, t("Reply to ") + String(m->name)};
     rows[n++] = {A::Clipboard, IcMail, t("Clipboard")};
     if (!composer.length()) rows[n++] = {A::QuickReply, IcSend, t("Quick send")};
     if (channels::isChannel(recipient)) {
@@ -80,7 +95,7 @@ int actionItems(ActionItem* rows) {
 void openActionPanel() {
   activePanel = Panel::Actions;
   panelRow = 0;
-  ActionItem items[5];
+  ActionItem items[MaxActions];
   if (actionItems(items) == 1) {
     activePanel = Panel::Radios;
     radioReturnRow = -1;
@@ -88,13 +103,15 @@ void openActionPanel() {
 }
 
 void drawActionPanel() {
-  ActionItem items[5];
+  ActionItem items[MaxActions];
   int n = actionItems(items);
   panelRow = constrain(panelRow, 0, n - 1);
   bool radios = activePanel == Panel::Radios;
   text(14, 47, radios ? t("Radio controls") : t("Actions"), ink, big);
-  for (int i = 0; i < n; i++) {
-    int y = 56 + i * 34;
+  int first = constrain(panelRow - (ShownActions - 1), 0, max(0, n - ShownActions));
+  if (n > ShownActions) scrollbar(first, ShownActions, n, 56, 170);
+  for (int i = first; i < n && i < first + ShownActions; i++) {
+    int y = 56 + (i - first) * 34;
     bool focus = i == panelRow;
     listRow(y, 31, focus);
     target(8, y, 304, 31, i);
@@ -123,7 +140,7 @@ bool actionPanelKey(int key) {
       activePanel = Panel::Closed;
     return true;
   }
-  ActionItem rows[5];
+  ActionItem rows[MaxActions];
   int n = actionItems(rows);
   panelRow = constrain(panelRow, 0, n - 1);
   if (key == KeyUp || key == KeyDown) {
@@ -141,6 +158,13 @@ bool actionPanelKey(int key) {
   case A::ZoomOut: uiKey('-'); break;
   case A::Recenter: uiKey(Enter); break;
   case A::QuickReply: uiKey(KeyRight); break;
+  case A::Reply:
+    if (const ChatMessage* m = replyTarget()) {
+      String tag = "@[" + String(m->name) + "] ";
+      if (!composer.startsWith(tag)) composer = tag + composer;
+      chatOffset = 0; // back to the newest messages, the reply below them
+    }
+    break;
   case A::Sound:
     if (const channels::Channel* c = meshRadio.channel(page == Chat ? recipient : conversations[selected]))
       channelSoundToggle(c);

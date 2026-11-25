@@ -322,7 +322,7 @@
   "cells": 13,
   "where": [
    "src/Ui.cpp:936: case Memo: return t(\"Contact notes\");",
-   "src/UiActions.inc:67: rows[n++] = {A::Notes, IcMesh, t(\"Contact notes\")};"
+   "src/UiActions.inc:89: rows[n++] = {A::Notes, IcMesh, t(\"Contact notes\")};"
   ]
  },
  "126befb6": {
@@ -370,7 +370,7 @@
  "13dec412": {
   "cells": 11,
   "where": [
-   "src/UiActions.inc:57: rows[n++] = {A::Recenter, IcPin, t(\"My location\")};"
+   "src/UiActions.inc:79: rows[n++] = {A::Recenter, IcPin, t(\"My location\")};"
   ]
  },
  "140b9a3a": {
@@ -409,8 +409,8 @@
  "1716578a": {
   "cells": 15,
   "where": [
-   "src/UiActions.inc:47: rows[n++] = {A::Channel, IcHash, t(\"Channel details\")};",
-   "src/UiActions.inc:51: if (channels::isChannel(recipient)) rows[n++] = {A::Channel, IcHash, t(\"Channel details\")};"
+   "src/UiActions.inc:61: rows[n++] = {A::Channel, IcHash, t(\"Channel details\")};",
+   "src/UiActions.inc:70: rows[n++] = {A::Channel, IcHash, t(\"Channel details\")};"
   ]
  },
  "17215ba9": {
@@ -470,8 +470,8 @@
  "194d1be3": {
   "cells": 4,
   "where": [
-   "src/MeshRadio.cpp:1315: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));",
-   "src/MeshRadio.cpp:1315: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));"
+   "src/MeshRadio.cpp:1336: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));",
+   "src/MeshRadio.cpp:1336: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));"
   ]
  },
  "195cfed6": {
@@ -758,7 +758,7 @@
   "cells": 10,
   "where": [
    "src/Ui.cpp:949: case Library: return t(\"Saved maps\");",
-   "src/UiActions.inc:60: rows[n++] = {A::Maps, IcFolder, t(\"Saved maps\")};"
+   "src/UiActions.inc:82: rows[n++] = {A::Maps, IcFolder, t(\"Saved maps\")};"
   ]
  },
  "2265ebb1": {
@@ -849,6 +849,12 @@
    "src/UiHeltec.cpp:1427: return t(\"hold \") + MM_BUTTON;"
   ]
  },
+ "2747d3ac": {
+  "cells": 9,
+  "where": [
+   "src/UiActions.inc:66: if (const ChatMessage* m = replyTarget()) rows[n++] = {A::Reply, IcSend, t(\"Reply to \") + String(m->name)};"
+  ]
+ },
  "27669571": {
   "cells": 14,
   "where": [
@@ -908,7 +914,7 @@
   "cells": 17,
   "where": [
    "src/Ui.cpp:1568: textCenter(160, 144, tagFilter.length() ? t(\"F: edit tag filter\") : t(\"Advertise my node\"), dim, small);",
-   "src/UiActions.inc:62: rows[n++] = {A::Advert, IcRadio, t(\"Advertise my node\")};"
+   "src/UiActions.inc:84: rows[n++] = {A::Advert, IcRadio, t(\"Advertise my node\")};"
   ]
  },
  "2b6886b2": {
@@ -1053,7 +1059,7 @@
   "cells": 11,
   "where": [
    "src/Ui.cpp:1280: footer({{\"OK\", t(\"Open\")}, {\"MENU\", t(\"Actions\")}, {\"U\", t(\"Next unread\")}});",
-   "src/UiActions.inc:45: rows[n++] = {A::Unread, IcMail, t(\"Next unread\")};"
+   "src/UiActions.inc:59: rows[n++] = {A::Unread, IcMail, t(\"Next unread\")};"
   ]
  },
  "33a9cb6d": {
@@ -1164,8 +1170,8 @@
   "cells": 14,
   "where": [
    "src/Ui.cpp:1197: footer({{\"OK\", t(\"Open\")}, {\"MSG\", t(\"Chats\")}, {\"MAP\", t(\"Map\")}, {\"MENU\", t(\"Radio controls\")}});",
-   "src/UiActions.inc:68: rows[n++] = {A::Radios, IcRadio, t(\"Radio controls\")};",
-   "src/UiActions.inc:87: text(14, 47, radios ? t(\"Radio controls\") : t(\"Actions\"), ink, big);"
+   "src/UiActions.inc:90: rows[n++] = {A::Radios, IcRadio, t(\"Radio controls\")};",
+   "src/UiActions.inc:109: text(14, 47, radios ? t(\"Radio controls\") : t(\"Actions\"), ink, big);"
   ]
  },
  "376c2317": {
@@ -1472,7 +1478,7 @@
   "cells": 5,
   "where": [
    "src/Ui.cpp:1902: {\"P\", scopeHeld ? t(\"Resume\") : t(\"Pause\")},",
-   "src/UiActions.inc:54: rows[n++] = {A::Pause, IcRadar, scopeHeld ? t(\"Resume\") : t(\"Pause\")};"
+   "src/UiActions.inc:76: rows[n++] = {A::Pause, IcRadar, scopeHeld ? t(\"Resume\") : t(\"Pause\")};"
   ]
  },
  "45465004": {
@@ -1485,7 +1491,7 @@
   "cells": 6,
   "where": [
    "src/Ui.cpp:1902: {\"P\", scopeHeld ? t(\"Resume\") : t(\"Pause\")},",
-   "src/UiActions.inc:54: rows[n++] = {A::Pause, IcRadar, scopeHeld ? t(\"Resume\") : t(\"Pause\")};"
+   "src/UiActions.inc:76: rows[n++] = {A::Pause, IcRadar, scopeHeld ? t(\"Resume\") : t(\"Pause\")};"
   ]
  },
  "45570065": {
@@ -1621,7 +1627,7 @@
   "where": [
    "src/Ui.cpp:1095: {IcRadar, accent, t(\"Radar\"), \"Wi-Fi, BLE, LoRa\", 0},",
    "src/Ui.cpp:1901: footer({{\"L\", scopeWide ? t(\"Radar\") : t(\"List\")},",
-   "src/UiActions.inc:53: rows[n++] = {A::List, IcRadar, scopeWide ? t(\"Radar\") : t(\"Full-width list\")};"
+   "src/UiActions.inc:75: rows[n++] = {A::List, IcRadar, scopeWide ? t(\"Radar\") : t(\"Full-width list\")};"
   ]
  },
  "4bab65fd": {
@@ -1717,7 +1723,7 @@
   "cells": 18,
   "where": [
    "src/Ui.cpp:2555: cardAt(0, wh, IcWifi, t(\"Wi-Fi access point\"),",
-   "src/UiActions.inc:38: rows[n++] = {A::Hotspot, IcWifi, t(\"Wi-Fi access point\"), portalActive()};"
+   "src/UiActions.inc:52: rows[n++] = {A::Hotspot, IcWifi, t(\"Wi-Fi access point\"), portalActive()};"
   ]
  },
  "4d851fe7": {
@@ -2078,7 +2084,7 @@
  "5a1b6d0e": {
   "cells": 6,
   "where": [
-   "src/MeshRadio.cpp:1316: String s = m.route == ChatMessage::RouteDirect ? (hops.length() ? hops : String(tr(\"routed\")))"
+   "src/MeshRadio.cpp:1337: String s = m.route == ChatMessage::RouteDirect ? (hops.length() ? hops : String(tr(\"routed\")))"
   ]
  },
  "5a5d7e3d": {
@@ -2133,7 +2139,9 @@
  "5d1a5f53": {
   "cells": 13,
   "where": [
-   "src/Ui.cpp:2202: tr(\"Channel sound\"),"
+   "src/Ui.cpp:2202: tr(\"Channel sound\"),",
+   "src/UiActions.inc:63: rows[n++] = {A::Sound, IcMail, t(\"Channel sound\"), c->policy.sound != 0};",
+   "src/UiActions.inc:72: rows[n++] = {A::Sound, IcMail, t(\"Channel sound\"), c->policy.sound != 0}; // the channel's own switch"
   ]
  },
  "5d67bec6": {
@@ -2204,8 +2212,8 @@
  "5fe7049c": {
   "cells": 6,
   "where": [
-   "src/MeshRadio.cpp:1314: : !m.hops     ? String(brief ? tr(\"direct\") : tr(\"direct\"))",
-   "src/MeshRadio.cpp:1314: : !m.hops     ? String(brief ? tr(\"direct\") : tr(\"direct\"))",
+   "src/MeshRadio.cpp:1335: : !m.hops     ? String(brief ? tr(\"direct\") : tr(\"direct\"))",
+   "src/MeshRadio.cpp:1335: : !m.hops     ? String(brief ? tr(\"direct\") : tr(\"direct\"))",
    "src/Ui.cpp:895: if (!(p.pathLength & 63)) return t(\"direct\");"
   ]
  },
@@ -2281,7 +2289,7 @@
  "62bbb91b": {
   "cells": 7,
   "where": [
-   "src/MeshRadio.cpp:1321: s += m.status == ChatMessage::Delivered ? (brief ? \" #\" + String(m.tries) : String(tr(\" · try \")) + m.tries)"
+   "src/MeshRadio.cpp:1342: s += m.status == ChatMessage::Delivered ? (brief ? \" #\" + String(m.tries) : String(tr(\" · try \")) + m.tries)"
   ]
  },
  "63703628": {
@@ -2512,7 +2520,7 @@
   "cells": 6,
   "where": [
    "src/Ui.cpp:2583: footer({{\"OK\", selected == 1 ? t(\"Networks\") : t(\"Toggle\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Back\")}});",
-   "src/UiActions.inc:102: footer({{\"OK\", radios ? t(\"Toggle\") : t(\"Choose\")}, {\"BACK\", t(\"Back\")}});"
+   "src/UiActions.inc:124: footer({{\"OK\", radios ? t(\"Toggle\") : t(\"Choose\")}, {\"BACK\", t(\"Back\")}});"
   ]
  },
  "6d3d79bb": {
@@ -2581,7 +2589,7 @@
   "where": [
    "src/Ui.cpp:955: case QuickView: return t(\"Quick send\");",
    "src/Ui.cpp:1082: {IcSend, info, t(\"Quick send\"), quickSend::targetName(), 0},",
-   "src/UiActions.inc:50: if (!composer.length()) rows[n++] = {A::QuickReply, IcSend, t(\"Quick send\")};"
+   "src/UiActions.inc:68: if (!composer.length()) rows[n++] = {A::QuickReply, IcSend, t(\"Quick send\")};"
   ]
  },
  "6fb7daa2": {
@@ -2683,7 +2691,7 @@
  "73c66160": {
   "cells": 6,
   "where": [
-   "src/UiActions.inc:102: footer({{\"OK\", radios ? t(\"Toggle\") : t(\"Choose\")}, {\"BACK\", t(\"Back\")}});",
+   "src/UiActions.inc:124: footer({{\"OK\", radios ? t(\"Toggle\") : t(\"Choose\")}, {\"BACK\", t(\"Back\")}});",
    "src/UiChannels.inc:158: footer({{\"OK\", t(\"Choose\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Chats\")}});",
    "src/UiClipboard.inc:100: footer({{\"OK\", t(\"Choose\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Back\")}});"
   ]
@@ -2855,7 +2863,7 @@
   "cells": 13,
   "where": [
    "src/Ui.cpp:2849: : page == Nodes       ? t(\"Filter by tag\")",
-   "src/UiActions.inc:63: rows[n++] = {A::Filter, IcMesh, t(\"Filter by tag\")};"
+   "src/UiActions.inc:85: rows[n++] = {A::Filter, IcMesh, t(\"Filter by tag\")};"
   ]
  },
  "7e3d4120": {
@@ -2907,7 +2915,7 @@
   "cells": 13,
   "where": [
    "src/Ui.cpp:957: case ChannelAdd: return t(\"Add a channel\");",
-   "src/UiActions.inc:44: rows[n++] = {A::Add, IcHash, t(\"Add a channel\")};"
+   "src/UiActions.inc:58: rows[n++] = {A::Add, IcHash, t(\"Add a channel\")};"
   ]
  },
  "81c648bf": {
@@ -3039,7 +3047,7 @@
  "8570fe3a": {
   "cells": 8,
   "where": [
-   "src/UiActions.inc:59: rows[n++] = {A::ZoomOut, IcCompass, t(\"Zoom out\")};"
+   "src/UiActions.inc:81: rows[n++] = {A::ZoomOut, IcCompass, t(\"Zoom out\")};"
   ]
  },
  "8581156e": {
@@ -3292,7 +3300,7 @@
  "92584437": {
   "cells": 15,
   "where": [
-   "src/UiActions.inc:53: rows[n++] = {A::List, IcRadar, scopeWide ? t(\"Radar\") : t(\"Full-width list\")};"
+   "src/UiActions.inc:75: rows[n++] = {A::List, IcRadar, scopeWide ? t(\"Radar\") : t(\"Full-width list\")};"
   ]
  },
  "925b4cdd": {
@@ -3475,7 +3483,7 @@
  "9a9b9449": {
   "cells": 4,
   "where": [
-   "src/MeshRadio.cpp:1315: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));"
+   "src/MeshRadio.cpp:1336: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));"
   ]
  },
  "9ad03b43": {
@@ -3622,7 +3630,7 @@
  "a3583899": {
   "cells": 7,
   "where": [
-   "src/UiActions.inc:58: rows[n++] = {A::ZoomIn, IcCompass, t(\"Zoom in\")};"
+   "src/UiActions.inc:80: rows[n++] = {A::ZoomIn, IcCompass, t(\"Zoom in\")};"
   ]
  },
  "a3980ce8": {
@@ -3708,7 +3716,7 @@
   "cells": 6,
   "where": [
    "src/Ui.cpp:1904: {\"<>\", t(\"Motion\")}});",
-   "src/UiActions.inc:55: rows[n++] = {A::Motion, IcPulse, t(\"Motion\")};"
+   "src/UiActions.inc:77: rows[n++] = {A::Motion, IcPulse, t(\"Motion\")};"
   ]
  },
  "ab15d6c8": {
@@ -4690,7 +4698,7 @@
   "cells": 12,
   "where": [
    "src/Ui.cpp:2679: text(48, 42, t(\"Wi-Fi client\"), ink, bold);",
-   "src/UiActions.inc:37: rows[n++] = {A::Wifi, IcWifi, t(\"Wi-Fi client\"), internet.enabled};"
+   "src/UiActions.inc:51: rows[n++] = {A::Wifi, IcWifi, t(\"Wi-Fi client\"), internet.enabled};"
   ]
  },
  "df6cf078": {
@@ -5196,7 +5204,7 @@
  "f51b5247": {
   "cells": 11,
   "where": [
-   "src/UiActions.inc:65: if (peer && peer->position) rows[n++] = {A::NodeMap, IcPin, t(\"Show on map\")};"
+   "src/UiActions.inc:87: if (peer && peer->position) rows[n++] = {A::NodeMap, IcPin, t(\"Show on map\")};"
   ]
  },
  "f574869a": {

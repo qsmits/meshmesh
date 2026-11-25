@@ -97,6 +97,18 @@ static void scenario() {
   shot("threads");
   key(13);
   shot("chat-public");
+  // Reply: MENU names the sender of the message at the bottom (scrolled up past our own one); choosing it starts
+  // the message with "@[name] ".
+  key(0xb5);
+  key(0x83);
+  shot("chat-menu-reply");
+  key(13);
+  if (uiStatus().indexOf("\"composer\":\"@[") < 0) {
+    printf("FAIL reply mention: %s\n", uiStatus().c_str());
+    exit(1);
+  }
+  shot("chat-reply");
+  for (int i = 0; i < 40; i++) key(0x08); // erase the reply again
   key(0x86);
   // Channels: the list, a hashtag channel's card, a private channel and its card, adding one, an invitation.
   key(0xb6);
