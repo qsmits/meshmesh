@@ -1939,6 +1939,10 @@
   "en": "Encryption test failed",
   "text": "Błąd testu szyfrowania"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "Wł."
+ },
  "f371db6e": {
   "en": "New message from ",
   "text": "Wiadomość od "
@@ -1950,10 +1954,6 @@
  "4d782bae": {
   "en": "Queued: waiting for delivery",
   "text": "Czeka na potwierdzenie"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "Wł."
  },
  "67884f31": {
   "en": "Queued: broadcast",
@@ -1982,6 +1982,10 @@
  "1fef106f": {
   "en": "No unread messages",
   "text": "Brak nieprzeczytanych wiadomości"
+ },
+ "8ac53aac": {
+  "en": "All messages read",
+  "text": "Wszystko przeczytane"
  },
  "1abf61d8": {
   "en": "Clock not set",
@@ -2245,6 +2249,10 @@
  "73c66160": {
   "en": "Choose",
   "text": "Wybierz"
+ },
+ "6d267c97": {
+  "en": "Mark all as read",
+  "text": "Oznacz wszystko jako przeczytane"
  },
  "1716578a": {
   "en": "Channel details",

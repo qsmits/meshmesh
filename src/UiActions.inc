@@ -23,7 +23,8 @@ enum class AppAction {
   Recenter,
   QuickReply,
   Sound,
-  Reply
+  Reply,
+  AllRead
 };
 // The message a reply goes to: the one at the bottom of the chat (the newest, or where the chat is scrolled to),
 // when it is someone else's in a channel. A reply starts with "@[name] ", MeshCore's mention.
@@ -58,6 +59,7 @@ int actionItems(ActionItem* rows) {
   if (page == Threads) {
     rows[n++] = {A::Add, IcHash, t("Add a channel")};
     rows[n++] = {A::Unread, IcMail, t("Next unread")};
+    if (unreadTotal()) rows[n++] = {A::AllRead, IcMail, t("Mark all as read")};
     if (conversationCount && channels::isChannel(conversations[selected])) {
       rows[n++] = {A::Channel, IcHash, t("Channel details")};
       if (const channels::Channel* c = meshRadio.channel(conversations[selected]))
@@ -171,6 +173,7 @@ bool actionPanelKey(int key) {
     break;
   case A::Add: change(ChannelAdd); break;
   case A::Unread: nextUnread(); break;
+  case A::AllRead: markAllRead(); break;
   case A::Channel: openChannelInfo(page == Chat ? recipient : conversations[selected], page); break;
   case A::Clipboard: openClipboard(); break;
   case A::Maps: change(Library); break;

@@ -1927,6 +1927,10 @@
   "en": "Encryption test failed",
   "text": "Échec du test de chiffrement"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "Oui"
+ },
  "f371db6e": {
   "en": "New message from ",
   "text": "Message de "
@@ -1938,10 +1942,6 @@
  "4d782bae": {
   "en": "Queued: waiting for delivery",
   "text": "En file : attente de remise"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "Oui"
  },
  "67884f31": {
   "en": "Queued: broadcast",
@@ -1970,6 +1970,10 @@
  "1fef106f": {
   "en": "No unread messages",
   "text": "Aucun message non lu"
+ },
+ "8ac53aac": {
+  "en": "All messages read",
+  "text": "Tout est lu"
  },
  "1abf61d8": {
   "en": "Clock not set",
@@ -2232,6 +2236,10 @@
  "73c66160": {
   "en": "Choose",
   "text": "Choisir"
+ },
+ "6d267c97": {
+  "en": "Mark all as read",
+  "text": "Tout marquer comme lu"
  },
  "1716578a": {
   "en": "Channel details",

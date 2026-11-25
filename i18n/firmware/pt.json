@@ -1927,6 +1927,10 @@
   "en": "Encryption test failed",
   "text": "Teste de criptografia falhou"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "Lig"
+ },
  "f371db6e": {
   "en": "New message from ",
   "text": "Nova mensagem de "
@@ -1938,10 +1942,6 @@
  "4d782bae": {
   "en": "Queued: waiting for delivery",
   "text": "Na fila: aguardando entrega"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "Lig"
  },
  "67884f31": {
   "en": "Queued: broadcast",
@@ -1970,6 +1970,10 @@
  "1fef106f": {
   "en": "No unread messages",
   "text": "Nenhuma mensagem por ler"
+ },
+ "8ac53aac": {
+  "en": "All messages read",
+  "text": "Tudo lido"
  },
  "1abf61d8": {
   "en": "Clock not set",
@@ -2232,6 +2236,10 @@
  "73c66160": {
   "en": "Choose",
   "text": "Escolher"
+ },
+ "6d267c97": {
+  "en": "Mark all as read",
+  "text": "Marcar tudo como lido"
  },
  "1716578a": {
   "en": "Channel details",

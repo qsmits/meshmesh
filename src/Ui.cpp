@@ -681,20 +681,22 @@ unsigned unreadTotal() {
     if (conversations[i]) n += unread(conversations[i]);
   return n;
 }
-void markRead() {
+// A chat read up to its newest message. persist false: the caller saves the marks once (mark all as read).
+bool markReadFor(uint64_t id, bool persist = true) {
   uint32_t at = 0;
   for (unsigned i = 0; i < meshRadio.historyCount; i++) {
     auto& m = meshRadio.history[i];
-    if (belongs(m, recipient) && !m.outgoing) {
+    if (belongs(m, id) && !m.outgoing) {
       at = max(at, m.timestamp);
       m.seen = true;
     }
   }
-  if (at <= readAt(recipient)) return;
+  if (at <= readAt(id)) return false;
   for (unsigned i = 0; i < markCount; i++)
-    if (marks[i].id == recipient) marks[i].at = at;
+    if (marks[i].id == id) marks[i].at = at;
+  if (!persist) return true;
   Preferences p;
-  String key = readKey(recipient);
+  String key = readKey(id);
   if (saveMarks()) {
     if (p.begin("meshmesh-ui", false)) {
       if (p.isKey(key.c_str())) p.remove(key.c_str());
@@ -704,6 +706,26 @@ void markRead() {
     p.putUInt(key.c_str(), at);
     p.end();
   }
+  return true;
+}
+void markRead() {
+  markReadFor(recipient);
+}
+// Every chat read at once (MENU in the chat list): one save of the marks.
+void markAllRead() {
+  threads();
+  bool changed = false;
+  for (unsigned i = 0; i < conversationCount; i++)
+    if (conversations[i] && markReadFor(conversations[i], false)) changed = true;
+  if (changed && !saveMarks()) { // no storage: the marks go to NVS, as markReadFor does
+    Preferences p;
+    if (p.begin("meshmesh-ui", false)) {
+      for (unsigned i = 0; i < markCount; i++) p.putUInt(readKey(marks[i].id).c_str(), marks[i].at);
+      p.end();
+    }
+  }
+  notice(t("All messages read"), ok);
+  dirty = true;
 }
 void rememberComposer() {
   int chosen = -1;
@@ -3202,6 +3224,7 @@ String uiStatus() {
   d["composer_bytes"] = composer.length();
   d["editing"] = editing;
   d["chat_offset"] = chatOffset;
+  d["unread"] = unreadTotal();
   d["idle_seconds"] = (millis() - lastInput) / 1000;
   if (page == Folder) {
     d["folder"] = folderOpen;

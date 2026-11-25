@@ -557,6 +557,23 @@ static void scenario() {
     config.apps[0] = 0;
     printf("wardrive UI checks passed\n");
   }
+  // Mark all as read: MENU in the chat list (Add a channel, Next unread, Mark all as read).
+  key(0x81);
+  if (uiStatus().indexOf("\"unread\":0") >= 0) {
+    printf("FAIL mark all read: nothing unread to start with\n");
+    exit(1);
+  }
+  key(0x83);
+  key(0xb6);
+  key(0xb6);
+  shot("threads-menu-all-read");
+  key(13);
+  if (uiStatus().indexOf("\"unread\":0") < 0) {
+    printf("FAIL mark all read: %s\n", uiStatus().c_str());
+    exit(1);
+  }
+  shot("threads-all-read");
+  key(0x82);
   // Power off last: the screens stop taking keys once it is requested.
   key(0x82);
   showPasteFailure();

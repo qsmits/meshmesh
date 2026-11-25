@@ -1915,6 +1915,10 @@
   "en": "Encryption test failed",
   "text": "Tes enkripsi gagal"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "On"
+ },
  "f371db6e": {
   "en": "New message from ",
   "text": "Pesan baru dari "
@@ -1926,10 +1930,6 @@
  "4d782bae": {
   "en": "Queued: waiting for delivery",
   "text": "Antre: menunggu pengiriman"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "On"
  },
  "67884f31": {
   "en": "Queued: broadcast",
@@ -1958,6 +1958,10 @@
  "1fef106f": {
   "en": "No unread messages",
   "text": "Tidak ada pesan yang belum dibaca"
+ },
+ "8ac53aac": {
+  "en": "All messages read",
+  "text": "Semua sudah dibaca"
  },
  "1abf61d8": {
   "en": "Clock not set",
@@ -2219,6 +2223,10 @@
  "73c66160": {
   "en": "Choose",
   "text": "Pilih"
+ },
+ "6d267c97": {
+  "en": "Mark all as read",
+  "text": "Tandai semua sudah dibaca"
  },
  "1716578a": {
   "en": "Channel details",

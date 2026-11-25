@@ -1975,6 +1975,10 @@
   "en": "Encryption test failed",
   "text": "فشل اختبار التشفير"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "يعمل"
+ },
  "f371db6e": {
   "en": "New message from ",
   "text": "رسالة جديدة من "
@@ -1986,10 +1990,6 @@
  "4d782bae": {
   "en": "Queued: waiting for delivery",
   "text": "في الطابور: بانتظار التسليم"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "يعمل"
  },
  "67884f31": {
   "en": "Queued: broadcast",
@@ -2018,6 +2018,10 @@
  "1fef106f": {
   "en": "No unread messages",
   "text": "لا توجد رسائل غير مقروءة"
+ },
+ "8ac53aac": {
+  "en": "All messages read",
+  "text": "تمت قراءة الكل"
  },
  "1abf61d8": {
   "en": "Clock not set",
@@ -2284,6 +2288,10 @@
  "73c66160": {
   "en": "Choose",
   "text": "اختيار"
+ },
+ "6d267c97": {
+  "en": "Mark all as read",
+  "text": "تعليم الكل كمقروء"
  },
  "1716578a": {
   "en": "Channel details",

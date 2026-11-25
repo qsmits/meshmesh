@@ -1915,6 +1915,10 @@
   "en": "Encryption test failed",
   "text": "加密测试失败"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "开"
+ },
  "f371db6e": {
   "en": "New message from ",
   "text": "新消息来自 "
@@ -1926,10 +1930,6 @@
  "4d782bae": {
   "en": "Queued: waiting for delivery",
   "text": "已排队: 等待送达确认"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "开"
  },
  "67884f31": {
   "en": "Queued: broadcast",
@@ -1958,6 +1958,10 @@
  "1fef106f": {
   "en": "No unread messages",
   "text": "没有未读消息"
+ },
+ "8ac53aac": {
+  "en": "All messages read",
+  "text": "已全部读完"
  },
  "1abf61d8": {
   "en": "Clock not set",
@@ -2219,6 +2223,10 @@
  "73c66160": {
   "en": "Choose",
   "text": "选择"
+ },
+ "6d267c97": {
+  "en": "Mark all as read",
+  "text": "全部标为已读"
  },
  "1716578a": {
   "en": "Channel details",
