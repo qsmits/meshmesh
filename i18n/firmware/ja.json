@@ -2529,6 +2529,771 @@
   "en": "Save failed",
   "text": "保存失敗"
  },
+ "7764bddd": {
+  "en": "A ping is under way",
+  "text": "ping 送信中"
+ },
+ "6df5060c": {
+  "en": "Hold again: erase",
+  "text": "もう一度長押し：消去"
+ },
+ "d283d10c": {
+  "en": "OK queued",
+  "text": "OKを送信待ち"
+ },
+ "376c2317": {
+  "en": "Not queued",
+  "text": "送信できず"
+ },
+ "fa990075": {
+  "en": "Path reset",
+  "text": "経路をリセット"
+ },
+ "2d97fd4e": {
+  "en": "Sent, waiting",
+  "text": "送信済み、待機中"
+ },
+ "1ea76214": {
+  "en": "Not sent",
+  "text": "未送信"
+ },
+ "3e0b7996": {
+  "en": "Needs a GPS fix",
+  "text": "GPS測位が必要"
+ },
+ "78cc37f0": {
+  "en": "Homing started",
+  "text": "探索を開始"
+ },
+ "b901ffbb": {
+  "en": "Calibrating 10 s",
+  "text": "校正中 10秒"
+ },
+ "3a9c0bfa": {
+  "en": "No beacon heard",
+  "text": "ビーコン受信なし"
+ },
+ "732df7cc": {
+  "en": "Hold again: turn off",
+  "text": "もう一度長押し：オフ"
+ },
+ "f0f648f0": {
+  "en": "Encryption: OK",
+  "text": "暗号: OK"
+ },
+ "445b8620": {
+  "en": "Encryption: ERROR",
+  "text": "暗号: エラー"
+ },
+ "845fe7f2": {
+  "en": "hold: ",
+  "text": "長押し: "
+ },
+ "74680ff5": {
+  "en": "hold: menu",
+  "text": "長押し: メニュー"
+ },
+ "34ce44a5": {
+  "en": "Exit",
+  "text": "終了"
+ },
+ "c90a7f1a": {
+  "en": "No recipients",
+  "text": "送信先なし"
+ },
+ "43d50db4": {
+  "en": "click-next hold-run",
+  "text": "押す:次 長押し:実行"
+ },
+ "8dce1b4b": {
+  "en": "click: close",
+  "text": "押す: 閉じる"
+ },
+ "2725da48": {
+  "en": "hold ",
+  "text": "長押し "
+ },
+ "f47b9c0a": {
+  "en": "To turn on:",
+  "text": "電源オン："
+ },
+ "cdbcee99": {
+  "en": "No repeaters yet",
+  "text": "リピーターなし"
+ },
+ "d8b69508": {
+  "en": "dB echo ",
+  "text": "dB エコー "
+ },
+ "56a8ebda": {
+  "en": "LED / screen / popup",
+  "text": "LED / 画面 / 表示"
+ },
+ "0aba55a5": {
+  "en": "  near ",
+  "text": "  付近 "
+ },
+ "ee9f0444": {
+  "en": "USB power",
+  "text": "USB給電"
+ },
+ "92f97927": {
+  "en": "  relay on",
+  "text": "  中継オン"
+ },
+ "b5bdd13c": {
+  "en": "You",
+  "text": "自分"
+ },
+ "58300254": {
+  "en": "queued",
+  "text": "送信待ち"
+ },
+ "6261af7f": {
+  "en": "sent",
+  "text": "送信済み"
+ },
+ "625c860f": {
+  "en": "delivered",
+  "text": "配達済み"
+ },
+ "9ad03b43": {
+  "en": "no ACK",
+  "text": "ACKなし"
+ },
+ "0d6af842": {
+  "en": "They appear here",
+  "text": "ここに表示されます"
+ },
+ "4021ba19": {
+  "en": "saved, not heard",
+  "text": "保存済み、未受信"
+ },
+ "187974c2": {
+  "en": " m ",
+  "text": " m "
+ },
+ "43a7ef59": {
+  "en": " km ",
+  "text": " km "
+ },
+ "2029f0ba": {
+  "en": "has GPS position",
+  "text": "GPS位置あり"
+ },
+ "1ee0cbd7": {
+  "en": "No nodes heard",
+  "text": "ノード未検出"
+ },
+ "6ad1d9a1": {
+  "en": "hold: announce",
+  "text": "長押し: アドバート"
+ },
+ "e8b6db6e": {
+  "en": "Motion CSI",
+  "text": "CSI動き検知"
+ },
+ "65e6150d": {
+  "en": "no Wi-Fi: AP on?",
+  "text": "Wi-Fiなし: AP使用中?"
+ },
+ "d5c0cd8a": {
+  "en": "no beacon",
+  "text": "ビーコンなし"
+ },
+ "37c16fa8": {
+  "en": "CSI frozen",
+  "text": "CSI停止"
+ },
+ "3f5b0605": {
+  "en": "calibrating",
+  "text": "校正中"
+ },
+ "c8028cd1": {
+  "en": "still",
+  "text": "静止"
+ },
+ "4de9b3ae": {
+  "en": " / thr ",
+  "text": " / 閾値 "
+ },
+ "5ed1fbd7": {
+  "en": "/s",
+  "text": "/秒"
+ },
+ "e234733b": {
+  "en": "lost",
+  "text": "ロスト"
+ },
+ "4d109126": {
+  "en": "no signal",
+  "text": "信号なし"
+ },
+ "127be1ad": {
+  "en": "stronger",
+  "text": "強くなった"
+ },
+ "07c50682": {
+  "en": "weaker",
+  "text": "弱くなった"
+ },
+ "a0cbfc13": {
+  "en": "steady",
+  "text": "変化なし"
+ },
+ "58b577e3": {
+  "en": " pkts",
+  "text": " パケット"
+ },
+ "beb6a03a": {
+  "en": "CSI beacon ",
+  "text": "CSIビーコン "
+ },
+ "c9225c36": {
+  "en": "Beacon on",
+  "text": "ビーコン送信中"
+ },
+ "525ead8b": {
+  "en": "hold: switch off",
+  "text": "長押し: オフ"
+ },
+ "587de994": {
+  "en": "Wi-Fi and LoRa",
+  "text": "Wi-FiとLoRa"
+ },
+ "1c43d491": {
+  "en": "Position fix",
+  "text": "測位済み"
+ },
+ "60cec72a": {
+  "en": "Old GPS date",
+  "text": "GPSの日付が古い"
+ },
+ "867f6426": {
+  "en": "Searching sky",
+  "text": "衛星を探索中"
+ },
+ "3e4cca02": {
+  "en": "No data from GPS",
+  "text": "GPSからデータなし"
+ },
+ "f6d172c1": {
+  "en": "Satellites ",
+  "text": "衛星 "
+ },
+ "d457dbe7": {
+  "en": "Clock ",
+  "text": "時計 "
+ },
+ "0d410d04": {
+  "en": "Access point off",
+  "text": "アクセスポイント オフ"
+ },
+ "925b4cdd": {
+  "en": "Web chat and settings",
+  "text": "Webチャットと設定"
+ },
+ "510149b4": {
+  "en": "Bluetooth off",
+  "text": "Bluetooth オフ"
+ },
+ "975182c4": {
+  "en": "Secure pairing",
+  "text": "安全なペアリング"
+ },
+ "f1e1a6d4": {
+  "en": "Battery: ",
+  "text": "電池: "
+ },
+ "e20b979b": {
+  "en": "volts",
+  "text": "電圧"
+ },
+ "75f9fa5a": {
+  "en": "percent",
+  "text": "パーセント"
+ },
+ "129c2249": {
+  "en": "relayed ",
+  "text": "中継 "
+ },
+ "24b9070d": {
+  "en": "  rejected ",
+  "text": "  拒否 "
+ },
+ "e28a5100": {
+  "en": "up ",
+  "text": "稼働 "
+ },
+ "4feda587": {
+  "en": "  boot ",
+  "text": "  起動 "
+ },
+ "3da19f7a": {
+  "en": "hold: open",
+  "text": "長押し: 開く"
+ },
+ "6a5979e5": {
+  "en": "click-next hold-send",
+  "text": "クリック選択 長押し送信"
+ },
+ "f60c4582": {
+  "en": "s",
+  "text": "秒"
+ },
+ "e80c2f78": {
+  "en": "m",
+  "text": "分"
+ },
+ "ed0c3757": {
+  "en": "h",
+  "text": "時間"
+ },
+ "e10c2473": {
+  "en": "d",
+  "text": "日"
+ },
+ "af671227": {
+  "en": "path ?",
+  "text": "経路 ?"
+ },
+ "1bce552b": {
+  "en": " hops",
+  "text": " ホップ"
+ },
+ "0438ccd1": {
+  "en": "Delivery not confirmed",
+  "text": "配達未確認"
+ },
+ "4bab65fd": {
+  "en": "repeater",
+  "text": "リピーター"
+ },
+ "37fd327a": {
+  "en": "room",
+  "text": "ルーム"
+ },
+ "83b6367b": {
+  "en": "sensor",
+  "text": "センサー"
+ },
+ "a24bf9ab": {
+  "en": "chat",
+  "text": "チャット"
+ },
+ "64866487": {
+  "en": "login: waiting",
+  "text": "ログイン：待機中"
+ },
+ "d957add7": {
+  "en": "logged in: admin",
+  "text": "ログイン：管理者"
+ },
+ "bd1a4b8e": {
+  "en": "login refused",
+  "text": "ログイン拒否"
+ },
+ "f9f14d5f": {
+  "en": "login: no answer",
+  "text": "ログイン：応答なし"
+ },
+ "94439fdb": {
+  "en": "trace: waiting",
+  "text": "トレース：待機中"
+ },
+ "3792fa0b": {
+  "en": "trace: no answer",
+  "text": "トレース：応答なし"
+ },
+ "cef137e6": {
+  "en": "SNR ",
+  "text": "SNR "
+ },
+ "73713780": {
+  "en": "status: waiting",
+  "text": "状態：待機中"
+ },
+ "71df82b0": {
+  "en": "status: no answer",
+  "text": "状態：応答なし"
+ },
+ "94a0707a": {
+  "en": "V up ",
+  "text": "V 稼働 "
+ },
+ "59c32085": {
+  "en": "h rx ",
+  "text": "時 受 "
+ },
+ "773611af": {
+  "en": "phone",
+  "text": "スマホ"
+ },
+ "5fb7b228": {
+  "en": "watch",
+  "text": "ウォッチ"
+ },
+ "1d87ea26": {
+  "en": "headphones",
+  "text": "ヘッドホン"
+ },
+ "4245804b": {
+  "en": "phone/watch",
+  "text": "スマホ/ウォッチ"
+ },
+ "abd207a3": {
+  "en": "hidden network",
+  "text": "隠しネットワーク"
+ },
+ "433213b3": {
+  "en": "Wi-Fi: access point",
+  "text": "Wi-Fi: AP使用中"
+ },
+ "1b46e0ae": {
+  "en": "Wi-Fi busy",
+  "text": "Wi-Fi使用中"
+ },
+ "c927d40c": {
+  "en": "scanning...",
+  "text": "スキャン中..."
+ },
+ "112800bb": {
+  "en": "BLE busy",
+  "text": "BLE使用中"
+ },
+ "843c79a8": {
+  "en": "BLE error",
+  "text": "BLEエラー"
+ },
+ "f8611fd5": {
+  "en": "Messages",
+  "text": "メッセージ"
+ },
+ "381d190f": {
+  "en": "Notifications",
+  "text": "通知"
+ },
+ "e74c644a": {
+  "en": "Modules",
+  "text": "モジュール"
+ },
+ "c749a5e6": {
+  "en": "Power",
+  "text": "出力"
+ },
+ "cae55685": {
+  "en": "Relay limit",
+  "text": "中継上限"
+ },
+ "99ba3a7e": {
+  "en": "Relaying",
+  "text": "中継"
+ },
+ "d4372516": {
+  "en": "Path hash",
+  "text": "パスハッシュ"
+ },
+ "ead1fb48": {
+  "en": "Previous",
+  "text": "以前"
+ },
+ "61342fd0": {
+  "en": "on",
+  "text": "オン"
+ },
+ "ada7afdb": {
+  "en": "none",
+  "text": "なし"
+ },
+ "ee7b9448": {
+  "en": "keep",
+  "text": "維持"
+ },
+ "99eb4caf": {
+  "en": " rpt...",
+  "text": " 中継..."
+ },
+ "aeb4bd84": {
+  "en": {
+   "one": "found",
+   "other": "found"
+  },
+  "forms": {
+   "other": "{n} 件"
+  }
+ },
+ "d492831a": {
+  "en": "Radio test: restart returns",
+  "text": "テスト：再起動で戻る"
+ },
+ "8fbb2b89": {
+  "en": "click-digit+ hold-next",
+  "text": "押す:桁+ 長押し:次"
+ },
+ "4d060666": {
+  "en": "click-change hold-done",
+  "text": "押す:変更 長押し:完了"
+ },
+ "e6fc9c8e": {
+  "en": "click-next hold-save",
+  "text": "押す:次 長押し:保存"
+ },
+ "849a40b6": {
+  "en": "click-next hold-leave",
+  "text": "押す:次 長押し:戻る"
+ },
+ "9e1a1817": {
+  "en": "click-next hold-change",
+  "text": "押す:次 長押し:変更"
+ },
+ "4fd25c86": {
+  "en": "No position: GPS/phone",
+  "text": "位置なし: GPS/スマホ"
+ },
+ "a679aabd": {
+  "en": "Phone ",
+  "text": "スマホ "
+ },
+ "37cc8d2a": {
+  "en": "Ping: listening...",
+  "text": "ping: 受信待ち..."
+ },
+ "46dd80ed": {
+  "en": "No pings yet",
+  "text": "ping なし"
+ },
+ "280669ca": {
+  "en": "Ping: nobody repeated",
+  "text": "ping: 応答なし"
+ },
+ "9e3d87eb": {
+  "en": "Ping: ",
+  "text": "ping: "
+ },
+ "317f4047": {
+  "en": " rpt, ",
+  "text": " 中継, "
+ },
+ "19ec0a14": {
+  "en": "Invitation to channel ",
+  "text": "チャンネル招待 "
+ },
+ "3614fff0": {
+  "en": "Joined ",
+  "text": "参加: "
+ },
+ "ec50c78a": {
+  "en": "Already in ",
+  "text": "参加済み: "
+ },
+ "7bb69d7b": {
+  "en": "Not joined",
+  "text": "参加できません"
+ },
+ "eb761881": {
+  "en": "Stop wardrive",
+  "text": "電波マップ停止"
+ },
+ "5cb4426d": {
+  "en": "Start: listen + ping",
+  "text": "開始: 受信 + ping"
+ },
+ "282b6065": {
+  "en": "Ping now",
+  "text": "今すぐ ping"
+ },
+ "755d765c": {
+  "en": "Show summary",
+  "text": "概要を表示"
+ },
+ "90c5347a": {
+  "en": "Repeaters heard",
+  "text": "聞こえたリピーター"
+ },
+ "87afae0f": {
+  "en": "Wake: ",
+  "text": "起動： "
+ },
+ "5a745d7f": {
+  "en": "Popup: ",
+  "text": "表示： "
+ },
+ "13254bc4": {
+  "en": "all",
+  "text": "すべて"
+ },
+ "644908b5": {
+  "en": "TX alert: ",
+  "text": "送信通知： "
+ },
+ "4ca9cc3b": {
+  "en": "Join ",
+  "text": "参加: "
+ },
+ "e29c938b": {
+  "en": "Join heard ",
+  "text": "参加: "
+ },
+ "e6af9e0a": {
+  "en": "Announce node",
+  "text": "ノードをアドバート"
+ },
+ "56eafb8f": {
+  "en": "Reply: OK",
+  "text": "返信: OK"
+ },
+ "9dbda18a": {
+  "en": "Reply: Got it",
+  "text": "返信: 了解"
+ },
+ "ce15d57a": {
+  "en": "Older message",
+  "text": "前のメッセージ"
+ },
+ "bf4762dd": {
+  "en": "Newer message",
+  "text": "次のメッセージ"
+ },
+ "967ad824": {
+  "en": "Next node",
+  "text": "次のノード"
+ },
+ "85610d67": {
+  "en": "Send: OK",
+  "text": "送信: OK"
+ },
+ "423b6110": {
+  "en": "Log in",
+  "text": "ログイン"
+ },
+ "55647eb0": {
+  "en": "Log in as guest",
+  "text": "ゲストでログイン"
+ },
+ "df6cf078": {
+  "en": "Server status",
+  "text": "サーバー状態"
+ },
+ "0618ca8b": {
+  "en": "Trace route",
+  "text": "経路をトレース"
+ },
+ "81c648bf": {
+  "en": "Turn GPS off",
+  "text": "GPSをオフ"
+ },
+ "25c4d45b": {
+  "en": "Turn GPS on",
+  "text": "GPSをオン"
+ },
+ "27669571": {
+  "en": "Turn Wi-Fi off",
+  "text": "Wi-Fiをオフ"
+ },
+ "88aa7275": {
+  "en": "Turn Wi-Fi on",
+  "text": "Wi-Fiをオン"
+ },
+ "932d19aa": {
+  "en": "Turn BLE off",
+  "text": "BLEをオフ"
+ },
+ "e4b7a4f0": {
+  "en": "Turn BLE on",
+  "text": "BLEをオン"
+ },
+ "0d719ca9": {
+  "en": "Language: ",
+  "text": "言語: "
+ },
+ "70a1c010": {
+  "en": "Battery: volts",
+  "text": "電池: 電圧"
+ },
+ "5a5d7e3d": {
+  "en": "Battery: percent",
+  "text": "電池: パーセント"
+ },
+ "34426849": {
+  "en": "Double click: back",
+  "text": "ダブルクリック: 戻る"
+ },
+ "b0db8877": {
+  "en": "Double click: off",
+  "text": "ダブルクリック: オフ"
+ },
+ "56bc324a": {
+  "en": "Screen off: ",
+  "text": "画面オフ: "
+ },
+ "0ac95089": {
+  "en": "never",
+  "text": "しない"
+ },
+ "e55ee2b1": {
+  "en": "Contrast: ",
+  "text": "コントラスト: "
+ },
+ "bb53d167": {
+  "en": "Home in: ",
+  "text": "探索: "
+ },
+ "ebbb7a7c": {
+  "en": "Next signal",
+  "text": "次の信号"
+ },
+ "95b8d74b": {
+  "en": "Stop beacon",
+  "text": "ビーコン停止"
+ },
+ "42fc3fcd": {
+  "en": "CSI beacon: on",
+  "text": "CSIビーコン: オン"
+ },
+ "4c494547": {
+  "en": "CSI motion: off",
+  "text": "CSI動き検知: オフ"
+ },
+ "4b2d12ac": {
+  "en": "CSI sensor",
+  "text": "CSI受信機"
+ },
+ "86d255b7": {
+  "en": "Calibrate (10 s still)",
+  "text": "校正 (10秒静止)"
+ },
+ "8d1d9b67": {
+  "en": "Stop homing",
+  "text": "探索を停止"
+ },
+ "2c559fd7": {
+  "en": "Turn off...",
+  "text": "電源オフ..."
+ },
+ "1bc8e3ca": {
+  "en": "Radio...",
+  "text": "無線..."
+ },
+ "c5f2b8d0": {
+  "en": "Encryption test",
+  "text": "暗号テスト"
+ },
+ "57a21e12": {
+  "en": "< Close menu",
+  "text": "< メニューを閉じる"
+ },
+ "28cda4a5": {
+  "en": "Reply ",
+  "text": "返信 "
+ },
+ "195cfed6": {
+  "en": " queued",
+  "text": " 送信待ち"
+ },
+ "692b3757": {
+  "en": "Reply not queued",
+  "text": "返信を送信できず"
+ },
  "55edebd2": {
   "en": "Login",
   "text": "ログイン"

@@ -123,7 +123,11 @@ void Hardware::text(int x, int y, const String& v, uint16_t color) {
   font.print(v);
 }
 void Hardware::line(int y, const String& v, uint16_t color) {
+#if defined(MM_HELTEC_V4)
+  text(0, y, v, color);
+#else
   text(12, y, v, color);
+#endif
 }
 // Radio
 static uint32_t nextId = 900;
@@ -247,8 +251,13 @@ static void save(const std::string& path) {
   for (int y = 0; y < c.height(); y++)
     for (int x = 0; x < c.width(); x++) {
       uint16_t p = c.getPixel(x, y);
+#if defined(MM_HELTEC_V4) // the monochrome OLED: any colour is lit
+      uint8_t v = p ? 255 : 0;
+      uint8_t rgb[3] = {v, v, v};
+#else
       uint8_t rgb[3] = {uint8_t((p >> 11 & 31) * 255 / 31), uint8_t((p >> 5 & 63) * 255 / 63),
                         uint8_t((p & 31) * 255 / 31)};
+#endif
       fwrite(rgb, 1, 3, f);
     }
   fclose(f);
@@ -295,6 +304,7 @@ static void shot(const char* name) {
 static uint64_t peerId(int i) {
   return (uint64_t(0x1F + i * 0x2B) << 56) | 0xB2C3D4E5F600ULL | uint64_t(i * 0x1111);
 } // 8-byte IDs as MeshCore keys give
+#if !defined(MM_COMPACT)
 // Start from normal mode, then exercise the actual clipboard and device-name editor.
 static void showPasteFailure() {
   key(0x81);
@@ -309,6 +319,7 @@ static void showPasteFailure() {
   key(0xa3);
   key('r');
 }
+#endif
 static void scenario();
 #include "wishlist_checks.inc"
 #ifdef MM_DESKTOP_SIMULATOR
@@ -320,8 +331,13 @@ int main(int argc, char** argv) {
 #ifdef MM_DESKTOP_SIMULATOR
   config.lang = LangEn;
 #endif
+#if defined(MM_HELTEC_V4)
+  hardware.canvas = new GFXcanvas16(128, 64);
+  strcpy(config.name, "Heltec V4");
+#else
   hardware.canvas = new GFXcanvas16(320, 240);
   strcpy(config.name, "M9");
+#endif
   hardware.font.begin(*hardware.canvas);
   hardware.font.setFont(u8g2_font_6x13_t_cyrillic);
   hardware.font.setFontMode(1);
@@ -498,4 +514,8 @@ int main(int argc, char** argv) {
   return 0;
 #endif
 }
+#if defined(MM_HELTEC_V4)
+#include "scenario_heltec.inc"
+#else
 #include "scenario.inc"
+#endif

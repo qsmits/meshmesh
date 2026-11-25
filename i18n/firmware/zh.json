@@ -2529,6 +2529,771 @@
   "en": "Save failed",
   "text": "保存失败"
  },
+ "7764bddd": {
+  "en": "A ping is under way",
+  "text": "ping 进行中"
+ },
+ "6df5060c": {
+  "en": "Hold again: erase",
+  "text": "再次长按：擦除"
+ },
+ "d283d10c": {
+  "en": "OK queued",
+  "text": "OK 已排队"
+ },
+ "376c2317": {
+  "en": "Not queued",
+  "text": "未排队"
+ },
+ "fa990075": {
+  "en": "Path reset",
+  "text": "路径已重置"
+ },
+ "2d97fd4e": {
+  "en": "Sent, waiting",
+  "text": "已发送，等待中"
+ },
+ "1ea76214": {
+  "en": "Not sent",
+  "text": "未发送"
+ },
+ "3e0b7996": {
+  "en": "Needs a GPS fix",
+  "text": "需要 GPS 定位"
+ },
+ "78cc37f0": {
+  "en": "Homing started",
+  "text": "开始测向"
+ },
+ "b901ffbb": {
+  "en": "Calibrating 10 s",
+  "text": "校准中 10 秒"
+ },
+ "3a9c0bfa": {
+  "en": "No beacon heard",
+  "text": "未收到信标"
+ },
+ "732df7cc": {
+  "en": "Hold again: turn off",
+  "text": "再次长按：关机"
+ },
+ "f0f648f0": {
+  "en": "Encryption: OK",
+  "text": "加密: OK"
+ },
+ "445b8620": {
+  "en": "Encryption: ERROR",
+  "text": "加密: 错误"
+ },
+ "845fe7f2": {
+  "en": "hold: ",
+  "text": "长按: "
+ },
+ "74680ff5": {
+  "en": "hold: menu",
+  "text": "长按: 菜单"
+ },
+ "34ce44a5": {
+  "en": "Exit",
+  "text": "退出"
+ },
+ "c90a7f1a": {
+  "en": "No recipients",
+  "text": "无收件人"
+ },
+ "43d50db4": {
+  "en": "click-next hold-run",
+  "text": "单击-下一项 长按-执行"
+ },
+ "8dce1b4b": {
+  "en": "click: close",
+  "text": "单击: 关闭"
+ },
+ "2725da48": {
+  "en": "hold ",
+  "text": "按住 "
+ },
+ "f47b9c0a": {
+  "en": "To turn on:",
+  "text": "开机："
+ },
+ "cdbcee99": {
+  "en": "No repeaters yet",
+  "text": "无中继"
+ },
+ "d8b69508": {
+  "en": "dB echo ",
+  "text": "dB 回声 "
+ },
+ "56a8ebda": {
+  "en": "LED / screen / popup",
+  "text": "LED / 屏幕 / 弹窗"
+ },
+ "0aba55a5": {
+  "en": "  near ",
+  "text": "  附近 "
+ },
+ "ee9f0444": {
+  "en": "USB power",
+  "text": "USB 供电"
+ },
+ "92f97927": {
+  "en": "  relay on",
+  "text": "  转发开"
+ },
+ "b5bdd13c": {
+  "en": "You",
+  "text": "你"
+ },
+ "58300254": {
+  "en": "queued",
+  "text": "排队"
+ },
+ "6261af7f": {
+  "en": "sent",
+  "text": "已发送"
+ },
+ "625c860f": {
+  "en": "delivered",
+  "text": "已送达"
+ },
+ "9ad03b43": {
+  "en": "no ACK",
+  "text": "无 ACK"
+ },
+ "0d6af842": {
+  "en": "They appear here",
+  "text": "消息会显示在这里"
+ },
+ "4021ba19": {
+  "en": "saved, not heard",
+  "text": "已保存,未收到"
+ },
+ "187974c2": {
+  "en": " m ",
+  "text": " 米 "
+ },
+ "43a7ef59": {
+  "en": " km ",
+  "text": " 公里 "
+ },
+ "2029f0ba": {
+  "en": "has GPS position",
+  "text": "有 GPS 位置"
+ },
+ "1ee0cbd7": {
+  "en": "No nodes heard",
+  "text": "尚未收到节点"
+ },
+ "6ad1d9a1": {
+  "en": "hold: announce",
+  "text": "长按: 通告"
+ },
+ "e8b6db6e": {
+  "en": "Motion CSI",
+  "text": "CSI 移动"
+ },
+ "65e6150d": {
+  "en": "no Wi-Fi: AP on?",
+  "text": "无 Wi-Fi: 热点开?"
+ },
+ "d5c0cd8a": {
+  "en": "no beacon",
+  "text": "无信标"
+ },
+ "37c16fa8": {
+  "en": "CSI frozen",
+  "text": "CSI 无变化"
+ },
+ "3f5b0605": {
+  "en": "calibrating",
+  "text": "校准中"
+ },
+ "c8028cd1": {
+  "en": "still",
+  "text": "静止"
+ },
+ "4de9b3ae": {
+  "en": " / thr ",
+  "text": " / 阈值 "
+ },
+ "5ed1fbd7": {
+  "en": "/s",
+  "text": "/秒"
+ },
+ "e234733b": {
+  "en": "lost",
+  "text": "丢失"
+ },
+ "4d109126": {
+  "en": "no signal",
+  "text": "无信号"
+ },
+ "127be1ad": {
+  "en": "stronger",
+  "text": "变强"
+ },
+ "07c50682": {
+  "en": "weaker",
+  "text": "变弱"
+ },
+ "a0cbfc13": {
+  "en": "steady",
+  "text": "稳定"
+ },
+ "58b577e3": {
+  "en": " pkts",
+  "text": " 包"
+ },
+ "beb6a03a": {
+  "en": "CSI beacon ",
+  "text": "CSI 信标 "
+ },
+ "c9225c36": {
+  "en": "Beacon on",
+  "text": "信标已开启"
+ },
+ "525ead8b": {
+  "en": "hold: switch off",
+  "text": "长按: 关闭"
+ },
+ "587de994": {
+  "en": "Wi-Fi and LoRa",
+  "text": "Wi-Fi 和 LoRa"
+ },
+ "1c43d491": {
+  "en": "Position fix",
+  "text": "已定位"
+ },
+ "60cec72a": {
+  "en": "Old GPS date",
+  "text": "GPS 日期过旧"
+ },
+ "867f6426": {
+  "en": "Searching sky",
+  "text": "正在搜星"
+ },
+ "3e4cca02": {
+  "en": "No data from GPS",
+  "text": "GPS 无数据"
+ },
+ "f6d172c1": {
+  "en": "Satellites ",
+  "text": "卫星 "
+ },
+ "d457dbe7": {
+  "en": "Clock ",
+  "text": "时钟 "
+ },
+ "0d410d04": {
+  "en": "Access point off",
+  "text": "热点已关闭"
+ },
+ "925b4cdd": {
+  "en": "Web chat and settings",
+  "text": "网页聊天和设置"
+ },
+ "510149b4": {
+  "en": "Bluetooth off",
+  "text": "Bluetooth 关"
+ },
+ "975182c4": {
+  "en": "Secure pairing",
+  "text": "安全配对"
+ },
+ "f1e1a6d4": {
+  "en": "Battery: ",
+  "text": "电池: "
+ },
+ "e20b979b": {
+  "en": "volts",
+  "text": "电压"
+ },
+ "75f9fa5a": {
+  "en": "percent",
+  "text": "百分比"
+ },
+ "129c2249": {
+  "en": "relayed ",
+  "text": "已转发 "
+ },
+ "24b9070d": {
+  "en": "  rejected ",
+  "text": "  已拒绝 "
+ },
+ "e28a5100": {
+  "en": "up ",
+  "text": "运行 "
+ },
+ "4feda587": {
+  "en": "  boot ",
+  "text": "  启动 "
+ },
+ "3da19f7a": {
+  "en": "hold: open",
+  "text": "长按: 打开"
+ },
+ "6a5979e5": {
+  "en": "click-next hold-send",
+  "text": "点击选择 长按发送"
+ },
+ "f60c4582": {
+  "en": "s",
+  "text": "秒"
+ },
+ "e80c2f78": {
+  "en": "m",
+  "text": "分"
+ },
+ "ed0c3757": {
+  "en": "h",
+  "text": "时"
+ },
+ "e10c2473": {
+  "en": "d",
+  "text": "天"
+ },
+ "af671227": {
+  "en": "path ?",
+  "text": "路径 ?"
+ },
+ "1bce552b": {
+  "en": " hops",
+  "text": " 跳"
+ },
+ "0438ccd1": {
+  "en": "Delivery not confirmed",
+  "text": "送达未确认"
+ },
+ "4bab65fd": {
+  "en": "repeater",
+  "text": "中继器"
+ },
+ "37fd327a": {
+  "en": "room",
+  "text": "房间"
+ },
+ "83b6367b": {
+  "en": "sensor",
+  "text": "传感器"
+ },
+ "a24bf9ab": {
+  "en": "chat",
+  "text": "聊天"
+ },
+ "64866487": {
+  "en": "login: waiting",
+  "text": "登录：等待中"
+ },
+ "d957add7": {
+  "en": "logged in: admin",
+  "text": "登录：管理员"
+ },
+ "bd1a4b8e": {
+  "en": "login refused",
+  "text": "登录被拒"
+ },
+ "f9f14d5f": {
+  "en": "login: no answer",
+  "text": "登录：无应答"
+ },
+ "94439fdb": {
+  "en": "trace: waiting",
+  "text": "追踪：等待中"
+ },
+ "3792fa0b": {
+  "en": "trace: no answer",
+  "text": "追踪：无应答"
+ },
+ "cef137e6": {
+  "en": "SNR ",
+  "text": "SNR "
+ },
+ "73713780": {
+  "en": "status: waiting",
+  "text": "状态：等待中"
+ },
+ "71df82b0": {
+  "en": "status: no answer",
+  "text": "状态：无应答"
+ },
+ "94a0707a": {
+  "en": "V up ",
+  "text": "V 运行 "
+ },
+ "59c32085": {
+  "en": "h rx ",
+  "text": "时 收 "
+ },
+ "773611af": {
+  "en": "phone",
+  "text": "手机"
+ },
+ "5fb7b228": {
+  "en": "watch",
+  "text": "手表"
+ },
+ "1d87ea26": {
+  "en": "headphones",
+  "text": "耳机"
+ },
+ "4245804b": {
+  "en": "phone/watch",
+  "text": "手机/手表"
+ },
+ "abd207a3": {
+  "en": "hidden network",
+  "text": "隐藏网络"
+ },
+ "433213b3": {
+  "en": "Wi-Fi: access point",
+  "text": "Wi-Fi: 热点"
+ },
+ "1b46e0ae": {
+  "en": "Wi-Fi busy",
+  "text": "Wi-Fi 忙"
+ },
+ "c927d40c": {
+  "en": "scanning...",
+  "text": "扫描中..."
+ },
+ "112800bb": {
+  "en": "BLE busy",
+  "text": "BLE 忙"
+ },
+ "843c79a8": {
+  "en": "BLE error",
+  "text": "BLE 错误"
+ },
+ "f8611fd5": {
+  "en": "Messages",
+  "text": "消息"
+ },
+ "381d190f": {
+  "en": "Notifications",
+  "text": "通知"
+ },
+ "e74c644a": {
+  "en": "Modules",
+  "text": "模块"
+ },
+ "c749a5e6": {
+  "en": "Power",
+  "text": "功率"
+ },
+ "cae55685": {
+  "en": "Relay limit",
+  "text": "转发上限"
+ },
+ "99ba3a7e": {
+  "en": "Relaying",
+  "text": "转发"
+ },
+ "d4372516": {
+  "en": "Path hash",
+  "text": "路径哈希"
+ },
+ "ead1fb48": {
+  "en": "Previous",
+  "text": "原设置"
+ },
+ "61342fd0": {
+  "en": "on",
+  "text": "开"
+ },
+ "ada7afdb": {
+  "en": "none",
+  "text": "无"
+ },
+ "ee7b9448": {
+  "en": "keep",
+  "text": "保留"
+ },
+ "99eb4caf": {
+  "en": " rpt...",
+  "text": " 中继..."
+ },
+ "aeb4bd84": {
+  "en": {
+   "one": "found",
+   "other": "found"
+  },
+  "forms": {
+   "other": "找到 {n}"
+  }
+ },
+ "d492831a": {
+  "en": "Radio test: restart returns",
+  "text": "测试：重启恢复"
+ },
+ "8fbb2b89": {
+  "en": "click-digit+ hold-next",
+  "text": "单击-位+ 长按-下一位"
+ },
+ "4d060666": {
+  "en": "click-change hold-done",
+  "text": "单击-修改 长按-完成"
+ },
+ "e6fc9c8e": {
+  "en": "click-next hold-save",
+  "text": "单击-下一项 长按-保存"
+ },
+ "849a40b6": {
+  "en": "click-next hold-leave",
+  "text": "单击-下一项 长按-退出"
+ },
+ "9e1a1817": {
+  "en": "click-next hold-change",
+  "text": "单击-下一项 长按-修改"
+ },
+ "4fd25c86": {
+  "en": "No position: GPS/phone",
+  "text": "无位置：GPS/手机"
+ },
+ "a679aabd": {
+  "en": "Phone ",
+  "text": "手机 "
+ },
+ "37cc8d2a": {
+  "en": "Ping: listening...",
+  "text": "Ping：监听中..."
+ },
+ "46dd80ed": {
+  "en": "No pings yet",
+  "text": "暂无 ping"
+ },
+ "280669ca": {
+  "en": "Ping: nobody repeated",
+  "text": "Ping：无人回应"
+ },
+ "9e3d87eb": {
+  "en": "Ping: ",
+  "text": "Ping: "
+ },
+ "317f4047": {
+  "en": " rpt, ",
+  "text": " 中继, "
+ },
+ "19ec0a14": {
+  "en": "Invitation to channel ",
+  "text": "频道邀请 "
+ },
+ "3614fff0": {
+  "en": "Joined ",
+  "text": "已加入 "
+ },
+ "ec50c78a": {
+  "en": "Already in ",
+  "text": "已在频道 "
+ },
+ "7bb69d7b": {
+  "en": "Not joined",
+  "text": "加入失败"
+ },
+ "eb761881": {
+  "en": "Stop wardrive",
+  "text": "停止扫街测绘"
+ },
+ "5cb4426d": {
+  "en": "Start: listen + ping",
+  "text": "开始：接收 + ping"
+ },
+ "282b6065": {
+  "en": "Ping now",
+  "text": "立即 ping"
+ },
+ "755d765c": {
+  "en": "Show summary",
+  "text": "显示概况"
+ },
+ "90c5347a": {
+  "en": "Repeaters heard",
+  "text": "听到的中继"
+ },
+ "87afae0f": {
+  "en": "Wake: ",
+  "text": "唤醒： "
+ },
+ "5a745d7f": {
+  "en": "Popup: ",
+  "text": "弹窗： "
+ },
+ "13254bc4": {
+  "en": "all",
+  "text": "全部"
+ },
+ "644908b5": {
+  "en": "TX alert: ",
+  "text": "发送提醒： "
+ },
+ "4ca9cc3b": {
+  "en": "Join ",
+  "text": "加入 "
+ },
+ "e29c938b": {
+  "en": "Join heard ",
+  "text": "加入 "
+ },
+ "e6af9e0a": {
+  "en": "Announce node",
+  "text": "通告节点"
+ },
+ "56eafb8f": {
+  "en": "Reply: OK",
+  "text": "回复: OK"
+ },
+ "9dbda18a": {
+  "en": "Reply: Got it",
+  "text": "回复: 收到"
+ },
+ "ce15d57a": {
+  "en": "Older message",
+  "text": "上一条"
+ },
+ "bf4762dd": {
+  "en": "Newer message",
+  "text": "下一条"
+ },
+ "967ad824": {
+  "en": "Next node",
+  "text": "下一个节点"
+ },
+ "85610d67": {
+  "en": "Send: OK",
+  "text": "发送: OK"
+ },
+ "423b6110": {
+  "en": "Log in",
+  "text": "登录"
+ },
+ "55647eb0": {
+  "en": "Log in as guest",
+  "text": "以访客登录"
+ },
+ "df6cf078": {
+  "en": "Server status",
+  "text": "服务器状态"
+ },
+ "0618ca8b": {
+  "en": "Trace route",
+  "text": "追踪路由"
+ },
+ "81c648bf": {
+  "en": "Turn GPS off",
+  "text": "关闭 GPS"
+ },
+ "25c4d45b": {
+  "en": "Turn GPS on",
+  "text": "开启 GPS"
+ },
+ "27669571": {
+  "en": "Turn Wi-Fi off",
+  "text": "关闭 Wi-Fi"
+ },
+ "88aa7275": {
+  "en": "Turn Wi-Fi on",
+  "text": "开启 Wi-Fi"
+ },
+ "932d19aa": {
+  "en": "Turn BLE off",
+  "text": "关闭 BLE"
+ },
+ "e4b7a4f0": {
+  "en": "Turn BLE on",
+  "text": "开启 BLE"
+ },
+ "0d719ca9": {
+  "en": "Language: ",
+  "text": "语言: "
+ },
+ "70a1c010": {
+  "en": "Battery: volts",
+  "text": "电池: 电压"
+ },
+ "5a5d7e3d": {
+  "en": "Battery: percent",
+  "text": "电池: 百分比"
+ },
+ "34426849": {
+  "en": "Double click: back",
+  "text": "双击: 返回"
+ },
+ "b0db8877": {
+  "en": "Double click: off",
+  "text": "双击: 关"
+ },
+ "56bc324a": {
+  "en": "Screen off: ",
+  "text": "熄屏: "
+ },
+ "0ac95089": {
+  "en": "never",
+  "text": "从不"
+ },
+ "e55ee2b1": {
+  "en": "Contrast: ",
+  "text": "对比度: "
+ },
+ "bb53d167": {
+  "en": "Home in: ",
+  "text": "测向: "
+ },
+ "ebbb7a7c": {
+  "en": "Next signal",
+  "text": "下一个信号"
+ },
+ "95b8d74b": {
+  "en": "Stop beacon",
+  "text": "停止信标"
+ },
+ "42fc3fcd": {
+  "en": "CSI beacon: on",
+  "text": "CSI 信标: 开启"
+ },
+ "4c494547": {
+  "en": "CSI motion: off",
+  "text": "CSI 移动: 关"
+ },
+ "4b2d12ac": {
+  "en": "CSI sensor",
+  "text": "CSI 接收端"
+ },
+ "86d255b7": {
+  "en": "Calibrate (10 s still)",
+  "text": "校准 (静止 10 秒)"
+ },
+ "8d1d9b67": {
+  "en": "Stop homing",
+  "text": "停止测向"
+ },
+ "2c559fd7": {
+  "en": "Turn off...",
+  "text": "关机..."
+ },
+ "1bc8e3ca": {
+  "en": "Radio...",
+  "text": "无线电..."
+ },
+ "c5f2b8d0": {
+  "en": "Encryption test",
+  "text": "加密测试"
+ },
+ "57a21e12": {
+  "en": "< Close menu",
+  "text": "< 关闭菜单"
+ },
+ "28cda4a5": {
+  "en": "Reply ",
+  "text": "回复 "
+ },
+ "195cfed6": {
+  "en": " queued",
+  "text": " 已排队"
+ },
+ "692b3757": {
+  "en": "Reply not queued",
+  "text": "回复未排队"
+ },
  "55edebd2": {
   "en": "Login",
   "text": "登录"

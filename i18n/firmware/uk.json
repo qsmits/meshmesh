@@ -2557,6 +2557,773 @@
   "en": "Save failed",
   "text": "Помилка запису"
  },
+ "7764bddd": {
+  "en": "A ping is under way",
+  "text": "Пінг уже йде"
+ },
+ "6df5060c": {
+  "en": "Hold again: erase",
+  "text": "Утрим. ще: стерти"
+ },
+ "d283d10c": {
+  "en": "OK queued",
+  "text": "OK у черзі"
+ },
+ "376c2317": {
+  "en": "Not queued",
+  "text": "Не надіслано"
+ },
+ "fa990075": {
+  "en": "Path reset",
+  "text": "Шлях скинуто"
+ },
+ "2d97fd4e": {
+  "en": "Sent, waiting",
+  "text": "Надіслано, чекаємо"
+ },
+ "1ea76214": {
+  "en": "Not sent",
+  "text": "Не надіслано"
+ },
+ "3e0b7996": {
+  "en": "Needs a GPS fix",
+  "text": "Потрібна позиція GPS"
+ },
+ "78cc37f0": {
+  "en": "Homing started",
+  "text": "Пеленг розпочато"
+ },
+ "b901ffbb": {
+  "en": "Calibrating 10 s",
+  "text": "Калібрування 10 с"
+ },
+ "3a9c0bfa": {
+  "en": "No beacon heard",
+  "text": "Маяк не чути"
+ },
+ "732df7cc": {
+  "en": "Hold again: turn off",
+  "text": "Утрим. ще: вимкнути"
+ },
+ "f0f648f0": {
+  "en": "Encryption: OK",
+  "text": "Шифрування: OK"
+ },
+ "445b8620": {
+  "en": "Encryption: ERROR",
+  "text": "Шифрування: помилка"
+ },
+ "845fe7f2": {
+  "en": "hold: ",
+  "text": "утрим: "
+ },
+ "74680ff5": {
+  "en": "hold: menu",
+  "text": "утрим: меню"
+ },
+ "34ce44a5": {
+  "en": "Exit",
+  "text": "Вихід"
+ },
+ "c90a7f1a": {
+  "en": "No recipients",
+  "text": "Немає одержувачів"
+ },
+ "43d50db4": {
+  "en": "click-next hold-run",
+  "text": "клік-далі утрим-OK"
+ },
+ "8dce1b4b": {
+  "en": "click: close",
+  "text": "клік: закрити"
+ },
+ "2725da48": {
+  "en": "hold ",
+  "text": "утримати "
+ },
+ "f47b9c0a": {
+  "en": "To turn on:",
+  "text": "Увімкнути:"
+ },
+ "cdbcee99": {
+  "en": "No repeaters yet",
+  "text": "Ретрансляторів немає"
+ },
+ "d8b69508": {
+  "en": "dB echo ",
+  "text": "дБ ехо "
+ },
+ "56a8ebda": {
+  "en": "LED / screen / popup",
+  "text": "LED / екран / вікно"
+ },
+ "0aba55a5": {
+  "en": "  near ",
+  "text": "  поруч "
+ },
+ "ee9f0444": {
+  "en": "USB power",
+  "text": "Живлення USB"
+ },
+ "92f97927": {
+  "en": "  relay on",
+  "text": "  ретрансляція"
+ },
+ "b5bdd13c": {
+  "en": "You",
+  "text": "Ви"
+ },
+ "58300254": {
+  "en": "queued",
+  "text": "черга"
+ },
+ "6261af7f": {
+  "en": "sent",
+  "text": "надісл."
+ },
+ "625c860f": {
+  "en": "delivered",
+  "text": "доставлено"
+ },
+ "9ad03b43": {
+  "en": "no ACK",
+  "text": "без ACK"
+ },
+ "0d6af842": {
+  "en": "They appear here",
+  "text": "Тут з'являться вхідні"
+ },
+ "4021ba19": {
+  "en": "saved, not heard",
+  "text": "збережений, не чути"
+ },
+ "187974c2": {
+  "en": " m ",
+  "text": " м "
+ },
+ "43a7ef59": {
+  "en": " km ",
+  "text": " км "
+ },
+ "2029f0ba": {
+  "en": "has GPS position",
+  "text": "є GPS-позиція"
+ },
+ "1ee0cbd7": {
+  "en": "No nodes heard",
+  "text": "Вузлів ще не чути"
+ },
+ "6ad1d9a1": {
+  "en": "hold: announce",
+  "text": "утримуйте: оголосити"
+ },
+ "e8b6db6e": {
+  "en": "Motion CSI",
+  "text": "Рух CSI"
+ },
+ "65e6150d": {
+  "en": "no Wi-Fi: AP on?",
+  "text": "немає Wi-Fi: точка?"
+ },
+ "d5c0cd8a": {
+  "en": "no beacon",
+  "text": "немає маяка"
+ },
+ "37c16fa8": {
+  "en": "CSI frozen",
+  "text": "CSI стоїть"
+ },
+ "3f5b0605": {
+  "en": "calibrating",
+  "text": "калібрування"
+ },
+ "c8028cd1": {
+  "en": "still",
+  "text": "тихо"
+ },
+ "4de9b3ae": {
+  "en": " / thr ",
+  "text": " / поріг "
+ },
+ "5ed1fbd7": {
+  "en": "/s",
+  "text": "/с"
+ },
+ "e234733b": {
+  "en": "lost",
+  "text": "втрачено"
+ },
+ "4d109126": {
+  "en": "no signal",
+  "text": "немає сигналу"
+ },
+ "127be1ad": {
+  "en": "stronger",
+  "text": "тепліше"
+ },
+ "07c50682": {
+  "en": "weaker",
+  "text": "холодніше"
+ },
+ "a0cbfc13": {
+  "en": "steady",
+  "text": "рівно"
+ },
+ "58b577e3": {
+  "en": " pkts",
+  "text": " пак."
+ },
+ "beb6a03a": {
+  "en": "CSI beacon ",
+  "text": "Маяк CSI "
+ },
+ "c9225c36": {
+  "en": "Beacon on",
+  "text": "Маяк увімкнено"
+ },
+ "525ead8b": {
+  "en": "hold: switch off",
+  "text": "утримуйте: вимкнути"
+ },
+ "587de994": {
+  "en": "Wi-Fi and LoRa",
+  "text": "Wi-Fi і LoRa"
+ },
+ "1c43d491": {
+  "en": "Position fix",
+  "text": "Позиція є"
+ },
+ "60cec72a": {
+  "en": "Old GPS date",
+  "text": "Стара дата GPS"
+ },
+ "867f6426": {
+  "en": "Searching sky",
+  "text": "Пошук супутників"
+ },
+ "3e4cca02": {
+  "en": "No data from GPS",
+  "text": "Немає даних GPS"
+ },
+ "f6d172c1": {
+  "en": "Satellites ",
+  "text": "Супутники "
+ },
+ "d457dbe7": {
+  "en": "Clock ",
+  "text": "Час "
+ },
+ "0d410d04": {
+  "en": "Access point off",
+  "text": "Точка доступу вимк."
+ },
+ "925b4cdd": {
+  "en": "Web chat and settings",
+  "text": "Веб-чат, налаштування"
+ },
+ "510149b4": {
+  "en": "Bluetooth off",
+  "text": "Bluetooth вимк."
+ },
+ "975182c4": {
+  "en": "Secure pairing",
+  "text": "Захищене спряження"
+ },
+ "f1e1a6d4": {
+  "en": "Battery: ",
+  "text": "Батарея: "
+ },
+ "e20b979b": {
+  "en": "volts",
+  "text": "вольти"
+ },
+ "75f9fa5a": {
+  "en": "percent",
+  "text": "відсотки"
+ },
+ "129c2249": {
+  "en": "relayed ",
+  "text": "переслано "
+ },
+ "24b9070d": {
+  "en": "  rejected ",
+  "text": "  відхил. "
+ },
+ "e28a5100": {
+  "en": "up ",
+  "text": "робота "
+ },
+ "4feda587": {
+  "en": "  boot ",
+  "text": "  запуск "
+ },
+ "3da19f7a": {
+  "en": "hold: open",
+  "text": "утрим: відкрити"
+ },
+ "6a5979e5": {
+  "en": "click-next hold-send",
+  "text": "клік-вибір утрим-слати"
+ },
+ "f60c4582": {
+  "en": "s",
+  "text": "с"
+ },
+ "e80c2f78": {
+  "en": "m",
+  "text": "хв"
+ },
+ "ed0c3757": {
+  "en": "h",
+  "text": "год"
+ },
+ "e10c2473": {
+  "en": "d",
+  "text": "д"
+ },
+ "af671227": {
+  "en": "path ?",
+  "text": "шлях ?"
+ },
+ "1bce552b": {
+  "en": " hops",
+  "text": " хоп."
+ },
+ "0438ccd1": {
+  "en": "Delivery not confirmed",
+  "text": "Доставку не підтверджено"
+ },
+ "4bab65fd": {
+  "en": "repeater",
+  "text": "ретранслятор"
+ },
+ "37fd327a": {
+  "en": "room",
+  "text": "кімната"
+ },
+ "83b6367b": {
+  "en": "sensor",
+  "text": "датчик"
+ },
+ "a24bf9ab": {
+  "en": "chat",
+  "text": "чат"
+ },
+ "64866487": {
+  "en": "login: waiting",
+  "text": "вхід: чекаємо"
+ },
+ "d957add7": {
+  "en": "logged in: admin",
+  "text": "вхід: адмін"
+ },
+ "bd1a4b8e": {
+  "en": "login refused",
+  "text": "вхід: відмова"
+ },
+ "f9f14d5f": {
+  "en": "login: no answer",
+  "text": "вхід: немає відповіді"
+ },
+ "94439fdb": {
+  "en": "trace: waiting",
+  "text": "траса: чекаємо"
+ },
+ "3792fa0b": {
+  "en": "trace: no answer",
+  "text": "траса: немає відповіді"
+ },
+ "cef137e6": {
+  "en": "SNR ",
+  "text": "SNR "
+ },
+ "73713780": {
+  "en": "status: waiting",
+  "text": "статус: чекаємо"
+ },
+ "71df82b0": {
+  "en": "status: no answer",
+  "text": "статус: немає відповіді"
+ },
+ "94a0707a": {
+  "en": "V up ",
+  "text": "В "
+ },
+ "59c32085": {
+  "en": "h rx ",
+  "text": "год прм "
+ },
+ "773611af": {
+  "en": "phone",
+  "text": "телефон"
+ },
+ "5fb7b228": {
+  "en": "watch",
+  "text": "годинник"
+ },
+ "1d87ea26": {
+  "en": "headphones",
+  "text": "навушники"
+ },
+ "4245804b": {
+  "en": "phone/watch",
+  "text": "телефон/годинник"
+ },
+ "abd207a3": {
+  "en": "hidden network",
+  "text": "прихована мережа"
+ },
+ "433213b3": {
+  "en": "Wi-Fi: access point",
+  "text": "Wi-Fi: точка доступу"
+ },
+ "1b46e0ae": {
+  "en": "Wi-Fi busy",
+  "text": "Wi-Fi зайнятий"
+ },
+ "c927d40c": {
+  "en": "scanning...",
+  "text": "сканую..."
+ },
+ "112800bb": {
+  "en": "BLE busy",
+  "text": "BLE зайнятий"
+ },
+ "843c79a8": {
+  "en": "BLE error",
+  "text": "Помилка BLE"
+ },
+ "f8611fd5": {
+  "en": "Messages",
+  "text": "Повідомлення"
+ },
+ "381d190f": {
+  "en": "Notifications",
+  "text": "Сповіщення"
+ },
+ "e74c644a": {
+  "en": "Modules",
+  "text": "Модулі"
+ },
+ "c749a5e6": {
+  "en": "Power",
+  "text": "Потужність"
+ },
+ "cae55685": {
+  "en": "Relay limit",
+  "text": "Межа перес."
+ },
+ "99ba3a7e": {
+  "en": "Relaying",
+  "text": "Ретрансляція"
+ },
+ "d4372516": {
+  "en": "Path hash",
+  "text": "Хеш шляху"
+ },
+ "ead1fb48": {
+  "en": "Previous",
+  "text": "Попередні"
+ },
+ "61342fd0": {
+  "en": "on",
+  "text": "увімк"
+ },
+ "ada7afdb": {
+  "en": "none",
+  "text": "немає"
+ },
+ "ee7b9448": {
+  "en": "keep",
+  "text": "залишити"
+ },
+ "99eb4caf": {
+  "en": " rpt...",
+  "text": " ретр..."
+ },
+ "aeb4bd84": {
+  "en": {
+   "one": "found",
+   "other": "found"
+  },
+  "forms": {
+   "one": "{n} знайдено",
+   "few": "{n} знайдено",
+   "many": "{n} знайдено"
+  }
+ },
+ "d492831a": {
+  "en": "Radio test: restart returns",
+  "text": "Тест: перезапуск поверне"
+ },
+ "8fbb2b89": {
+  "en": "click-digit+ hold-next",
+  "text": "клік-цифра+ утрим-далі"
+ },
+ "4d060666": {
+  "en": "click-change hold-done",
+  "text": "клік-змін. утрим-готово"
+ },
+ "e6fc9c8e": {
+  "en": "click-next hold-save",
+  "text": "клік-далі утрим-зберегти"
+ },
+ "849a40b6": {
+  "en": "click-next hold-leave",
+  "text": "клік-далі утрим-вийти"
+ },
+ "9e1a1817": {
+  "en": "click-next hold-change",
+  "text": "клік-далі утрим-змін."
+ },
+ "4fd25c86": {
+  "en": "No position: GPS/phone",
+  "text": "Немає позиції: GPS/тел."
+ },
+ "a679aabd": {
+  "en": "Phone ",
+  "text": "Тел. "
+ },
+ "37cc8d2a": {
+  "en": "Ping: listening...",
+  "text": "Пінг: слухаю..."
+ },
+ "46dd80ed": {
+  "en": "No pings yet",
+  "text": "Пінгів поки немає"
+ },
+ "280669ca": {
+  "en": "Ping: nobody repeated",
+  "text": "Пінг: ніхто не відповів"
+ },
+ "9e3d87eb": {
+  "en": "Ping: ",
+  "text": "Пінг: "
+ },
+ "317f4047": {
+  "en": " rpt, ",
+  "text": " ретр., "
+ },
+ "19ec0a14": {
+  "en": "Invitation to channel ",
+  "text": "Запрошення в канал "
+ },
+ "3614fff0": {
+  "en": "Joined ",
+  "text": "Приєднано: "
+ },
+ "ec50c78a": {
+  "en": "Already in ",
+  "text": "Уже в каналі "
+ },
+ "7bb69d7b": {
+  "en": "Not joined",
+  "text": "Не вдалося вступити"
+ },
+ "eb761881": {
+  "en": "Stop wardrive",
+  "text": "Зупинити вардрайв"
+ },
+ "5cb4426d": {
+  "en": "Start: listen + ping",
+  "text": "Старт: приймання + пінги"
+ },
+ "282b6065": {
+  "en": "Ping now",
+  "text": "Пінг зараз"
+ },
+ "755d765c": {
+  "en": "Show summary",
+  "text": "Показати зведення"
+ },
+ "90c5347a": {
+  "en": "Repeaters heard",
+  "text": "Почуті ретранслятори"
+ },
+ "87afae0f": {
+  "en": "Wake: ",
+  "text": "Екран: "
+ },
+ "5a745d7f": {
+  "en": "Popup: ",
+  "text": "Вікно: "
+ },
+ "13254bc4": {
+  "en": "all",
+  "text": "усі"
+ },
+ "644908b5": {
+  "en": "TX alert: ",
+  "text": "Помилка TX: "
+ },
+ "4ca9cc3b": {
+  "en": "Join ",
+  "text": "Вступити: "
+ },
+ "e29c938b": {
+  "en": "Join heard ",
+  "text": "Вступити: "
+ },
+ "e6af9e0a": {
+  "en": "Announce node",
+  "text": "Оголосити вузол"
+ },
+ "56eafb8f": {
+  "en": "Reply: OK",
+  "text": "Відповісти: OK"
+ },
+ "9dbda18a": {
+  "en": "Reply: Got it",
+  "text": "Відповісти: Прийнято"
+ },
+ "ce15d57a": {
+  "en": "Older message",
+  "text": "Попереднє"
+ },
+ "bf4762dd": {
+  "en": "Newer message",
+  "text": "Наступне"
+ },
+ "967ad824": {
+  "en": "Next node",
+  "text": "Наступний вузол"
+ },
+ "85610d67": {
+  "en": "Send: OK",
+  "text": "Написати: OK"
+ },
+ "423b6110": {
+  "en": "Log in",
+  "text": "Увійти"
+ },
+ "55647eb0": {
+  "en": "Log in as guest",
+  "text": "Увійти гостем"
+ },
+ "df6cf078": {
+  "en": "Server status",
+  "text": "Статус сервера"
+ },
+ "0618ca8b": {
+  "en": "Trace route",
+  "text": "Трасування"
+ },
+ "81c648bf": {
+  "en": "Turn GPS off",
+  "text": "Вимкнути GPS"
+ },
+ "25c4d45b": {
+  "en": "Turn GPS on",
+  "text": "Увімкнути GPS"
+ },
+ "27669571": {
+  "en": "Turn Wi-Fi off",
+  "text": "Вимкнути Wi-Fi"
+ },
+ "88aa7275": {
+  "en": "Turn Wi-Fi on",
+  "text": "Увімкнути Wi-Fi"
+ },
+ "932d19aa": {
+  "en": "Turn BLE off",
+  "text": "Вимкнути BLE"
+ },
+ "e4b7a4f0": {
+  "en": "Turn BLE on",
+  "text": "Увімкнути BLE"
+ },
+ "0d719ca9": {
+  "en": "Language: ",
+  "text": "Мова: "
+ },
+ "70a1c010": {
+  "en": "Battery: volts",
+  "text": "Батарея: вольти"
+ },
+ "5a5d7e3d": {
+  "en": "Battery: percent",
+  "text": "Батарея: відсотки"
+ },
+ "34426849": {
+  "en": "Double click: back",
+  "text": "Подвійний клік: назад"
+ },
+ "b0db8877": {
+  "en": "Double click: off",
+  "text": "Подвійний клік: вимк."
+ },
+ "56bc324a": {
+  "en": "Screen off: ",
+  "text": "Гасити: "
+ },
+ "0ac95089": {
+  "en": "never",
+  "text": "ніколи"
+ },
+ "e55ee2b1": {
+  "en": "Contrast: ",
+  "text": "Контраст: "
+ },
+ "bb53d167": {
+  "en": "Home in: ",
+  "text": "Пеленг: "
+ },
+ "ebbb7a7c": {
+  "en": "Next signal",
+  "text": "Наступний сигнал"
+ },
+ "95b8d74b": {
+  "en": "Stop beacon",
+  "text": "Вимкнути маяк"
+ },
+ "42fc3fcd": {
+  "en": "CSI beacon: on",
+  "text": "Маяк CSI: увімкнути"
+ },
+ "4c494547": {
+  "en": "CSI motion: off",
+  "text": "Рух CSI: вимк."
+ },
+ "4b2d12ac": {
+  "en": "CSI sensor",
+  "text": "Приймач CSI"
+ },
+ "86d255b7": {
+  "en": "Calibrate (10 s still)",
+  "text": "Калібр. (10 с тихо)"
+ },
+ "8d1d9b67": {
+  "en": "Stop homing",
+  "text": "Зупинити пеленг"
+ },
+ "2c559fd7": {
+  "en": "Turn off...",
+  "text": "Вимкнути..."
+ },
+ "1bc8e3ca": {
+  "en": "Radio...",
+  "text": "Радіо..."
+ },
+ "c5f2b8d0": {
+  "en": "Encryption test",
+  "text": "Тест шифрування"
+ },
+ "57a21e12": {
+  "en": "< Close menu",
+  "text": "< Закрити меню"
+ },
+ "28cda4a5": {
+  "en": "Reply ",
+  "text": "Відповідь "
+ },
+ "195cfed6": {
+  "en": " queued",
+  "text": " у черзі"
+ },
+ "692b3757": {
+  "en": "Reply not queued",
+  "text": "Відповідь не пішла"
+ },
  "55edebd2": {
   "en": "Login",
   "text": "Увійти"

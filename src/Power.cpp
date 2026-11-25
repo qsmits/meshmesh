@@ -171,7 +171,11 @@ bool radiosUp() {
 }
 bool inUse() {
   return !uiScreenOff() || radiosUp() || portalActive() || radar.active || radar.csi != Radar::CsiOff ||
-         wifiProbeActive() || bleProbeActive() || internet.state != Internet::Off || millis() - inputAt < 10000;
+         wifiProbeActive() || bleProbeActive() ||
+#if !defined(MM_COMPACT)
+         internet.state != Internet::Off ||
+#endif
+         millis() - inputAt < 10000;
 }
 } // namespace
 

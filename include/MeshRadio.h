@@ -7,7 +7,11 @@
 #include "BoardPins.h"
 #include "Channels.h"
 #include "Config.h"
+#if defined(MM_RADIO_SX1262)
+using DeviceRadio = SX1262;
+#else
 using DeviceRadio = LR1110;
+#endif
 class MeshCoreBackend;
 class MeshCoreRadioAdapter;
 struct CompanionCore;
@@ -120,10 +124,12 @@ public:
   void begin();
   void tick();
   bool applyConfig();
+#if defined(MM_RADIO_LR1110)
   enum class SampleResult { Ok, Busy, Error };
   const char* spectrumWaitReason = "";
-  // A band sample returns the transceiver to the mesh frequency before yielding the loop.
+  // A band sample returns the transceiver to the mesh frequency before yielding the loop (the M9 spectrum).
   SampleResult spectrumSample(bool offChannel, float mhz, int8_t& dbm);
+#endif
   // The network search (NetFind.h): the transceiver on another profile, the settings unchanged; an unset profile
   // returns to the settings. applyConfig ends the search.
   bool tune(const RadioProfile& profile);

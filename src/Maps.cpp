@@ -40,6 +40,7 @@ double py(double lat, int z) {
 }
 } // namespace
 void Maps::begin() {
+#if !defined(MM_COMPACT) // the Heltec has no SD card and no map screen
   available = hardware.sdOk;
   // The last view the user chose (or the IP location) opens the map without any preloaded area.
   Preferences p;
@@ -55,6 +56,7 @@ void Maps::begin() {
       haveCenter = true;
     }
   }
+#endif
   if (!available) return;
   SD.mkdir("/meshmesh");
   SD.mkdir("/meshmesh/maps");
@@ -710,6 +712,7 @@ String Maps::command(const String& line) {
 // Web tiles: the worker downloads and decodes; the loop shows the tile at once and
 // writes the same MMT1 file an upload would, in 4 KB steps so LoRa keeps its turn.
 void Maps::netTick() {
+#if !defined(MM_COMPACT)
   bool on = internet.online();
   if (on != wasOnline) {
     wasOnline = on;
@@ -775,6 +778,7 @@ void Maps::netTick() {
   for (auto& t : tiles)
     if (t.fetch && t.z == zoom && millis() - t.stamp < 3000 && (!next || int32_t(t.stamp - next->stamp) > 0)) next = &t;
   if (next) internet.fetchTile(next->z, next->x, next->y);
+#endif
 }
 void Maps::cacheBegin(int z, int x, int y, const uint16_t* pixels) {
   if (output) return;

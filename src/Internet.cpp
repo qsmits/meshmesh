@@ -24,6 +24,8 @@ volatile uint32_t ntpReceived = 0;
 void ntpReady(struct timeval* tv) {
   ntpReceived = uint32_t(tv->tv_sec);
 }
+// Map tiles and the IP location (the M9 map): a worker task with its buffers in PSRAM. The Heltec has no map.
+#if !defined(MM_COMPACT)
 const size_t BodyMax = 768 * 1024;
 // Worker hand-off: the loop fills a job and sets Busy; the worker sets Done;
 // the loop reads the result and sets Idle. Buffers belong to whoever holds the phase.
@@ -181,6 +183,7 @@ void work(void*) {
     setPhase(Done);
   }
 }
+#endif
 String urlFor(int z, int x, int y) {
   String u = tileTemplate;
   u.replace("{z}", String(z));
@@ -215,6 +218,7 @@ void Internet::begin() {
     strlcpy(tileTemplate, DefaultTiles, sizeof tileTemplate);
   sntp_set_time_sync_notification_cb(ntpReady);
   ntpDue = millis() + 60000;
+#if !defined(MM_COMPACT)
   pixels = (uint16_t*)heap_caps_malloc(256 * 256 * 2, MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
   body = (uint8_t*)heap_caps_malloc(BodyMax, MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
   // Core 0 beside the Wi-Fi stack, below its priority; the loop (LoRa, UI, SD) keeps core 1.
@@ -226,6 +230,7 @@ void Internet::begin() {
     worker = nullptr;
     error = "Internet task RAM";
   }
+#endif
 }
 void Internet::load(unsigned i, String& name, String& password) {
   Preferences p;
@@ -617,6 +622,7 @@ void Internet::tick() {
     }
   }
 }
+#if !defined(MM_COMPACT)
 bool Internet::idle() {
   return worker && current() == Idle;
 }
@@ -664,6 +670,24 @@ Internet::Result Internet::result(int& z, int& x, int& y, const uint16_t*& out, 
 void Internet::release() {
   if (current() == Done) setPhase(Idle);
 }
+#else
+bool Internet::idle() {
+  return false;
+}
+bool Internet::backingOff() {
+  return false;
+}
+bool Internet::fetchTile(int, int, int) {
+  return false;
+}
+bool Internet::locate() {
+  return false;
+}
+Internet::Result Internet::result(int&, int&, int&, const uint16_t*&, double&, double&) {
+  return None;
+}
+void Internet::release() {}
+#endif
 String Internet::tileUrl() {
   return tileTemplate;
 }
@@ -730,6 +754,7 @@ String Internet::info() {
   d["ntp_retry_seconds"] = int32_t(ntpDue - millis()) > 0 ? (ntpDue - millis()) / 1000 : 0;
   d["clock_age_seconds"] = hardware.clockAge() / 1000;
   d["preferred"] = preferred;
+#if !defined(MM_COMPACT)
   d["tile_url"] = tileTemplate;
   d["tiles"] = tiles;
   d["tile_errors"] = tileErrors;
@@ -737,6 +762,7 @@ String Internet::info() {
   d["worker"] = worker != nullptr;
   d["busy"] = worker && current() != Idle;
   d["backoff"] = backingOff();
+#endif
   d["heap"] = ESP.getFreeHeap();
   d["heap_min_block"] = heap_caps_get_largest_free_block(MALLOC_CAP_INTERNAL | MALLOC_CAP_8BIT);
   String s;

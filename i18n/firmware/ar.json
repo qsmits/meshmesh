@@ -2599,6 +2599,776 @@
   "en": "Save failed",
   "text": "فشل الحفظ"
  },
+ "7764bddd": {
+  "en": "A ping is under way",
+  "text": "البينغ جارٍ"
+ },
+ "6df5060c": {
+  "en": "Hold again: erase",
+  "text": "اضغط مطولا مجددا: مسح"
+ },
+ "d283d10c": {
+  "en": "OK queued",
+  "text": "OK في الطابور"
+ },
+ "376c2317": {
+  "en": "Not queued",
+  "text": "لم يرسل"
+ },
+ "fa990075": {
+  "en": "Path reset",
+  "text": "تم تصفير المسار"
+ },
+ "2d97fd4e": {
+  "en": "Sent, waiting",
+  "text": "أُرسل، بانتظار الرد"
+ },
+ "1ea76214": {
+  "en": "Not sent",
+  "text": "لم يُرسل"
+ },
+ "3e0b7996": {
+  "en": "Needs a GPS fix",
+  "text": "يلزم موقع GPS"
+ },
+ "78cc37f0": {
+  "en": "Homing started",
+  "text": "بدأ التعقب"
+ },
+ "b901ffbb": {
+  "en": "Calibrating 10 s",
+  "text": "معايرة 10 ث"
+ },
+ "3a9c0bfa": {
+  "en": "No beacon heard",
+  "text": "لم تسمع منارة"
+ },
+ "732df7cc": {
+  "en": "Hold again: turn off",
+  "text": "اضغط مطولا مجددا: إيقاف"
+ },
+ "f0f648f0": {
+  "en": "Encryption: OK",
+  "text": "التشفير: OK"
+ },
+ "445b8620": {
+  "en": "Encryption: ERROR",
+  "text": "التشفير: خطأ"
+ },
+ "845fe7f2": {
+  "en": "hold: ",
+  "text": "مطولا: "
+ },
+ "74680ff5": {
+  "en": "hold: menu",
+  "text": "مطولا: قائمة"
+ },
+ "34ce44a5": {
+  "en": "Exit",
+  "text": "خروج"
+ },
+ "c90a7f1a": {
+  "en": "No recipients",
+  "text": "لا يوجد مستلمون"
+ },
+ "43d50db4": {
+  "en": "click-next hold-run",
+  "text": "نقرة-التالي مطولا-تنفيذ"
+ },
+ "8dce1b4b": {
+  "en": "click: close",
+  "text": "نقرة: إغلاق"
+ },
+ "2725da48": {
+  "en": "hold ",
+  "text": "اضغط مطولا "
+ },
+ "f47b9c0a": {
+  "en": "To turn on:",
+  "text": "للتشغيل:"
+ },
+ "cdbcee99": {
+  "en": "No repeaters yet",
+  "text": "لا مرحلات"
+ },
+ "d8b69508": {
+  "en": "dB echo ",
+  "text": "dB صدى "
+ },
+ "56a8ebda": {
+  "en": "LED / screen / popup",
+  "text": "LED / شاشة / نافذة"
+ },
+ "0aba55a5": {
+  "en": "  near ",
+  "text": "  قريبة "
+ },
+ "ee9f0444": {
+  "en": "USB power",
+  "text": "طاقة USB"
+ },
+ "92f97927": {
+  "en": "  relay on",
+  "text": "  الترحيل يعمل"
+ },
+ "b5bdd13c": {
+  "en": "You",
+  "text": "أنت"
+ },
+ "58300254": {
+  "en": "queued",
+  "text": "طابور"
+ },
+ "6261af7f": {
+  "en": "sent",
+  "text": "أرسلت"
+ },
+ "625c860f": {
+  "en": "delivered",
+  "text": "وصلت"
+ },
+ "9ad03b43": {
+  "en": "no ACK",
+  "text": "لا ACK"
+ },
+ "0d6af842": {
+  "en": "They appear here",
+  "text": "ستظهر هنا"
+ },
+ "4021ba19": {
+  "en": "saved, not heard",
+  "text": "محفوظ، لم يسمع"
+ },
+ "187974c2": {
+  "en": " m ",
+  "text": " م "
+ },
+ "43a7ef59": {
+  "en": " km ",
+  "text": " كم "
+ },
+ "2029f0ba": {
+  "en": "has GPS position",
+  "text": "لديه موقع GPS"
+ },
+ "1ee0cbd7": {
+  "en": "No nodes heard",
+  "text": "لم تسمع عقد"
+ },
+ "6ad1d9a1": {
+  "en": "hold: announce",
+  "text": "مطولا: إعلان"
+ },
+ "e8b6db6e": {
+  "en": "Motion CSI",
+  "text": "حركة CSI"
+ },
+ "65e6150d": {
+  "en": "no Wi-Fi: AP on?",
+  "text": "لا Wi-Fi: نقطة وصول؟"
+ },
+ "d5c0cd8a": {
+  "en": "no beacon",
+  "text": "لا منارة"
+ },
+ "37c16fa8": {
+  "en": "CSI frozen",
+  "text": "CSI متجمد"
+ },
+ "3f5b0605": {
+  "en": "calibrating",
+  "text": "معايرة"
+ },
+ "c8028cd1": {
+  "en": "still",
+  "text": "سكون"
+ },
+ "4de9b3ae": {
+  "en": " / thr ",
+  "text": " / عتبة "
+ },
+ "5ed1fbd7": {
+  "en": "/s",
+  "text": "/ث"
+ },
+ "e234733b": {
+  "en": "lost",
+  "text": "مفقود"
+ },
+ "4d109126": {
+  "en": "no signal",
+  "text": "لا إشارة"
+ },
+ "127be1ad": {
+  "en": "stronger",
+  "text": "أقوى"
+ },
+ "07c50682": {
+  "en": "weaker",
+  "text": "أضعف"
+ },
+ "a0cbfc13": {
+  "en": "steady",
+  "text": "ثابت"
+ },
+ "58b577e3": {
+  "en": " pkts",
+  "text": " حزمة"
+ },
+ "beb6a03a": {
+  "en": "CSI beacon ",
+  "text": "منارة CSI "
+ },
+ "c9225c36": {
+  "en": "Beacon on",
+  "text": "المنارة تعمل"
+ },
+ "525ead8b": {
+  "en": "hold: switch off",
+  "text": "مطولا: إطفاء"
+ },
+ "587de994": {
+  "en": "Wi-Fi and LoRa",
+  "text": "Wi-Fi وLoRa"
+ },
+ "1c43d491": {
+  "en": "Position fix",
+  "text": "الموقع محدد"
+ },
+ "60cec72a": {
+  "en": "Old GPS date",
+  "text": "تاريخ GPS قديم"
+ },
+ "867f6426": {
+  "en": "Searching sky",
+  "text": "بحث عن الأقمار"
+ },
+ "3e4cca02": {
+  "en": "No data from GPS",
+  "text": "لا بيانات من GPS"
+ },
+ "f6d172c1": {
+  "en": "Satellites ",
+  "text": "الأقمار "
+ },
+ "d457dbe7": {
+  "en": "Clock ",
+  "text": "الساعة "
+ },
+ "0d410d04": {
+  "en": "Access point off",
+  "text": "نقطة الوصول مطفأة"
+ },
+ "925b4cdd": {
+  "en": "Web chat and settings",
+  "text": "دردشة ويب وإعدادات"
+ },
+ "510149b4": {
+  "en": "Bluetooth off",
+  "text": "Bluetooth مطفأ"
+ },
+ "975182c4": {
+  "en": "Secure pairing",
+  "text": "اقتران آمن"
+ },
+ "f1e1a6d4": {
+  "en": "Battery: ",
+  "text": "البطارية: "
+ },
+ "e20b979b": {
+  "en": "volts",
+  "text": "فولت"
+ },
+ "75f9fa5a": {
+  "en": "percent",
+  "text": "نسبة"
+ },
+ "129c2249": {
+  "en": "relayed ",
+  "text": "معاد "
+ },
+ "24b9070d": {
+  "en": "  rejected ",
+  "text": "  مرفوض "
+ },
+ "e28a5100": {
+  "en": "up ",
+  "text": "تشغيل "
+ },
+ "4feda587": {
+  "en": "  boot ",
+  "text": "  إقلاع "
+ },
+ "3da19f7a": {
+  "en": "hold: open",
+  "text": "مطولا: فتح"
+ },
+ "6a5979e5": {
+  "en": "click-next hold-send",
+  "text": "نقرة للاختيار ضغط للإرسال"
+ },
+ "f60c4582": {
+  "en": "s",
+  "text": "ث"
+ },
+ "e80c2f78": {
+  "en": "m",
+  "text": "د"
+ },
+ "ed0c3757": {
+  "en": "h",
+  "text": "س"
+ },
+ "e10c2473": {
+  "en": "d",
+  "text": "ي"
+ },
+ "af671227": {
+  "en": "path ?",
+  "text": "المسار ؟"
+ },
+ "1bce552b": {
+  "en": " hops",
+  "text": " قفزة"
+ },
+ "0438ccd1": {
+  "en": "Delivery not confirmed",
+  "text": "التسليم غير مؤكد"
+ },
+ "4bab65fd": {
+  "en": "repeater",
+  "text": "مرحل"
+ },
+ "37fd327a": {
+  "en": "room",
+  "text": "غرفة"
+ },
+ "83b6367b": {
+  "en": "sensor",
+  "text": "مستشعر"
+ },
+ "a24bf9ab": {
+  "en": "chat",
+  "text": "دردشة"
+ },
+ "64866487": {
+  "en": "login: waiting",
+  "text": "الدخول: بانتظار"
+ },
+ "d957add7": {
+  "en": "logged in: admin",
+  "text": "الدخول: مدير"
+ },
+ "bd1a4b8e": {
+  "en": "login refused",
+  "text": "رُفض الدخول"
+ },
+ "f9f14d5f": {
+  "en": "login: no answer",
+  "text": "الدخول: لا رد"
+ },
+ "94439fdb": {
+  "en": "trace: waiting",
+  "text": "التتبّع: بانتظار"
+ },
+ "3792fa0b": {
+  "en": "trace: no answer",
+  "text": "التتبّع: لا رد"
+ },
+ "cef137e6": {
+  "en": "SNR ",
+  "text": "SNR "
+ },
+ "73713780": {
+  "en": "status: waiting",
+  "text": "الحالة: بانتظار"
+ },
+ "71df82b0": {
+  "en": "status: no answer",
+  "text": "الحالة: لا رد"
+ },
+ "94a0707a": {
+  "en": "V up ",
+  "text": "V تشغيل "
+ },
+ "59c32085": {
+  "en": "h rx ",
+  "text": "س استقبال "
+ },
+ "773611af": {
+  "en": "phone",
+  "text": "هاتف"
+ },
+ "5fb7b228": {
+  "en": "watch",
+  "text": "ساعة"
+ },
+ "1d87ea26": {
+  "en": "headphones",
+  "text": "سماعات"
+ },
+ "4245804b": {
+  "en": "phone/watch",
+  "text": "هاتف/ساعة"
+ },
+ "abd207a3": {
+  "en": "hidden network",
+  "text": "شبكة مخفية"
+ },
+ "433213b3": {
+  "en": "Wi-Fi: access point",
+  "text": "Wi-Fi: نقطة وصول"
+ },
+ "1b46e0ae": {
+  "en": "Wi-Fi busy",
+  "text": "Wi-Fi مشغول"
+ },
+ "c927d40c": {
+  "en": "scanning...",
+  "text": "جار الفحص..."
+ },
+ "112800bb": {
+  "en": "BLE busy",
+  "text": "BLE مشغول"
+ },
+ "843c79a8": {
+  "en": "BLE error",
+  "text": "خطأ BLE"
+ },
+ "f8611fd5": {
+  "en": "Messages",
+  "text": "الرسائل"
+ },
+ "381d190f": {
+  "en": "Notifications",
+  "text": "الإشعارات"
+ },
+ "e74c644a": {
+  "en": "Modules",
+  "text": "الوحدات"
+ },
+ "c749a5e6": {
+  "en": "Power",
+  "text": "القدرة"
+ },
+ "cae55685": {
+  "en": "Relay limit",
+  "text": "حد الترحيل"
+ },
+ "99ba3a7e": {
+  "en": "Relaying",
+  "text": "الترحيل"
+ },
+ "d4372516": {
+  "en": "Path hash",
+  "text": "تجزئة المسار"
+ },
+ "ead1fb48": {
+  "en": "Previous",
+  "text": "السابق"
+ },
+ "61342fd0": {
+  "en": "on",
+  "text": "يعمل"
+ },
+ "ada7afdb": {
+  "en": "none",
+  "text": "لا شيء"
+ },
+ "ee7b9448": {
+  "en": "keep",
+  "text": "إبقاء"
+ },
+ "99eb4caf": {
+  "en": " rpt...",
+  "text": " مرحل..."
+ },
+ "aeb4bd84": {
+  "en": {
+   "one": "found",
+   "other": "found"
+  },
+  "forms": {
+   "zero": "{n} موجودة",
+   "one": "واحدة",
+   "two": "اثنتان",
+   "few": "{n} موجودة",
+   "many": "{n} موجودة",
+   "other": "{n} موجودة"
+  }
+ },
+ "d492831a": {
+  "en": "Radio test: restart returns",
+  "text": "اختبار: إعادة التشغيل تعيد"
+ },
+ "8fbb2b89": {
+  "en": "click-digit+ hold-next",
+  "text": "نقرة-رقم+ مطولا-التالي"
+ },
+ "4d060666": {
+  "en": "click-change hold-done",
+  "text": "نقرة-تغيير مطولا-تم"
+ },
+ "e6fc9c8e": {
+  "en": "click-next hold-save",
+  "text": "نقرة-التالي مطولا-حفظ"
+ },
+ "849a40b6": {
+  "en": "click-next hold-leave",
+  "text": "نقرة-التالي مطولا-خروج"
+ },
+ "9e1a1817": {
+  "en": "click-next hold-change",
+  "text": "نقرة-التالي مطولا-تغيير"
+ },
+ "4fd25c86": {
+  "en": "No position: GPS/phone",
+  "text": "لا موقع: GPS/هاتف"
+ },
+ "a679aabd": {
+  "en": "Phone ",
+  "text": "هاتف "
+ },
+ "37cc8d2a": {
+  "en": "Ping: listening...",
+  "text": "بينغ: أستمع..."
+ },
+ "46dd80ed": {
+  "en": "No pings yet",
+  "text": "لا بينغ بعد"
+ },
+ "280669ca": {
+  "en": "Ping: nobody repeated",
+  "text": "بينغ: لا رد"
+ },
+ "9e3d87eb": {
+  "en": "Ping: ",
+  "text": "بينغ: "
+ },
+ "317f4047": {
+  "en": " rpt, ",
+  "text": " مرحل، "
+ },
+ "19ec0a14": {
+  "en": "Invitation to channel ",
+  "text": "دعوة إلى قناة "
+ },
+ "3614fff0": {
+  "en": "Joined ",
+  "text": "انضممت إلى "
+ },
+ "ec50c78a": {
+  "en": "Already in ",
+  "text": "أنت بالفعل في "
+ },
+ "7bb69d7b": {
+  "en": "Not joined",
+  "text": "تعذر الانضمام"
+ },
+ "eb761881": {
+  "en": "Stop wardrive",
+  "text": "إيقاف المسح"
+ },
+ "5cb4426d": {
+  "en": "Start: listen + ping",
+  "text": "بدء: استقبال + بينغ"
+ },
+ "282b6065": {
+  "en": "Ping now",
+  "text": "بينغ الآن"
+ },
+ "755d765c": {
+  "en": "Show summary",
+  "text": "عرض الملخص"
+ },
+ "90c5347a": {
+  "en": "Repeaters heard",
+  "text": "المرحلات المسموعة"
+ },
+ "87afae0f": {
+  "en": "Wake: ",
+  "text": "إيقاظ: "
+ },
+ "5a745d7f": {
+  "en": "Popup: ",
+  "text": "نافذة: "
+ },
+ "13254bc4": {
+  "en": "all",
+  "text": "الكل"
+ },
+ "644908b5": {
+  "en": "TX alert: ",
+  "text": "تنبيه الإرسال: "
+ },
+ "4ca9cc3b": {
+  "en": "Join ",
+  "text": "انضم إلى "
+ },
+ "e29c938b": {
+  "en": "Join heard ",
+  "text": "انضم إلى "
+ },
+ "e6af9e0a": {
+  "en": "Announce node",
+  "text": "إعلان العقدة"
+ },
+ "56eafb8f": {
+  "en": "Reply: OK",
+  "text": "الرد: OK"
+ },
+ "9dbda18a": {
+  "en": "Reply: Got it",
+  "text": "الرد: تم الاستلام"
+ },
+ "ce15d57a": {
+  "en": "Older message",
+  "text": "رسالة أقدم"
+ },
+ "bf4762dd": {
+  "en": "Newer message",
+  "text": "رسالة أحدث"
+ },
+ "967ad824": {
+  "en": "Next node",
+  "text": "العقدة التالية"
+ },
+ "85610d67": {
+  "en": "Send: OK",
+  "text": "إرسال: OK"
+ },
+ "423b6110": {
+  "en": "Log in",
+  "text": "دخول"
+ },
+ "55647eb0": {
+  "en": "Log in as guest",
+  "text": "دخول كضيف"
+ },
+ "df6cf078": {
+  "en": "Server status",
+  "text": "حالة الخادم"
+ },
+ "0618ca8b": {
+  "en": "Trace route",
+  "text": "تتبّع المسار"
+ },
+ "81c648bf": {
+  "en": "Turn GPS off",
+  "text": "إطفاء GPS"
+ },
+ "25c4d45b": {
+  "en": "Turn GPS on",
+  "text": "تشغيل GPS"
+ },
+ "27669571": {
+  "en": "Turn Wi-Fi off",
+  "text": "إطفاء Wi-Fi"
+ },
+ "88aa7275": {
+  "en": "Turn Wi-Fi on",
+  "text": "تشغيل Wi-Fi"
+ },
+ "932d19aa": {
+  "en": "Turn BLE off",
+  "text": "إطفاء BLE"
+ },
+ "e4b7a4f0": {
+  "en": "Turn BLE on",
+  "text": "تشغيل BLE"
+ },
+ "0d719ca9": {
+  "en": "Language: ",
+  "text": "اللغة: "
+ },
+ "70a1c010": {
+  "en": "Battery: volts",
+  "text": "البطارية: فولت"
+ },
+ "5a5d7e3d": {
+  "en": "Battery: percent",
+  "text": "البطارية: نسبة"
+ },
+ "34426849": {
+  "en": "Double click: back",
+  "text": "النقر المزدوج: رجوع"
+ },
+ "b0db8877": {
+  "en": "Double click: off",
+  "text": "النقر المزدوج: مطفأ"
+ },
+ "56bc324a": {
+  "en": "Screen off: ",
+  "text": "إطفاء الشاشة: "
+ },
+ "0ac95089": {
+  "en": "never",
+  "text": "أبدا"
+ },
+ "e55ee2b1": {
+  "en": "Contrast: ",
+  "text": "التباين: "
+ },
+ "bb53d167": {
+  "en": "Home in: ",
+  "text": "تعقب: "
+ },
+ "ebbb7a7c": {
+  "en": "Next signal",
+  "text": "الإشارة التالية"
+ },
+ "95b8d74b": {
+  "en": "Stop beacon",
+  "text": "إيقاف المنارة"
+ },
+ "42fc3fcd": {
+  "en": "CSI beacon: on",
+  "text": "منارة CSI: تشغيل"
+ },
+ "4c494547": {
+  "en": "CSI motion: off",
+  "text": "حركة CSI: إطفاء"
+ },
+ "4b2d12ac": {
+  "en": "CSI sensor",
+  "text": "مستقبل CSI"
+ },
+ "86d255b7": {
+  "en": "Calibrate (10 s still)",
+  "text": "معايرة (10 ث سكون)"
+ },
+ "8d1d9b67": {
+  "en": "Stop homing",
+  "text": "إيقاف التعقب"
+ },
+ "2c559fd7": {
+  "en": "Turn off...",
+  "text": "إيقاف التشغيل..."
+ },
+ "1bc8e3ca": {
+  "en": "Radio...",
+  "text": "راديو..."
+ },
+ "c5f2b8d0": {
+  "en": "Encryption test",
+  "text": "اختبار التشفير"
+ },
+ "57a21e12": {
+  "en": "< Close menu",
+  "text": "< إغلاق القائمة"
+ },
+ "28cda4a5": {
+  "en": "Reply ",
+  "text": "الرد "
+ },
+ "195cfed6": {
+  "en": " queued",
+  "text": " في الطابور"
+ },
+ "692b3757": {
+  "en": "Reply not queued",
+  "text": "لم يرسل الرد"
+ },
  "55edebd2": {
   "en": "Login",
   "text": "دخول"

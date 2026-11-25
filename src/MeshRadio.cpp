@@ -62,14 +62,21 @@ uint32_t confirm(uint32_t ack, uint64_t& destination); // the message ID of an a
 int scope(uint8_t key[16]); // the app's region for our floods: 0 - not set, 1 - none, 2 - key
 void control(const mesh::Packet* packet); // a zero-hop control packet (node discovery answers) for the app
 } // namespace appLink
+#if defined(MM_RADIO_SX1262)
+constexpr uint32_t irqTxDone = RADIOLIB_SX126X_IRQ_TX_DONE, irqPreamble = RADIOLIB_SX126X_IRQ_PREAMBLE_DETECTED,
+                   irqRxDone = RADIOLIB_SX126X_IRQ_RX_DONE;
+#else
 constexpr uint32_t irqTxDone = RADIOLIB_LR11X0_IRQ_TX_DONE, irqPreamble = RADIOLIB_LR11X0_IRQ_PREAMBLE_DETECTED,
                    irqRxDone = RADIOLIB_LR11X0_IRQ_RX_DONE;
+#endif
+#if defined(MM_RADIO_LR1110)
 // Spectrum may acknowledge a latched preamble before the frame ends. Keep both
 // the mesh transmitter and scanner off the receiver for a maximum packet airtime.
 static uint32_t spectrumRxSince = 0, spectrumRxWindow = 0;
 static bool spectrumReceiving() {
   return millis() - spectrumRxSince < spectrumRxWindow;
 }
+#endif
 static volatile bool radioIrq = false;
 static void IRAM_ATTR onRadioIrq() {
   radioIrq = true;
@@ -142,7 +149,9 @@ public:
   }
   bool isInRecvMode() const override { return owner.ready && !owner.transmitting; }
   bool isReceiving() override {
+#if defined(MM_RADIO_LR1110)
     if (spectrumReceiving()) return true;
+#endif
     return !owner.transmitting && (owner.radio.getIrqFlags() & irqPreamble);
   }
   void resetAGC() override { owner.recalibrate(); } // the server's agc.reset.interval
@@ -1052,6 +1061,7 @@ namespace {
 uint32_t recalAt = 0;
 bool recalFailed = false;
 } // namespace
+#if defined(MM_RADIO_LR1110)
 MeshRadio::SampleResult MeshRadio::spectrumSample(bool offChannel, float mhz, int8_t& dbm) {
   auto defer = [this](const char* reason) {
     spectrumWaitReason = reason;
@@ -1106,6 +1116,7 @@ MeshRadio::SampleResult MeshRadio::spectrumSample(bool offChannel, float mhz, in
   dbm = int8_t(lroundf(level));
   return SampleResult::Ok;
 }
+#endif
 bool MeshRadio::applyConfig() {
   if (transmitting) return false;
   netfind::cancel();
@@ -1138,6 +1149,10 @@ bool MeshRadio::startRadio(bool quiet) {
   }
   ready = radioError == 0;
   if (ready) {
+#if defined(MM_HELTEC_V4)
+    extern int heltecFemTx; // HardwareHeltec.cpp: the front end's TX enable, by board revision
+    radio.setRfSwitchPins(RADIOLIB_NC, heltecFemTx);
+#else
     static const uint32_t dios[Module::RFSWITCH_MAX_PINS] = {RADIOLIB_LR11X0_DIO5, RADIOLIB_LR11X0_DIO6, RADIOLIB_NC,
                                                              RADIOLIB_NC, RADIOLIB_NC};
     static const Module::RfSwitchMode_t modes[] = {{LR11x0::MODE_STBY, {LOW, LOW}},  {LR11x0::MODE_RX, {HIGH, LOW}},
@@ -1145,7 +1160,7 @@ bool MeshRadio::startRadio(bool quiet) {
                                                    {LR11x0::MODE_TX_HF, {LOW, LOW}}, {LR11x0::MODE_GNSS, {LOW, LOW}},
                                                    {LR11x0::MODE_WIFI, {LOW, LOW}},  END_OF_MODE_TABLE};
     radio.setRfSwitchTable(dios, modes);
-    // Station G2: its LNA saturates with the boosted gain (MeshCore keeps it off on this board).
+#endif
     radio.setRxBoostedGainMode(true);
     radio.setPacketReceivedAction(onRadioIrq);
     radioIrq = false;

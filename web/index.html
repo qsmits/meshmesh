@@ -244,11 +244,11 @@ let recipient='ALL',eventSeen=null,readInit=false,trackAt=0,deleteArmed='',wifiA
 let chans=null,joinLink=null,chTab='tag',probeTimer=0,clockSynced=0;
 let mapState={lat:0,lon:0,z:14,center:false,follow:false};const tileCache=new Map(),tilePending=new Set(),drafts=new Map(),cameFrom={};let chatRows=[],replyTo=null;
 const HUES=['#2f7d6f','#3f6fb5','#8a5cc2','#b5693f','#4f8a3a','#a8466a','#3a8aa0','#8f7a2e'];
-// Board family: 'compact' (128x64 screen, one button) or 'full' (320x240 screen and keyboard). Older firmware: board only.
+// Board family: 'compact' (Heltec V4: 128x64 screen, one button) or 'full' (M9: 320x240 screen and keyboard). Older firmware: board only.
 const heltec=()=>status.family?status.family==='compact':status.board==='heltec_v4';
-// Boards without a Wi-Fi radio (nRF52: GAT562) reach this page only through the app (BLE/USB).
+// A board without a Wi-Fi radio reaches this page only through the app (BLE/USB).
 const noWifi=()=>status.wifi_radio===false;
-const extGps=()=>status.board==='heltec_v4'||status.board==='station_g2',boardName=()=>status.board_name||(heltec()?'Heltec V4':'ThinkNode M9');
+const extGps=()=>status.board==='heltec_v4',boardName=()=>status.board_name||(heltec()?'Heltec V4':'ThinkNode M9');
 
 // Helpers: storage (per browser, may be unavailable), escaping, icons, plurals.
 function store(key,value){try{if(value===undefined)return JSON.parse(localStorage.getItem('mm-'+key));localStorage.setItem('mm-'+key,JSON.stringify(value))}catch{return null}}
@@ -961,7 +961,7 @@ function appsClick(e){const t=e.target.closest('[data-mv],[data-app],[data-fsw],
  else if(d.fnew){const [n,err]=folderCheck($('appsNewName').value,-1);if(!n){notify(err,'warn');$('appsNewName').focus();return}appsDraft.push({folder:n,on:true,apps:[]});appsEdit=-1;notify(L`Folder “${folderName(n)}” created: move apps into it`,'muted')}
  renderApps()}
 // Power off (firmware 0.8.0+): deep sleep or System OFF; status.power_on tells what turns the board on again.
-function powerOnText(){const b=status.power_button;return status.power_on==='button'?L`Power on: hold ${b==='trackball'?L('trackball'):b==='joystick'?L('joystick center'):L`button ${b}`} for about a second or press RESET.`:status.power_on==='power_key'?L('Power on: the board power button (PWR).'):L('Power on: RESET button or power switch.')}
+function powerOnText(){const b=status.power_button;return status.power_on==='button'?L`Power on: hold ${L`button ${b}`} for about a second or press RESET.`:status.power_on==='power_key'?L('Power on: the board power button (PWR).'):L('Power on: RESET button or power switch.')}
 // Two presses, as the device screens confirm erasing: the first arms the button for 5 s.
 async function powerOffDevice(){const b=$('powerOff');if(!powerOffDevice.armed){powerOffDevice.armed=true;b.textContent=L('Tap again — the device will turn off');b.className='btn primary';setTimeout(()=>{powerOffDevice.armed=false;b.textContent=L('Turn off device');b.className='btn'},5000);return}
  powerOffDevice.armed=false;b.disabled=true;try{await command('poweroff');notify(L`The device is turning off. ${powerOnText()}`,'ok')}catch(e){notify(e.message,'bad')}finally{setTimeout(()=>{b.disabled=false;b.textContent=L('Turn off device');b.className='btn'},5000)}}
@@ -1149,8 +1149,8 @@ async function netAction(a,b){
  if(a==='check'){netPick.check={busy:true};renderNet();try{await chanDo({action:'regions'});await loadChans();for(let i=0;i<25&&regionBusy();i++){await new Promise(r=>setTimeout(r,2000));await loadChans()}netPick.check={n:chans?.regions?.repeaters||0}}catch(e){netPick.check=null;notify(e.message.replace(/^ERR \w+: /,''),'bad')}renderNet();if(route==='radio')renderRegions();return}
  if(a==='keep'||a==='revert'||a==='previous'){b.disabled=true;try{await command('radio '+a);netPick.check=null;await netReload();notify(a==='keep'?L('Settings saved'):L('Previous radio settings restored'),'ok')}catch(e){b.disabled=false;notify(e.message.replace(/^ERR (radio: )?/,''),'bad')}}}
 function renderHelp(){
- const btn=status.button||'PRG',keys=btn==='joystick'?[['← →',L('pages')],['↑ ↓',L('messages, nodes, signals, menu items')],[L('Center'),L('page or menu action')],[L('Hold center'),L('in keyboard — send')],[L('Back'),L('close; in keyboard — delete character; otherwise — home screen')],[L('Hold back'),L('home screen; close keyboard')]]:heltec()?[[btn,L('short press — next page')],[btn,L('hold — page action or action menu')]]:status.board==='tdeck'?[[L('Ball'),L('move through menus, lists and the map')],[L('Press'),L('open / send')],['Enter',L('open / send')],['DEL',L('delete; with no text — back')],['L',L('on map: map list')],['+ −',L('map zoom')],['P',L('node on map')]]:[['MSG',L('Chats')],['MAP',L('Map; L — map list')],['HOME',L('Main menu')],['BACK',L('Previous screen')],['CTRL',L('Settings')],['ADV',L('Advertise node; hold — GPS on/off')],status.mic_key===false?[L('hold OK'),L('Home screen: lock')]:['MIC',L('Lock (no microphone)')],['OK',L('Open / send; hold — enter')]];
- $('helpKeys').innerHTML=`<h3>${btn==='joystick'?L`Joystick ${boardName()}`:heltec()?L`Button ${boardName()}`:L`${status.board==='tdeck'?'T-Deck':'M9'} keys`}</h3><div class="card" style="padding:6px 10px">${keys.map(([k,a],i)=>`<div class="keyrow"><span class="key">${k}</span><span class="${i%2?'muted':''}">${a}</span></div>`).join('')}</div>`;}
+ const btn=status.button||'PRG',keys=heltec()?[[btn,L('short press — next page')],[btn,L('hold — page action or action menu')],...config.double_back?[[btn+' ×2',L('Previous screen')]]:[]]:[['MSG',L('Chats')],['MAP',L('Map; L — map list')],['HOME',L('Main menu')],['BACK',L('Previous screen')],['CTRL',L('Settings')],['ADV',L('Advertise node; hold — GPS on/off')],status.mic_key===false?[L('hold OK'),L('Home screen: lock')]:['MIC',L('Lock (no microphone)')],['OK',L('Open / send; hold — enter')]];
+ $('helpKeys').innerHTML=`<h3>${heltec()?L`Button ${boardName()}`:L`${'M9'} keys`}</h3><div class="card" style="padding:6px 10px">${keys.map(([k,a],i)=>`<div class="keyrow"><span class="key">${k}</span><span class="${i%2?'muted':''}">${a}</span></div>`).join('')}</div>`;}
 
 // Map: tiles from the phone (app: window.phoneMaps, host.js) or the device SD, the nodes over them or over a bare
 // grid, own position, direct links and a scale bar. A missing zoom shows the nearest saved parent tile enlarged.

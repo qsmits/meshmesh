@@ -2,14 +2,22 @@
 #include <Arduino.h>
 #include "Board.h"
 #include "BoardPins.h"
+#if defined(MM_HELTEC_V4)
+#include <Adafruit_SSD1306.h>
+#else
 #include <Adafruit_ST7789.h>
+#endif
 #include <U8g2_for_Adafruit_GFX.h>
 #include <TinyGPSPlus.h>
 #include <RTClib.h>
 
 class Hardware {
 public:
+#if defined(MM_HELTEC_V4)
+  Adafruit_SSD1306 display;
+#else
   Adafruit_ST7789 display;
+#endif
   GFXcanvas16* canvas = nullptr;
   U8G2_FOR_ADAFRUIT_GFX font;
   TinyGPSPlus gps;
@@ -24,7 +32,11 @@ public:
   uint8_t keyboardHw = 0, keyboardFw = 0;
   const char* boardName = MM_BOARD_NAME; // the M9 adds its revision once the keyboard answers (Hardware.cpp)
   bool micKey = true; // false on the M9 V1.1: no MIC key, hold OK on the home screen locks instead (Ui.cpp)
+#if defined(MM_HELTEC_V4)
+  Hardware() : display(128, 64, &Wire, pins::oledReset) {}
+#else
   Hardware() : display(&SPI, pins::lcdCs, pins::lcdDc, pins::lcdReset) {}
+#endif
   bool clockTrusted = false, clockConflict = false;
   String clockSource = "unset";
   void beginClock();
@@ -43,6 +55,7 @@ public:
   void beep();
   void ping(uint16_t hz, uint16_t ms);
   void flush();
+#if !defined(MM_HELTEC_V4)
   void flushRect(int x, int y, int width, int height) {
 #if !defined(MM_UI_PREVIEW)
     uint16_t* row = canvas->getBuffer() + y * canvas->width() + x;
@@ -52,6 +65,7 @@ public:
     display.endWrite();
 #endif
   }
+#endif
   // Power off (Power.cpp): the screen, GPS and peripheral supplies off; the levels are held through
   // deep sleep (ESP32) or System OFF (nRF52). started: begin() ran; false on a wake that goes back to
   // sleep, when only the pin levels are set again. A board with a PMU (T-Beam) is switched off by it here.

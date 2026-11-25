@@ -2543,6 +2543,772 @@
   "en": "Save failed",
   "text": "Error al guardar"
  },
+ "7764bddd": {
+  "en": "A ping is under way",
+  "text": "Ping en curso"
+ },
+ "6df5060c": {
+  "en": "Hold again: erase",
+  "text": "Mantén: borrar"
+ },
+ "d283d10c": {
+  "en": "OK queued",
+  "text": "OK en cola"
+ },
+ "376c2317": {
+  "en": "Not queued",
+  "text": "No enviado"
+ },
+ "fa990075": {
+  "en": "Path reset",
+  "text": "Ruta borrada"
+ },
+ "2d97fd4e": {
+  "en": "Sent, waiting",
+  "text": "Enviado, esperando"
+ },
+ "1ea76214": {
+  "en": "Not sent",
+  "text": "No enviado"
+ },
+ "3e0b7996": {
+  "en": "Needs a GPS fix",
+  "text": "Falta posición GPS"
+ },
+ "78cc37f0": {
+  "en": "Homing started",
+  "text": "Rastreo iniciado"
+ },
+ "b901ffbb": {
+  "en": "Calibrating 10 s",
+  "text": "Calibrando 10 s"
+ },
+ "3a9c0bfa": {
+  "en": "No beacon heard",
+  "text": "No se oye baliza"
+ },
+ "732df7cc": {
+  "en": "Hold again: turn off",
+  "text": "Mantén otra vez: apagar"
+ },
+ "f0f648f0": {
+  "en": "Encryption: OK",
+  "text": "Cifrado: OK"
+ },
+ "445b8620": {
+  "en": "Encryption: ERROR",
+  "text": "Cifrado: ERROR"
+ },
+ "845fe7f2": {
+  "en": "hold: ",
+  "text": "mant: "
+ },
+ "74680ff5": {
+  "en": "hold: menu",
+  "text": "mant: menú"
+ },
+ "34ce44a5": {
+  "en": "Exit",
+  "text": "Salir"
+ },
+ "c90a7f1a": {
+  "en": "No recipients",
+  "text": "Sin destinatarios"
+ },
+ "43d50db4": {
+  "en": "click-next hold-run",
+  "text": "clic-sig. mant-OK"
+ },
+ "8dce1b4b": {
+  "en": "click: close",
+  "text": "clic: cerrar"
+ },
+ "2725da48": {
+  "en": "hold ",
+  "text": "mantén "
+ },
+ "f47b9c0a": {
+  "en": "To turn on:",
+  "text": "Encender:"
+ },
+ "cdbcee99": {
+  "en": "No repeaters yet",
+  "text": "Sin repetidores"
+ },
+ "d8b69508": {
+  "en": "dB echo ",
+  "text": "dB eco "
+ },
+ "56a8ebda": {
+  "en": "LED / screen / popup",
+  "text": "LED / pantalla / aviso"
+ },
+ "0aba55a5": {
+  "en": "  near ",
+  "text": "  cerca "
+ },
+ "ee9f0444": {
+  "en": "USB power",
+  "text": "Corriente USB"
+ },
+ "92f97927": {
+  "en": "  relay on",
+  "text": "  reenvío"
+ },
+ "b5bdd13c": {
+  "en": "You",
+  "text": "Tú"
+ },
+ "58300254": {
+  "en": "queued",
+  "text": "en cola"
+ },
+ "6261af7f": {
+  "en": "sent",
+  "text": "enviado"
+ },
+ "625c860f": {
+  "en": "delivered",
+  "text": "entregado"
+ },
+ "9ad03b43": {
+  "en": "no ACK",
+  "text": "sin ACK"
+ },
+ "0d6af842": {
+  "en": "They appear here",
+  "text": "Aparecerán aquí"
+ },
+ "4021ba19": {
+  "en": "saved, not heard",
+  "text": "guardado, no oído"
+ },
+ "187974c2": {
+  "en": " m ",
+  "text": " m "
+ },
+ "43a7ef59": {
+  "en": " km ",
+  "text": " km "
+ },
+ "2029f0ba": {
+  "en": "has GPS position",
+  "text": "tiene posición GPS"
+ },
+ "1ee0cbd7": {
+  "en": "No nodes heard",
+  "text": "No se oyen nodos"
+ },
+ "6ad1d9a1": {
+  "en": "hold: announce",
+  "text": "mant: anunciar"
+ },
+ "e8b6db6e": {
+  "en": "Motion CSI",
+  "text": "Movimiento CSI"
+ },
+ "65e6150d": {
+  "en": "no Wi-Fi: AP on?",
+  "text": "sin Wi-Fi: ¿AP?"
+ },
+ "d5c0cd8a": {
+  "en": "no beacon",
+  "text": "sin baliza"
+ },
+ "37c16fa8": {
+  "en": "CSI frozen",
+  "text": "CSI parado"
+ },
+ "3f5b0605": {
+  "en": "calibrating",
+  "text": "calibrando"
+ },
+ "c8028cd1": {
+  "en": "still",
+  "text": "quieto"
+ },
+ "4de9b3ae": {
+  "en": " / thr ",
+  "text": " / umbral "
+ },
+ "5ed1fbd7": {
+  "en": "/s",
+  "text": "/s"
+ },
+ "e234733b": {
+  "en": "lost",
+  "text": "perdido"
+ },
+ "4d109126": {
+  "en": "no signal",
+  "text": "sin señal"
+ },
+ "127be1ad": {
+  "en": "stronger",
+  "text": "más fuerte"
+ },
+ "07c50682": {
+  "en": "weaker",
+  "text": "más débil"
+ },
+ "a0cbfc13": {
+  "en": "steady",
+  "text": "estable"
+ },
+ "58b577e3": {
+  "en": " pkts",
+  "text": " paq."
+ },
+ "beb6a03a": {
+  "en": "CSI beacon ",
+  "text": "Baliza CSI "
+ },
+ "c9225c36": {
+  "en": "Beacon on",
+  "text": "Baliza activa"
+ },
+ "525ead8b": {
+  "en": "hold: switch off",
+  "text": "mant: apagar"
+ },
+ "587de994": {
+  "en": "Wi-Fi and LoRa",
+  "text": "Wi-Fi y LoRa"
+ },
+ "1c43d491": {
+  "en": "Position fix",
+  "text": "Con posición"
+ },
+ "60cec72a": {
+  "en": "Old GPS date",
+  "text": "Fecha GPS antigua"
+ },
+ "867f6426": {
+  "en": "Searching sky",
+  "text": "Buscando satélites"
+ },
+ "3e4cca02": {
+  "en": "No data from GPS",
+  "text": "Sin datos del GPS"
+ },
+ "f6d172c1": {
+  "en": "Satellites ",
+  "text": "Satélites "
+ },
+ "d457dbe7": {
+  "en": "Clock ",
+  "text": "Hora "
+ },
+ "0d410d04": {
+  "en": "Access point off",
+  "text": "Punto de acceso: no"
+ },
+ "925b4cdd": {
+  "en": "Web chat and settings",
+  "text": "Chat web y ajustes"
+ },
+ "510149b4": {
+  "en": "Bluetooth off",
+  "text": "Bluetooth apagado"
+ },
+ "975182c4": {
+  "en": "Secure pairing",
+  "text": "Emparejamiento seguro"
+ },
+ "f1e1a6d4": {
+  "en": "Battery: ",
+  "text": "Batería: "
+ },
+ "e20b979b": {
+  "en": "volts",
+  "text": "voltios"
+ },
+ "75f9fa5a": {
+  "en": "percent",
+  "text": "porcentaje"
+ },
+ "129c2249": {
+  "en": "relayed ",
+  "text": "reenv. "
+ },
+ "24b9070d": {
+  "en": "  rejected ",
+  "text": "  rechaz. "
+ },
+ "e28a5100": {
+  "en": "up ",
+  "text": "activo "
+ },
+ "4feda587": {
+  "en": "  boot ",
+  "text": "  inicio "
+ },
+ "3da19f7a": {
+  "en": "hold: open",
+  "text": "mant: abrir"
+ },
+ "6a5979e5": {
+  "en": "click-next hold-send",
+  "text": "pulsa-elige mantén-envía"
+ },
+ "f60c4582": {
+  "en": "s",
+  "text": "s"
+ },
+ "e80c2f78": {
+  "en": "m",
+  "text": "m"
+ },
+ "ed0c3757": {
+  "en": "h",
+  "text": "h"
+ },
+ "e10c2473": {
+  "en": "d",
+  "text": "d"
+ },
+ "af671227": {
+  "en": "path ?",
+  "text": "ruta ?"
+ },
+ "1bce552b": {
+  "en": " hops",
+  "text": " saltos"
+ },
+ "0438ccd1": {
+  "en": "Delivery not confirmed",
+  "text": "Entrega no confirmada"
+ },
+ "4bab65fd": {
+  "en": "repeater",
+  "text": "repetidor"
+ },
+ "37fd327a": {
+  "en": "room",
+  "text": "sala"
+ },
+ "83b6367b": {
+  "en": "sensor",
+  "text": "sensor"
+ },
+ "a24bf9ab": {
+  "en": "chat",
+  "text": "chat"
+ },
+ "64866487": {
+  "en": "login: waiting",
+  "text": "acceso: esperando"
+ },
+ "d957add7": {
+  "en": "logged in: admin",
+  "text": "acceso: admin"
+ },
+ "bd1a4b8e": {
+  "en": "login refused",
+  "text": "acceso rechazado"
+ },
+ "f9f14d5f": {
+  "en": "login: no answer",
+  "text": "acceso: sin respuesta"
+ },
+ "94439fdb": {
+  "en": "trace: waiting",
+  "text": "traza: esperando"
+ },
+ "3792fa0b": {
+  "en": "trace: no answer",
+  "text": "traza: sin respuesta"
+ },
+ "cef137e6": {
+  "en": "SNR ",
+  "text": "SNR "
+ },
+ "73713780": {
+  "en": "status: waiting",
+  "text": "estado: esperando"
+ },
+ "71df82b0": {
+  "en": "status: no answer",
+  "text": "estado: sin respuesta"
+ },
+ "94a0707a": {
+  "en": "V up ",
+  "text": "V act. "
+ },
+ "59c32085": {
+  "en": "h rx ",
+  "text": "h rx "
+ },
+ "773611af": {
+  "en": "phone",
+  "text": "teléfono"
+ },
+ "5fb7b228": {
+  "en": "watch",
+  "text": "reloj"
+ },
+ "1d87ea26": {
+  "en": "headphones",
+  "text": "auriculares"
+ },
+ "4245804b": {
+  "en": "phone/watch",
+  "text": "teléfono/reloj"
+ },
+ "abd207a3": {
+  "en": "hidden network",
+  "text": "red oculta"
+ },
+ "433213b3": {
+  "en": "Wi-Fi: access point",
+  "text": "Wi-Fi ocupado: AP"
+ },
+ "1b46e0ae": {
+  "en": "Wi-Fi busy",
+  "text": "Wi-Fi ocupado"
+ },
+ "c927d40c": {
+  "en": "scanning...",
+  "text": "escaneando..."
+ },
+ "112800bb": {
+  "en": "BLE busy",
+  "text": "BLE ocupado"
+ },
+ "843c79a8": {
+  "en": "BLE error",
+  "text": "Error BLE"
+ },
+ "f8611fd5": {
+  "en": "Messages",
+  "text": "Mensajes"
+ },
+ "381d190f": {
+  "en": "Notifications",
+  "text": "Notificaciones"
+ },
+ "e74c644a": {
+  "en": "Modules",
+  "text": "Módulos"
+ },
+ "c749a5e6": {
+  "en": "Power",
+  "text": "Potencia"
+ },
+ "cae55685": {
+  "en": "Relay limit",
+  "text": "Límite saltos"
+ },
+ "99ba3a7e": {
+  "en": "Relaying",
+  "text": "Reenviar"
+ },
+ "d4372516": {
+  "en": "Path hash",
+  "text": "Hash de ruta"
+ },
+ "ead1fb48": {
+  "en": "Previous",
+  "text": "Anterior"
+ },
+ "61342fd0": {
+  "en": "on",
+  "text": "sí"
+ },
+ "ada7afdb": {
+  "en": "none",
+  "text": "no"
+ },
+ "ee7b9448": {
+  "en": "keep",
+  "text": "mantener"
+ },
+ "99eb4caf": {
+  "en": " rpt...",
+  "text": " rep..."
+ },
+ "aeb4bd84": {
+  "en": {
+   "one": "found",
+   "other": "found"
+  },
+  "forms": {
+   "one": "{n} hallada",
+   "other": "{n} halladas"
+  }
+ },
+ "d492831a": {
+  "en": "Radio test: restart returns",
+  "text": "Prueba: reinicio revierte"
+ },
+ "8fbb2b89": {
+  "en": "click-digit+ hold-next",
+  "text": "clic-dígito+ mant-sig."
+ },
+ "4d060666": {
+  "en": "click-change hold-done",
+  "text": "clic-cambiar mant-listo"
+ },
+ "e6fc9c8e": {
+  "en": "click-next hold-save",
+  "text": "clic-sig. mant-guardar"
+ },
+ "849a40b6": {
+  "en": "click-next hold-leave",
+  "text": "clic-sig. mant-salir"
+ },
+ "9e1a1817": {
+  "en": "click-next hold-change",
+  "text": "clic-sig. mant-cambiar"
+ },
+ "4fd25c86": {
+  "en": "No position: GPS/phone",
+  "text": "Sin posición: GPS/tel."
+ },
+ "a679aabd": {
+  "en": "Phone ",
+  "text": "Tel. "
+ },
+ "37cc8d2a": {
+  "en": "Ping: listening...",
+  "text": "Ping: escuchando..."
+ },
+ "46dd80ed": {
+  "en": "No pings yet",
+  "text": "Aún sin pings"
+ },
+ "280669ca": {
+  "en": "Ping: nobody repeated",
+  "text": "Ping: nadie respondió"
+ },
+ "9e3d87eb": {
+  "en": "Ping: ",
+  "text": "Ping: "
+ },
+ "317f4047": {
+  "en": " rpt, ",
+  "text": " rep., "
+ },
+ "19ec0a14": {
+  "en": "Invitation to channel ",
+  "text": "Invitación al canal "
+ },
+ "3614fff0": {
+  "en": "Joined ",
+  "text": "Unido a "
+ },
+ "ec50c78a": {
+  "en": "Already in ",
+  "text": "Ya en "
+ },
+ "7bb69d7b": {
+  "en": "Not joined",
+  "text": "Error al unirse"
+ },
+ "eb761881": {
+  "en": "Stop wardrive",
+  "text": "Parar wardriving"
+ },
+ "5cb4426d": {
+  "en": "Start: listen + ping",
+  "text": "Iniciar: escucha + ping"
+ },
+ "282b6065": {
+  "en": "Ping now",
+  "text": "Ping ahora"
+ },
+ "755d765c": {
+  "en": "Show summary",
+  "text": "Ver resumen"
+ },
+ "90c5347a": {
+  "en": "Repeaters heard",
+  "text": "Repetidores oídos"
+ },
+ "87afae0f": {
+  "en": "Wake: ",
+  "text": "Activar: "
+ },
+ "5a745d7f": {
+  "en": "Popup: ",
+  "text": "Aviso: "
+ },
+ "13254bc4": {
+  "en": "all",
+  "text": "todos"
+ },
+ "644908b5": {
+  "en": "TX alert: ",
+  "text": "Alerta TX: "
+ },
+ "4ca9cc3b": {
+  "en": "Join ",
+  "text": "Unirse a "
+ },
+ "e29c938b": {
+  "en": "Join heard ",
+  "text": "Unirse a "
+ },
+ "e6af9e0a": {
+  "en": "Announce node",
+  "text": "Anunciar nodo"
+ },
+ "56eafb8f": {
+  "en": "Reply: OK",
+  "text": "Responder: OK"
+ },
+ "9dbda18a": {
+  "en": "Reply: Got it",
+  "text": "Responder: Recibido"
+ },
+ "ce15d57a": {
+  "en": "Older message",
+  "text": "Mensaje anterior"
+ },
+ "bf4762dd": {
+  "en": "Newer message",
+  "text": "Mensaje siguiente"
+ },
+ "967ad824": {
+  "en": "Next node",
+  "text": "Siguiente nodo"
+ },
+ "85610d67": {
+  "en": "Send: OK",
+  "text": "Escribir: OK"
+ },
+ "423b6110": {
+  "en": "Log in",
+  "text": "Entrar"
+ },
+ "55647eb0": {
+  "en": "Log in as guest",
+  "text": "Entrar como invitado"
+ },
+ "df6cf078": {
+  "en": "Server status",
+  "text": "Estado del servidor"
+ },
+ "0618ca8b": {
+  "en": "Trace route",
+  "text": "Trazar ruta"
+ },
+ "81c648bf": {
+  "en": "Turn GPS off",
+  "text": "Apagar GPS"
+ },
+ "25c4d45b": {
+  "en": "Turn GPS on",
+  "text": "Encender GPS"
+ },
+ "27669571": {
+  "en": "Turn Wi-Fi off",
+  "text": "Apagar Wi-Fi"
+ },
+ "88aa7275": {
+  "en": "Turn Wi-Fi on",
+  "text": "Encender Wi-Fi"
+ },
+ "932d19aa": {
+  "en": "Turn BLE off",
+  "text": "Apagar BLE"
+ },
+ "e4b7a4f0": {
+  "en": "Turn BLE on",
+  "text": "Encender BLE"
+ },
+ "0d719ca9": {
+  "en": "Language: ",
+  "text": "Idioma: "
+ },
+ "70a1c010": {
+  "en": "Battery: volts",
+  "text": "Batería: voltios"
+ },
+ "5a5d7e3d": {
+  "en": "Battery: percent",
+  "text": "Batería: porcentaje"
+ },
+ "34426849": {
+  "en": "Double click: back",
+  "text": "Doble clic: atrás"
+ },
+ "b0db8877": {
+  "en": "Double click: off",
+  "text": "Doble clic: apagado"
+ },
+ "56bc324a": {
+  "en": "Screen off: ",
+  "text": "Reposo: "
+ },
+ "0ac95089": {
+  "en": "never",
+  "text": "nunca"
+ },
+ "e55ee2b1": {
+  "en": "Contrast: ",
+  "text": "Contraste: "
+ },
+ "bb53d167": {
+  "en": "Home in: ",
+  "text": "Rastrear: "
+ },
+ "ebbb7a7c": {
+  "en": "Next signal",
+  "text": "Siguiente señal"
+ },
+ "95b8d74b": {
+  "en": "Stop beacon",
+  "text": "Parar baliza"
+ },
+ "42fc3fcd": {
+  "en": "CSI beacon: on",
+  "text": "Baliza CSI: activar"
+ },
+ "4c494547": {
+  "en": "CSI motion: off",
+  "text": "Movimiento CSI: no"
+ },
+ "4b2d12ac": {
+  "en": "CSI sensor",
+  "text": "Receptor CSI"
+ },
+ "86d255b7": {
+  "en": "Calibrate (10 s still)",
+  "text": "Calibrar (10 s quieto)"
+ },
+ "8d1d9b67": {
+  "en": "Stop homing",
+  "text": "Parar rastreo"
+ },
+ "2c559fd7": {
+  "en": "Turn off...",
+  "text": "Apagar..."
+ },
+ "1bc8e3ca": {
+  "en": "Radio...",
+  "text": "Radio..."
+ },
+ "c5f2b8d0": {
+  "en": "Encryption test",
+  "text": "Prueba de cifrado"
+ },
+ "57a21e12": {
+  "en": "< Close menu",
+  "text": "< Cerrar menú"
+ },
+ "28cda4a5": {
+  "en": "Reply ",
+  "text": "Resp. "
+ },
+ "195cfed6": {
+  "en": " queued",
+  "text": " en cola"
+ },
+ "692b3757": {
+  "en": "Reply not queued",
+  "text": "Respuesta no enviada"
+ },
  "55edebd2": {
   "en": "Login",
   "text": "Entrar"

@@ -2543,6 +2543,772 @@
   "en": "Save failed",
   "text": "Kayıt başarısız"
  },
+ "7764bddd": {
+  "en": "A ping is under way",
+  "text": "Ping sürüyor"
+ },
+ "6df5060c": {
+  "en": "Hold again: erase",
+  "text": "Basılı tut: sil"
+ },
+ "d283d10c": {
+  "en": "OK queued",
+  "text": "OK kuyrukta"
+ },
+ "376c2317": {
+  "en": "Not queued",
+  "text": "Gönderilmedi"
+ },
+ "fa990075": {
+  "en": "Path reset",
+  "text": "Yol sıfırlandı"
+ },
+ "2d97fd4e": {
+  "en": "Sent, waiting",
+  "text": "Gönderildi, bekleniyor"
+ },
+ "1ea76214": {
+  "en": "Not sent",
+  "text": "Gönderilmedi"
+ },
+ "3e0b7996": {
+  "en": "Needs a GPS fix",
+  "text": "GPS konumu gerekli"
+ },
+ "78cc37f0": {
+  "en": "Homing started",
+  "text": "Yön bulma başladı"
+ },
+ "b901ffbb": {
+  "en": "Calibrating 10 s",
+  "text": "Kalibrasyon 10 sn"
+ },
+ "3a9c0bfa": {
+  "en": "No beacon heard",
+  "text": "Verici duyulmuyor"
+ },
+ "732df7cc": {
+  "en": "Hold again: turn off",
+  "text": "Tekrar basılı tut: kapat"
+ },
+ "f0f648f0": {
+  "en": "Encryption: OK",
+  "text": "Şifreleme: OK"
+ },
+ "445b8620": {
+  "en": "Encryption: ERROR",
+  "text": "Şifreleme: HATA"
+ },
+ "845fe7f2": {
+  "en": "hold: ",
+  "text": "basılı: "
+ },
+ "74680ff5": {
+  "en": "hold: menu",
+  "text": "basılı: menü"
+ },
+ "34ce44a5": {
+  "en": "Exit",
+  "text": "Çık"
+ },
+ "c90a7f1a": {
+  "en": "No recipients",
+  "text": "Alıcı yok"
+ },
+ "43d50db4": {
+  "en": "click-next hold-run",
+  "text": "tık-ileri tut-uygula"
+ },
+ "8dce1b4b": {
+  "en": "click: close",
+  "text": "tık: kapat"
+ },
+ "2725da48": {
+  "en": "hold ",
+  "text": "basılı tut: "
+ },
+ "f47b9c0a": {
+  "en": "To turn on:",
+  "text": "Açmak için:"
+ },
+ "cdbcee99": {
+  "en": "No repeaters yet",
+  "text": "Röle yok"
+ },
+ "d8b69508": {
+  "en": "dB echo ",
+  "text": "dB yankı "
+ },
+ "56a8ebda": {
+  "en": "LED / screen / popup",
+  "text": "LED / ekran / pencere"
+ },
+ "0aba55a5": {
+  "en": "  near ",
+  "text": "  yakın "
+ },
+ "ee9f0444": {
+  "en": "USB power",
+  "text": "USB gücü"
+ },
+ "92f97927": {
+  "en": "  relay on",
+  "text": "  aktarma açık"
+ },
+ "b5bdd13c": {
+  "en": "You",
+  "text": "Siz"
+ },
+ "58300254": {
+  "en": "queued",
+  "text": "kuyrukta"
+ },
+ "6261af7f": {
+  "en": "sent",
+  "text": "gönderildi"
+ },
+ "625c860f": {
+  "en": "delivered",
+  "text": "iletildi"
+ },
+ "9ad03b43": {
+  "en": "no ACK",
+  "text": "ACK yok"
+ },
+ "0d6af842": {
+  "en": "They appear here",
+  "text": "Gelenler burada görünür"
+ },
+ "4021ba19": {
+  "en": "saved, not heard",
+  "text": "kayıtlı, duyulmadı"
+ },
+ "187974c2": {
+  "en": " m ",
+  "text": " m "
+ },
+ "43a7ef59": {
+  "en": " km ",
+  "text": " km "
+ },
+ "2029f0ba": {
+  "en": "has GPS position",
+  "text": "GPS konumu var"
+ },
+ "1ee0cbd7": {
+  "en": "No nodes heard",
+  "text": "Düğüm duyulmadı"
+ },
+ "6ad1d9a1": {
+  "en": "hold: announce",
+  "text": "basılı: duyur"
+ },
+ "e8b6db6e": {
+  "en": "Motion CSI",
+  "text": "CSI hareket"
+ },
+ "65e6150d": {
+  "en": "no Wi-Fi: AP on?",
+  "text": "Wi-Fi yok: AP açık?"
+ },
+ "d5c0cd8a": {
+  "en": "no beacon",
+  "text": "verici yok"
+ },
+ "37c16fa8": {
+  "en": "CSI frozen",
+  "text": "CSI dondu"
+ },
+ "3f5b0605": {
+  "en": "calibrating",
+  "text": "kalibrasyon"
+ },
+ "c8028cd1": {
+  "en": "still",
+  "text": "sakin"
+ },
+ "4de9b3ae": {
+  "en": " / thr ",
+  "text": " / eşik "
+ },
+ "5ed1fbd7": {
+  "en": "/s",
+  "text": "/sn"
+ },
+ "e234733b": {
+  "en": "lost",
+  "text": "kayıp"
+ },
+ "4d109126": {
+  "en": "no signal",
+  "text": "sinyal yok"
+ },
+ "127be1ad": {
+  "en": "stronger",
+  "text": "ısınıyor"
+ },
+ "07c50682": {
+  "en": "weaker",
+  "text": "soğuyor"
+ },
+ "a0cbfc13": {
+  "en": "steady",
+  "text": "sabit"
+ },
+ "58b577e3": {
+  "en": " pkts",
+  "text": " pkt"
+ },
+ "beb6a03a": {
+  "en": "CSI beacon ",
+  "text": "CSI verici "
+ },
+ "c9225c36": {
+  "en": "Beacon on",
+  "text": "Verici açık"
+ },
+ "525ead8b": {
+  "en": "hold: switch off",
+  "text": "basılı: kapat"
+ },
+ "587de994": {
+  "en": "Wi-Fi and LoRa",
+  "text": "Wi-Fi ve LoRa"
+ },
+ "1c43d491": {
+  "en": "Position fix",
+  "text": "Konum var"
+ },
+ "60cec72a": {
+  "en": "Old GPS date",
+  "text": "Eski GPS tarihi"
+ },
+ "867f6426": {
+  "en": "Searching sky",
+  "text": "Uydu aranıyor"
+ },
+ "3e4cca02": {
+  "en": "No data from GPS",
+  "text": "GPS'ten veri yok"
+ },
+ "f6d172c1": {
+  "en": "Satellites ",
+  "text": "Uydu "
+ },
+ "d457dbe7": {
+  "en": "Clock ",
+  "text": "Saat "
+ },
+ "0d410d04": {
+  "en": "Access point off",
+  "text": "Erişim noktası kapalı"
+ },
+ "925b4cdd": {
+  "en": "Web chat and settings",
+  "text": "Web sohbet ve ayarlar"
+ },
+ "510149b4": {
+  "en": "Bluetooth off",
+  "text": "Bluetooth kapalı"
+ },
+ "975182c4": {
+  "en": "Secure pairing",
+  "text": "Güvenli eşleşme"
+ },
+ "f1e1a6d4": {
+  "en": "Battery: ",
+  "text": "Pil: "
+ },
+ "e20b979b": {
+  "en": "volts",
+  "text": "volt"
+ },
+ "75f9fa5a": {
+  "en": "percent",
+  "text": "yüzde"
+ },
+ "129c2249": {
+  "en": "relayed ",
+  "text": "aktarılan "
+ },
+ "24b9070d": {
+  "en": "  rejected ",
+  "text": "  reddedilen "
+ },
+ "e28a5100": {
+  "en": "up ",
+  "text": "çalışma "
+ },
+ "4feda587": {
+  "en": "  boot ",
+  "text": "  açılış "
+ },
+ "3da19f7a": {
+  "en": "hold: open",
+  "text": "basılı: aç"
+ },
+ "6a5979e5": {
+  "en": "click-next hold-send",
+  "text": "tık-seç basılı-gönder"
+ },
+ "f60c4582": {
+  "en": "s",
+  "text": "sn"
+ },
+ "e80c2f78": {
+  "en": "m",
+  "text": "dk"
+ },
+ "ed0c3757": {
+  "en": "h",
+  "text": "sa"
+ },
+ "e10c2473": {
+  "en": "d",
+  "text": "g"
+ },
+ "af671227": {
+  "en": "path ?",
+  "text": "yol ?"
+ },
+ "1bce552b": {
+  "en": " hops",
+  "text": " atl."
+ },
+ "0438ccd1": {
+  "en": "Delivery not confirmed",
+  "text": "Teslimat onaylanmadı"
+ },
+ "4bab65fd": {
+  "en": "repeater",
+  "text": "tekrarlayıcı"
+ },
+ "37fd327a": {
+  "en": "room",
+  "text": "oda"
+ },
+ "83b6367b": {
+  "en": "sensor",
+  "text": "sensör"
+ },
+ "a24bf9ab": {
+  "en": "chat",
+  "text": "sohbet"
+ },
+ "64866487": {
+  "en": "login: waiting",
+  "text": "giriş: bekleniyor"
+ },
+ "d957add7": {
+  "en": "logged in: admin",
+  "text": "giriş: yönetici"
+ },
+ "bd1a4b8e": {
+  "en": "login refused",
+  "text": "giriş reddedildi"
+ },
+ "f9f14d5f": {
+  "en": "login: no answer",
+  "text": "giriş: yanıt yok"
+ },
+ "94439fdb": {
+  "en": "trace: waiting",
+  "text": "iz: bekleniyor"
+ },
+ "3792fa0b": {
+  "en": "trace: no answer",
+  "text": "iz: yanıt yok"
+ },
+ "cef137e6": {
+  "en": "SNR ",
+  "text": "SNR "
+ },
+ "73713780": {
+  "en": "status: waiting",
+  "text": "durum: bekleniyor"
+ },
+ "71df82b0": {
+  "en": "status: no answer",
+  "text": "durum: yanıt yok"
+ },
+ "94a0707a": {
+  "en": "V up ",
+  "text": "V açık "
+ },
+ "59c32085": {
+  "en": "h rx ",
+  "text": "sa rx "
+ },
+ "773611af": {
+  "en": "phone",
+  "text": "telefon"
+ },
+ "5fb7b228": {
+  "en": "watch",
+  "text": "saat"
+ },
+ "1d87ea26": {
+  "en": "headphones",
+  "text": "kulaklık"
+ },
+ "4245804b": {
+  "en": "phone/watch",
+  "text": "telefon/saat"
+ },
+ "abd207a3": {
+  "en": "hidden network",
+  "text": "gizli ağ"
+ },
+ "433213b3": {
+  "en": "Wi-Fi: access point",
+  "text": "Wi-Fi: erişim noktası"
+ },
+ "1b46e0ae": {
+  "en": "Wi-Fi busy",
+  "text": "Wi-Fi meşgul"
+ },
+ "c927d40c": {
+  "en": "scanning...",
+  "text": "taranıyor..."
+ },
+ "112800bb": {
+  "en": "BLE busy",
+  "text": "BLE meşgul"
+ },
+ "843c79a8": {
+  "en": "BLE error",
+  "text": "BLE hatası"
+ },
+ "f8611fd5": {
+  "en": "Messages",
+  "text": "Mesajlar"
+ },
+ "381d190f": {
+  "en": "Notifications",
+  "text": "Bildirimler"
+ },
+ "e74c644a": {
+  "en": "Modules",
+  "text": "Modüller"
+ },
+ "c749a5e6": {
+  "en": "Power",
+  "text": "Güç"
+ },
+ "cae55685": {
+  "en": "Relay limit",
+  "text": "Aktarma sınırı"
+ },
+ "99ba3a7e": {
+  "en": "Relaying",
+  "text": "Aktarma"
+ },
+ "d4372516": {
+  "en": "Path hash",
+  "text": "Yol hash"
+ },
+ "ead1fb48": {
+  "en": "Previous",
+  "text": "Önceki"
+ },
+ "61342fd0": {
+  "en": "on",
+  "text": "açık"
+ },
+ "ada7afdb": {
+  "en": "none",
+  "text": "yok"
+ },
+ "ee7b9448": {
+  "en": "keep",
+  "text": "tut"
+ },
+ "99eb4caf": {
+  "en": " rpt...",
+  "text": " röle..."
+ },
+ "aeb4bd84": {
+  "en": {
+   "one": "found",
+   "other": "found"
+  },
+  "forms": {
+   "one": "{n} bulundu",
+   "other": "{n} bulundu"
+  }
+ },
+ "d492831a": {
+  "en": "Radio test: restart returns",
+  "text": "Test: yeniden başlat geri alır"
+ },
+ "8fbb2b89": {
+  "en": "click-digit+ hold-next",
+  "text": "tık-basamak+ tut-ileri"
+ },
+ "4d060666": {
+  "en": "click-change hold-done",
+  "text": "tık-değiştir tut-bitti"
+ },
+ "e6fc9c8e": {
+  "en": "click-next hold-save",
+  "text": "tık-ileri tut-kaydet"
+ },
+ "849a40b6": {
+  "en": "click-next hold-leave",
+  "text": "tık-ileri tut-çık"
+ },
+ "9e1a1817": {
+  "en": "click-next hold-change",
+  "text": "tık-ileri tut-değiştir"
+ },
+ "4fd25c86": {
+  "en": "No position: GPS/phone",
+  "text": "Konum yok: GPS/tel."
+ },
+ "a679aabd": {
+  "en": "Phone ",
+  "text": "Tel. "
+ },
+ "37cc8d2a": {
+  "en": "Ping: listening...",
+  "text": "Ping: dinleniyor..."
+ },
+ "46dd80ed": {
+  "en": "No pings yet",
+  "text": "Henüz ping yok"
+ },
+ "280669ca": {
+  "en": "Ping: nobody repeated",
+  "text": "Ping: yanıt yok"
+ },
+ "9e3d87eb": {
+  "en": "Ping: ",
+  "text": "Ping: "
+ },
+ "317f4047": {
+  "en": " rpt, ",
+  "text": " röle, "
+ },
+ "19ec0a14": {
+  "en": "Invitation to channel ",
+  "text": "Kanal daveti: "
+ },
+ "3614fff0": {
+  "en": "Joined ",
+  "text": "Katıldınız: "
+ },
+ "ec50c78a": {
+  "en": "Already in ",
+  "text": "Zaten üye: "
+ },
+ "7bb69d7b": {
+  "en": "Not joined",
+  "text": "Katılınamadı"
+ },
+ "eb761881": {
+  "en": "Stop wardrive",
+  "text": "Wardriving durdur"
+ },
+ "5cb4426d": {
+  "en": "Start: listen + ping",
+  "text": "Başlat: dinle + ping"
+ },
+ "282b6065": {
+  "en": "Ping now",
+  "text": "Şimdi ping"
+ },
+ "755d765c": {
+  "en": "Show summary",
+  "text": "Özeti göster"
+ },
+ "90c5347a": {
+  "en": "Repeaters heard",
+  "text": "Duyulan röleler"
+ },
+ "87afae0f": {
+  "en": "Wake: ",
+  "text": "Uyandır: "
+ },
+ "5a745d7f": {
+  "en": "Popup: ",
+  "text": "Pencere: "
+ },
+ "13254bc4": {
+  "en": "all",
+  "text": "tümü"
+ },
+ "644908b5": {
+  "en": "TX alert: ",
+  "text": "TX uyarısı: "
+ },
+ "4ca9cc3b": {
+  "en": "Join ",
+  "text": "Katıl: "
+ },
+ "e29c938b": {
+  "en": "Join heard ",
+  "text": "Katıl: "
+ },
+ "e6af9e0a": {
+  "en": "Announce node",
+  "text": "Düğümü duyur"
+ },
+ "56eafb8f": {
+  "en": "Reply: OK",
+  "text": "Yanıt: OK"
+ },
+ "9dbda18a": {
+  "en": "Reply: Got it",
+  "text": "Yanıt: Anlaşıldı"
+ },
+ "ce15d57a": {
+  "en": "Older message",
+  "text": "Önceki mesaj"
+ },
+ "bf4762dd": {
+  "en": "Newer message",
+  "text": "Sonraki mesaj"
+ },
+ "967ad824": {
+  "en": "Next node",
+  "text": "Sonraki düğüm"
+ },
+ "85610d67": {
+  "en": "Send: OK",
+  "text": "Gönder: OK"
+ },
+ "423b6110": {
+  "en": "Log in",
+  "text": "Giriş yap"
+ },
+ "55647eb0": {
+  "en": "Log in as guest",
+  "text": "Misafir olarak gir"
+ },
+ "df6cf078": {
+  "en": "Server status",
+  "text": "Sunucu durumu"
+ },
+ "0618ca8b": {
+  "en": "Trace route",
+  "text": "Rotayı izle"
+ },
+ "81c648bf": {
+  "en": "Turn GPS off",
+  "text": "GPS'i kapat"
+ },
+ "25c4d45b": {
+  "en": "Turn GPS on",
+  "text": "GPS'i aç"
+ },
+ "27669571": {
+  "en": "Turn Wi-Fi off",
+  "text": "Wi-Fi'ı kapat"
+ },
+ "88aa7275": {
+  "en": "Turn Wi-Fi on",
+  "text": "Wi-Fi'ı aç"
+ },
+ "932d19aa": {
+  "en": "Turn BLE off",
+  "text": "BLE'yi kapat"
+ },
+ "e4b7a4f0": {
+  "en": "Turn BLE on",
+  "text": "BLE'yi aç"
+ },
+ "0d719ca9": {
+  "en": "Language: ",
+  "text": "Dil: "
+ },
+ "70a1c010": {
+  "en": "Battery: volts",
+  "text": "Pil: volt"
+ },
+ "5a5d7e3d": {
+  "en": "Battery: percent",
+  "text": "Pil: yüzde"
+ },
+ "34426849": {
+  "en": "Double click: back",
+  "text": "Çift tık: geri"
+ },
+ "b0db8877": {
+  "en": "Double click: off",
+  "text": "Çift tık: kapalı"
+ },
+ "56bc324a": {
+  "en": "Screen off: ",
+  "text": "Karartma: "
+ },
+ "0ac95089": {
+  "en": "never",
+  "text": "asla"
+ },
+ "e55ee2b1": {
+  "en": "Contrast: ",
+  "text": "Kontrast: "
+ },
+ "bb53d167": {
+  "en": "Home in: ",
+  "text": "Yön bul: "
+ },
+ "ebbb7a7c": {
+  "en": "Next signal",
+  "text": "Sonraki sinyal"
+ },
+ "95b8d74b": {
+  "en": "Stop beacon",
+  "text": "Vericiyi kapat"
+ },
+ "42fc3fcd": {
+  "en": "CSI beacon: on",
+  "text": "CSI verici: aç"
+ },
+ "4c494547": {
+  "en": "CSI motion: off",
+  "text": "CSI hareket: kapat"
+ },
+ "4b2d12ac": {
+  "en": "CSI sensor",
+  "text": "CSI alıcı"
+ },
+ "86d255b7": {
+  "en": "Calibrate (10 s still)",
+  "text": "Kalibre (10 sn sakin)"
+ },
+ "8d1d9b67": {
+  "en": "Stop homing",
+  "text": "Yön bulmayı durdur"
+ },
+ "2c559fd7": {
+  "en": "Turn off...",
+  "text": "Kapat..."
+ },
+ "1bc8e3ca": {
+  "en": "Radio...",
+  "text": "Radyo..."
+ },
+ "c5f2b8d0": {
+  "en": "Encryption test",
+  "text": "Şifreleme testi"
+ },
+ "57a21e12": {
+  "en": "< Close menu",
+  "text": "< Menüyü kapat"
+ },
+ "28cda4a5": {
+  "en": "Reply ",
+  "text": "Yanıt "
+ },
+ "195cfed6": {
+  "en": " queued",
+  "text": " kuyrukta"
+ },
+ "692b3757": {
+  "en": "Reply not queued",
+  "text": "Yanıt gönderilmedi"
+ },
  "55edebd2": {
   "en": "Login",
   "text": "Giriş"

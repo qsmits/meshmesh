@@ -1,5 +1,7 @@
 #!/bin/sh
-# Build and render the M9 screen UI on the host: tools/ui_preview/build.sh m9 OUTDIR [LANG]
+# Build and render the screen UI on the host: tools/ui_preview/build.sh m9|heltec OUTDIR [LANG]
+# m9: the 320x240 keyboard interface (src/Ui.cpp, scenario.inc); heltec: the Heltec V4's 128x64 one-button
+# interface (src/UiHeltec.cpp, scenario_heltec.inc).
 # LANG is a code of include/I18n.h (en by default); a list with spaces ("en de uk") renders each into OUTDIR/<code>/.
 set -e
 ROOT=$(cd "$(dirname "$0")/../.." && pwd)
@@ -19,6 +21,12 @@ else
 fi
 DEF="-DARDUINO=10819 -DMM_UI_PREVIEW=1 -DARDUINOJSON_ENABLE_PROGMEM=0 -DARDUINOJSON_ENABLE_ARDUINO_STREAM=0 -DARDUINOJSON_ENABLE_ARDUINO_PRINT=0 -DARDUINOJSON_ENABLE_STD_STRING=0 -DARDUINOJSON_ENABLE_STD_STREAM=0"
 SRC=$ROOT/src/Ui.cpp
+M9ONLY="UiIcons ScreenCredential" # the M9's screen icons and credential storage: not in the Heltec image
+case "$BOARD" in
+m9) ;;
+heltec) DEF="$DEF -DMM_HELTEC_V4=1";SRC=$ROOT/src/UiHeltec.cpp;M9ONLY="";;
+*) echo "Board: m9 or heltec" >&2;exit 1;;
+esac
 INC="-I$ROOT/tools/ui_preview/shim -I$ROOT/include -I$ROOT/lib/MeshProtocol -I$LIB/ArduinoJson/src -I$LIB/Adafruit\ GFX\ Library -I$LIB/U8g2_for_Adafruit_GFX/src"
 B=$(mktemp -d)
 trap 'rm -rf "$B"' EXIT
@@ -29,7 +37,6 @@ eval c++ -std=gnu++17 -O1 -Wall -Wno-unused-function $DEF $INC -c "$SRC" -o "$B/
 eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/Config.cpp" -o "$B/config.o"
 eval c++ -std=gnu++17 -O1 -w $DEF $INC $simflags -c "$ROOT/tools/ui_preview/preview.cpp" -o "$B/preview.o"
 eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/I18n.cpp" -o "$B/i18n.o"
-eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/UiIcons.cpp" -o "$B/icons.o"
 eval c++ -std=gnu++17 -O1 -Wall -Wextra $DEF $INC -c "$ROOT/src/Emoji.cpp" -o "$B/emoji.o"
 eval c++ -std=gnu++17 -O1 -Wall -Wextra $DEF $INC -c "$ROOT/src/Apps.cpp" -o "$B/apps.o"
 eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/RadarModel.cpp" -o "$B/radar.o"
@@ -44,7 +51,7 @@ eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/HistoryStorage.cpp" -o "
 eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/HistoryReply.cpp" -o "$B/history-reply.o"
 eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/Clock.cpp" -o "$B/clock.o"
 for f in SHA256 Hash Crypto;do eval c++ -std=gnu++17 -O1 -w $DEF $INC -c "$LIB/Crypto/$f.cpp" -o "$B/crypto-$f.o";done
-eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/ScreenCredential.cpp" -o "$B/credential.o"
+for f in $M9ONLY;do eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/$f.cpp" -o "$B/$f.o";done
 if [ "$(uname -s)" != Darwin ];then simlibs="$simlibs -lcrypto";fi
 c++ "$B"/*.o $simlibs -o "$B/preview"
 if [ -n "$simflags" ]; then

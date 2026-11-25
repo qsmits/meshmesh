@@ -22,6 +22,9 @@
 #include <memory>
 #include <new>
 #include <utility>
+#if defined(MM_NATIVE_USB)
+#include <hal/usb_serial_jtag_ll.h>
+#endif
 namespace {
 uint8_t* usbBytes = nullptr;
 std::unique_ptr<String> usbText;
@@ -77,6 +80,14 @@ void usbScreenshot() {
   usbBytes[usbSize - 1] = '\n';
 }
 void usbTick() {
+#if defined(MM_NATIVE_USB)
+  // The Arduino HWCDC driver can leave bytes queued when its SOF connection
+  // check briefly reports disconnection. Kick the FIFO without clearing it.
+  if (HWCDC::isPlugged() && Serial.availableForWrite() < 2048) {
+    usb_serial_jtag_ll_txfifo_flush();
+    usb_serial_jtag_ll_ena_intr_mask(USB_SERIAL_JTAG_INTR_SERIAL_IN_EMPTY);
+  }
+#endif
   if (!usbBusy()) return;
   int available = Serial.availableForWrite();
   if (available <= 0) return;
@@ -237,12 +248,16 @@ void appLoop() {
     if (c == '\n') {
       companion::disconnected(companion::LinkUsb);
       if (command.startsWith("baud ")) {
+#if defined(MM_NATIVE_USB)
+        usbLine("ERR native USB does not need baud switching");
+#else
         unsigned rate = command.substring(5).toInt();
         if (rate == 115200 || rate == 460800 || rate == 921600) {
           pendingBaud = rate;
           usbLine("OK USB baud switching");
         } else
           usbLine("ERR baud 115200/460800/921600");
+#endif
       } else if (command == "screenshot")
         usbScreenshot();
       // Research: raw CSI lines ("CSI us rssi iqhex") while on; beacon frames per second.
@@ -307,13 +322,16 @@ void appLoop() {
         uiKey(strtol(command.substring(6).c_str(), nullptr, 0));
         usbLine("OK UI key");
       }
-      // "uitouch t|h X Y" or "uitouch u|d|l|r": the T-Deck touch gestures, for checks without a finger.
+#if !defined(MM_COMPACT)
+      // "uitouch t|h X Y" or "uitouch u|d|l|r": touch gestures of the 320x240 interface, for checks without a finger.
       else if (command.startsWith("uitouch ") && command.length() > 8 && strchr("thudlr", command[8])) {
         int x = 0, y = 0;
         sscanf(command.c_str() + 9, "%d %d", &x, &y);
         uiTouch(command[8], x, y);
         usbLine("OK UI touch");
-      } else
+      }
+#endif
+      else
         usbLine(executeCommand(command));
       command = "";
     } else if (c != '\r' && command.length() < 1024)
@@ -337,6 +355,7 @@ void appLoop() {
     String line;
     for (int i = 0; i < 8 && Serial.availableForWrite() >= 240 && radar.streamLine(line); i++) Serial.println(line);
   }
+#if !defined(MM_NATIVE_USB) // the USB-UART bridge of the M9; native USB has no baud rate
   if (!usbBusy() && (pendingBaud || (usbBaud != 115200 && int32_t(millis() - baudExpires) >= 0))) {
     Serial.flush();
     usbBaud = pendingBaud ? pendingBaud : 115200;
@@ -344,6 +363,7 @@ void appLoop() {
     Serial.updateBaudRate(usbBaud);
     baudExpires = millis() + 10000;
   }
+#endif
   powerTick(!usbBusy() && !pendingBaud && usbBaud == 115200);
 }
 void setup() {

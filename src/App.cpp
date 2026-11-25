@@ -30,8 +30,13 @@ String statusJson() {
   d["board"] = MM_BOARD_ID;
   d["board_name"] = hardware.boardName;
   d["max_power"] = MM_MAX_POWER;
+#if defined(MM_COMPACT)
+  d["family"] = "compact";
+  d["button"] = MM_BUTTON;
+#else
   d["family"] = "full";
   d["mic_key"] = hardware.micKey;
+#endif
   {
     static const int absent[] = {MM_ABSENT - 1};
     JsonArray a = d.createNestedArray("absent");
@@ -125,7 +130,11 @@ String statusJson() {
   d["quick_send"] = true;
   d["wardrive"] = true;
   d["notification_dropped"] = notifications::dropped();
+#if defined(MM_COMPACT)
+  d["notification_led"] = pins::led >= 0;
+#else
   d["notification_led"] = false;
+#endif
   d["event"] = meshRadio.event;
   d["wifi"] = portalActive();
   d["internet"] = internet.online();

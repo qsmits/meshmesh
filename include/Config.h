@@ -35,7 +35,11 @@ struct Config {
   bool launcherTiles = false; // Home and folders default to List
   bool lockDetails = true; // the locked screen names message senders
   uint8_t notifyLed = 1, notifyPopup = 1;
+#if defined(MM_COMPACT)
+  uint8_t notifyWake = 1; // the OLED wakes for every message
+#else
   uint8_t notifyWake = 0; // preserve the keyboard boards' existing screen-off behaviour
+#endif
   bool notifyFailed = false;
   char notifyWords[97] = "";
   char apps[256] = ""; // screen menu: order of the apps, "-" hides one (App.h); empty = the default

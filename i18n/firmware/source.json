@@ -14,7 +14,8 @@
  "008f5512": {
   "cells": 9,
   "where": [
-   "src/Ui.cpp:2175: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),"
+   "src/Ui.cpp:2175: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),",
+   "src/UiHeltec.cpp:483: case RowBw: return t(\"Bandwidth\");"
   ]
  },
  "00c6075a": {
@@ -67,6 +68,12 @@
    "src/Ui.cpp:951: case Motion: return t(\"Radar: motion (CSI)\");"
   ]
  },
+ "0438ccd1": {
+  "cells": 22,
+  "where": [
+   "src/UiHeltec.cpp:1992: : t(\"Delivery not confirmed\"));"
+  ]
+ },
  "04be6123": {
   "cells": 8,
   "where": [
@@ -83,6 +90,12 @@
   "cells": 14,
   "where": [
    "src/Ui.cpp:2179: if (i == RowPrev) return config.trial.set() ? t(\"Radio test\") : t(\"Previous radio\");"
+  ]
+ },
+ "0618ca8b": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:941: case ActTrace: return t(\"Trace route\");"
   ]
  },
  "0685388d": {
@@ -109,6 +122,12 @@
   "cells": 38,
   "where": [
    "src/UiChannels.inc:122: detail = t(\"Key from another app: 32 hex or base64\");"
+  ]
+ },
+ "07c50682": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:1615: : trend < 0 ? t(\"weaker\")"
   ]
  },
  "081ff103": {
@@ -142,10 +161,23 @@
    "src/UiRemote.inc:117: footer({{\"<>\", t(\"Action\")}, {\"OK\", t(\"Run\")}, {\"BACK\", t(\"Node\")}});"
   ]
  },
+ "0aba55a5": {
+  "cells": 7,
+  "where": [
+   "src/UiHeltec.cpp:1521: say(0, 43, \"RX \" + String(meshRadio.rxCount) + \"  TX \" + String(meshRadio.txCount) + t(\"  near \") + String(near),"
+  ]
+ },
  "0abaed3f": {
   "cells": 5,
   "where": [
    "src/Ui.cpp:2511: footer({{\"<>\", t(\"Found\")}, {\"OK\", t(\"Type\")}, {\"BACK\", t(\"Cancel\")}});"
+  ]
+ },
+ "0ac95089": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:949: case ActScreen: return t(\"Screen off: \") + (config.dimAfter ? String(config.dimAfter) + t(\" s\") : t(\"never\"));",
+   "src/UiHeltec.cpp:1707: say(0, 36, t(\"Screen off: \") + (config.dimAfter ? String(config.dimAfter) + t(\" s\") : t(\"never\")), small);"
   ]
  },
  "0ae8097f": {
@@ -176,7 +208,27 @@
   "cells": 14,
   "where": [
    "src/Ui.cpp:3062: notice(saved ? t(\"Settings saved\") : reply, saved ? ok : bad);",
+   "src/UiHeltec.cpp:635: notice(saved ? t(\"Settings saved\") : r.startsWith(\"ERR radio busy\") ? t(\"Radio busy, retry\") : r.substring(4));",
    "src/UiScreenLock.inc:56: notice(t(\"Settings saved\"), ok);"
+  ]
+ },
+ "0d410d04": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:1688: say(0, 27, t(\"Access point off\"));"
+  ]
+ },
+ "0d6af842": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:1544: say(0, 44, t(\"They appear here\"), small);"
+  ]
+ },
+ "0d719ca9": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:946: case ActLanguage: return t(\"Language: \") + langNames[config.lang < LangCount ? config.lang : 0];",
+   "src/UiHeltec.cpp:1705: say(0, 20, t(\"Language: \") + langNames[config.lang < LangCount ? config.lang : 0], small);"
   ]
  },
  "0dad9117": {
@@ -188,7 +240,7 @@
  "0dc6b4aa": {
   "cells": 3,
   "where": [
-   "src/Internet.cpp:691: case Off: return tr(\"Off\");",
+   "src/Internet.cpp:715: case Off: return tr(\"Off\");",
    "src/Ui.cpp:383: return v ? t(\"On\") : t(\"Off\");",
    "src/Ui.cpp:1097: wardrive::running() ? count(wardrive::points(), \"point\", \"points\") : t(\"Off\"), 0},"
   ]
@@ -239,7 +291,13 @@
  "10e72a25": {
   "cells": 12,
   "where": [
-   "src/Internet.cpp:695: case Connecting: return tr(\"Connecting: \") + ssid;"
+   "src/Internet.cpp:719: case Connecting: return tr(\"Connecting: \") + ssid;"
+  ]
+ },
+ "112800bb": {
+  "cells": 8,
+  "where": [
+   "src/UiHeltec.cpp:312: return radar.ble == Radar::BleBusy ? t(\"BLE busy\") : radar.ble == Radar::BleFailed ? t(\"BLE error\") : \"\";"
   ]
  },
  "119314d0": {
@@ -273,6 +331,18 @@
    "src/Ui.cpp:2214: const char* modes[] = {tr(\"Dark\"), tr(\"Light\"), tr(\"Auto\")};"
   ]
  },
+ "127be1ad": {
+  "cells": 8,
+  "where": [
+   "src/UiHeltec.cpp:1614: : trend > 0 ? t(\"stronger\")"
+  ]
+ },
+ "129c2249": {
+  "cells": 8,
+  "where": [
+   "src/UiHeltec.cpp:1730: say(0, 39, t(\"relayed \") + String(meshRadio.relayed) + t(\"  rejected \") + String(meshRadio.rejected), small);"
+  ]
+ },
  "12a760c5": {
   "cells": 30,
   "where": [
@@ -283,6 +353,12 @@
   "cells": 28,
   "where": [
    "src/Ui.cpp:3498: notice(t(\"This node has not shared GPS\"), warn);"
+  ]
+ },
+ "13254bc4": {
+  "cells": 3,
+  "where": [
+   "src/UiHeltec.cpp:913: : mode == 1 ? t(\"all\")"
   ]
  },
  "13d6d724": {
@@ -326,7 +402,8 @@
  "168512be": {
   "cells": 12,
   "where": [
-   "src/Ui.cpp:1187: : t(\"Radio error \") + String(meshRadio.radioError),"
+   "src/Ui.cpp:1187: : t(\"Radio error \") + String(meshRadio.radioError),",
+   "src/UiHeltec.cpp:1517: sayRight(128, 24, t(\"Radio error \") + String(meshRadio.radioError));"
   ]
  },
  "1716578a": {
@@ -339,7 +416,7 @@
  "17215ba9": {
   "cells": 16,
   "where": [
-   "src/Internet.cpp:697: default: return savedCount() ? tr(\"No saved network in range\") : tr(\"Choose a network\");"
+   "src/Internet.cpp:721: default: return savedCount() ? tr(\"No saved network in range\") : tr(\"Choose a network\");"
   ]
  },
  "172ac002": {
@@ -378,6 +455,12 @@
    "src/Ui.cpp:1942: text(224, 101, t(\"keep moving\"), faint, small);"
   ]
  },
+ "187974c2": {
+  "cells": 3,
+  "where": [
+   "src/UiHeltec.cpp:1570: say(0, 51, (metres < 1000 ? String(int(metres)) + t(\" m \") : String(metres / 1000, 1) + t(\" km \")) + dirs[k],"
+  ]
+ },
  "18ac79a2": {
   "cells": 8,
   "where": [
@@ -387,8 +470,14 @@
  "194d1be3": {
   "cells": 4,
   "where": [
-   "src/MeshRadio.cpp:1298: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));",
-   "src/MeshRadio.cpp:1298: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));"
+   "src/MeshRadio.cpp:1313: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));",
+   "src/MeshRadio.cpp:1313: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));"
+  ]
+ },
+ "195cfed6": {
+  "cells": 7,
+  "where": [
+   "src/UiHeltec.cpp:974: notice(sent ? t(\"Reply \") + text + t(\" queued\") : t(\"Reply not queued\"));"
   ]
  },
  "1983dffb": {
@@ -401,6 +490,12 @@
   "cells": 40,
   "where": [
    "src/Ui.cpp:2068: if (!n) textCenter(160, 175, t(\"Walk between the boards to see the trace\"), faint, small);"
+  ]
+ },
+ "19ec0a14": {
+  "cells": 22,
+  "where": [
+   "src/UiHeltec.cpp:789: return channels::parseLink(m.text, name, key) ? t(\"Invitation to channel \") + name : String(m.text);"
   ]
  },
  "19ede191": {
@@ -446,6 +541,12 @@
    "src/Ui.cpp:1623: p->heard ? (millis() - p->seen < 60000 ? ago(0) : ago(millis() - p->seen) + t(\" ago\")) : t(\"not since boot\")},"
   ]
  },
+ "1b46e0ae": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:306: case Radar::WifiBusy: return t(\"Wi-Fi busy\");"
+  ]
+ },
  "1b480018": {
   "cells": 24,
   "where": [
@@ -464,11 +565,24 @@
    "src/Ui.cpp:895: return count(p.pathLength & 63, \"hop\", \"hops\");"
   ]
  },
+ "1bc8e3ca": {
+  "cells": 8,
+  "where": [
+   "src/UiHeltec.cpp:962: case ActRadio: return t(\"Radio...\");"
+  ]
+ },
+ "1bce552b": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:195: return String(p.pathLength & 63) + t(\" hops\");"
+  ]
+ },
  "1be7979b": {
   "cells": 11,
   "where": [
    "src/Ui.cpp:1820: case Radar::WifiFailed: return t(\"Wi-Fi error\");",
-   "src/Ui.cpp:2007: : radar.wifi == Radar::WifiFailed              ? t(\"Wi-Fi error\")"
+   "src/Ui.cpp:2007: : radar.wifi == Radar::WifiFailed              ? t(\"Wi-Fi error\")",
+   "src/UiHeltec.cpp:307: case Radar::WifiFailed: return t(\"Wi-Fi error\");"
   ]
  },
  "1c076c32": {
@@ -482,6 +596,12 @@
   "cells": 7,
   "where": [
    "src/Ui.cpp:2746: {t(\"Relayed\"), String(meshRadio.relayed)},"
+  ]
+ },
+ "1c43d491": {
+  "cells": 12,
+  "where": [
+   "src/UiHeltec.cpp:1666: : fix                           ? t(\"Position fix\")"
   ]
  },
  "1c9c7d52": {
@@ -502,6 +622,12 @@
    "src/Ui.cpp:1511: : hardware.clockConflict ? t(\"GPS: old date\")"
   ]
  },
+ "1d87ea26": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:288: case RadarTarget::Audio: return t(\"headphones\");"
+  ]
+ },
  "1db880db": {
   "cells": 7,
   "where": [
@@ -511,7 +637,8 @@
  "1dd4ab8a": {
   "cells": 9,
   "where": [
-   "src/Ui.cpp:2297: if (wardrive::settings.passive) s = t(\"Listening\");"
+   "src/Ui.cpp:2297: if (wardrive::settings.passive) s = t(\"Listening\");",
+   "src/UiHeltec.cpp:694: if (wardrive::settings.passive) s = t(\"Listening\");"
   ]
  },
  "1e0d93a4": {
@@ -537,6 +664,18 @@
   "where": [
    "src/Ui.cpp:2714: case KeyRight: return t(\"Right\");",
    "src/Ui.cpp:2771: {tr(\"Right\"), t(\"In text: capital letter\")}};"
+  ]
+ },
+ "1ea76214": {
+  "cells": 8,
+  "where": [
+   "src/UiHeltec.cpp:1079: notice(sent ? t(\"Sent, waiting\") : t(\"Not sent\"));"
+  ]
+ },
+ "1ee0cbd7": {
+  "cells": 14,
+  "where": [
+   "src/UiHeltec.cpp:1575: say(0, 30, t(\"No nodes heard\"));"
   ]
  },
  "1f0bca87": {
@@ -571,6 +710,12 @@
   "cells": 4,
   "where": [
    "src/Ui.cpp:2197: case 2: return String(c.bandwidth, 1) + t(\" kHz\");"
+  ]
+ },
+ "2029f0ba": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:1573: say(0, 51, t(\"has GPS position\"), small);"
   ]
  },
  "203aefe9": {
@@ -659,6 +804,18 @@
    "src/Ui.cpp:2179: if (i == RowPrev) return config.trial.set() ? t(\"Radio test\") : t(\"Previous radio\");"
   ]
  },
+ "24b9070d": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:1730: say(0, 39, t(\"relayed \") + String(meshRadio.relayed) + t(\"  rejected \") + String(meshRadio.rejected), small);"
+  ]
+ },
+ "25c4d45b": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:942: case ActGps: return config.gps ? t(\"Turn GPS off\") : t(\"Turn GPS on\");"
+  ]
+ },
  "25d966fa": {
   "cells": 13,
   "where": [
@@ -675,7 +832,8 @@
  "2697628b": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:2086: textCenter(160, 138, farewell ? t(\"Device is off\") : t(\"Turning off...\"), ink, bold);"
+   "src/Ui.cpp:2086: textCenter(160, 138, farewell ? t(\"Device is off\") : t(\"Turning off...\"), ink, bold);",
+   "src/UiHeltec.cpp:1433: say(0, 24, farewell ? t(\"Device is off\") : t(\"Turning off...\"), bold);"
   ]
  },
  "26f8e74e": {
@@ -683,6 +841,18 @@
   "where": [
    "src/Ui.cpp:1641: deleteArmed ? t(\"Sure?\") : t(\"Forget\"),  t(\"Server\"), t(\"Trace\")};",
    "src/UiRemote.inc:107: const String names[] = {t(\"Login\"), t(\"Status\"), t(\"Command\"), t(\"Trace\")};"
+  ]
+ },
+ "2725da48": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:1427: return t(\"hold \") + MM_BUTTON;"
+  ]
+ },
+ "27669571": {
+  "cells": 14,
+  "where": [
+   "src/UiHeltec.cpp:944: case ActWifi: return portalActive() ? t(\"Turn Wi-Fi off\") : t(\"Turn Wi-Fi on\");"
   ]
  },
  "276d8d02": {
@@ -697,10 +867,28 @@
    "src/Ui.cpp:2729: for (int i = 0; i < 8; i++) label[i] = names[i] ? String(names[i]) : i == 1 ? t(\"Keyboard\") : t(\"Compass\");"
   ]
  },
+ "280669ca": {
+  "cells": 21,
+  "where": [
+   "src/UiHeltec.cpp:714: if (!r.count) return t(\"Ping: nobody repeated\");"
+  ]
+ },
+ "282b6065": {
+  "cells": 8,
+  "where": [
+   "src/UiHeltec.cpp:901: case ActWardrivePing: return t(\"Ping now\");"
+  ]
+ },
  "28b19af7": {
   "cells": 3,
   "where": [
    "src/Ui.cpp:871: if (s < 60) return t(\"now\");"
+  ]
+ },
+ "28cda4a5": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:974: notice(sent ? t(\"Reply \") + text + t(\" queued\") : t(\"Reply not queued\"));"
   ]
  },
  "29cc0d19": {
@@ -712,7 +900,8 @@
  "29e665f2": {
   "cells": 2,
   "where": [
-   "src/Ui.cpp:920: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};"
+   "src/Ui.cpp:920: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};",
+   "src/UiHeltec.cpp:1568: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};"
   ]
  },
  "2ad4b008": {
@@ -725,7 +914,8 @@
  "2b6886b2": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:2758: footer({{\"OK\", hardware.fsOk ? t(\"Crypto test + sound\") : t(\"Create storage...\")}, {\"BACK\", t(\"Back\")}});"
+   "src/Ui.cpp:2758: footer({{\"OK\", hardware.fsOk ? t(\"Crypto test + sound\") : t(\"Create storage...\")}, {\"BACK\", t(\"Back\")}});",
+   "src/UiHeltec.cpp:917: case ActFormat: return t(\"Create storage...\");"
   ]
  },
  "2b6aba6c": {
@@ -752,6 +942,12 @@
    "src/QuickSend.cpp:18: tr(\"Arrived\"),"
   ]
  },
+ "2c559fd7": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:961: case ActPowerOff: return t(\"Turn off...\");"
+  ]
+ },
  "2c64a5cf": {
   "cells": 11,
   "where": [
@@ -768,6 +964,12 @@
   "cells": 5,
   "where": [
    "src/Ui.cpp:1641: deleteArmed ? t(\"Sure?\") : t(\"Forget\"),  t(\"Server\"), t(\"Trace\")};"
+  ]
+ },
+ "2d97fd4e": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:1079: notice(sent ? t(\"Sent, waiting\") : t(\"Not sent\"));"
   ]
  },
  "2dd2d3d9": {
@@ -791,13 +993,15 @@
  "2fe2598e": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2298: if (wardrive::settings.ping) s += String(s.length() ? \" + \" : \"\") + t(\"pings\");"
+   "src/Ui.cpp:2298: if (wardrive::settings.ping) s += String(s.length() ? \" + \" : \"\") + t(\"pings\");",
+   "src/UiHeltec.cpp:695: if (wardrive::settings.ping) s += String(s.length() ? \" + \" : \"\") + t(\"pings\");"
   ]
  },
  "2ffcbe05": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2505: : s.phase == netfind::State::Done && s.best != 255 ? t(\"Test\")"
+   "src/Ui.cpp:2505: : s.phase == netfind::State::Done && s.best != 255 ? t(\"Test\")",
+   "src/UiHeltec.cpp:493: case RowPrev: return config.trial.set() ? t(\"Test\") : t(\"Previous\");"
   ]
  },
  "30025399": {
@@ -823,7 +1027,14 @@
  "308f8aac": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:3348: notice(sent ? t(\"Node announced\") : t(\"Announcement failed\"), sent ? ok : bad);"
+   "src/Ui.cpp:3348: notice(sent ? t(\"Node announced\") : t(\"Announcement failed\"), sent ? ok : bad);",
+   "src/UiHeltec.cpp:1049: case ActAdvert: notice(meshRadio.sendHello() ? t(\"Node announced\") : t(\"Announcement failed\")); break;"
+  ]
+ },
+ "317f4047": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:715: return t(\"Ping: \") + String(r.count) + t(\" rpt, \") + wdHash(r.hash, r.size) + \" \" + wdSnr(r.snr);"
   ]
  },
  "32e97c4a": {
@@ -857,6 +1068,12 @@
    "src/UiRemote.inc:99: text(14, y, t(\"Command: \") + remoteState(s->command, \"\"), dim, small);"
   ]
  },
+ "34426849": {
+  "cells": 18,
+  "where": [
+   "src/UiHeltec.cpp:948: case ActDoubleBack: return config.doubleBack ? t(\"Double click: back\") : t(\"Double click: off\");"
+  ]
+ },
  "3468032d": {
   "cells": 4,
   "where": [
@@ -877,6 +1094,12 @@
    "src/Ui.cpp:872: if (s < 3600) return String(s / 60) + t(\" min\");",
    "src/UiRemote.inc:4: return s < 3600    ? String(s / 60) + t(\" min\")",
    "src/UiRemote.inc:5: : s < 86400 ? String(s / 3600) + t(\" h \") + String(s / 60 % 60) + t(\" min\")"
+  ]
+ },
+ "34ce44a5": {
+  "cells": 4,
+  "where": [
+   "src/UiHeltec.cpp:1281: return \"< \" + t(\"Exit\");"
   ]
  },
  "34dfb5f5": {
@@ -921,7 +1144,8 @@
  "35e6a0ec": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:3627: notice(t(\"Nothing to save\"), dim);"
+   "src/Ui.cpp:3627: notice(t(\"Nothing to save\"), dim);",
+   "src/UiHeltec.cpp:618: notice(t(\"Nothing to save\"));"
   ]
  },
  "3613e041": {
@@ -930,12 +1154,30 @@
    "src/Ui.cpp:2737: textRight(x + 144, y + 14, state[i] ? \"OK\" : t(\"n/a\"), state[i] ? ok : bad, small);"
   ]
  },
+ "3614fff0": {
+  "cells": 7,
+  "where": [
+   "src/UiHeltec.cpp:792: notice(r == MeshRadio::ChannelAdded    ? t(\"Joined \") + name"
+  ]
+ },
  "3750eb16": {
   "cells": 14,
   "where": [
    "src/Ui.cpp:1196: footer({{\"OK\", t(\"Open\")}, {\"MSG\", t(\"Chats\")}, {\"MAP\", t(\"Map\")}, {\"MENU\", t(\"Radio controls\")}});",
    "src/UiActions.inc:68: rows[n++] = {A::Radios, IcRadio, t(\"Radio controls\")};",
    "src/UiActions.inc:87: text(14, 47, radios ? t(\"Radio controls\") : t(\"Actions\"), ink, big);"
+  ]
+ },
+ "376c2317": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:1064: notice(sent ? t(\"OK queued\") : t(\"Not queued\"));"
+  ]
+ },
+ "3792fa0b": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:220: if (tr.state != remote::Done) return t(\"trace: no answer\");"
   ]
  },
  "37976ee4": {
@@ -950,10 +1192,37 @@
    "src/Ui.cpp:1725: : navigation.calibrated ? t(\"calibrated\")"
   ]
  },
+ "37c16fa8": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:1586: : radar.csiStale               ? t(\"CSI frozen\")"
+  ]
+ },
+ "37cc8d2a": {
+  "cells": 18,
+  "where": [
+   "src/UiHeltec.cpp:712: if (wardrive::pinging()) return t(\"Ping: listening...\");"
+  ]
+ },
  "37e67bfc": {
   "cells": 2,
   "where": [
-   "src/Ui.cpp:920: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};"
+   "src/Ui.cpp:920: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};",
+   "src/UiHeltec.cpp:1568: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};"
+  ]
+ },
+ "37fd327a": {
+  "cells": 4,
+  "where": [
+   "src/UiHeltec.cpp:200: case 3: return t(\"room\");"
+  ]
+ },
+ "381d190f": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:432: case NotifyPage: return t(\"Notifications\");",
+   "src/UiHeltec.cpp:904: case ActNotify: return t(\"Notifications\");",
+   "src/UiHeltec.cpp:1506: title = t(\"Notifications\");"
   ]
  },
  "394ec4f2": {
@@ -971,13 +1240,20 @@
  "39de9ae9": {
   "cells": 22,
   "where": [
-   "src/Ui.cpp:3644: notice(done                             ? t(\"Radio settings changed\")"
+   "src/Ui.cpp:3644: notice(done                             ? t(\"Radio settings changed\")",
+   "src/UiHeltec.cpp:607: notice(done                             ? t(\"Radio settings changed\")"
   ]
  },
  "3a56e759": {
   "cells": 6,
   "where": [
    "src/Ui.cpp:857: const char* days[] = {tr(\"Sunday\"),   tr(\"Monday\"), tr(\"Tuesday\"), tr(\"Wednesday\"),"
+  ]
+ },
+ "3a9c0bfa": {
+  "cells": 15,
+  "where": [
+   "src/UiHeltec.cpp:1138: notice(t(\"No beacon heard\"));"
   ]
  },
  "3b06b3cd": {
@@ -1017,6 +1293,25 @@
    "src/Ui.cpp:2093: String names[] = {t(\"Radio\"),         t(\"Screen & device\"), t(\"GPS & compass\"), t(\"Connections\"),"
   ]
  },
+ "3da19f7a": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:1737: footer(page == FolderPage ? t(\"hold: open\")",
+   "src/UiHeltec.cpp:1738: : appClosed()      ? t(\"hold: open\")"
+  ]
+ },
+ "3e0b7996": {
+  "cells": 15,
+  "where": [
+   "src/UiHeltec.cpp:1086: case ActPosition: notice(meshRadio.sendPosition() ? t(\"Position shared\") : t(\"Needs a GPS fix\")); break;"
+  ]
+ },
+ "3e4cca02": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:1669: : t(\"No data from GPS\"),"
+  ]
+ },
  "3e892b4d": {
   "cells": 6,
   "where": [
@@ -1037,6 +1332,12 @@
    "src/Ui.cpp:2256: case 6: return t(\"Relay packets with fewer hops than this\");"
   ]
  },
+ "3f5b0605": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:1587: : radar.calibrateUntil         ? t(\"calibrating\")"
+  ]
+ },
  "3f609f74": {
   "cells": 4,
   "where": [
@@ -1055,6 +1356,12 @@
    "src/UiRemote.inc:95: text(14, y, t(\"Replies:\"), dim, small);"
   ]
  },
+ "4021ba19": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:1564: : t(\"saved, not heard\"),"
+  ]
+ },
  "41ae3d10": {
   "cells": 5,
   "where": [
@@ -1065,6 +1372,18 @@
   "cells": 59,
   "where": [
    "src/Ui.cpp:2071: text(12, 130, fit(t(\"Place the boards 2-5 m apart; motion between them is sensed\"), 296, small), dim, small);"
+  ]
+ },
+ "423b6110": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:938: return p && remote::saved(p->id) ? t(\"Log in\") : t(\"Log in as guest\");"
+  ]
+ },
+ "4245804b": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:289: case RadarTarget::Personal: return t(\"phone/watch\");"
   ]
  },
  "42cfcb2d": {
@@ -1085,6 +1404,31 @@
    "src/Ui.cpp:2712: case KeyUp: return t(\"Up\");"
   ]
  },
+ "42fc3fcd": {
+  "cells": 14,
+  "where": [
+   "src/UiHeltec.cpp:956: case ActCsiBeacon: return radar.csi == Radar::CsiBeacon ? t(\"Stop beacon\") : t(\"CSI beacon: on\");"
+  ]
+ },
+ "433213b3": {
+  "cells": 19,
+  "where": [
+   "src/UiHeltec.cpp:305: case Radar::WifiPortal: return t(\"Wi-Fi: access point\");"
+  ]
+ },
+ "43a7ef59": {
+  "cells": 4,
+  "where": [
+   "src/UiHeltec.cpp:1570: say(0, 51, (metres < 1000 ? String(int(metres)) + t(\" m \") : String(metres / 1000, 1) + t(\" km \")) + dirs[k],"
+  ]
+ },
+ "43d50db4": {
+  "cells": 19,
+  "where": [
+   "src/UiHeltec.cpp:1379: footer(t(\"click-next hold-run\"));",
+   "src/UiHeltec.cpp:1740: ? (quickTargets || !quickIndex || quickIndex > quickSend::Count ? t(\"click-next hold-run\")"
+  ]
+ },
  "43e4fe52": {
   "cells": 8,
   "where": [
@@ -1095,6 +1439,12 @@
   "cells": 9,
   "where": [
    "src/Ui.cpp:2157: return t(\"OK: test \") + netfind::profileText(r.radio) +"
+  ]
+ },
+ "445b8620": {
+  "cells": 17,
+  "where": [
+   "src/UiHeltec.cpp:1157: notice(valid ? t(\"Encryption: OK\") : t(\"Encryption: ERROR\"));"
   ]
  },
  "44a7f051": {
@@ -1149,6 +1499,12 @@
    "src/Ui.cpp:1313: : t(\"Open channel · senders unverified · no ACK\"))"
   ]
  },
+ "46dd80ed": {
+  "cells": 12,
+  "where": [
+   "src/UiHeltec.cpp:713: if (!r.done) return t(\"No pings yet\");"
+  ]
+ },
  "46ff9c40": {
   "cells": 6,
   "where": [
@@ -1170,13 +1526,15 @@
  "48ce1413": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:3666: notice(sent ? t(\"Position shared\") : t(\"Waiting for GPS fix\"), sent ? ok : warn);"
+   "src/Ui.cpp:3666: notice(sent ? t(\"Position shared\") : t(\"Waiting for GPS fix\"), sent ? ok : warn);",
+   "src/UiHeltec.cpp:1086: case ActPosition: notice(meshRadio.sendPosition() ? t(\"Position shared\") : t(\"Needs a GPS fix\")); break;"
   ]
  },
  "49031ccd": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:1895: text(left + 4, 110, fit(state.length() ? state : t(\"No signals yet\"), width - 8, small), color, small);"
+   "src/Ui.cpp:1895: text(left + 4, 110, fit(state.length() ? state : t(\"No signals yet\"), width - 8, small), color, small);",
+   "src/UiHeltec.cpp:1644: say(0, 30, beacon ? t(\"Beacon on\") : t(\"No signals yet\"));"
   ]
  },
  "4926f14f": {
@@ -1202,13 +1560,14 @@
  "49e98b8b": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2203: case 8: return count(c.pathHash, \"byte\", \"bytes\");"
+   "src/Ui.cpp:2203: case 8: return count(c.pathHash, \"byte\", \"bytes\");",
+   "src/UiHeltec.cpp:507: case RowHash: return plural(c.pathHash, \"byte\", \"bytes\");"
   ]
  },
  "49fd4d21": {
   "cells": 18,
   "where": [
-   "src/Internet.cpp:693: return portalActive() ? tr(\"Paused: access point on\") : radar.active ? tr(\"Paused: radar open\") : tr(\"Paused\");"
+   "src/Internet.cpp:717: return portalActive() ? tr(\"Paused: access point on\") : radar.active ? tr(\"Paused: radar open\") : tr(\"Paused\");"
   ]
  },
  "4aba2ce0": {
@@ -1223,6 +1582,12 @@
    "src/Ui.cpp:942: case Settings: return t(\"Settings\");",
    "src/Ui.cpp:1100: {IcGear, dim, t(\"Settings\"), t(\"Radio, screen\"), 0}};",
    "src/Ui.cpp:2765: {\"CTRL\", t(\"Settings\")},"
+  ]
+ },
+ "4b2d12ac": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:957: case ActCsiSensor: return radar.csi == Radar::CsiSensor ? t(\"CSI motion: off\") : t(\"CSI sensor\");"
   ]
  },
  "4b3d5e0c": {
@@ -1246,6 +1611,18 @@
    "src/UiActions.inc:53: rows[n++] = {A::List, IcRadar, scopeWide ? t(\"Radar\") : t(\"Full-width list\")};"
   ]
  },
+ "4bab65fd": {
+  "cells": 8,
+  "where": [
+   "src/UiHeltec.cpp:199: case 2: return t(\"repeater\");"
+  ]
+ },
+ "4c494547": {
+  "cells": 15,
+  "where": [
+   "src/UiHeltec.cpp:957: case ActCsiSensor: return radar.csi == Radar::CsiSensor ? t(\"CSI motion: off\") : t(\"CSI sensor\");"
+  ]
+ },
  "4c80d01f": {
   "cells": 13,
   "where": [
@@ -1261,7 +1638,14 @@
  "4c891c6a": {
   "cells": 6,
   "where": [
-   "src/QuickSend.cpp:16: tr(\"Got it\"),"
+   "src/QuickSend.cpp:16: tr(\"Got it\"),",
+   "src/UiHeltec.cpp:1051: case ActReplyAck: reply(t(\"Got it\")); break;"
+  ]
+ },
+ "4ca9cc3b": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:922: return t(\"Join \") + name;"
   ]
  },
  "4cc13e8b": {
@@ -1274,13 +1658,26 @@
   "cells": 14,
   "where": [
    "src/Ui.cpp:3818: return tr(\"Radio TX error\");",
-   "src/Ui.cpp:3839: notice(notification.kind == notifications::TxError             ? t(\"Radio TX error\")"
+   "src/Ui.cpp:3839: notice(notification.kind == notifications::TxError             ? t(\"Radio TX error\")",
+   "src/UiHeltec.cpp:1990: notice(e.kind == notifications::TxError             ? t(\"Radio TX error\")"
   ]
  },
  "4cda3fd3": {
   "cells": 38,
   "where": [
    "src/UiChannels.inc:154: meshRadio.heardSamples ? t(\"Other channels heard: none\") : t(\"Channels heard on air will appear here\"),"
+  ]
+ },
+ "4d060666": {
+  "cells": 22,
+  "where": [
+   "src/UiHeltec.cpp:669: if (radioEditing) return radioRow == RowFreq ? t(\"click-digit+ hold-next\") : t(\"click-change hold-done\");"
+  ]
+ },
+ "4d109126": {
+  "cells": 9,
+  "where": [
+   "src/UiHeltec.cpp:1613: : !fresh    ? (radar.samples > 1 ? t(\"lost\") : t(\"no signal\"))"
   ]
  },
  "4d2d5d68": {
@@ -1313,7 +1710,8 @@
  "4d851fe7": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2036: state = t(\"MOTION\");"
+   "src/Ui.cpp:2036: state = t(\"MOTION\");",
+   "src/UiHeltec.cpp:1588: : radar.moving                 ? t(\"MOTION\")"
   ]
  },
  "4dbe556f": {
@@ -1326,6 +1724,12 @@
   "cells": 6,
   "where": [
    "src/Ui.cpp:1941: text(224, 86, trend > 0 ? t(\"Stronger\") : trend < 0 ? t(\"Weaker\") : t(\"Steady\"), c, bold);"
+  ]
+ },
+ "4de9b3ae": {
+  "cells": 7,
+  "where": [
+   "src/UiHeltec.cpp:1596: String(radar.activity * 1000, 1) + t(\" / thr \") + String(threshold * 1000, 1) +"
   ]
  },
  "4e5a0349": {
@@ -1370,6 +1774,18 @@
    "src/UiRemote.inc:64: s->room ? t(\"Posts \") + String(s->posted) : t(\"Air \") + uptimeText(s->airtime)};"
   ]
  },
+ "4fd25c86": {
+  "cells": 22,
+  "where": [
+   "src/UiHeltec.cpp:702: if (!wardrive::position(lat, lon, phone)) return t(\"No position: GPS/phone\");"
+  ]
+ },
+ "4feda587": {
+  "cells": 7,
+  "where": [
+   "src/UiHeltec.cpp:1731: say(0, 48, t(\"up \") + ago(millis()) + t(\"  boot \") + String(config.bootCounter), small);"
+  ]
+ },
  "4ff47198": {
   "cells": 19,
   "where": [
@@ -1389,6 +1805,12 @@
    "src/Ui.cpp:2695: {\"DEL\", saved ? t(\"Forget\") : t(\"Rescan\")},"
   ]
  },
+ "510149b4": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:1699: say(0, 27, t(\"Bluetooth off\"));"
+  ]
+ },
  "517f4378": {
   "cells": 10,
   "where": [
@@ -1405,7 +1827,14 @@
   "cells": 15,
   "where": [
    "src/Ui.cpp:1263: : !c                            ? t(\"No messages yet\")",
-   "src/Ui.cpp:1372: textCenter(160, 124, t(\"No messages yet\"), dim);"
+   "src/Ui.cpp:1372: textCenter(160, 124, t(\"No messages yet\"), dim);",
+   "src/UiHeltec.cpp:1543: say(0, 30, t(\"No messages yet\"));"
+  ]
+ },
+ "525ead8b": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:1645: say(0, 44, st.length() ? st : beacon ? t(\"hold: switch off\") : t(\"Wi-Fi and LoRa\"), small);"
   ]
  },
  "5261f68a": {
@@ -1417,7 +1846,7 @@
  "5284637e": {
   "cells": 23,
   "where": [
-   "src/Internet.cpp:693: return portalActive() ? tr(\"Paused: access point on\") : radar.active ? tr(\"Paused: radar open\") : tr(\"Paused\");"
+   "src/Internet.cpp:717: return portalActive() ? tr(\"Paused: access point on\") : radar.active ? tr(\"Paused: radar open\") : tr(\"Paused\");"
   ]
  },
  "538b10e9": {
@@ -1443,7 +1872,8 @@
  "54279dd1": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:3840: : channels::isChannel(notification.message.destination) ? t(\"No repeat heard\")"
+   "src/Ui.cpp:3840: : channels::isChannel(notification.message.destination) ? t(\"No repeat heard\")",
+   "src/UiHeltec.cpp:1991: : channels::isChannel(e.message.destination) ? t(\"No repeat heard\")"
   ]
  },
  "542d8f50": {
@@ -1455,7 +1885,8 @@
  "542f08f5": {
   "cells": 18,
   "where": [
-   "src/UiChannels.inc:21: case MeshRadio::ChannelFull: return t(\"8 channels at most\");"
+   "src/UiChannels.inc:21: case MeshRadio::ChannelFull: return t(\"8 channels at most\");",
+   "src/UiHeltec.cpp:794: : r == MeshRadio::ChannelFull   ? t(\"8 channels at most\")"
   ]
  },
  "543bd3e9": {
@@ -1491,13 +1922,20 @@
  "54f6c01a": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2363: notice(wardrive::ping()                       ? t(\"Ping queued\")"
+   "src/Ui.cpp:2363: notice(wardrive::ping()                       ? t(\"Ping queued\")",
+   "src/UiHeltec.cpp:1010: notice(wardrive::ping()                       ? t(\"Ping queued\")"
   ]
  },
  "555cbe68": {
   "cells": 4,
   "where": [
    "src/Ui.cpp:2501: footer({{\"OK\", config.trial.set() ? t(\"Keep\") : t(\"Return\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});"
+  ]
+ },
+ "55647eb0": {
+  "cells": 15,
+  "where": [
+   "src/UiHeltec.cpp:938: return p && remote::saved(p->id) ? t(\"Log in\") : t(\"Log in as guest\");"
   ]
  },
  "55b3f622": {
@@ -1535,7 +1973,27 @@
   "cells": 5,
   "where": [
    "src/Ui.cpp:943: case Radio: return t(\"Radio\");",
-   "src/Ui.cpp:2093: String names[] = {t(\"Radio\"),         t(\"Screen & device\"), t(\"GPS & compass\"), t(\"Connections\"),"
+   "src/Ui.cpp:2093: String names[] = {t(\"Radio\"),         t(\"Screen & device\"), t(\"GPS & compass\"), t(\"Connections\"),",
+   "src/UiHeltec.cpp:1416: header(t(\"Radio\") + (radioChanged() ? \" *\" : \"\"));"
+  ]
+ },
+ "56a8ebda": {
+  "cells": 20,
+  "where": [
+   "src/UiHeltec.cpp:1507: say(0, 28, t(\"LED / screen / popup\"), small);"
+  ]
+ },
+ "56bc324a": {
+  "cells": 12,
+  "where": [
+   "src/UiHeltec.cpp:949: case ActScreen: return t(\"Screen off: \") + (config.dimAfter ? String(config.dimAfter) + t(\" s\") : t(\"never\"));",
+   "src/UiHeltec.cpp:1707: say(0, 36, t(\"Screen off: \") + (config.dimAfter ? String(config.dimAfter) + t(\" s\") : t(\"never\")), small);"
+  ]
+ },
+ "56eafb8f": {
+  "cells": 9,
+  "where": [
+   "src/UiHeltec.cpp:929: case ActReplyOk: return t(\"Reply: OK\") + String(publicChat ? \" #\" : \"\");"
   ]
  },
  "5797ea6a": {
@@ -1544,10 +2002,34 @@
    "src/UiScreenLock.inc:47: footer({{\"OK\", t(\"Confirm\")}, {\"DEL\", t(\"Delete\")}});"
   ]
  },
+ "57a21e12": {
+  "cells": 12,
+  "where": [
+   "src/UiHeltec.cpp:964: case ActClose: return t(\"< Close menu\");"
+  ]
+ },
+ "58300254": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:1535: const char* states[] = {\"\", tr(\"queued\"), tr(\"sent\"), tr(\"delivered\"), tr(\"no ACK\")};"
+  ]
+ },
  "58389a6e": {
   "cells": 21,
   "where": [
    "src/Ui.cpp:2833: : page == ChannelInfo ? String(t(\"Region of the channel\"))"
+  ]
+ },
+ "587de994": {
+  "cells": 14,
+  "where": [
+   "src/UiHeltec.cpp:1645: say(0, 44, st.length() ? st : beacon ? t(\"hold: switch off\") : t(\"Wi-Fi and LoRa\"), small);"
+  ]
+ },
+ "58b577e3": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:1632: String st = f.kind == RadarTarget::Lora ? String(radar.samples) + t(\" pkts\") : String(radar.rate) + t(\"/s\");"
   ]
  },
  "59317dec": {
@@ -1568,6 +2050,12 @@
    "src/UiChannels.inc:344: textCenter(cx, ry + 9, region ? (regionChoice == c->region ? t(\"Region\") : t(\"Region · OK: save\")) : t(\"Invite\"),"
   ]
  },
+ "59c32085": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:228: return String(s->battery / 1000.0f, 2) + t(\"V up \") + String(s->uptime / 3600) + t(\"h rx \") + String(s->received);"
+  ]
+ },
  "59d32a58": {
   "cells": 16,
   "where": [
@@ -1577,7 +2065,19 @@
  "5a1b6d0e": {
   "cells": 6,
   "where": [
-   "src/MeshRadio.cpp:1299: String s = m.route == ChatMessage::RouteDirect ? (hops.length() ? hops : String(tr(\"routed\")))"
+   "src/MeshRadio.cpp:1314: String s = m.route == ChatMessage::RouteDirect ? (hops.length() ? hops : String(tr(\"routed\")))"
+  ]
+ },
+ "5a5d7e3d": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:947: case ActBattery: return config.batteryVolts ? t(\"Battery: volts\") : t(\"Battery: percent\");"
+  ]
+ },
+ "5a745d7f": {
+  "cells": 7,
+  "where": [
+   "src/UiHeltec.cpp:911: : t(\"Popup: \")) +"
   ]
  },
  "5af8edfd": {
@@ -1595,7 +2095,14 @@
  "5c028b25": {
   "cells": 2,
   "where": [
-   "src/Ui.cpp:920: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};"
+   "src/Ui.cpp:920: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};",
+   "src/UiHeltec.cpp:1568: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};"
+  ]
+ },
+ "5cb4426d": {
+  "cells": 20,
+  "where": [
+   "src/UiHeltec.cpp:900: case ActWardriveRun: return wardrive::running() ? t(\"Stop wardrive\") : t(\"Start: listen + ping\");"
   ]
  },
  "5cbe851e": {
@@ -1648,10 +2155,25 @@
    "src/Ui.cpp:2229: case 6: return c.dimAfter ? String(c.dimAfter) + t(\" s\") : t(\"Off\");"
   ]
  },
+ "5ed1fbd7": {
+  "cells": 2,
+  "where": [
+   "src/UiHeltec.cpp:1599: say(30, 62, String(radar.csiRate) + t(\"/s\"), small);",
+   "src/UiHeltec.cpp:1632: String st = f.kind == RadarTarget::Lora ? String(radar.samples) + t(\" pkts\") : String(radar.rate) + t(\"/s\");",
+   "src/UiHeltec.cpp:1638: title = beacon ? t(\"CSI beacon \") + String(radar.csiRate) + t(\"/s\")"
+  ]
+ },
  "5f7eec60": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2357: notice(wardrive::running() ? t(\"Wardrive on\") : t(\"Wardrive off\"), wardrive::running() ? ok : dim);"
+   "src/Ui.cpp:2357: notice(wardrive::running() ? t(\"Wardrive on\") : t(\"Wardrive off\"), wardrive::running() ? ok : dim);",
+   "src/UiHeltec.cpp:1003: : wardrive::running()  ? t(\"Wardrive on\")"
+  ]
+ },
+ "5fb7b228": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:287: case RadarTarget::Watch: return t(\"watch\");"
   ]
  },
  "5fc765a7": {
@@ -1663,8 +2185,8 @@
  "5fe7049c": {
   "cells": 6,
   "where": [
-   "src/MeshRadio.cpp:1297: : !m.hops     ? String(brief ? tr(\"direct\") : tr(\"direct\"))",
-   "src/MeshRadio.cpp:1297: : !m.hops     ? String(brief ? tr(\"direct\") : tr(\"direct\"))",
+   "src/MeshRadio.cpp:1312: : !m.hops     ? String(brief ? tr(\"direct\") : tr(\"direct\"))",
+   "src/MeshRadio.cpp:1312: : !m.hops     ? String(brief ? tr(\"direct\") : tr(\"direct\"))",
    "src/Ui.cpp:894: if (!(p.pathLength & 63)) return t(\"direct\");"
   ]
  },
@@ -1680,10 +2202,25 @@
    "src/UiRemote.inc:28: case remote::Refused: return t(\"refused\");"
   ]
  },
+ "60cec72a": {
+  "cells": 12,
+  "where": [
+   "src/UiHeltec.cpp:1667: : hardware.clockConflict        ? t(\"Old GPS date\")"
+  ]
+ },
  "60e47df0": {
   "cells": 2,
   "where": [
-   "src/Ui.cpp:383: return v ? t(\"On\") : t(\"Off\");"
+   "src/Ui.cpp:383: return v ? t(\"On\") : t(\"Off\");",
+   "src/UiHeltec.cpp:893: return value ? t(\"On\") : t(\"Off\");"
+  ]
+ },
+ "61342fd0": {
+  "cells": 2,
+  "where": [
+   "src/UiHeltec.cpp:506: case RowRelay: return c.relay ? t(\"on\") : t(\"off\");",
+   "src/UiHeltec.cpp:916: case ActNotifyFailed: return t(\"TX alert: \") + (config.notifyFailed ? t(\"on\") : t(\"off\"));",
+   "src/UiHeltec.cpp:1083: notice(applyOne(\"gps\", !config.gps).startsWith(\"OK\") ? \"GPS: \" + String(config.gps ? t(\"on\") : t(\"off\"))"
   ]
  },
  "61efb279": {
@@ -1704,6 +2241,18 @@
    "src/Ui.cpp:1530: {\"+/-\", t(\"Zoom\")},"
   ]
  },
+ "625c860f": {
+  "cells": 9,
+  "where": [
+   "src/UiHeltec.cpp:1535: const char* states[] = {\"\", tr(\"queued\"), tr(\"sent\"), tr(\"delivered\"), tr(\"no ACK\")};"
+  ]
+ },
+ "6261af7f": {
+  "cells": 4,
+  "where": [
+   "src/UiHeltec.cpp:1535: const char* states[] = {\"\", tr(\"queued\"), tr(\"sent\"), tr(\"delivered\"), tr(\"no ACK\")};"
+  ]
+ },
  "62722f4e": {
   "cells": 16,
   "where": [
@@ -1713,7 +2262,7 @@
  "62bbb91b": {
   "cells": 7,
   "where": [
-   "src/MeshRadio.cpp:1304: s += m.status == ChatMessage::Delivered ? (brief ? \" #\" + String(m.tries) : String(tr(\" · try \")) + m.tries)"
+   "src/MeshRadio.cpp:1319: s += m.status == ChatMessage::Delivered ? (brief ? \" #\" + String(m.tries) : String(tr(\" · try \")) + m.tries)"
   ]
  },
  "63703628": {
@@ -1726,6 +2275,18 @@
   "cells": 9,
   "where": [
    "src/UiClipboard.inc:70: const char* labels[] = {tr(\"Copy text\"), tr(\"Paste\"), tr(\"Replace text\"), tr(\"Copy message\")};"
+  ]
+ },
+ "644908b5": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:916: case ActNotifyFailed: return t(\"TX alert: \") + (config.notifyFailed ? t(\"on\") : t(\"off\"));"
+  ]
+ },
+ "64866487": {
+  "cells": 14,
+  "where": [
+   "src/UiHeltec.cpp:210: case remote::Waiting: return t(\"login: waiting\");"
   ]
  },
  "64c53956": {
@@ -1752,6 +2313,12 @@
   "cells": 25,
   "where": [
    "src/Ui.cpp:3289: notice(t(\"Password: 8-63 characters\"), bad);"
+  ]
+ },
+ "65e6150d": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:1584: String state = radar.wifi != Radar::WifiReady ? t(\"no Wi-Fi: AP on?\")"
   ]
  },
  "662dcc9e": {
@@ -1825,7 +2392,14 @@
  "68f7fd73": {
   "cells": 10,
   "where": [
-   "src/Ui.cpp:1994: footer({{\"OK\", radarSound ? t(\"Mute\") : t(\"Sound\")}, {\"<>\", t(\"Reset peak\")}, {\"BACK\", t(\"List\")}});"
+   "src/Ui.cpp:1994: footer({{\"OK\", radarSound ? t(\"Mute\") : t(\"Sound\")}, {\"<>\", t(\"Reset peak\")}, {\"BACK\", t(\"List\")}});",
+   "src/UiHeltec.cpp:960: case ActResetPeak: return t(\"Reset peak\");"
+  ]
+ },
+ "692b3757": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:974: notice(sent ? t(\"Reply \") + text + t(\" queued\") : t(\"Reply not queued\"));"
   ]
  },
  "698ba244": {
@@ -1856,7 +2430,8 @@
  "6a02a12f": {
   "cells": 2,
   "where": [
-   "src/Ui.cpp:920: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};"
+   "src/Ui.cpp:920: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};",
+   "src/UiHeltec.cpp:1568: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};"
   ]
  },
  "6a3aaab2": {
@@ -1865,16 +2440,29 @@
    "src/UiScreenLock.inc:36: : credentialStep == CredentialStep::New   ? t(\"New password\")"
   ]
  },
+ "6a5979e5": {
+  "cells": 20,
+  "where": [
+   "src/UiHeltec.cpp:1741: : t(\"click-next hold-send\"))"
+  ]
+ },
+ "6ad1d9a1": {
+  "cells": 14,
+  "where": [
+   "src/UiHeltec.cpp:1576: say(0, 44, t(\"hold: announce\"), small);"
+  ]
+ },
  "6b3e96ac": {
   "cells": 11,
   "where": [
-   "src/Internet.cpp:694: case Scanning: return tr(\"Scanning...\");"
+   "src/Internet.cpp:718: case Scanning: return tr(\"Scanning...\");"
   ]
  },
  "6bc8d619": {
   "cells": 10,
   "where": [
-   "src/Ui.cpp:3556: notice(t(\"Peak reset\"), dim);"
+   "src/Ui.cpp:3556: notice(t(\"Peak reset\"), dim);",
+   "src/UiHeltec.cpp:1129: notice(t(\"Peak reset\"));"
   ]
  },
  "6c03392d": {
@@ -1930,6 +2518,12 @@
   "cells": 2,
   "where": [
    "src/Ui.cpp:874: return String(s / 86400) + t(\" d\");"
+  ]
+ },
+ "6df5060c": {
+  "cells": 17,
+  "where": [
+   "src/UiHeltec.cpp:1024: notice(t(\"Hold again: erase\"));"
   ]
  },
  "6e19da59": {
@@ -1989,6 +2583,12 @@
    "src/Ui.cpp:2499: footer({{\"OK\", t(\"Edit name\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});"
   ]
  },
+ "70a1c010": {
+  "cells": 14,
+  "where": [
+   "src/UiHeltec.cpp:947: case ActBattery: return config.batteryVolts ? t(\"Battery: volts\") : t(\"Battery: percent\");"
+  ]
+ },
  "7111e600": {
   "cells": 15,
   "where": [
@@ -2011,6 +2611,12 @@
   "cells": 14,
   "where": [
    "src/Ui.cpp:2803: text(80, y + 32, t(\"Unlock to read\"), dim, small);"
+  ]
+ },
+ "71df82b0": {
+  "cells": 17,
+  "where": [
+   "src/UiHeltec.cpp:227: if (s->status != remote::Done) return s->status == remote::Waiting ? t(\"status: waiting\") : t(\"status: no answer\");"
   ]
  },
  "7261c8af": {
@@ -2037,6 +2643,18 @@
    "src/Ui.cpp:2102: t(\" relayed\"),"
   ]
  },
+ "732df7cc": {
+  "cells": 20,
+  "where": [
+   "src/UiHeltec.cpp:1144: notice(t(\"Hold again: turn off\"));"
+  ]
+ },
+ "73713780": {
+  "cells": 15,
+  "where": [
+   "src/UiHeltec.cpp:227: if (s->status != remote::Done) return s->status == remote::Waiting ? t(\"status: waiting\") : t(\"status: no answer\");"
+  ]
+ },
  "73ac94c3": {
   "cells": 7,
   "where": [
@@ -2057,6 +2675,13 @@
    "src/Ui.cpp:2182: const char* names[] = {tr(\"Name\"),           tr(\"Language\"),      tr(\"Day brightness\"), tr(\"Home layout\"),"
   ]
  },
+ "74680ff5": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:1264: return n == 1 ? t(\"hold: \") + actName(acts[0]) : t(\"hold: menu\");",
+   "src/UiHeltec.cpp:1508: say(0, 42, t(\"hold: menu\"), small);"
+  ]
+ },
  "74d4cc9d": {
   "cells": 44,
   "where": [
@@ -2069,10 +2694,16 @@
    "src/Ui.cpp:2176: tr(\"Coding rate\"),    tr(\"TX power\"),  tr(\"Relay hop limit\"), tr(\"Relay packets\"),"
   ]
  },
+ "755d765c": {
+  "cells": 12,
+  "where": [
+   "src/UiHeltec.cpp:902: case ActWardriveView: return wardriveList ? t(\"Show summary\") : t(\"Repeaters heard\");"
+  ]
+ },
  "758aa13f": {
   "cells": 25,
   "where": [
-   "src/Internet.cpp:697: default: return savedCount() ? tr(\"No saved network in range\") : tr(\"Choose a network\");",
+   "src/Internet.cpp:721: default: return savedCount() ? tr(\"No saved network in range\") : tr(\"Choose a network\");",
    "src/Ui.cpp:2593: N_(\"No saved network in range\"),"
   ]
  },
@@ -2094,6 +2725,12 @@
    "src/Ui.cpp:1726: : t(\"needs calibration\"),"
   ]
  },
+ "75f9fa5a": {
+  "cells": 7,
+  "where": [
+   "src/UiHeltec.cpp:1706: say(0, 28, t(\"Battery: \") + (config.batteryVolts ? t(\"volts\") : t(\"percent\")), small);"
+  ]
+ },
  "7608c344": {
   "cells": 26,
   "where": [
@@ -2113,6 +2750,18 @@
    "src/UiContactNotes.inc:76: text(18, y + 17, i ? t(\"Tags\") : t(\"Note\"), dim, small);"
   ]
  },
+ "773611af": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:286: case RadarTarget::Phone: return t(\"phone\");"
+  ]
+ },
+ "7764bddd": {
+  "cells": 19,
+  "where": [
+   "src/UiHeltec.cpp:1012: : t(\"A ping is under way\"));"
+  ]
+ },
  "77c28af9": {
   "cells": 27,
   "where": [
@@ -2122,7 +2771,14 @@
  "78c14fb6": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:1960: t(\"peak \") + (radar.samples"
+   "src/Ui.cpp:1960: t(\"peak \") + (radar.samples",
+   "src/UiHeltec.cpp:1625: sayRight(128, 41, t(\"peak \") + (radar.samples ? String(int(lroundf(radar.peak))) : String(\"-\")), small);"
+  ]
+ },
+ "78cc37f0": {
+  "cells": 14,
+  "where": [
+   "src/UiHeltec.cpp:1111: notice(t(\"Homing started\"));"
   ]
  },
  "78fdcc66": {
@@ -2143,6 +2799,12 @@
   "cells": 13,
   "where": [
    "src/UiChannels.inc:260: return config.region[0] ? t(\"Default: \") + String(config.region) : String(t(\"Default: none\"));"
+  ]
+ },
+ "7bb69d7b": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:795: : t(\"Not joined\"));"
   ]
  },
  "7bc55d8b": {
@@ -2179,7 +2841,8 @@
  "7e3d4120": {
   "cells": 10,
   "where": [
-   "src/Ui.cpp:1777: default: return t(\"BLE device\");"
+   "src/Ui.cpp:1777: default: return t(\"BLE device\");",
+   "src/UiHeltec.cpp:290: default: return t(\"BLE device\");"
   ]
  },
  "7e8a19d5": {
@@ -2227,6 +2890,12 @@
    "src/UiActions.inc:44: rows[n++] = {A::Add, IcHash, t(\"Add a channel\")};"
   ]
  },
+ "81c648bf": {
+  "cells": 12,
+  "where": [
+   "src/UiHeltec.cpp:942: case ActGps: return config.gps ? t(\"Turn GPS off\") : t(\"Turn GPS on\");"
+  ]
+ },
  "81ef07a9": {
   "cells": 10,
   "where": [
@@ -2250,7 +2919,8 @@
   "cells": 13,
   "where": [
    "src/Ui.cpp:2964: notice(meshRadio.busy() || regions::searching() ? t(\"Radio busy, retry\") : t(\"Radio offline\"), bad);",
-   "src/Ui.cpp:3651: if (!regions::find()) notice(t(\"Radio offline\"), bad);"
+   "src/Ui.cpp:3651: if (!regions::find()) notice(t(\"Radio offline\"), bad);",
+   "src/UiHeltec.cpp:578: if (!regions::find()) notice(t(\"Radio offline\"));"
   ]
  },
  "832f1cca": {
@@ -2265,10 +2935,17 @@
    "src/UiChannels.inc:137: detail = t(\"Heard on air: \") + heard + t(\" · OK: join\");"
   ]
  },
+ "83b6367b": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:201: case 4: return t(\"sensor\");"
+  ]
+ },
  "8425dffa": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:3107: notice(reset ? t(\"Path reset: next message floods\") : t(\"Path reset failed\"), reset ? ok : bad);"
+   "src/Ui.cpp:3107: notice(reset ? t(\"Path reset: next message floods\") : t(\"Path reset failed\"), reset ? ok : bad);",
+   "src/UiHeltec.cpp:1069: notice(p && !meshRadio.busy() && meshRadio.resetPath(p->id) ? t(\"Path reset\") : t(\"Path reset failed\"));"
   ]
  },
  "84397af6": {
@@ -2277,11 +2954,29 @@
    "src/Ui.cpp:1916: fit(lora ? \"LoRa · \" + meshRadio.idText(f.id) + t(\" · direct packets only\")"
   ]
  },
+ "843c79a8": {
+  "cells": 9,
+  "where": [
+   "src/UiHeltec.cpp:312: return radar.ble == Radar::BleBusy ? t(\"BLE busy\") : radar.ble == Radar::BleFailed ? t(\"BLE error\") : \"\";"
+  ]
+ },
  "845949bc": {
   "cells": 19,
   "where": [
    "src/Ui.cpp:3487: notice(t(\"Waiting for GPS fix\"), warn);",
    "src/Ui.cpp:3666: notice(sent ? t(\"Position shared\") : t(\"Waiting for GPS fix\"), sent ? ok : warn);"
+  ]
+ },
+ "845fe7f2": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:1264: return n == 1 ? t(\"hold: \") + actName(acts[0]) : t(\"hold: menu\");"
+  ]
+ },
+ "849a40b6": {
+  "cells": 21,
+  "where": [
+   "src/UiHeltec.cpp:671: : radioRow == RowCancel ? t(\"click-next hold-leave\")"
   ]
  },
  "84e158a3": {
@@ -2315,6 +3010,12 @@
    "src/Ui.cpp:1409: : !maps.available ? t(\"Needs Wi-Fi internet or an SD card\")"
   ]
  },
+ "85610d67": {
+  "cells": 8,
+  "where": [
+   "src/UiHeltec.cpp:934: case ActNodeOk: return t(\"Send: OK\");"
+  ]
+ },
  "8570fe3a": {
   "cells": 8,
   "where": [
@@ -2333,6 +3034,12 @@
    "src/Ui.cpp:2268: return t(\"Applied to the radio when saved\");"
   ]
  },
+ "867f6426": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:1668: : hardware.gps.passedChecksum() ? t(\"Searching sky\")"
+  ]
+ },
  "86ae6e6d": {
   "cells": 30,
   "where": [
@@ -2345,6 +3052,18 @@
    "src/UiChannels.inc:355: String label = i == InfoInvite ? t(\"No chat contacts\") : deleteArmed ? t(\"Sure? OK again\") : t(\"Leave channel\");"
   ]
  },
+ "86d255b7": {
+  "cells": 22,
+  "where": [
+   "src/UiHeltec.cpp:958: case ActCalibrate: return t(\"Calibrate (10 s still)\");"
+  ]
+ },
+ "87afae0f": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:910: : a == ActNotifyWake ? t(\"Wake: \")"
+  ]
+ },
  "87c7093b": {
   "cells": 5,
   "where": [
@@ -2355,6 +3074,12 @@
   "cells": 4,
   "where": [
    "src/Ui.cpp:2218: const char* colors[] = {tr(\"Lime\"), tr(\"Blue\"), tr(\"Violet\"), tr(\"Amber\")};"
+  ]
+ },
+ "88aa7275": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:944: case ActWifi: return portalActive() ? t(\"Turn Wi-Fi off\") : t(\"Turn Wi-Fi on\");"
   ]
  },
  "89414ad6": {
@@ -2402,7 +3127,8 @@
  "8ae160ba": {
   "cells": 12,
   "where": [
-   "src/Ui.cpp:2357: notice(wardrive::running() ? t(\"Wardrive on\") : t(\"Wardrive off\"), wardrive::running() ? ok : dim);"
+   "src/Ui.cpp:2357: notice(wardrive::running() ? t(\"Wardrive on\") : t(\"Wardrive off\"), wardrive::running() ? ok : dim);",
+   "src/UiHeltec.cpp:1004: : t(\"Wardrive off\"));"
   ]
  },
  "8bdf7f34": {
@@ -2421,6 +3147,12 @@
   "cells": 31,
   "where": [
    "src/Ui.cpp:3107: notice(reset ? t(\"Path reset: next message floods\") : t(\"Path reset failed\"), reset ? ok : bad);"
+  ]
+ },
+ "8d1d9b67": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:959: case ActStopHoming: return t(\"Stop homing\");"
   ]
  },
  "8d2937a1": {
@@ -2442,13 +3174,20 @@
  "8d9206a1": {
   "cells": 9,
   "where": [
-   "src/Ui.cpp:2175: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),"
+   "src/Ui.cpp:2175: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),",
+   "src/UiHeltec.cpp:482: case RowFreq: return t(\"Frequency\");"
   ]
  },
  "8dc21305": {
   "cells": 6,
   "where": [
    "src/UiClipboard.inc:128: notice(t(\"Copied\"), ok);"
+  ]
+ },
+ "8dce1b4b": {
+  "cells": 12,
+  "where": [
+   "src/UiHeltec.cpp:1390: sayRight(126, 62, t(\"click: close\"));"
   ]
  },
  "8e4165b7": {
@@ -2488,6 +3227,12 @@
    "src/Ui.cpp:1714: String(hardware.gps.satellites.value()) + (view ? t(\" of \") + String(view) + t(\" in view\") : String()), ink);"
   ]
  },
+ "8fbb2b89": {
+  "cells": 22,
+  "where": [
+   "src/UiHeltec.cpp:669: if (radioEditing) return radioRow == RowFreq ? t(\"click-digit+ hold-next\") : t(\"click-change hold-done\");"
+  ]
+ },
  "9023a2b0": {
   "cells": 8,
   "where": [
@@ -2504,6 +3249,12 @@
   "cells": 3,
   "where": [
    "src/Ui.cpp:887: return String(q / 4.0f, 1) + t(\" dB\");"
+  ]
+ },
+ "90c5347a": {
+  "cells": 15,
+  "where": [
+   "src/UiHeltec.cpp:902: case ActWardriveView: return wardriveList ? t(\"Show summary\") : t(\"Repeaters heard\");"
   ]
  },
  "90cbadfa": {
@@ -2524,6 +3275,12 @@
    "src/UiActions.inc:53: rows[n++] = {A::List, IcRadar, scopeWide ? t(\"Radar\") : t(\"Full-width list\")};"
   ]
  },
+ "925b4cdd": {
+  "cells": 21,
+  "where": [
+   "src/UiHeltec.cpp:1689: say(0, 41, t(\"Web chat and settings\"), small);"
+  ]
+ },
  "92773890": {
   "cells": 4,
   "where": [
@@ -2540,6 +3297,18 @@
   "cells": 8,
   "where": [
    "src/Ui.cpp:2176: tr(\"Coding rate\"),    tr(\"TX power\"),  tr(\"Relay hop limit\"), tr(\"Relay packets\"),"
+  ]
+ },
+ "92f97927": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:1524: say(0, 52, (mv > 4250 ? t(\"USB power\") : String(mv / 1000.f, 2) + \"V\") + (config.relay ? t(\"  relay on\") : \"\"),"
+  ]
+ },
+ "932d19aa": {
+  "cells": 12,
+  "where": [
+   "src/UiHeltec.cpp:945: case ActBle: return bleActive() ? t(\"Turn BLE off\") : t(\"Turn BLE on\");"
   ]
  },
  "93382782": {
@@ -2566,6 +3335,18 @@
    "src/UiClipboard.inc:91: text(18, 182, t(\"Paste failed\"), warn, bold);"
   ]
  },
+ "94439fdb": {
+  "cells": 14,
+  "where": [
+   "src/UiHeltec.cpp:219: if (tr.state == remote::Waiting) return t(\"trace: waiting\");"
+  ]
+ },
+ "94a0707a": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:228: return String(s->battery / 1000.0f, 2) + t(\"V up \") + String(s->uptime / 3600) + t(\"h rx \") + String(s->received);"
+  ]
+ },
  "9525b78e": {
   "cells": 6,
   "where": [
@@ -2578,6 +3359,18 @@
    "src/Ui.cpp:2866: : page == Remote   ? (remoteEdit == EditPassword ? t(\"OK: log in   BACK: cancel\") : t(\"OK: send   BACK: cancel\"))"
   ]
  },
+ "95b8d74b": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:956: case ActCsiBeacon: return radar.csi == Radar::CsiBeacon ? t(\"Stop beacon\") : t(\"CSI beacon: on\");"
+  ]
+ },
+ "967ad824": {
+  "cells": 9,
+  "where": [
+   "src/UiHeltec.cpp:933: case ActNextNode: return t(\"Next node\");"
+  ]
+ },
  "9685740f": {
   "cells": 3,
   "where": [
@@ -2588,6 +3381,12 @@
   "cells": 17,
   "where": [
    "src/Ui.cpp:2279: case 5: return t(\"0 = off, 30-600 s\");"
+  ]
+ },
+ "975182c4": {
+  "cells": 14,
+  "where": [
+   "src/UiHeltec.cpp:1700: say(0, 41, t(\"Secure pairing\"), small);"
   ]
  },
  "983f66dc": {
@@ -2606,6 +3405,18 @@
   "cells": 5,
   "where": [
    "src/Ui.cpp:860: const char* months[] = {tr(\"January\"),   tr(\"February\"), tr(\"March\"),    tr(\"April\"),"
+  ]
+ },
+ "99ba3a7e": {
+  "cells": 8,
+  "where": [
+   "src/UiHeltec.cpp:488: case RowRelay: return t(\"Relaying\");"
+  ]
+ },
+ "99eb4caf": {
+  "cells": 7,
+  "where": [
+   "src/UiHeltec.cpp:524: return regions::searching()               ? String(s.repeaters) + t(\" rpt...\")"
   ]
  },
  "99eb4fd7": {
@@ -2644,7 +3455,13 @@
  "9a9b9449": {
   "cells": 4,
   "where": [
-   "src/MeshRadio.cpp:1298: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));"
+   "src/MeshRadio.cpp:1313: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));"
+  ]
+ },
+ "9ad03b43": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:1535: const char* states[] = {\"\", tr(\"queued\"), tr(\"sent\"), tr(\"delivered\"), tr(\"no ACK\")};"
   ]
  },
  "9bb72cae": {
@@ -2678,6 +3495,12 @@
    "src/Ui.cpp:860: const char* months[] = {tr(\"January\"),   tr(\"February\"), tr(\"March\"),    tr(\"April\"),"
   ]
  },
+ "9dbda18a": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:930: case ActReplyAck: return t(\"Reply: Got it\");"
+  ]
+ },
  "9e13a743": {
   "cells": 14,
   "where": [
@@ -2690,10 +3513,23 @@
    "src/UiClipboard.inc:70: const char* labels[] = {tr(\"Copy text\"), tr(\"Paste\"), tr(\"Replace text\"), tr(\"Copy message\")};"
   ]
  },
+ "9e1a1817": {
+  "cells": 22,
+  "where": [
+   "src/UiHeltec.cpp:672: : t(\"click-next hold-change\");"
+  ]
+ },
+ "9e3d87eb": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:715: return t(\"Ping: \") + String(r.count) + t(\" rpt, \") + wdHash(r.hash, r.size) + \" \" + wdSnr(r.snr);"
+  ]
+ },
  "9f6d6c39": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:950: case Homing: return t(\"Homing\");"
+   "src/Ui.cpp:950: case Homing: return t(\"Homing\");",
+   "src/UiHeltec.cpp:1604: title = t(\"Homing\");"
   ]
  },
  "9fa2c938": {
@@ -2706,6 +3542,12 @@
   "cells": 10,
   "where": [
    "src/Ui.cpp:2142: if (netfind::running()) return t(\"Listening \") + String(s.step + 1) + \"/\" + String(s.count);"
+  ]
+ },
+ "a0cbfc13": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:1616: : t(\"steady\"),"
   ]
  },
  "a0eb78b0": {
@@ -2737,6 +3579,12 @@
   "cells": 11,
   "where": [
    "src/Ui.cpp:2097: t(\"Brightness \") + String(config.brightness) + \" · \" + langNames[config.lang < LangCount ? config.lang : 0],"
+  ]
+ },
+ "a24bf9ab": {
+  "cells": 4,
+  "where": [
+   "src/UiHeltec.cpp:203: return t(\"chat\");"
   ]
  },
  "a2c6becb": {
@@ -2800,6 +3648,12 @@
    "src/Ui.cpp:3672: notice(t(\"Rotate in all directions\"));"
   ]
  },
+ "a679aabd": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:703: return String(phone ? t(\"Phone \") : \"GPS \") + String(lat / 1e6, 5) + \" \" + String(lon / 1e6, 5);"
+  ]
+ },
  "a711c2a7": {
   "cells": 23,
   "where": [
@@ -2852,7 +3706,9 @@
  "ab3a8a0a": {
   "cells": 3,
   "where": [
-   "src/Ui.cpp:1702: fit(!config.gps              ? t(\"off\")"
+   "src/Ui.cpp:1702: fit(!config.gps              ? t(\"off\")",
+   "src/UiHeltec.cpp:506: case RowRelay: return c.relay ? t(\"on\") : t(\"off\");",
+   "src/UiHeltec.cpp:912: (mode == 0   ? t(\"off\")"
   ]
  },
  "ab5a04f6": {
@@ -2867,6 +3723,12 @@
    "src/Ui.cpp:3660: if (selected == 3) notice(t(\"Public key: \") + meshRadio.publicKeyText().substring(0, 16));"
   ]
  },
+ "abd207a3": {
+  "cells": 14,
+  "where": [
+   "src/UiHeltec.cpp:292: return r.kind == RadarTarget::Wifi ? t(\"hidden network\") : meshRadio.idText(r.id);"
+  ]
+ },
  "ac08ff7b": {
   "cells": 18,
   "where": [
@@ -2879,10 +3741,22 @@
    "src/Ui.cpp:2185: tr(\"Message popup\"),  tr(\"Theme\"),         tr(\"Accent colour\"),  tr(\"Night brightness\"),"
   ]
  },
+ "ada7afdb": {
+  "cells": 4,
+  "where": [
+   "src/UiHeltec.cpp:508: case RowRegion: return c.region[0] ? String(c.region) : String(t(\"none\"));"
+  ]
+ },
  "ae0ed984": {
   "cells": 7,
   "where": [
    "src/Ui.cpp:1640: const String names[] = {p->type == 3 ? t(\"Room\") : t(\"Message\"), t(\"On map\"), t(\"Reset path\"),"
+  ]
+ },
+ "aeb4bd84": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:525: : s.state == regions::Search::Done ? plural(s.count, \"found\", \"found\")"
   ]
  },
  "af34335c": {
@@ -2897,6 +3771,12 @@
    "src/Ui.cpp:2255: case 5: return t(\"Radio chip setting, 0-22 dBm\");"
   ]
  },
+ "af671227": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:193: if (p.pathLength == 255) return t(\"path ?\");"
+  ]
+ },
  "afa5c9cd": {
   "cells": 16,
   "where": [
@@ -2906,7 +3786,14 @@
  "b034b9e4": {
   "cells": 20,
   "where": [
-   "src/Ui.cpp:3638: notice(t(\"No previous settings\"), dim);"
+   "src/Ui.cpp:3638: notice(t(\"No previous settings\"), dim);",
+   "src/UiHeltec.cpp:601: notice(t(\"No previous settings\"));"
+  ]
+ },
+ "b0db8877": {
+  "cells": 17,
+  "where": [
+   "src/UiHeltec.cpp:948: case ActDoubleBack: return config.doubleBack ? t(\"Double click: back\") : t(\"Double click: off\");"
   ]
  },
  "b1374eac": {
@@ -2919,7 +3806,8 @@
  "b13772cd": {
   "cells": 24,
   "where": [
-   "src/Ui.cpp:3705: notice(done ? t(\"Storage created, restart\") : r, done ? ok : bad);"
+   "src/Ui.cpp:3705: notice(done ? t(\"Storage created, restart\") : r, done ? ok : bad);",
+   "src/UiHeltec.cpp:1030: notice(r.startsWith(\"OK\") ? t(\"Storage created, restart\") : r);"
   ]
  },
  "b1e20664": {
@@ -3002,6 +3890,12 @@
    "src/Ui.cpp:893: if (p.pathLength == 255) return t(\"path unknown\");"
   ]
  },
+ "b5bdd13c": {
+  "cells": 3,
+  "where": [
+   "src/UiHeltec.cpp:1533: String who = m->outgoing ? t(\"You\") : String(m->name);"
+  ]
+ },
  "b639f585": {
   "cells": 13,
   "where": [
@@ -3041,13 +3935,20 @@
  "b872ed2b": {
   "cells": 12,
   "where": [
-   "src/Ui.cpp:2177: tr(\"Path hash size\"), tr(\"Region\"),    tr(\"Find regions\")};"
+   "src/Ui.cpp:2177: tr(\"Path hash size\"), tr(\"Region\"),    tr(\"Find regions\")};",
+   "src/UiHeltec.cpp:491: case RowFind: return t(\"Find regions\");"
   ]
  },
  "b8a018ba": {
   "cells": 28,
   "where": [
    "src/Ui.cpp:1918: t(\" · address changes over time\")"
+  ]
+ },
+ "b901ffbb": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:1136: notice(t(\"Calibrating 10 s\"));"
   ]
  },
  "b96d02c0": {
@@ -3081,6 +3982,12 @@
    "src/UiChannels.inc:197: if (n > 0) return t(\"Heard on air: \") + count(n, \"message\", \"messages\");"
   ]
  },
+ "bb53d167": {
+  "cells": 9,
+  "where": [
+   "src/UiHeltec.cpp:953: return t(\"Home in: \") + (i >= 0 ? signalName(radar.targets[i]) : String(\"-\"));"
+  ]
+ },
  "bb5f80fd": {
   "cells": 5,
   "where": [
@@ -3104,6 +4011,12 @@
   "cells": 9,
   "where": [
    "src/UiChannels.inc:374: notice(saved ? (c->policy.sound ? t(\"Sound on\") : t(\"Sound off\")) : r, saved ? ok : bad);"
+  ]
+ },
+ "bd1a4b8e": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:212: case remote::Refused: return t(\"login refused\");"
   ]
  },
  "bd54d12a": {
@@ -3136,6 +4049,18 @@
    "src/Ui.cpp:2845: textRight(294, 160, String(edit.length()) + \"/\" + String(textByteLimit()) + t(\" bytes\"), faint, small);"
   ]
  },
+ "beb6a03a": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:1638: title = beacon ? t(\"CSI beacon \") + String(radar.csiRate) + t(\"/s\")"
+  ]
+ },
+ "bf4762dd": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:932: case ActNewer: return t(\"Newer message\");"
+  ]
+ },
  "bfacb4d0": {
   "cells": 22,
   "where": [
@@ -3146,7 +4071,8 @@
   "cells": 1,
   "where": [
    "src/Ui.cpp:920: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};",
-   "src/Ui.cpp:1665: const char* dirs[] = {tr(\"N\"), tr(\"E\"), tr(\"S\"), tr(\"W\")};"
+   "src/Ui.cpp:1665: const char* dirs[] = {tr(\"N\"), tr(\"E\"), tr(\"S\"), tr(\"W\")};",
+   "src/UiHeltec.cpp:1568: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};"
   ]
  },
  "c0846390": {
@@ -3166,7 +4092,8 @@
   "cells": 6,
   "where": [
    "src/Ui.cpp:1097: wardrive::running() ? count(wardrive::points(), \"point\", \"points\") : t(\"Off\"), 0},",
-   "src/Ui.cpp:2314: String counts = count(wardrive::points(), \"point\", \"points\");"
+   "src/Ui.cpp:2314: String counts = count(wardrive::points(), \"point\", \"points\");",
+   "src/UiHeltec.cpp:706: String s = plural(wardrive::points(), \"point\", \"points\");"
   ]
  },
  "c14c68f4": {
@@ -3237,6 +4164,7 @@
   "cells": 9,
   "where": [
    "src/Ui.cpp:1316: ? t(\"logged in\")",
+   "src/UiHeltec.cpp:211: case remote::Done: return s->admin ? t(\"logged in: admin\") : t(\"logged in\");",
    "src/UiRemote.inc:37: return remoteState(s->login, s->admin ? t(\"logged in as admin\") : t(\"logged in\"));"
   ]
  },
@@ -3258,6 +4186,12 @@
    "src/UiRemote.inc:89: remote::traceable(p->id) ? t(\"Trace shows the SNR at every repeater of the route\")"
   ]
  },
+ "c5f2b8d0": {
+  "cells": 15,
+  "where": [
+   "src/UiHeltec.cpp:963: case ActSelfTest: return t(\"Encryption test\");"
+  ]
+ },
  "c646a2c9": {
   "cells": 6,
   "where": [
@@ -3277,16 +4211,46 @@
    "src/UiRemote.inc:107: const String names[] = {t(\"Login\"), t(\"Status\"), t(\"Command\"), t(\"Trace\")};"
   ]
  },
+ "c749a5e6": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:486: case RowPower: return t(\"Power\");"
+  ]
+ },
  "c7e915d7": {
   "cells": 17,
   "where": [
    "src/Ui.cpp:2595: N_(\"Wi-Fi scan failed\"),"
   ]
  },
+ "c8028cd1": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:1589: : t(\"still\");"
+  ]
+ },
+ "c90a7f1a": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:1306: notice(t(\"No recipients\"));"
+  ]
+ },
  "c91eb13e": {
   "cells": 6,
   "where": [
    "src/Ui.cpp:2175: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),"
+  ]
+ },
+ "c9225c36": {
+  "cells": 9,
+  "where": [
+   "src/UiHeltec.cpp:1644: say(0, 30, beacon ? t(\"Beacon on\") : t(\"No signals yet\"));"
+  ]
+ },
+ "c927d40c": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:308: default: return radar.sweeps ? \"\" : t(\"scanning...\");"
   ]
  },
  "c99da0c5": {
@@ -3309,17 +4273,25 @@
    "src/Ui.cpp:2184: tr(\"UTC offset\"),     tr(\"Battery shows\"), tr(\"Lock screen\"),    tr(\"Wake on message\"),"
   ]
  },
+ "cae55685": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:487: case RowHops: return t(\"Relay limit\");"
+  ]
+ },
  "cb0c01d1": {
   "cells": 1,
   "where": [
    "src/Ui.cpp:920: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};",
-   "src/Ui.cpp:1665: const char* dirs[] = {tr(\"N\"), tr(\"E\"), tr(\"S\"), tr(\"W\")};"
+   "src/Ui.cpp:1665: const char* dirs[] = {tr(\"N\"), tr(\"E\"), tr(\"S\"), tr(\"W\")};",
+   "src/UiHeltec.cpp:1568: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};"
   ]
  },
  "cba7fbe8": {
   "cells": 13,
   "where": [
-   "src/Ui.cpp:2086: textCenter(160, 138, farewell ? t(\"Device is off\") : t(\"Turning off...\"), ink, bold);"
+   "src/Ui.cpp:2086: textCenter(160, 138, farewell ? t(\"Device is off\") : t(\"Turning off...\"), ink, bold);",
+   "src/UiHeltec.cpp:1433: say(0, 24, farewell ? t(\"Device is off\") : t(\"Turning off...\"), bold);"
   ]
  },
  "cc01b1df": {
@@ -3346,6 +4318,12 @@
    "src/Ui.cpp:1941: text(224, 86, trend > 0 ? t(\"Stronger\") : trend < 0 ? t(\"Weaker\") : t(\"Steady\"), c, bold);"
   ]
  },
+ "cdbcee99": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:1489: if (!n) say(0, 30, t(\"No repeaters yet\"), small);"
+  ]
+ },
  "cde081d3": {
   "cells": 7,
   "where": [
@@ -3359,10 +4337,22 @@
    "src/Ui.cpp:2412: footer({{\"^v\", t(\"choose\")}, {\"OK\", quickTargets || selected == 0 ? t(\"select\") : t(\"send\")}, {\"BACK\", t(\"exit\")}});"
   ]
  },
+ "ce15d57a": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:931: case ActOlder: return t(\"Older message\");"
+  ]
+ },
  "cef097f4": {
   "cells": 4,
   "where": [
    "src/UiRemote.inc:81: line += t(\"you \") + String(tr.snr[tr.hops] / 4.0f, 1);"
+  ]
+ },
+ "cef137e6": {
+  "cells": 4,
+  "where": [
+   "src/UiHeltec.cpp:223: return t(\"SNR \") + r + String(tr.snr[tr.hops] / 4.0f, 0);"
   ]
  },
  "cfa790b1": {
@@ -3413,7 +4403,8 @@
   "cells": 1,
   "where": [
    "src/Ui.cpp:920: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};",
-   "src/Ui.cpp:1665: const char* dirs[] = {tr(\"N\"), tr(\"E\"), tr(\"S\"), tr(\"W\")};"
+   "src/Ui.cpp:1665: const char* dirs[] = {tr(\"N\"), tr(\"E\"), tr(\"S\"), tr(\"W\")};",
+   "src/UiHeltec.cpp:1568: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};"
   ]
  },
  "d20cf720": {
@@ -3426,7 +4417,14 @@
   "cells": 8,
   "where": [
    "src/Ui.cpp:953: case WardriveView: return t(\"Wardrive\");",
-   "src/Ui.cpp:1096: {IcTower, wardrive::running() ? ok : dim, t(\"Wardrive\"),"
+   "src/Ui.cpp:1096: {IcTower, wardrive::running() ? ok : dim, t(\"Wardrive\"),",
+   "src/UiHeltec.cpp:428: case WardrivePage: return t(\"Wardrive\");"
+  ]
+ },
+ "d283d10c": {
+  "cells": 9,
+  "where": [
+   "src/UiHeltec.cpp:1064: notice(sent ? t(\"OK queued\") : t(\"Not queued\"));"
   ]
  },
  "d284a6e4": {
@@ -3465,17 +4463,42 @@
    "src/Ui.cpp:3463: notice(t(\"UTF-8 byte limit: \") + String(meshRadio.messageLimit(recipient)), warn);"
   ]
  },
+ "d4372516": {
+  "cells": 9,
+  "where": [
+   "src/UiHeltec.cpp:489: case RowHash: return t(\"Path hash\");"
+  ]
+ },
  "d4460949": {
   "cells": 35,
   "where": [
    "src/UiRemote.inc:90: : t(\"No route through repeaters to trace\"),"
   ]
  },
+ "d457dbe7": {
+  "cells": 6,
+  "where": [
+   "src/UiHeltec.cpp:1676: t(\"Clock \") + clockText(time(nullptr)) + \" \" +"
+  ]
+ },
+ "d492831a": {
+  "cells": 27,
+  "where": [
+   "src/UiHeltec.cpp:590: notice(done                             ? t(\"Radio test: restart returns\")"
+  ]
+ },
+ "d5c0cd8a": {
+  "cells": 9,
+  "where": [
+   "src/UiHeltec.cpp:1585: : !heard                       ? t(\"no beacon\")"
+  ]
+ },
  "d60c1322": {
   "cells": 1,
   "where": [
    "src/Ui.cpp:920: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};",
-   "src/Ui.cpp:1665: const char* dirs[] = {tr(\"N\"), tr(\"E\"), tr(\"S\"), tr(\"W\")};"
+   "src/Ui.cpp:1665: const char* dirs[] = {tr(\"N\"), tr(\"E\"), tr(\"S\"), tr(\"W\")};",
+   "src/UiHeltec.cpp:1568: const char* dirs[] = {tr(\"N\"), tr(\"NE\"), tr(\"E\"), tr(\"SE\"), tr(\"S\"), tr(\"SW\"), tr(\"W\"), tr(\"NW\")};"
   ]
  },
  "d725d6d4": {
@@ -3502,6 +4525,12 @@
    "src/UiChannels.inc:194: if (addStep == AddKey) return t(\"32 hex digits or base64 (16 bytes)\");"
   ]
  },
+ "d8b69508": {
+  "cells": 8,
+  "where": [
+   "src/UiHeltec.cpp:1493: clipped(wdHash(e.hash, e.size) + \" \" + wdSnr(e.snr) + t(\"dB echo \") + String(e.echoes) + \" rx \" +"
+  ]
+ },
  "d8e1dad5": {
   "cells": 15,
   "where": [
@@ -3512,6 +4541,12 @@
   "cells": 26,
   "where": [
    "src/UiChannels.inc:311: unsigned n = wrap(channels::isPublic(c->secret) ? t(\"Every MeshCore node has it\")"
+  ]
+ },
+ "d957add7": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:211: case remote::Done: return s->admin ? t(\"logged in: admin\") : t(\"logged in\");"
   ]
  },
  "d97d8ec3": {
@@ -3543,7 +4578,8 @@
  "db5485e7": {
   "cells": 10,
   "where": [
-   "src/Ui.cpp:1640: const String names[] = {p->type == 3 ? t(\"Room\") : t(\"Message\"), t(\"On map\"), t(\"Reset path\"),"
+   "src/Ui.cpp:1640: const String names[] = {p->type == 3 ? t(\"Room\") : t(\"Message\"), t(\"On map\"), t(\"Reset path\"),",
+   "src/UiHeltec.cpp:935: case ActResetPath: return t(\"Reset path\");"
   ]
  },
  "db65b4b4": {
@@ -3570,7 +4606,8 @@
  "dc6bfbe0": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2196: case 1: return String(c.frequency, 3) + t(\" MHz\");"
+   "src/Ui.cpp:2196: case 1: return String(c.frequency, 3) + t(\" MHz\");",
+   "src/UiHeltec.cpp:1514: sayRight(128, 20, String(config.frequency, 3) + t(\" MHz\"));"
   ]
  },
  "dc755d30": {
@@ -3620,7 +4657,7 @@
  "de281feb": {
   "cells": 6,
   "where": [
-   "src/Internet.cpp:693: return portalActive() ? tr(\"Paused: access point on\") : radar.active ? tr(\"Paused: radar open\") : tr(\"Paused\");"
+   "src/Internet.cpp:717: return portalActive() ? tr(\"Paused: access point on\") : radar.active ? tr(\"Paused: radar open\") : tr(\"Paused\");"
   ]
  },
  "df42eda4": {
@@ -3628,6 +4665,12 @@
   "where": [
    "src/Ui.cpp:2658: text(48, 42, t(\"Wi-Fi client\"), ink, bold);",
    "src/UiActions.inc:37: rows[n++] = {A::Wifi, IcWifi, t(\"Wi-Fi client\"), internet.enabled};"
+  ]
+ },
+ "df6cf078": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:940: case ActRemoteStatus: return t(\"Server status\");"
   ]
  },
  "df6e627c": {
@@ -3639,7 +4682,8 @@
  "dfe5ac67": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:2364: : !wardrive::position(lat, lon, phone) ? t(\"No position yet\")"
+   "src/Ui.cpp:2364: : !wardrive::position(lat, lon, phone) ? t(\"No position yet\")",
+   "src/UiHeltec.cpp:1011: : !wardrive::position(lat, lon, phone) ? t(\"No position yet\")"
   ]
  },
  "e01eca3a": {
@@ -3666,6 +4710,12 @@
    "src/UiRemote.inc:185: notice(sent ? (remoteEdit == EditPassword ? t(\"Login sent\") : t(\"Command sent\")) : t(\"Not sent: radio or contact\"),"
   ]
  },
+ "e10c2473": {
+  "cells": 1,
+  "where": [
+   "src/UiHeltec.cpp:190: return String(s / 86400) + t(\"d\");"
+  ]
+ },
  "e125a9a1": {
   "cells": 15,
   "where": [
@@ -3684,11 +4734,23 @@
    "src/Ui.cpp:2099: (navigation.calibrated ? t(\"compass calibrated\") : t(\"compass not calibrated\")),"
   ]
  },
+ "e20b979b": {
+  "cells": 5,
+  "where": [
+   "src/UiHeltec.cpp:1706: say(0, 28, t(\"Battery: \") + (config.batteryVolts ? t(\"volts\") : t(\"percent\")), small);"
+  ]
+ },
  "e2339f44": {
   "cells": 5,
   "where": [
    "src/Ui.cpp:1578: String age = p.heard ? ago(now - p.seen) : t(\"saved\");",
    "src/Ui.cpp:2686: : r.saved ? (r.visible ? t(\"saved\") : t(\"saved, away\"))"
+  ]
+ },
+ "e234733b": {
+  "cells": 4,
+  "where": [
+   "src/UiHeltec.cpp:1613: : !fresh    ? (radar.samples > 1 ? t(\"lost\") : t(\"no signal\"))"
   ]
  },
  "e234f405": {
@@ -3709,10 +4771,22 @@
    "src/UiScreenLock.inc:37: : t(\"Enter password\");"
   ]
  },
+ "e28a5100": {
+  "cells": 3,
+  "where": [
+   "src/UiHeltec.cpp:1731: say(0, 48, t(\"up \") + ago(millis()) + t(\"  boot \") + String(config.bootCounter), small);"
+  ]
+ },
  "e28b0bc0": {
   "cells": 22,
   "where": [
    "src/Ui.cpp:3709: notice(passed ? t(\"Encryption test passed\") : t(\"Encryption test failed\"), passed ? ok : bad);"
+  ]
+ },
+ "e29c938b": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:926: return t(\"Join heard \") + (h ? h->name : \"\");"
   ]
  },
  "e2dabf28": {
@@ -3725,6 +4799,12 @@
   "cells": 15,
   "where": [
    "src/UiChannels.inc:116: name = t(\"Join by hashtag\");"
+  ]
+ },
+ "e4b7a4f0": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:945: case ActBle: return bleActive() ? t(\"Turn BLE off\") : t(\"Turn BLE on\");"
   ]
  },
  "e4f5443f": {
@@ -3743,6 +4823,13 @@
   "cells": 4,
   "where": [
    "src/Ui.cpp:1084: hardware.gpsFix() ? \"GPS: \" + count(hardware.gps.satellites.value(), \"sat\", \"sats\")"
+  ]
+ },
+ "e55ee2b1": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:950: case ActContrast: return t(\"Contrast: \") + String(config.brightness);",
+   "src/UiHeltec.cpp:1708: say(0, 44, t(\"Contrast: \") + String(config.brightness), small);"
   ]
  },
  "e5e4ab77": {
@@ -3765,6 +4852,25 @@
    "src/Ui.cpp:1474: : maps.waiting ? t(\"Reading map from SD...\")"
   ]
  },
+ "e6af9e0a": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:928: case ActAdvert: return t(\"Announce node\");"
+  ]
+ },
+ "e6fc9c8e": {
+  "cells": 20,
+  "where": [
+   "src/UiHeltec.cpp:670: return radioRow == RowSave     ? t(\"click-next hold-save\")"
+  ]
+ },
+ "e74c644a": {
+  "cells": 7,
+  "where": [
+   "src/UiHeltec.cpp:435: return t(\"Modules\");",
+   "src/UiHeltec.cpp:1719: title = t(\"Modules\");"
+  ]
+ },
  "e754fa0d": {
   "cells": 27,
   "where": [
@@ -3780,13 +4886,26 @@
  "e7872b4f": {
   "cells": 19,
   "where": [
-   "src/Ui.cpp:3348: notice(sent ? t(\"Node announced\") : t(\"Announcement failed\"), sent ? ok : bad);"
+   "src/Ui.cpp:3348: notice(sent ? t(\"Node announced\") : t(\"Announcement failed\"), sent ? ok : bad);",
+   "src/UiHeltec.cpp:1049: case ActAdvert: notice(meshRadio.sendHello() ? t(\"Node announced\") : t(\"Announcement failed\")); break;"
+  ]
+ },
+ "e80c2f78": {
+  "cells": 1,
+  "where": [
+   "src/UiHeltec.cpp:188: if (s < 3600) return String(s / 60) + t(\"m\");"
   ]
  },
  "e8239b77": {
   "cells": 9,
   "where": [
    "src/Ui.cpp:857: const char* days[] = {tr(\"Sunday\"),   tr(\"Monday\"), tr(\"Tuesday\"), tr(\"Wednesday\"),"
+  ]
+ },
+ "e8b6db6e": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:1582: title = t(\"Motion CSI\");"
   ]
  },
  "e8f719bd": {
@@ -3843,6 +4962,12 @@
    "src/UiChannels.inc:126: name = t(\"Create a private channel\");"
   ]
  },
+ "ead1fb48": {
+  "cells": 8,
+  "where": [
+   "src/UiHeltec.cpp:493: case RowPrev: return config.trial.set() ? t(\"Test\") : t(\"Previous\");"
+  ]
+ },
  "eb20490a": {
   "cells": 8,
   "where": [
@@ -3852,7 +4977,20 @@
  "eb38bf4c": {
   "cells": 12,
   "where": [
-   "src/Ui.cpp:2178: if (i == RowNet) return t(\"Find network\");"
+   "src/Ui.cpp:2178: if (i == RowNet) return t(\"Find network\");",
+   "src/UiHeltec.cpp:492: case RowNet: return t(\"Find network\");"
+  ]
+ },
+ "eb761881": {
+  "cells": 13,
+  "where": [
+   "src/UiHeltec.cpp:900: case ActWardriveRun: return wardrive::running() ? t(\"Stop wardrive\") : t(\"Start: listen + ping\");"
+  ]
+ },
+ "ebbb7a7c": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:955: case ActNextSignal: return t(\"Next signal\");"
   ]
  },
  "ec266ec8": {
@@ -3865,6 +5003,12 @@
   "cells": 10,
   "where": [
    "src/UiRemote.inc:185: notice(sent ? (remoteEdit == EditPassword ? t(\"Login sent\") : t(\"Command sent\")) : t(\"Not sent: radio or contact\"),"
+  ]
+ },
+ "ec50c78a": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:793: : r == MeshRadio::ChannelExists ? t(\"Already in \") + name"
   ]
  },
  "eca63717": {
@@ -3885,6 +5029,12 @@
    "src/Ui.cpp:862: tr(\"September\"), tr(\"October\"),  tr(\"November\"), tr(\"December\")};"
   ]
  },
+ "ed0c3757": {
+  "cells": 1,
+  "where": [
+   "src/UiHeltec.cpp:189: if (s < 86400) return String(s / 3600) + t(\"h\");"
+  ]
+ },
  "ed88bd72": {
   "cells": 27,
   "where": [
@@ -3895,6 +5045,18 @@
   "cells": 17,
   "where": [
    "src/UiChannels.inc:344: textCenter(cx, ry + 9, region ? (regionChoice == c->region ? t(\"Region\") : t(\"Region · OK: save\")) : t(\"Invite\"),"
+  ]
+ },
+ "ee7b9448": {
+  "cells": 4,
+  "where": [
+   "src/UiHeltec.cpp:510: return config.trial.set()      ? t(\"keep\")"
+  ]
+ },
+ "ee9f0444": {
+  "cells": 9,
+  "where": [
+   "src/UiHeltec.cpp:1524: say(0, 52, (mv > 4250 ? t(\"USB power\") : String(mv / 1000.f, 2) + \"V\") + (config.relay ? t(\"  relay on\") : \"\"),"
   ]
  },
  "ef7ee013": {
@@ -3927,6 +5089,18 @@
   "cells": 49,
   "where": [
    "src/Ui.cpp:2250: case RowPreset: return t(\"MeshCore regional settings: frequency, BW, SF, CR\");"
+  ]
+ },
+ "f0f648f0": {
+  "cells": 14,
+  "where": [
+   "src/UiHeltec.cpp:1157: notice(valid ? t(\"Encryption: OK\") : t(\"Encryption: ERROR\"));"
+  ]
+ },
+ "f1e1a6d4": {
+  "cells": 9,
+  "where": [
+   "src/UiHeltec.cpp:1706: say(0, 28, t(\"Battery: \") + (config.batteryVolts ? t(\"volts\") : t(\"percent\")), small);"
   ]
  },
  "f28e14cf": {
@@ -3969,6 +5143,12 @@
    "src/UiChannels.inc:19: case MeshRadio::ChannelAdded: return t(\"Channel added\");"
   ]
  },
+ "f47b9c0a": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:1434: say(0, 44, t(\"To turn on:\"), small);"
+  ]
+ },
  "f496171f": {
   "cells": 25,
   "where": [
@@ -3999,16 +5179,47 @@
    "src/Ui.cpp:1713: row(t(\"Satellites\"),"
   ]
  },
+ "f60c4582": {
+  "cells": 1,
+  "where": [
+   "src/UiHeltec.cpp:187: if (s < 60) return String(s) + t(\"s\");"
+  ]
+ },
+ "f6d172c1": {
+  "cells": 11,
+  "where": [
+   "src/UiHeltec.cpp:1672: t(\"Satellites \") + String(hardware.gps.satellites.value()) + \"  NMEA \" + String(hardware.gps.passedChecksum()),"
+  ]
+ },
  "f7823778": {
   "cells": 10,
   "where": [
    "src/UiRemote.inc:143: notice(sent ? t(\"Trace sent\") : t(\"Not sent: radio or route\"), sent ? dim : bad);"
   ]
  },
+ "f8611fd5": {
+  "cells": 8,
+  "where": [
+   "src/UiHeltec.cpp:423: case Messages: return t(\"Messages\");",
+   "src/UiHeltec.cpp:1530: title = t(\"Messages\") +"
+  ]
+ },
+ "f9f14d5f": {
+  "cells": 16,
+  "where": [
+   "src/UiHeltec.cpp:213: default: return t(\"login: no answer\");"
+  ]
+ },
  "fa81bada": {
   "cells": 47,
   "where": [
    "src/Ui.cpp:2258: case 8: return t(\"Per hop in our floods; older MeshCore drops 2-3\");"
+  ]
+ },
+ "fa990075": {
+  "cells": 10,
+  "where": [
+   "src/UiHeltec.cpp:1069: notice(p && !meshRadio.busy() && meshRadio.resetPath(p->id) ? t(\"Path reset\") : t(\"Path reset failed\"));"
   ]
  },
  "faa0c1ab": {
@@ -4083,7 +5294,8 @@
  "ff05911b": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:1728: String actions[] = {t(\"Share position\"), navigation.calibrating ? t(\"Finish calibration\") : t(\"Calibrate compass\")};"
+   "src/Ui.cpp:1728: String actions[] = {t(\"Share position\"), navigation.calibrating ? t(\"Finish calibration\") : t(\"Calibrate compass\")};",
+   "src/UiHeltec.cpp:943: case ActPosition: return t(\"Share position\");"
   ]
  },
  "ff1537fa": {
@@ -4095,7 +5307,8 @@
  "ffa35e26": {
   "cells": 7,
   "where": [
-   "src/Ui.cpp:1718: (hardware.clockSource == \"unset\"    ? t(\"not set\")"
+   "src/Ui.cpp:1718: (hardware.clockSource == \"unset\"    ? t(\"not set\")",
+   "src/UiHeltec.cpp:1677: (hardware.clockSource == \"unset\" ? t(\"not set\") : hardware.clockSource),"
   ]
  },
  "ffbb350b": {

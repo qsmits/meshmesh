@@ -2529,6 +2529,771 @@
   "en": "Save failed",
   "text": "Gagal menyimpan"
  },
+ "7764bddd": {
+  "en": "A ping is under way",
+  "text": "Ping berjalan"
+ },
+ "6df5060c": {
+  "en": "Hold again: erase",
+  "text": "Tahan lagi: hapus"
+ },
+ "d283d10c": {
+  "en": "OK queued",
+  "text": "OK diantrekan"
+ },
+ "376c2317": {
+  "en": "Not queued",
+  "text": "Tak terkirim"
+ },
+ "fa990075": {
+  "en": "Path reset",
+  "text": "Jalur direset"
+ },
+ "2d97fd4e": {
+  "en": "Sent, waiting",
+  "text": "Terkirim, menunggu"
+ },
+ "1ea76214": {
+  "en": "Not sent",
+  "text": "Tidak terkirim"
+ },
+ "3e0b7996": {
+  "en": "Needs a GPS fix",
+  "text": "Perlu fix GPS"
+ },
+ "78cc37f0": {
+  "en": "Homing started",
+  "text": "Lacak dimulai"
+ },
+ "b901ffbb": {
+  "en": "Calibrating 10 s",
+  "text": "Kalibrasi 10 d"
+ },
+ "3a9c0bfa": {
+  "en": "No beacon heard",
+  "text": "Tak ada beacon"
+ },
+ "732df7cc": {
+  "en": "Hold again: turn off",
+  "text": "Tahan lagi: matikan"
+ },
+ "f0f648f0": {
+  "en": "Encryption: OK",
+  "text": "Enkripsi: OK"
+ },
+ "445b8620": {
+  "en": "Encryption: ERROR",
+  "text": "Enkripsi: GALAT"
+ },
+ "845fe7f2": {
+  "en": "hold: ",
+  "text": "tahan: "
+ },
+ "74680ff5": {
+  "en": "hold: menu",
+  "text": "tahan: menu"
+ },
+ "34ce44a5": {
+  "en": "Exit",
+  "text": "Keluar"
+ },
+ "c90a7f1a": {
+  "en": "No recipients",
+  "text": "Tidak ada penerima"
+ },
+ "43d50db4": {
+  "en": "click-next hold-run",
+  "text": "klik-lanjut tahan-OK"
+ },
+ "8dce1b4b": {
+  "en": "click: close",
+  "text": "klik: tutup"
+ },
+ "2725da48": {
+  "en": "hold ",
+  "text": "tahan "
+ },
+ "f47b9c0a": {
+  "en": "To turn on:",
+  "text": "Menyalakan:"
+ },
+ "cdbcee99": {
+  "en": "No repeaters yet",
+  "text": "Tak ada repeater"
+ },
+ "d8b69508": {
+  "en": "dB echo ",
+  "text": "dB gema "
+ },
+ "56a8ebda": {
+  "en": "LED / screen / popup",
+  "text": "LED / layar / jendela"
+ },
+ "0aba55a5": {
+  "en": "  near ",
+  "text": "  dekat "
+ },
+ "ee9f0444": {
+  "en": "USB power",
+  "text": "Daya USB"
+ },
+ "92f97927": {
+  "en": "  relay on",
+  "text": "  relay aktif"
+ },
+ "b5bdd13c": {
+  "en": "You",
+  "text": "Anda"
+ },
+ "58300254": {
+  "en": "queued",
+  "text": "antre"
+ },
+ "6261af7f": {
+  "en": "sent",
+  "text": "dikirim"
+ },
+ "625c860f": {
+  "en": "delivered",
+  "text": "terkirim"
+ },
+ "9ad03b43": {
+  "en": "no ACK",
+  "text": "tanpa ACK"
+ },
+ "0d6af842": {
+  "en": "They appear here",
+  "text": "Muncul di sini"
+ },
+ "4021ba19": {
+  "en": "saved, not heard",
+  "text": "tersimpan, tak aktif"
+ },
+ "187974c2": {
+  "en": " m ",
+  "text": " m "
+ },
+ "43a7ef59": {
+  "en": " km ",
+  "text": " km "
+ },
+ "2029f0ba": {
+  "en": "has GPS position",
+  "text": "ada posisi GPS"
+ },
+ "1ee0cbd7": {
+  "en": "No nodes heard",
+  "text": "Belum ada node"
+ },
+ "6ad1d9a1": {
+  "en": "hold: announce",
+  "text": "tahan: umumkan"
+ },
+ "e8b6db6e": {
+  "en": "Motion CSI",
+  "text": "Gerakan CSI"
+ },
+ "65e6150d": {
+  "en": "no Wi-Fi: AP on?",
+  "text": "tanpa Wi-Fi: AP?"
+ },
+ "d5c0cd8a": {
+  "en": "no beacon",
+  "text": "tanpa beacon"
+ },
+ "37c16fa8": {
+  "en": "CSI frozen",
+  "text": "CSI beku"
+ },
+ "3f5b0605": {
+  "en": "calibrating",
+  "text": "kalibrasi"
+ },
+ "c8028cd1": {
+  "en": "still",
+  "text": "diam"
+ },
+ "4de9b3ae": {
+  "en": " / thr ",
+  "text": " / ambang "
+ },
+ "5ed1fbd7": {
+  "en": "/s",
+  "text": "/d"
+ },
+ "e234733b": {
+  "en": "lost",
+  "text": "hilang"
+ },
+ "4d109126": {
+  "en": "no signal",
+  "text": "tanpa sinyal"
+ },
+ "127be1ad": {
+  "en": "stronger",
+  "text": "menguat"
+ },
+ "07c50682": {
+  "en": "weaker",
+  "text": "melemah"
+ },
+ "a0cbfc13": {
+  "en": "steady",
+  "text": "stabil"
+ },
+ "58b577e3": {
+  "en": " pkts",
+  "text": " pkt"
+ },
+ "beb6a03a": {
+  "en": "CSI beacon ",
+  "text": "Beacon CSI "
+ },
+ "c9225c36": {
+  "en": "Beacon on",
+  "text": "Beacon aktif"
+ },
+ "525ead8b": {
+  "en": "hold: switch off",
+  "text": "tahan: matikan"
+ },
+ "587de994": {
+  "en": "Wi-Fi and LoRa",
+  "text": "Wi-Fi dan LoRa"
+ },
+ "1c43d491": {
+  "en": "Position fix",
+  "text": "Posisi fix"
+ },
+ "60cec72a": {
+  "en": "Old GPS date",
+  "text": "Tanggal GPS lama"
+ },
+ "867f6426": {
+  "en": "Searching sky",
+  "text": "Mencari satelit"
+ },
+ "3e4cca02": {
+  "en": "No data from GPS",
+  "text": "Tak ada data GPS"
+ },
+ "f6d172c1": {
+  "en": "Satellites ",
+  "text": "Satelit "
+ },
+ "d457dbe7": {
+  "en": "Clock ",
+  "text": "Jam "
+ },
+ "0d410d04": {
+  "en": "Access point off",
+  "text": "Titik akses mati"
+ },
+ "925b4cdd": {
+  "en": "Web chat and settings",
+  "text": "Chat web & pengaturan"
+ },
+ "510149b4": {
+  "en": "Bluetooth off",
+  "text": "Bluetooth mati"
+ },
+ "975182c4": {
+  "en": "Secure pairing",
+  "text": "Pemasangan aman"
+ },
+ "f1e1a6d4": {
+  "en": "Battery: ",
+  "text": "Baterai: "
+ },
+ "e20b979b": {
+  "en": "volts",
+  "text": "volt"
+ },
+ "75f9fa5a": {
+  "en": "percent",
+  "text": "persen"
+ },
+ "129c2249": {
+  "en": "relayed ",
+  "text": "relay "
+ },
+ "24b9070d": {
+  "en": "  rejected ",
+  "text": "  tolak "
+ },
+ "e28a5100": {
+  "en": "up ",
+  "text": "aktif "
+ },
+ "4feda587": {
+  "en": "  boot ",
+  "text": "  boot "
+ },
+ "3da19f7a": {
+  "en": "hold: open",
+  "text": "tahan: buka"
+ },
+ "6a5979e5": {
+  "en": "click-next hold-send",
+  "text": "klik-pilih tahan-kirim"
+ },
+ "f60c4582": {
+  "en": "s",
+  "text": "d"
+ },
+ "e80c2f78": {
+  "en": "m",
+  "text": "m"
+ },
+ "ed0c3757": {
+  "en": "h",
+  "text": "j"
+ },
+ "e10c2473": {
+  "en": "d",
+  "text": "h"
+ },
+ "af671227": {
+  "en": "path ?",
+  "text": "jalur ?"
+ },
+ "1bce552b": {
+  "en": " hops",
+  "text": " hop"
+ },
+ "0438ccd1": {
+  "en": "Delivery not confirmed",
+  "text": "Pengiriman belum dikonfirmasi"
+ },
+ "4bab65fd": {
+  "en": "repeater",
+  "text": "repeater"
+ },
+ "37fd327a": {
+  "en": "room",
+  "text": "ruang"
+ },
+ "83b6367b": {
+  "en": "sensor",
+  "text": "sensor"
+ },
+ "a24bf9ab": {
+  "en": "chat",
+  "text": "chat"
+ },
+ "64866487": {
+  "en": "login: waiting",
+  "text": "masuk: menunggu"
+ },
+ "d957add7": {
+  "en": "logged in: admin",
+  "text": "masuk: admin"
+ },
+ "bd1a4b8e": {
+  "en": "login refused",
+  "text": "masuk ditolak"
+ },
+ "f9f14d5f": {
+  "en": "login: no answer",
+  "text": "masuk: tak ada jawaban"
+ },
+ "94439fdb": {
+  "en": "trace: waiting",
+  "text": "lacak: menunggu"
+ },
+ "3792fa0b": {
+  "en": "trace: no answer",
+  "text": "lacak: tak ada jawaban"
+ },
+ "cef137e6": {
+  "en": "SNR ",
+  "text": "SNR "
+ },
+ "73713780": {
+  "en": "status: waiting",
+  "text": "status: menunggu"
+ },
+ "71df82b0": {
+  "en": "status: no answer",
+  "text": "status: tak ada jawaban"
+ },
+ "94a0707a": {
+  "en": "V up ",
+  "text": "V nyala "
+ },
+ "59c32085": {
+  "en": "h rx ",
+  "text": "j rx "
+ },
+ "773611af": {
+  "en": "phone",
+  "text": "ponsel"
+ },
+ "5fb7b228": {
+  "en": "watch",
+  "text": "arloji"
+ },
+ "1d87ea26": {
+  "en": "headphones",
+  "text": "headphone"
+ },
+ "4245804b": {
+  "en": "phone/watch",
+  "text": "ponsel/arloji"
+ },
+ "abd207a3": {
+  "en": "hidden network",
+  "text": "Wi-Fi tersembunyi"
+ },
+ "433213b3": {
+  "en": "Wi-Fi: access point",
+  "text": "Wi-Fi: titik akses"
+ },
+ "1b46e0ae": {
+  "en": "Wi-Fi busy",
+  "text": "Wi-Fi sibuk"
+ },
+ "c927d40c": {
+  "en": "scanning...",
+  "text": "memindai..."
+ },
+ "112800bb": {
+  "en": "BLE busy",
+  "text": "BLE sibuk"
+ },
+ "843c79a8": {
+  "en": "BLE error",
+  "text": "Galat BLE"
+ },
+ "f8611fd5": {
+  "en": "Messages",
+  "text": "Pesan"
+ },
+ "381d190f": {
+  "en": "Notifications",
+  "text": "Notifikasi"
+ },
+ "e74c644a": {
+  "en": "Modules",
+  "text": "Modul"
+ },
+ "c749a5e6": {
+  "en": "Power",
+  "text": "Daya"
+ },
+ "cae55685": {
+  "en": "Relay limit",
+  "text": "Batas relay"
+ },
+ "99ba3a7e": {
+  "en": "Relaying",
+  "text": "Relay"
+ },
+ "d4372516": {
+  "en": "Path hash",
+  "text": "Hash jalur"
+ },
+ "ead1fb48": {
+  "en": "Previous",
+  "text": "Sebelum"
+ },
+ "61342fd0": {
+  "en": "on",
+  "text": "on"
+ },
+ "ada7afdb": {
+  "en": "none",
+  "text": "tdk"
+ },
+ "ee7b9448": {
+  "en": "keep",
+  "text": "pertahankan"
+ },
+ "99eb4caf": {
+  "en": " rpt...",
+  "text": " rpt..."
+ },
+ "aeb4bd84": {
+  "en": {
+   "one": "found",
+   "other": "found"
+  },
+  "forms": {
+   "other": "{n} ditemukan"
+  }
+ },
+ "d492831a": {
+  "en": "Radio test: restart returns",
+  "text": "Uji: mulai ulang kembali"
+ },
+ "8fbb2b89": {
+  "en": "click-digit+ hold-next",
+  "text": "klik-digit+ tahan-lanjut"
+ },
+ "4d060666": {
+  "en": "click-change hold-done",
+  "text": "klik-ubah tahan-selesai"
+ },
+ "e6fc9c8e": {
+  "en": "click-next hold-save",
+  "text": "klik-lanjut tahan-simpan"
+ },
+ "849a40b6": {
+  "en": "click-next hold-leave",
+  "text": "klik-lanjut tahan-keluar"
+ },
+ "9e1a1817": {
+  "en": "click-next hold-change",
+  "text": "klik-lanjut tahan-ubah"
+ },
+ "4fd25c86": {
+  "en": "No position: GPS/phone",
+  "text": "Tanpa posisi: GPS/HP"
+ },
+ "a679aabd": {
+  "en": "Phone ",
+  "text": "HP "
+ },
+ "37cc8d2a": {
+  "en": "Ping: listening...",
+  "text": "Ping: mendengar..."
+ },
+ "46dd80ed": {
+  "en": "No pings yet",
+  "text": "Belum ada ping"
+ },
+ "280669ca": {
+  "en": "Ping: nobody repeated",
+  "text": "Ping: tak ada balasan"
+ },
+ "9e3d87eb": {
+  "en": "Ping: ",
+  "text": "Ping: "
+ },
+ "317f4047": {
+  "en": " rpt, ",
+  "text": " rpt, "
+ },
+ "19ec0a14": {
+  "en": "Invitation to channel ",
+  "text": "Undangan ke kanal "
+ },
+ "3614fff0": {
+  "en": "Joined ",
+  "text": "Bergabung: "
+ },
+ "ec50c78a": {
+  "en": "Already in ",
+  "text": "Sudah di "
+ },
+ "7bb69d7b": {
+  "en": "Not joined",
+  "text": "Gagal bergabung"
+ },
+ "eb761881": {
+  "en": "Stop wardrive",
+  "text": "Hentikan wardriving"
+ },
+ "5cb4426d": {
+  "en": "Start: listen + ping",
+  "text": "Mulai: dengar + ping"
+ },
+ "282b6065": {
+  "en": "Ping now",
+  "text": "Ping sekarang"
+ },
+ "755d765c": {
+  "en": "Show summary",
+  "text": "Lihat ringkasan"
+ },
+ "90c5347a": {
+  "en": "Repeaters heard",
+  "text": "Repeater terdengar"
+ },
+ "87afae0f": {
+  "en": "Wake: ",
+  "text": "Bangunkan: "
+ },
+ "5a745d7f": {
+  "en": "Popup: ",
+  "text": "Jendela: "
+ },
+ "13254bc4": {
+  "en": "all",
+  "text": "semua"
+ },
+ "644908b5": {
+  "en": "TX alert: ",
+  "text": "Peringatan TX: "
+ },
+ "4ca9cc3b": {
+  "en": "Join ",
+  "text": "Gabung "
+ },
+ "e29c938b": {
+  "en": "Join heard ",
+  "text": "Gabung "
+ },
+ "e6af9e0a": {
+  "en": "Announce node",
+  "text": "Umumkan node"
+ },
+ "56eafb8f": {
+  "en": "Reply: OK",
+  "text": "Balas: OK"
+ },
+ "9dbda18a": {
+  "en": "Reply: Got it",
+  "text": "Balas: Diterima"
+ },
+ "ce15d57a": {
+  "en": "Older message",
+  "text": "Pesan sebelumnya"
+ },
+ "bf4762dd": {
+  "en": "Newer message",
+  "text": "Pesan berikutnya"
+ },
+ "967ad824": {
+  "en": "Next node",
+  "text": "Node berikutnya"
+ },
+ "85610d67": {
+  "en": "Send: OK",
+  "text": "Kirim: OK"
+ },
+ "423b6110": {
+  "en": "Log in",
+  "text": "Masuk"
+ },
+ "55647eb0": {
+  "en": "Log in as guest",
+  "text": "Masuk sebagai tamu"
+ },
+ "df6cf078": {
+  "en": "Server status",
+  "text": "Status server"
+ },
+ "0618ca8b": {
+  "en": "Trace route",
+  "text": "Lacak rute"
+ },
+ "81c648bf": {
+  "en": "Turn GPS off",
+  "text": "Matikan GPS"
+ },
+ "25c4d45b": {
+  "en": "Turn GPS on",
+  "text": "Nyalakan GPS"
+ },
+ "27669571": {
+  "en": "Turn Wi-Fi off",
+  "text": "Matikan Wi-Fi"
+ },
+ "88aa7275": {
+  "en": "Turn Wi-Fi on",
+  "text": "Nyalakan Wi-Fi"
+ },
+ "932d19aa": {
+  "en": "Turn BLE off",
+  "text": "Matikan BLE"
+ },
+ "e4b7a4f0": {
+  "en": "Turn BLE on",
+  "text": "Nyalakan BLE"
+ },
+ "0d719ca9": {
+  "en": "Language: ",
+  "text": "Bahasa: "
+ },
+ "70a1c010": {
+  "en": "Battery: volts",
+  "text": "Baterai: volt"
+ },
+ "5a5d7e3d": {
+  "en": "Battery: percent",
+  "text": "Baterai: persen"
+ },
+ "34426849": {
+  "en": "Double click: back",
+  "text": "Klik ganda: kembali"
+ },
+ "b0db8877": {
+  "en": "Double click: off",
+  "text": "Klik ganda: off"
+ },
+ "56bc324a": {
+  "en": "Screen off: ",
+  "text": "Redup: "
+ },
+ "0ac95089": {
+  "en": "never",
+  "text": "tak pernah"
+ },
+ "e55ee2b1": {
+  "en": "Contrast: ",
+  "text": "Kontras: "
+ },
+ "bb53d167": {
+  "en": "Home in: ",
+  "text": "Lacak: "
+ },
+ "ebbb7a7c": {
+  "en": "Next signal",
+  "text": "Sinyal berikutnya"
+ },
+ "95b8d74b": {
+  "en": "Stop beacon",
+  "text": "Hentikan beacon"
+ },
+ "42fc3fcd": {
+  "en": "CSI beacon: on",
+  "text": "Beacon CSI: on"
+ },
+ "4c494547": {
+  "en": "CSI motion: off",
+  "text": "Gerakan CSI: off"
+ },
+ "4b2d12ac": {
+  "en": "CSI sensor",
+  "text": "Penerima CSI"
+ },
+ "86d255b7": {
+  "en": "Calibrate (10 s still)",
+  "text": "Kalibrasi (10 d diam)"
+ },
+ "8d1d9b67": {
+  "en": "Stop homing",
+  "text": "Hentikan lacak"
+ },
+ "2c559fd7": {
+  "en": "Turn off...",
+  "text": "Matikan..."
+ },
+ "1bc8e3ca": {
+  "en": "Radio...",
+  "text": "Radio..."
+ },
+ "c5f2b8d0": {
+  "en": "Encryption test",
+  "text": "Tes enkripsi"
+ },
+ "57a21e12": {
+  "en": "< Close menu",
+  "text": "< Tutup menu"
+ },
+ "28cda4a5": {
+  "en": "Reply ",
+  "text": "Balasan "
+ },
+ "195cfed6": {
+  "en": " queued",
+  "text": " antre"
+ },
+ "692b3757": {
+  "en": "Reply not queued",
+  "text": "Balasan gagal"
+ },
  "55edebd2": {
   "en": "Login",
   "text": "Masuk"

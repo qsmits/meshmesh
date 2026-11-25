@@ -10,8 +10,9 @@ from ports import M9_PORT
 
 def connect(port):
     s=serial.Serial(port=None,baudrate=115200,timeout=.5,exclusive=True)
-    # ESP32-S3 USB Serial/JTAG and nRF52 TinyUSB CDC: DTR on (TinyUSB sends nothing without it).
-    native=any(p.device==port and ((p.vid==0x303a and p.pid==0x1001) or p.vid==0x239a) for p in comports())
+    # The Heltec's ESP32-S3 USB Serial/JTAG reads DTR and RTS for its reset and boot mode: DTR on, RTS off keeps it
+    # running. The M9's CH340: both off.
+    native=any(p.device==port and p.vid==0x303a and p.pid==0x1001 for p in comports())
     s.port=port;s.dtr=native;s.rts=False;s.meshmesh_native=native;s.open()
     return s
 

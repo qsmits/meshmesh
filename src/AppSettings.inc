@@ -38,6 +38,9 @@ String configJson(bool includeKey) {
   d["notify_wake"] = config.notifyWake;
   d["notify_popup"] = config.notifyPopup;
   d["notify_failed"] = config.notifyFailed;
+#if defined(MM_COMPACT)
+  d["double_back"] = config.doubleBack; // the page shows the switch only where the board has it
+#endif
   d["notify_words"] = config.notifyWords;
   d["utc_offset"] = config.utcOffset;
   d["apps"] = appsText(config.apps);
