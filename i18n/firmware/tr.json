@@ -1081,6 +1081,14 @@
   "en": "Screen password",
   "text": "Ekran parolası"
  },
+ "5d1a5f53": {
+  "en": "Channel sound",
+  "text": "Kanal sesi"
+ },
+ "42bbad70": {
+  "en": "Direct message sound",
+  "text": "Özel mesaj sesi"
+ },
  "9525b78e": {
   "en": "Custom",
   "text": "Özel"
@@ -1143,6 +1151,14 @@
   "en": "Same as day",
   "text": "Gündüz gibi"
  },
+ "75afe364": {
+  "en": "All",
+  "text": "Tümü"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "Bahsetmeler"
+ },
  "8581156e": {
   "en": "Tiles",
   "text": "Kutucuklar"
@@ -1158,14 +1174,6 @@
  "3c2dfe59": {
   "en": "Hidden",
   "text": "Gizli"
- },
- "75afe364": {
-  "en": "All",
-  "text": "Tümü"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "Bahsetmeler"
  },
  "f0b87eb8": {
   "en": "MeshCore regional settings: frequency, BW, SF, CR",
@@ -1234,6 +1242,14 @@
  "7c3b11a9": {
   "en": "OK: set or change password",
   "text": "OK: parola belirle veya değiştir"
+ },
+ "e629f336": {
+  "en": "Beep for channel messages; repeats stay silent",
+  "text": "Kanal mesajlarında bip; tekrarlar sessiz kalır"
+ },
+ "395b917d": {
+  "en": "Beep for direct messages",
+  "text": "Özel mesajlarda bip"
  },
  "e754fa0d": {
   "en": "Day 07:00–20:00, local time",
@@ -1923,6 +1939,10 @@
   "en": "Queued: waiting for delivery",
   "text": "Kuyrukta: iletim bekleniyor"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "Açık"
+ },
  "67884f31": {
   "en": "Queued: broadcast",
   "text": "Kuyrukta: genel yayın"
@@ -1934,10 +1954,6 @@
  "4cd5c726": {
   "en": "Radio TX error",
   "text": "Radyo TX hatası"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "Açık"
  },
  "54279dd1": {
   "en": "No repeat heard",

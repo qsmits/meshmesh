@@ -1070,6 +1070,14 @@
   "en": "Screen password",
   "text": "Sandi layar"
  },
+ "5d1a5f53": {
+  "en": "Channel sound",
+  "text": "Suara kanal"
+ },
+ "42bbad70": {
+  "en": "Direct message sound",
+  "text": "Suara pesan langsung"
+ },
  "9525b78e": {
   "en": "Custom",
   "text": "Kustom"
@@ -1131,6 +1139,14 @@
   "en": "Same as day",
   "text": "Seperti siang"
  },
+ "75afe364": {
+  "en": "All",
+  "text": "Semua"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "Sebutan"
+ },
  "8581156e": {
   "en": "Tiles",
   "text": "Ubin"
@@ -1146,14 +1162,6 @@
  "3c2dfe59": {
   "en": "Hidden",
   "text": "Sembunyi"
- },
- "75afe364": {
-  "en": "All",
-  "text": "Semua"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "Sebutan"
  },
  "f0b87eb8": {
   "en": "MeshCore regional settings: frequency, BW, SF, CR",
@@ -1222,6 +1230,14 @@
  "7c3b11a9": {
   "en": "OK: set or change password",
   "text": "OK: atur atau ubah sandi"
+ },
+ "e629f336": {
+  "en": "Beep for channel messages; repeats stay silent",
+  "text": "Bunyi untuk pesan kanal; pengulangan tetap senyap"
+ },
+ "395b917d": {
+  "en": "Beep for direct messages",
+  "text": "Bunyi untuk pesan langsung"
  },
  "e754fa0d": {
   "en": "Day 07:00–20:00, local time",
@@ -1911,6 +1927,10 @@
   "en": "Queued: waiting for delivery",
   "text": "Antre: menunggu pengiriman"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "On"
+ },
  "67884f31": {
   "en": "Queued: broadcast",
   "text": "Antre: siaran"
@@ -1922,10 +1942,6 @@
  "4cd5c726": {
   "en": "Radio TX error",
   "text": "Galat TX radio"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "On"
  },
  "54279dd1": {
   "en": "No repeat heard",

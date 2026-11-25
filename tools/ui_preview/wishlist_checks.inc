@@ -146,6 +146,33 @@ static void wishlistChecks() {
   notifications::tick();
   while (notifications::take(event))
     must(event.kind != notifications::Unconfirmed, "repeat outside retained history cancels timeout");
+  { // The message beep: channel and direct-message settings, mentions, and silent repeats.
+    auto soundChannels = config.soundChannels;
+    auto soundDirect = config.soundDirect;
+    ChatMessage m;
+    m.source = 0x1111;
+    m.destination = meshmesh::Broadcast;
+    strlcpy(m.text, "beep test one", sizeof m.text);
+    config.soundChannels = 1;
+    config.soundDirect = true;
+    must(notifications::sound(m, false), "a channel message beeps");
+    must(!notifications::sound(m, false), "the same message again stays silent");
+    fakeMillis += 600001;
+    must(notifications::sound(m, false), "the same message after 10 minutes beeps again");
+    strlcpy(m.text, "beep test two", sizeof m.text);
+    config.soundChannels = 2;
+    must(!notifications::sound(m, false) && notifications::sound(m, true), "channel sound for mentions only");
+    config.soundChannels = 0;
+    strlcpy(m.text, "beep test three", sizeof m.text);
+    must(!notifications::sound(m, true), "channel sound off");
+    m.destination = 0x2222; // a direct message
+    must(notifications::sound(m, false), "a direct message beeps while channels are off");
+    strlcpy(m.text, "beep test four", sizeof m.text);
+    config.soundDirect = false;
+    must(!notifications::sound(m, false), "direct message sound off");
+    config.soundChannels = soundChannels;
+    config.soundDirect = soundDirect;
+  }
   must(appsOldDefault("chats nodes chess pet dice quick people radar gps ble settings health wardrive") &&
            appsOldDefault(
                "chats map nodes nav connect radar health settings solitaire chess pet dice quick people wardrive"),

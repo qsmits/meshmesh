@@ -1081,6 +1081,14 @@
   "en": "Screen password",
   "text": "Senha da tela"
  },
+ "5d1a5f53": {
+  "en": "Channel sound",
+  "text": "Som dos canais"
+ },
+ "42bbad70": {
+  "en": "Direct message sound",
+  "text": "Som das diretas"
+ },
  "9525b78e": {
   "en": "Custom",
   "text": "Personalizado"
@@ -1143,6 +1151,14 @@
   "en": "Same as day",
   "text": "Igual ao dia"
  },
+ "75afe364": {
+  "en": "All",
+  "text": "Todos"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "Menções"
+ },
  "8581156e": {
   "en": "Tiles",
   "text": "Blocos"
@@ -1158,14 +1174,6 @@
  "3c2dfe59": {
   "en": "Hidden",
   "text": "Oculto"
- },
- "75afe364": {
-  "en": "All",
-  "text": "Todos"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "Menções"
  },
  "f0b87eb8": {
   "en": "MeshCore regional settings: frequency, BW, SF, CR",
@@ -1234,6 +1242,14 @@
  "7c3b11a9": {
   "en": "OK: set or change password",
   "text": "OK: definir ou mudar senha"
+ },
+ "e629f336": {
+  "en": "Beep for channel messages; repeats stay silent",
+  "text": "Bipe para mensagens de canal; repetições ficam em silêncio"
+ },
+ "395b917d": {
+  "en": "Beep for direct messages",
+  "text": "Bipe para mensagens diretas"
  },
  "e754fa0d": {
   "en": "Day 07:00–20:00, local time",
@@ -1923,6 +1939,10 @@
   "en": "Queued: waiting for delivery",
   "text": "Na fila: aguardando entrega"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "Lig"
+ },
  "67884f31": {
   "en": "Queued: broadcast",
   "text": "Na fila: transmissão geral"
@@ -1934,10 +1954,6 @@
  "4cd5c726": {
   "en": "Radio TX error",
   "text": "Erro de transmissão no rádio"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "Lig"
  },
  "54279dd1": {
   "en": "No repeat heard",

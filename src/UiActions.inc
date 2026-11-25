@@ -21,7 +21,8 @@ enum class AppAction {
   ZoomIn,
   ZoomOut,
   Recenter,
-  QuickReply
+  QuickReply,
+  Sound
 };
 struct ActionItem {
   AppAction action;
@@ -43,12 +44,19 @@ int actionItems(ActionItem* rows) {
   if (page == Threads) {
     rows[n++] = {A::Add, IcHash, t("Add a channel")};
     rows[n++] = {A::Unread, IcMail, t("Next unread")};
-    if (conversationCount && channels::isChannel(conversations[selected]))
+    if (conversationCount && channels::isChannel(conversations[selected])) {
       rows[n++] = {A::Channel, IcHash, t("Channel details")};
+      if (const channels::Channel* c = meshRadio.channel(conversations[selected]))
+        rows[n++] = {A::Sound, IcMail, t("Channel sound"), c->policy.sound != 0};
+    }
   } else if (page == Chat) {
     rows[n++] = {A::Clipboard, IcMail, t("Clipboard")};
     if (!composer.length()) rows[n++] = {A::QuickReply, IcSend, t("Quick send")};
-    if (channels::isChannel(recipient)) rows[n++] = {A::Channel, IcHash, t("Channel details")};
+    if (channels::isChannel(recipient)) {
+      rows[n++] = {A::Channel, IcHash, t("Channel details")};
+      if (const channels::Channel* c = meshRadio.channel(recipient))
+        rows[n++] = {A::Sound, IcMail, t("Channel sound"), c->policy.sound != 0}; // the channel's own switch
+    }
   } else if (page == Scope) {
     rows[n++] = {A::List, IcRadar, scopeWide ? t("Radar") : t("Full-width list")};
     rows[n++] = {A::Pause, IcRadar, scopeHeld ? t("Resume") : t("Pause")};
@@ -92,7 +100,7 @@ void drawActionPanel() {
     target(8, y, 304, 31, i);
     icon(items[i].icon, 28, y + 15, 8, focus ? accent : dim, focus ? cardHi : bg);
     text(48, y + 20, fit(items[i].label, 200, bold), ink, bold);
-    if (radios) {
+    if (radios || items[i].action == AppAction::Sound) { // a switch shows its state
       textRight(262, y + 20, flag(items[i].on), dim, small);
       toggle(272, y + 7, items[i].on);
     } else
@@ -133,6 +141,10 @@ bool actionPanelKey(int key) {
   case A::ZoomOut: uiKey('-'); break;
   case A::Recenter: uiKey(Enter); break;
   case A::QuickReply: uiKey(KeyRight); break;
+  case A::Sound:
+    if (const channels::Channel* c = meshRadio.channel(page == Chat ? recipient : conversations[selected]))
+      channelSoundToggle(c);
+    break;
   case A::Add: change(ChannelAdd); break;
   case A::Unread: nextUnread(); break;
   case A::Channel: openChannelInfo(page == Chat ? recipient : conversations[selected], page); break;

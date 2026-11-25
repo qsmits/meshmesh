@@ -2120,10 +2120,11 @@ void drawSettings() {
   footer({{"OK", t("Open")}, {"^v", t("Select")}, {"BACK", t("Menu")}});
 }
 constexpr int RowLauncherLayout = 3;
-constexpr int RowTheme = 13, RowAccent = 14, RowNight = 15, RowPassword = 16;
+constexpr int RowTheme = 13, RowAccent = 14, RowNight = 15, RowPassword = 16, RowSoundChannels = 17,
+              RowSoundDirect = 18;
 bool credentialEnabled();
 int settingRows() {
-  return page == Display ? 18 : 14;
+  return page == Display ? 20 : 14;
 } // Includes the final Save row. Radio row 0: the regional preset (RadioPresets.h).
 // Radio rows 9 and 10: the default region of our floods (OK types one, <> the regions found) and the region search;
 // row 11: the profile before the last change of frequency, BW, SF or CR (OK returns to it), or during a test of a
@@ -2181,12 +2182,26 @@ String settingName(int i) {
     if (i == RowPrev) return config.trial.set() ? t("Radio test") : t("Previous radio");
     return i < 11 ? names[i] : "";
   }
-  const char* names[] = {tr("Name"),           tr("Language"),      tr("Day brightness"), tr("Home layout"),
-                         tr("Sounds"),         tr("Auto lock"),     tr("Dim screen"),     tr("GPS receiver"),
-                         tr("UTC offset"),     tr("Battery shows"), tr("Lock screen"),    tr("Wake on message"),
-                         tr("Message popup"),  tr("Theme"),         tr("Accent colour"),  tr("Night brightness"),
-                         tr("Screen password")};
-  return i <= RowPassword ? names[i] : "";
+  const char* names[] = {tr("Name"),
+                         tr("Language"),
+                         tr("Day brightness"),
+                         tr("Home layout"),
+                         tr("Sounds"),
+                         tr("Auto lock"),
+                         tr("Dim screen"),
+                         tr("GPS receiver"),
+                         tr("UTC offset"),
+                         tr("Battery shows"),
+                         tr("Lock screen"),
+                         tr("Wake on message"),
+                         tr("Message popup"),
+                         tr("Theme"),
+                         tr("Accent colour"),
+                         tr("Night brightness"),
+                         tr("Screen password"),
+                         tr("Channel sound"),
+                         tr("Direct message sound")};
+  return i <= RowSoundDirect ? names[i] : "";
 }
 String settingValue(const Config& c, int i) {
   if (page == Radio) {
@@ -2222,6 +2237,8 @@ String settingValue(const Config& c, int i) {
   }
   case RowNight: return c.nightBrightness ? String(c.nightBrightness) : t("Same as day");
   case RowPassword: return flag(credentialEnabled());
+  case RowSoundChannels: return c.soundChannels == 0 ? t("Off") : c.soundChannels == 1 ? t("All") : t("Mentions");
+  case RowSoundDirect: return flag(c.soundDirect);
   case 0: return c.name;
   case 1: return langNames[c.lang < LangCount ? c.lang : 0];
   case 2: return String(c.brightness);
@@ -2271,6 +2288,8 @@ String settingHint(int i) {
   }
   switch (i) {
   case RowPassword: return t("OK: set or change password");
+  case RowSoundChannels: return t("Beep for channel messages; repeats stay silent");
+  case RowSoundDirect: return t("Beep for direct messages");
   case RowTheme:
   case RowNight: return t("Day 07:00–20:00, local time");
   case 0: return t("OK: edit, 1-24 UTF-8 bytes");
@@ -3018,6 +3037,8 @@ void alter(int dir) {
       break;
     case 11: draft.notifyWake = (draft.notifyWake + dir + 3) % 3; break;
     case 12: draft.notifyPopup = (draft.notifyPopup + dir + 3) % 3; break;
+    case RowSoundChannels: draft.soundChannels = (draft.soundChannels + dir + 3) % 3; break;
+    case RowSoundDirect: draft.soundDirect = !draft.soundDirect; break;
     }
   }
   dirty = true;
@@ -3058,6 +3079,8 @@ void saveDraft() {
     d["lock_details"] = draft.lockDetails;
     d["notify_wake"] = draft.notifyWake;
     d["notify_popup"] = draft.notifyPopup;
+    d["sound_channels"] = draft.soundChannels;
+    d["sound_direct"] = draft.soundDirect;
   }
   String reply = applySettings(d.as<JsonObjectConst>());
   bool saved = reply.startsWith("OK");
@@ -3835,7 +3858,7 @@ void uiTick() {
   notifications::Event notification;
   while (notifications::take(notification)) {
     if (notification.kind == notifications::Incoming) {
-      if (notifications::sound(notification.message)) hardware.beep();
+      if (notifications::sound(notification.message, notification.mention)) hardware.beep();
       if (notifications::enabled(notifications::mode(notification.message, config.notifyWake, 1),
                                  notification.mention)) {
         wakeOnly = false;

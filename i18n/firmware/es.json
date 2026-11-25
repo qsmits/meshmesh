@@ -1081,6 +1081,14 @@
   "en": "Screen password",
   "text": "Clave de pantalla"
  },
+ "5d1a5f53": {
+  "en": "Channel sound",
+  "text": "Sonido de canales"
+ },
+ "42bbad70": {
+  "en": "Direct message sound",
+  "text": "Sonido de directos"
+ },
  "9525b78e": {
   "en": "Custom",
   "text": "Personalizado"
@@ -1143,6 +1151,14 @@
   "en": "Same as day",
   "text": "Como de día"
  },
+ "75afe364": {
+  "en": "All",
+  "text": "Todos"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "Menciones"
+ },
  "8581156e": {
   "en": "Tiles",
   "text": "Mosaicos"
@@ -1158,14 +1174,6 @@
  "3c2dfe59": {
   "en": "Hidden",
   "text": "Oculto"
- },
- "75afe364": {
-  "en": "All",
-  "text": "Todos"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "Menciones"
  },
  "f0b87eb8": {
   "en": "MeshCore regional settings: frequency, BW, SF, CR",
@@ -1234,6 +1242,14 @@
  "7c3b11a9": {
   "en": "OK: set or change password",
   "text": "OK: configurar o cambiar clave"
+ },
+ "e629f336": {
+  "en": "Beep for channel messages; repeats stay silent",
+  "text": "Pitido para mensajes de canal; las repeticiones no suenan"
+ },
+ "395b917d": {
+  "en": "Beep for direct messages",
+  "text": "Pitido para mensajes directos"
  },
  "e754fa0d": {
   "en": "Day 07:00–20:00, local time",
@@ -1923,6 +1939,10 @@
   "en": "Queued: waiting for delivery",
   "text": "En cola: esperando entrega"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "Sí"
+ },
  "67884f31": {
   "en": "Queued: broadcast",
   "text": "En cola: difusión"
@@ -1934,10 +1954,6 @@
  "4cd5c726": {
   "en": "Radio TX error",
   "text": "Error de TX de radio"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "Sí"
  },
  "54279dd1": {
   "en": "No repeat heard",

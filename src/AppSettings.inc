@@ -38,6 +38,8 @@ String configJson(bool includeKey) {
   d["notify_wake"] = config.notifyWake;
   d["notify_popup"] = config.notifyPopup;
   d["notify_failed"] = config.notifyFailed;
+  d["sound_channels"] = config.soundChannels;
+  d["sound_direct"] = config.soundDirect;
 #if defined(MM_COMPACT)
   d["double_back"] = config.doubleBack; // the page shows the switch only where the board has it
 #endif
@@ -100,12 +102,13 @@ String applySettings(JsonObjectConst v) {
         if (n < 10 || n > 255) return "ERR brightness 10..255";
         next.brightness = n;
       }
-    } else if (name == "notify_led" || name == "notify_wake" || name == "notify_popup") {
+    } else if (name == "notify_led" || name == "notify_wake" || name == "notify_popup" || name == "sound_channels") {
       if (!value.is<int>() || value.as<int>() < 0 || value.as<int>() > 2)
         return "ERR notification mode 0 off, 1 all, 2 mentions";
       if (name == "notify_led") next.notifyLed = value.as<int>();
       if (name == "notify_wake") next.notifyWake = value.as<int>();
       if (name == "notify_popup") next.notifyPopup = value.as<int>();
+      if (name == "sound_channels") next.soundChannels = value.as<int>();
     } else if (name == "notify_words") {
       if (!value.is<const char*>() || value.as<String>().length() > 96) return "ERR notify_words: up to 96 UTF-8 bytes";
       strlcpy(next.notifyWords, value.as<const char*>(), sizeof next.notifyWords);
@@ -173,11 +176,12 @@ String applySettings(JsonObjectConst v) {
       }
       next.lang = l;
     } else if (name == "relay" || name == "gps" || name == "sound" || name == "battery_volts" ||
-               name == "lock_details" || name == "notify_failed" || name == "double_back") {
+               name == "lock_details" || name == "notify_failed" || name == "double_back" || name == "sound_direct") {
       if (!value.is<bool>()) return "ERR boolean required";
       bool n = value.as<bool>();
       if (name == "double_back") next.doubleBack = n;
       if (name == "notify_failed") next.notifyFailed = n;
+      if (name == "sound_direct") next.soundDirect = n;
       if (name == "relay") next.relay = n;
       if (name == "gps") next.gps = n;
       if (name == "sound") next.sound = n;

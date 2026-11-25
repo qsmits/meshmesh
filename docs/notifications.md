@@ -1,10 +1,16 @@
-# Notifications, quick send and counting
+# Notifications and quick send
 
 ## Notifications
 
 Screen wake and the incoming-message pop-up are independent: off, all messages or mentions. Each channel may
 override or inherit them, and each channel has its own sound switch. Configure them in the M9 screen settings
 (wake and pop-up), on the channel card, or in the settings of the web page.
+
+The message beep has two settings of its own, at the end of the M9's "Screen & device" settings and on the web
+page: **Channel sound** (off, all, mentions only) and **Direct message sound** (on, off). A channel can also be
+muted on its own: "Channel sound" in the menu of the open chat or of the chat list, or on the channel card. A
+message identical to one the same sender sent in the same chat within 10 minutes does not beep again (it still
+appears in the chat).
 
 Mentions use `@[node name]`, case-insensitive for Latin and Cyrillic. Optional comma-separated words
 (`notify_words`) also trigger mentions. A plain unmarked name does not. Events are independent of history
@@ -14,14 +20,13 @@ The M9 has no software-controlled notification LED: `status.notification_led` is
 setting has no visible effect.
 
 Optional failure alerts distinguish radio TX failure, missing direct-message ACK and no channel repeat heard within
-30 seconds. Missing a repeat does not prove failed delivery. Delivered still requires the appropriate ACK. Manual
-counting does not let pop-ups consume the next key press.
-
+30 seconds. Missing a repeat does not prove failed delivery. Delivered still requires the appropriate ACK. 
 Web page notification settings separately control incoming banners (all, mentions, off) and action feedback (all,
 errors, off). Operation errors remain visible in the interface.
 
 Settings (`set {JSON}`): `notify_wake`, `notify_popup`, `notify_led` (0 off, 1 all, 2 mentions), `notify_failed`
-(true/false), `notify_words` (up to 96 UTF-8 bytes), `sound` (true/false, the device-wide beep). Per channel:
+(true/false), `notify_words` (up to 96 UTF-8 bytes), `sound` (true/false, the device-wide beep), `sound_channels`
+(0 off, 1 all, 2 mentions), `sound_direct` (true/false). Per channel:
 `channel do {"action":"policy","channel":"<ID>",…}` with `led`, `wake`, `popup` (0 off, 1 all, 2 mentions,
 3 as the device setting), `sound` (0 silent, 1 a beep on a new message), `priority` (0–2), `device_limit`
 (0, 8, 16).

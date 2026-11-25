@@ -1092,6 +1092,14 @@
   "en": "Screen password",
   "text": "Пароль екрана"
  },
+ "5d1a5f53": {
+  "en": "Channel sound",
+  "text": "Звук каналів"
+ },
+ "42bbad70": {
+  "en": "Direct message sound",
+  "text": "Звук особистих"
+ },
  "9525b78e": {
   "en": "Custom",
   "text": "Власний"
@@ -1155,6 +1163,14 @@
   "en": "Same as day",
   "text": "Як удень"
  },
+ "75afe364": {
+  "en": "All",
+  "text": "Усі"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "Згадки"
+ },
  "8581156e": {
   "en": "Tiles",
   "text": "Плитки"
@@ -1170,14 +1186,6 @@
  "3c2dfe59": {
   "en": "Hidden",
   "text": "Приховано"
- },
- "75afe364": {
-  "en": "All",
-  "text": "Усі"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "Згадки"
  },
  "f0b87eb8": {
   "en": "MeshCore regional settings: frequency, BW, SF, CR",
@@ -1246,6 +1254,14 @@
  "7c3b11a9": {
   "en": "OK: set or change password",
   "text": "OK: задати або змінити пароль"
+ },
+ "e629f336": {
+  "en": "Beep for channel messages; repeats stay silent",
+  "text": "Сигнал для повідомлень каналів; повтори без звуку"
+ },
+ "395b917d": {
+  "en": "Beep for direct messages",
+  "text": "Сигнал для особистих повідомлень"
  },
  "e754fa0d": {
   "en": "Day 07:00–20:00, local time",
@@ -1935,6 +1951,10 @@
   "en": "Queued: waiting for delivery",
   "text": "Очікування підтвердження"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "Увімк"
+ },
  "67884f31": {
   "en": "Queued: broadcast",
   "text": "Надсилається в загальний чат"
@@ -1946,10 +1966,6 @@
  "4cd5c726": {
   "en": "Radio TX error",
   "text": "Помилка радіопередачі"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "Увімк"
  },
  "54279dd1": {
   "en": "No repeat heard",

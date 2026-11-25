@@ -1070,6 +1070,14 @@
   "en": "Screen password",
   "text": "画面パスワード"
  },
+ "5d1a5f53": {
+  "en": "Channel sound",
+  "text": "チャンネル通知音"
+ },
+ "42bbad70": {
+  "en": "Direct message sound",
+  "text": "DM 通知音"
+ },
  "9525b78e": {
   "en": "Custom",
   "text": "カスタム"
@@ -1131,6 +1139,14 @@
   "en": "Same as day",
   "text": "日中と同じ"
  },
+ "75afe364": {
+  "en": "All",
+  "text": "すべて"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "メンション"
+ },
  "8581156e": {
   "en": "Tiles",
   "text": "タイル"
@@ -1146,14 +1162,6 @@
  "3c2dfe59": {
   "en": "Hidden",
   "text": "非表示"
- },
- "75afe364": {
-  "en": "All",
-  "text": "すべて"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "メンション"
  },
  "f0b87eb8": {
   "en": "MeshCore regional settings: frequency, BW, SF, CR",
@@ -1222,6 +1230,14 @@
  "7c3b11a9": {
   "en": "OK: set or change password",
   "text": "OK: パスワードを設定・変更"
+ },
+ "e629f336": {
+  "en": "Beep for channel messages; repeats stay silent",
+  "text": "チャンネルのメッセージで音を出す。同じメッセージは無音"
+ },
+ "395b917d": {
+  "en": "Beep for direct messages",
+  "text": "DM で音を出す"
  },
  "e754fa0d": {
   "en": "Day 07:00–20:00, local time",
@@ -1911,6 +1927,10 @@
   "en": "Queued: waiting for delivery",
   "text": "送信待ち: 配達確認待ち"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "オン"
+ },
  "67884f31": {
   "en": "Queued: broadcast",
   "text": "送信待ち: 一斉送信"
@@ -1922,10 +1942,6 @@
  "4cd5c726": {
   "en": "Radio TX error",
   "text": "無線送信エラー"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "オン"
  },
  "54279dd1": {
   "en": "No repeat heard",

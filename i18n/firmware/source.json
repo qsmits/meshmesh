@@ -2,7 +2,7 @@
  "004e9a25": {
   "cells": 22,
   "where": [
-   "src/Ui.cpp:3721: notice(passed ? t(\"Encryption test passed\") : t(\"Encryption test failed\"), passed ? ok : bad);"
+   "src/Ui.cpp:3744: notice(passed ? t(\"Encryption test passed\") : t(\"Encryption test failed\"), passed ? ok : bad);"
   ]
  },
  "005ef20f": {
@@ -14,7 +14,7 @@
  "008f5512": {
   "cells": 9,
   "where": [
-   "src/Ui.cpp:2177: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),",
+   "src/Ui.cpp:2178: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),",
    "src/UiHeltec.cpp:483: case RowBw: return t(\"Bandwidth\");"
   ]
  },
@@ -47,7 +47,7 @@
  "018eb564": {
   "cells": 31,
   "where": [
-   "src/Ui.cpp:2279: case RowLauncherLayout: return t(\"Applies to Home and all folders\");"
+   "src/Ui.cpp:2298: case RowLauncherLayout: return t(\"Applies to Home and all folders\");"
   ]
  },
  "023fb5d9": {
@@ -77,7 +77,7 @@
  "04be6123": {
   "cells": 8,
   "where": [
-   "src/Ui.cpp:2339: text(150, y, t(\"rx \") + String(e.rx) + t(\" · echo \") + String(e.echoes), dim, small);"
+   "src/Ui.cpp:2358: text(150, y, t(\"rx \") + String(e.rx) + t(\" · echo \") + String(e.echoes), dim, small);"
   ]
  },
  "04dfc93c": {
@@ -89,7 +89,7 @@
  "0614ba0b": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:2181: if (i == RowPrev) return config.trial.set() ? t(\"Radio test\") : t(\"Previous radio\");"
+   "src/Ui.cpp:2182: if (i == RowPrev) return config.trial.set() ? t(\"Radio test\") : t(\"Previous radio\");"
   ]
  },
  "0618ca8b": {
@@ -115,7 +115,7 @@
  "0725094d": {
   "cells": 27,
   "where": [
-   "src/Ui.cpp:3123: notice(t(\"Cannot remove while sending\"), bad);"
+   "src/Ui.cpp:3146: notice(t(\"Cannot remove while sending\"), bad);"
   ]
  },
  "077a795e": {
@@ -133,7 +133,7 @@
  "081ff103": {
   "cells": 20,
   "where": [
-   "src/Ui.cpp:3701: notice(t(\"Needs a heard beacon\"), warn);"
+   "src/Ui.cpp:3724: notice(t(\"Needs a heard beacon\"), warn);"
   ]
  },
  "087a6114": {
@@ -151,7 +151,7 @@
  "09974b89": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:2596: N_(\"Connection lost\"),"
+   "src/Ui.cpp:2615: N_(\"Connection lost\"),"
   ]
  },
  "0a77a91f": {
@@ -170,7 +170,7 @@
  "0abaed3f": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2513: footer({{\"<>\", t(\"Found\")}, {\"OK\", t(\"Type\")}, {\"BACK\", t(\"Cancel\")}});"
+   "src/Ui.cpp:2532: footer({{\"<>\", t(\"Found\")}, {\"OK\", t(\"Type\")}, {\"BACK\", t(\"Cancel\")}});"
   ]
  },
  "0ac95089": {
@@ -183,13 +183,13 @@
  "0ae8097f": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2342: footer({{\"OK\", on ? t(\"Stop\") : t(\"Start\")}, {\"P\", t(\"Ping\")}, {\"N\", \"Wi-Fi/BLE\"}, {\"BACK\", t(\"Back\")}});"
+   "src/Ui.cpp:2361: footer({{\"OK\", on ? t(\"Stop\") : t(\"Start\")}, {\"P\", t(\"Ping\")}, {\"N\", \"Wi-Fi/BLE\"}, {\"BACK\", t(\"Back\")}});"
   ]
  },
  "0aed7015": {
   "cells": 3,
   "where": [
-   "src/Ui.cpp:2339: text(150, y, t(\"rx \") + String(e.rx) + t(\" · echo \") + String(e.echoes), dim, small);"
+   "src/Ui.cpp:2358: text(150, y, t(\"rx \") + String(e.rx) + t(\" · echo \") + String(e.echoes), dim, small);"
   ]
  },
  "0b728291": {
@@ -201,13 +201,13 @@
  "0cf72110": {
   "cells": 25,
   "where": [
-   "src/Ui.cpp:2367: : t(\"Wait: a ping is under way\"),"
+   "src/Ui.cpp:2386: : t(\"Wait: a ping is under way\"),"
   ]
  },
  "0cf7e9c3": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:3064: notice(saved ? t(\"Settings saved\") : reply, saved ? ok : bad);",
+   "src/Ui.cpp:3087: notice(saved ? t(\"Settings saved\") : reply, saved ? ok : bad);",
    "src/UiHeltec.cpp:635: notice(saved ? t(\"Settings saved\") : r.startsWith(\"ERR radio busy\") ? t(\"Radio busy, retry\") : r.substring(4));",
    "src/UiScreenLock.inc:56: notice(t(\"Settings saved\"), ok);"
   ]
@@ -234,7 +234,7 @@
  "0dad9117": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2223: case RowNight: return c.nightBrightness ? String(c.nightBrightness) : t(\"Same as day\");"
+   "src/Ui.cpp:2238: case RowNight: return c.nightBrightness ? String(c.nightBrightness) : t(\"Same as day\");"
   ]
  },
  "0dc6b4aa": {
@@ -254,14 +254,14 @@
  "0e9eb651": {
   "cells": 16,
   "where": [
-   "src/Ui.cpp:2617: notice(internet.enabled ? t(\"Wi-Fi client on\") : t(\"Wi-Fi client off\"), internet.enabled ? ok : dim);"
+   "src/Ui.cpp:2636: notice(internet.enabled ? t(\"Wi-Fi client on\") : t(\"Wi-Fi client off\"), internet.enabled ? ok : dim);"
   ]
  },
  "0ec24245": {
   "cells": 7,
   "where": [
    "src/Ui.cpp:1594: footer({{\"OK\", t(\"Details\")}, {\"MENU\", t(\"Actions\")}, {\"F\", t(\"Filter\")}, {\"BACK\", t(\"Back\")}});",
-   "src/Ui.cpp:2240: case 10: return !credentialEnabled() && c.lockDetails ? t(\"Details\") : t(\"Hidden\");"
+   "src/Ui.cpp:2257: case 10: return !credentialEnabled() && c.lockDetails ? t(\"Details\") : t(\"Hidden\");"
   ]
  },
  "0ec969ac": {
@@ -273,7 +273,7 @@
  "0fe07306": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2184: const char* names[] = {tr(\"Name\"),           tr(\"Language\"),      tr(\"Day brightness\"), tr(\"Home layout\"),"
+   "src/Ui.cpp:2185: const char* names[] = {tr(\"Name\"),"
   ]
  },
  "0ff01b6a": {
@@ -309,7 +309,7 @@
  "11c2662d": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2414: footer({{\"^v\", t(\"choose\")}, {\"OK\", quickTargets || selected == 0 ? t(\"select\") : t(\"send\")}, {\"BACK\", t(\"exit\")}});"
+   "src/Ui.cpp:2433: footer({{\"^v\", t(\"choose\")}, {\"OK\", quickTargets || selected == 0 ? t(\"select\") : t(\"send\")}, {\"BACK\", t(\"exit\")}});"
   ]
  },
  "12070be9": {
@@ -328,7 +328,7 @@
  "126befb6": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2216: const char* modes[] = {tr(\"Dark\"), tr(\"Light\"), tr(\"Auto\")};"
+   "src/Ui.cpp:2231: const char* modes[] = {tr(\"Dark\"), tr(\"Light\"), tr(\"Auto\")};"
   ]
  },
  "127be1ad": {
@@ -352,7 +352,7 @@
  "12e5654f": {
   "cells": 28,
   "where": [
-   "src/Ui.cpp:3510: notice(t(\"This node has not shared GPS\"), warn);"
+   "src/Ui.cpp:3533: notice(t(\"This node has not shared GPS\"), warn);"
   ]
  },
  "13254bc4": {
@@ -376,7 +376,7 @@
  "140b9a3a": {
   "cells": 25,
   "where": [
-   "src/Ui.cpp:2321: : !r.done           ? t(\"No pings yet: P sends one\")"
+   "src/Ui.cpp:2340: : !r.done           ? t(\"No pings yet: P sends one\")"
   ]
  },
  "1440c15d": {
@@ -396,7 +396,7 @@
  "15903060": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2220: const char* colors[] = {tr(\"Lime\"), tr(\"Blue\"), tr(\"Violet\"), tr(\"Amber\")};"
+   "src/Ui.cpp:2235: const char* colors[] = {tr(\"Lime\"), tr(\"Blue\"), tr(\"Violet\"), tr(\"Amber\")};"
   ]
  },
  "168512be": {
@@ -428,19 +428,19 @@
  "172eebcb": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:2602: N_(\"Not a PNG image\"),"
+   "src/Ui.cpp:2621: N_(\"Not a PNG image\"),"
   ]
  },
  "175749a2": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:2178: tr(\"Coding rate\"),    tr(\"TX power\"),  tr(\"Relay hop limit\"), tr(\"Relay packets\"),"
+   "src/Ui.cpp:2179: tr(\"Coding rate\"),    tr(\"TX power\"),  tr(\"Relay hop limit\"), tr(\"Relay packets\"),"
   ]
  },
  "17bd62a7": {
   "cells": 23,
   "where": [
-   "src/Ui.cpp:2773: {tr(\"Right\"), t(\"In text: capital letter\")}};"
+   "src/Ui.cpp:2792: {tr(\"Right\"), t(\"In text: capital letter\")}};"
   ]
  },
  "183ddd99": {
@@ -464,14 +464,14 @@
  "18ac79a2": {
   "cells": 8,
   "where": [
-   "src/Ui.cpp:2564: footer({{\"OK\", selected == 1 ? t(\"Networks\") : t(\"Toggle\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Back\")}});"
+   "src/Ui.cpp:2583: footer({{\"OK\", selected == 1 ? t(\"Networks\") : t(\"Toggle\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Back\")}});"
   ]
  },
  "194d1be3": {
   "cells": 4,
   "where": [
-   "src/MeshRadio.cpp:1313: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));",
-   "src/MeshRadio.cpp:1313: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));"
+   "src/MeshRadio.cpp:1315: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));",
+   "src/MeshRadio.cpp:1315: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));"
   ]
  },
  "195cfed6": {
@@ -483,7 +483,7 @@
  "1983dffb": {
   "cells": 31,
   "where": [
-   "src/Ui.cpp:2324: : t(\"Last ping: no repeater heard it\") + String(\" · \") + ago(millis() - r.at);"
+   "src/Ui.cpp:2343: : t(\"Last ping: no repeater heard it\") + String(\" · \") + ago(millis() - r.at);"
   ]
  },
  "19deef04": {
@@ -519,7 +519,7 @@
  "1a8c15c3": {
   "cells": 7,
   "where": [
-   "src/Ui.cpp:2140: return s.state == regions::Search::Done ? count(s.count, \"region\", \"regions\") : t(\"OK: start\");"
+   "src/Ui.cpp:2141: return s.state == regions::Search::Done ? count(s.count, \"region\", \"regions\") : t(\"OK: start\");"
   ]
  },
  "1a940c2a": {
@@ -532,7 +532,7 @@
   "cells": 13,
   "where": [
    "src/Ui.cpp:857: if (!localTime(time(nullptr), v)) return t(\"Clock not set\");",
-   "src/Ui.cpp:2599: N_(\"Clock not set\"),"
+   "src/Ui.cpp:2618: N_(\"Clock not set\"),"
   ]
  },
  "1ae89b50": {
@@ -550,7 +550,7 @@
  "1b480018": {
   "cells": 24,
   "where": [
-   "src/Ui.cpp:3710: notice(t(\"OK again: erase old data\"), warn);"
+   "src/Ui.cpp:3733: notice(t(\"OK again: erase old data\"), warn);"
   ]
  },
  "1b68d598": {
@@ -588,14 +588,14 @@
  "1c076c32": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:2188: tr(\"Screen password\")};",
+   "src/Ui.cpp:2201: tr(\"Screen password\"),",
    "src/UiScreenLock.inc:33: String title = credentialStep == CredentialStep::Unlock ? t(\"Unlock\") : t(\"Screen password\");"
   ]
  },
  "1c09a5b3": {
   "cells": 7,
   "where": [
-   "src/Ui.cpp:2748: {t(\"Relayed\"), String(meshRadio.relayed)},"
+   "src/Ui.cpp:2767: {t(\"Relayed\"), String(meshRadio.relayed)},"
   ]
  },
  "1c43d491": {
@@ -637,14 +637,14 @@
  "1dd4ab8a": {
   "cells": 9,
   "where": [
-   "src/Ui.cpp:2299: if (wardrive::settings.passive) s = t(\"Listening\");",
+   "src/Ui.cpp:2318: if (wardrive::settings.passive) s = t(\"Listening\");",
    "src/UiHeltec.cpp:694: if (wardrive::settings.passive) s = t(\"Listening\");"
   ]
  },
  "1e0d93a4": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:3681: notice(saved ? t(\"Calibration saved\") : t(\"Rotate wider, at least 20 seconds\"), saved ? ok : warn);"
+   "src/Ui.cpp:3704: notice(saved ? t(\"Calibration saved\") : t(\"Rotate wider, at least 20 seconds\"), saved ? ok : warn);"
   ]
  },
  "1e3add08": {
@@ -656,14 +656,14 @@
  "1e3f0243": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:2771: : Hint{tr(\"hold OK\"), t(\"Home screen: lock\")},"
+   "src/Ui.cpp:2790: : Hint{tr(\"hold OK\"), t(\"Home screen: lock\")},"
   ]
  },
  "1e9e9f85": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2716: case KeyRight: return t(\"Right\");",
-   "src/Ui.cpp:2773: {tr(\"Right\"), t(\"In text: capital letter\")}};"
+   "src/Ui.cpp:2735: case KeyRight: return t(\"Right\");",
+   "src/Ui.cpp:2792: {tr(\"Right\"), t(\"In text: capital letter\")}};"
   ]
  },
  "1ea76214": {
@@ -681,7 +681,7 @@
  "1f0bca87": {
   "cells": 10,
   "where": [
-   "src/Ui.cpp:2185: tr(\"Sounds\"),         tr(\"Auto lock\"),     tr(\"Dim screen\"),     tr(\"GPS receiver\"),"
+   "src/Ui.cpp:2191: tr(\"Dim screen\"),"
   ]
  },
  "1f5d2384": {
@@ -709,7 +709,7 @@
  "1ffe2452": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2199: case 2: return String(c.bandwidth, 1) + t(\" kHz\");"
+   "src/Ui.cpp:2214: case 2: return String(c.bandwidth, 1) + t(\" kHz\");"
   ]
  },
  "2029f0ba": {
@@ -727,7 +727,7 @@
  "20f5774f": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2759: text(10, 207, t(\"Boot \") + String(config.bootCounter) + t(\" · last key: \") + keyName(hardware.lastKey), faint, small);"
+   "src/Ui.cpp:2778: text(10, 207, t(\"Boot \") + String(config.bootCounter) + t(\" · last key: \") + keyName(hardware.lastKey), faint, small);"
   ]
  },
  "219101e3": {
@@ -739,19 +739,19 @@
  "2197c64b": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:2179: tr(\"Path hash size\"), tr(\"Region\"),    tr(\"Find regions\")};"
+   "src/Ui.cpp:2180: tr(\"Path hash size\"), tr(\"Region\"),    tr(\"Find regions\")};"
   ]
  },
  "21c2fbf9": {
   "cells": 28,
   "where": [
-   "src/Ui.cpp:3115: notice(t(\"OK again removes the contact\"), warn);"
+   "src/Ui.cpp:3138: notice(t(\"OK again removes the contact\"), warn);"
   ]
  },
  "21ff842c": {
   "cells": 34,
   "where": [
-   "src/Ui.cpp:2253: case 1: return t(\"1 kHz steps; must match every node\");"
+   "src/Ui.cpp:2270: case 1: return t(\"1 kHz steps; must match every node\");"
   ]
  },
  "22608033": {
@@ -764,7 +764,7 @@
  "2265ebb1": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:2166: return t(\"Current profile: \") + count(n, \"repeater\", \"repeaters\");"
+   "src/Ui.cpp:2167: return t(\"Current profile: \") + count(n, \"repeater\", \"repeaters\");"
   ]
  },
  "228aed48": {
@@ -789,19 +789,19 @@
  "231886db": {
   "cells": 34,
   "where": [
-   "src/Ui.cpp:2772: {\"OK\", t(\"Open / send; twice or hold: unlock\")},"
+   "src/Ui.cpp:2791: {\"OK\", t(\"Open / send; twice or hold: unlock\")},"
   ]
  },
  "231a6135": {
   "cells": 36,
   "where": [
-   "src/Ui.cpp:2768: {tr(\"Map pin\"), t(\"Announce this node; hold: GPS on/off\")},"
+   "src/Ui.cpp:2787: {tr(\"Map pin\"), t(\"Announce this node; hold: GPS on/off\")},"
   ]
  },
  "24646b98": {
   "cells": 10,
   "where": [
-   "src/Ui.cpp:2181: if (i == RowPrev) return config.trial.set() ? t(\"Radio test\") : t(\"Previous radio\");"
+   "src/Ui.cpp:2182: if (i == RowPrev) return config.trial.set() ? t(\"Radio test\") : t(\"Previous radio\");"
   ]
  },
  "24b9070d": {
@@ -858,13 +858,13 @@
  "276d8d02": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2688: : r.saved ? (r.visible ? t(\"saved\") : t(\"saved, away\"))"
+   "src/Ui.cpp:2707: : r.saved ? (r.visible ? t(\"saved\") : t(\"saved, away\"))"
   ]
  },
  "27d1a714": {
   "cells": 8,
   "where": [
-   "src/Ui.cpp:2731: for (int i = 0; i < 8; i++) label[i] = names[i] ? String(names[i]) : i == 1 ? t(\"Keyboard\") : t(\"Compass\");"
+   "src/Ui.cpp:2750: for (int i = 0; i < 8; i++) label[i] = names[i] ? String(names[i]) : i == 1 ? t(\"Keyboard\") : t(\"Compass\");"
   ]
  },
  "280669ca": {
@@ -914,14 +914,14 @@
  "2b6886b2": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:2760: footer({{\"OK\", hardware.fsOk ? t(\"Crypto test + sound\") : t(\"Create storage...\")}, {\"BACK\", t(\"Back\")}});",
+   "src/Ui.cpp:2779: footer({{\"OK\", hardware.fsOk ? t(\"Crypto test + sound\") : t(\"Create storage...\")}, {\"BACK\", t(\"Back\")}});",
    "src/UiHeltec.cpp:917: case ActFormat: return t(\"Create storage...\");"
   ]
  },
  "2b6aba6c": {
   "cells": 36,
   "where": [
-   "src/Ui.cpp:2770: hardware.micKey ? Hint{\"MIC\", t(\"Lock screen (there is no microphone)\")}"
+   "src/Ui.cpp:2789: hardware.micKey ? Hint{\"MIC\", t(\"Lock screen (there is no microphone)\")}"
   ]
  },
  "2b8b882d": {
@@ -933,7 +933,7 @@
  "2b90772b": {
   "cells": 22,
   "where": [
-   "src/Ui.cpp:3315: notice(t(\"Name: 1-24 UTF-8 bytes\"), bad);"
+   "src/Ui.cpp:3338: notice(t(\"Name: 1-24 UTF-8 bytes\"), bad);"
   ]
  },
  "2c1279ee": {
@@ -975,7 +975,7 @@
  "2dd2d3d9": {
   "cells": 31,
   "where": [
-   "src/Ui.cpp:3704: notice(radarSound ? (config.sound ? t(\"Ping on\") : t(\"Device sound is off in settings\")) : t(\"Ping off\"),"
+   "src/Ui.cpp:3727: notice(radarSound ? (config.sound ? t(\"Ping on\") : t(\"Device sound is off in settings\")) : t(\"Ping off\"),"
   ]
  },
  "2fce4529": {
@@ -987,20 +987,20 @@
  "2fd16ea7": {
   "cells": 36,
   "where": [
-   "src/Ui.cpp:2264: return regions::search.count ? t(\"Found: \") + regionsFound() : t(\"Asks repeaters that hear this device\");"
+   "src/Ui.cpp:2281: return regions::search.count ? t(\"Found: \") + regionsFound() : t(\"Asks repeaters that hear this device\");"
   ]
  },
  "2fe2598e": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2300: if (wardrive::settings.ping) s += String(s.length() ? \" + \" : \"\") + t(\"pings\");",
+   "src/Ui.cpp:2319: if (wardrive::settings.ping) s += String(s.length() ? \" + \" : \"\") + t(\"pings\");",
    "src/UiHeltec.cpp:695: if (wardrive::settings.ping) s += String(s.length() ? \" + \" : \"\") + t(\"pings\");"
   ]
  },
  "2ffcbe05": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2507: : s.phase == netfind::State::Done && s.best != 255 ? t(\"Test\")",
+   "src/Ui.cpp:2526: : s.phase == netfind::State::Done && s.best != 255 ? t(\"Test\")",
    "src/UiHeltec.cpp:493: case RowPrev: return config.trial.set() ? t(\"Test\") : t(\"Previous\");"
   ]
  },
@@ -1013,21 +1013,21 @@
  "300ec32d": {
   "cells": 9,
   "where": [
-   "src/Ui.cpp:2185: tr(\"Sounds\"),         tr(\"Auto lock\"),     tr(\"Dim screen\"),     tr(\"GPS receiver\"),"
+   "src/Ui.cpp:2190: tr(\"Auto lock\"),"
   ]
  },
  "304ff7fb": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2206: case RowRegion: return c.region[0] ? String(c.region) : String(t(\"None\"));",
-   "src/Ui.cpp:2210: return config.trial.set() ? t(\"OK: keep\") : config.previous.set() ? profileText(config.previous) : t(\"None\");",
+   "src/Ui.cpp:2221: case RowRegion: return c.region[0] ? String(c.region) : String(t(\"None\"));",
+   "src/Ui.cpp:2225: return config.trial.set() ? t(\"OK: keep\") : config.previous.set() ? profileText(config.previous) : t(\"None\");",
    "src/UiChannels.inc:258: if (r == regions::Unscoped) return t(\"None\");"
   ]
  },
  "308f8aac": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:3351: notice(sent ? t(\"Node announced\") : t(\"Announcement failed\"), sent ? ok : bad);",
+   "src/Ui.cpp:3374: notice(sent ? t(\"Node announced\") : t(\"Announcement failed\"), sent ? ok : bad);",
    "src/UiHeltec.cpp:1049: case ActAdvert: notice(meshRadio.sendHello() ? t(\"Node announced\") : t(\"Announcement failed\")); break;"
   ]
  },
@@ -1059,7 +1059,7 @@
  "33a9cb6d": {
   "cells": 7,
   "where": [
-   "src/Ui.cpp:2264: return regions::search.count ? t(\"Found: \") + regionsFound() : t(\"Asks repeaters that hear this device\");"
+   "src/Ui.cpp:2281: return regions::search.count ? t(\"Found: \") + regionsFound() : t(\"Asks repeaters that hear this device\");"
   ]
  },
  "343e2f48": {
@@ -1105,33 +1105,33 @@
  "34dfb5f5": {
   "cells": 20,
   "where": [
-   "src/Ui.cpp:2598: N_(\"Wi-Fi scan timed out\"),"
+   "src/Ui.cpp:2617: N_(\"Wi-Fi scan timed out\"),"
   ]
  },
  "34f428b1": {
   "cells": 25,
   "where": [
-   "src/Ui.cpp:2168: return t(\"Try every regional preset\");"
+   "src/Ui.cpp:2169: return t(\"Try every regional preset\");"
   ]
  },
  "34fd54b2": {
   "cells": 26,
   "where": [
-   "src/Ui.cpp:2276: case 0: return t(\"OK: edit, 1-24 UTF-8 bytes\");"
+   "src/Ui.cpp:2295: case 0: return t(\"OK: edit, 1-24 UTF-8 bytes\");"
   ]
  },
  "3553e285": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2719: case ' ': return t(\"space\");"
+   "src/Ui.cpp:2738: case ' ': return t(\"space\");"
   ]
  },
  "35afca3b": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2499: footer({{\"OK\", t(\"Edit\")}, {\"BACK\", t(\"Cancel\")}});",
-   "src/Ui.cpp:2501: footer({{\"OK\", t(\"Edit name\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});",
-   "src/Ui.cpp:2503: footer({{\"OK\", config.trial.set() ? t(\"Keep\") : t(\"Return\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});"
+   "src/Ui.cpp:2518: footer({{\"OK\", t(\"Edit\")}, {\"BACK\", t(\"Cancel\")}});",
+   "src/Ui.cpp:2520: footer({{\"OK\", t(\"Edit name\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});",
+   "src/Ui.cpp:2522: footer({{\"OK\", config.trial.set() ? t(\"Keep\") : t(\"Return\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});"
   ]
  },
  "35c403f6": {
@@ -1144,14 +1144,14 @@
  "35e6a0ec": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:3639: notice(t(\"Nothing to save\"), dim);",
+   "src/Ui.cpp:3662: notice(t(\"Nothing to save\"), dim);",
    "src/UiHeltec.cpp:618: notice(t(\"Nothing to save\"));"
   ]
  },
  "3613e041": {
   "cells": 3,
   "where": [
-   "src/Ui.cpp:2739: textRight(x + 144, y + 14, state[i] ? \"OK\" : t(\"n/a\"), state[i] ? ok : bad, small);"
+   "src/Ui.cpp:2758: textRight(x + 144, y + 14, state[i] ? \"OK\" : t(\"n/a\"), state[i] ? ok : bad, small);"
   ]
  },
  "3614fff0": {
@@ -1183,7 +1183,7 @@
  "37976ee4": {
   "cells": 12,
   "where": [
-   "src/Ui.cpp:2185: tr(\"Sounds\"),         tr(\"Auto lock\"),     tr(\"Dim screen\"),     tr(\"GPS receiver\"),"
+   "src/Ui.cpp:2192: tr(\"GPS receiver\"),"
   ]
  },
  "37b8f592": {
@@ -1231,16 +1231,22 @@
    "src/Ui.cpp:2009: : (!beacon && radar.wifi == Radar::WifiPortal) ? t(\"Turn the access point off\")"
   ]
  },
+ "395b917d": {
+  "cells": 24,
+  "where": [
+   "src/Ui.cpp:2292: case RowSoundDirect: return t(\"Beep for direct messages\");"
+  ]
+ },
  "39b7127d": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2322: : r.count           ? t(\"Last ping: \") + count(r.count, \"repeater\", \"repeaters\") + \", \" +"
+   "src/Ui.cpp:2341: : r.count           ? t(\"Last ping: \") + count(r.count, \"repeater\", \"repeaters\") + \", \" +"
   ]
  },
  "39de9ae9": {
   "cells": 22,
   "where": [
-   "src/Ui.cpp:3656: notice(done                             ? t(\"Radio settings changed\")",
+   "src/Ui.cpp:3679: notice(done                             ? t(\"Radio settings changed\")",
    "src/UiHeltec.cpp:607: notice(done                             ? t(\"Radio settings changed\")"
   ]
  },
@@ -1271,19 +1277,19 @@
  "3c097887": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:3608: notice(t(\"Map unavailable\"), bad);"
+   "src/Ui.cpp:3631: notice(t(\"Map unavailable\"), bad);"
   ]
  },
  "3c2364a7": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2178: tr(\"Coding rate\"),    tr(\"TX power\"),  tr(\"Relay hop limit\"), tr(\"Relay packets\"),"
+   "src/Ui.cpp:2179: tr(\"Coding rate\"),    tr(\"TX power\"),  tr(\"Relay hop limit\"), tr(\"Relay packets\"),"
   ]
  },
  "3c2dfe59": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2240: case 10: return !credentialEnabled() && c.lockDetails ? t(\"Details\") : t(\"Hidden\");"
+   "src/Ui.cpp:2257: case 10: return !credentialEnabled() && c.lockDetails ? t(\"Details\") : t(\"Hidden\");"
   ]
  },
  "3d1b856b": {
@@ -1329,7 +1335,7 @@
  "3f328711": {
   "cells": 39,
   "where": [
-   "src/Ui.cpp:2258: case 6: return t(\"Relay packets with fewer hops than this\");"
+   "src/Ui.cpp:2275: case 6: return t(\"Relay packets with fewer hops than this\");"
   ]
  },
  "3f5b0605": {
@@ -1386,6 +1392,12 @@
    "src/UiHeltec.cpp:289: case RadarTarget::Personal: return t(\"phone/watch\");"
   ]
  },
+ "42bbad70": {
+  "cells": 20,
+  "where": [
+   "src/Ui.cpp:2203: tr(\"Direct message sound\")};"
+  ]
+ },
  "42cfcb2d": {
   "cells": 6,
   "where": [
@@ -1395,13 +1407,13 @@
  "42d976f9": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2753: {t(\"Uptime\"), uptime}};"
+   "src/Ui.cpp:2772: {t(\"Uptime\"), uptime}};"
   ]
  },
  "42f35940": {
   "cells": 2,
   "where": [
-   "src/Ui.cpp:2714: case KeyUp: return t(\"Up\");"
+   "src/Ui.cpp:2733: case KeyUp: return t(\"Up\");"
   ]
  },
  "42fc3fcd": {
@@ -1432,13 +1444,14 @@
  "43e4fe52": {
   "cells": 8,
   "where": [
-   "src/Ui.cpp:2244: return mode == 0 ? t(\"Off\") : mode == 1 ? t(\"All\") : t(\"Mentions\");"
+   "src/Ui.cpp:2240: case RowSoundChannels: return c.soundChannels == 0 ? t(\"Off\") : c.soundChannels == 1 ? t(\"All\") : t(\"Mentions\");",
+   "src/Ui.cpp:2261: return mode == 0 ? t(\"Off\") : mode == 1 ? t(\"All\") : t(\"Mentions\");"
   ]
  },
  "443ffd47": {
   "cells": 9,
   "where": [
-   "src/Ui.cpp:2159: return t(\"OK: test \") + netfind::profileText(r.radio) +"
+   "src/Ui.cpp:2160: return t(\"OK: test \") + netfind::profileText(r.radio) +"
   ]
  },
  "445b8620": {
@@ -1478,7 +1491,7 @@
  "45570065": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2216: const char* modes[] = {tr(\"Dark\"), tr(\"Light\"), tr(\"Auto\")};"
+   "src/Ui.cpp:2231: const char* modes[] = {tr(\"Dark\"), tr(\"Light\"), tr(\"Auto\")};"
   ]
  },
  "46102346": {
@@ -1508,25 +1521,25 @@
  "46ff9c40": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2414: footer({{\"^v\", t(\"choose\")}, {\"OK\", quickTargets || selected == 0 ? t(\"select\") : t(\"send\")}, {\"BACK\", t(\"exit\")}});"
+   "src/Ui.cpp:2433: footer({{\"^v\", t(\"choose\")}, {\"OK\", quickTargets || selected == 0 ? t(\"select\") : t(\"send\")}, {\"BACK\", t(\"exit\")}});"
   ]
  },
  "470014b9": {
   "cells": 24,
   "where": [
-   "src/Ui.cpp:2974: notice(t(\"No preset for this radio\"), warn);"
+   "src/Ui.cpp:2993: notice(t(\"No preset for this radio\"), warn);"
   ]
  },
  "48707a29": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:2283: case 7: return t(\"Receiver power\");"
+   "src/Ui.cpp:2302: case 7: return t(\"Receiver power\");"
   ]
  },
  "48ce1413": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:3678: notice(sent ? t(\"Position shared\") : t(\"Waiting for GPS fix\"), sent ? ok : warn);",
+   "src/Ui.cpp:3701: notice(sent ? t(\"Position shared\") : t(\"Waiting for GPS fix\"), sent ? ok : warn);",
    "src/UiHeltec.cpp:1086: case ActPosition: notice(meshRadio.sendPosition() ? t(\"Position shared\") : t(\"Needs a GPS fix\")); break;"
   ]
  },
@@ -1546,8 +1559,8 @@
  "492e789d": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2179: tr(\"Path hash size\"), tr(\"Region\"),    tr(\"Find regions\")};",
-   "src/Ui.cpp:2834: : page == Radio       ? String(t(\"Region\"))",
+   "src/Ui.cpp:2180: tr(\"Path hash size\"), tr(\"Region\"),    tr(\"Find regions\")};",
+   "src/Ui.cpp:2853: : page == Radio       ? String(t(\"Region\"))",
    "src/UiChannels.inc:344: textCenter(cx, ry + 9, region ? (regionChoice == c->region ? t(\"Region\") : t(\"Region · OK: save\")) : t(\"Invite\"),"
   ]
  },
@@ -1560,7 +1573,7 @@
  "49e98b8b": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2205: case 8: return count(c.pathHash, \"byte\", \"bytes\");",
+   "src/Ui.cpp:2220: case 8: return count(c.pathHash, \"byte\", \"bytes\");",
    "src/UiHeltec.cpp:507: case RowHash: return plural(c.pathHash, \"byte\", \"bytes\");"
   ]
  },
@@ -1573,7 +1586,7 @@
  "4aba2ce0": {
   "cells": 33,
   "where": [
-   "src/Ui.cpp:2312: : t(\"No position: GPS fix or phone app\"),"
+   "src/Ui.cpp:2331: : t(\"No position: GPS fix or phone app\"),"
   ]
  },
  "4b058728": {
@@ -1581,7 +1594,7 @@
   "where": [
    "src/Ui.cpp:943: case Settings: return t(\"Settings\");",
    "src/Ui.cpp:1101: {IcGear, dim, t(\"Settings\"), t(\"Radio, screen\"), 0}};",
-   "src/Ui.cpp:2767: {\"CTRL\", t(\"Settings\")},"
+   "src/Ui.cpp:2786: {\"CTRL\", t(\"Settings\")},"
   ]
  },
  "4b2d12ac": {
@@ -1593,14 +1606,14 @@
  "4b3d5e0c": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:2766: {\"BACK\", t(\"Previous screen\")},"
+   "src/Ui.cpp:2785: {\"BACK\", t(\"Previous screen\")},"
   ]
  },
  "4b7f7705": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2342: footer({{\"OK\", on ? t(\"Stop\") : t(\"Start\")}, {\"P\", t(\"Ping\")}, {\"N\", \"Wi-Fi/BLE\"}, {\"BACK\", t(\"Back\")}});",
-   "src/Ui.cpp:2506: footer({{\"OK\", netfind::running()                                 ? t(\"Stop\")"
+   "src/Ui.cpp:2361: footer({{\"OK\", on ? t(\"Stop\") : t(\"Start\")}, {\"P\", t(\"Ping\")}, {\"N\", \"Wi-Fi/BLE\"}, {\"BACK\", t(\"Back\")}});",
+   "src/Ui.cpp:2525: footer({{\"OK\", netfind::running()                                 ? t(\"Stop\")"
   ]
  },
  "4b896fbb": {
@@ -1657,8 +1670,8 @@
  "4cd5c726": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:3830: return tr(\"Radio TX error\");",
-   "src/Ui.cpp:3851: notice(notification.kind == notifications::TxError             ? t(\"Radio TX error\")",
+   "src/Ui.cpp:3853: return tr(\"Radio TX error\");",
+   "src/Ui.cpp:3874: notice(notification.kind == notifications::TxError             ? t(\"Radio TX error\")",
    "src/UiHeltec.cpp:1990: notice(e.kind == notifications::TxError             ? t(\"Radio TX error\")"
   ]
  },
@@ -1683,8 +1696,8 @@
  "4d2d5d68": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2488: String label = t(\"Save\");",
-   "src/Ui.cpp:2515: footer({{\"<>\", t(\"Change\")}, {\"OK\", selected == rows - 1 ? t(\"Save\") : t(\"Next value\")}, {\"BACK\", t(\"Cancel\")}});",
+   "src/Ui.cpp:2507: String label = t(\"Save\");",
+   "src/Ui.cpp:2534: footer({{\"<>\", t(\"Change\")}, {\"OK\", selected == rows - 1 ? t(\"Save\") : t(\"Next value\")}, {\"BACK\", t(\"Cancel\")}});",
    "src/UiChannels.inc:360: {\"OK\", regionChoice == c->region ? t(\"Type\") : t(\"Save\")},"
   ]
  },
@@ -1697,13 +1710,13 @@
  "4d782bae": {
   "cells": 28,
   "where": [
-   "src/Ui.cpp:3826: if (value == \"Queued: waiting for delivery\") return tr(\"Queued: waiting for delivery\");"
+   "src/Ui.cpp:3849: if (value == \"Queued: waiting for delivery\") return tr(\"Queued: waiting for delivery\");"
   ]
  },
  "4d7ef753": {
   "cells": 18,
   "where": [
-   "src/Ui.cpp:2536: cardAt(0, wh, IcWifi, t(\"Wi-Fi access point\"),",
+   "src/Ui.cpp:2555: cardAt(0, wh, IcWifi, t(\"Wi-Fi access point\"),",
    "src/UiActions.inc:38: rows[n++] = {A::Hotspot, IcWifi, t(\"Wi-Fi access point\"), portalActive()};"
   ]
  },
@@ -1717,7 +1730,7 @@
  "4dbe556f": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:2563: cardAt(3, 38, IcKey, t(\"MeshCore identity\"), meshRadio.publicKeyText().substring(0, 24) + \"...\", true);"
+   "src/Ui.cpp:2582: cardAt(3, 38, IcKey, t(\"MeshCore identity\"), meshRadio.publicKeyText().substring(0, 24) + \"...\", true);"
   ]
  },
  "4dd880a2": {
@@ -1741,13 +1754,13 @@
  "4eaf7c92": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2187: tr(\"Message popup\"),  tr(\"Theme\"),         tr(\"Accent colour\"),  tr(\"Night brightness\"),"
+   "src/Ui.cpp:2198: tr(\"Theme\"),"
   ]
  },
  "4ef0ddc5": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2185: tr(\"Sounds\"),         tr(\"Auto lock\"),     tr(\"Dim screen\"),     tr(\"GPS receiver\"),"
+   "src/Ui.cpp:2189: tr(\"Sounds\"),"
   ]
  },
  "4f0a0e98": {
@@ -1790,7 +1803,7 @@
   "cells": 19,
   "where": [
    "src/Ui.cpp:953: case NetList: return t(\"Internet over Wi-Fi\");",
-   "src/Ui.cpp:2549: cardAt(1, ih, IcWifi, t(\"Internet over Wi-Fi\"), internet.stateText(), internet.online());"
+   "src/Ui.cpp:2568: cardAt(1, ih, IcWifi, t(\"Internet over Wi-Fi\"), internet.stateText(), internet.online());"
   ]
  },
  "503d6eed": {
@@ -1802,7 +1815,7 @@
  "50e15249": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2697: {\"DEL\", saved ? t(\"Forget\") : t(\"Rescan\")},"
+   "src/Ui.cpp:2716: {\"DEL\", saved ? t(\"Forget\") : t(\"Rescan\")},"
   ]
  },
  "510149b4": {
@@ -1820,7 +1833,7 @@
  "51c955b1": {
   "cells": 16,
   "where": [
-   "src/Ui.cpp:2267: : config.previous.set() ? t(\"OK: return to it\")"
+   "src/Ui.cpp:2284: : config.previous.set() ? t(\"OK: return to it\")"
   ]
  },
  "51e7624c": {
@@ -1840,7 +1853,7 @@
  "5261f68a": {
   "cells": 43,
   "where": [
-   "src/Ui.cpp:2268: : t(\"Kept on a change of frequency, BW, SF or CR\");"
+   "src/Ui.cpp:2285: : t(\"Kept on a change of frequency, BW, SF or CR\");"
   ]
  },
  "5284637e": {
@@ -1860,7 +1873,7 @@
  "53e32296": {
   "cells": 37,
   "where": [
-   "src/Ui.cpp:2320: String last = wardrive::pinging() ? t(\"Ping sent, listening for repeaters...\")"
+   "src/Ui.cpp:2339: String last = wardrive::pinging() ? t(\"Ping sent, listening for repeaters...\")"
   ]
  },
  "5427923a": {
@@ -1872,7 +1885,7 @@
  "54279dd1": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:3852: : channels::isChannel(notification.message.destination) ? t(\"No repeat heard\")",
+   "src/Ui.cpp:3875: : channels::isChannel(notification.message.destination) ? t(\"No repeat heard\")",
    "src/UiHeltec.cpp:1991: : channels::isChannel(e.message.destination) ? t(\"No repeat heard\")"
   ]
  },
@@ -1904,32 +1917,32 @@
  "548b7cf8": {
   "cells": 16,
   "where": [
-   "src/Ui.cpp:2187: tr(\"Message popup\"),  tr(\"Theme\"),         tr(\"Accent colour\"),  tr(\"Night brightness\"),"
+   "src/Ui.cpp:2200: tr(\"Night brightness\"),"
   ]
  },
  "54c7f4e7": {
   "cells": 21,
   "where": [
-   "src/Ui.cpp:2812: String unlock = t(\"Twice or hold: unlock\");"
+   "src/Ui.cpp:2831: String unlock = t(\"Twice or hold: unlock\");"
   ]
  },
  "54eed4d0": {
   "cells": 9,
   "where": [
-   "src/Ui.cpp:2687: String tag = current   ? t(\"connected\")"
+   "src/Ui.cpp:2706: String tag = current   ? t(\"connected\")"
   ]
  },
  "54f6c01a": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2365: notice(wardrive::ping()                       ? t(\"Ping queued\")",
+   "src/Ui.cpp:2384: notice(wardrive::ping()                       ? t(\"Ping queued\")",
    "src/UiHeltec.cpp:1010: notice(wardrive::ping()                       ? t(\"Ping queued\")"
   ]
  },
  "555cbe68": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2503: footer({{\"OK\", config.trial.set() ? t(\"Keep\") : t(\"Return\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});"
+   "src/Ui.cpp:2522: footer({{\"OK\", config.trial.set() ? t(\"Keep\") : t(\"Return\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});"
   ]
  },
  "55647eb0": {
@@ -1941,7 +1954,7 @@
  "55b3f622": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2837: : t(\"Device name\"),",
+   "src/Ui.cpp:2856: : t(\"Device name\"),",
    "src/UiClipboard.inc:92: if (page == Display) textRight(300, 182, t(\"Device name\"), dim, small);"
   ]
  },
@@ -1954,7 +1967,7 @@
  "560f367c": {
   "cells": 35,
   "where": [
-   "src/Ui.cpp:2670: textCenter(160, 120, t(\"Turn the client on to find networks\"), dim);"
+   "src/Ui.cpp:2689: textCenter(160, 120, t(\"Turn the client on to find networks\"), dim);"
   ]
  },
  "56148506": {
@@ -2017,7 +2030,7 @@
  "58389a6e": {
   "cells": 21,
   "where": [
-   "src/Ui.cpp:2835: : page == ChannelInfo ? String(t(\"Region of the channel\"))"
+   "src/Ui.cpp:2854: : page == ChannelInfo ? String(t(\"Region of the channel\"))"
   ]
  },
  "587de994": {
@@ -2059,13 +2072,13 @@
  "59d32a58": {
   "cells": 16,
   "where": [
-   "src/Ui.cpp:2836: : pass                ? fit(t(\"Wi-Fi password: \") + pendingSsid, 268, bold)"
+   "src/Ui.cpp:2855: : pass                ? fit(t(\"Wi-Fi password: \") + pendingSsid, 268, bold)"
   ]
  },
  "5a1b6d0e": {
   "cells": 6,
   "where": [
-   "src/MeshRadio.cpp:1314: String s = m.route == ChatMessage::RouteDirect ? (hops.length() ? hops : String(tr(\"routed\")))"
+   "src/MeshRadio.cpp:1316: String s = m.route == ChatMessage::RouteDirect ? (hops.length() ? hops : String(tr(\"routed\")))"
   ]
  },
  "5a5d7e3d": {
@@ -2089,7 +2102,7 @@
  "5b61220f": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2642: if (internet.forget(name)) notice(t(\"Forgotten: \") + name, dim);"
+   "src/Ui.cpp:2661: if (internet.forget(name)) notice(t(\"Forgotten: \") + name, dim);"
   ]
  },
  "5c028b25": {
@@ -2117,16 +2130,22 @@
    "src/Ui.cpp:950: case Scope: return t(\"Radar: signals\");"
   ]
  },
+ "5d1a5f53": {
+  "cells": 13,
+  "where": [
+   "src/Ui.cpp:2202: tr(\"Channel sound\"),"
+  ]
+ },
  "5d67bec6": {
   "cells": 7,
   "where": [
-   "src/Ui.cpp:3704: notice(radarSound ? (config.sound ? t(\"Ping on\") : t(\"Device sound is off in settings\")) : t(\"Ping off\"),"
+   "src/Ui.cpp:3727: notice(radarSound ? (config.sound ? t(\"Ping on\") : t(\"Device sound is off in settings\")) : t(\"Ping off\"),"
   ]
  },
  "5d6af097": {
   "cells": 47,
   "where": [
-   "src/Ui.cpp:2285: case 9: return t(\"Status bar: charge estimate or measured voltage\");"
+   "src/Ui.cpp:2304: case 9: return t(\"Status bar: charge estimate or measured voltage\");"
   ]
  },
  "5ddb609c": {
@@ -2144,15 +2163,15 @@
  "5ec05505": {
   "cells": 19,
   "where": [
-   "src/Ui.cpp:2764: {\"MAP\", t(\"Map; L - saved maps\")},"
+   "src/Ui.cpp:2783: {\"MAP\", t(\"Map; L - saved maps\")},"
   ]
  },
  "5ec52fe4": {
   "cells": 2,
   "where": [
    "src/Ui.cpp:2034: state = t(\"CALIBRATING \") + String((radar.calibrateUntil - now + 999) / 1000) + t(\" s\");",
-   "src/Ui.cpp:2230: case 5: return c.autoLock ? String(c.autoLock) + t(\" s\") : t(\"Off\");",
-   "src/Ui.cpp:2231: case 6: return c.dimAfter ? String(c.dimAfter) + t(\" s\") : t(\"Off\");"
+   "src/Ui.cpp:2247: case 5: return c.autoLock ? String(c.autoLock) + t(\" s\") : t(\"Off\");",
+   "src/Ui.cpp:2248: case 6: return c.dimAfter ? String(c.dimAfter) + t(\" s\") : t(\"Off\");"
   ]
  },
  "5ed1fbd7": {
@@ -2166,7 +2185,7 @@
  "5f7eec60": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2359: notice(wardrive::running() ? t(\"Wardrive on\") : t(\"Wardrive off\"), wardrive::running() ? ok : dim);",
+   "src/Ui.cpp:2378: notice(wardrive::running() ? t(\"Wardrive on\") : t(\"Wardrive off\"), wardrive::running() ? ok : dim);",
    "src/UiHeltec.cpp:1003: : wardrive::running()  ? t(\"Wardrive on\")"
   ]
  },
@@ -2185,8 +2204,8 @@
  "5fe7049c": {
   "cells": 6,
   "where": [
-   "src/MeshRadio.cpp:1312: : !m.hops     ? String(brief ? tr(\"direct\") : tr(\"direct\"))",
-   "src/MeshRadio.cpp:1312: : !m.hops     ? String(brief ? tr(\"direct\") : tr(\"direct\"))",
+   "src/MeshRadio.cpp:1314: : !m.hops     ? String(brief ? tr(\"direct\") : tr(\"direct\"))",
+   "src/MeshRadio.cpp:1314: : !m.hops     ? String(brief ? tr(\"direct\") : tr(\"direct\"))",
    "src/Ui.cpp:895: if (!(p.pathLength & 63)) return t(\"direct\");"
   ]
  },
@@ -2226,7 +2245,7 @@
  "61efb279": {
   "cells": 12,
   "where": [
-   "src/Ui.cpp:2466: textCenter(160, y + 15, changed ? t(\"Save changes\") : t(\"No changes\"), changed ? (focus ? bg : ink) : dim, bold);"
+   "src/Ui.cpp:2485: textCenter(160, y + 15, changed ? t(\"Save changes\") : t(\"No changes\"), changed ? (focus ? bg : ink) : dim, bold);"
   ]
  },
  "620f3cc6": {
@@ -2262,7 +2281,7 @@
  "62bbb91b": {
   "cells": 7,
   "where": [
-   "src/MeshRadio.cpp:1319: s += m.status == ChatMessage::Delivered ? (brief ? \" #\" + String(m.tries) : String(tr(\" · try \")) + m.tries)"
+   "src/MeshRadio.cpp:1321: s += m.status == ChatMessage::Delivered ? (brief ? \" #\" + String(m.tries) : String(tr(\" · try \")) + m.tries)"
   ]
  },
  "63703628": {
@@ -2312,7 +2331,7 @@
  "656575de": {
   "cells": 25,
   "where": [
-   "src/Ui.cpp:3292: notice(t(\"Password: 8-63 characters\"), bad);"
+   "src/Ui.cpp:3315: notice(t(\"Password: 8-63 characters\"), bad);"
   ]
  },
  "65e6150d": {
@@ -2336,7 +2355,7 @@
  "667ad2f5": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:2186: tr(\"UTC offset\"),     tr(\"Battery shows\"), tr(\"Lock screen\"),    tr(\"Wake on message\"),"
+   "src/Ui.cpp:2196: tr(\"Wake on message\"),"
   ]
  },
  "66836516": {
@@ -2354,7 +2373,7 @@
  "67884f31": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:3827: if (value == \"Queued: broadcast\") return tr(\"Queued: broadcast\");"
+   "src/Ui.cpp:3850: if (value == \"Queued: broadcast\") return tr(\"Queued: broadcast\");"
   ]
  },
  "67a31c2c": {
@@ -2378,7 +2397,7 @@
  "68f05e95": {
   "cells": 26,
   "where": [
-   "src/Ui.cpp:2809: textCenter(160, 166, meshRadio.ready ? t(\"Radio and GPS keep working\") : t(\"Radio error\"),"
+   "src/Ui.cpp:2828: textCenter(160, 166, meshRadio.ready ? t(\"Radio and GPS keep working\") : t(\"Radio error\"),"
   ]
  },
  "68f399b1": {
@@ -2386,7 +2405,7 @@
   "where": [
    "src/Ui.cpp:1396: footer({{\"OK\", t(\"Send\")}, {\"<\", left}, {t(\"hold OK\").c_str(), t(\"Clipboard\")}, {\"MENU\", t(\"Actions\")}});",
    "src/Ui.cpp:1398: footer({{\"OK\", t(\"Send\")}, {t(\"hold OK\").c_str(), t(\"Clipboard\")}, {\"MENU\", t(\"Actions\")}});",
-   "src/Ui.cpp:2871: footer({{t(\"hold OK\").c_str(), t(\"Clipboard\")}, {\"BACK\", t(\"Cancel\")}});"
+   "src/Ui.cpp:2890: footer({{t(\"hold OK\").c_str(), t(\"Clipboard\")}, {\"BACK\", t(\"Cancel\")}});"
   ]
  },
  "68f7fd73": {
@@ -2418,7 +2437,7 @@
  "69cd01c2": {
   "cells": 21,
   "where": [
-   "src/Ui.cpp:3105: notice(t(\"Radio busy, try again\"), warn);"
+   "src/Ui.cpp:3128: notice(t(\"Radio busy, try again\"), warn);"
   ]
  },
  "69f2c208": {
@@ -2461,14 +2480,14 @@
  "6bc8d619": {
   "cells": 10,
   "where": [
-   "src/Ui.cpp:3568: notice(t(\"Peak reset\"), dim);",
+   "src/Ui.cpp:3591: notice(t(\"Peak reset\"), dim);",
    "src/UiHeltec.cpp:1129: notice(t(\"Peak reset\"));"
   ]
  },
  "6c03392d": {
   "cells": 29,
   "where": [
-   "src/Ui.cpp:2333: if (!n) textCenter(160, 150, on ? t(\"No repeaters heard yet\") : t(\"OK starts listening and pings\"), faint, small);"
+   "src/Ui.cpp:2352: if (!n) textCenter(160, 150, on ? t(\"No repeaters heard yet\") : t(\"OK starts listening and pings\"), faint, small);"
   ]
  },
  "6c129c2a": {
@@ -2480,19 +2499,19 @@
  "6c3bf15d": {
   "cells": 39,
   "where": [
-   "src/Ui.cpp:3439: notice(t(\"Cannot send: empty, full queue or radio\"), bad);"
+   "src/Ui.cpp:3462: notice(t(\"Cannot send: empty, full queue or radio\"), bad);"
   ]
  },
  "6cf00f88": {
   "cells": 23,
   "where": [
-   "src/Ui.cpp:2288: return t(\"Stored in device memory\");"
+   "src/Ui.cpp:2307: return t(\"Stored in device memory\");"
   ]
  },
  "6cf1ba25": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2564: footer({{\"OK\", selected == 1 ? t(\"Networks\") : t(\"Toggle\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Back\")}});",
+   "src/Ui.cpp:2583: footer({{\"OK\", selected == 1 ? t(\"Networks\") : t(\"Toggle\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Back\")}});",
    "src/UiActions.inc:102: footer({{\"OK\", radios ? t(\"Toggle\") : t(\"Choose\")}, {\"BACK\", t(\"Back\")}});"
   ]
  },
@@ -2536,7 +2555,7 @@
   "cells": 6,
   "where": [
    "src/Ui.cpp:1642: deleteArmed ? t(\"Sure?\") : t(\"Forget\"),  t(\"Server\"), t(\"Trace\")};",
-   "src/Ui.cpp:2697: {\"DEL\", saved ? t(\"Forget\") : t(\"Rescan\")},"
+   "src/Ui.cpp:2716: {\"DEL\", saved ? t(\"Forget\") : t(\"Rescan\")},"
   ]
  },
  "6e8fc273": {
@@ -2548,7 +2567,7 @@
  "6eccae80": {
   "cells": 20,
   "where": [
-   "src/Ui.cpp:2831: : key                 ? t(\"Network key · 64 hex\")"
+   "src/Ui.cpp:2850: : key                 ? t(\"Network key · 64 hex\")"
   ]
  },
  "6f59150a": {
@@ -2580,7 +2599,7 @@
  "701eaa88": {
   "cells": 9,
   "where": [
-   "src/Ui.cpp:2501: footer({{\"OK\", t(\"Edit name\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});"
+   "src/Ui.cpp:2520: footer({{\"OK\", t(\"Edit name\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});"
   ]
  },
  "70a1c010": {
@@ -2598,19 +2617,19 @@
  "71494765": {
   "cells": 39,
   "where": [
-   "src/Ui.cpp:2600: N_(\"SSID 1-32 bytes, password empty or 8-63\"),"
+   "src/Ui.cpp:2619: N_(\"SSID 1-32 bytes, password empty or 8-63\"),"
   ]
  },
  "71b42d62": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2814: footer({{\"OK\", unlock}, {\"MIC\", t(\"Lock\")}});"
+   "src/Ui.cpp:2833: footer({{\"OK\", unlock}, {\"MIC\", t(\"Lock\")}});"
   ]
  },
  "71be5af6": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:2805: text(80, y + 32, t(\"Unlock to read\"), dim, small);"
+   "src/Ui.cpp:2824: text(80, y + 32, t(\"Unlock to read\"), dim, small);"
   ]
  },
  "71df82b0": {
@@ -2622,13 +2641,13 @@
  "7261c8af": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2414: footer({{\"^v\", t(\"choose\")}, {\"OK\", quickTargets || selected == 0 ? t(\"select\") : t(\"send\")}, {\"BACK\", t(\"exit\")}});"
+   "src/Ui.cpp:2433: footer({{\"^v\", t(\"choose\")}, {\"OK\", quickTargets || selected == 0 ? t(\"select\") : t(\"send\")}, {\"BACK\", t(\"exit\")}});"
   ]
  },
  "726ab9e5": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:3437: notice(t(\"Message queued\"));"
+   "src/Ui.cpp:3460: notice(t(\"Message queued\"));"
   ]
  },
  "72d06ea7": {
@@ -2672,7 +2691,7 @@
  "73d459b4": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2184: const char* names[] = {tr(\"Name\"),           tr(\"Language\"),      tr(\"Day brightness\"), tr(\"Home layout\"),"
+   "src/Ui.cpp:2188: tr(\"Home layout\"),"
   ]
  },
  "74680ff5": {
@@ -2691,7 +2710,7 @@
  "75193707": {
   "cells": 13,
   "where": [
-   "src/Ui.cpp:2178: tr(\"Coding rate\"),    tr(\"TX power\"),  tr(\"Relay hop limit\"), tr(\"Relay packets\"),"
+   "src/Ui.cpp:2179: tr(\"Coding rate\"),    tr(\"TX power\"),  tr(\"Relay hop limit\"), tr(\"Relay packets\"),"
   ]
  },
  "755d765c": {
@@ -2704,19 +2723,20 @@
   "cells": 25,
   "where": [
    "src/Internet.cpp:721: default: return savedCount() ? tr(\"No saved network in range\") : tr(\"Choose a network\");",
-   "src/Ui.cpp:2595: N_(\"No saved network in range\"),"
+   "src/Ui.cpp:2614: N_(\"No saved network in range\"),"
   ]
  },
  "75a04256": {
   "cells": 27,
   "where": [
-   "src/Ui.cpp:2593: const char* const map[] = {N_(\"Wrong password or refused: \"),"
+   "src/Ui.cpp:2612: const char* const map[] = {N_(\"Wrong password or refused: \"),"
   ]
  },
  "75afe364": {
   "cells": 3,
   "where": [
-   "src/Ui.cpp:2244: return mode == 0 ? t(\"Off\") : mode == 1 ? t(\"All\") : t(\"Mentions\");"
+   "src/Ui.cpp:2240: case RowSoundChannels: return c.soundChannels == 0 ? t(\"Off\") : c.soundChannels == 1 ? t(\"All\") : t(\"Mentions\");",
+   "src/Ui.cpp:2261: return mode == 0 ? t(\"Off\") : mode == 1 ? t(\"All\") : t(\"Mentions\");"
   ]
  },
  "75c3ffb2": {
@@ -2734,7 +2754,7 @@
  "7608c344": {
   "cells": 26,
   "where": [
-   "src/Ui.cpp:2254: case 2: return t(\"62.5 / 125 / 250 / 500 kHz\");"
+   "src/Ui.cpp:2271: case 2: return t(\"62.5 / 125 / 250 / 500 kHz\");"
   ]
  },
  "7629db5a": {
@@ -2816,7 +2836,7 @@
  "7c3b11a9": {
   "cells": 26,
   "where": [
-   "src/Ui.cpp:2273: case RowPassword: return t(\"OK: set or change password\");"
+   "src/Ui.cpp:2290: case RowPassword: return t(\"OK: set or change password\");"
   ]
  },
  "7c620193": {
@@ -2828,13 +2848,13 @@
  "7cd202ed": {
   "cells": 37,
   "where": [
-   "src/Ui.cpp:2259: case 7: return t(\"Forward other nodes' MeshCore packets\");"
+   "src/Ui.cpp:2276: case 7: return t(\"Forward other nodes' MeshCore packets\");"
   ]
  },
  "7d1bfa04": {
   "cells": 13,
   "where": [
-   "src/Ui.cpp:2830: : page == Nodes       ? t(\"Filter by tag\")",
+   "src/Ui.cpp:2849: : page == Nodes       ? t(\"Filter by tag\")",
    "src/UiActions.inc:63: rows[n++] = {A::Filter, IcMesh, t(\"Filter by tag\")};"
   ]
  },
@@ -2848,13 +2868,13 @@
  "7e8a19d5": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2139: if (regions::searching()) return t(\"Searching: \") + count(s.repeaters, \"repeater\", \"repeaters\");"
+   "src/Ui.cpp:2140: if (regions::searching()) return t(\"Searching: \") + count(s.repeaters, \"repeater\", \"repeaters\");"
   ]
  },
  "7ecd2a4c": {
   "cells": 13,
   "where": [
-   "src/Ui.cpp:2277: case 1: return t(\"Menu language\");"
+   "src/Ui.cpp:2296: case 1: return t(\"Menu language\");"
   ]
  },
  "7f264f8d": {
@@ -2880,7 +2900,7 @@
  "7fb7f0a9": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2342: footer({{\"OK\", on ? t(\"Stop\") : t(\"Start\")}, {\"P\", t(\"Ping\")}, {\"N\", \"Wi-Fi/BLE\"}, {\"BACK\", t(\"Back\")}});"
+   "src/Ui.cpp:2361: footer({{\"OK\", on ? t(\"Stop\") : t(\"Start\")}, {\"P\", t(\"Ping\")}, {\"N\", \"Wi-Fi/BLE\"}, {\"BACK\", t(\"Back\")}});"
   ]
  },
  "8058a344": {
@@ -2912,14 +2932,14 @@
  "82646fb3": {
   "cells": 51,
   "where": [
-   "src/Ui.cpp:2853: : t(\"As in the MeshCore app: ver, get name, neighbors...\"),"
+   "src/Ui.cpp:2872: : t(\"As in the MeshCore app: ver, get name, neighbors...\"),"
   ]
  },
  "827c2efb": {
   "cells": 13,
   "where": [
-   "src/Ui.cpp:2966: notice(meshRadio.busy() || regions::searching() ? t(\"Radio busy, retry\") : t(\"Radio offline\"), bad);",
-   "src/Ui.cpp:3663: if (!regions::find()) notice(t(\"Radio offline\"), bad);",
+   "src/Ui.cpp:2985: notice(meshRadio.busy() || regions::searching() ? t(\"Radio busy, retry\") : t(\"Radio offline\"), bad);",
+   "src/Ui.cpp:3686: if (!regions::find()) notice(t(\"Radio offline\"), bad);",
    "src/UiHeltec.cpp:578: if (!regions::find()) notice(t(\"Radio offline\"));"
   ]
  },
@@ -2944,7 +2964,7 @@
  "8425dffa": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:3109: notice(reset ? t(\"Path reset: next message floods\") : t(\"Path reset failed\"), reset ? ok : bad);",
+   "src/Ui.cpp:3132: notice(reset ? t(\"Path reset: next message floods\") : t(\"Path reset failed\"), reset ? ok : bad);",
    "src/UiHeltec.cpp:1069: notice(p && !meshRadio.busy() && meshRadio.resetPath(p->id) ? t(\"Path reset\") : t(\"Path reset failed\"));"
   ]
  },
@@ -2963,8 +2983,8 @@
  "845949bc": {
   "cells": 19,
   "where": [
-   "src/Ui.cpp:3499: notice(t(\"Waiting for GPS fix\"), warn);",
-   "src/Ui.cpp:3678: notice(sent ? t(\"Position shared\") : t(\"Waiting for GPS fix\"), sent ? ok : warn);"
+   "src/Ui.cpp:3522: notice(t(\"Waiting for GPS fix\"), warn);",
+   "src/Ui.cpp:3701: notice(sent ? t(\"Position shared\") : t(\"Waiting for GPS fix\"), sent ? ok : warn);"
   ]
  },
  "845fe7f2": {
@@ -2989,13 +3009,13 @@
  "8504bdd5": {
   "cells": 22,
   "where": [
-   "src/Ui.cpp:2333: if (!n) textCenter(160, 150, on ? t(\"No repeaters heard yet\") : t(\"OK starts listening and pings\"), faint, small);"
+   "src/Ui.cpp:2352: if (!n) textCenter(160, 150, on ? t(\"No repeaters heard yet\") : t(\"OK starts listening and pings\"), faint, small);"
   ]
  },
  "8513a98e": {
   "cells": 44,
   "where": [
-   "src/Ui.cpp:2261: case RowRegion: return t(\"Repeaters pass on our floods by it; OK: type\");"
+   "src/Ui.cpp:2278: case RowRegion: return t(\"Repeaters pass on our floods by it; OK: type\");"
   ]
  },
  "85191c8a": {
@@ -3025,13 +3045,13 @@
  "8581156e": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2228: case RowLauncherLayout: return c.launcherTiles ? t(\"Tiles\") : t(\"List\");"
+   "src/Ui.cpp:2245: case RowLauncherLayout: return c.launcherTiles ? t(\"Tiles\") : t(\"List\");"
   ]
  },
  "85dde262": {
   "cells": 31,
   "where": [
-   "src/Ui.cpp:2270: return t(\"Applied to the radio when saved\");"
+   "src/Ui.cpp:2287: return t(\"Applied to the radio when saved\");"
   ]
  },
  "867f6426": {
@@ -3043,7 +3063,7 @@
  "86ae6e6d": {
   "cells": 30,
   "where": [
-   "src/Ui.cpp:2769: {tr(\"Menu\"), t(\"App actions and radio controls\")},"
+   "src/Ui.cpp:2788: {tr(\"Menu\"), t(\"App actions and radio controls\")},"
   ]
  },
  "86b1d2eb": {
@@ -3067,13 +3087,13 @@
  "87c7093b": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2239: case 9: return c.batteryVolts ? t(\"Volts\") : t(\"Percent\");"
+   "src/Ui.cpp:2256: case 9: return c.batteryVolts ? t(\"Volts\") : t(\"Percent\");"
   ]
  },
  "880f97dc": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2220: const char* colors[] = {tr(\"Lime\"), tr(\"Blue\"), tr(\"Violet\"), tr(\"Amber\")};"
+   "src/Ui.cpp:2235: const char* colors[] = {tr(\"Lime\"), tr(\"Blue\"), tr(\"Violet\"), tr(\"Amber\")};"
   ]
  },
  "88aa7275": {
@@ -3109,25 +3129,25 @@
  "8ab0cda9": {
   "cells": 43,
   "where": [
-   "src/Ui.cpp:2959: notice(done                             ? t(\"Radio test: a restart returns the saved one\")"
+   "src/Ui.cpp:2978: notice(done                             ? t(\"Radio test: a restart returns the saved one\")"
   ]
  },
  "8ad2f8cf": {
   "cells": 5,
   "where": [
-   "src/Ui.cpp:2216: const char* modes[] = {tr(\"Dark\"), tr(\"Light\"), tr(\"Auto\")};"
+   "src/Ui.cpp:2231: const char* modes[] = {tr(\"Dark\"), tr(\"Light\"), tr(\"Auto\")};"
   ]
  },
  "8ad4ac6d": {
   "cells": 13,
   "where": [
-   "src/Ui.cpp:2759: text(10, 207, t(\"Boot \") + String(config.bootCounter) + t(\" · last key: \") + keyName(hardware.lastKey), faint, small);"
+   "src/Ui.cpp:2778: text(10, 207, t(\"Boot \") + String(config.bootCounter) + t(\" · last key: \") + keyName(hardware.lastKey), faint, small);"
   ]
  },
  "8ae160ba": {
   "cells": 12,
   "where": [
-   "src/Ui.cpp:2359: notice(wardrive::running() ? t(\"Wardrive on\") : t(\"Wardrive off\"), wardrive::running() ? ok : dim);",
+   "src/Ui.cpp:2378: notice(wardrive::running() ? t(\"Wardrive on\") : t(\"Wardrive off\"), wardrive::running() ? ok : dim);",
    "src/UiHeltec.cpp:1004: : t(\"Wardrive off\"));"
   ]
  },
@@ -3146,7 +3166,7 @@
  "8c060706": {
   "cells": 31,
   "where": [
-   "src/Ui.cpp:3109: notice(reset ? t(\"Path reset: next message floods\") : t(\"Path reset failed\"), reset ? ok : bad);"
+   "src/Ui.cpp:3132: notice(reset ? t(\"Path reset: next message floods\") : t(\"Path reset failed\"), reset ? ok : bad);"
   ]
  },
  "8d1d9b67": {
@@ -3160,7 +3180,7 @@
   "where": [
    "src/Ui.cpp:1901: footer({{\"L\", scopeWide ? t(\"Radar\") : t(\"List\")},",
    "src/Ui.cpp:1995: footer({{\"OK\", radarSound ? t(\"Mute\") : t(\"Sound\")}, {\"<>\", t(\"Reset peak\")}, {\"BACK\", t(\"List\")}});",
-   "src/Ui.cpp:2228: case RowLauncherLayout: return c.launcherTiles ? t(\"Tiles\") : t(\"List\");"
+   "src/Ui.cpp:2245: case RowLauncherLayout: return c.launcherTiles ? t(\"Tiles\") : t(\"List\");"
   ]
  },
  "8d57e66a": {
@@ -3174,7 +3194,7 @@
  "8d9206a1": {
   "cells": 9,
   "where": [
-   "src/Ui.cpp:2177: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),",
+   "src/Ui.cpp:2178: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),",
    "src/UiHeltec.cpp:482: case RowFreq: return t(\"Frequency\");"
   ]
  },
@@ -3205,7 +3225,7 @@
  "8e980208": {
   "cells": 30,
   "where": [
-   "src/Ui.cpp:2852: remoteEdit == EditPassword ? t(\"Saved after a successful login\")"
+   "src/Ui.cpp:2871: remoteEdit == EditPassword ? t(\"Saved after a successful login\")"
   ]
  },
  "8f635566": {
@@ -3217,7 +3237,7 @@
  "8f706ae2": {
   "cells": 28,
   "where": [
-   "src/Ui.cpp:3563: notice(csiBeaconRole ? t(\"This board is now the beacon\") : t(\"This board is now the sensor\"));"
+   "src/Ui.cpp:3586: notice(csiBeaconRole ? t(\"This board is now the beacon\") : t(\"This board is now the sensor\"));"
   ]
  },
  "8f7412e6": {
@@ -3236,7 +3256,7 @@
  "9023a2b0": {
   "cells": 8,
   "where": [
-   "src/Ui.cpp:2210: return config.trial.set() ? t(\"OK: keep\") : config.previous.set() ? profileText(config.previous) : t(\"None\");"
+   "src/Ui.cpp:2225: return config.trial.set() ? t(\"OK: keep\") : config.previous.set() ? profileText(config.previous) : t(\"None\");"
   ]
  },
  "90836dd5": {
@@ -3284,19 +3304,19 @@
  "92773890": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2713: case KeyLeft: return t(\"Left\");"
+   "src/Ui.cpp:2732: case KeyLeft: return t(\"Left\");"
   ]
  },
  "9296739d": {
   "cells": 7,
   "where": [
-   "src/Ui.cpp:2311: fit(fix ? (phone ? t(\"Phone: \") : \"GPS: \") + String(lat / 1e6, 5) + \", \" + String(lon / 1e6, 5)"
+   "src/Ui.cpp:2330: fit(fix ? (phone ? t(\"Phone: \") : \"GPS: \") + String(lat / 1e6, 5) + \", \" + String(lon / 1e6, 5)"
   ]
  },
  "92d39d44": {
   "cells": 8,
   "where": [
-   "src/Ui.cpp:2178: tr(\"Coding rate\"),    tr(\"TX power\"),  tr(\"Relay hop limit\"), tr(\"Relay packets\"),"
+   "src/Ui.cpp:2179: tr(\"Coding rate\"),    tr(\"TX power\"),  tr(\"Relay hop limit\"), tr(\"Relay packets\"),"
   ]
  },
  "92f97927": {
@@ -3326,7 +3346,7 @@
  "943a47cb": {
   "cells": 31,
   "where": [
-   "src/Ui.cpp:2255: case 3: return t(\"Higher SF: longer range, slower\");"
+   "src/Ui.cpp:2272: case 3: return t(\"Higher SF: longer range, slower\");"
   ]
  },
  "943e58ad": {
@@ -3350,13 +3370,13 @@
  "9525b78e": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2196: return p < 0 ? String(t(\"Custom\")) : String(radiopresets::list[p].name);"
+   "src/Ui.cpp:2211: return p < 0 ? String(t(\"Custom\")) : String(radiopresets::list[p].name);"
   ]
  },
  "957a886a": {
   "cells": 23,
   "where": [
-   "src/Ui.cpp:2868: : page == Remote   ? (remoteEdit == EditPassword ? t(\"OK: log in   BACK: cancel\") : t(\"OK: send   BACK: cancel\"))"
+   "src/Ui.cpp:2887: : page == Remote   ? (remoteEdit == EditPassword ? t(\"OK: log in   BACK: cancel\") : t(\"OK: send   BACK: cancel\"))"
   ]
  },
  "95b8d74b": {
@@ -3380,7 +3400,7 @@
  "969a0678": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:2281: case 5: return t(\"0 = off, 30-600 s\");"
+   "src/Ui.cpp:2300: case 5: return t(\"0 = off, 30-600 s\");"
   ]
  },
  "975182c4": {
@@ -3398,7 +3418,7 @@
  "98b6a9f6": {
   "cells": 13,
   "where": [
-   "src/Ui.cpp:2187: tr(\"Message popup\"),  tr(\"Theme\"),         tr(\"Accent colour\"),  tr(\"Night brightness\"),"
+   "src/Ui.cpp:2197: tr(\"Message popup\"),"
   ]
  },
  "98dbac97": {
@@ -3428,8 +3448,8 @@
  "99f30427": {
   "cells": 9,
   "where": [
-   "src/Ui.cpp:2140: return s.state == regions::Search::Done ? count(s.count, \"region\", \"regions\") : t(\"OK: start\");",
-   "src/Ui.cpp:2149: return s.phase == netfind::State::Done ? t(\"Nothing new\") : t(\"OK: start\");"
+   "src/Ui.cpp:2141: return s.state == regions::Search::Done ? count(s.count, \"region\", \"regions\") : t(\"OK: start\");",
+   "src/Ui.cpp:2150: return s.phase == netfind::State::Done ? t(\"Nothing new\") : t(\"OK: start\");"
   ]
  },
  "9a1796e8": {
@@ -3441,21 +3461,21 @@
  "9a555563": {
   "cells": 9,
   "where": [
-   "src/Ui.cpp:2139: if (regions::searching()) return t(\"Searching: \") + count(s.repeaters, \"repeater\", \"repeaters\");",
-   "src/Ui.cpp:2147: return \"SF\" + String(r.radio.sf) + \" · \" + count(r.repeaters, \"repeater\", \"repeaters\");",
-   "src/Ui.cpp:2166: return t(\"Current profile: \") + count(n, \"repeater\", \"repeaters\");"
+   "src/Ui.cpp:2140: if (regions::searching()) return t(\"Searching: \") + count(s.repeaters, \"repeater\", \"repeaters\");",
+   "src/Ui.cpp:2148: return \"SF\" + String(r.radio.sf) + \" · \" + count(r.repeaters, \"repeater\", \"repeaters\");",
+   "src/Ui.cpp:2167: return t(\"Current profile: \") + count(n, \"repeater\", \"repeaters\");"
   ]
  },
  "9a73db9b": {
   "cells": 8,
   "where": [
-   "src/Ui.cpp:2184: const char* names[] = {tr(\"Name\"),           tr(\"Language\"),      tr(\"Day brightness\"), tr(\"Home layout\"),"
+   "src/Ui.cpp:2186: tr(\"Language\"),"
   ]
  },
  "9a9b9449": {
   "cells": 4,
   "where": [
-   "src/MeshRadio.cpp:1313: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));"
+   "src/MeshRadio.cpp:1315: : (brief ? String(m.hops) + tr(\" rpt\") : String(tr(\"via \")) + m.hops + tr(\" rpt\"));"
   ]
  },
  "9ad03b43": {
@@ -3541,7 +3561,7 @@
  "9fca3c9e": {
   "cells": 10,
   "where": [
-   "src/Ui.cpp:2144: if (netfind::running()) return t(\"Listening \") + String(s.step + 1) + \"/\" + String(s.count);"
+   "src/Ui.cpp:2145: if (netfind::running()) return t(\"Listening \") + String(s.step + 1) + \"/\" + String(s.count);"
   ]
  },
  "a0cbfc13": {
@@ -3565,7 +3585,7 @@
  "a1de2fdd": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2515: footer({{\"<>\", t(\"Change\")}, {\"OK\", selected == rows - 1 ? t(\"Save\") : t(\"Next value\")}, {\"BACK\", t(\"Cancel\")}});",
+   "src/Ui.cpp:2534: footer({{\"<>\", t(\"Change\")}, {\"OK\", selected == rows - 1 ? t(\"Save\") : t(\"Next value\")}, {\"BACK\", t(\"Cancel\")}});",
    "src/UiChannels.inc:364: footer({{\"OK\", t(\"Change\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Back\")}});"
   ]
  },
@@ -3590,7 +3610,7 @@
  "a2c6becb": {
   "cells": 10,
   "where": [
-   "src/Ui.cpp:2466: textCenter(160, y + 15, changed ? t(\"Save changes\") : t(\"No changes\"), changed ? (focus ? bg : ink) : dim, bold);"
+   "src/Ui.cpp:2485: textCenter(160, y + 15, changed ? t(\"Save changes\") : t(\"No changes\"), changed ? (focus ? bg : ink) : dim, bold);"
   ]
  },
  "a30a5085": {
@@ -3608,7 +3628,7 @@
  "a3980ce8": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2149: return s.phase == netfind::State::Done ? t(\"Nothing new\") : t(\"OK: start\");"
+   "src/Ui.cpp:2150: return s.phase == netfind::State::Done ? t(\"Nothing new\") : t(\"OK: start\");"
   ]
  },
  "a3ad51f3": {
@@ -3632,7 +3652,7 @@
  "a4995035": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2715: case KeyDown: return t(\"Down\");"
+   "src/Ui.cpp:2734: case KeyDown: return t(\"Down\");"
   ]
  },
  "a4bb08e5": {
@@ -3645,7 +3665,7 @@
   "cells": 24,
   "where": [
    "src/Ui.cpp:1731: navigation.calibrating ? t(\"Rotate in all directions\") : t(\"Rotate for 20+ seconds\")};",
-   "src/Ui.cpp:3684: notice(t(\"Rotate in all directions\"));"
+   "src/Ui.cpp:3707: notice(t(\"Rotate in all directions\"));"
   ]
  },
  "a679aabd": {
@@ -3663,7 +3683,7 @@
  "a889b573": {
   "cells": 12,
   "where": [
-   "src/Ui.cpp:2647: notice(t(\"Searching...\"), dim);"
+   "src/Ui.cpp:2666: notice(t(\"Searching...\"), dim);"
   ]
  },
  "a8e7e5cc": {
@@ -3681,7 +3701,7 @@
  "aa6b129b": {
   "cells": 18,
   "where": [
-   "src/Ui.cpp:3695: notice(scopeCount ? t(\"Signal no longer listed\") : t(\"No signal selected\"), warn);"
+   "src/Ui.cpp:3718: notice(scopeCount ? t(\"Signal no longer listed\") : t(\"No signal selected\"), warn);"
   ]
  },
  "aad07647": {
@@ -3694,7 +3714,7 @@
  "ab15d6c8": {
   "cells": 33,
   "where": [
-   "src/Ui.cpp:3681: notice(saved ? t(\"Calibration saved\") : t(\"Rotate wider, at least 20 seconds\"), saved ? ok : warn);"
+   "src/Ui.cpp:3704: notice(saved ? t(\"Calibration saved\") : t(\"Rotate wider, at least 20 seconds\"), saved ? ok : warn);"
   ]
  },
  "ab1fafa1": {
@@ -3714,13 +3734,13 @@
  "ab5a04f6": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:2282: case 6: return t(\"0 = off, 10-600 s\");"
+   "src/Ui.cpp:2301: case 6: return t(\"0 = off, 10-600 s\");"
   ]
  },
  "ab8f2d0d": {
   "cells": 12,
   "where": [
-   "src/Ui.cpp:3672: if (selected == 3) notice(t(\"Public key: \") + meshRadio.publicKeyText().substring(0, 16));"
+   "src/Ui.cpp:3695: if (selected == 3) notice(t(\"Public key: \") + meshRadio.publicKeyText().substring(0, 16));"
   ]
  },
  "abd207a3": {
@@ -3732,13 +3752,13 @@
  "ac08ff7b": {
   "cells": 18,
   "where": [
-   "src/Ui.cpp:3626: notice(t(\"OK again: turn off\"), warn);"
+   "src/Ui.cpp:3649: notice(t(\"OK again: turn off\"), warn);"
   ]
  },
  "ac7ce48d": {
   "cells": 13,
   "where": [
-   "src/Ui.cpp:2187: tr(\"Message popup\"),  tr(\"Theme\"),         tr(\"Accent colour\"),  tr(\"Night brightness\"),"
+   "src/Ui.cpp:2199: tr(\"Accent colour\"),"
   ]
  },
  "ada7afdb": {
@@ -3768,7 +3788,7 @@
  "af53f6b8": {
   "cells": 28,
   "where": [
-   "src/Ui.cpp:2257: case 5: return t(\"Radio chip setting, 0-22 dBm\");"
+   "src/Ui.cpp:2274: case 5: return t(\"Radio chip setting, 0-22 dBm\");"
   ]
  },
  "af671227": {
@@ -3786,7 +3806,7 @@
  "b034b9e4": {
   "cells": 20,
   "where": [
-   "src/Ui.cpp:3650: notice(t(\"No previous settings\"), dim);",
+   "src/Ui.cpp:3673: notice(t(\"No previous settings\"), dim);",
    "src/UiHeltec.cpp:601: notice(t(\"No previous settings\"));"
   ]
  },
@@ -3799,14 +3819,14 @@
  "b1374eac": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:2630: notice(t(\"Connecting to \") + r.ssid);",
-   "src/Ui.cpp:3299: notice(t(\"Connecting to \") + pendingSsid);"
+   "src/Ui.cpp:2649: notice(t(\"Connecting to \") + r.ssid);",
+   "src/Ui.cpp:3322: notice(t(\"Connecting to \") + pendingSsid);"
   ]
  },
  "b13772cd": {
   "cells": 24,
   "where": [
-   "src/Ui.cpp:3717: notice(done ? t(\"Storage created, restart\") : r, done ? ok : bad);",
+   "src/Ui.cpp:3740: notice(done ? t(\"Storage created, restart\") : r, done ? ok : bad);",
    "src/UiHeltec.cpp:1030: notice(r.startsWith(\"OK\") ? t(\"Storage created, restart\") : r);"
   ]
  },
@@ -3819,13 +3839,13 @@
  "b265628f": {
   "cells": 26,
   "where": [
-   "src/Ui.cpp:2280: case 4: return t(\"Tone for messages and ACKs\");"
+   "src/Ui.cpp:2299: case 4: return t(\"Tone for messages and ACKs\");"
   ]
  },
  "b27feee2": {
   "cells": 46,
   "where": [
-   "src/Ui.cpp:3120: notice(t(\"Contact removed; its next advert adds it again\"), ok);"
+   "src/Ui.cpp:3143: notice(t(\"Contact removed; its next advert adds it again\"), ok);"
   ]
  },
  "b2e48278": {
@@ -3837,7 +3857,7 @@
  "b33a4c85": {
   "cells": 41,
   "where": [
-   "src/Ui.cpp:2857: page == Radio ? t(\"As on repeaters: msk, sao...; empty: none\")"
+   "src/Ui.cpp:2876: page == Radio ? t(\"As on repeaters: msk, sao...; empty: none\")"
   ]
  },
  "b34a0288": {
@@ -3867,7 +3887,7 @@
  "b56df055": {
   "cells": 10,
   "where": [
-   "src/Ui.cpp:2807: text(80, y + 32, fit(t(\"Last from \") + String(last->name), 190, small), dim, small);"
+   "src/Ui.cpp:2826: text(80, y + 32, fit(t(\"Last from \") + String(last->name), 190, small), dim, small);"
   ]
  },
  "b59a5b35": {
@@ -3879,9 +3899,9 @@
  "b5a3372a": {
   "cells": 7,
   "where": [
-   "src/Ui.cpp:2706: case KeyAdv: return t(\"Map pin\");",
-   "src/Ui.cpp:2707: case KeyGps: return t(\"Map pin\") + \" (GPS)\";",
-   "src/Ui.cpp:2768: {tr(\"Map pin\"), t(\"Announce this node; hold: GPS on/off\")},"
+   "src/Ui.cpp:2725: case KeyAdv: return t(\"Map pin\");",
+   "src/Ui.cpp:2726: case KeyGps: return t(\"Map pin\") + \" (GPS)\";",
+   "src/Ui.cpp:2787: {tr(\"Map pin\"), t(\"Announce this node; hold: GPS on/off\")},"
   ]
  },
  "b5b7a680": {
@@ -3917,7 +3937,7 @@
  "b81d5640": {
   "cells": 24,
   "where": [
-   "src/Ui.cpp:2863: text(26, 160, t(\"Empty shows all contacts\"), dim, small);"
+   "src/Ui.cpp:2882: text(26, 160, t(\"Empty shows all contacts\"), dim, small);"
   ]
  },
  "b8297e9a": {
@@ -3935,7 +3955,7 @@
  "b872ed2b": {
   "cells": 12,
   "where": [
-   "src/Ui.cpp:2179: tr(\"Path hash size\"), tr(\"Region\"),    tr(\"Find regions\")};",
+   "src/Ui.cpp:2180: tr(\"Path hash size\"), tr(\"Region\"),    tr(\"Find regions\")};",
    "src/UiHeltec.cpp:491: case RowFind: return t(\"Find regions\");"
   ]
  },
@@ -3954,7 +3974,7 @@
  "b96d02c0": {
   "cells": 28,
   "where": [
-   "src/Ui.cpp:3563: notice(csiBeaconRole ? t(\"This board is now the beacon\") : t(\"This board is now the sensor\"));"
+   "src/Ui.cpp:3586: notice(csiBeaconRole ? t(\"This board is now the beacon\") : t(\"This board is now the sensor\"));"
   ]
  },
  "b991041c": {
@@ -3966,7 +3986,7 @@
  "ba5122e7": {
   "cells": 23,
   "where": [
-   "src/Ui.cpp:2537: wifi ? \"192.168.4.1 · \" + String(t(\"Web chat and map upload\")) : t(\"Off\"), wifi);"
+   "src/Ui.cpp:2556: wifi ? \"192.168.4.1 · \" + String(t(\"Web chat and map upload\")) : t(\"Off\"), wifi);"
   ]
  },
  "ba994464": {
@@ -3998,7 +4018,7 @@
   "cells": 7,
   "where": [
    "src/Ui.cpp:1724: row(t(\"Compass\"),",
-   "src/Ui.cpp:2731: for (int i = 0; i < 8; i++) label[i] = names[i] ? String(names[i]) : i == 1 ? t(\"Keyboard\") : t(\"Compass\");"
+   "src/Ui.cpp:2750: for (int i = 0; i < 8; i++) label[i] = names[i] ? String(names[i]) : i == 1 ? t(\"Keyboard\") : t(\"Compass\");"
   ]
  },
  "bc09cf52": {
@@ -4022,7 +4042,7 @@
  "bd54d12a": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2809: textCenter(160, 166, meshRadio.ready ? t(\"Radio and GPS keep working\") : t(\"Radio error\"),"
+   "src/Ui.cpp:2828: textCenter(160, 166, meshRadio.ready ? t(\"Radio and GPS keep working\") : t(\"Radio error\"),"
   ]
  },
  "bd5d84cf": {
@@ -4046,7 +4066,7 @@
  "be555d4a": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2847: textRight(294, 160, String(edit.length()) + \"/\" + String(textByteLimit()) + t(\" bytes\"), faint, small);"
+   "src/Ui.cpp:2866: textRight(294, 160, String(edit.length()) + \"/\" + String(textByteLimit()) + t(\" bytes\"), faint, small);"
   ]
  },
  "beb6a03a": {
@@ -4085,14 +4105,14 @@
   "cells": 12,
   "where": [
    "src/Ui.cpp:1081: unreadCount ? count(unreadCount, \"new message\", \"new messages\") : t(\"No unread messages\"), unreadCount},",
-   "src/Ui.cpp:2803: text(80, y + 16, count(n, \"new message\", \"new messages\"), ink, bold);"
+   "src/Ui.cpp:2822: text(80, y + 16, count(n, \"new message\", \"new messages\"), ink, bold);"
   ]
  },
  "c0de6b7d": {
   "cells": 6,
   "where": [
    "src/Ui.cpp:1098: wardrive::running() ? count(wardrive::points(), \"point\", \"points\") : t(\"Off\"), 0},",
-   "src/Ui.cpp:2316: String counts = count(wardrive::points(), \"point\", \"points\");",
+   "src/Ui.cpp:2335: String counts = count(wardrive::points(), \"point\", \"points\");",
    "src/UiHeltec.cpp:706: String s = plural(wardrive::points(), \"point\", \"points\");"
   ]
  },
@@ -4125,20 +4145,20 @@
   "where": [
    "src/Ui.cpp:1594: footer({{\"OK\", t(\"Details\")}, {\"MENU\", t(\"Actions\")}, {\"F\", t(\"Filter\")}, {\"BACK\", t(\"Back\")}});",
    "src/Ui.cpp:1745: {\"BACK\", t(\"Back\")}});",
-   "src/Ui.cpp:2342: footer({{\"OK\", on ? t(\"Stop\") : t(\"Start\")}, {\"P\", t(\"Ping\")}, {\"N\", \"Wi-Fi/BLE\"}, {\"BACK\", t(\"Back\")}});"
+   "src/Ui.cpp:2361: footer({{\"OK\", on ? t(\"Stop\") : t(\"Start\")}, {\"P\", t(\"Ping\")}, {\"N\", \"Wi-Fi/BLE\"}, {\"BACK\", t(\"Back\")}});"
   ]
  },
  "c2c76cb1": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2499: footer({{\"OK\", t(\"Edit\")}, {\"BACK\", t(\"Cancel\")}});",
+   "src/Ui.cpp:2518: footer({{\"OK\", t(\"Edit\")}, {\"BACK\", t(\"Cancel\")}});",
    "src/UiContactNotes.inc:81: footer({{\"OK\", t(\"Edit\")}, {\"BACK\", t(\"Back\")}});"
   ]
  },
  "c3a34509": {
   "cells": 10,
   "where": [
-   "src/Ui.cpp:2515: footer({{\"<>\", t(\"Change\")}, {\"OK\", selected == rows - 1 ? t(\"Save\") : t(\"Next value\")}, {\"BACK\", t(\"Cancel\")}});"
+   "src/Ui.cpp:2534: footer({{\"<>\", t(\"Change\")}, {\"OK\", selected == rows - 1 ? t(\"Save\") : t(\"Next value\")}, {\"BACK\", t(\"Cancel\")}});"
   ]
  },
  "c416a424": {
@@ -4177,7 +4197,7 @@
  "c52a8c0f": {
   "cells": 27,
   "where": [
-   "src/Ui.cpp:2256: case 4: return t(\"Error correction 4/5 to 4/8\");"
+   "src/Ui.cpp:2273: case 4: return t(\"Error correction 4/5 to 4/8\");"
   ]
  },
  "c57453ef": {
@@ -4195,8 +4215,8 @@
  "c646a2c9": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2508: : t(\"Search\")},",
-   "src/Ui.cpp:2511: footer({{\"OK\", t(\"Search\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});"
+   "src/Ui.cpp:2527: : t(\"Search\")},",
+   "src/Ui.cpp:2530: footer({{\"OK\", t(\"Search\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});"
   ]
  },
  "c6787629": {
@@ -4220,7 +4240,7 @@
  "c7e915d7": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:2597: N_(\"Wi-Fi scan failed\"),"
+   "src/Ui.cpp:2616: N_(\"Wi-Fi scan failed\"),"
   ]
  },
  "c8028cd1": {
@@ -4238,7 +4258,7 @@
  "c91eb13e": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2177: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),"
+   "src/Ui.cpp:2178: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),"
   ]
  },
  "c9225c36": {
@@ -4270,7 +4290,7 @@
  "caa82244": {
   "cells": 13,
   "where": [
-   "src/Ui.cpp:2186: tr(\"UTC offset\"),     tr(\"Battery shows\"), tr(\"Lock screen\"),    tr(\"Wake on message\"),"
+   "src/Ui.cpp:2194: tr(\"Battery shows\"),"
   ]
  },
  "cae55685": {
@@ -4297,7 +4317,7 @@
  "cc01b1df": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2503: footer({{\"OK\", config.trial.set() ? t(\"Keep\") : t(\"Return\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});"
+   "src/Ui.cpp:2522: footer({{\"OK\", config.trial.set() ? t(\"Keep\") : t(\"Return\")}, {\"^v\", t(\"Select\")}, {\"BACK\", t(\"Cancel\")}});"
   ]
  },
  "cd03e04b": {
@@ -4334,7 +4354,7 @@
  "cded1a85": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2414: footer({{\"^v\", t(\"choose\")}, {\"OK\", quickTargets || selected == 0 ? t(\"select\") : t(\"send\")}, {\"BACK\", t(\"exit\")}});"
+   "src/Ui.cpp:2433: footer({{\"^v\", t(\"choose\")}, {\"OK\", quickTargets || selected == 0 ? t(\"select\") : t(\"send\")}, {\"BACK\", t(\"exit\")}});"
   ]
  },
  "ce15d57a": {
@@ -4358,13 +4378,13 @@
  "cf8274c3": {
   "cells": 32,
   "where": [
-   "src/Ui.cpp:3378: notice(t(\"Unsaved: OK saves, BACK discards\"), warn);"
+   "src/Ui.cpp:3401: notice(t(\"Unsaved: OK saves, BACK discards\"), warn);"
   ]
  },
  "cfa790b1": {
   "cells": 41,
   "where": [
-   "src/Ui.cpp:3699: notice(t(\"Calibrating: keep the area still for 10 s\"), info);"
+   "src/Ui.cpp:3722: notice(t(\"Calibrating: keep the area still for 10 s\"), info);"
   ]
  },
  "d08919c3": {
@@ -4389,20 +4409,20 @@
  "d155d06d": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2513: footer({{\"<>\", t(\"Found\")}, {\"OK\", t(\"Type\")}, {\"BACK\", t(\"Cancel\")}});",
+   "src/Ui.cpp:2532: footer({{\"<>\", t(\"Found\")}, {\"OK\", t(\"Type\")}, {\"BACK\", t(\"Cancel\")}});",
    "src/UiChannels.inc:360: {\"OK\", regionChoice == c->region ? t(\"Type\") : t(\"Save\")},"
   ]
  },
  "d174bc31": {
   "cells": 16,
   "where": [
-   "src/Ui.cpp:2177: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),"
+   "src/Ui.cpp:2178: const char* names[] = {tr(\"Preset\"),         tr(\"Frequency\"), tr(\"Bandwidth\"),       tr(\"Spreading factor\"),"
   ]
  },
  "d1d835b6": {
   "cells": 19,
   "where": [
-   "src/Ui.cpp:2760: footer({{\"OK\", hardware.fsOk ? t(\"Crypto test + sound\") : t(\"Create storage...\")}, {\"BACK\", t(\"Back\")}});"
+   "src/Ui.cpp:2779: footer({{\"OK\", hardware.fsOk ? t(\"Crypto test + sound\") : t(\"Create storage...\")}, {\"BACK\", t(\"Back\")}});"
   ]
  },
  "d20c0cd6": {
@@ -4416,7 +4436,7 @@
  "d20cf720": {
   "cells": 43,
   "where": [
-   "src/Ui.cpp:2865: text(26, 160, t(\"8-63 characters; -> after a letter: capital\"), faint, small);"
+   "src/Ui.cpp:2884: text(26, 160, t(\"8-63 characters; -> after a letter: capital\"), faint, small);"
   ]
  },
  "d24c9257": {
@@ -4436,7 +4456,7 @@
  "d284a6e4": {
   "cells": 18,
   "where": [
-   "src/Ui.cpp:2266: return config.trial.set()      ? t(\"A restart returns \") + profileText(config.trial)"
+   "src/Ui.cpp:2283: return config.trial.set()      ? t(\"A restart returns \") + profileText(config.trial)"
   ]
  },
  "d2cdcecb": {
@@ -4448,13 +4468,13 @@
  "d35ec4c9": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2689: : r.open  ? t(\"open\")"
+   "src/Ui.cpp:2708: : r.open  ? t(\"open\")"
   ]
  },
  "d3ace4a5": {
   "cells": 25,
   "where": [
-   "src/Ui.cpp:2861: text(26, 160, t(\"Separate tags with commas\"), dim, small);"
+   "src/Ui.cpp:2880: text(26, 160, t(\"Separate tags with commas\"), dim, small);"
   ]
  },
  "d3bcc1f1": {
@@ -4466,7 +4486,7 @@
  "d3f03342": {
   "cells": 18,
   "where": [
-   "src/Ui.cpp:3475: notice(t(\"UTF-8 byte limit: \") + String(meshRadio.messageLimit(recipient)), warn);"
+   "src/Ui.cpp:3498: notice(t(\"UTF-8 byte limit: \") + String(meshRadio.messageLimit(recipient)), warn);"
   ]
  },
  "d4372516": {
@@ -4540,7 +4560,7 @@
  "d8e1dad5": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:2617: notice(internet.enabled ? t(\"Wi-Fi client on\") : t(\"Wi-Fi client off\"), internet.enabled ? ok : dim);"
+   "src/Ui.cpp:2636: notice(internet.enabled ? t(\"Wi-Fi client on\") : t(\"Wi-Fi client off\"), internet.enabled ? ok : dim);"
   ]
  },
  "d92dbe47": {
@@ -4571,14 +4591,14 @@
  "da253637": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:3828: if (value == \"No delivery ACK\") return tr(\"No delivery ACK\");",
-   "src/Ui.cpp:3853: : t(\"No delivery ACK\"),"
+   "src/Ui.cpp:3851: if (value == \"No delivery ACK\") return tr(\"No delivery ACK\");",
+   "src/Ui.cpp:3876: : t(\"No delivery ACK\"),"
   ]
  },
  "da64e928": {
   "cells": 8,
   "where": [
-   "src/Ui.cpp:3704: notice(radarSound ? (config.sound ? t(\"Ping on\") : t(\"Device sound is off in settings\")) : t(\"Ping off\"),"
+   "src/Ui.cpp:3727: notice(radarSound ? (config.sound ? t(\"Ping on\") : t(\"Device sound is off in settings\")) : t(\"Ping off\"),"
   ]
  },
  "db5485e7": {
@@ -4591,28 +4611,28 @@
  "db65b4b4": {
   "cells": 25,
   "where": [
-   "src/Ui.cpp:2601: N_(\"Tile is not 256 or 512 px\"),"
+   "src/Ui.cpp:2620: N_(\"Tile is not 256 or 512 px\"),"
   ]
  },
  "db89a899": {
   "cells": 7,
   "where": [
    "src/Ui.cpp:1099: {IcWifi, info, t(\"Connect\"), links, 0},",
-   "src/Ui.cpp:2696: footer({{\"OK\", selected == 0 ? t(\"On/off\") : t(\"Connect\")},"
+   "src/Ui.cpp:2715: footer({{\"OK\", selected == 0 ? t(\"On/off\") : t(\"Connect\")},"
   ]
  },
  "dbce7f21": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:2960: : r.startsWith(\"ERR radio busy\") ? t(\"Radio busy, retry\")",
-   "src/Ui.cpp:2966: notice(meshRadio.busy() || regions::searching() ? t(\"Radio busy, retry\") : t(\"Radio offline\"), bad);",
-   "src/Ui.cpp:3657: : r.startsWith(\"ERR radio busy\") ? t(\"Radio busy, retry\")"
+   "src/Ui.cpp:2979: : r.startsWith(\"ERR radio busy\") ? t(\"Radio busy, retry\")",
+   "src/Ui.cpp:2985: notice(meshRadio.busy() || regions::searching() ? t(\"Radio busy, retry\") : t(\"Radio offline\"), bad);",
+   "src/Ui.cpp:3680: : r.startsWith(\"ERR radio busy\") ? t(\"Radio busy, retry\")"
   ]
  },
  "dc6bfbe0": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2198: case 1: return String(c.frequency, 3) + t(\" MHz\");",
+   "src/Ui.cpp:2213: case 1: return String(c.frequency, 3) + t(\" MHz\");",
    "src/UiHeltec.cpp:1514: sayRight(128, 20, String(config.frequency, 3) + t(\" MHz\"));"
   ]
  },
@@ -4657,7 +4677,7 @@
  "ddf7e6a7": {
   "cells": 23,
   "where": [
-   "src/Ui.cpp:2869: : t(\"OK: save   BACK: cancel\"),"
+   "src/Ui.cpp:2888: : t(\"OK: save   BACK: cancel\"),"
   ]
  },
  "de281feb": {
@@ -4669,7 +4689,7 @@
  "df42eda4": {
   "cells": 12,
   "where": [
-   "src/Ui.cpp:2660: text(48, 42, t(\"Wi-Fi client\"), ink, bold);",
+   "src/Ui.cpp:2679: text(48, 42, t(\"Wi-Fi client\"), ink, bold);",
    "src/UiActions.inc:37: rows[n++] = {A::Wifi, IcWifi, t(\"Wi-Fi client\"), internet.enabled};"
   ]
  },
@@ -4682,13 +4702,13 @@
  "df6e627c": {
   "cells": 14,
   "where": [
-   "src/Ui.cpp:2184: const char* names[] = {tr(\"Name\"),           tr(\"Language\"),      tr(\"Day brightness\"), tr(\"Home layout\"),"
+   "src/Ui.cpp:2187: tr(\"Day brightness\"),"
   ]
  },
  "dfe5ac67": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:2366: : !wardrive::position(lat, lon, phone) ? t(\"No position yet\")",
+   "src/Ui.cpp:2385: : !wardrive::position(lat, lon, phone) ? t(\"No position yet\")",
    "src/UiHeltec.cpp:1011: : !wardrive::position(lat, lon, phone) ? t(\"No position yet\")"
   ]
  },
@@ -4701,13 +4721,13 @@
  "e0227864": {
   "cells": 44,
   "where": [
-   "src/Ui.cpp:2858: : t(\"As on repeaters: msk, sao...; empty: default\"),"
+   "src/Ui.cpp:2877: : t(\"As on repeaters: msk, sao...; empty: default\"),"
   ]
  },
  "e0b50b72": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2696: footer({{\"OK\", selected == 0 ? t(\"On/off\") : t(\"Connect\")},"
+   "src/Ui.cpp:2715: footer({{\"OK\", selected == 0 ? t(\"On/off\") : t(\"Connect\")},"
   ]
  },
  "e0b5aafc": {
@@ -4731,7 +4751,7 @@
  "e1418f02": {
   "cells": 23,
   "where": [
-   "src/Ui.cpp:3695: notice(scopeCount ? t(\"Signal no longer listed\") : t(\"No signal selected\"), warn);"
+   "src/Ui.cpp:3718: notice(scopeCount ? t(\"Signal no longer listed\") : t(\"No signal selected\"), warn);"
   ]
  },
  "e1b4bdaa": {
@@ -4750,7 +4770,7 @@
   "cells": 5,
   "where": [
    "src/Ui.cpp:1579: String age = p.heard ? ago(now - p.seen) : t(\"saved\");",
-   "src/Ui.cpp:2688: : r.saved ? (r.visible ? t(\"saved\") : t(\"saved, away\"))"
+   "src/Ui.cpp:2707: : r.saved ? (r.visible ? t(\"saved\") : t(\"saved, away\"))"
   ]
  },
  "e234733b": {
@@ -4762,7 +4782,7 @@
  "e234f405": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2603: N_(\"No location\"),"
+   "src/Ui.cpp:2622: N_(\"No location\"),"
   ]
  },
  "e27f342a": {
@@ -4786,7 +4806,7 @@
  "e28b0bc0": {
   "cells": 22,
   "where": [
-   "src/Ui.cpp:3721: notice(passed ? t(\"Encryption test passed\") : t(\"Encryption test failed\"), passed ? ok : bad);"
+   "src/Ui.cpp:3744: notice(passed ? t(\"Encryption test passed\") : t(\"Encryption test failed\"), passed ? ok : bad);"
   ]
  },
  "e29c938b": {
@@ -4798,7 +4818,7 @@
  "e2dabf28": {
   "cells": 15,
   "where": [
-   "src/Ui.cpp:2594: N_(\"No answer from \"),"
+   "src/Ui.cpp:2613: N_(\"No answer from \"),"
   ]
  },
  "e3abda16": {
@@ -4816,13 +4836,13 @@
  "e4f5443f": {
   "cells": 28,
   "where": [
-   "src/Ui.cpp:2286: case 10: return t(\"Message senders while locked\");"
+   "src/Ui.cpp:2305: case 10: return t(\"Message senders while locked\");"
   ]
  },
  "e4f81b64": {
   "cells": 13,
   "where": [
-   "src/Ui.cpp:3825: if (value.startsWith(\"Delivered to \")) return tr(\"Delivered to \") + value.substring(13);"
+   "src/Ui.cpp:3848: if (value.startsWith(\"Delivered to \")) return tr(\"Delivered to \") + value.substring(13);"
   ]
  },
  "e50e2dad": {
@@ -4842,6 +4862,12 @@
   "cells": 15,
   "where": [
    "src/Ui.cpp:1813: case Radar::BleFailed: return t(\"Bluetooth error\");"
+  ]
+ },
+ "e629f336": {
+  "cells": 46,
+  "where": [
+   "src/Ui.cpp:2291: case RowSoundChannels: return t(\"Beep for channel messages; repeats stay silent\");"
   ]
  },
  "e65fb504": {
@@ -4880,7 +4906,7 @@
  "e754fa0d": {
   "cells": 27,
   "where": [
-   "src/Ui.cpp:2275: case RowNight: return t(\"Day 07:00–20:00, local time\");"
+   "src/Ui.cpp:2294: case RowNight: return t(\"Day 07:00–20:00, local time\");"
   ]
  },
  "e774d890": {
@@ -4892,7 +4918,7 @@
  "e7872b4f": {
   "cells": 19,
   "where": [
-   "src/Ui.cpp:3351: notice(sent ? t(\"Node announced\") : t(\"Announcement failed\"), sent ? ok : bad);",
+   "src/Ui.cpp:3374: notice(sent ? t(\"Node announced\") : t(\"Announcement failed\"), sent ? ok : bad);",
    "src/UiHeltec.cpp:1049: case ActAdvert: notice(meshRadio.sendHello() ? t(\"Node announced\") : t(\"Announcement failed\")); break;"
   ]
  },
@@ -4953,7 +4979,7 @@
  "e9dd1fed": {
   "cells": 4,
   "where": [
-   "src/Ui.cpp:2220: const char* colors[] = {tr(\"Lime\"), tr(\"Blue\"), tr(\"Violet\"), tr(\"Amber\")};"
+   "src/Ui.cpp:2235: const char* colors[] = {tr(\"Lime\"), tr(\"Blue\"), tr(\"Violet\"), tr(\"Amber\")};"
   ]
  },
  "ea1182ad": {
@@ -4983,7 +5009,7 @@
  "eb38bf4c": {
   "cells": 12,
   "where": [
-   "src/Ui.cpp:2180: if (i == RowNet) return t(\"Find network\");",
+   "src/Ui.cpp:2181: if (i == RowNet) return t(\"Find network\");",
    "src/UiHeltec.cpp:492: case RowNet: return t(\"Find network\");"
   ]
  },
@@ -5044,7 +5070,7 @@
  "ed88bd72": {
   "cells": 27,
   "where": [
-   "src/Ui.cpp:2284: case 8: return t(\"Local time, 15 minute steps\");"
+   "src/Ui.cpp:2303: case 8: return t(\"Local time, 15 minute steps\");"
   ]
  },
  "edaf9d4d": {
@@ -5068,7 +5094,7 @@
  "ef7ee013": {
   "cells": 28,
   "where": [
-   "src/Ui.cpp:3283: notice(t(\"Region: letters, digits, '-'\"), bad);",
+   "src/Ui.cpp:3306: notice(t(\"Region: letters, digits, '-'\"), bad);",
    "src/UiChannels.inc:381: notice(t(\"Region: letters, digits, '-'\"), bad);",
    "src/UiChannels.inc:454: notice(t(\"Region: letters, digits, '-'\"), bad);"
   ]
@@ -5076,25 +5102,25 @@
  "f03bdf12": {
   "cells": 6,
   "where": [
-   "src/Ui.cpp:2220: const char* colors[] = {tr(\"Lime\"), tr(\"Blue\"), tr(\"Violet\"), tr(\"Amber\")};"
+   "src/Ui.cpp:2235: const char* colors[] = {tr(\"Lime\"), tr(\"Blue\"), tr(\"Violet\"), tr(\"Amber\")};"
   ]
  },
  "f050c067": {
   "cells": 8,
   "where": [
-   "src/Ui.cpp:2749: {t(\"Rejected\"), String(meshRadio.rejected)},"
+   "src/Ui.cpp:2768: {t(\"Rejected\"), String(meshRadio.rejected)},"
   ]
  },
  "f050c5bc": {
   "cells": 10,
   "where": [
-   "src/Ui.cpp:2186: tr(\"UTC offset\"),     tr(\"Battery shows\"), tr(\"Lock screen\"),    tr(\"Wake on message\"),"
+   "src/Ui.cpp:2193: tr(\"UTC offset\"),"
   ]
  },
  "f0b87eb8": {
   "cells": 49,
   "where": [
-   "src/Ui.cpp:2252: case RowPreset: return t(\"MeshCore regional settings: frequency, BW, SF, CR\");"
+   "src/Ui.cpp:2269: case RowPreset: return t(\"MeshCore regional settings: frequency, BW, SF, CR\");"
   ]
  },
  "f0f648f0": {
@@ -5120,15 +5146,15 @@
   "cells": 16,
   "where": [
    "src/QuickSend.cpp:68: return String(tr(\"Choose recipient\"));",
-   "src/Ui.cpp:2382: return t(\"Choose recipient\");",
-   "src/Ui.cpp:2388: text(12, 44, fit(t(\"Choose recipient\"), 296, bold), accent, bold);"
+   "src/Ui.cpp:2401: return t(\"Choose recipient\");",
+   "src/Ui.cpp:2407: text(12, 44, fit(t(\"Choose recipient\"), 296, bold), accent, bold);"
   ]
  },
  "f371db6e": {
   "cells": 17,
   "where": [
-   "src/Ui.cpp:3824: if (value.startsWith(\"New message from \")) return tr(\"New message from \") + value.substring(17);",
-   "src/Ui.cpp:3847: notice(t(\"New message from \") + notification.message.name, accent);"
+   "src/Ui.cpp:3847: if (value.startsWith(\"New message from \")) return tr(\"New message from \") + value.substring(17);",
+   "src/Ui.cpp:3870: notice(t(\"New message from \") + notification.message.name, accent);"
   ]
  },
  "f3f514aa": {
@@ -5158,7 +5184,7 @@
  "f496171f": {
   "cells": 25,
   "where": [
-   "src/Ui.cpp:2868: : page == Remote   ? (remoteEdit == EditPassword ? t(\"OK: log in   BACK: cancel\") : t(\"OK: send   BACK: cancel\"))"
+   "src/Ui.cpp:2887: : page == Remote   ? (remoteEdit == EditPassword ? t(\"OK: log in   BACK: cancel\") : t(\"OK: send   BACK: cancel\"))"
   ]
  },
  "f4a9c097": {
@@ -5219,7 +5245,7 @@
  "fa81bada": {
   "cells": 47,
   "where": [
-   "src/Ui.cpp:2260: case 8: return t(\"Per hop in our floods; older MeshCore drops 2-3\");"
+   "src/Ui.cpp:2277: case 8: return t(\"Per hop in our floods; older MeshCore drops 2-3\");"
   ]
  },
  "fa990075": {
@@ -5249,7 +5275,7 @@
  "fbef0d23": {
   "cells": 24,
   "where": [
-   "src/Ui.cpp:3096: if (!remote::traceTo(p->id)) notice(t(\"Not sent: radio or route\"), bad);",
+   "src/Ui.cpp:3119: if (!remote::traceTo(p->id)) notice(t(\"Not sent: radio or route\"), bad);",
    "src/UiRemote.inc:143: notice(sent ? t(\"Trace sent\") : t(\"Not sent: radio or route\"), sent ? dim : bad);"
   ]
  },
@@ -5268,7 +5294,7 @@
  "fd387bbd": {
   "cells": 29,
   "where": [
-   "src/Ui.cpp:2604: N_(\"SD full: web tiles not cached\")};"
+   "src/Ui.cpp:2623: N_(\"SD full: web tiles not cached\")};"
   ]
  },
  "fdd029a8": {
@@ -5294,7 +5320,7 @@
  "fecd422a": {
   "cells": 11,
   "where": [
-   "src/Ui.cpp:2186: tr(\"UTC offset\"),     tr(\"Battery shows\"), tr(\"Lock screen\"),    tr(\"Wake on message\"),"
+   "src/Ui.cpp:2195: tr(\"Lock screen\"),"
   ]
  },
  "ff05911b": {
@@ -5307,7 +5333,7 @@
  "ff1537fa": {
   "cells": 7,
   "where": [
-   "src/Ui.cpp:2239: case 9: return c.batteryVolts ? t(\"Volts\") : t(\"Percent\");"
+   "src/Ui.cpp:2256: case 9: return c.batteryVolts ? t(\"Volts\") : t(\"Percent\");"
   ]
  },
  "ffa35e26": {
@@ -5320,7 +5346,7 @@
  "ffbb350b": {
   "cells": 25,
   "where": [
-   "src/Ui.cpp:2672: textCenter(160, 120, internet.state == Internet::Paused ? internet.stateText() : t(\"Searching for networks...\"),"
+   "src/Ui.cpp:2691: textCenter(160, 120, internet.state == Internet::Paused ? internet.stateText() : t(\"Searching for networks...\"),"
   ]
  }
 }

@@ -1071,6 +1071,8 @@ function fields(page){const h=heltec();return page==='radio'?[
  {k:'notify_led',n:L('LED on message'),h:status.notification_led===false?L('This board has no software-controlled LED'):L('Incoming message indication mode'),t:'sel',o:[[0,L('Off')],[1,L('All messages')],[2,L('Mentions only')]]},
  {k:'notify_wake',n:L('Turn on screen'),h:L('Incoming messages; independent of LED and pop-up'),t:'sel',o:[[0,L('Never')],[1,L('All messages')],[2,L('Mentions only')]]},
  {k:'notify_popup',n:L('Pop-up on the board screen'),h:L('Show an incoming message over the current screen'),t:'sel',o:[[0,L('Off')],[1,L('All messages')],[2,L('Mentions only')]]},
+ {k:'sound_channels',n:L('Sound for channel messages'),h:L('Repeats of the same message stay silent; a channel can also be muted on its own'),t:'sel',o:[[0,L('Off')],[1,L('All messages')],[2,L('Mentions only')]]},
+ {k:'sound_direct',n:L('Sound for direct messages'),h:L('Beep when a direct message arrives'),t:'sw'},
  {k:'notify_failed',n:L('Send problem alert'),h:L('Transmitter error or no ACK for a direct message'),t:'sw'},
  {k:'notify_words',n:L('Board keywords'),h:L('Count as mentions; comma-separated, up to 96 bytes of UTF-8'),t:'text',max:96}],
  {k:'dim_after',n:L('Screen off, s'),h:L('0 = off, 10–600 s'),t:'num',min:0,max:600,step:10},

@@ -117,9 +117,30 @@ bool take(Event& event) {
 uint32_t dropped() {
   return lost;
 }
-bool sound(const ChatMessage& message) {
-  const auto* c = meshRadio.channel(message.destination);
-  return !c || c->policy.sound;
+bool sound(const ChatMessage& message, bool mention) {
+  if (channels::isChannel(message.destination)) {
+    const auto* c = meshRadio.channel(message.destination);
+    if ((c && !c->policy.sound) || !enabled(config.soundChannels, mention)) return false;
+  } else if (!config.soundDirect)
+    return false;
+  // Repeats: the same sender, place and text again within 10 minutes stay silent.
+  uint32_t hash = 2166136261u;
+  for (const char* p = message.text; *p; p++) hash = (hash ^ uint8_t(*p)) * 16777619u;
+  hash ^= uint32_t(message.destination) * 2654435761u;
+  static struct {
+    uint64_t source;
+    uint32_t hash, at;
+  } recent[12] = {};
+  static unsigned next = 0;
+  uint32_t now = millis();
+  for (auto& r : recent)
+    if (r.at && r.source == message.source && r.hash == hash && now - r.at < 600000) {
+      r.at = now;
+      return false;
+    }
+  recent[next] = {message.source, hash, now ? now : 1};
+  next = (next + 1) % 12;
+  return true;
 }
 bool enabled(uint8_t mode, bool mention) {
   return mode == All || (mode == Mentions && mention);

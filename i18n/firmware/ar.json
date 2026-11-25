@@ -1125,6 +1125,14 @@
   "en": "Screen password",
   "text": "كلمة مرور الشاشة"
  },
+ "5d1a5f53": {
+  "en": "Channel sound",
+  "text": "صوت القنوات"
+ },
+ "42bbad70": {
+  "en": "Direct message sound",
+  "text": "صوت الرسائل المباشرة"
+ },
  "9525b78e": {
   "en": "Custom",
   "text": "مخصص"
@@ -1191,6 +1199,14 @@
   "en": "Same as day",
   "text": "مثل النهار"
  },
+ "75afe364": {
+  "en": "All",
+  "text": "الكل"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "الإشارات"
+ },
  "8581156e": {
   "en": "Tiles",
   "text": "بلاطات"
@@ -1206,14 +1222,6 @@
  "3c2dfe59": {
   "en": "Hidden",
   "text": "مخفي"
- },
- "75afe364": {
-  "en": "All",
-  "text": "الكل"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "الإشارات"
  },
  "f0b87eb8": {
   "en": "MeshCore regional settings: frequency, BW, SF, CR",
@@ -1282,6 +1290,14 @@
  "7c3b11a9": {
   "en": "OK: set or change password",
   "text": "OK: تعيين كلمة المرور أو تغييرها"
+ },
+ "e629f336": {
+  "en": "Beep for channel messages; repeats stay silent",
+  "text": "تنبيه لرسائل القنوات؛ التكرارات بلا صوت"
+ },
+ "395b917d": {
+  "en": "Beep for direct messages",
+  "text": "تنبيه للرسائل المباشرة"
  },
  "e754fa0d": {
   "en": "Day 07:00–20:00, local time",
@@ -1971,6 +1987,10 @@
   "en": "Queued: waiting for delivery",
   "text": "في الطابور: بانتظار التسليم"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "يعمل"
+ },
  "67884f31": {
   "en": "Queued: broadcast",
   "text": "في الطابور: بث عام"
@@ -1982,10 +2002,6 @@
  "4cd5c726": {
   "en": "Radio TX error",
   "text": "خطأ إرسال الراديو"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "يعمل"
  },
  "54279dd1": {
   "en": "No repeat heard",

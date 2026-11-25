@@ -1982,7 +1982,7 @@ void uiTick() {
         popupAt = now;
         menuOpen = false;
       }
-      if (notifications::sound(e.message)) hardware.beep();
+      if (notifications::sound(e.message, e.mention)) hardware.beep();
       dirty = true;
     } else if (config.notifyFailed && (e.kind == notifications::TxError || e.kind == notifications::Unconfirmed)) {
       ledAt = now;

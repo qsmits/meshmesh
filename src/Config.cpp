@@ -14,7 +14,7 @@ bool Config::valid() const {
          sf <= 12 && cr >= 5 && cr <= 8 && power >= 0 && power <= MM_MAX_POWER && hops <= 7 && pathHash >= 1 &&
          pathHash <= 3 && brightness >= 10 && (autoLock == 0 || (autoLock >= 30 && autoLock <= 600)) &&
          (dimAfter == 0 || (dimAfter >= 10 && dimAfter <= 600)) && utcOffset >= -720 && utcOffset <= 840 &&
-         utcOffset % 15 == 0 && notifyLed <= 2 && notifyWake <= 2 && notifyPopup <= 2 &&
+         utcOffset % 15 == 0 && notifyLed <= 2 && notifyWake <= 2 && notifyPopup <= 2 && soundChannels <= 2 &&
          strnlen(notifyWords, sizeof notifyWords) < sizeof notifyWords &&
          meshmesh::validUtf8((const uint8_t*)notifyWords, strlen(notifyWords)) && strnlen(name, sizeof(name)) > 0 &&
          strnlen(name, sizeof(name)) < sizeof(name) && strnlen(region, sizeof(region)) < sizeof(region) &&
@@ -76,6 +76,9 @@ void Config::load() {
   notifyPopup = p.getUChar("n_popup", notifyPopup);
   if (notifyPopup > 2) notifyPopup = 1;
   notifyFailed = p.getBool("n_failed", false);
+  soundChannels = p.getUChar("s_chan", 1);
+  if (soundChannels > 2) soundChannels = 1;
+  soundDirect = p.getBool("s_direct", true);
   p.getString("n_words", notifyWords, sizeof notifyWords);
   if (!meshmesh::validUtf8((const uint8_t*)notifyWords, strlen(notifyWords))) notifyWords[0] = 0;
   utcOffset = p.getShort("utc_offset", 180);
@@ -172,6 +175,8 @@ bool Config::save() {
   p.putUChar("n_wake", notifyWake);
   p.putUChar("n_popup", notifyPopup);
   p.putBool("n_failed", notifyFailed);
+  p.putUChar("s_chan", soundChannels);
+  p.putBool("s_direct", soundDirect);
   p.putString("n_words", notifyWords);
   const RadioProfile kept = trial.set() ? trial : radio(); // a test is not saved
   p.putString("name", name);

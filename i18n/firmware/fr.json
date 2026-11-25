@@ -1081,6 +1081,14 @@
   "en": "Screen password",
   "text": "Code de verrouillage"
  },
+ "5d1a5f53": {
+  "en": "Channel sound",
+  "text": "Son des canaux"
+ },
+ "42bbad70": {
+  "en": "Direct message sound",
+  "text": "Son des messages directs"
+ },
  "9525b78e": {
   "en": "Custom",
   "text": "Personnalisé"
@@ -1143,6 +1151,14 @@
   "en": "Same as day",
   "text": "Comme le jour"
  },
+ "75afe364": {
+  "en": "All",
+  "text": "Tous"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "Mentions"
+ },
  "8581156e": {
   "en": "Tiles",
   "text": "Tuiles"
@@ -1158,14 +1174,6 @@
  "3c2dfe59": {
   "en": "Hidden",
   "text": "Masqué"
- },
- "75afe364": {
-  "en": "All",
-  "text": "Tous"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "Mentions"
  },
  "f0b87eb8": {
   "en": "MeshCore regional settings: frequency, BW, SF, CR",
@@ -1234,6 +1242,14 @@
  "7c3b11a9": {
   "en": "OK: set or change password",
   "text": "OK : définir ou modifier le code"
+ },
+ "e629f336": {
+  "en": "Beep for channel messages; repeats stay silent",
+  "text": "Bip pour les messages de canal ; les répétitions restent muettes"
+ },
+ "395b917d": {
+  "en": "Beep for direct messages",
+  "text": "Bip pour les messages directs"
  },
  "e754fa0d": {
   "en": "Day 07:00–20:00, local time",
@@ -1923,6 +1939,10 @@
   "en": "Queued: waiting for delivery",
   "text": "En file : attente de remise"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "Oui"
+ },
  "67884f31": {
   "en": "Queued: broadcast",
   "text": "En file : diffusion"
@@ -1934,10 +1954,6 @@
  "4cd5c726": {
   "en": "Radio TX error",
   "text": "Erreur d'émission radio"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "Oui"
  },
  "54279dd1": {
   "en": "No repeat heard",

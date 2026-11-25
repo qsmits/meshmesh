@@ -1092,6 +1092,14 @@
   "en": "Screen password",
   "text": "Hasło ekranu"
  },
+ "5d1a5f53": {
+  "en": "Channel sound",
+  "text": "Dźwięk kanałów"
+ },
+ "42bbad70": {
+  "en": "Direct message sound",
+  "text": "Dźwięk wiadomości prywatnych"
+ },
  "9525b78e": {
   "en": "Custom",
   "text": "Własny"
@@ -1155,6 +1163,14 @@
   "en": "Same as day",
   "text": "Jak w dzień"
  },
+ "75afe364": {
+  "en": "All",
+  "text": "Wszystkie"
+ },
+ "43e4fe52": {
+  "en": "Mentions",
+  "text": "Wzmianki"
+ },
  "8581156e": {
   "en": "Tiles",
   "text": "Kafelki"
@@ -1170,14 +1186,6 @@
  "3c2dfe59": {
   "en": "Hidden",
   "text": "Ukryte"
- },
- "75afe364": {
-  "en": "All",
-  "text": "Wszystkie"
- },
- "43e4fe52": {
-  "en": "Mentions",
-  "text": "Wzmianki"
  },
  "f0b87eb8": {
   "en": "MeshCore regional settings: frequency, BW, SF, CR",
@@ -1246,6 +1254,14 @@
  "7c3b11a9": {
   "en": "OK: set or change password",
   "text": "OK: ustaw lub zmień hasło"
+ },
+ "e629f336": {
+  "en": "Beep for channel messages; repeats stay silent",
+  "text": "Sygnał dla wiadomości z kanałów; powtórki bez dźwięku"
+ },
+ "395b917d": {
+  "en": "Beep for direct messages",
+  "text": "Sygnał dla wiadomości prywatnych"
  },
  "e754fa0d": {
   "en": "Day 07:00–20:00, local time",
@@ -1935,6 +1951,10 @@
   "en": "Queued: waiting for delivery",
   "text": "Czeka na potwierdzenie"
  },
+ "60e47df0": {
+  "en": "On",
+  "text": "Wł."
+ },
  "67884f31": {
   "en": "Queued: broadcast",
   "text": "W kolejce: czat ogólny"
@@ -1946,10 +1966,6 @@
  "4cd5c726": {
   "en": "Radio TX error",
   "text": "Błąd nadawania radia"
- },
- "60e47df0": {
-  "en": "On",
-  "text": "Wł."
  },
  "54279dd1": {
   "en": "No repeat heard",

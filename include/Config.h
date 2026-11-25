@@ -41,6 +41,8 @@ struct Config {
   uint8_t notifyWake = 0; // preserve the keyboard boards' existing screen-off behaviour
 #endif
   bool notifyFailed = false;
+  uint8_t soundChannels = 1; // the beep for channel messages: 0 off, 1 all, 2 mentions (Notifications.h)
+  bool soundDirect = true; // the beep for direct messages
   char notifyWords[97] = "";
   char apps[256] = ""; // screen menu: order of the apps, "-" hides one (App.h); empty = the default
   // Default region of our flood packets (Regions.h): empty - none; the key is that of "#name" unless an app set
