@@ -1,6 +1,7 @@
 #include "Notifications.h"
 #include "Config.h"
 #include "I18n.h"
+#include "UsbEvents.h"
 namespace notifications {
 // On the heap: with the defaults of ChatMessage static arrays would keep a copy of their start values in flash.
 namespace {
@@ -60,6 +61,7 @@ bool mentioned(const char* text, const char* name, const char* words) {
   return false;
 }
 void emit(Kind kind, const ChatMessage& message) {
+  usbEvents::push(kind, message);
   if (kind == Transmitted && channels::isChannel(message.destination)) {
     AwaitEcho* slot = nullptr;
     for (auto& e : echoWait)

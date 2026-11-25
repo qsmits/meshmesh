@@ -1,3 +1,4 @@
+#include "UsbEvents.h"
 #include "Version.h"
 #include <Arduino.h>
 #include "App.h"
@@ -37,6 +38,7 @@ uint32_t baudExpires = 0;
 // MeshCore companion apps over USB: '<', a 16-bit length and the frame in; '>', the length and the frame out.
 // A text command on the port ends that link, so the frames never mix with text replies.
 uint8_t appFrame[companion::MaxFrame];
+bool appOverUsb = false; // a MeshCore app speaks over USB (frames, not text)
 int appState = -1;
 size_t appLength = 0, appGot = 0; // -1: text; 0, 1: length; 2: frame
 void usbFrame(const uint8_t* frame, size_t length) {
@@ -243,10 +245,12 @@ void appLoop() {
     }
     if (c == '<' && !command.length()) {
       appState = 0;
+      appOverUsb = true; // companion frames: no event lines in between
       continue;
     }
     if (c == '\n') {
       companion::disconnected(companion::LinkUsb);
+      appOverUsb = false;
       if (command.startsWith("baud ")) {
 #if defined(MM_NATIVE_USB)
         usbLine("ERR native USB does not need baud switching");
@@ -351,6 +355,10 @@ void appLoop() {
   }
   restartTick();
   powerOffTick();
+  if (!usbBusy() && !appOverUsb) { // USB events (UsbEvents.h), one line at a time between replies
+    String line;
+    if (usbEvents::next(line)) usbLine(std::move(line));
+  }
   if (radar.csiStream && !usbBusy()) {
     String line;
     for (int i = 0; i < 8 && Serial.availableForWrite() >= 240 && radar.streamLine(line); i++) Serial.println(line);

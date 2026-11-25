@@ -43,6 +43,7 @@ eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/RadarModel.cpp" -o "$B/r
 eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -I$LIB/Crypto -c "$ROOT/src/Channels.cpp" -o "$B/channels.o"
 eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -I$LIB/Crypto -c "$ROOT/src/Regions.cpp" -o "$B/regions.o"
 eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/Notifications.cpp" -o "$B/notifications.o"
+eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/UsbEvents.cpp" -o "$B/usb-events.o"
 eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/ChannelPolicy.cpp" -o "$B/policy.o"
 eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/QuickSend.cpp" -o "$B/quick.o"
 eval c++ -std=gnu++17 -O1 -Wall $DEF $INC -c "$ROOT/src/Wardrive.cpp" -o "$B/wardrive.o"

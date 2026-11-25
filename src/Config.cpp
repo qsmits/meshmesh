@@ -140,6 +140,7 @@ void Config::load() {
   }
   if (p.getBytesLength("radio_prev") == sizeof previous) p.getBytes("radio_prev", &previous, sizeof previous);
   doubleBack = p.getBool("dbl_back", false);
+  usbEvents = p.getBool("usb_events", false);
   p.end();
   {
     Config c = *this;
@@ -183,6 +184,7 @@ bool Config::save() {
   else if (p.isKey("radio_prev"))
     p.remove("radio_prev");
   p.putBool("dbl_back", doubleBack);
+  p.putBool("usb_events", usbEvents);
   p.putChar("power", power);
   p.putUChar("hops", hops);
   p.putUChar("path_hash", pathHash);

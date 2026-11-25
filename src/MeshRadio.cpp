@@ -1,3 +1,4 @@
+#include "UsbEvents.h"
 #include "MeshRadio.h"
 #include "Notifications.h"
 #include "ChannelPolicy.h"
@@ -436,6 +437,7 @@ public:
 protected:
   void onDiscoveredContact(ContactInfo& c, bool added, uint8_t pathLen, const uint8_t*) override {
     updateContact(c, true, pathLen & 63);
+    usbEvents::node(aliasOf(c.id.pub_key), c.name, owner.lastSnr, owner.lastRssi);
     contactsDue = millis() + 2000;
     appLink::advert(c, added);
   }

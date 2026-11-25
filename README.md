@@ -41,6 +41,8 @@ see [docs/heltec.md](docs/heltec.md).
   BLE.
 - **MeshCore companion protocol** over BLE and USB: the official MeshCore apps connect to the device.
   [docs/companion.md](docs/companion.md)
+- **USB events and range test**: the board reports incoming messages over USB as they arrive; `tools/range_bot.py`
+  makes a USB-connected board answer and map range-test messages. [docs/usb-events.md](docs/usb-events.md)
 - **Power** — idle waits, a lower CPU clock when unused, and software power off. [docs/power.md](docs/power.md)
 - **14 interface languages**: English, Ukrainian, Spanish, Portuguese, French, German, Italian, Polish, Turkish,
   Chinese, Japanese, Korean, Arabic and Indonesian.
@@ -96,8 +98,8 @@ python3 tools/i18n.py check
 ## Documentation
 
 [backup](docs/backup.md) · [channels](docs/channels.md) · [MeshCore apps](docs/companion.md) ·
-[Heltec V4](docs/heltec.md) · [map format](docs/maps-format.md) · [notifications, quick send and counting](docs/notifications.md) ·
-[power](docs/power.md) · [regions](docs/regions.md) · [wardriving](docs/wardrive.md)
+[Heltec V4](docs/heltec.md) · [map format](docs/maps-format.md) · [notifications and quick send](docs/notifications.md) ·
+[power](docs/power.md) · [range test and USB events](docs/usb-events.md) · [regions](docs/regions.md) · [wardriving](docs/wardrive.md)
 
 ## Credits
 

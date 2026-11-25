@@ -52,6 +52,7 @@ struct Config {
   // The profile before the last change of the shared radio parameters ("radio previous" returns to it), and
   // during a test ("radio try") the saved one: the test lives in memory only, a restart brings the saved one back.
   RadioProfile previous, trial;
+  bool usbEvents = false; // "events on": one USB line per mesh event (UsbEvents.h)
   bool doubleBack = false; // one-button boards: a double click steps back (single clicks then wait for a second one)
   RadioProfile radio() const {
     RadioProfile r;
