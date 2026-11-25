@@ -117,6 +117,11 @@ bool take(Event& event) {
 uint32_t dropped() {
   return lost;
 }
+bool muted(const ChatMessage& message) {
+  if (!channels::isChannel(message.destination)) return false;
+  const auto* c = meshRadio.channel(message.destination);
+  return c && !c->policy.sound;
+}
 bool sound(const ChatMessage& message, bool mention) {
   if (channels::isChannel(message.destination)) {
     const auto* c = meshRadio.channel(message.destination);

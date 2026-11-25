@@ -108,6 +108,19 @@ static void scenario() {
     exit(1);
   }
   shot("chat-reply");
+  { // A message arriving while typing: the pop-up shows at the top, clear of the text box.
+    ChatMessage m;
+    m.source = 0xA1B2C3D40000ULL;
+    m.destination = meshRadio.nodeId; // a direct message
+    strlcpy(m.name, "Alex", sizeof m.name);
+    strlcpy(m.text, "Are you coming?", sizeof m.text);
+    m.timestamp = uint32_t(time(nullptr));
+    meshRadio.history[meshRadio.historyCount++] = m;
+    notifications::incoming(m);
+    tick();
+    shot("chat-popup");
+    meshRadio.historyCount--; // gone again: the later steps count the chats
+  }
   for (int i = 0; i < 40; i++) key(0x08); // erase the reply again
   key(0x86);
   // Channels: the list, a hashtag channel's card, a private channel and its card, adding one, an invitation.

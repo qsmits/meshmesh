@@ -170,6 +170,10 @@ static void wishlistChecks() {
     strlcpy(m.text, "beep test four", sizeof m.text);
     config.soundDirect = false;
     must(!notifications::sound(m, false), "direct message sound off");
+    m.destination = meshmesh::Broadcast;
+    must(!notifications::muted(m), "Public is not muted by default");
+    m.destination = 0x2222;
+    must(!notifications::muted(m), "a direct message is never muted by a channel switch");
     config.soundChannels = soundChannels;
     config.soundDirect = soundDirect;
   }

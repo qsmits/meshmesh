@@ -2939,7 +2939,7 @@ void draw() {
   else if (editing && !locked)
     drawEditing();
   if (clipMenu && !locked) drawClipboard();
-  if (credentialStep == CredentialStep::Idle) drawToast(clipMenu && pasteError.reason != PasteError::None ? 22 : 193);
+  if (credentialStep == CredentialStep::Idle) drawToast(24); // under the status bar: clear of the text box while typing
   hardware.flush();
 }
 // Right after a letter toggles its case.
@@ -3859,14 +3859,15 @@ void uiTick() {
   while (notifications::take(notification)) {
     if (notification.kind == notifications::Incoming) {
       if (notifications::sound(notification.message, notification.mention)) hardware.beep();
-      if (notifications::enabled(notifications::mode(notification.message, config.notifyWake, 1),
-                                 notification.mention)) {
+      bool muted = notifications::muted(notification.message);
+      if (!muted && notifications::enabled(notifications::mode(notification.message, config.notifyWake, 1),
+                                           notification.mention)) {
         wakeOnly = false;
         hardware.brightness(config.backlight(time(nullptr)));
         lastInput = now;
       }
-      if (notifications::enabled(notifications::mode(notification.message, config.notifyPopup, 2),
-                                 notification.mention))
+      if (!muted && notifications::enabled(notifications::mode(notification.message, config.notifyPopup, 2),
+                                           notification.mention))
         notice(t("New message from ") + notification.message.name, accent);
       dirty = true;
     } else if (config.notifyFailed &&

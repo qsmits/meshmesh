@@ -1973,12 +1973,13 @@ void uiTick() {
     if (e.kind == notifications::Incoming) {
       if (page != Messages) unreadCount++;
       incomingPopup = e.message;
-      if (notifications::enabled(notifications::mode(e.message, config.notifyLed, 0), e.mention)) {
+      bool muted = notifications::muted(e.message);
+      if (!muted && notifications::enabled(notifications::mode(e.message, config.notifyLed, 0), e.mention)) {
         ledAt = now;
         ledPattern = e.mention ? 2 : 1;
       }
-      wake = notifications::enabled(notifications::mode(e.message, config.notifyWake, 1), e.mention);
-      if (notifications::enabled(notifications::mode(e.message, config.notifyPopup, 2), e.mention)) {
+      wake = !muted && notifications::enabled(notifications::mode(e.message, config.notifyWake, 1), e.mention);
+      if (!muted && notifications::enabled(notifications::mode(e.message, config.notifyPopup, 2), e.mention)) {
         popupAt = now;
         menuOpen = false;
       }
