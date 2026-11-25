@@ -570,6 +570,19 @@ protected:
     const ::channels::Channel* c = owner.channel(dest);
     const char* split = strstr(text, ": ");
     String name = split ? String(text).substring(0, split - text) : c ? String(c->name) : String("?");
+    // Our own message coming back rebuilt by another node (a bridge sends it again with a new stamp): no new
+    // message, our row counts it as heard again.
+    if (split && name == config.name) {
+      uint32_t now = uint32_t(time(nullptr));
+      for (unsigned i = 0; i < owner.historyCount; i++) {
+        auto& old = owner.history[i];
+        if (old.outgoing && old.destination == dest && now - old.timestamp < 600 && !strcmp(old.text, split + 2)) {
+          if (old.heard < 255) old.heard++;
+          owner.dirty = true;
+          return;
+        }
+      }
+    }
     uint8_t hash[32];
     mesh::Utils::sha256(hash, 32, (const uint8_t*)name.c_str(), name.length());
     uint64_t source = aliasOf(hash);

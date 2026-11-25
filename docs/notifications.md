@@ -12,6 +12,8 @@ muted on its own: "Channel sound" in the menu of the open chat or of the chat li
 message identical to one the same sender sent in the same chat within 10 minutes is no new message: some apps resend
 a channel message when they hear no repeater pass it on. It gets no row of its own and no beep; the earlier row
 counts it as heard again. Copies of one message through different repeaters were already merged this way.
+Your own channel message coming back rebuilt by another node (a bridge sends it again under your name with a new
+stamp) counts the same way: your row counts it as heard again.
 
 Mentions use `@[node name]`, case-insensitive for Latin and Cyrillic. Optional comma-separated words
 (`notify_words`) also trigger mentions. A plain unmarked name does not. Events are independent of history
