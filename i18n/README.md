@@ -13,7 +13,8 @@ Simplified), Japanese (`ja`), Korean (`ko`), Arabic (`ar`) and Indonesian (`id`)
 
 English is written in the code; the other languages come from `i18n/firmware/<lang>.json`.
 
-- `t("English")` — a screen string (in `src/Ui.cpp`, a macro around `tr()` that returns a `String`).
+- `t("English")` — a screen string (in `src/Ui.cpp` and `src/UiHeltec.cpp`, a macro around `tr()` that returns a
+  `String`).
 - `tr("English")` — the translated `const char*`. The key is computed by the compiler (`include/I18n.h`).
 - `N_("English")` — marks a string in a table; it is translated where it is read, with `trText(text)`, which
   hashes the text at run time.
@@ -46,7 +47,8 @@ leave the number out (`"رسالتان"`).
 
 Rules:
 
-- **Fit the screen.** The M9 screen is 320×240. Keep a translation close to `cells`; abbreviate when needed.
+- **Fit the screen.** The M9 screen is 320×240; the Heltec V4's is 128×64, about 21 columns of the body font. Keep
+  a translation close to `cells`; abbreviate when needed.
   `check` reports translations that are much longer than the English.
 - **Keep the edges.** Leading and trailing spaces, line breaks and placeholders (`%d`, `%s`, `{weekday}`, `{month}`,
   `{day}`) stay exactly as in English: the code glues these strings together. `check` enforces this.

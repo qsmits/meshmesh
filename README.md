@@ -1,12 +1,15 @@
-# MeshMesh for the ThinkNode M9
+# MeshMesh for the ThinkNode M9 and Heltec V4
 
-Off-grid messaging firmware for the **Elecrow ThinkNode M9** (hardware v1.0 and v1.1, detected at runtime).
-Messages hop by LoRa radio from device to device, with no internet, cell network or servers. The radio layer is
-[MeshCore](https://github.com/meshcore-dev/MeshCore), so the M9 talks to standard MeshCore nodes and works with
-the official MeshCore apps.
+Off-grid messaging firmware for the **Elecrow ThinkNode M9** (hardware v1.0 and v1.1, detected at runtime) and
+the **Heltec WiFi LoRa 32 V4**. Messages hop by LoRa radio from device to device, with no internet, cell network
+or servers. The radio layer is [MeshCore](https://github.com/meshcore-dev/MeshCore), so the devices talk to
+standard MeshCore nodes and work with the official MeshCore apps.
 
 This is a slimmed-down fork of [IKrasnodymov/meshmesh](https://github.com/IKrasnodymov/meshmesh) that keeps only
-the M9 and its messaging and field tools. The device always runs as a MeshCore chat node.
+these two boards and their messaging and field tools. The device always runs as a MeshCore chat node.
+
+The features below are those of the M9. The Heltec V4 has a 128×64 screen and one button, and a subset of them:
+see [docs/heltec.md](docs/heltec.md).
 
 ## Features
 
@@ -54,7 +57,8 @@ python3 -m venv .venv
 .venv/bin/pio run -e m9 -t upload       # build and flash over USB
 ```
 
-The M9's USB port goes through a CH340 USB-serial bridge, which is only reliable at 115200 baud (the PlatformIO
+For the Heltec V4 use `-e heltec_v4` (or `-e heltec_v4_r8` for the V4-R8); its USB is the ESP32-S3's own, so the
+baud rate does not matter. The M9's USB port goes through a CH340 USB-serial bridge, which is only reliable at 115200 baud (the PlatformIO
 environment already uses that speed). An upload does not erase the flash: the node key, settings and channels in
 NVS and LittleFS survive. To write only the application, flash `firmware.bin` at `0x10000`:
 
@@ -68,7 +72,8 @@ The screen UI can be rendered on a computer without a device (run a `pio run -e 
 are downloaded):
 
 ```sh
-sh tools/ui_preview/build.sh m9 OUTDIR [LANG]
+sh tools/ui_preview/build.sh m9 OUTDIR [LANG]       # the M9
+sh tools/ui_preview/build.sh heltec OUTDIR [LANG]   # the Heltec V4
 ```
 
 ## Device tool
@@ -91,7 +96,7 @@ python3 tools/i18n.py check
 ## Documentation
 
 [backup](docs/backup.md) · [channels](docs/channels.md) · [MeshCore apps](docs/companion.md) ·
-[map format](docs/maps-format.md) · [notifications, quick send and counting](docs/notifications.md) ·
+[Heltec V4](docs/heltec.md) · [map format](docs/maps-format.md) · [notifications, quick send and counting](docs/notifications.md) ·
 [power](docs/power.md) · [regions](docs/regions.md) · [wardriving](docs/wardrive.md)
 
 ## Credits

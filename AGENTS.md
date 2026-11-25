@@ -1,4 +1,4 @@
-# Working on MeshMesh for the ThinkNode M9
+# Working on MeshMesh for the ThinkNode M9 and Heltec V4
 
 ## Purpose
 
@@ -6,15 +6,19 @@ Firmware for the Elecrow ThinkNode M9 (hardware v1.0 and v1.1, detected at runti
 MeshCore chat node with channels, contacts, remote admin of repeaters and rooms, regions, regional radio presets,
 offline maps, GPS/compass navigation, a signal radar with Wi-Fi CSI motion sensing, spectrum, wardriving, quick
 send, notifications, backup/restore, its own web page and the MeshCore companion protocol over
-BLE/USB. It is a slimmed-down fork of `IKrasnodymov/meshmesh` (MIT). The device always runs as a chat node; there
-are no repeater or room-server modes and no other boards.
+BLE/USB. It also runs on the Heltec WiFi LoRa 32 V4 (128×64 OLED, one button) with a subset of these features
+(`docs/heltec.md`). It is a slimmed-down fork of `IKrasnodymov/meshmesh` (MIT). The device always runs as a chat
+node; there are no repeater or room-server modes and no boards other than these two.
 
 Answer in the language the user writes in. Code comments and documentation are in English.
 
 ## Repository layout
 
 - `src/`, `include/` — the application and drivers (screens `src/Ui*.cpp|inc`, radio `src/MeshRadio.cpp`,
-  companion protocol `src/Companion.inc`, web server `src/Portal.cpp`, power `src/Power.cpp`).
+  companion protocol `src/Companion.inc`, web server `src/Portal.cpp`, power `src/Power.cpp`). Each board has its
+  own hardware layer and screen interface: the M9 `Hardware.cpp` and `Ui.cpp`, the Heltec `HardwareHeltec.cpp` and
+  `UiHeltec.cpp` (`build_src_filter` in `platformio.ini`). Board differences in shared code use `MM_HELTEC_V4`,
+  `MM_COMPACT` (the 128×64 interface), `MM_RADIO_SX1262`/`MM_RADIO_LR1110` and `MM_NATIVE_USB` (`include/Board.h`).
 - `lib/MeshCore/` — vendored MeshCore with its own license and headers; keep its original headers and attribution.
   `lib/MeshProtocol/`, `lib/CayenneLPP/` — support libraries.
 - `web/index.html` — the device's web page; `tools/pio_web.py` compresses it and its language files into the
@@ -22,7 +26,8 @@ Answer in the language the user writes in. Code comments and documentation are i
 - `i18n/firmware/<lang>.json` — screen translations; `i18n/web/<lang>.json` — web page translations;
   `i18n/fonts/` — font licenses. See `i18n/README.md`.
 - `tools/` — USB device tool, map packages, translations, UI preview and hardware checks.
-- `boards/meshmesh_m9.json`, `platformio.ini`, `partitions.csv` — the build target.
+- `boards/meshmesh_*.json`, `platformio.ini`, `partitions.csv` — the build targets `m9`, `heltec_v4` and
+  `heltec_v4_r8`.
 - `docs/` — feature documentation (English).
 - `backups/`, `artifacts/`, `logs/`, `upstream/`, `.venv/`, build output and `.env` stay local (`.gitignore`).
 
@@ -30,9 +35,9 @@ Answer in the language the user writes in. Code comments and documentation are i
 
 ```sh
 python3 -m venv .venv && .venv/bin/pip install platformio esptool pyserial cryptography
-.venv/bin/pio run -e m9                      # build
+.venv/bin/pio run -e m9                      # build (also heltec_v4, heltec_v4_r8)
 .venv/bin/pio run -e m9 -t upload            # flash over USB (115200 baud)
-sh tools/ui_preview/build.sh m9 OUTDIR [LANG]  # render the screens on a computer (after one pio build)
+sh tools/ui_preview/build.sh m9|heltec OUTDIR [LANG]  # render the screens on a computer (after one pio build)
 python3 tools/i18n.py sync|check|todo LANG   # firmware translations
 .venv/bin/python tools/i18n.py generate      # include/I18nTable.h and glyph subsets (needs upstream/fonts)
 node tools/web_i18n.cjs sync|check           # web page translations (npm ci --prefix tools once)
@@ -63,6 +68,14 @@ locally) and `build_sha256`: the same SemVer does not prove the same image.
   as a real position. A stored compass calibration does not prove accuracy.
 - One LoRa transceiver: different radio profiles need switching; never promise simultaneous coverage of all
   networks.
+
+## Hardware notes (Heltec V4)
+
+- ESP32-S3, 16 MB flash, 2 MB PSRAM (V4-R8: 8 MB octal, other pins in `include/BoardPins.h`), SX1262 behind a
+  GC1109 or KCT8103L front end (told apart at start, `src/HardwareHeltec.cpp`), SSD1306 128×64 OLED, PRG button,
+  LED, optional GNSS module. No keyboard, SD card, RTC, compass, IMU or buzzer.
+- USB is the ESP32-S3's native USB Serial/JTAG: no baud rate; `tools/device.py` keeps DTR on and RTS off.
+- Strings used only by `UiHeltec.cpp` go into the Heltec image only (`tools/i18n.py` builds one table per interface).
 
 ## Compatibility
 
