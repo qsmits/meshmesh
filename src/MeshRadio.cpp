@@ -311,15 +311,23 @@ class MeshCoreBackend : public BaseChatMesh {
       return false;
     }
     if (duplicate(source, stamp, text)) return false;
+    // A copy (same sender stamp) is no new message, and neither is a resend: the same sender, chat and text within
+    // 10 minutes (apps resend a channel message that no repeater was heard passing on). It counts as heard again.
+    uint32_t now = uint32_t(time(nullptr));
     for (unsigned i = 0; i < owner.historyCount; i++) {
-      const auto& old = owner.history[i];
-      if (old.protocol == 2 && !old.outgoing && old.source == source && old.session == stamp && !strcmp(old.text, text))
+      auto& old = owner.history[i];
+      if (old.protocol != 2 || old.outgoing || old.source != source || strcmp(old.text, text)) continue;
+      if (old.session == stamp) return false;
+      if (old.destination == dest && now - old.timestamp < 600) {
+        if (old.heard < 255) old.heard++;
+        owner.dirty = true;
         return false;
+      }
     }
     ChatMessage m;
     m.source = source;
     m.destination = dest;
-    m.timestamp = uint32_t(time(nullptr));
+    m.timestamp = now;
     m.session = stamp;
     m.route = packet->isRouteFlood() ? ChatMessage::RouteFlood : ChatMessage::RouteDirect;
     m.hops = hops;

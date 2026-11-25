@@ -9,8 +9,9 @@ override or inherit them, and each channel has its own sound switch. Configure t
 The message beep has two settings of its own, at the end of the M9's "Screen & device" settings and on the web
 page: **Channel sound** (off, all, mentions only) and **Direct message sound** (on, off). A channel can also be
 muted on its own: "Channel sound" in the menu of the open chat or of the chat list, or on the channel card. A
-message identical to one the same sender sent in the same chat within 10 minutes does not beep again (it still
-appears in the chat).
+message identical to one the same sender sent in the same chat within 10 minutes is no new message: some apps resend
+a channel message when they hear no repeater pass it on. It gets no row of its own and no beep; the earlier row
+counts it as heard again. Copies of one message through different repeaters were already merged this way.
 
 Mentions use `@[node name]`, case-insensitive for Latin and Cyrillic. Optional comma-separated words
 (`notify_words`) also trigger mentions. A plain unmarked name does not. Events are independent of history
