@@ -14,6 +14,11 @@ and other notices appear at the top of the screen, under the status bar, clear o
 message identical to one the same sender sent in the same chat within 10 minutes is no new message: some apps resend
 a channel message when they hear no repeater pass it on. It gets no row of its own and no beep; the earlier row
 counts it as heard again. Copies of one message through different repeaters were already merged this way.
+The USB command `resends` lists the last 32 merged resends: sender, chat, seconds after the first copy
+(`delay`), the sender's stamp difference (`stamp_delta`: about the delay when the sender itself resent, different
+when another node rebuilt the message), hops and route (`path`: repeater IDs, the sender's side first).
+
+The unread total in the status bar and on the home screen leaves out muted channels.
 Your own channel message coming back rebuilt by another node (a bridge sends it again under your name with a new
 stamp) counts the same way: your row counts it as heard again.
 

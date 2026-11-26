@@ -438,6 +438,7 @@ String executeCommand(const String& input) {
     return channelCommand(d.as<JsonObjectConst>());
   }
   if (line == "hello") return meshRadio.sendHello() ? "OK hello queued" : "ERR hello failed";
+  if (line == "resends") return meshRadio.resendsJson(); // diagnostics: resent messages and their routes
   if (line == "events") return config.usbEvents ? "OK events on" : "OK events off";
   if (line == "events on" || line == "events off") {
     Config next = config;

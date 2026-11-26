@@ -81,6 +81,21 @@ public:
   // On the heap: in static memory it does not fit the classic ESP32 boards (dram0 segment).
   ChatMessage* const history = new ChatMessage[64];
   unsigned historyCount = 0;
+  // Resends merged into an earlier message, and our own messages sent back by another node ("resends" over USB):
+  // who, in which chat, how long after the first, and the route of the copy, to find where they come from.
+  struct Resend {
+    char name[25];
+    uint64_t dest;
+    uint32_t at, delay; // our clock; seconds after the first copy arrived
+    int32_t stampDelta; // the sender's stamp minus the first copy's: about the delay when the sender resent it
+    uint8_t hops, pathLen, path[24];
+    int8_t snr;
+  };
+  Resend resends[32];
+  unsigned resendCount = 0, resendNext = 0;
+  uint32_t resendTotal = 0;
+  void logResend(const ChatMessage& first, uint32_t stamp, uint8_t hops, uint8_t pathLen, const uint8_t* path);
+  String resendsJson() const;
   Peer peers[MAX_CONTACTS]; // MAX_CONTACTS: platformio.ini, per board
   unsigned peerCount = 0;
   // Group channels: [0] is Public; the others are kept in NVS. Removing one keeps its history, joining it again shows it.

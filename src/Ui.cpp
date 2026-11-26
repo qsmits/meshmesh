@@ -674,11 +674,17 @@ void nextUnread() {
   }
   notice(t("No unread messages"), dim);
 }
+// The total of the status bar and the home tile: a muted channel (its sound off) does not count; its own row
+// in the chat list still shows its unread messages.
 unsigned unreadTotal() {
   threads();
   unsigned n = 0;
-  for (unsigned i = 0; i < conversationCount; i++)
-    if (conversations[i]) n += unread(conversations[i]);
+  for (unsigned i = 0; i < conversationCount; i++) {
+    uint64_t id = conversations[i];
+    if (!id) continue;
+    const channels::Channel* c = channels::isChannel(id) ? meshRadio.channel(id) : nullptr;
+    if (!c || c->policy.sound) n += unread(id);
+  }
   return n;
 }
 // A chat read up to its newest message. persist false: the caller saves the marks once (mark all as read).

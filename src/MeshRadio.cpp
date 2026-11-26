@@ -322,6 +322,7 @@ class MeshCoreBackend : public BaseChatMesh {
       if (old.protocol != 2 || old.outgoing || old.source != source || strcmp(old.text, text)) continue;
       if (old.session == stamp) return false;
       if (old.destination == dest && now - old.timestamp < 600) {
+        owner.logResend(old, stamp, hops, packet->isRouteFlood() ? packet->path_len : 255, packet->path);
         if (old.heard < 255) old.heard++;
         owner.dirty = true;
         return false;
@@ -580,6 +581,8 @@ protected:
       for (unsigned i = 0; i < owner.historyCount; i++) {
         auto& old = owner.history[i];
         if (old.outgoing && old.destination == dest && now - old.timestamp < 600 && !strcmp(old.text, split + 2)) {
+          owner.logResend(old, stamp, packet->isRouteFlood() ? packet->getPathHashCount() : 255,
+                          packet->isRouteFlood() ? packet->path_len : 255, packet->path);
           if (old.heard < 255) old.heard++;
           owner.dirty = true;
           return;
@@ -1421,6 +1424,48 @@ static size_t unhex(const char* s, uint8_t* out, size_t max) {
     s += 2;
   }
   return n;
+}
+void MeshRadio::logResend(const ChatMessage& first, uint32_t stamp, uint8_t hops, uint8_t pathLen,
+                          const uint8_t* path) {
+  Resend& r = resends[resendNext];
+  resendNext = (resendNext + 1) % 32;
+  if (resendCount < 32) resendCount++;
+  resendTotal++;
+  r = {};
+  copyUtf8(r.name, first.name, sizeof r.name);
+  r.dest = first.destination;
+  r.at = uint32_t(time(nullptr));
+  r.delay = r.at - first.timestamp;
+  r.stampDelta = int32_t(stamp - (first.outgoing ? first.timestamp : first.session));
+  r.hops = hops;
+  r.pathLen = 255;
+  if (path && pathLen != 255 && mesh::Packet::isValidPathLen(pathLen)) {
+    r.pathLen = pathLen;
+    memcpy(r.path, path, min(size_t(((pathLen >> 6) + 1) * (pathLen & 63)), sizeof r.path));
+  }
+  r.snr = int8_t(constrain(lroundf(lastSnr * 4), -128, 127));
+}
+String MeshRadio::resendsJson() const {
+  DynamicJsonDocument d(8192);
+  d["total"] = resendTotal;
+  JsonArray a = d.createNestedArray("resends");
+  for (unsigned k = 0; k < resendCount; k++) {
+    const Resend& r = resends[(resendNext + 32 - resendCount + k) % 32];
+    JsonObject o = a.createNestedObject();
+    o["name"] = r.name;
+    const channels::Channel* c = channel(r.dest);
+    o["chat"] = c ? c->name : idText(r.dest).c_str();
+    o["at"] = r.at;
+    o["delay"] = r.delay;
+    o["stamp_delta"] = r.stampDelta;
+    if (r.hops != 255) o["hops"] = r.hops;
+    if (r.pathLen != 255)
+      o["path"] = hexOf(r.path, min(size_t(((r.pathLen >> 6) + 1) * (r.pathLen & 63)), sizeof r.path));
+    o["snr"] = r.snr / 4.0f;
+  }
+  String out;
+  serializeJson(d, out);
+  return out;
 }
 void MeshRadio::pathJson(JsonObject j, const ChatMessage& m) {
   if (m.pathLen != 255) {
