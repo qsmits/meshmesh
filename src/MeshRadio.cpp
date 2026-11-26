@@ -283,11 +283,14 @@ class MeshCoreBackend : public BaseChatMesh {
     uint32_t advert;
     int32_t lat, lon;
   };
-  struct ContactBlob {
-    uint32_t version = 1, count = 0;
-    SavedContact contacts[24] = {};
+  // The contacts file: version 2 holds MAX_CONTACTS; version 1 (before 0.34) held 24 and is read once.
+  template <unsigned Slots, uint32_t Version> struct ContactFile {
+    uint32_t version = Version, count = 0;
+    SavedContact contacts[Slots] = {};
     uint8_t hash[32] = {};
   };
+  using ContactBlob = ContactFile<MAX_CONTACTS, 2>;
+  using ContactBlobV1 = ContactFile<24, 1>;
   struct ReceivedId {
     uint64_t source = 0;
     uint32_t stamp = 0, hash = 0;
@@ -358,7 +361,7 @@ class MeshCoreBackend : public BaseChatMesh {
     uint64_t id = aliasOf(c.id.pub_key);
     Peer* p = owner.contact(id);
     if (!p) {
-      if (owner.peerCount >= 24) return;
+      if (owner.peerCount >= MAX_CONTACTS) return;
       p = &owner.peers[owner.peerCount++];
       *p = {};
       p->id = id;
@@ -752,14 +755,17 @@ public:
     // Contacts live in MeshMesh storage; an older firmware kept them in NVS, which is moved once and freed.
     {
       ContactBlob* blob = new ContactBlob;
-      bool found = readStored(ContactsFile, ContactsTemp, blob, sizeof(*blob)) && validBlob(*blob), fromNvs = false;
+      bool found = readStored(ContactsFile, ContactsTemp, blob, sizeof(*blob)) && validBlob(*blob), fromNvs = false,
+           old = false;
       if (!found && p.getBytesLength("contacts") == sizeof(ContactBlob)) {
         p.getBytes("contacts", blob, sizeof(*blob));
         found = fromNvs = validBlob(*blob);
       }
+      if (!found) found = old = readOldContacts(*blob, p, fromNvs); // saved again in the new format below
       if (found && hardware.fsOk && p.isKey("contacts") &&
           (!fromNvs || writeStored(ContactsFile, ContactsTemp, blob, sizeof(*blob))))
         p.remove("contacts");
+      if (old) contactsDue = millis() + 2000;
       if (found)
         for (unsigned i = 0; i < blob->count; i++) {
           auto& saved = blob->contacts[i];
@@ -787,7 +793,7 @@ public:
   }
   void saveContacts() {
     ContactBlob* blob = new ContactBlob;
-    blob->count = min(getNumContacts(), 24);
+    blob->count = min(getNumContacts(), MAX_CONTACTS);
     for (unsigned i = 0; i < blob->count; i++) {
       ContactInfo c;
       if (!getContactByIdx(i, c)) continue;
@@ -813,10 +819,26 @@ public:
     delete blob;
     contactsDue = 0;
   }
-  static bool validBlob(const ContactBlob& b) {
+  template <class Blob> static bool validBlob(const Blob& b) {
     uint8_t digest[32];
-    mesh::Utils::sha256(digest, 32, (const uint8_t*)&b, offsetof(ContactBlob, hash));
-    return b.version == 1 && b.count <= 24 && !memcmp(digest, b.hash, 32);
+    mesh::Utils::sha256(digest, 32, (const uint8_t*)&b, offsetof(Blob, hash));
+    return b.version == Blob().version && b.count <= sizeof b.contacts / sizeof *b.contacts &&
+           !memcmp(digest, b.hash, 32);
+  }
+  // The version 1 file (24 contacts) of an older firmware, read into the current one.
+  static bool readOldContacts(ContactBlob& out, Preferences& p, bool& fromNvs) {
+    ContactBlobV1* old = new ContactBlobV1;
+    bool found = readStored(ContactsFile, ContactsTemp, old, sizeof(*old)) && validBlob(*old);
+    if (!found && p.getBytesLength("contacts") == sizeof(ContactBlobV1)) {
+      p.getBytes("contacts", old, sizeof(*old));
+      found = fromNvs = validBlob(*old);
+    }
+    if (found) {
+      out.count = min(old->count, uint32_t(MAX_CONTACTS));
+      for (unsigned i = 0; i < out.count; i++) out.contacts[i] = old->contacts[i];
+    }
+    delete old;
+    return found;
   }
   bool reserveStamp(uint32_t stamp) {
     Preferences p;

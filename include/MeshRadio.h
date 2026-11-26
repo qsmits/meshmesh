@@ -81,7 +81,7 @@ public:
   // On the heap: in static memory it does not fit the classic ESP32 boards (dram0 segment).
   ChatMessage* const history = new ChatMessage[64];
   unsigned historyCount = 0;
-  Peer peers[24];
+  Peer peers[MAX_CONTACTS]; // MAX_CONTACTS: platformio.ini, per board
   unsigned peerCount = 0;
   // Group channels: [0] is Public; the others are kept in NVS. Removing one keeps its history, joining it again shows it.
   channels::Channel channelList[channels::Max];

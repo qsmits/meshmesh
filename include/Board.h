@@ -37,3 +37,12 @@
 #if defined(ARDUINO_USB_CDC_ON_BOOT) && ARDUINO_USB_CDC_ON_BOOT
 #define MM_NATIVE_USB 1
 #endif
+// Nodes remembered (MeshCore contacts): set per board in platformio.ini, which MeshCore itself must see too; the same
+// values here for the screen preview, which builds without those flags.
+#ifndef MAX_CONTACTS
+#if defined(MM_HELTEC_V4)
+#define MAX_CONTACTS 24
+#else
+#define MAX_CONTACTS 100
+#endif
+#endif

@@ -252,7 +252,7 @@ unsigned sortedNodes(unsigned* order) {
   return n;
 }
 Peer* shownNode() {
-  unsigned order[24];
+  unsigned order[MAX_CONTACTS];
   unsigned n = sortedNodes(order);
   if (!n) return nullptr;
   nodeIndex %= n;
@@ -1483,7 +1483,7 @@ void draw() {
   case WardrivePage:
     title = t("Wardrive");
     if (wardriveList) {
-      unsigned order[24];
+      unsigned order[MAX_CONTACTS];
       const wardrive::Repeater* l;
       unsigned n = wdOrder(order, l);
       if (!n) say(0, 30, t("No repeaters yet"), small);
@@ -1546,7 +1546,7 @@ void draw() {
     break;
   }
   case Nodes: {
-    unsigned order[24];
+    unsigned order[MAX_CONTACTS];
     unsigned n = sortedNodes(order);
     Peer* p = shownNode();
     title = t("Nodes") + (n ? " " + String(nodeIndex % n + 1) + "/" + String(n) : "");

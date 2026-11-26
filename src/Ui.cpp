@@ -121,7 +121,7 @@ unsigned markCount = 0;
 DynamicJsonDocument library(8192);
 uint64_t conversations[65];
 unsigned conversationCount = 1;
-unsigned nodeOrder[24], nodeTotal = 0;
+unsigned nodeOrder[MAX_CONTACTS], nodeTotal = 0;
 
 // Palette: neutral dark surfaces, colour reserved for focus and state.
 constexpr uint16_t rgb(uint32_t v) {
