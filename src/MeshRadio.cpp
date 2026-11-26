@@ -285,6 +285,7 @@ class MeshCoreBackend : public BaseChatMesh {
   };
   // The contacts file: version 2 holds MAX_CONTACTS; version 1 (before 0.34) held 24 and is read once.
   template <unsigned Slots, uint32_t Version> struct ContactFile {
+    static constexpr uint32_t Expected = Version, Capacity = Slots; // no temporary file on the stack to read these
     uint32_t version = Version, count = 0;
     SavedContact contacts[Slots] = {};
     uint8_t hash[32] = {};
@@ -825,8 +826,7 @@ public:
   template <class Blob> static bool validBlob(const Blob& b) {
     uint8_t digest[32];
     mesh::Utils::sha256(digest, 32, (const uint8_t*)&b, offsetof(Blob, hash));
-    return b.version == Blob().version && b.count <= sizeof b.contacts / sizeof *b.contacts &&
-           !memcmp(digest, b.hash, 32);
+    return b.version == Blob::Expected && b.count <= Blob::Capacity && !memcmp(digest, b.hash, 32);
   }
   // The version 1 file (24 contacts) of an older firmware, read into the current one.
   static bool readOldContacts(ContactBlob& out, Preferences& p, bool& fromNvs) {

@@ -11,7 +11,7 @@ struct MemoCache {
 MemoCache* memoCache = nullptr;
 String tagFilter;
 MemoCache& contactMemo(const Peer& peer) {
-  if (!memoCache) memoCache = new MemoCache[24];
+  if (!memoCache) memoCache = new MemoCache[MAX_CONTACTS]; // indexed by the peer's place in meshRadio.peers
   auto& entry = memoCache[&peer - meshRadio.peers];
   if (entry.id != peer.id || memcmp(entry.memo.identity, peer.publicKey, 32)) {
     entry = {};

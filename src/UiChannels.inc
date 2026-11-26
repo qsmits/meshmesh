@@ -319,7 +319,7 @@ void drawChannelInfo() {
     text(x, y, rows[i], dim, small);
     y += 10;
   }
-  Peer* list[24];
+  Peer* list[MAX_CONTACTS];
   int people = chatContacts(list);
   inviteTo = people ? (inviteTo % people + people) % people : 0;
   selected = constrain(selected, 0, actions - 1);
@@ -422,7 +422,7 @@ void channelInfoKey(int key) {
   }
   if (selected == InfoInvite) {
     deleteArmed = false;
-    Peer* list[24];
+    Peer* list[MAX_CONTACTS];
     int people = chatContacts(list);
     if (!people) {
       notice(t("Discover a chat contact first: ADV"), warn);
